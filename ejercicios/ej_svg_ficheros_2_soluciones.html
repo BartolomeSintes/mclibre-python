@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soluciones Ficheros (2). SVG. Brython. Python. Bartolomé Sintes Marco</title>
+    <title>Soluciones (2). Ficheros. SVG. Python. Bartolomé Sintes Marco</title>
     <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
     <link rel="icon" href="../varios/favicon.ico" />
     <link rel="stylesheet" href="../varios/prism-python.css" />
@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <h1>SVG - Ficheros (2): Bucles Soluciones</h1>
+    <h1>Gráficos SVG - Ficheros: Bucles - Soluciones (2)</h1>
 
     <nav>
       <p>
@@ -40,40 +40,80 @@
       <table class="ejemplo">
         <tbody>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_1.png" alt="SVG Ficheros (2) 1 1" title="SVG Ficheros (2) 1 1" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">import webbrowser
+
+ruta = "svg_ficheros_2_1_1.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (2) 1-1. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />", file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(11):
+            print(f"      &lt;circle cx=\"{30 * i}\" cy=\"150\"   r=\"5\" fill=\"black\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_2.png" alt="SVG Ficheros (2) 1 2" title="SVG Ficheros (2) 1 2" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_3.png" alt="SVG Ficheros (2) 1 3" title="SVG Ficheros (2) 1 3" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_4.png" alt="SVG Ficheros (2) 1 4" title="SVG Ficheros (2) 1 4" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_5.png" alt="SVG Ficheros (2) 1 5" title="SVG Ficheros (2) 1 5" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_1_6.png" alt="SVG Ficheros (2) 1 6" title="SVG Ficheros (2) 1 6" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -85,40 +125,58 @@
       <table class="ejemplo">
         <tbody>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_1.png" alt="SVG Ficheros (2) 2 1" title="SVG Ficheros (2) 2 1" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_2.png" alt="SVG Ficheros (2) 2 2" title="SVG Ficheros (2) 2 2" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_3.png" alt="SVG Ficheros (2) 2 3" title="SVG Ficheros (2) 2 3" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_4.png" alt="SVG Ficheros (2) 2 4" title="SVG Ficheros (2) 2 4" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_5.png" alt="SVG Ficheros (2) 2 5" title="SVG Ficheros (2) 2 5" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_2_6.png" alt="SVG Ficheros (2) 2 6" title="SVG Ficheros (2) 2 6" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -130,40 +188,58 @@
       <table class="ejemplo">
         <tbody>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_1.png" alt="SVG Ficheros (2) 3 1" title="SVG Ficheros (2) 3 1" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_2.png" alt="SVG Ficheros (2) 3 2" title="SVG Ficheros (2) 3 2" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"</code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_3.png" alt="SVG Ficheros (2) 3 3" title="SVG Ficheros (2) 3 3" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_4.png" alt="SVG Ficheros (2) 3 4" title="SVG Ficheros (2) 3 4" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_5.png" alt="SVG Ficheros (2) 3 5" title="SVG Ficheros (2) 3 5" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
           <tr>
-            <td>
-              <pre><code class="language-markup"></code></pre>
-            </td>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_2_3_6.png" alt="SVG Ficheros (2) 3 6" title="SVG Ficheros (2) 3 6" width="324" height="324" /></td>
+            <td>
+              <pre>
+<code class="language-markup">
+</code>
+</pre>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -171,7 +247,7 @@
 
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 31 de marzo de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 10 de abril de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
