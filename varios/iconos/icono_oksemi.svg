@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="47.89" height="47.87" xmlns:xlink="http://www.w3.org/1999/xlink" version="1">
+  <defs>
+    <linearGradient id="b">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#ebebeb"/>
+    </linearGradient>
+    <linearGradient id="a">
+      <stop offset="0" stop-color="#ff0"/>
+      <stop offset="1" stop-color="#ffc700"/>
+    </linearGradient>
+    <linearGradient id="d" x1="-61.54" x2="-40.6" y1="-3.66" y2="15.36" xlink:href="#a" gradientUnits="userSpaceOnUse" gradientTransform="translate(83.233 3.746) scale(1.248)"/>
+    <linearGradient id="c" x1="3.35" x2="28.43" y1="3.89" y2="27.28" xlink:href="#b" gradientUnits="userSpaceOnUse" gradientTransform="translate(.124 -8.307) scale(1.248)"/>
+  </defs>
+  <path fill="url(#c)" stroke="#ffc300" stroke-width=".49" d="M8.85-7.8c-.48.06-.94.24-1.3.6L1.33-.94C.4 0 .56 1.7 1.67 2.82l8.78 8.8v.25l-8.93 8.85c-1.13 1.12-1.3 2.78-.35 3.7l6.32 6.2c.9.94 2.53.8 3.7-.3l8.9-8.9 9 9.05c1.1 1.13 2.74 1.3 3.7.35l6.2-6.3c.93-.95.77-2.6-.35-3.72l-8.86-8.93v-.08l9-8.98c1.13-1.12 1.3-2.74.36-3.67L32.9-7.07c-.94-.93-2.62-.77-3.75.35l-8.9 8.85h-.07l-8.93-9c-.7-.7-1.6-1.03-2.42-.94z" stroke-linejoin="round" transform="translate(-.38 9.695) scale(1.205)"/>
+  <path fill="url(#d)" d="M9.1-3.6c-.23 0-.44.05-.6.2L5.05.1c-.3.3-.23.87.16 1.25l10.37 10.33L5.2 22c-.4.38-.47.94-.16 1.25l3.47 3.47c.36.3.9.27 1.3-.1l10.3-10.36L30.44 26.6c.38.4.95.43 1.25.12l3.47-3.47c.3-.3.23-.87-.15-1.25L24.66 11.66 35 1.33c.38-.38.46-.95.15-1.25L31.68-3.4c-.3-.3-.87-.22-1.25.16L20.1 7.1 9.76-3.24c-.2-.2-.44-.32-.66-.35z" transform="translate(-.38 9.695) scale(1.205)"/>
+</svg>

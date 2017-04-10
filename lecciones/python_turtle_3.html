@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo turtle (3). Gráficos. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos: el módulo turtle (3). Eventos</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Módulo turtle (3)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#mainloop">mainloop()</a></li>
+          <li><a href="#onscreenclick">onscreenclick()</a></li>
+          <li><a href="#ontimer">ontimer()</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata la creación de gráficos usando el módulo turtle. Se recomienda leer previamente la lección <a href="python_turtle_1.html">turtle (1)</a>.</p>
+
+    <section id="mainloop">
+      <h2>Repetición: mainloop()</h2>
+
+      <p>Para crear programas de tortuga interactivos necesitamos que los programas no terminen, sino que permanezcan a la espera y reaccionen a los eventos (de ratón o de teclado) generados por el usuario.</p>
+
+      <p>La función <strong>mainloop()</strong>, que se escribe al final del programa, hace que el programa no termine, sino que permanezca a la espera de los eventos definidos en el programa.</p>
+    </section>
+
+    <section id="onscreenclick">
+      <h2>Evento hacer clic: onscreenclick()</h2>
+
+      <p>La función <strong>onscreenclick(función, botón=1, añade=<span class="idle-rese">None</span>)</strong> relaciona un clic de ratón con una función, de manera que cuando se haga clic se ejecutará la función. Los tres argumentos de la función son:</p>
+      <ul>
+        <li><strong>función</strong>: el nombre de la función. Esta función recibirá siempre dos argumentos, las coordenadas x e y del punto en el que se ha hecho clic.</li>
+        <li><strong>botón</strong>: el botón pulsado (1 = botón izquierdo, 2= botón central, 3 = botón izquierdo). Si se omite, el valor predeterminado es 1.</li>
+        <li><strong>añade</strong>: si el valor es <span class="idle-rese">True</span> la relación entre el clic y la función se añade a las anteriores, si el valor es <span class="idle-rese">False</span> la relación sustituye a las anteriores. Si se omite, el valor predeterminado es <span class="idle-rese">False</span>.</li>
+      </ul>
+      <ul>
+        <li>El siguiente programa ejecuta la función punto() cada vez que se hace clic en la ventana de tortuga. La función simplemente dibuja un punto en el lugar en el que se ha hecho clic.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+def punto(x, y):
+    goto(x, y)
+    dot(10, "black")
+
+onscreenclick(punto)
+mainloop()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_1.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El siguiente programa ejecuta además la función cuadro() cada vez que se hace clic con el botón derecho. La función cuadro() simplemente dibuja un cuadro en el lugar en el que se ha hecho clic derecho.
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+def punto(x, y):
+    goto(x, y)
+    dot(10, "black")
+
+def cuadro(x, y):
+    goto(x - 5, y - 5)
+    pendown()
+    goto(x + 5, y - 5)
+    goto(x + 5, y + 5)
+    goto(x - 5, y + 5)
+    goto(x - 5, y - 5)
+    penup()
+
+onscreenclick(punto)
+onscreenclick(cuadro, 3)
+mainloop()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_2.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El siguiente programa ejecuta además las funciones punto() y cuadro() cada vez que se hace clic con el botón central del ratón. Para que se asocien las dos funciones al clic central, la segunda llamada incluye el tercer argumento <span class="idle-rese">True</span>.
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+def punto(x, y):
+    goto(x, y)
+    dot(10, "black")
+
+def cuadro(x, y):
+    goto(x - 5, y - 5)
+    pendown()
+    goto(x + 5, y - 5)
+    goto(x + 5, y + 5)
+    goto(x - 5, y + 5)
+    goto(x - 5, y - 5)
+    penup()
+
+onscreenclick(punto)
+onscreenclick(cuadro, 3)
+onscreenclick(punto, 2)
+onscreenclick(cuadro, 2, True)
+mainloop()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_3.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ontimer">
+      <h2>Temporizador: ontimer()</h2>
+
+      <p>La función <strong>ontimer(función, tiempo)</strong> pone en marcha un temporizador que ejecuta una función al cabo de un tiempo. Los dos argumentos de la función son:</p>
+      <ul>
+        <li><strong>función</strong>: la función que se ejecuta cuando el temporizador termina de contar el tiempo.</li>
+        <li><strong>tiempo</strong>: el tiempo en milisegundos que cuenta el temporizador</li>
+      </ul>
+
+      <p>El temporizador sólo cuenta una vez el tiempo. Si se quiere llamar a la función de forma repetida, se debe incluir un nuevo <strong>ontimer</strong>() en la función a la que llama <strong>ontimer</strong>().</p>
+      <ul>
+        <li>El siguiente programa pone en marcha un temporizador que al cabo de un segundo llama a la función punto(). La función punto() dibuja un punto al azar en la ventana y vuelve a poner en marcha un temporizador, por lo que el programa no acaba nunca. Este programa no necesita llamar a la función mainloop(), puesto que el programa no responde a eventos de ratón o teclado.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+from random import randint
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+def punto():
+    global randint
+    goto(randint(-225, 225), randint(-100, 100))
+    dot(10, "black")
+    ontimer(punto, 1000)
+
+ontimer(punto, 1000)</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Función ontimer()" src="../img/turtle/turtle_ontimer_1.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 22 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

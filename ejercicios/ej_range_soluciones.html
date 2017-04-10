@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones. El tipo range(). Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>El tipo <span class="idle-func">range</span>() - Soluciones</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Tipo <span class="idle-func">range</span>()</h2>
+
+      <h3><a href="ej_range.html">Enunciados</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_range.html#ejercicio-1">1 - Test <span class="idle-func">range</span>(m)</a></li>
+          <li><a href="ej_range.html#ejercicio-2">2 - Test <span class="idle-func">range</span>(m, n)</a></li>
+          <li><a href="ej_range.html#ejercicio-3">3 - Test <span class="idle-func">range</span>(m, n, p)</a></li>
+          <li><a href="ej_range.html#ejercicio-4">4 - Listas fijas</a></li>
+          <li><a href="ej_range.html#ejercicio-5">5 - Listas a partir de valor</a></li>
+          <li><a href="ej_range.html#ejercicio-6">6 - De cero a valor</a></li>
+          <li><a href="ej_range.html#ejercicio-7">7 - Listas entre dos números</a></li>
+          <li><a href="ej_range.html#ejercicio-8">8 - Lista de uno a otro</a></li>
+          <li><a href="ej_range.html#ejercicio-9">9 - Lista de menor a mayor</a></li>
+          <li><a href="ej_range.html#ejercicio-10">10 - Valores consecutivos</a></li>
+          <li><a href="ej_range.html#ejercicio-11">11 - Pares entre valores</a></li>
+          <li><a href="ej_range.html#ejercicio-12">12 - Múltiplos entre valores</a></li>
+        </ul>
+      </div>
+
+      <h3>Soluciones</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-4">4 - Listas fijas</a></li>
+          <li><a href="#ejercicio-5">5 - Listas a partir valor</a></li>
+          <li><a href="#ejercicio-6">6 - De cero a valor</a></li>
+          <li><a href="#ejercicio-7">7 - Listas entre dos números</a></li>
+          <li><a href="#ejercicio-8">8 - Lista de uno a otro</a></li>
+          <li><a href="#ejercicio-9">9 - Lista de menor a mayor</a></li>
+          <li><a href="#ejercicio-10">10 - Valores consecutivos</a></li>
+          <li><a href="#ejercicio-11">11 - Pares entre valores</a></li>
+          <li><a href="#ejercicio-12">12 - Múltiplos entre valores</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_range.html">ejercicios del tipo <span class="idle-func">range</span>()</a>.</p>
+
+    <section id="ejercicio-4">
+      <h2><span class="idle-func">range</span>() - 4</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTAS FIJAS")
+print(list(range(10)))
+print(list(range(4, 11)))
+print(list(range(-6, 0)))
+print(list(range(-56, -49)))
+print(list(range(1, 19, 2)))
+print(list(range(-6, 12, 2)))
+print(list(range(100, 1100, 100)))
+print(list(range(10, 3, -1)))
+print(list(range(-50, -57, -1)))
+print(list(range(17, 0, -2)))
+print(list(range(500, -100, -100)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2><span class="idle-func">range</span>() - 5</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTAS A PARTIR DE VALOR")
+numero = int(input("Escriba un número entero mayor que 0: "))
+
+if numero &lt;= 0:
+    print("¡Le he pedido un número entero mayor que 0!")
+else:
+    print(list(range(numero + 1)))
+    print(list(range(numero, -1, -1)))
+    print(list(range(1, numero)))
+    print(list(range(numero - 1, 0, -1)))
+    print(list(range(numero)) + list(range(numero, -1, -1)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2><span class="idle-func">range</span>() - 6</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTAS DE CERO A VALOR")
+numero = int(input("Escriba un número entero: "))
+
+if numero &gt; 0:
+    print(list(range(0, numero + 1)))
+else:
+    print(list(range(0, numero - 1, -1)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2><span class="idle-func">range</span>() - 7</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTAS ENTRE DOS NÚMEROS")
+numero_1 = int(input("Escriba un número entero: "))
+numero_2 = int(input(f"Escriba un número entero mayor que {numero_1}: "))
+
+if numero_2 &lt;= numero_1:
+    print(f"¡Le he pedido un número mayor que {numero_1}!")
+else:
+    print(list(range(numero_1, numero_2 + 1)))
+    print(list(range(numero_2 - 1, numero_1 - 1, -1)))
+    print(list(range(numero_1 + 1, numero_2 + 2)))
+    print(list(range(numero_2 - 1, numero_1, -1)))
+    print(list(range(numero_1, numero_2)) + list(range(numero_2, numero_1 - 1, -1)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-8">
+      <h2><span class="idle-func">range</span>() - 8</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTA DE UN VALOR A OTRO")
+inicial = int(input("Escriba el número entero inicial: "))
+final = int(input("Escriba el número entero final: "))
+
+if final &gt; inicial:
+    print(list(range(inicial, final + 1)))
+else:
+    print(list(range(inicial, final - 1, -1)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-9">
+      <h2><span class="idle-func">range</span>() - 9</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("LISTA DE MENOR A MAYOR")
+numero_1 = int(input("Escriba un número entero: "))
+numero_2 = int(input("Escriba otro número entero: "))
+
+if numero_2 &gt; numero_1:
+    print(list(range(numero_1 + 1, numero_2)))
+else:
+    print(list(range(numero_2 + 1, numero_1)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-10">
+      <h2><span class="idle-func">range</span>() - 10</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("VALORES CONSECUTIVOS")
+inicial = int(input("Escriba el número entero inicial: "))
+cantidad = int(input("Escriba cuántos valores quiere: "))
+
+if cantidad &lt; 0:
+    print("¡La cantidad de valores no puede ser negativa!")
+else:
+    print(list(range(inicial, inicial + cantidad)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-11">
+      <h2><span class="idle-func">range</span>() - 11</h2>
+
+      <p>Si el número inicial es impar, debe empezar por el número siguiente. La lista debe contar de dos en dos y terminar antes del siguiente al valor final.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("PARES ENTRE VALORES")
+inicial = int(input("Escriba el número entero inicial: "))
+final = int(input("Escriba el número entero final: "))
+
+if final &lt; inicial:
+    print("¡El número final debe ser mayor que el inicial!")
+else:
+    if inicial % 2 != 0:
+        inicial = inicial + 1
+    print(list(range(inicial, final + 1, 2)))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-12">
+      <h2><span class="idle-func">range</span>() - 12</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("MÚLTIPLOS ENTRE VALORES")
+inicial = int(input("Escriba el número entero inicial: "))
+final = int(input("Escriba el número entero final: "))
+
+if final &lt; inicial:
+    print("¡El número final debe ser mayor que el inicial!")
+else:
+    paso = int(input("¿De qué número quiere los múltiplos?: "))
+    if paso &lt;= 0:
+        print("¡Los múltiplos deben ser de un número entero mayor que cero!")
+    else:
+        if inicial % paso != 0:
+            inicial2 = inicial // paso * paso + paso
+        else:
+            inicial2 = inicial
+        print(f"Entre {inicial} y {final} hay "
+              f"{len(range(inicial2, final + 1, paso))} múltiplos de {paso}")
+        print(list(range(inicial2, final + 1, paso)))</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

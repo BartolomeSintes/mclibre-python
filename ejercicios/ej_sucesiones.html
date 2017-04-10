@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios. Sucesiones aritméticas . Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body onload="e01_generaSucesion(4); e02_generaSucesion();">
+    <h1>Sucesiones aritméticas - Ejercicios</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Sucesiones aritméticas</h2>
+
+      <h3>Enunciados</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">1 - Reconocer sucesiones</a></li>
+          <li><a href="#ejercicio-2">2 - Escribir fórmulas</a></li>
+          <li><a href="#ejercicio-3">3 - Sucesiones aritméticas</a></li>
+          <li><a href="#ejercicio-4">4 - Suc. no aritméticas</a></li>
+        </ul>
+      </div>
+
+      <h3><a href="ej_sucesiones_soluciones.html">Soluciones</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_sucesiones_soluciones.html#ejercicio-3">3 - Sucesiones aritméticas</a></li>
+          <li><a href="ej_sucesiones_soluciones.html#ejercicio-4">4 - Suc. no aritméticas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Los dos primeros ejercicios corresponden a lo explicado en la lección <a href="../otros/sucesiones_aritmeticas.html">Sucesiones aritméticas</a>.</p>
+
+    <p>Estos dos ejercicios se pueden repetir las veces que sea necesario, hasta adquirir la destreza practicada. Los ejercicios plantean una pregunta distinta cada vez y evalúan la respuesta automáticamente, planteando inmediatamente una nueva pregunta.</p>
+
+    <p>Los contadores situados debajo de cada ejercicio indican los aciertos y errores cometidos. Estos contadores se pueden reiniciar haciendo clic en el botón "Reiniciar contador".</p>
+
+    <p>Los dos últimos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python_for.html">bucle <span class="idle-rese">for</span> (1)</a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_sucesiones_soluciones.html">posibles soluciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2>Sucesiones aritméticas - 01 - Reconocer sucesiones aritméticas</h2>
+
+      <p>Los valores siguientes son los primeros valores de una sucesión:</p>
+
+      <table style="border: black 1px solid; text-align: center">
+        <tbody id="e01-sucesion">
+        </tbody>
+      </table>
+
+      <p>¿La sucesión es aritmética? <button onclick="e01_comprueba(true)">Sí</button> - <button onclick="e01_comprueba(false)">No</button> <span id="e01-resultado"></span></p>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Correctas:</td>
+            <td style="width: 2em; text-align: right;"><span id="e01-t-correctas"></span></td>
+            <td><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10"><rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e01-l-correctas"/></svg></td>
+          </tr>
+          <tr>
+            <td>Incorrectas:</td>
+            <td style="text-align: right;"><span id="e01-t-incorrectas"></span></td>
+            <td><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10"><rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e01-l-incorrectas"/></svg></td>
+          </tr>
+          <tr>
+            <td colspan="3"><button onclick="e01_reinicia_contador()">Reiniciar contador</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Sucesiones aritméticas - 02 - Escribir fórmulas sucesiones aritméticas</h2>
+
+      <p>Seleccione la dificultad del ejercicio:
+        <input type="radio" name="e02-dificultad" value="1" checked="checked"> Fácil -
+        <input type="radio" name="e02-dificultad" value="2"> Medio -
+        <input type="radio" name="e02-dificultad" value="3"> Difícil - </p>
+
+      <p>Los valores siguientes son algunos valores de una sucesión aritmética:</p>
+
+      <table style="border: black 1px solid; text-align: center">
+        <tbody id="e02-sucesion">
+        </tbody>
+      </table>
+
+      <p>Escriba una fórmula (en función de <i>i</i>) que se ajuste a los valores anteriores:</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <td style="vertical-align: middle"><span style="font-size:150%">f(i) = </span><input type="text" id="e02-expresion" size="30" value="i" style="font-size: 1.5em"/></td>
+            <td>
+              <button onclick="e02_pasar()">Nueva sucesión</button><br />
+              <button onclick="e02_comprueba()">Evaluar</button>
+              <span id="e02-resultado"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="e02-ayuda"></div>
+
+      <table>
+        <tbody>
+          <tr>
+            <td>Correctas:</td>
+            <td style="width: 2em; text-align: right;"><span id="e02-t-correctas"></span></td>
+            <td><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10"><rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e02-l-correctas"/></svg></td>
+          </tr>
+          <tr>
+            <td>Incorrectas:</td>
+            <td style="text-align: right;"><span id="e02-t-incorrectas"></span></td>
+            <td><svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10"><rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e02-l-incorrectas"/></svg></td>
+          </tr>
+          <tr>
+            <td colspan="3"><button onclick="e02_reinicia_contador()">Reiniciar contador</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Sucesiones aritméticas - 03</h2>
+
+      <p>Escriba <strong>tres</strong> programas que escriban las siguientes secuencias de números:</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="idle-resp">2      4     6     8    10    12    14    16    18    20
+20    22    24    26    28    30    32    34
+10    14    18    22    26    30
+40    35    30    25    20    15    10     5    0
+1      2     3     4     5     6     7     8     9    10</code>
+</pre>
+      </div>
+
+      <ul>
+        <li>En el primer programa, el tipo <span class="idle-func">range</span>() que se utilice en cada bucle debe tener un único argumento.</li>
+        <li>En el segundo programa, el tipo <span class="idle-func">range</span>() que se utilice en cada bucle debe tener dos argumentos.</li>
+        <li>En el tercer programa, el tipo <span class="idle-func">range</span>() que se utilice en cada bucle debe tener tres argumentos.</li>
+      </ul>
+
+      <p><strong>Notas</strong>:</p>
+      <ul>
+        <li>La separación entre números del enunciado es para facilitar la lectura. Es suficiente con que haya un espacio en blanco entre valores.</li>
+        <li>En este ejercicio todas las secuencias son sucesiones aritméticas, por lo que las fórmulas son muy parecidas a las del ejemplo siguiente.</li>
+        <li>Si la secuencia fuera la siguiente:
+          <div class="ejercicio">
+            <pre><code class="idle-resp">7    10    13    16    19    22    25    28</code></pre>
+          </div>
+
+          <p>se podría hacer de estas tres formas distintas:</p>
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">for i in range(7, 30, 3):
+    print(i, end=" ")</code>
+</pre>
+          </div>
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">for i in range(1, 9):
+    print(3*i + 4, end=" ")</code>
+</pre>
+          </div>
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">for i in range(8):
+    print(3*i + 7, end=" ")</code>
+</pre>
+          </div>
+        </li>
+        <li>Los números forman una sucesión aritmética. La diferencia entre los términos de la sucesión es precisamente el número por el que se multiplica la "i".</li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Sucesiones <strong>NO</strong> aritméticas - 04 (optativo)</h2>
+
+      <p><strong>Nota</strong>: Este ejercicio es bastante "matemático", así que he decidio dejarlo como ejercicio optativo.</p>
+
+      <p>Escriba un programa que escriba las siguientes secuencias de números:</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="idle-resp">1      4      9           16         25          36          49    64    81    100
+2      5     10           17         26          37          50    65    82    101
+8     27     64          125        216         343
+1.0    0.5    0.3333..     0.25       0.2         0.1666..
+2      6     12           20         30           42         56
+1     10    100         1000      10000       100000
+1.0    0.1    0.01         0.001      0.0001
+1     -1      1           -1          1           -1          1    -1</code>
+</pre>
+      </div>
+
+      <p><strong>Notas</strong>:</p>
+      <ul>
+        <li>La separación entre números es para facilitar la lectura. Es suficiente con que haya un espacio en blanco entre valores.</li>
+        <li>Los puntos suspensivos del enunciado indican que Python escribirá más decimales.</li>
+        <li>En este ejercicio cada secuencia es distinta y hay que descubrir qué fórmula se utiliza en cada caso (multiplicaciones, divisiones, elevar al cuadrado, al cubo, etc.).</li>
+        <li>No hay que fijarse en cómo se puede pasar de un valor al siguiente, sino cómo calcular cada uno de forma independiente (por ejemplo, en las dos primeras secuencias se puede pasar de un valor al siguiente sumando cada vez un número impar, pero eso no sirve para encontrar la fórmula).</li>
+        <li>Para simplificar las fórmulas, en las cinco primeras secuencias es conveniente utilizar el tipo <span class="idle-func">range</span>() con dos argumentos para no empezar en cero. En las tres últimas secuencias, con un argumento es suficiente.</li>
+      </ul>
+    </section>
+
+    <script type="text/javascript">
+      ///////////////////////
+      // Funciones comunes //
+      ///////////////////////
+      var anchoContador = 200;
+
+      function dibujaContador(correctas, tCorrectas, lCorrectas, incorrectas, tIncorrectas, lIncorrectas) {
+        tCorrectas.textContent = correctas;
+        tIncorrectas.textContent = incorrectas;
+        var total = correctas + incorrectas;
+        if (total == 0) {
+          total = 1;
+        }
+        lCorrectas.setAttribute("width", Math.max(anchoContador * correctas / total, 1))
+        lIncorrectas.setAttribute("width", Math.max(anchoContador * incorrectas / total, 1))
+      }
+
+      function getRadioVal(name) {
+        var val;
+        var radios = document.getElementsByName(name);
+
+        for (var i = 0, len = radios.length; i < len; i++) {
+          if (radios[i].checked) {
+            return radios[i].value;
+          }
+        }
+      }
+
+      ////////////////////////////////////////////////
+      // Ejercicio 1: Reconocer sucesión aritmética //
+      ////////////////////////////////////////////////
+
+      var e01_sucesion = document.getElementById("e01-sucesion");
+      var e01_resultado = document.getElementById("e01-resultado");
+      var e01_tCorrectas = document.getElementById("e01-t-correctas");
+      var e01_lCorrectas = document.getElementById("e01-l-correctas");
+      var e01_tIncorrectas = document.getElementById("e01-t-incorrectas");
+      var e01_lIncorrectas = document.getElementById("e01-l-incorrectas");
+      var e01_respuesta = true;
+      var e01_nCorrectas = 0;
+      var e01_nIncorrectas = 0;
+      var valoresMostrados = "";
+
+      function e01_generaSucesion(n) {
+        var porcentaje = 1 - Math.pow(0.5, 1 / n);
+        var inicial = Math.round(Math.random()*100);
+        var diferencia = Math.round(Math.random()*100) - 50;
+        var actual = inicial;
+        e01_sucesion.innerHTML = "";  // borra el contenido
+        var fila = e01_sucesion.insertRow(0);
+        var celda = fila.insertCell(-1);
+        celda.setAttribute("style", "border: black 1px solid; width: 50px;");
+        celda.innerHTML = actual;
+        valoresMostrados = actual;
+        e01_respuesta = true;
+        //          e01_sucesion.textContent = actual ;
+        for (var i = 2; i <= n + 1; i++) {
+          if (Math.random() > porcentaje) {
+            actual += diferencia;
+          } else {
+            actual += Math.round(Math.random()*100);
+            e01_respuesta = false;
+          }
+          //          e01_sucesion.textContent += " - " + actual;
+          var celda = fila.insertCell(-1);
+          celda.setAttribute("style", "border: black 1px solid; width: 50px;");
+          celda.innerHTML = actual;
+          valoresMostrados += " " + actual;
+        }
+        //        e01_sucesion.textContent += " - ...";
+        var celda = fila.insertCell(-1);
+        celda.setAttribute("style", "border: black 1px solid; width: 50px;");
+        celda.innerHTML = ". . .";
+        valoresMostrados += ". . . ";
+      }
+
+      function e01_comprueba(respuesta) {
+        if (respuesta == e01_respuesta) {
+          e01_resultado.textContent = "¡Correcto!";
+          e01_nCorrectas++;
+        } else {
+          e01_resultado.textContent = "¡Has fallado!";
+          e01_nIncorrectas++;
+          if (e01_respuesta == true) {
+            e01_resultado.textContent += " La sucesión " + valoresMostrados + " sí es una sucesión aritmética";
+          } else {
+            e01_resultado.textContent += " La sucesión " + valoresMostrados + " no es una sucesión aritmética";
+          }
+        }
+        e01_generaSucesion(4);
+        dibujaContador(e01_nCorrectas, e01_tCorrectas, e01_lCorrectas, e01_nIncorrectas, e01_tIncorrectas, e01_lIncorrectas);
+      }
+
+      function e01_reinicia_contador() {
+        e01_nCorrectas = e01_nIncorrectas = 0;
+        dibujaContador(e01_nCorrectas, e01_tCorrectas, e01_lCorrectas, e01_nIncorrectas, e01_tIncorrectas, e01_lIncorrectas);
+      }
+    </script>
+
+    <script type="text/javascript">
+      /////////////////////////////////////////////////
+      // Ejercicio 2: Fórmula de sucesión aritmética //
+      /////////////////////////////////////////////////
+
+      //      var e02_dificultad = document.getElementById("e02-dificultad");
+      var e02_dificultad = getRadioVal("e02-dificultad");
+      var e02_sucesion = document.getElementById("e02-sucesion");
+      var e02_expresion = document.getElementById("e02-expresion");
+      var e02_resultado = document.getElementById("e02-resultado");
+      var e02_ayuda = document.getElementById("e02-ayuda");
+      var e02_tCorrectas = document.getElementById("e02-t-correctas");
+      var e02_lCorrectas = document.getElementById("e02-l-correctas");
+      var e02_tIncorrectas = document.getElementById("e02-t-incorrectas");
+      var e02_lIncorrectas = document.getElementById("e02-l-incorrectas");
+      var e02_nCorrectas = 0;
+      var e02_nIncorrectas = 0;
+      var inicial, diferencia, indiceInicial;
+      var n = 4;
+      var indicesSucesion = [];
+
+      function e02_generaSucesion() {
+        e02_dificultad = getRadioVal("e02-dificultad");
+        if (e02_dificultad == 3) {                          // Difícil
+          inicial = Math.round(Math.random()*100);
+          diferencia = Math.round(Math.random()*10 - 5);
+          indiceInicial = Math.round(Math.random()*10);
+        } else if (e02_dificultad == 2) {                    // Medio
+          inicial = Math.round(Math.random()*100);
+          diferencia = Math.round(Math.random()*100 - 50);
+          indiceInicial = Math.round(Math.random());
+        } else {                                            // Fácil
+          inicial = Math.round(Math.random()*100);
+          diferencia = Math.round(Math.random()*10 - 5);
+          indiceInicial = 0;
+        }
+        indicesSucesion = [];
+        var valoresSucesion = []
+        tmp = 0
+        for (var i = 0; i < n; i++) {
+          if (e02_dificultad == 3) {                          // Difícil
+            tmp += 2 + Math.round(Math.random()*10);
+            indicesSucesion.push(tmp+indiceInicial);
+            valoresSucesion.push(inicial + tmp * diferencia);
+          } else {                                            // Medio y fácil
+            indicesSucesion.push(i+indiceInicial);
+            valoresSucesion.push(inicial + i * diferencia);
+          }
+        }
+
+        e02_sucesion.innerHTML = "";  // borra el contenido
+        var actual = inicial;
+        var fila = e02_sucesion.insertRow(0);
+        var celda = fila.insertCell(-1);
+        celda.setAttribute("style", "border: black 1px solid; font-weight: bold; font-style: oblique; width: 50px;");
+        celda.innerHTML = "i";
+        for (var i = 0; i < n; i++) {
+          var celda = fila.insertCell(-1);
+          celda.setAttribute("style", "border: black 1px solid; width: 50px;");
+          celda.innerHTML = indicesSucesion[i];
+        }
+        fila = e02_sucesion.insertRow(1);
+        var celda = fila.insertCell(-1);
+        celda.setAttribute("style", "border: black 1px solid; font-weight: bold; font-style: oblique;");
+        celda.innerHTML = "f(i)";
+        for (var i = 0; i < n; i++) {
+          var celda = fila.insertCell(-1);
+          celda.setAttribute("style", "border: black 1px solid;");
+          celda.innerHTML = valoresSucesion[i];
+        }
+      }
+
+      function e02_comprueba() {
+        var expresion = e02_expresion.value;
+
+        var expresionCorrecta = true;
+        var i = indiceInicial;
+        // e02_resultado.textContent += " T1: " + indiceInicial + ": " + inicial + " - " + eval(expresion) + " - ";
+        if (inicial != eval(expresion)) {
+          expresionCorrecta = false;
+        }
+        i += 5 + Math.round(Math.random()*100);
+        if (inicial + (i - indiceInicial) * diferencia != eval(expresion)) {
+          expresionCorrecta = false;
+        }
+        // e02_resultado.textContent += " T2: " + i + ": " + (inicial + (i - indiceInicial) * diferencia) + " - " + eval(expresion) + " - ";
+        i += 5 + Math.round(Math.random()*100);
+        if (inicial + (i - indiceInicial) * diferencia != eval(expresion)) {
+          expresionCorrecta = false;
+        }
+        // e02_resultado.textContent += " T3: " + i + ": " + (inicial + (i - indiceInicial) * diferencia) + " - " + eval(expresion) + " - ";
+        if (expresionCorrecta) {
+          e02_resultado.textContent = "¡Correcto!";
+          e02_ayuda.textContent = "";
+          e02_nCorrectas++;
+          e02_generaSucesion(4);
+          e02_expresion.value = "";
+        } else {
+          e02_resultado.textContent = "¡Has fallado!";
+          e02_nIncorrectas++;
+          e02_ayuda.textContent = "La fórmula " + expresion + " no es correcta. Esa fórmula da los siguientes valores:";
+          var tabla = document.createElement('table');
+          tabla.setAttribute("style", "border: black 1px solid;");
+          var fila = tabla.insertRow(0);
+          var celda = fila.insertCell(-1);
+          celda.setAttribute("style", "border: black 1px solid; font-weight: bold; font-style: oblique; width: 50px;");
+          celda.innerHTML = "i";
+          for (var i = 0; i < n; i++) {
+            var celda = fila.insertCell(-1);
+            celda.setAttribute("style", "border: black 1px solid; width: 50px;");
+            celda.innerHTML = indicesSucesion[i];
+          }
+          fila = tabla.insertRow(1);
+          var celda = fila.insertCell(-1);
+          celda.setAttribute("style", "border: black 1px solid; font-weight: bold; font-style: oblique;");
+          celda.innerHTML = "f(i)";
+          for (var j = 0; j < n; j++) {
+            var celda = fila.insertCell(-1);
+            celda.setAttribute("style", "border: black 1px solid;");
+            i = indicesSucesion[j];
+            celda.innerHTML = eval(expresion);
+          }
+          e02_ayuda.appendChild(tabla);
+        }
+        dibujaContador(e02_nCorrectas, e02_tCorrectas, e02_lCorrectas, e02_nIncorrectas, e02_tIncorrectas, e02_lIncorrectas);
+      }
+
+      function e02_pasar() {
+        e02_nIncorrectas++;
+        dibujaContador(e02_nCorrectas, e02_tCorrectas, e02_lCorrectas, e02_nIncorrectas, e02_tIncorrectas, e02_lIncorrectas);
+        e02_generaSucesion(4);
+      }
+
+      function e02_reinicia_contador() {
+        e02_nCorrectas = e02_nIncorrectas = 0;
+        dibujaContador(e02_nCorrectas, e02_tCorrectas, e02_lCorrectas, e02_nIncorrectas, e02_tIncorrectas, e02_lIncorrectas);
+      }
+    </script>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 25 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

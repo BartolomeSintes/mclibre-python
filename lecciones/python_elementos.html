@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementos de un programa. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Elementos de un programa de Python</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Elementos</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#elementos">Elementos de un programa</a></li>
+          <li><a href="#lineas-espacios">Líneas y espacios</a></li>
+          <li><a href="#palabras-reservadas"><i>keywords</i></a></li>
+          <li><a href="#literales">Literales</a></li>
+          <li><a href="#operadores">Operadores</a></li>
+          <li><a href="#delimitadores">Delimitadores</a></li>
+          <li><a href="#identificadores">Identificadores</a>
+            <ul>
+              <li><a href="#funciones-integradas"><i>built-in functions</i></a></li>
+              <li><a href="#funciones-adicionales">Funciones</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar con ejemplos</p>
+
+    <p>En esta lección se tratan los elementos que componen un programa de Python</p>
+
+    <section id="elementos">
+      <h2>Elementos de un programa</h2>
+
+      <p>Un programa de Python es un fichero de texto (normalmente guardado con el juego de caracteres UTF-8) que contiene expresiones y sentencias del lenguaje Python. Esas expresiones y sentencias se consiguen combinando los elementos básicos del lenguaje.</p>
+
+      <p>El lenguaje Python está formado por elementos (<i>tokens</i>) de diferentes tipos:</p>
+      <ul>
+        <li>palabras reservadas (<i>keywords</i>)</li>
+        <li>funciones integradas (<i>built-in functions</i>)</li>
+        <li>literales</li>
+        <li>operadores</li>
+        <li>delimitadores</li>
+        <li>identificadores</li>
+      </ul>
+
+      <p>En esta lección se comentan los principales elementos del lenguaje. En la documentación de Python se puede consultar una <a href="https://docs.python.org/3/reference/lexical_analysis.html">descripción mucho más detallada y completa</a>.</p>
+
+      <p>Para que un programa se pueda ejecutar, el programa debe ser sintácticamente correcto, es decir, utilizar los elementos del lenguaje Python respetando su reglas de "ensamblaje". Esas reglas se comentan en otras lecciones de este curso. Obviamente, que un programa se pueda ejecutar no significa que un programa vaya a realizar la tarea deseada, ni que lo vaya a hacer en todos los casos.</p>
+    </section>
+
+    <section id="lineas-espacios">
+      <h2>Líneas y espacios</h2>
+
+      <p>Un programa de Python está formado por líneas de texto.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">radio = 5
+area = 3.14159242 * radio ** 2
+print(area)</code>
+</pre>
+      </div>
+
+      <p>Se recomienda que cada línea contenga una única instrucción, aunque puede haber varias instrucciones en una línea, separadas por un punto y coma (;).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="sinborde"><img src="../varios/iconos/icono_oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40" /></td>
+            <td>
+              <pre>
+<code class="language-python">radio = 5; area = 3.14159242 * radio ** 2
+print(area)</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Por motivos de legibilidad, se recomienda que las líneas no superen los 79 caracteres. Si una instrucción supera esa longitud, se puede dividir en varias líneas usando el caracter contrabarra (\):</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">radio = 5
+area = 3.14159265358979323846 \
+       * radio ** 2
+print(area)</code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Los elementos del lenguaje se separan por espacios en blanco (normalmente, uno), aunque en algunos casos no se escriben espacios:</p>
+      <ul>
+        <li>entre los nombres de las funciones y el paréntesis</li>
+        <li>antes de una coma (,)</li>
+        <li>entre los delimitadores y su contenido (paréntesis, llaves, corchetes o comillas)</li>
+      </ul>
+
+      <p>Los espacios no son significativos, es decir, da lo mismo un espacio que varios, excepto al principio de una línea.</p>
+
+      <p>Los espacios al principio de una línea (el sangrado) indican un nivel de agrupamiento. El sangrado inicial es una de las características de Python que lo distinguen de otros lenguajes, que utilizan un caracter para delimitar agrupamientos (en muchos lenguajes se utilizan las llaves { }). Por ello, una línea no puede contener espacios iniciales, a menos que forme parte de un bloque de instrucciones o de una instrucción dividida en varias líneas.</p>
+
+      <p>Al ejecutar en IDLE una instrucción con espacios iniciales, se mostraría un aviso de error de sintaxis:</p>
+
+      <div class="codigo">
+        <pre><span class="idle-prompt">&gt;&gt;&gt;</span>    <span class="idle-errbg"> </span>x = 42
+<span class="idle-erro">SyntaxError: unexpected indent</span></pre>
+      </div>
+
+      <p>Al ejecutar un programa, se mostraría una ventana con el mensaje de error de sintaxis:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre><code class="language-python">     x = 42</code></pre>
+            </td>
+            <td><img alt="Aviso: Error de sangrado" src="../img/error_sangrado_2.png" width="216" height="161" title="Aviso: Error de sangrado" /></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr class="corta" />
+
+      <p>El carácter almohadilla (<span class="idle-come">#</span>) marca el inicio de un comentario. Python ignora el resto de la línea (desde la almohadilla hasta el final de la línea).</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">area = 3.14159242 * radio ** 2       # Fórmula del área de un círculo</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="palabras-reservadas">
+      <h2>Palabras reservadas (<i>keywords</i>)</h2>
+
+      <p>Las palabras reservadas de Python son las que forman el núcleo del lenguaje Python. Son las siguientes:</p>
+
+      <pre><span class="idle-rese">False      class      finally    is         return
+None       continue   for        lambda     try
+True       def        from       nonlocal   while
+and        del        global     not        with
+as         elif       if         or         yield
+assert     else       import     pass
+break      except     in         raise</span></pre>
+
+      <p>Estas palabras no pueden utilizarse para nombrar otros elementos (variables, funciones, etc.), aunque pueden aparecer en cadenas de texto.</p>
+    </section>
+
+    <section id="literales">
+      <h2>Literales</h2>
+
+      <p>Los literales son los datos simples que Python es capaz de manejar:</p>
+      <ul>
+        <li>números: valores lógicos, enteros, decimales y complejos, en notación decimal, octal o hexadecimal</li>
+        <li>cadenas de texto</li>
+      </ul>
+    </section>
+
+    <section id="operadores">
+      <h2>Operadores</h2>
+
+      <p>Los operadores son los caracteres que definen operaciones matemáticas (lógicas y aritméticas). Son los siguientes:</p>
+      <pre>+       -       *       **      /       //      %      @
+&lt;&lt;      &gt;&gt;      &amp;       |       ^       ~
+&lt;       &gt;       &lt;=      &gt;=      ==      !=</pre>
+    </section>
+
+    <section id="delimitadores">
+      <h2>Delimitadores</h2>
+
+      <p>Los delimitadores son los caracteres que permiten delimitar, separar o representar expresiones. Son los siguientes:</p>
+      <pre>'       "       #       \
+(       )       [       ]       {       }
+,       :       .       ;       @       =       -&gt;
++=      -=      *=      /=      //=     %=      @=
+&amp;=      |=      ^=      &gt;&gt;=     &lt;&lt;=     **=</pre>
+    </section>
+
+    <section id="identificadores">
+      <h2>Identificadores</h2>
+
+      <p>Los identificadores son las palabras que se utilizan para nombrar elementos creados por el usuario u otros usuarios. Esos elementos pueden ser variables u objetos que almacenan información, funciones que agrupan instrucciones, clases que combinan ambos, módulos que agrupan los elementos anteriores, etc.</p>
+
+      <p>Los identificadores están formados por letras (mayúsculas y minúsculas), números y el carácter guión bajo (_). Pueden ser caracteres Unicode, aunque normalmente se recomienda utilizar caracteres ASCII para evitar complicaciones a usuarios de oros países que utilizan juegos de caracteres diferentes.</p>
+
+      <p>El primer caracter del identificador debe ser una letra.</p>
+
+      <section id="funciones-integradas">
+        <h3>Funciones integradas (<i>built-in functions</i>)</h3>
+
+        <p>Una función es un bloque de instrucciones agrupadas, que permiten reutilizar partes de un programa.</p>
+
+        <p>Python incluye las siguientes funciones de forma predeterminada (es decir, estas funciones siempre están disponibles):</p>
+
+        <pre><span class="idle-func">abs</span>()         <span class="idle-func">dict</span>()      <span class="idle-func">help</span>()       <span class="idle-func">min(</span>)      <span class="idle-func">setattr</span>()
+<span class="idle-func">all</span>()         <span class="idle-func">dir</span>()       <span class="idle-func">hex</span>()        <span class="idle-func">next</span>()     <span class="idle-func">slice</span>()
+<span class="idle-func">any</span>()         <span class="idle-func">divmod</span>()    <span class="idle-func">id</span>()         <span class="idle-func">object</span>()   <span class="idle-func">sorted</span>()
+<span class="idle-func">ascii</span>()       <span class="idle-func">enumerate</span>() <span class="idle-func">input</span>()      <span class="idle-func">oct</span>()      <span class="idle-func">staticmethod</span>()
+<span class="idle-func">bin</span>()         <span class="idle-func">eval</span>()      <span class="idle-func">int</span>()        <span class="idle-func">open</span>()     <span class="idle-func">str</span>()
+<span class="idle-func">bool</span>()        <span class="idle-func">exec</span>()      <span class="idle-func">isinstance</span>() <span class="idle-func">ord</span>()      <span class="idle-func">sum</span>()
+<span class="idle-func">bytearray</span>()   <span class="idle-func">filter</span>()    <span class="idle-func">issubclass</span>() <span class="idle-func">pow</span>()      <span class="idle-func">super</span>()
+<span class="idle-func">bytes</span>()       <span class="idle-func">float</span>()     <span class="idle-func">iter</span>()       <span class="idle-func">print</span>()    <span class="idle-func">tuple</span>()
+<span class="idle-func">callable</span>()    <span class="idle-func">format</span>()    <span class="idle-func">len</span>()        <span class="idle-func">property</span>() <span class="idle-func">type</span>()
+<span class="idle-func">chr</span>()         <span class="idle-func">frozenset</span>() <span class="idle-func">list</span>()       <span class="idle-func">range</span>()    <span class="idle-func">vars(</span>)
+<span class="idle-func">classmethod</span>() <span class="idle-func">getattr</span>()   <span class="idle-func">locals</span>()     <span class="idle-func">repr</span>()     <span class="idle-func">zip</span>()
+<span class="idle-func">compile</span>()     <span class="idle-func">globals</span>()   <span class="idle-func">map</span>()        <span class="idle-func">reversed</span>() __import__()
+<span class="idle-func">complex</span>()     <span class="idle-func">hasattr</span>()   <span class="idle-func">max</span>()        <span class="idle-func">round</span>()
+<span class="idle-func">delattr</span>()     <span class="idle-func">hash</span>()      <span class="idle-func">memoryview</span>() <span class="idle-func">set</span>()
+</pre>
+
+        <p>Como se comenta en la lección <a href="python_variables.html#variables-nombres">Variables (1)</a>, los nombres de las funciones integradas se pueden utilizar para nombrar variables, pero entonces las funciones ya no estarán disponibles en el programa. Si se eliminan las variables, las funciones vuelven a estar disponibles.</p>
+      </section>
+
+      <section id="funciones-adicionales">
+        <h3>Funciones adicionales</h3>
+
+        <p>Un programa puede definir nuevas funciones o redefinir las funciones integradas. Los nombres de las funciones no pueden coincidir con las palabras reservadas.</p>
+
+        <p>Un programa puede también importar nuevas funciones que se encuentran definidas en otros ficheros llamados módulos.</p>
+
+        <p>Python incluye una biblioteca de módulos (llamada <a href="https://docs.python.org/3/library/">Biblioteca estándar</a>) especializados en todo tipo de tareas.</p>
+
+        <p>Además de la biblioteca estándar, existen miles de módulos escritos por diferentes programadores y accesibles en Internet. El principal repositorio de módulos es el <a href="https://pypi.python.org/pypi">Python Package Index</a> (Índice de paquetes de Python), más conocido por PyPI.</p>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

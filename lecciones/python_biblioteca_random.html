@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valores aleatorios. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+  <body>
+    <h1>Valores aleatorios: la biblioteca random</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Valores aleatorios</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#biblioteca-random">Biblioteca random</a></li>
+          <li><a href="#random-randint">enteros: randint</a></li>
+          <li><a href="#random-randrange">enteros: randrange</a></li>
+          <li><a href="#random-random">decimales: random</a></li>
+          <li><a href="#random-uniform">decimales: uniform</a></li>
+          <li><a href="#random-choice">cualquiera: choice</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata el uso de valores aleatorios mediante la biblioteca estándar <strong>random</strong> de Python.</p>
+
+    <section id="biblioteca-random">
+      <h2>La biblioteca <strong>random</strong></h2>
+
+      <p>La biblioteca <strong>random</strong> contiene una serie de funciones relacionadas con los valores aleatorios. El <a href="https://docs.python.org/3/library/random.html">listado completo de funciones de esta biblioteca</a> se describe en el manual de Python.</p>
+
+      <hr class="corta" />
+
+      <p>Como ocurre con todas las bibliotecas, antes de utilizar una función se debe importar la función o la biblioteca entera.</p>
+
+      <ul>
+        <li>Si se importa la biblioteca entera, se debe escribir el nombre de la biblioteca y el de la función separada por un punto, como muestra el siguiente ejemplo:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">import random
+
+print(random.randrange(10))</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si se importa únicamente una función, se debe escribir simplemente el nombre de la función, como muestra el siguiente ejemplo:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from random import randrange
+
+print(randrange(10))</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si se importan varias funciones, los nombres de las funciones deben separarse como comas (,), como muestra el siguiente ejemplo:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from random import randrange, choice
+
+print(randrange(10))
+print(choice(["uno", "dos", "tres"]))</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5</span>
+<span class="idle-resp">dos</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+
+    </section>
+
+    <section id="random-randint">
+      <h2>Generar números enteros: la función <strong>randint()</strong></h2>
+
+      <p>La función <strong>randint(<em>a</em>, <em>b</em>)</strong> genera un número entero entre <i>a</i> y <i>b</i>, ambos incluidos. <i>a</i> debe ser inferior o igual a <i>b</i>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import randint
+
+print(randint(10, 20))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">12</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="random-randrange">
+      <h2>Generar números enteros: la función <strong>randrange()</strong></h2>
+
+      <p>La función <strong>randrange(<em>a</em>, <em>b</em>, <em>c</em>)</strong> genera un número entero entre los valores generados por <span class="idle-func">range</span>(<em>a</em>, <em>b</em>, <em>c</em>). Como ocurre con <span class="idle-func">range</span>(), la función <strong>randrange()</strong> admite uno, dos o tres argumentos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import randrange
+
+print(randrange(10))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">9</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import randrange
+
+print(randrange(10, 110))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">61</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import randrange
+
+print(randrange(10, 110, 10))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">80</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="random-random">
+      <h2>Generar números decimales: la función <strong>random()</strong></h2>
+
+      <p>La función <strong>random()</strong> genera un número decimal entre 0 y 1 (puede generar 0, pero no 1).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import random
+
+print(random())</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">0.5310449231726346</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="random-uniform">
+      <h2>Generar números decimales: la función <strong>uniform()</strong></h2>
+
+      <p>La función <strong>uniform(<em>a</em>, <em>b</em>)</strong> genera un número decimal entre <i>a</i> y <i>b</i> (puede generar <i>a</i> y, debido a la forma de redondear de Python, puede que genere <i>b</i> o no).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import uniform
+
+print(uniform(5, 8))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">6.216950987513291</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="random-choice">
+      <h2>Seleccionar un elemento al azar: la función <strong>choice()</strong></h2>
+
+      <p>La función <strong>choice(<em>secuencia</em>)</strong> elige un valor al azar en un conjunto de elementos. Cualquier tipo de datos enumerable (tupla, lista, cadena, range) puede utilizarse como conjunto de elementos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import choice
+
+print(choice((14, 15, 20, 150)))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">14</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import choice
+
+print(choice([14, 15, 20, 150]))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">20</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import choice
+
+print(choice("AEIOU"))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">E</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from random import choice
+
+print((choice(range(10))))</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">4</span>
+</pre>
+            </td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p>En el caso de conjuntos y diccionarios (que en Python 3 no son elementos iterables, sino iteradores), no se puede utilizar la función <strong>choice()</strong>.</p>
+
+    <p class="incompleto">Por completar: contar cómo hacerlo (convirtiendo a listas o utilizando <strong>sample()</strong>)</p>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 5 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

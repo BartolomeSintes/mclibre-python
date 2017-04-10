@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios. if ... elif ... else ... Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+  <body>
+    <h1><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - Ejercicios</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h2>
+
+      <h3>Enunciados</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">1 - Divisor de números</a></li>
+          <li><a href="#ejercicio-2">2 - Comparador de números</a></li>
+          <li><a href="#ejercicio-3">3 - Comparador de años</a></li>
+          <li><a href="#ejercicio-4">4 - Comparador de múltiplos</a></li>
+          <li><a href="#ejercicio-5">5 - Comparador de 3 números</a></li>
+          <li><a href="#ejercicio-6">6 - Comprobador bisiestos</a></li>
+          <li><a href="#ejercicio-7">7 - Ecuación 1º grado</a></li>
+          <li><a href="#ejercicio-8">8 - Ecuación 2º grado</a></li>
+          <li><a href="#ejercicio-9">9 - Cálculo de áreas</a></li>
+          <li><a href="#ejercicio-10">10 - cm a km, m y cm</a></li>
+        </ul>
+      </div>
+
+      <h3><a href="ej_if_else_soluciones.html">Soluciones</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-1">1 - Divisor de números</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-2">2 - Comparador de números</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-3">3 - Comparador de años</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-4">4 - Comparador de múltiplos</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-5">5 - Comparador de 3 números</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-6">6 - Comprobador bisiestos</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-7">7 - Ecuación 1º grado</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-8">8 - Ecuación 2º grado</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-9">9 - Cálculo de áreas</a></li>
+          <li><a href="ej_if_else_soluciones.html#ejercicio-10">10 - cm a km, m y cm</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_if_else.html"><span class="idle-rese">If</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_if_else_soluciones.html">posibles soluciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 1</h2>
+
+      <p>Escriba un programa que pida dos números enteros y que calcule su división, escribiendo si la división es exacta o no.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">DIVISOR DE NÚMEROS</span>
+<span class="idle-resp">Escriba el dividendo:</span> 14
+<span class="idle-resp">Escriba el divisor:</span> 5
+<span class="idle-resp">La división no es exacta. Cociente: 2 Resto: 4</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">DIVISOR DE NÚMEROS</span>
+<span class="idle-resp">Escriba el dividendo:</span> 20
+<span class="idle-resp">Escriba el divisor:</span> 4
+<span class="idle-resp">La división es exacta. Cociente: 5</span>
+</pre>
+      </div>
+
+      <p><strong>Nota</strong>: Se puede mejorar el programa haciendo que tenga en cuenta que no se puede dividir por cero:</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">DIVISOR DE NÚMEROS</span>
+<span class="idle-resp">Escriba el dividendo:</span> 20
+<span class="idle-resp">Escriba el divisor:</span> 0
+<span class="idle-resp">No se puede dividir por 0</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 2</h2>
+
+      <p>Escriba un programa que pida dos números y que conteste cuál es el menor y cuál el mayor o que escriba que son iguales.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 23
+<span class="idle-resp">Escriba otro número:</span> 14.5
+<span class="idle-resp">Menor: 14.5; Mayor: 23.0</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 5.0
+<span class="idle-resp">Escriba otro número:</span> 5
+<span class="idle-resp">Los dos números son iguales</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 3</h2>
+
+      <p>Escriba un programa que pida el año actual y un año cualquiera y que escriba cuántos años han pasado desde ese año o cuántos años faltan para llegar a ese año.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE AÑOS</span>
+<span class="idle-resp">¿En qué año estamos?:</span> 2015
+<span class="idle-resp">Escriba un año cualquiera:</span> 2020
+<span class="idle-resp">Para llegar al año 2020 faltan 5 años.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE AÑOS</span>
+<span class="idle-resp">¿En qué año estamos?:</span> 2015
+<span class="idle-resp">Escriba un año cualquiera:</span> 1997
+<span class="idle-resp">Desde el año 1997 han pasado 18 años.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE AÑOS</span>
+<span class="idle-resp">¿En qué año estamos?:</span> 2015
+<span class="idle-resp">Escriba un año cualquiera:</span> 2015
+<span class="idle-resp">¡Son el mismo año!</span>
+</pre>
+      </div>
+
+      <p><strong>Nota</strong>: Se puede mejorar el programa haciendo que cuando la diferencia sea exactamente un año y escriba la frase en singular:</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE AÑOS</span>
+<span class="idle-resp">¿En qué año estamos?:</span> 2015
+<span class="idle-resp">Escriba un año cualquiera:</span> 2016
+<span class="idle-resp">Para llegar al año 2016 falta 1 año.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 4</h2>
+
+      <p>Escriba un programa que pida dos números enteros y que escriba si el mayor es múltiplo del menor.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 48
+<span class="idle-resp">Escriba otro número:</span> 6
+<span class="idle-resp">48 es múltiplo de 6.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba otro número:</span> 48
+<span class="idle-resp">48 es múltiplo de 6.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba otro número:</span> 49
+<span class="idle-resp">49 no es múltiplo de 6.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba otro número:</span> 6
+<span class="idle-resp">6 es múltiplo de 6.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 5</h2>
+
+      <p>Escriba un programa que pida tres números y que escriba si son los tres iguales, si hay dos iguales o si son los tres distintos.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE TRES NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba otro número:</span> 6
+<span class="idle-resp">Escriba otro número más:</span> 6
+<span class="idle-resp">Ha escrito tres veces el mismo número.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE TRES NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba otro número:</span> 6.5
+<span class="idle-resp">Escriba otro número más:</span> 6
+<span class="idle-resp">Ha escrito uno de los números dos veces.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPARADOR DE TRES NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 4
+<span class="idle-resp">Escriba otro número:</span> 5
+<span class="idle-resp">Escriba otro número más:</span> 6
+<span class="idle-resp">Los tres números que ha escrito son distintos.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 6</h2>
+
+      <p>Escriba un programa que pida un año y que escriba si es bisiesto o no.</p>
+
+      <p>Se recuerda que los años bisiestos son múltiplos de 4, pero los múltiplos de 100 no lo son, aunque los múltiplos de 400 sí.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPROBADOR DE AÑOS BISIESTOS</span>
+<span class="idle-resp">Escriba un año y le diré si es bisiesto:</span> 2012
+<span class="idle-resp">El año 2012 es un año bisiesto porque es múltiplo de 4.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPROBADOR DE AÑOS BISIESTOS</span>
+<span class="idle-resp">Escriba un año y le diré si es bisiesto:</span> 2010
+<span class="idle-resp">El año 2010 no es un año bisiesto.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPROBADOR DE AÑOS BISIESTOS</span>
+<span class="idle-resp">Escriba un año y le diré si es bisiesto:</span> 2000
+<span class="idle-resp">El año 2000 es un año bisiesto porque es múltiplo de 400.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">COMPROBADOR DE AÑOS BISIESTOS</span>
+<span class="idle-resp">Escriba un año y le diré si es bisiesto:</span> 1900
+<span class="idle-resp">El año 1900 no es un año bisiesto porque es múltiplo de 100 sin ser múltiplo de 400.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 7</h2>
+
+      <p>Escriba un programa que pida los coeficientes de una ecuación de primer grado (a x + b = 0) y escriba la solución.</p>
+
+      <p>Se recuerda que una ecuación de primer grado puede no tener solución, tener una solución única, o que todos los números sean solución. Se recuerda que la
+        fórmula de las soluciones es x = -b / a</p>
+
+      <p>Estos son algunos ejemplos de posibles respuestas (el orden de los ejemplos no tiene por qué corresponder con el orden de las condiciones):</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ECUACIÓN A X + B = 0</span>
+<span class="idle-resp">Escriba el valor del coeficiente a:</span> 0
+<span class="idle-resp">Escriba el valor del coeficiente b:</span> 3
+<span class="idle-resp">La ecuación no tiene solución.</span>
+</pre>
+      </div>
+
+          <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ECUACIÓN A X + B = 0</span>
+<span class="idle-resp">Escriba el valor del coeficiente a:</span> 4.2
+<span class="idle-resp">Escriba el valor del coeficiente b:</span> 21
+<span class="idle-resp">La ecuación tiene una solución: -5.0</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ECUACIÓN A X + B = 0</span>
+<span class="idle-resp">Escriba el valor del coeficiente a:</span> 0
+<span class="idle-resp">Escriba el valor del coeficiente b:</span> 0
+<span class="idle-resp">Todos los números son solución.</span>
+</pre>
+      </div>
+</section>
+
+    <section id="ejercicio-8">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 8</h2>
+
+      <p>Escriba un programa que pida los coeficientes de una ecuación de segundo grado (a x² + b x + c = 0) y escriba la solución.</p>
+
+      <p>Se recuerda que una ecuación de segundo grado puede no tener solución, tener una solución única, tener dos soluciones o que todos los números sean solución. Se recuerda que la fórmula de las soluciones cuando hay dos soluciones es x = (-b ± &radic;(b<sup>2</sup>-4ac) ) / (2a)</p>
+
+      <p>Estos son algunos ejemplos de posibles respuestas (el orden de los ejemplos no tiene por qué corresponder con el orden de las condiciones).</p>
+
+      <table class="conborde">
+        <tbody>
+          <tr>
+            <th>a</th>
+            <th>b</th>
+            <th>c</th>
+            <th>Solución</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>-2</td>
+            <td>2</td>
+            <td>Sin solución real</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>-7</td>
+            <td>3</td>
+            <td>Dos soluciones: 0.5 y 3.0</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>Una solución: -1.0</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>5</td>
+            <td>Sin solución</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Todos los números son solución</td>
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>3</td>
+            <td>2</td>
+            <td>Una solución: -0.666...</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ECUACIÓN A X² + B X + C = 0</span>
+<span class="idle-resp">Escriba el valor del coeficiente a:</span> 2
+<span class="idle-resp">Escriba el valor del coeficiente b:</span> -7
+<span class="idle-resp">Escriba el valor del coeficiente c:</span> 3
+<span class="idle-resp">Las soluciones de la ecuación son 3.0 y 0.5</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-9">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 9</h2>
+
+      <p>Escriba un programa que pregunte primero si se quiere calcular el área de un triángulo o la de un círculo. Si se contesta que se quiere calcular el área de un triángulo, el programa tiene que pedir entonces la base y la altura y escribir el área. Si se contesta que se quiere calcular el área de un círculo, el programa tiene que pedir entonces el radio y escribir el área.</p>
+
+      <p>Se recuerda que el área de un triángulo es base por altura dividido por 2 y que el área de un círculo es Pi (aproximadamente 3,141592) por el radio al cuadrado.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">CÁLCULO DE ÁREAS</span>
+<span class="idle-resp">Elija una figura geométrica:</span>
+<span class="idle-resp">a) Triángulo</span>
+<span class="idle-resp">b) Círculo</span>
+<span class="idle-resp">¿Qué figura quiere calcular (Escriba T o C)?</span> T
+<span class="idle-resp">Escriba la base:</span> 3
+<span class="idle-resp">Escriba la altura:</span> 5.5
+<span class="idle-resp">Un triángulo de base 3.0 y altura 5.0 tiene un área de</span> 8.25
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">CÁLCULO DE ÁREAS</span>
+<span class="idle-resp">Elija una figura geométrica:</span>
+<span class="idle-resp">a) Triángulo</span>
+<span class="idle-resp">b) Círculo</span>
+<span class="idle-resp">¿Qué figura quiere calcular (Escriba T o C)?</span> C
+<span class="idle-resp">Escriba el radio:</span> 2
+<span class="idle-resp">Un círculo de radio 2.0 tiene un área de 12.566370614359172</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-10">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 10</h2>
+
+      <p>Escriba un programa que pida una distancia en centímetros y que escriba esa distancia en kilómetros, metros y centímetros (escribiendo solamente las unidades necesarias).</p>
+
+      <p>Estos son algunos ejemplos de posibles respuestas:</p>
+
+      <table class="conborde">
+        <tbody>
+          <tr>
+            <th>Distancia en cm</th>
+            <th>Distancia en km, m y cm</th>
+          </tr>
+          <tr>
+            <td>100</td>
+            <td>1 m</td>
+          </tr>
+          <tr>
+            <td>240 005</td>
+            <td>2 km, 400 m, 5 cm</td>
+          </tr>
+          <tr>
+            <td>67</td>
+            <td>67 cm</td>
+          </tr>
+          <tr>
+            <td>300 004</td>
+            <td>3 km, 4 cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La dificultad del ejercicio se puede reducir o aumentar según la forma de presentar el resultado:</p>
+      <ul>
+        <li>sin separador entre unidades: 2 km 400 m 5 cm</li>
+        <li>separando con comas las unidades: 2 km, 400 m, 5 cm</li>
+        <li>separando con comas y con la conjunción 'y' en la última unidad: 2 km, 400 m y 5 cm</li>
+      </ul>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">CONVERTIDOR DE CM A KM, M Y CM</span>
+<span class="idle-resp">Escriba una distancia en centímetros:</span> 43210
+<span class="idle-resp">43210 centímetros son 432 m, 10 cm.</span>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 17 de febrero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

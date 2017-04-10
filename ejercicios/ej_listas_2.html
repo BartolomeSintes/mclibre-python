@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (2). Listas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Listas - Ejercicios (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Listas (2)</h2>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_listas.html">Listas.</a></p>
+
+    <p>Se pueden consultar unas <a href="ej_listas_2_soluciones.html">posibles soluciones</a>.</p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar y ordenar</p>
+
+    <section id="ejercicio-1">
+      <h2>Listas (2) - 1</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, ordene la lista por orden alfabético.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Alberto
+<span class="idle-resp">Dígame la palabra 3:</span> Daniel
+<span class="idle-resp">Dígame la palabra 4:</span> Benito
+<span class="idle-resp">La lista creada es: ['Carmen', Alberto', 'Daniel', 'Benito']</span>
+<span class="idle-resp">La lista odenada es: ['Alberto', 'Benito', 'Carmen', 'Daniel']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Listas (2) - 2</h2>
+
+      <p>Escriba un programa que pida un número y a continuación escriba la lista de todos los divisores del número (incluidos el uno y él mismo).</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame un número:</span> 36
+<span class="idle-resp">36 tiene 9 divisores: [1, 2, 3, 4, 6, 9, 12, 18, 36]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame un número:</span> 125
+<span class="idle-resp">125 tiene 4 divisores: [1, 5, 25, 125]</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Listas (2) - 3</h2>
+
+      <p>Escriba un programa que pida un número y a continuación escriba la lista de todos los números primos hasta él..</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame un número:</span> 100
+<span class="idle-resp">Primos hasta 100: 1 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Listas (2) - 4</h2>
+
+      <p>Escriba un programa que calcule términos de una sucesión del tipo U<sub>n+1</sub> = a U<sub>n</sub> + b. El programa tiene que pedir el valor de a, de b y del término U<sub>0</sub> y el número de términos a calcular.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Cálculo de términos de una sucesión U(n+1)=a.U(n)+b.</span>
+<span class="idle-resp">Dígame el valor de a:</span> 2
+<span class="idle-resp">Dígame el valor de b:</span> -1
+<span class="idle-resp">Dígame el valor de U(0):</span> 3
+<span class="idle-resp">Dígame cuántos términos quieres:</span> 8
+<span class="idle-resp">Los términos de la sucesión son: [3, 5, 9, 17, 33, 65, 129, 257]</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2>Listas (2) - 5</h2>
+
+      <p>Escriba un programa que calcule términos de la sucesión U<sub>n+1</sub> = 3 U<sub>n</sub> + 1 si U<sub>n</sub> es impar y U <sub>n+1</sub> = U<sub>n</sub> / 2 si U<sub>n</sub> es par. El programa tiene que pedir el término U<sub>0</sub> y el número de términos a calcular.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Cálculo de términos de la sucesión U(n+1)=3.U(n)+1 si n es impar y U(n)=U(n)/2 si n es par.</span>
+<span class="idle-resp">Dígame el valor de U(0):</span> 7
+<span class="idle-resp">Dígame cuántos términos quieres:</span> 20
+<span class="idle-resp">Los términos de la sucesión son: [7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1]</span>
+</pre>
+      </div>
+
+      <p>Nota: La <a href="https://es.wikipedia.org/wiki/Conjetura_de_Collatz">conjetura de Collatz</a> establece que esta sucesión alcanza el valor 1 para cualquier valor inicial. Desde 1937, esta conjetura permanece sin demostrar.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de abril de 2014</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

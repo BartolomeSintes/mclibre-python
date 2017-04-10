@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (2). Bucle while. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Bucle <span class="idle-rese">while</span> - Ejercicios (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Bucle <span class="idle-rese">while</span> (2)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#apartado-a">A - Siete y media</a></li>
+          <li><a href="#apartado-b">B - Tragaperras</a></li>
+          <li><a href="#apartado-c">C - Operaciones</a></li>
+          <li><a href="#apartado-d">D - Adivinar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python_while.html">bucle <span class="idle-rese">while</span></a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_while_2_soluciones.html">posibles soluciones</a>.</p>
+
+    <hr class="corta" />
+
+    <p>Para generar números aleatorios, utilice la función <span class="idle-func">randrange</span>(<var>mínimo</var>, <var>máximo</var>, <var>paso</var>) del módulo random, como se explica en la <a href="../lecciones/python_biblioteca_random.html#random-randrange">lección sobre Valores aleatorios</a></p>
+
+    <section id="apartado-a">
+      <h2>A. Juego de las siete y media</h2>
+
+      <section id="ejercicio-a-1">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - A-1</h3>
+
+        <p>Escriba un programa que muestre números al azar del 1 al 6 mientras no se escriba nada.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Tirada: 3</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Tirada: 6</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span> x
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-a-2">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - A-2</h3>
+
+        <p>Escriba un programa que muestre números al azar del 1 al 6 mientras no se escriba nada y que muestre la suma de los números anteriores.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Tirada: 2 - Suma: 2</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Tirada: 5 - Suma: 7</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Tirada: 4 - Suma: 11</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span> z
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-a-3">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - A-3</h3>
+
+        <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras no se escriba nada y que muestre la suma de los números anteriores. El programa declarará ganador al jugador que haya obtenido más puntos.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 6 - Suma: 6</span>
+<span class="idle-resp">Jugador 2: Tirada: 3 - Suma: 3</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 2 - Suma: 8</span>
+<span class="idle-resp">Jugador 2: Tirada: 4 - Suma: 7</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 4 - Suma: 12</span>
+<span class="idle-resp">Jugador 2: Tirada: 1 - Suma: 8</span>
+
+<span class="idle-resp">Pulse Intro para lanzar el dado / otra tecla para terminar </span> a
+<span class="idle-resp">Jugador 1: Suma: 12</span>
+<span class="idle-resp">Jugador 2: Suma: 8</span>
+<span class="idle-resp">Ha ganado el jugador 1</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-a-4">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - A-4</h3>
+
+        <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras no escriban nada cada uno de ellos y que muestre la suma de los números anteriores.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 2 - Suma: 2</span>
+<span class="idle-resp">Jugador 2: Tirada: 5 - Suma: 5</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 4 - Suma: 6</span>
+<span class="idle-resp">Jugador 2: Tirada: 3 - Suma: 8</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span> x
+<span class="idle-resp">Jugador 1: Tirada: 5 - Suma: 11</span>
+<span class="idle-resp">Jugador 2: Suma: 8</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 3 - Suma: 14</span>
+<span class="idle-resp">Jugador 2: Suma: 8</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span> a
+<span class="idle-resp">Jugador 1: Suma: 14</span>
+<span class="idle-resp">Jugador 2: Suma: 8</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-a-5">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - A-5</h3>
+
+        <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras no escriban nada cada uno de ellos y que muestre la suma de los números anteriores.  El programa declarará ganador al jugador que haya obtenido más puntos sin superar 20 puntos.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 6 - Suma: 6</span>
+<span class="idle-resp">Jugador 2: Tirada: 5 - Suma: 5</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 4 - Suma: 10</span>
+<span class="idle-resp">Jugador 2: Tirada: 6 - Suma: 11</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Tirada: 6 - Suma: 16</span>
+<span class="idle-resp">Jugador 2: Tirada: 4 - Suma: 15</span>
+
+<span class="idle-resp">Jugador 1: Pulse Intro para lanzar el dado / otra tecla para terminar </span> x
+<span class="idle-resp">Jugador 2: Pulse Intro para lanzar el dado / otra tecla para terminar </span>
+<span class="idle-resp">Jugador 1: Suma: 16</span>
+<span class="idle-resp">Jugador 2: Tirada: 6 - Suma: 21</span>
+
+<span class="idle-resp">Ha ganado el jugador 1</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+    </section>
+
+    <section id="apartado-b">
+      <h2>B. Tragaperras</h2>
+
+      <section id="ejercicio-b1">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - B-1</h3>
+
+        <p>Escriba un programa que muestre tres números al azar del 1 al 5.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Tirada: 1 3 4</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+
+<span class="idle-resp">Tirada: 5 2 5</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-b2">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - B-2</h3>
+
+        <p>Escriba un programa que muestre tres números al azar del 1 al 5 y diga si hay dos o tres números iguales.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Tirada: 1 3 4</span>
+<span class="idle-resp">No hay números iguales</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+
+<span class="idle-resp">Tirada: 5 2 5</span>
+<span class="idle-resp">Hay dos números iguales</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+
+<span class="idle-resp">Tirada: 3 3 3</span>
+<span class="idle-resp">Hay tres números iguales</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-b3">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - B-3</h3>
+
+        <p>Escriba un programa que simule una máquina tragaperras.</p>
+
+        <ul>
+          <li>Inicialmente, el jugador indica cuántas monedas quiere jugar.</li>
+          <li>El programa muestra tres números al azar del 1 al 5.</li>
+          <li>Si los tres números son distintos, el jugador pierde todo su dinero y la partida termina.</li>
+          <li>Si salen dos números iguales, el jugador duplica la apuesta.</li>
+          <li>Si salen tres números iguales, el jugador multiplica por 5 la apuesta.</li>
+          <li>El jugador indica si quiere seguir jugando o no.</li>
+          <li>Al terminar la partida, el programa indica si se ha ganado o perdido.</li>
+        </ul>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 5
+
+<span class="idle-resp">Tirada: 3 3 1</span>
+<span class="idle-resp">¡Enhorabuena! Ha ganado 5 monedas. Tiene ahora 10 monedas.</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+
+<span class="idle-resp">Tirada: 5 5 5</span>
+<span class="idle-resp">¡Enhorabuena! Ha ganado 40 monedas. Tiene ahora 50 monedas.</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+
+<span class="idle-resp">¡Enhorabuena! Ha ganado 40 monedas.</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 3
+
+<span class="idle-resp">Tirada: 3 5 1</span>
+
+<span class="idle-resp">¡Lo siento! Ha perdido 3 monedas.</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-b4">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - B-4</h3>
+
+        <p>Escriba un programa que simule una máquina tragaperras más completa.</p>
+
+        <ul>
+          <li>Inicialmente, el jugador indica cuántas monedas quiere jugar.</li>
+          <li>El programa muestra tres números al azar del 1 al 5.</li>
+          <li>Si los tres números son distintos, el jugador pierde todo su dinero y la partida termina.</li>
+          <li>Si sale un 5, se recupera la apuesta.</li>
+          <li>Si salen dos 5, el jugador multiplica por cuatro la apuesta.</li>
+          <li>Si salen tres 5, el jugador multiplica por diez la apuesta.</li>
+          <li>Si salen dos números iguales que no sean 5, el jugador duplica la apuesta.</li>
+          <li>Si salen un 5 y dos números iguales que no sean 5, el jugador multiplica por 3 la apuesta.</li>
+          <li>Si salen tres números iguales que no sean cinco, el jugador multiplica por 5 la apuesta.</li>
+          <li>El jugador indica si quiere seguir jugando o no.</li>
+          <li>Al terminar la partida, el programa indica si se ha ganado o perdido.</li>
+        </ul>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 5
+
+<span class="idle-resp">Tirada: 4 5 2</span>
+<span class="idle-resp">¡Enhorabuena! Sigue teniendo 5 monedas.</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+
+<span class="idle-resp">Tirada: 5 3 3</span>
+<span class="idle-resp">¡Enhorabuena! Ha ganado 10 monedas. Tiene ahora 15 monedas.</span>
+<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+
+<span class="idle-resp">¡Enhorabuena! Ha ganado 10 monedas.</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 4
+
+<span class="idle-resp">Tirada: 3 2 1</span>
+
+<span class="idle-resp">¡Lo siento! Ha perdido 4 monedas.</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+    </section>
+
+
+    <section id="apartado-c">
+      <h2>C. Operaciones</h2>
+
+      <section id="ejercicio-c1">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - C-1</h3>
+
+        <p>Escriba un programa que proponga sumas de números positivos (dos números entre 0 y 100) al usuario y compruebe la respuesta. El programa continuará hasta que se acierten cinco sumas.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
+<span class="idle-resp">32 + 47:</span> 79
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">65 + 42:</span> 107
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">6 + 71:</span> 77
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">80 + 15:</span> 95
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">31 + 95:</span> 127
+<span class="idle-resp">¡Respuesta incorrecta!</span>
+
+<span class="idle-resp">41 + 27:</span> 68
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">Programa terminado</span>
+</pre>
+        </div>
+      </section>
+    </section>
+
+    <section id="apartado-d">
+      <h2>D. Adivinar números</h2>
+
+      <section id="ejercicio-d1">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - D-1</h3>
+
+        <p>Escriba un programa para jugar a adivinar un número (el ordenador "piensa" el número y el usuario tiene que adivinarlo). El programa empieza pidiendo entre qué números está el número a adivinar, se "inventa" un número al azar y después el usuario va probando valores y el programa va diciendo si son demasiado grandes o pequeños.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Valor mínimo:</span> 0
+<span class="idle-resp">Valor máximo:</span> 100
+<span class="idle-resp">Intente adivinar un número entero entre 0 y 100.</span>
+<span class="idle-resp">Escriba un número:</span> 20
+<span class="idle-resp">¡Demasiado pequeño! Inténtelo de nuevo:</span> 30
+<span class="idle-resp">¡Demasiado grande! Inténtelo de nuevo:</span> 27
+<span class="idle-resp">¡Acertó! Le ha costado 3 intentos.</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-d2">
+        <h3>Bucle <span class="idle-rese">while</span> (2) - D-2</h3>
+
+        <p>Escriba un programa para jugar a adivinar un número (el usuario piensa un número y el programa tiene que adivinarlo). El programa empieza pidiendo entre qué números está el número a adivinar y después intenta adivinar de qué número se trata. El usuario va diciendo si el número que ha dicho el programa es menor, mayor o igual al buscado.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">Valor mínimo:</span> 0
+<span class="idle-resp">Valor máximo:</span> 100
+<span class="idle-resp">Piense un número entre 0 y 100 a ver si lo adivino.</span>
+<span class="idle-resp">¿Es 50?:</span> mayor
+<span class="idle-resp">¿Es 75?:</span> menor
+<span class="idle-resp">¿Es 62?:</span> menor
+<span class="idle-resp">¿Es 56?:</span> mayor
+<span class="idle-resp">¿Es 59?:</span> igual
+<span class="idle-resp">Gracias por jugar conmigo</span>
+</pre>
+        </div>
+
+        <p>Puede perfeccionar este programa haciendo:</p>
+        <ul>
+          <li>que al principio el programa se asegure de que el valor máximo es superior al valor mínimo.</li>
+          <li>que el programa detecte "trampas", por ejemplo, si al decir 25 le decimos "mayor" y al decir 26 le decimos "menor", el programa debe decirnos que estamos haciendo trampas y dejar de jugar.</li>
+        </ul>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 26 de abril de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

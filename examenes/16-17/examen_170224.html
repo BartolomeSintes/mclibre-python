@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen 24/02/17. Exámenes. Python. Bartolomé Sintes Marco</title>
+    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../../varios/favicon.ico" />
+    <link rel="stylesheet" href="../../varios/prism-python.css" />
+    <script type="text/javascript" src="../../varios/prism.js"></script>
+
+  </head>
+
+  <body>
+    <h1>Examen 24 de febrero de 2017</h1>
+
+    <nav>
+      <p>
+        <a href="../../index.html"><img src="../../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../examenes.html"><img src="../../varios/iconos/icono_school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+      </p>
+
+      <h2>Examen 24/02/17</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">Operaciones</a>
+          <li><a href="#ejercicio-2"><span class="idle-rese">if</span> ... <span class="idle-rese">else</span></a>
+          <li><a href="#ejercicio-3">Tipo <span class="idle-func">range</span>()</a>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="ejercicio-1">
+      <h2>Ejercicio 1</h2>
+
+      <p>Existen varios algoritmos para calcular el día de la semana en que cae una fecha cualquiera. El que se utiliza en este ejercicio lo cuenta el danés Claus Tøndering en su web <a href="http://tondering.dk/claus/cal/chrweek.php#calcdow">The Calendar FAQ</a>.</p>
+
+      <p>Escriba un programa que calcule el día de la semana en que cae una fecha cualquiera posterior a 1582 (es decir, desde que se utiliza el <a href="https://es.wikipedia.org/wiki/Calendario_gregoriano">calendario gregoriano</a>) mediante el siguiente algoritmo:</p>
+
+      <ul>
+        <li>A es el cociente de la división de 14 menos el mes entre 12,</li>
+        <li>B es el año menos A</li>
+        <li>C es el mes más doce veces A menos 2</li>
+        <li>D es el cociente de la división de B entre 4</li>
+        <li>E es el cociente de la división de B entre 100</li>
+        <li>F es el cociente de la división de B entre 400</li>
+        <li>G es el cociente de 31 veces C entre 12</li>
+        <li>H es el dia más B más D menos E más F más G</li>
+        <li>I es el resto de la división de H entre 7</li>
+        <li>Si I es 0, el día cae en Domingo; si I es 1, el día cae en Lunes; si I es 2, el día cae en Martes, etc</li>
+      </ul>
+
+      <p>El programa no tiene por qué comprobar que se escribe una fecha correcta (más allá de que el año sea posterior a 1582)</p>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>15</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1564</p>
+        <p><span class="idle-resp">¡Le he pedido un año posterior a 1582!</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1583</p>
+        <p><span class="idle-resp">El día 1 del mes 1 de 1583 es sábado</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>24</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>2017</p>
+        <p><span class="idle-resp">El día 24 del mes 2 de 2017 es viernes</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>31</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>7</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1990</p>
+        <p><span class="idle-resp">El día 31 del mes 7 de 1990 es martes</span></p>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Ejercicio 2</h2>
+
+      <p>Escriba un programa que pida una fecha y diga si ese día existe.</p>
+
+      <p>El programa no tiene por qué comprobar que se escribe una fecha posterior al 15 de octubre de 1582, que fue cuando se instauro el calendario gregoriano.</p>
+
+      <p>Se recuerda que enero, marzo, mayo, julio, agosto, octubre y diciembre tienen 31 días, que abril, junio, septiembre y noviembre tienen 30 días y febrero tiene 28 días salvo los años bisiestos en que tiene 29.</p>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>24</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>2017</p>
+        <p><span class="idle-resp">El día 24 del mes 2 del año 2017 existe.</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>40</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1982</p>
+        <p><span class="idle-resp">El día 40 del mes 5 del año 1982 no existe.</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>0</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>13</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1999</p>
+        <p><span class="idle-resp">El día 0 del mes 13 del año 1999 no existe.</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>29</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>2016</p>
+        <p><span class="idle-resp">El día 29 del mes 2 del año 2016 existe.</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>29</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1900</p>
+        <p><span class="idle-resp">El día 29 del mes 2 del año 1900 no existe.</span></p>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Ejercicio 3</h2>
+
+      <p>Escriba un programa que pida tres números enteros y escriba una lista de enteros consecutivos del primero al segundo y del segundo al tercero.</p>
+
+      <p>El programa no tiene que aceptar que se escriban dos números iguales seguidos.</p>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">¡No ha escrito número válidos!</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>10</p>
+        <p><span class="idle-resp">[8, 7, 6, 5, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>-2</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">[5, 4, 3, 2, 1, 0, -1, -2, -1, 0, 1, 2, 3, 4, 5]</span></p>
+      </div>
+
+      <div class="ejercicio">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>-3</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>4</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>7</p>
+        <p><span class="idle-resp">[-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7]</span></p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 24 de febrero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

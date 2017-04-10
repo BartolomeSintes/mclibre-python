@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (3). El módulo turtle. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos: el módulo turtle - Soluciones (3)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Módulo turtle (3)</h2>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_turtle_3.html">ejercicios (3) del módulo turtle</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2><a href="ej_turtle_3.html#ejercicio-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>turtle (3) - 01 - Cuadrado de puntos</h2>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(420, 420, 0, 0)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (1-20): ", 10, 1, 20))
+
+screensize(lado*2*20 + 30, 300)
+
+penup()
+for i in range(lado):
+    for j in range(lado):
+        goto(20 * i, 20 * j)
+        dot(5, "black")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 01" src="../img/ejercicios/turtle_3/turtle_3_1_a2.png" width="436" height="250" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(420, 420, 0, 0)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (1-20): ", 10, 1, 20))
+grosor = int(numinput("Módulo turtle", "Grosor del punto (3-20): ", 10, 3, 20))
+
+screensize(lado*2*20 + 30, lado*2*20 + 30)
+
+penup()
+for i in range(lado):
+    for j in range(lado):
+        goto(20 * i, 20 * j)
+        dot(grosor, "black")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 01" src="../img/ejercicios/turtle_3/turtle_3_1_b3.png" width="436" height="250" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(420, 420, 0, 0)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (1-20): ", 10, 1, 20))
+grosor = int(numinput("Módulo turtle", "Grosor del punto (3-20): ", 10, 3, 20))
+separaMin = grosor * 2
+separaMax = grosor * 6
+separa = int(numinput("Módulo turtle", "Separación entre puntos (" + str(separaMin)
+                      + "-" + str(separaMax) + "): ", grosor * 4 , separaMin, separaMax))
+
+screensize(2*lado*separa + 30, 2*lado*separa + 30)
+
+penup()
+for i in range(lado):
+    for j in range(lado):
+        goto(separa * i, separa * j)
+        dot(grosor, "black")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 01" src="../img/ejercicios/turtle_3/turtle_3_1_c4.png" width="436" height="250" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(420, 420, 0, 0)
+title("www.mclibre.org")
+hideturtle()
+penup()
+
+nx = int(numinput("Módulo turtle", "Número de puntos en horizontal (1-20): ", 10, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de puntos en vertical (1-20): ", 10, 1, 20))
+grosor = int(numinput("Módulo turtle", "Grosor del punto (3-20): ", 10, 3, 20))
+separaMin = grosor * 2
+separaMax = grosor * 6
+separa = int(numinput("Módulo turtle", "Separación entre puntos (" + str(separaMin)
+                      + "-" + str(separaMax) + "): ", grosor * 4 , separaMin, separaMax))
+
+screensize(2*nx*separa + 30, 2*ny*separa + 30)
+
+penup()
+for i in range(nx):
+    for j in range(ny):
+        goto(separa * i, separa * j)
+        dot(grosor, "black")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 01" src="../img/ejercicios/turtle_3/turtle_3_1_d5.png" width="436" height="458" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="ejercicio-2">
+      <h2><a href="ej_turtle_3.html#ejercicio-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>turtle (3) - 02 - Trama de cuadrados</h2>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (10-100): ", 50, 10, 100))
+n = int(numinput("Módulo turtle", "Número de cuadrados (1-20)", 5, 1, 20))
+
+screensize(lado * n * 2 * 2, 150)
+
+for i in range(n):
+    origen = 2 * lado * i
+    goto(origen, 0)
+    pendown()
+    begin_fill()
+    goto(origen + lado, 0)
+    goto(origen + lado, lado)
+    goto(origen, lado)
+    goto(origen, 0)
+    end_fill()
+    penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_3/turtle_3_2_1.png" width="325" height="75" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (10-100): ", 50, 10, 100))
+nx = int(numinput("Módulo turtle", "Número de cuadrados en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de cuadrados en vertical (1-20)", 5, 1, 20))
+
+screensize(lado * nx * 2 * 2, lado * ny * 2 * 2)
+
+for i in range(ny):
+    for j in range(nx):
+        origenX = 2 * lado * j
+        origenY = 2 * lado * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + lado, origenY)
+        goto(origenX + lado, origenY + lado)
+        goto(origenX, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 2" src="../img/ejercicios/turtle_3/turtle_3_2_2d.png" width="400" height="250" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (10-100): ", 50, 10, 100))
+separacion = int(numinput("Módulo turtle", "Separación entre cuadros (2-100): ", 30, 2, 100))
+nx = int(numinput("Módulo turtle", "Número de cuadrados en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de cuadrados en vertical (1-20)", 5, 1, 20))
+
+screensize((lado+separacion) * nx * 2, (lado+separacion) * ny * 2)
+
+for i in range(ny):
+    for j in range(nx):
+        origenX = (lado+separacion) * j
+        origenY = (lado+separacion) * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + lado, origenY)
+        goto(origenX + lado, origenY + lado)
+        goto(origenX, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 2" src="../img/ejercicios/turtle_3/turtle_3_2_3e.png" width="300" height="200" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (10-100): ", 50, 10, 100))
+separacion = int(numinput("Módulo turtle", "Separación entre cuadros (2-100): ", 30, 2, 100))
+nx = int(numinput("Módulo turtle", "Número de cuadrados en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de cuadrados en vertical (1-20)", 5, 1, 20))
+
+screensize((lado+separacion) * nx * 2, (lado+separacion) * ny * 2)
+
+for i in range(ny):
+    for j in range(nx):
+        origenX = (lado+separacion) * j
+        origenY = (lado+separacion) * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + lado, origenY)
+        goto(origenX + lado, origenY + lado)
+        goto(origenX, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()
+
+for i in range(ny - 1):
+    for j in range(nx - 1):
+        origenX = (lado+separacion) * j + lado
+        origenY = (lado+separacion) * i + lado
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + separacion, origenY)
+        goto(origenX + separacion, origenY + separacion)
+        goto(origenX, origenY + separacion)
+        goto(origenX, origenY)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 2" src="../img/ejercicios/turtle_3/turtle_3_2_4e.png" width="240" height="180" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (10-100): ", 50, 10, 100))
+separacion = int(numinput("Módulo turtle", "Separación entre cuadros (2-100): ", 30, 2, 100))
+nx = int(numinput("Módulo turtle", "Número de cuadrados en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de cuadrados en vertical (1-20)", 5, 1, 20))
+
+screensize((lado+separacion) * nx * 2, (lado+separacion) * ny * 2)
+
+begin_fill()
+goto((lado+separacion) * nx - separacion, 0)
+goto((lado+separacion) * nx - separacion, (lado+separacion) * ny - separacion)
+goto(0, (lado+separacion) * ny - separacion)
+goto(0, 0)
+end_fill()
+
+pencolor("white")
+fillcolor("white")
+for i in range(ny):
+    for j in range(nx):
+        origenX = (lado+separacion) * j
+        origenY = (lado+separacion) * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + lado, origenY)
+        goto(origenX + lado, origenY + lado)
+        goto(origenX, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()
+
+for i in range(ny - 1):
+    for j in range(nx - 1):
+        origenX = (lado+separacion) * j + lado
+        origenY = (lado+separacion) * i + lado
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + separacion, origenY)
+        goto(origenX + separacion, origenY + separacion)
+        goto(origenX, origenY + separacion)
+        goto(origenX, origenY)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 2" src="../img/ejercicios/turtle_3/turtle_3_2_5e.png" width="240" height="180" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2><a href="ej_turtle_3.html#ejercicio-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>turtle (3) - 03 - Tramas</h2>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del triángulo (10-100): ", 50, 10, 100))
+nx = int(numinput("Módulo turtle", "Número de triángulos en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de triángulos en vertical (1-20)", 5, 1, 20))
+
+screensize(lado * nx * 2, lado * ny * 2)
+
+for i in range(ny):
+    for j in range(nx):
+        origenX = lado * j
+        origenY = lado * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX + lado, origenY)
+        goto(origenX, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 3" src="../img/ejercicios/turtle_3/turtle_3_3_1d.png" width="335" height="230" /></p></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+lado = int(numinput("Módulo turtle", "Tamaño del molinillo (10-100): ", 50, 10, 100))
+nx = int(numinput("Módulo turtle", "Número de molinillos en horizontal (1-20)", 5, 1, 20))
+ny = int(numinput("Módulo turtle", "Número de molinillos en vertical (1-20)", 5, 1, 20))
+
+screensize(lado * nx * 2, lado * ny * 2)
+
+for i in range(ny):
+    for j in range(nx):
+        origenX = lado * j
+        origenY = lado * i
+        goto(origenX, origenY)
+        pendown()
+        begin_fill()
+        goto(origenX, origenY + lado//2)
+        goto(origenX + lado, origenY + lado//2)
+        goto(origenX + lado, origenY + lado)
+        goto(origenX, origenY)
+        end_fill()
+        penup()
+        goto(origenX, origenY + lado)
+        pendown()
+        begin_fill()
+        goto(origenX + lado//2, origenY + lado)
+        goto(origenX + lado // 2, origenY)
+        goto(origenX + lado, origenY)
+        goto(origenX, origenY + lado)
+        end_fill()
+        penup()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Turtle (3) 3" src="../img/ejercicios/turtle_3/turtle_3_3_2d.png" width="260" height="190" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2><a href="ej_turtle_3.html#ejercicio-4"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>turtle (3) - 04 - Tramas</h2>
+
+      <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
+    </section>
+
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 24 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

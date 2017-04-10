@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen 04/09/12. Exámenes. Python. Bartolomé Sintes Marco</title>
+    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Examen 4 de septiembre de 2012</h1>
+
+    <nav>
+      <p>
+        <a href="../../index.html"><img src="../../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../examenes.html"><img src="../../varios/iconos/icono_school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+      </p>
+
+      <h2>Examen 04/09/12</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">Operaciones</a>
+          <li><a href="#ejercicio-2"><span class="idle-func">range</span>()</a>
+          <li><a href="#ejercicio-3">Dibujos bucles</a>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="ejercicio-1">
+      <h2>Ejercicio 1</h2>
+
+      <p>Escriba un programa conversor de pesetas a euros o viceversa. El programa debe pedir el tipo de conversión (de pesetas a euros o de euros a pesetas), y la cantidad a convertir, para terminar dando la respuesta.</p>
+
+      <p>Se recuerda que un euro son 166,386 pesetas.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Conversor entre euros y pesetas</span>
+<span class="idle-resp">Conteste 1 si quiere convertir euros en pesetas</span>
+<span class="idle-resp">Conteste 2 si quiere convertir pesetas en euros</span>
+<span class="idle-resp">¿Qué quiere convertir?</span> 3
+<span class="idle-resp">No ha escrito ni 1 ni 2.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Conversor entre euros y pesetas</span>
+<span class="idle-resp">Conteste 1 si quiere convertir euros en pesetas</span>
+<span class="idle-resp">Conteste 2 si quiere convertir pesetas en euros</span>
+<span class="idle-resp">¿Qué quiere convertir?</span> 1
+<span class="idle-resp">Escriba la cantidad de euros:</span> 3
+<span class="idle-resp">3.0 euros son 499.158 pesetas</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Conversor entre euros y pesetas</span>
+<span class="idle-resp">Conteste 1 si quiere convertir euros en pesetas</span>
+<span class="idle-resp">Conteste 2 si quiere convertir pesetas en euros</span>
+<span class="idle-resp">¿Qué quiere convertir?</span> 2
+<span class="idle-resp">Escriba la cantidad de pesetas:</span> 500
+<span class="idle-resp">500.0 pesetas son 3.00506052192 euros</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Ejercicio 2</h2>
+
+      <p>Escriba un programa que pida tres números enteros y escriba la lista de números enteros desde el primero al segundo y del segundo al tercero.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Generador de lista</span>
+<span class="idle-resp">Escriba el número inicial:</span> 3
+<span class="idle-resp">Escriba el número intermedio:</span> 9
+<span class="idle-resp">Escriba el número final:</span> 6
+<span class="idle-resp">La lista es [3, 4, 5, 6, 7, 8, 9, 8, 7, 6]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Generador de lista</span>
+<span class="idle-resp">Escriba el número inicial:</span> 5
+<span class="idle-resp">Escriba el número intermedio:</span> 1
+<span class="idle-resp">Escriba el número final:</span> 4
+<span class="idle-resp">La lista es [5, 4, 3, 2, 1, 2, 3, 4]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Generador de lista</span>
+<span class="idle-resp">Escriba el número inicial:</span> 3
+<span class="idle-resp">Escriba el número intermedio:</span> 5
+<span class="idle-resp">Escriba el número final:</span> 8
+<span class="idle-resp">La lista es [3, 4, 5, 6, 7, 8]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Generador de lista</span>
+<span class="idle-resp">Escriba el número inicial:</span> 6
+<span class="idle-resp">Escriba el número intermedio:</span> 4
+<span class="idle-resp">Escriba el número final:</span> 4
+<span class="idle-resp">La lista es [6, 5, 4]</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Ejercicio 3</h2>
+
+      <p>Escriba un programa que pida el tamaño de un triángulo y lo dibuje</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dibuja un triángulo
+Escriba el lado del triángulo:</span> -4
+<span class="idle-resp">¡El lado no puede ser inferior a dos!</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dibuja un triángulo
+Escriba el lado del triángulo:</span> 4
+<span class="idle-resp">* * * *
+*   *
+* *
+*</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dibuja un triángulo
+Escriba el lado del triángulo:</span> 2
+<span class="idle-resp">* *
+*</span>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de septiembre de 2012
+      </p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

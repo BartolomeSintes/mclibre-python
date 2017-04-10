@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (4). El módulo turtle. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos: el módulo turtle - Ejercicios (4)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Módulo turtle (4)</h2>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en las lecciones sobre <a href="../lecciones/python_turtle_1.html">el módulo turtle (1)</a> y <a href="../lecciones/python_turtle_2.html">el módulo turtle (2)</a>. En ellos se utilizan funciones , tratadas en las lecciones <a href="../lecciones/python_funciones_1.html">funciones (1)</a> y <a href="../lecciones/python_funciones_2.html">funciones (2)</a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_turtle_4_soluciones.html">posibles soluciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2>turtle (4) - 01 - Círculo</h2>
+      <ol>
+        <li>Escriba un programa que solicite el radio del círculo (entre 10 y 300 píxeles) y lo dibuje centrado en el origen (sin usar la función circle() del módulo turtle). Defina una función circulo(radio) que dibuje el círculo a partir del radio:
+          <p class="captura">
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_1a.png" width="230" height="124" />
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_1b.png" width="256" height="264" />
+          </p>
+
+          <p><strong>Sugerencias</strong>:</p>
+          <ul>
+            <li>Dibuje un punto en el origen (independiente del círculo) para que se vea que el círculo está centrado en el origen.</li>
+            <li>Para dibujar el círculo, se puede dibujar primero el semicírculo superior y después el semicírculo inferior.</li>
+            <li>Para dibujar el semicírculo superior se puede ir calculando las coordenadas de los puntos de la circunferencia y moviendo la toruga de punto a punto.</li>
+            <li>Las abcisas se pueden obtener mediante un bucle que vaya desde -radio hasta +radio. Las ordenadas se pueden calcular a partir de las abcisas.</li>
+          </ul>
+        </li>
+        <li>Escriba un programa que solicite el radio del círculo (entre 10 y 300 píxeles) y las coordenadas del centro /entre -300 y 300 píxeles) y lo dibuje. Defina una función circulo(x0, y0, radio) que dibuje el círculo a partir de las cordenadas del centro y del radio:
+          <p class="captura">
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_2a.png" width="230" height="124" />
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_2b.png" width="299" height="124" />
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_2c.png" width="299" height="124" />
+          </p>
+
+          <p class="captura">
+            <img alt="Turtle (4) 01" src="../img/ejercicios/turtle_4/turtle_4_1_2d.png" width="350" height="260" />
+          </p>
+
+          <p><strong>Sugerencias</strong>:</p>
+          <ul>
+            <li>Dibuje un punto en el origen (independiente del círculo) para que se vea que el círculo está situado correctamente.</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <hr />
+
+    <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 30 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

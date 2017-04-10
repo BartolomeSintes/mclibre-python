@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuplas: listas inmutables. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body class="corta">
+    <h1>Tuplas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Tuplas</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-son">Qué son</a></li>
+          <li><a href="#tuplas-operaciones">Operaciones con tuplas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="que-son">
+      <h2>Qué son las tuplas</h2>
+
+      <p>En Python, una <strong>tupla</strong> es un conjunto ordenado e inmutable de elementos del mismo o diferente tipo.</p>
+
+      <p>Las tuplas se representan escribiendo los elementos entre paréntesis y separados por comas.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> (1, <span class="idle-cade">"a"</span>, 3.14)
+<span class="idle-resp">(1, 'a', 3.14)</span>
+</pre>
+      </div>
+
+      <p>En realidad no es necesario escribir los paréntesis para indicar que se trata de una tupla, basta con escribir las comas, pero Python escribe siempre los paréntesis:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1, <span class="idle-cade">"a"</span>, 3.14
+<span class="idle-resp">(1, 'a', 3.14)</span>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>La función <span class="idle-func">len</span>() devuelve el número de elementos de una tupla:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>((1, <span class="idle-cade">"a"</span>, 3.14))
+<span class="idle-resp">3</span>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Una tupla puede no contener ningún elemento, es decir, ser una tupla vacía.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> ()
+<span class="idle-resp">()</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>(())
+<span class="idle-resp">0</span>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Una tupla puede incluir un único elemento, pero para que Python entienda que nos estamos refiriendo a una tupla es necesario escribir al menos una coma.</p>
+
+      <p>El ejemplo siguiente muestra la diferencia entre escribir o no una coma. En el primer caso Python interpreta la expresión como un número y en el segundo como una tupla de un único elemento.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> (3)
+<span class="idle-resp">3</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> (3,)
+<span class="idle-resp">(3,)</span>
+</pre>
+      </div>
+
+      <p>Python escribe una coma al final en las tuplas de un único elemento para indicar que se trata de un tupla, pero esa coma no indica que hay un elemento después:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> (3,)
+<span class="idle-resp">(3,)</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>((3,))
+<span class="idle-resp">1</span>
+</pre>
+      </div>
+
+    </section>
+
+    <section id="tuplas-operaciones">
+      <h2>Operaciones con tuplas</h2>
+
+      <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Faltan ejemplos y desarrollar estos puntos</p>
+      <ul>
+        <li>Podemos referirnos a los elementos de las tuplas de forma individual usando corchetes.</li>
+        <li>Las tuplas se pueden concatenar.
+
+          <p>Que las tuplas se puedan concatenar no significa que no sean inmutables, porque al concatenar dos tuplas se obtiene una nueva tupla, distinta de las concatenadas.</p>
+        </li>
+      </ul>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 6 de febrero de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

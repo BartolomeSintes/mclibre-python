@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca estándar. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+  <body>
+    <h1>Biblioteca estándar</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Biblioteca estándar</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#subrutinas">Subrutinas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata la biblioteca estándar de Python.</p>
+
+    <section id="subrutinas">
+      <h2>Subrutinas y bibliotecas en Programación</h2>
+
+      <p>A veces, en un determinado programa es necesario efectuar una misma tarea en distintos puntos del programa y, a menudo, en diferentes programas es necesario efectuar una misma tarea. Para evitar tener que volver a escribir una y otra vez las mismas instrucciones, casi todos los lenguajes de programación permiten agrupar porciones de programa y reutilizarlos en un mismo programa o en diferentes programas.</p>
+
+      <p>Estas agrupaciones de código fueron inventadas en 1951 por <a href="https://en.wikipedia.org/wiki/Maurice_Wilkes">Maurice Wilkes</a>, matemático y físico británico que construyó en 1949 el EDSAC, el primer ordenador que almacenaba los programas en la propia circuitería del ordenador. Por sus contribuciones a la informática, Wilkes recibió en 1967 el premio Turing, considerado el premio Nobel de la Informática. Wilkes bautizó a las agrupaciones de código con el nombre de <strong>subrutinas</strong>, pero posteriores lenguajes de programación les han ido dando distintos nombres (subrutinas, procedimientos, funciones, métodos, etc.) y dándoles distintas características.</p>
+
+      <p>Las subrutinas tienen muchas ventajas evidentes:</p>
+      <ul>
+        <li>ahorrar trabajo: si sabemos cómo realizar una tarea, no es necesario volver a programarla una y otra vez.</li>
+        <li>facilitar el mantenimiento: si descubrimos errores en una subrutina, sólo hay que corregirlos en un sitio, sin tener que recordar en cuántos sitios utilizamos el algoritmo.</li>
+        <li>simplificar el código: la longitud y complejidad del programa se reducen porque las tareas repetitivas ya no aparecen en el cuerpo del programa.</li>
+        <li>facilitar la creación de programas: el trabajo se puede dividir entre varios programadores (unos escriben las subrutinas, otros el cuerpo principal del programa, etc.).</li>
+      </ul>
+
+      <p>Si una subrutina se va a utilizar en un único programa, se suele definir en el propio programa. Pero cuando una subrutina se va a utilizar en varios programas, no es necesario repetirla en cada programa (se perderían algunas de las ventajas comentadas anteriormente), sino que se puede incluir en un fichero aparte al que los programas pueden acceder para recuperar las subrutinas. Estos ficheros reciben el nombre de <strong>bibliotecas</strong> (en español se suele decir mucho <strong>librería</strong>, traduciendo incorrectamente el término inglés <strong>library</strong>).</p>
+
+      <p>En Python se utiliza el término <strong>función</strong> para referirse a las subrutinas y el término <strong>módulo</strong> para referirse a las bibliotecas.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de marzo de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

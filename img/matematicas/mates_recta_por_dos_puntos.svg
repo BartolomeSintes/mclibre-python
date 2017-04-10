@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="308.85" height="223.07">
+  <defs>
+    <marker id="a" orient="auto" overflow="visible">
+      <path fill-rule="evenodd" stroke="#000" stroke-width=".4pt" d="M-4 0l-2 2 7-2-7-2 2 2z"/>
+    </marker>
+  </defs>
+  <path fill="none" stroke="#000" stroke-width="2" d="M-1124.85 345.2l305.34-.96" marker-end="url(#a)" transform="translate(1125.852 -152.253)"/>
+  <path fill="none" stroke="#000" stroke-width="2" d="M-1098.16 374.33l-.96-219.58" marker-end="url(#a)" transform="translate(1125.852 -152.253)"/>
+  <path fill="red" stroke="red" stroke-width="2" d="M109.7 123.54c0 .27-.23.5-.5.5-.3 0-.5-.23-.5-.5 0-.28.2-.5.5-.5.27 0 .5.22.5.5z" opacity=".95" color="#000" overflow="visible"/>
+  <text x="-1009" y="285.26" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-1009" y="285.26" font-size="14">A(x<tspan font-size="65%" baseline-shift="sub">1</tspan>, y<tspan font-size="65%" baseline-shift="sub">1</tspan>)</tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M109.28 125.87l-.18 79.3" stroke-dasharray="2.00000001, 1"/>
+  <text x="-1023.7" y="370.25" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-1023.7" y="370.25" font-size="24"><tspan font-size="16">x</tspan><tspan font-size="11" baseline-shift="sub">1</tspan></tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M18.52 123.62l89.4-.16" stroke-dasharray="2.00000003, 1"/>
+  <text x="-1125.34" y="277.54" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-1125.34" y="277.54" font-size="24"><tspan font-size="16">y</tspan><tspan font-size="11" baseline-shift="sub">1</tspan></tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M243.24 52.34l-.17 154.2" stroke-dasharray="1.99999996, 0.99999997"/>
+  <path fill="red" stroke="red" stroke-width="2" d="M243.66 52.15c0 .27-.23.5-.5.5-.28 0-.5-.23-.5-.5 0-.28.22-.5.5-.5.27 0 .5.22.5.5z" opacity=".95" color="#000" overflow="visible"/>
+  <text x="-889.74" y="370.25" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-889.74" y="370.25" font-size="24"><tspan font-size="16">x</tspan><tspan font-size="11" baseline-shift="sub">2</tspan></tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M18.93 52.23l222.96-.16" stroke-dasharray="2.00000005, 1.00000001"/>
+  <text x="-1125.34" y="206.15" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-1125.34" y="206.15" font-size="24"><tspan font-size="16">y</tspan><tspan font-size="11" baseline-shift="sub">2</tspan></tspan>
+  </text>
+  <path fill="none" stroke="red" d="M71.24 143.73L280.87 32.08"/>
+  <text x="-876.13" y="213.47" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-876.13" y="213.47" font-size="14">B(x<tspan font-size="65%" baseline-shift="sub">2</tspan>, y<tspan font-size="65%" baseline-shift="sub">2</tspan>)</tspan>
+  </text>
+  <path fill="red" stroke="red" stroke-width="2" d="M181.63 85.14c0 .28-.22.5-.5.5-.27 0-.5-.22-.5-.5s.23-.5.5-.5c.28 0 .5.22.5.5z" opacity=".95" color="#000" overflow="visible"/>
+  <text x="-937.06" y="246.86" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-937.06" y="246.86" font-size="14">(x, y)</tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M181.22 87.47l-.17 118.28" stroke-dasharray="2.00000003, 1.00000001"/>
+  <text x="-948.72" y="370.25" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-948.72" y="370.25" font-size="24"><tspan font-size="16">x</tspan></tspan>
+  </text>
+  <path fill="none" stroke="#000" d="M17.75 85.22l162.1-.16" stroke-dasharray="2.00000005, 1.00000001"/>
+  <text x="-1122.29" y="239.14" style="text-align:start;line-height:125%;-inkscape-font-specification:Arial" font-size="40" letter-spacing="0" word-spacing="0" font-family="Arial" transform="translate(1125.852 -152.253)">
+    <tspan x="-1122.29" y="239.14" font-size="24"><tspan font-size="16">y</tspan></tspan>
+  </text>
+</svg>
+

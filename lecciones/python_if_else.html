@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if ... elif ... else ... Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#sentencias-condicionales"><span class="idle-rese">if</span> ...</a></li>
+          <li><a href="#if-else"><span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</a></li>
+          <li><a href="#sangrado-bloques">Sangrado bloques</a></li>
+          <li><a href="#if-else-anidados">Anidamiento</a></li>
+          <li><a href="#if-elif-else"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</a></li>
+          <li><a href="#no-booleanas">Condiciones no booleanas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata la estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...:</p>
+
+    <section id="sentencias-condicionales">
+      <h2>Sentencias condicionales: <span class="idle-rese">if</span>  ...</h2>
+
+      <p>La estructura de control <span class="idle-rese">if</span> ... permite que un programa ejecute unas instrucciones cuando se cumplan una condición. En inglés "if" significa "si" (condición). La orden en Pyhton se escribe así:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">if</span> condición:
+    aquí van las órdenes que se ejecutan si la condición es cierta
+    y que pueden ocupar varias líneas
+</pre>
+      </div>
+
+      <p>La primera línea contiene la condición a evaluar y es una expresión lógica. Esta línea debe terminar siempre por dos puntos (:).</p>
+
+      <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, IDLE sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
+
+      <hr class="corta" />
+
+      <p>Veamos un ejemplo. El programa siguiente pide un número positivos al usuario y almacena la respuesta en la variable "numero". Después comprueba si el número es negativo. Si lo es, el programa avisa que no era eso lo que se había pedido. Finalmente, el programa imprime siempre el valor introducido por el usuario. A continuación se pueden ver dos ejecuciones paso a paso de ese programa. En la primera el usuario escribe un valor negativo y en la segunda el usuario escribe  un valor positivo:</p>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso00">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -5
+<span class="idle-resp">¡Le he dicho que escriba un número positivo!
+Ha escrito el número -5</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso01"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso01">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso
+            1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">numero = int(input("Escriba un número positivo: "))</span>
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td><pre><span class="conborde"><span class="idle-resp">Escriba un número positivo:</span> -5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
+
+          <p class="control">
+            <a href="#Paso00"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso02"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso02">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+<span class="conborde">if numero &lt; 0</span>:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">Escriba un número positivo:</span> -5</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+
+          <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que -5 es inferior a 0.</p>
+
+          <p class="control">
+            <a href="#Paso01"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso03"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso03">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+if numero &lt; 0:
+    <span class="conborde">print("¡Le he dicho que escriba un número positivo!")</span>
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -5
+<span class="idle-resp conborde">¡Le he dicho que escriba un número positivo!</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "¡Le he dicho que escriba un número positivo!".</p>
+
+          <p class="control">
+            <a href="#Paso02"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso04"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso04">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+<span class="conborde">print(f"Ha escrito el número {numero}")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -5
+<span class="idle-resp">¡Le he dicho que escriba un número positivo!
+<span class="conborde">Ha escrito el número -5</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
+
+          <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso03"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso40">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> 5
+<span class="idle-resp">Ha escrito el número 5</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso41">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">numero = int(input("Escriba un número positivo: "))</span>
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td><pre><span class="conborde"><span class="idle-resp">Escriba un número positivo:</span> 5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
+
+          <p class="control">
+            <a href="#Paso40"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso42"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso42">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+<span class="conborde">if numero &lt; 0</span>:
+    print("¡Le he dicho que escriba un número positivo!")
+print(f"Ha escrito el número {numero}")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">Escriba un número positivo:</span> 5</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+
+          <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 5 no es inferior a 0.</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso43"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso43">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+if numero &lt; 0:
+    print("¡Le he dicho que escriba un número positivo!")
+<span class="conborde">print(f"Ha escrito el número {numero}")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> 5
+<span class="idle-resp"><span class="conborde">Ha escrito el número 5</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es falsa, no se ejecutan las instrucciones del bloque y el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
+
+          <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso42"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="if-else">
+      <h2>Bifurcaciones: <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</h2>
+
+      <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... permite que un programa ejecute unas instrucciones cuando se cumple una condición y otras instrucciones cuando no se cumple esa condición. En inglés "if" significa "si" (condición) y "else" significa "si no". La orden en Pyhton se escribe así:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">if</span> condición:
+    aquí van las órdenes que se ejecutan si la condición es cierta
+    y que pueden ocupar varias líneas
+<span class="idle-rese">else</span>:
+    y aquí van las órdenes que se ejecutan si la condición es
+    falsa y que también pueden ocupar varias líneas
+</pre>
+      </div>
+
+      <p>La primera línea contiene la condición a evaluar. Esta línea debe terminar siempre por dos puntos (:).</p>
+
+      <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, IDLE sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
+
+      <p>Después viene la línea con la orden <span class="idle-rese">else</span>, que indica a Python que el bloque que viene a continuación se tiene que ejecutar cuando la condición no se cumpla (es decir, cuando sea falsa). Esta línea también debe terminar siempre por dos puntos (:). La línea con la orden <span class="idle-rese">else</span> no debe incluir nada más que el <span class="idle-rese">else</span> y los dos puntos.</p>
+
+      <p>En último lugar está el bloque de instrucciones sangrado que corresponde al <span class="idle-rese">else</span>.</p>
+
+      <hr class="corta" />
+
+      <p>Veamos un ejemplo. El programa siguiente pregunta la edad al usuario y almacena la respuesta en la variable "edad". Después comprueba si la edad es inferior a 18 años. Si esta comparación es cierta, el programa escribe que es menor de edad y si es falsa escribe que es mayor de edad. Finalmente el programa siempre se despide, ya que la última instrucción está fuera de cualquier bloque y por tanto se ejecuta siempre. A continuación se pueden ver dos ejecuciones paso a paso de ese programa:</p>
+
+      <div class="diapo" style="height: 19em">
+
+        <div id="Paso10">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 17
+<span class="idle-resp">Es usted menor de edad
+¡Hasta la próxima!</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso11">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">edad = int(input("¿Cuántos años tiene? "))</span>
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td><pre><span class="conborde"><span class="idle-resp">¿Cuántos años tiene?</span></span> 17</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
+
+          <p class="control">
+            <a href="#Paso10"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso12"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso12">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+<span class="conborde">if edad &lt; 18</span>:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">¿Cuántos años tiene?</span> 17</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+
+          <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que 17 es inferior a 18.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso13"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso13">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    <span class="conborde">print("Es usted menor de edad")</span>
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 17
+<span class="idle-resp"><span class="conborde">Es usted menor de edad</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted menor de edad".</p>
+
+          <p class="control">
+            <a href="#Paso12"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso14"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso14">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+<span class="conborde">print("¡Hasta la próxima!")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 17
+<span class="idle-resp">Es usted menor de edad
+<span class="conborde">¡Hasta la próxima!</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> .. <span class="idle-rese">else</span> ...</p>
+
+          <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso13"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <div class="diapo" style="height: 19em">
+        <div id="Paso20">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 25
+<span class="idle-resp">Es usted mayor de edad
+¡Hasta la próxima!</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso21">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">edad = int(input("¿Cuántos años tiene? "))</span>
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td><pre><span class="conborde"><span class="idle-resp">¿Cuántos años tiene?</span></span> 25</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
+
+          <p class="control">
+            <a href="#Paso20"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso22"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso22">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+<span class="conborde">if edad &lt; 18</span>:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">¿Cuántos años tiene?</span> 25</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+
+          <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 25 es superior a 18.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso23"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso23">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    <span class="conborde">print("Es usted mayor de edad")</span>
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 17
+<span class="idle-resp"><span class="conborde">Es usted mayor de edad</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted mayor de edad".</p>
+
+          <p class="control">
+            <a href="#Paso22"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso24"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso24">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")
+<span class="conborde">print("¡Hasta la próxima!")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">¿Cuántos años tiene?</span> 25
+<span class="idle-resp">Es usted mayor de edad
+<span class="conborde">¡Hasta la próxima!</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez completado el bloque <span class="idle-rese">else</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+
+          <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso23"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Aunque no es aconsejable, en vez de un bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... se podría escribir un programa con dos bloques <span class="idle-rese">if</span> ... .</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+if edad &gt;= 18:
+    print("Es usted mayor de edad")
+print("¡Hasta la próxima!")</code>
+</pre>
+      </div>
+
+      <p>Es mejor no hacerlo así por dos motivos:</p>
+      <ul>
+        <li>al poner dos bloques <span class="idle-rese">if</span> estamos obligando a Python a evaluar siempre las dos condiciones, mientras que en un bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... sólo se evalúa una condición. En un programa sencillo la diferencia no es apreciable, pero en programas que ejecutan muchas comparaciones, el impacto puede ser apreciable.</li>
+        <li>utilizando <span class="idle-rese">else</span> nos ahorramos escribir una condición (además, escribiendo la condición nos podemos equivocar, pero escribiendo <span class="idle-rese">else</span> no).</li>
+      </ul>
+
+      <hr class="corta" />
+
+      <p>Si por algún motivo no se quisiera ejecutar ninguna orden en alguno de los bloques, el bloque de órdenes debe contener al menos la orden <span class="idle-rese">pass</span> (esta orden le dice a Python que no tiene que hacer nada).</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 120:
+    pass
+else:
+    print("¡No me lo creo!")
+print(f"Usted dice que tiene {edad} años.")</code>
+</pre>
+      </div>
+
+      <p>Evidentemente este programa podría simplificarse cambiando la desigualdad. Era sólo un ejemplo para mostrar cómo se utiliza la orden <span class="idle-rese">pass</span>.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &gt;= 120:
+    print("¡No me lo creo!")
+print(f"Usted dice que tiene {edad} años.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="sangrado-bloques">
+      <h2>Sangrado de los bloques</h2>
+
+      <p>Un bloque de instrucciones puede contener varias instrucciones. Todas las instrucciones del bloque tener el mismo sangrado:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+    print("Recuerde que está en la edad de aprender")
+else:
+    print("Es usted mayor de edad")
+    print("Recuerde que debe seguir aprendiendo")
+print("¡Hasta la próxima!")</code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Se aconseja utilizar siempre el mismo número de espacios en el sangrado, aunque Python permite que cada bloque tenga un número distinto. El siguiente programa es correcto:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+        print("Es usted menor de edad")
+        print("Recuerde que está en la edad de aprender")
+else:
+    print("Es usted mayor de edad")
+    print("Recuerde que debe seguir aprendiendo")
+print("¡Hasta la próxima!")</code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Lo que no se permite es que en un mismo bloque haya instrucciones con distintos sangrados. Dependiendo del orden de los sangrados, el mensaje de error al intentar ejecutar el programa será diferente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+        print("Recuerde que está en la edad de aprender")
+else:
+    print("Es usted mayor de edad")
+    print("Recuerde que debe seguir aprendiendo")
+print("¡Hasta la próxima!")</code>
+</pre>
+            </td>
+            <td><img alt="Aviso: Error de sangrado" src="../img/error_sangrado_2.png" width="216" height="161" title="Aviso: Error de sangrado" /></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+        print("Es usted menor de edad")
+    print("Recuerde que está en la edad de aprender")
+else:
+    print("Es usted mayor de edad")
+    print("Recuerde que debe seguir aprendiendo")
+print("¡Hasta la próxima!")</code>
+</pre>
+            </td>
+            <td><img alt="Aviso: Error de sangrado" src="../img/error_sangrado.png" width="388" height="161" title="Aviso: Error de sangrado" /></td>
+          </tr>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+print("Recuerde que está en la edad de aprender")
+else:
+    print("Es usted mayor de edad")
+    print("Recuerde que debe seguir aprendiendo")
+print("¡Hasta la próxima!")</code>
+</pre>
+            </td>
+            <td><img alt="Aviso: Error de sangrado" src="../img/error_sangrado_3.png" width="199" height="161" title="Aviso: Error de sangrado" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>En el primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado mayor, se produce el error "unexpected ident" (sangrado inesperado).</li>
+        <li>En el segundo caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado menor, Python entiende que esa instrucción pertenece a otro bloque, pero como no hay ningún bloque con ese nivel de sangrado, se produce el eror "unindent does not match any outer indentation level" (el sangrado no coincide con el de ningún nivel superior).</li>
+        <li>En el tercer caso, como la segunda instrucción no tiene sangrado, Python entiende que la bifurcación <span class="idle-rese">if</span> ha terminado, por lo que al encontrar un <span class="idle-rese">else</span> sin su <span class="idle-rese">if</span> correspondiente se produce el error "invalid syntax" (sintaxis no válida).</li>
+      </ul>
+    </section>
+
+    <section id="if-else-anidados">
+      <h2>Sentencias condicionales anidadas</h2>
+
+      <p>Una sentencia condicional puede contener a su vez otra sentencia anidada.</p>
+
+      <p>Por ejemplo, el programa siguiente "adivina" el número pensado por el usuario:</p>
+
+      <div class="diapo" style="height: 32em">
+
+        <div id="Paso30">
+          <p><strong>Ejemplo de sentencias condicionales anidadas</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
+<span class="idle-resp">El número pensado es 3
+¡Hasta la próxima!</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso31">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Piense un número de 1 a 4.")</span>
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">Piense un número de 1 a 4.</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime una frase.</p>
+
+          <p class="control">
+            <a href="#Paso30"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso32"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso32">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+<span class="conborde">print("Conteste S (sí) o N (no) a mis preguntas.")</span>
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+<span class="conborde">Conteste S (sí) o N (no) a mis preguntas.</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, imprime otra frase.</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso33"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso33">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+<span class="conborde">primera = input("¿El número pensado es mayor que 2? ")</span>
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.</span>
+<span class="conborde"><span class="idle-resp">¿El número pensado es mayor que 2?</span> S</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "primera".</p>
+
+          <p class="control">
+            <a href="#Paso32"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso34"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso34">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+<span class="conborde">if primera == "S":</span>
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (primera == <span class="idle-cade">"S"</span>).</p>
+
+          <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que el usuario ha contestado S.</p>
+
+          <p class="control">
+            <a href="#Paso33"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso35"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso35">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    <span class="conborde">segunda = input("¿El número pensado es mayor que 3? ")</span>
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+<span class="conborde"><span class="idle-resp">¿El número pensado es mayor que 3?</span> N</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+          <p>Imprime la segunda pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "segunda".</p>
+
+          <p class="control">
+            <a href="#Paso34"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso36"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso36">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input()
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    <span class="conborde">if segunda == "S":</span>
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se evalúa la condición (segunda == <span class="idle-cade">"S"</span>).</p>
+
+          <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que el usuario ha contestado N.</p>
+
+          <p class="control">
+            <a href="#Paso35"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso37"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso37">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        <span class="conborde">print("El número pensado es 3")</span>
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+print("¡Hasta la próxima!")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
+<span class="idle-resp">El número pensado es 3</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "El número pensado es 3".</p>
+
+          <p class="control">
+            <a href="#Paso36"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso38"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso38">
+          <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Piense un número de 1 a 4.")
+print("Conteste S (sí) o N (no) a mis preguntas.")
+primera = input("¿El número pensado es mayor que 2? ")
+if primera == "S":
+    segunda = input("¿El número pensado es mayor que 3? ")
+    if segunda == "S":
+        print("El número pensado es 4.")
+    else:
+        print("El número pensado es 3")
+else:
+    segunda = input("¿El número pensado es mayor que 1? ")
+    if segunda == "S":
+        print("El número pensado es 2.")
+    else:
+        print("El número pensado es 1.")
+<span class="conborde">print("¡Hasta la próxima!")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Piense un número de 1 a 4.
+Conteste S (sí) o N (no) a mis preguntas.
+¿El número pensado es mayor que 2?</span> S
+<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
+<span class="idle-resp">El número pensado es 3
+<span class="conborde">¡Hasta la próxima!</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez completado el bloque <span class="idle-rese">else</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+
+          <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso37"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>Se pueden anidar tantas sentencias condicionales como se desee.</p>
+
+    </section>
+
+    <section id="if-elif-else">
+      <h2>Más de dos alternativas: <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h2>
+
+      <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... permite encadenar varias condiciones. "elif" es una contracción de "else if". La orden en Pyhton se escribe así:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">if</span> condición_1:
+  bloque 1
+<span class="idle-rese">elif</span> condición_2:
+  bloque 2
+<span class="idle-rese">else</span>:
+  bloque 3
+</pre>
+      </div>
+
+      <ul>
+        <li>Si se cumple la condición 1, se ejecuta el bloque 1</li>
+        <li>Si no se cumple la condición 1 pero sí que se cumple la condición 2, se ejecuta el bloque 2 </li>
+        <li>Si no se cumplen ni la condición 1 ni la condición 2, se ejecuta el bloque 3.</li>
+      </ul>
+
+      <p>Esta estructura es equivalente a la siguiente estructura de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">if</span> condición_1:
+  bloque 1
+<span class="idle-rese">else:</span>
+  <span class="idle-rese">if</span> condición_2:
+    bloque 2
+  <span class="idle-rese">else</span>:
+    bloque 3
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Se pueden escribir tantos bloques <span class="idle-rese">elif</span> como sean necesarios. El bloque <span class="idle-rese">else</span> (que es opcional) se ejecuta si no se cumple ninguna de las condiciones anteriores.</p>
+
+      <hr class="corta" />
+
+      <p>En las estructuras <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... el orden en que se escriben los casos es importante y, a menudo, se pueden simplificar las condiciones ordenando adecuadamente los casos.</p>
+
+      <p>Podemos distinguir dos tipos de situaciones:</p>
+      <ol>
+        <li>Cuando los casos son mutuamente excluyentes.<br />
+
+          <p>Consideremos un programa que pide la edad y en función del valor recibido da un mensaje diferente. Podemos distinguir, por ejemplo, tres situaciones:</p>
+          <ul>
+            <li>si el valor es negativo, se trata de un error</li>
+            <li>si el valor está entre 0 y 17, se trata de un menor de edad</li>
+            <li>si el valor es superior o igual a 18, se trata de un menor de edad</li>
+          </ul>
+          <p>Los casos son mutuamente excluyentes, ya que un valor sólo puede estar en uno de los casos.</p>
+          <ul>
+            <li>Un posible programa es el siguiente:
+
+              <div class="codigo">
+                <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &gt;= 18:
+    print("Es usted mayor de edad")
+elif edad &lt; 0:
+    print("No se puede tener una edad negativa")
+else:
+    print("Es usted menor de edad")</code>
+</pre>
+              </div>
+            </li>
+            <li>El programa anterior funciona correctamente, pero los casos están desordenados. Es mejor escribirlos en orden, para asegurarnos de no olvidar ninguna de las posibles situaciones. Por ejemplo, podríamos escribirlos de menor a mayor edad, aunque eso obliga a escribir otras condiciones:
+
+              <div class="codigo">
+                <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 0:
+    print("No se puede tener una edad negativa")
+elif edad &gt;= 0 and edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")</code>
+</pre>
+              </div>
+            </li>
+            <li>En el programa anterior se pueden simplificar las comparaciones:
+
+              <div class="codigo">
+                <pre>
+<code class="language-python">edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 0:
+    print("No se puede tener una edad negativa")
+elif edad &lt; 18:
+    print("Es usted menor de edad")
+else:
+    print("Es usted mayor de edad")</code>
+</pre>
+              </div>
+
+              <p>Este último programa también funciona correctamente porque, en una estructura <span class="idle-rese">if ... elif .. else</span> , cuando se cumple una de las comparaciones Python ya no considera las siguientes condiciones, se cumplan o no. Por ejemplo, en la segunda comparación no hace falta comprobar que la edad sea mayor que 0 porque si hubiera sido menor que 0 hubiera cumplido la primera comparación y no estaría evaluando la segunda comparación, así que si está evaluando la segunda comparación es que no se cumple la primera, es decir, que la edad es mayor que 0.</p>
+            </li>
+            <li>Pero hay que tener cuidado, porque si los casos del programa anterior se ordenan al revés manteniendo las condiciones, el programa no funcionaría como se espera, puesto que al escribir un valor negativo mostraría el mensaje <span class="idle-resp">"Es usted menor de edad"</span>.
+
+              <div class="codigo">
+                <pre>
+<code class="language-python"># Este programa no funciona correctamente
+edad = int(input("¿Cuántos años tiene? "))
+if edad &lt; 18:
+    print("Es usted menor de edad")
+elif edad &lt; 0:
+    print("No se puede tener una edad negativa")
+else:
+    print("Es usted mayor de edad")</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Cuando unos casos incluyen a otros<br />
+
+          <p>Consideremos un programa que pide un valor y nos dice si es:</p>
+          <ul>
+            <li>si es múltiplo de dos,</li>
+            <li>si es múltiplo de cuatro (y de dos)</li>
+            <li>si no es múltiplo de dos</li>
+          </ul>
+          <p><strong>Nota</strong>: El valor 0 se considerará múltiplo de 4 y de 2.</p>
+          <p>Los casos no son mutuamente excluyentes, puesto que los múltiplos de cuatro son también múltiplos de dos.</p>
+          <ul>
+            <li>El siguiente programa no sería correcto:
+
+              <div class="codigo">
+                <pre>
+<code class="language-python"># Este programa no funciona correctamente
+numero = int(input("Escriba un número: "))
+if numero % 2 == 0:
+    print(f"{numero} es múltiplo de dos")
+elif numero % 4 == 0:
+    print(f"{numero} es múltiplo de cuatro y de dos")
+else:
+    print(f"{numero} no es múltiplo de dos")</code>
+</pre>
+              </div>
+              <p>El error de este programa es que el número que cumple la segunda condición, cumple también la primera. Si se escribe un múltiplo de cuatro, como también es múltiplo de dos, cumple la primera condición y el programa ejecuta el primer bloque de instrucciones, sin llegar a comprobar el resto de condiciones.</p>
+            </li>
+            <li>Una manera de corregir ese error es añadir en la primera condición (la de <span class="idle-rese">if</span>) que el número no sea múltiplo de cuatro.
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 2 == 0 and numero % 4 != 0:
+    print(f"{numero} es múltiplo de dos")
+elif numero % 4 == 0:
+    print(f"{numero} es múltiplo de cuatro y de dos")
+else:
+    print(f"{numero} no es múltiplo de dos")</code>
+</pre>
+          </div>
+        </li>
+        <li>También se podría haber escrito el siguiente programa:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 2 == 0 and numero % 4 != 0:
+    print(f"{numero} es múltiplo de dos")
+elif numero % 2 == 0:
+    print(f"{numero} es múltiplo de cuatro y de dos")
+else:
+    print(f"{numero} no es múltiplo de dos")</code>
+</pre>
+          </div>
+          <p>Este programa funciona porque los múltiplos de cuatro también son múltiplos de dos y el programa sólo evalúa la segunda condición (la de <span class="idle-rese">elif</span>) si no se ha cumplido la primera.</p>
+        </li>
+        <li>Pero todavía podemos simplificar más el programa, ordenando de otra manera los casos:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 4 == 0:
+    print(f"{numero} es múltiplo de cuatro y de dos")
+elif numero % 2 == 0:
+    print(f"{numero} es múltiplo de dos")
+else:
+    print(f"{numero} no es múltiplo de dos")</code>
+</pre>
+          </div>
+
+          <p>Este programa funciona correctamente ya que aunque la segunda condición (la de <span class="idle-rese">elif</span>) no distingue entre múltiplos de dos y de de cuatro, si se escribe un múltiplo de cuatro, el programa no llega a evaluar la segunda condición porque se cumple la primera (la de <span class="idle-rese">if</span>).</p>
+        </li>
+        </ul>
+      <p>En general, el orden que permite simplificar más las expresiones suele ser considerar primero los casos particulares y después los casos generales.</p>
+      </li>
+    </ol>
+
+  <hr class="corta" />
+
+  <p>Si las condiciones <span class="idle-rese">if ... elif ...</span> cubren todas las posibilidades, se puede no escribir el bloque <span class="idle-rese">else</span>:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero &gt;= 0:
+    print("Ha escrito un número positivo")
+elif numero &lt; 0:
+    print("Ha escrito un número negativo")</code>
+</pre>
+  </div>
+
+  <p>A menudo el último bloque <span class="idle-rese">elif ...</span> se sustituye por un bloque <span class="idle-rese">else</span>:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero &gt;= 0:
+    print("Ha escrito un número positivo")
+else:
+    print("Ha escrito un número negativo")</code>
+</pre>
+  </div>
+  </section>
+
+<section id="no-booleanas">
+  <h2>Condiciones no booleanas</h2>
+
+  <p>Dado que cualquier variable puede interpretarse como una variable booleana, si la condición es una comparación con cero, podemos omitir la comparación.</p>
+
+  <p>Por ejemplo, el programa siguiente:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 2 != 0:
+    print(f"{numero} es impar")
+else:
+    print(f"{numero} es par")</code>
+</pre>
+  </div>
+
+  <p>se podría escribir omitiendo la comparación:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 2:
+    print(f"{numero} es impar")
+else:
+    print(f"{numero} es par")</code>
+</pre>
+  </div>
+
+  <p>En este programa, si el número es impar, numero % 2 da como resultado 1. Y como el valor booleano de un número diferente de cero es <span class="idle-rese">True</span> (es decir, <span class="idle-func">bool</span>(1) es <span class="idle-rese">True</span>), la condición se estaría cumpliendo.</p>
+
+  <hr class="corta" />
+
+  <p>Si la comparación es una igualdad, se puede utilizar el operador <span class="idle-rese">not</span>. Por ejemplo, el programa siguiente:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if numero % 2 == 0:
+    print(f"{numero} es par")
+else:
+    print(f"{numero} es impar")</code>
+</pre>
+  </div>
+
+  <p>se podría escribir omitiendo la comparación:</p>
+
+  <div class="codigo">
+    <pre>
+<code class="language-python">numero = int(input("Escriba un número: "))
+if not numero % 2:
+    print(f"{numero} es par")
+else:
+    print(f"{numero} es impar")</code>
+</pre>
+  </div>
+
+  <p>En este programa, si el número es par, numero % 2 da como resultado 0. El valor booleano de cero es <span class="idle-rese">False</span> (es decir, <span class="idle-func">bool</span>(0) es <span class="idle-rese">False</span>), pero al negarse con <span class="idle-rese">not</span>, la condición se estaría cumpliendo (ya que <span class="idle-rese">not</span> <span class="idle-rese">False</span> es <span class="idle-rese">True</span>.</p>
+
+  <hr class="corta" />
+
+  <p>Cuando se está aprendiendo a programar, esta notación puede resultar un poco crítpica, por lo que se recomienda empezar escribiendo las comparaciones completas. Más adelante, cuando nos hayamos familiarizado con las expresiones lógicas, nos resultará más natural utilizarla.</p>
+</section>
+
+<footer>
+  <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+  <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+    Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+    que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+</footer>
+</body>
+</html>

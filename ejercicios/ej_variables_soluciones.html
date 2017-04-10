@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones. Operaciones aritméticas elementales. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Variables, Entrada y salida y Operaciones aritméticas elementales - Soluciones</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Operaciones aritméticas</h2>
+
+      <h3><a href="ej_variables.html">Enunciados</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_variables.html#ejercicio-1">1 - Media de dos números</a></li>
+          <li><a href="ej_variables.html#ejercicio-2">2 - Índice de Masa Corporal</a></li>
+          <li><a href="ej_variables.html#ejercicio-3">3 - Pies y pulgadas a cm</a></li>
+          <li><a href="ej_variables.html#ejercicio-4">4 - Celsius a Fahrenheit</a></li>
+          <li><a href="ej_variables.html#ejercicio-5">5 - Fahrenheit a Celsius</a></li>
+          <li><a href="ej_variables.html#ejercicio-6">6 - Segundos a minutos</a></li>
+          <li><a href="ej_variables.html#ejercicio-7">7 - Segundos a horas y min</a></li>
+          <li><a href="ej_variables.html#ejercicio-8">8 - A gruesas y docenas</a></li>
+        </ul>
+      </div>
+
+      <h3>Soluciones</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">1 - Media de dos números</a></li>
+          <li><a href="#ejercicio-2">2 - Índice de Masa Corporal</a></li>
+          <li><a href="#ejercicio-3">3 - Pies y pulgadas a cm</a></li>
+          <li><a href="#ejercicio-4">4 - Celsius a Fahrenheit</a></li>
+          <li><a href="#ejercicio-5">5 - Fahrenheit a Celsius</a></li>
+          <li><a href="#ejercicio-6">6 - Segundos a minutos</a></li>
+          <li><a href="#ejercicio-7">7 - Segundos a horas y min</a></li>
+          <li><a href="#ejercicio-8">8 - A gruesas y docenas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_variables.html">ejercicios de Variables, Entrada y salida y Operaciones aritméticas elementales.</a></p>
+
+    <section id="ejercicio-1">
+      <h2>Operaciones aritméticas - 1 - Solución</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CÁLCULO DE LA MEDIA DE DOS NÚMEROS")
+numero1 = float(input("Escriba un número: "))
+numero2 = float(input("Escriba otro número: "))
+
+media = (numero1+numero2) / 2
+
+print(f"La media aritmética de {numero1} y {numero2} es {media}")</code>
+</pre>
+      </div>
+
+      <p>Es posible ahorrarse la variable auxiliar media y escribir directamente el cálculo en la respuesta.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CÁLCULO DE LA MEDIA DE DOS NÚMEROS")
+numero1 = float(input("Escriba un número: "))
+numero2 = float(input("Escriba otro número: "))
+
+print(f"La media aritmética de {numero1} y {numero2} "
+      f"es {(numero1 + numero2) / 2}")</code></pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Operaciones aritméticas - 2 - Solución</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)")
+peso = float(input("¿Cuánto pesa? "))
+altura = float(input("¿Cuánto mide en metros? "))
+
+imc = peso / altura**2
+
+print(f"Su imc es {round(imc, 1)}")
+print("Un imc muy alto indica obesidad. Los valores \"normales\" de imc están")
+print("entre 20 y 25, pero esos límites dependen de la edad, del sexo, de la")
+print("constitución física, etc.")</code>
+</pre>
+      </div>
+
+      <p>El cálculo del índice de masa corporal podría expresarse de varias maneras:</p>
+
+      <div class="codigo">
+        <pre><code class="language-python">imc = peso / altura**2</code></pre>
+      </div>
+
+      <div class="codigo">
+        <pre><code class="language-python">imc = peso / (altura*altura)</code></pre>
+      </div>
+
+      <div class="codigo">
+        <pre><code class="language-python">imc = peso / pow(altura, 2)</code></pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Operaciones aritméticas - 3 - Solución</h2>
+      <ol>
+        <li>Pies y pulgadas
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">print("CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS")
+pies = float(input("Escriba una cantidad de pies: "))
+pulgadas = float(input("Escriba una cantidad de pulgadas: "))
+
+centimetros = (pies*12 + pulgadas) * 2.54
+
+print(f"{pies} pies y {pulgadas} pulgadas son {centimetros} cm")</code>
+</pre>
+          </div>
+
+          <p>El cálculo de los centímetro podría expresarse de varias maneras</p>
+
+          <div class="codigo">
+            <pre><code class="language-python">centimetros = (pies*12 + pulgadas) * 2.54</code></pre>
+          </div>
+
+          <div class="codigo">
+            <pre><code class="language-python">centimetros = pies*12*2.54 + pulgadas*2.54</code></pre>
+          </div>
+        </li>
+        <li>Pulgadas
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">print("CONVERTIDOR DE PULGADAS A CENTÍMETROS")
+pulgadas = float(input("Escriba una cantidad de pulgadas: "))
+
+centimetros = pulgadas * 2.54
+
+print(f"{pulgadas} pulgadas son {centimetros} cm")</code>
+</pre>
+          </div>
+        </li>
+        <li>Pies
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">print("CONVERTIDOR DE PIES A CENTÍMETROS")
+pies = float(input("Escriba una cantidad de pies: "))
+
+centimetros = pies * 12 * 2.54
+
+print(f"{pies} pies son {centimetros} cm")</code>
+</pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Operaciones aritméticas - 4 - Solución</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT")
+celsius = float(input("Escriba una temperatura en grados Celsius: "))
+
+fahrenheit = 1.8*celsius + 32
+
+print(f"{celsius} ºC son {fahrenheit} ºF")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2>Operaciones aritméticas - 5 - Solución</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS")
+fahrenheit = float(input("Escriba una temperatura en grados Fahrenheit: "))
+
+celsius = (fahrenheit-32) / 1.8
+
+print(f"{fahrenheit} ºF son {round(celsius, 1)} ºC")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2>Operaciones aritméticas - 6 - Solución</h2>
+
+      <p>Para convertir de segundos a minutos basta una división:</p>
+
+      <p><img alt="Segundos a minutos" src="../img/ejercicios/operaciones_aritmeticas/operaciones_aritmeticas_6_1.svg" /></p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CONVERTIDOR DE SEGUNDOS A MINUTOS")
+segundos = int(input("Escriba una cantidad de segundos: "))
+
+minutos = segundos // 60
+resto = segundos % 60
+
+print(f"{segundos} segundos son {minutos} minutos y {resto} segundos")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2>Operaciones aritméticas - 7 - Solución</h2>
+
+      <p>Como una hora son 3600 segundos (60 * 60), el resultado se obtiene mediante dos divisiones sucesivas:</p>
+
+      <p><img alt="Segundos a horas y minutos"
+              src="../img/ejercicios/operaciones_aritmeticas/operaciones_aritmeticas_7_1.svg" /></p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
+segundos = int(input("Escriba una cantidad de segundos: "))
+
+horas = segundos // 3600
+resto1 = segundos % 3600
+minutos = resto1 // 60
+resto = resto1 % 60
+
+print(f"{segundos} segundos son {horas} horas, "
+      f"{minutos} minutos y {resto} segundos")</code>
+</pre>
+      </div>
+
+      <p>Las expresiones anteriores se pueden simplificar sin recurrir a variables intermedias:</p>
+
+      <div class="codigo">
+        <pre><code class="language-python">print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
+segundos = int(input("Escriba una cantidad de segundos: "))
+
+horas = segundos // 3600
+minutos = segundos % 3600 // 60
+resto = segundos % 60
+
+print(f"{segundos} segundos son {horas} horas, "
+      f"{minutos} minutos y {resto} segundos")</code></pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-8">
+      <h2>Operaciones aritméticas - 8 - Solución</h2>
+
+      <p>Como una gruesa son 144 unidades (12 * 12), el resultado se obtiene mediante
+        dos divisiones sucesivas:</p>
+
+      <p><img alt="Cantidad a gruesas y docenas" src="../img/ejercicios/operaciones_aritmeticas/operaciones_aritmeticas_8_1.svg" /></p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">print("CONVERTIDOR A GRUESAS Y DOCENAS")
+unidades = int(input("Escriba una cantidad (entera): "))
+
+gruesas = unidades // 144
+docenas = unidades % 144 // 12
+resto = unidades % 12
+
+print(f"{unidades} unidades son {gruesas} gruesas, "
+      f"{docenas} docenas y {resto} unidades")</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 3 de abril de de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,3049 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucle for (1). Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Bucle <span class="idle-rese">for</span> (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Bucle <span class="idle-rese">for</span> (1)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#bucle-for">El bucle <span class="idle-rese">for</span></a></li>
+          <li><a href="#contadores-acumuladores">Contadores y acumuladores</a>
+            <ul>
+              <li><a href="#contador">Contador</a></li>
+              <li><a href="#acumulador">Acumulador</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se tratan los bucles <span class="idle-rese">for</span>:</p>
+
+    <section id="bucle-for">
+      <h2>El bucle <span class="idle-rese">for</span></h2>
+
+      <p>En general, un bucle es una estructura de control que repite un bloque de instrucciones. Un bucle <span class="idle-rese">for</span> es un bucle que repite el bloque de instrucciones un número prederminado de veces. El bloque de instrucciones que se repite se suele llamar cuerpo del bucle y cada repetición se suele llamar iteración.</p>
+
+      <p>La sintaxis de un bucle <span class="idle-rese">for</span> es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">for</span> variable <span class="idle-rese">in</span> elemento iterable (lista, cadena, range, etc.):
+    cuerpo del bucle
+</pre>
+      </div>
+
+      <p>No es necesario definir la variable de control antes del bucle, aunque se puede utilizar como variable de control una variable ya definida en el programa.</p>
+
+      <hr class="corta" />
+
+      <p>El cuerpo del bucle se ejecuta tantas veces como elementos tenga el elemento recorrible (elementos de una lista o de un <span class="idle-func">range</span>(), caracteres de una cadena, etc.). Por ejemplo:</p>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso010">
+          <p><strong>Ejemplo de bucle 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola Hola
+Final</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso011"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso011">
+          <p><strong>Ejemplo de bucle 1 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for i in [0, 1, 2]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso010"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso012"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso012">
+          <p><strong>Ejemplo de bucle 1 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [<span class="conborde">0</span>, 1, 2]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
+
+          <p class="control">
+            <a href="#Paso011"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso013"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso013">
+          <p><strong>Ejemplo de bucle 1 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp conborde">Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso012"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso014"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso014">
+          <p><strong>Ejemplo de bucle 1 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [0, <span class="conborde">1</span>, 2]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el segundo valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso013"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso015"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso015">
+          <p><strong>Ejemplo de bucle 1 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola <span class="conborde">Hola</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso014"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso016"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso016">
+          <p><strong>Ejemplo de bucle 1 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [0, 1, <span class="conborde">2</span>]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el tercer y último valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso015"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso017"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso017">
+          <p><strong>Ejemplo de bucle 1 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola Hola <span class="conborde">Hola</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso016"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso018"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso018">
+          <p><strong>Ejemplo de bucle 1 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    print("Hola ", end="")
+<span class="conborde">print()</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola Hola Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime un salto de línea, para que el siguiente <span class="idle-func">print</span>() imprima en la línea siguiente.</p>
+
+          <p class="control">
+            <a href="#Paso017"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso019"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso019">
+          <p><strong>Ejemplo de bucle 1 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [0, 1, 2]:
+    print("Hola ", end="")
+print()
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola Hola
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso018"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>En el ejemplo anterior, los valores que toma la variable no son importantes, lo que importa es que la lista tiene tres elementos y por tanto el bucle se ejecuta tres veces. El siguiente programa produciría el mismo resultado que el anterior:</p>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso020">
+          <p><strong>Ejemplo de bucle 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola Hola
+Final</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso021"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso021">
+          <p><strong>Ejemplo de bucle 2 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for i in [1, 1, 1]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso020"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso022"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso022">
+          <p><strong>Ejemplo de bucle 2 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [<span class="conborde">1</span>, 1, 1]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso021"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso023"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso023">
+          <p><strong>Ejemplo de bucle 2 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp conborde">Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso022"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso024"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso024">
+          <p><strong>Ejemplo de bucle 2 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [1, <span class="conborde">1</span>, 1]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el segundo valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso023"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso025"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso025">
+          <p><strong>Ejemplo de bucle 2 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola <span class="conborde">Hola</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso024"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso026"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso026">
+          <p><strong>Ejemplo de bucle 2 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [1, 1, <span class="conborde">1</span>]:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el tercer y último valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso025"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso027"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso027">
+          <p><strong>Ejemplo de bucle 2 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    <span class="conborde">print("Hola ", end="")</span>
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola Hola <span class="conborde">Hola</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola".</p>
+
+          <p class="control">
+            <a href="#Paso026"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso028"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso028">
+          <p><strong>Ejemplo de bucle 2 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    print("Hola ", end="")
+<span class="conborde">print()</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp">Hola Hola Hola</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al
+            bucle.</p>
+
+          <p>En este caso, imprime un salto de línea, para que el siguiente <span class="idle-func">print</span>() imprima en la línea siguiente.</p>
+
+          <p class="control">
+            <a href="#Paso027"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso029"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso029">
+          <p><strong>Ejemplo de bucle 2 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [1, 1, 1]:
+    print("Hola ", end="")
+print()
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola Hola Hola
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso028"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Si la lista está vacía, el bucle no se ejecuta ninguna vez. Por ejemplo:</p>
+
+      <div class="diapo" style="height: 15em">
+        <div id="Paso030">
+          <p><strong>Ejemplo de bucle 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in []:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+
+Final</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso031"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso031">
+          <p><strong>Ejemplo de bucle 3 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for i in []:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso030"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso032"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso032">
+          <p><strong>Ejemplo de bucle 3 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in <span class="conborde">[]</span>:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. Como la lista está vacía, la variable de control no toma ningún valor y el cuerpo del bucle no se ejecuta</p>
+
+          <p class="control">
+            <a href="#Paso031"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso033"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso033">
+          <p><strong>Ejemplo de bucle 3 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in []:
+    print("Hola ", end="")
+<span class="conborde">print()</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde"> </span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime un salto de línea, para que el siguiente <span class="idle-func">print</span>() imprima en la línea siguiente.</p>
+
+          <p class="control">
+            <a href="#Paso032"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso034"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso034">
+          <p><strong>Ejemplo de bucle 3 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in []:
+    print("Hola ", end="")
+print()
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso033"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+      <hr class="corta" />
+
+      <p>En los ejemplos anteriores, la variable de control "i" no se utilizaba en el bloque de instrucciones, pero en muchos casos sí que se utiliza. Cuando se utiliza, hay que tener en cuenta que la variable de control va tomando los valores del elemento recorrible. Por ejemplo:</p>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso040">
+          <p><strong>Ejemplo de bucle 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [3, 4, 5]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale 3 y su cuadrado 9
+Hola. Ahora i vale 4 y su cuadrado 16
+Hola. Ahora i vale 5 y su cuadrado 25
+Final</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso041"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso041">
+          <p><strong>Ejemplo de bucle 4 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for i in [3, 4, 5]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso040"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso042"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso042">
+          <p><strong>Ejemplo de bucle 4 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [<span class="conborde">3</span>, 4, 5]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso041"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso043"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso043">
+          <p><strong>Ejemplo de bucle 4 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [3, 4, 5]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp conborde">Hola. Ahora i vale 3 y su cuadrado 9</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ...".</p>
+
+          <p class="control">
+            <a href="#Paso042"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso044"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso044">
+          <p><strong>Ejemplo de bucle 4 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [3, <span class="conborde">4</span>, 5]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo</span>
+<span class="idle-resp ">Hola. Ahora i vale 3 y su cuadrado 9</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el segundo valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso043"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso045"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso045">
+          <p><strong>Ejemplo de bucle 4 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [3, 4, 5]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale 3 y su cuadrado 9
+<span class="conborde">Hola. Ahora i vale 4 y su cuadrado 16</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ...".</p>
+
+          <p class="control">
+            <a href="#Paso044"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso046"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso046">
+          <p><strong>Ejemplo de bucle 4 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [3, 4, <span class="conborde">5</span>]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale 3 y su cuadrado 9
+Hola. Ahora i vale 4 y su cuadrado 16</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el tercer y último valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
+
+          <p class="control">
+            <a href="#Paso045"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso047"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso047">
+          <p><strong>Ejemplo de bucle 4 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [3, 4, 5]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale 3 y su cuadrado 9
+Hola. Ahora i vale 4 y su cuadrado 16
+<span class="conborde">Hola. Ahora i vale 5 y su cuadrado 25</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ...".</p>
+
+          <p class="control">
+            <a href="#Paso046"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso048"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso048">
+          <p><strong>Ejemplo de bucle 4 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in [3, 4, 5]:
+    print(f"Hola. Ahora i vale {i} y su cuadrado {i ** 2}")
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale 3 y su cuadrado 9
+Hola. Ahora i vale 4 y su cuadrado 16
+Hola. Ahora i vale 5 y su cuadrado 25
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso047"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>La lista puede contener cualquier tipo de elementos, no sólo números. El bucle se repetirá siempre tantas veces como elementos tenga la lista y la variable irá tomando los valores de uno en uno. Por ejemplo:</p>
+
+      <div class="diapo" style="height: 16em">
+        <div id="Paso050">
+          <p><strong>Ejemplo de bucle 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in ["Alba", "Benito", 27]:
+    print(f"Hola. Ahora i vale {i}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba
+Hola. Ahora i vale Benito
+Hola. Ahora i vale 27
+Final</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso051"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso051">
+          <p><strong>Ejemplo de bucle 5 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for i in ["Alba", "Benito", 27]:
+    print(f"Hola. Ahora i vale {i}")
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">Comienzo</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso050"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso052"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso052">
+          <p><strong>Ejemplo de bucle 5 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in [<span class="conborde">"Alba"</span>, "Benito", 27]:
+    print(f"Hola. Ahora i vale {i}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor "Alba".</p>
+
+          <p class="control">
+            <a href="#Paso051"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso053"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso053">
+          <p><strong>Ejemplo de bucle 5 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in ["Alba", "Benito", 27]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">Hola. Ahora i vale Alba</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ... Alba".</p>
+
+          <p class="control">
+            <a href="#Paso052"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso054"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso054">
+          <p><strong>Ejemplo de bucle 5 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in ["Alba", <span class="conborde">"Benito"</span>, 27]:
+    print(f"Hola. Ahora i vale {i}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el segundo valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor "Benito".</p>
+
+          <p class="control">
+            <a href="#Paso053"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso055"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso055">
+          <p><strong>Ejemplo de bucle 5 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in ["Alba", "Benito", 27]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba
+<span class="conborde">Hola. Ahora i vale Benito</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ... Benito".</p>
+
+          <p class="control">
+            <a href="#Paso054"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso056"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso056">
+          <p><strong>Ejemplo de bucle 5 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">i</span> in ["Alba", "Benito", <span class="conborde">27</span>]:
+    print(f"Hola. Ahora i vale {i}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba
+Hola. Ahora i vale Benito</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el tercer y último valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>i</var> y toma el valor 27.</p>
+
+          <p class="control">
+            <a href="#Paso055"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso057"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso057">
+          <p><strong>Ejemplo de bucle 5 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in ["Alba", "Benito", 27]:
+    <span class="conborde">print(f"Hola. Ahora i vale {i}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba
+Hola. Ahora i vale Benito
+<span class="conborde">Hola. Ahora i vale 27</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Hola ... 27".</p>
+
+          <p class="control">
+            <a href="#Paso056"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso058"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso058">
+          <p><strong>Ejemplo de bucle 5 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for i in ["Alba", "Benito", 27]:
+    print(f"Hola. Ahora i vale {i}")
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+Hola. Ahora i vale Alba
+Hola. Ahora i vale Benito
+Hola. Ahora i vale 27
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso057"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+      <hr class="corta" />
+
+      <p>La costumbre más extendida es utilizar la letra <var>i</var> como nombre de la variable de control, pero se puede utilizar cualquier otro nombre válido. Por ejemplo:</p>
+
+      <div class="diapo" style="height: 18em">
+        <div id="Paso060">
+          <p><strong>Ejemplo de bucle 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+3 * 3 = 9
+Final</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso061"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso061">
+          <p><strong>Ejemplo de bucle 6 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+for numero in  [0, 1, 2, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">Comienzo</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso060"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso062"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso062">
+          <p><strong>Ejemplo de bucle 6 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">numero</span> in [<span class="conborde">0</span>, 1, 2, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">Comienzo</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>numero</var> y toma el valor 0.</p>
+
+          <p class="control">
+            <a href="#Paso061"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso063"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso063">
+          <p><strong>Ejemplo de bucle 6 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    <span class="conborde">print(f"{numero} * {numero} = {numero ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">0 * 0 = 0</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "0 * 0 = 0".</p>
+
+          <p class="control">
+            <a href="#Paso062"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso064"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso064">
+          <p><strong>Ejemplo de bucle 6 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">numero</span> in [0, <span class="conborde">1</span>, 2, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el segundo valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>numero</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso063"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso065"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso065">
+          <p><strong>Ejemplo de bucle 6 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    <span class="conborde">print(f"{numero} * {numero} = {numero ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+<span class="conborde">1 * 1 = 1</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "1 * 1 = 1".</p>
+
+          <p class="control">
+            <a href="#Paso064"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso066"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso066">
+          <p><strong>Ejemplo de bucle 6 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">numero</span> in  [0, 1, <span class="conborde">2</span>, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el tercer valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>numero</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso065"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso067"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso067">
+          <p><strong>Ejemplo de bucle 6 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    <span class="conborde">print(f"{numero} * {numero} = {numero ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1
+<span class="conborde">2 * 2 = 4</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por tercera vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "2 * 2 = 4".</p>
+
+          <p class="control">
+            <a href="#Paso066"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso068"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso068">
+          <p><strong>Ejemplo de bucle 6 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for <span class="conborde">numero</span> in  [0, 1, 2, <span class="conborde">3</span>]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación la variable de control toma el cuarto y último valor de la lista.</p>
+
+          <p>En este caso, la variable de control es <var>numero</var> y toma el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso067"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso069"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso069">
+          <p><strong>Ejemplo de bucle 6 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    <span class="conborde">print(f"{numero} * {numero} = {numero ** 2}")</span>
+print("Final")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+<span class="conborde">3 * 3 = 9</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan por cuarta y última vez las instrucciones del bloque.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "3 * 3 = 9".</p>
+
+          <p class="control">
+            <a href="#Paso068"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso0610"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso0610">
+          <p><strong>Ejemplo de bucle 6 - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">print("Comienzo")
+for numero in  [0, 1, 2, 3]:
+    print(f"{numero} * {numero} = {numero ** 2}")
+<span class="conborde">print("Final")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Comienzo
+0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+3 * 3 = 9
+<span class="conborde">Final</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso069"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+      <hr class="corta" />
+
+      <p>La variable de control puede ser una variable empleada antes del bucle. El valor que tuviera la variable no afecta a la ejecución del bucle, pero cuando termina el bucle, la variable de control conserva el último valor asignado:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">i = 10
+print(f"El bucle no ha comenzado. Ahora i vale {i}")
+
+for i in [0, 1, 2, 3, 4]:
+    print(f"{i} * {i} = {i ** 2}")
+
+print(f"El bucle ha terminado. Ahora i vale {i}")</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">El bucle no ha comenzado. Ahora i vale 10
+0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+3 * 3 = 9
+4 * 4 = 16
+El bucle ha terminado. Ahora i vale 4</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="corta" />
+
+      <p>Cuando se escriben dos o más bucles seguidos, la costumbre es utilizar el mismo nombre de variable puesto que cada bucle establece los valores de la variable sin importar los valores anteriores:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">for i in [0, 1, 2]:
+    print(f"{i} * {i} = {i ** 2}")
+
+print()
+
+for i in [0, 1, 2, 3]:
+    print(f"{i} * {i} * {i} = {i ** 3}")
+</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">0 * 0 = 0
+1 * 1 = 1
+2 * 2 = 4
+
+0 * 0 * 0 = 0
+1 * 1 * 1 = 1
+2 * 2 * 2 = 8
+3 * 3 * 3 = 27</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="corta" />
+
+      <p>En vez de una lista se puede escribir una cadena, en cuyo caso la variable de control va tomando como valor cada uno de los caracteres:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">for i in "AMIGO":
+    print(f"Dame una {i}")
+print("¡AMIGO!")</code>
+</pre>
+            </td>
+            <td>
+              <pre>
+<span class="idle-resp">Dame una A
+Dame una M
+Dame una I
+Dame una G
+Dame una O
+¡AMIGO!</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>En los ejemplos anteriores se ha utilizado una lista para facilitar la comprensión del funcionamiento de los bucles pero, si es posible hacerlo, se recomienda utilizar tipos <span class="idle-func">range</span>(), entre otros motivos porque durante la ejecución del programa ocupan menos memoria en el ordenador.</p>
+
+      <p>El siguiente programa es equivalente al programa del ejemplo anterior:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+                <pre>
+<code class="language-python">print("Comienzo")
+for i in <span class="conborde">range(3)</span>:
+    print("Hola ", end="")
+print()
+print("Final")</code>
+</pre>
+            </td>
+            <td>
+                <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">Hola Hola Hola</span>
+Final</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Otra de las ventajas de utilizar tipos <span class="idle-func">range</span>() es que el argumento del tipo <span class="idle-func">range</span>() controla el número de veces que se ejecuta el bucle.</p>
+
+      <p>En el ejemplo anterior basta cambiar el argumento para que el programa salude muchas más veces.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+                <pre>
+<code class="language-python">print("Comienzo")
+for i in <span class="conborde">range(10)</span>:
+    print("Hola ", end="")
+print()
+print("Final")
+</code>
+</pre>
+            </td>
+            <td>
+                <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">Hola Hola Hola Hola Hola Hola Hola Hola Hola Hola</span>
+Final</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Esto permite que el número de iteraciones dependa del desarrollo del programa. En el ejemplo siguiente es el usuario quien decide cuántas veces se ejecuta el bucle:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+                <pre>
+<code class="language-python">veces = int(input("¿Cuántas veces quiere que le salude? "))
+for i in <span class="conborde">range(veces)</span>:
+    print("Hola ", end="")
+print()
+print("Adios")</code>
+</pre>
+            </td>
+            <td>
+                <pre>
+<span class="idle-resp">¿Cuántas veces quiere que le salude?</span> 6
+<span class="idle-resp"><span class="conborde">Hola Hola Hola Hola Hola Hola</span>
+Adios</span>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="contadores-acumuladores">
+      <h2>Contadores y acumuladores</h2>
+
+      <p>En muchos programas se necesitan variables que cuenten cuántas veces ha ocurrido algo (contadores) o que acumulen valores (acumuladores). Las situaciones pueden ser muy diversas, por lo que simplemente hay aquí un par de ejemplos para mostrar la idea.</p>
+
+      <section id="contador">
+        <h3>Contador</h3>
+
+        <p>Se entiende por contador una variable que lleva la cuenta del número de veces que se ha cumplido una condición. El ejemplo siguiente es un ejemplo de programa con contador (en este caso, la variable que hace de contador es la variable <var>cuenta</var>):</p>
+
+        <div class="diapo" style="height: 18em">
+          <div id="Paso310">
+            <p><strong>Ejemplo de contador</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<span class="idle-resp">Comienzo
+Desde 1 hasta 5 hay 2 múltiplos de 2</span>
+</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+            <p class="control">
+              <a href="#Paso311"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso311">
+            <p><strong>Ejemplo de contador - Paso 1</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Se ejecuta la primera instrucción del programa.</p>
+
+            <p>En este caso, imprime el párrafo de comienzo.</p>
+
+            <p class="control">
+              <a href="#Paso310"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso312"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso312">
+            <p><strong>Ejemplo de contador - Paso 2</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+<span class="conborde">cuenta = 0</span>
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta la siguiente instrucción</p>
+
+            <p>La variable <var>cuenta</var>, que hace el papel de acumulador, toma el valor inicial 0.</p>
+
+            <p class="control">
+              <a href="#Paso311"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso313"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso313">
+            <p><strong>Ejemplo de contador - Paso 3</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="conborde">i</span> in <span class="conborde">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+            <p class="control">
+              <a href="#Paso312"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso314"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso314">
+            <p><strong>Ejemplo de contador - Paso 4</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="conborde">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (1 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+            <p class="control">
+              <a href="#Paso313"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso315"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+
+          <div id="Paso315">
+            <p><strong>Ejemplo de contador - Paso 5</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="conborde">i</span> in <span class="conborde">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+            <p class="control">
+              <a href="#Paso314"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso316"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso316">
+            <p><strong>Ejemplo de contador - Paso 6</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="conborde">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (2 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+            <p class="control">
+              <a href="#Paso315"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso317"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso317">
+            <p><strong>Ejemplo de contador - Paso 7</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        <span class="conborde">cuenta = cuenta + 1</span>
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+            <p>En este caso a la variable <var>cuenta</var> (que valía 0) se le añade 1, por lo que ahora <var>cuenta</var> vale 1.</p>
+
+            <p class="control">
+              <a href="#Paso316"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso318"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso318">
+            <p><strong>Ejemplo de contador - Paso 8</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="conborde">i</span> in <span class="conborde">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el tercer valor tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+
+            <p class="control">
+              <a href="#Paso317"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso319"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso319">
+            <p><strong>Ejemplo de contador - Paso 9</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="conborde">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (3 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+            <p class="control">
+              <a href="#Paso318"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3110"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3110">
+            <p><strong>Ejemplo de contador - Paso 10</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="conborde">i</span> in <span class="conborde">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el cuarto valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+
+            <p class="control">
+              <a href="#Paso319"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3111"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3111">
+            <p><strong>Ejemplo de contador - Paso 11</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="conborde">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (4 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+            <p class="control">
+              <a href="#Paso3110"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3112"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3112">
+            <p><strong>Ejemplo de contador - Paso 12</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        <span class="conborde">cuenta = cuenta + 1</span>
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+            <p>En este caso a la variable <var>cuenta</var> (que valía 1) se le añade 1, por lo que ahora <var>cuenta</var> vale 2.</p>
+
+            <p class="control">
+              <a href="#Paso3111"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3113"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3113">
+            <p><strong>Ejemplo de contador - Paso 13</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="conborde">i</span> in <span class="conborde">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>La variable de control toma el quinto y último valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
+
+            <p class="control">
+              <a href="#Paso3112"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3114"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3114">
+            <p><strong>Ejemplo de contador - Paso 14</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="conborde">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (5 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+            <p class="control">
+              <a href="#Paso3113"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3115"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3115">
+            <p><strong>Ejemplo de contador - Paso final</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+<span class="conborde">print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</span></code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">Desde 1 hasta 5 hay 2 múltiplos de 2</span></span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+            <p>En este caso, imprime el párrafo final. En total, la variable contador ha aumentado hasta 2 (los dos múltiplos de 2 que hay entre 1 y 5).</p>
+
+            <p class="control">
+              <a href="#Paso3114"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />            </p>
+          </div>
+        </div>
+
+        <p>Detalles importantes:</p>
+        <ul>
+          <li>En cada iteración, el programa comprueba si <var>i</var> es múltiplo de 2.</li>
+          <li>El contador se modifica sólo si la variable de control <var>i</var> es múltiplo de 2.</li>
+          <li>El contador va aumentando de uno en uno.</li>
+          <li>Antes del bucle se debe dar un valor inicial al contador (en este caso, 0)</li>
+        </ul>
+
+      </section>
+
+      <section id="acumulador">
+        <h3>Acumulador</h3>
+
+        <p>Se entiende por acumulador una variable que acumula el resultado de una operación. El ejemplo siguiente es un ejemplo de programa con acumulador (en este caso, la variable que hace de acumulador es la variable <var>suma</var>):</p>
+
+        <div class="diapo" style="height: 16em">
+          <div id="Paso320">
+            <p><strong>Ejemplo de acumulador</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<span class="idle-resp">Comienzo
+La suma de los números de 1 a 4 es 10</span>
+</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+            <p class="control">
+              <a href="#Paso321"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso321">
+            <p><strong>Ejemplo de acumulador - Paso 1</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python"><span class="conborde">print("Comienzo")</span>
+suma = 0
+for i in [1, 2, 3, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td><pre><span class="idle-resp conborde">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Se ejecuta la primera instrucción del programa.</p>
+
+            <p>En este caso, imprime el párrafo de comienzo.</p>
+
+            <p class="control">
+              <a href="#Paso320"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso322"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso322">
+            <p><strong>Ejemplo de acumulador - Paso 2</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+<span class="conborde">suma = 0</span>
+for i in [1, 2, 3, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta la siguiente instrucción</p>
+
+            <p>La variable <var>suma</var>, que hace el papel de acumulador, toma el valor inicial 0.</p>
+
+            <p class="control">
+              <a href="#Paso321"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso323"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso323">
+            <p><strong>Ejemplo de acumulador - Paso 3</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for <span class="conborde">i</span> in [<span class="conborde">1</span>, 2, 3, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el primer valor de la lista.En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+            <p class="control">
+              <a href="#Paso322"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso324"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso324">
+            <p><strong>Ejemplo de acumulador - Paso 4</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    <span class="conborde">suma = suma + i</span>
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso a la variable <var>suma</var> (que valía 0) se le añade <var>i</var> (que vale 1), por lo que ahora <var>suma</var> vale 1.</p>
+
+            <p class="control">
+              <a href="#Paso323"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso325"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso325">
+            <p><strong>Ejemplo de acumulador - Paso 5</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for <span class="conborde">i</span> in [1, <span class="conborde">2</span>, 3, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el segundo valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+            <p class="control">
+              <a href="#Paso324"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso326"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso326">
+            <p><strong>Ejemplo de acumulador - Paso 6</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    <span class="conborde">suma = suma + i</span>
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso a la variable <var>suma</var> (que valía 1) se le añade <var>i</var> (que vale 2), por lo que ahora <var>suma</var> vale 3.</p>
+
+            <p class="control">
+              <a href="#Paso325"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso327"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso327">
+            <p><strong>Ejemplo de acumulador - Paso 7</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for <span class="conborde">i</span> in [1, 2, <span class="conborde">3</span>, 4]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el tercer valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+
+            <p class="control">
+              <a href="#Paso326"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso328"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso328">
+            <p><strong>Ejemplo de acumulador - Paso 8</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    <span class="conborde">suma = suma + i</span>
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+            <p>En este caso a la variable <var>suma</var> (que valía 3) se le añade <var>i</var> (que vale 3), por lo que ahora <var>suma</var> vale 6.</p>
+
+            <p class="control">
+              <a href="#Paso327"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso329"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso329">
+            <p><strong>Ejemplo de acumulador - Paso 9</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for <span class="conborde">i</span> in [1, 2, 3, <span class="conborde">4</span>]:
+    suma = suma + i
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecuta el bucle.</p>
+
+            <p>La variable de control toma el cuarto y último valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+
+            <p class="control">
+              <a href="#Paso328"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3210"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3210">
+            <p><strong>Ejemplo de acumulador - Paso 10</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    <span class="conborde">suma = suma + i</span>
+print(f"La suma de los números de 1 a 4 es {suma}")</code>
+</pre>
+                  </td>
+                  <td>
+                    <pre><span class="idle-resp">Comienzo</span></pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>A continuación se ejecutan por última vez las instrucciones del bloque.</p>
+
+            <p>En este caso a la variable <var>suma</var> (que valía 6) se le añade <var>i</var> (que vale 4), por lo que ahora <var>suma</var> vale 10.</p>
+
+            <p class="control">
+              <a href="#Paso329"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <a href="#Paso3211"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+            </p>
+          </div>
+
+          <div id="Paso3211">
+            <p><strong>Ejemplo de acumulador - Paso 11</strong></p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <pre>
+<code class="language-python">print("Comienzo")
+suma = 0
+for i in [1, 2, 3, 4]:
+    suma = suma + i
+<span class="conborde">print(f"La suma de los números de 1 a 4 es {suma}")</span></code>
+</pre>
+                  </td>
+                  <td>
+                    <pre>
+<span class="idle-resp">Comienzo
+<span class="conborde">La suma de los números de 1 a 4 es 10</span></span>
+</pre>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+            <p>En este caso, imprime el párrafo final. En total, en la variable <var>suma</var> se han sumado los valores 1, 2, 3 y 4.</p>
+
+            <p class="control">
+              <a href="#Paso3210"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+              <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />            </p>
+          </div>
+        </div>
+
+        <p>Detalles importantes:</p>
+        <ul>
+          <li>El acumulador se modifica en cada iteración del bucle (en este caso, el valor de <var>i</var> se añade al acumulador <var>suma</var>).</li>
+          <li>Antes del bucle se debe dar un valor inicial al acumulador (en este caso, 0)</li>
+        </ul>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

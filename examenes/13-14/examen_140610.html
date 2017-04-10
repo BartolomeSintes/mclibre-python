@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen 10/06/14. Exámenes. Python. Bartolomé Sintes Marco</title>
+    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Examen 10 de junio de 2014</h1>
+
+    <nav>
+      <p>
+        <a href="../../index.html"><img src="../../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../examenes.html"><img src="../../varios/iconos/icono_school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+      </p>
+
+      <h2>Examen 10/06/14</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">Bucles y <span class="idle-func">range</span></a>
+          <li><a href="#ejercicio-2">Bucles y listas</a>
+          <li><a href="#ejercicio-3">Bucles y listas</a>
+          <li><a href="#ejercicio-4">Dibujos bucles</a>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="ejercicio-1">
+      <h2>Ejercicio 1</h2>
+
+      <p>Escriba un programa que escriba unas ondas de números, es decir, una lista de enteros consecutivos que empiecen en un valor, lleguen a otro, continuen hasta un tercero y terminen en el primero (y repita este proceso un número determinado de veces)</p>
+
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>El número de repeticiones debe ser al menos uno.</li>
+      </ul>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ONDAS DE NÚMEROS
+Escriba el valor inicial:</span> 5
+<span class="idle-resp">Escriba el primer valor central:</span> 8
+<span class="idle-resp">Escriba el segundo valor central:</span> 3
+<span class="idle-resp">Escriba el número de repeticiones:</span> 2
+<span class="idle-resp">[5, 6, 7, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 4, 5]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ONDAS DE NÚMEROS
+Escriba el valor inicial:</span> 6
+<span class="idle-resp">Escriba el primer valor central:</span> 9
+<span class="idle-resp">Escriba el segundo valor central:</span> 7
+<span class="idle-resp">Escriba el número de repeticiones:</span> 1
+<span class="idle-resp">[6, 7, 8, 9, 8, 7, 6]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ONDAS DE NÚMEROS
+Escriba el valor inicial:</span> 2
+<span class="idle-resp">Escriba el primer valor central:</span> 0
+<span class="idle-resp">Escriba el segundo valor central:</span> -1
+<span class="idle-resp">Escriba el número de repeticiones:</span> 3
+<span class="idle-resp">[2, 1, 0, -1, 0, 1, 2, 1, 0, -1, 0, 1, 2, 1, 0, -1, 0, 1, 2]</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">ONDAS DE NÚMEROS
+Escriba el valor inicial:</span> 2
+<span class="idle-resp">Escriba el primer valor central:</span> 3
+<span class="idle-resp">Escriba el segundo valor central:</span> 3
+<span class="idle-resp">Escriba el número de repeticiones:</span> 3
+<span class="idle-resp">[2, 3, 2, 3, 2, 3, 2]</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Ejercicio 2</h2>
+
+      <p>Escriba un programa que pida palabras hasta que se escriba "<strong>!!!</strong>" (sin comillas) y muestre dos listas, una con todas las palabras distintas que se han escrito (sin repeticiones) y otra con todas las palabras repetidas que se han escrito (sin repeticiones):</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">DESCARTA REPETICIONES</span>
+
+<span class="idle-resp">Escriba una palabra (!!! para terminar):</span> aaa
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> bbb
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> aaa
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> ccc
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> aaa
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> bbb
+<span class="idle-resp">Escriba otra palabra (!!! para terminar):</span> !!!
+
+<span class="idle-resp">La lista de palabras distintas es: ['aaa', 'bbb', 'ccc']
+La lista de palabras repetidas es: ['aaa', 'bbb']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Ejercicio 3</h2>
+
+      <p>Escriba un programa que pida primero una lista de números <strong>decimales</strong> (para indicar que no se quieren introducir más números, bastará con pulsar Intro) y luego un número. El programa tiene que decir que número de la lista está más alejado del número final.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">EL NÚMERO MÁS LEJANO</span>
+
+<span class="idle-resp">Empezamos creando la lista ...</span>
+<span class="idle-resp">Escriba un número:</span> 4
+<span class="idle-resp">Escriba otro número:</span> 10
+<span class="idle-resp">Escriba otro número:</span> 12
+<span class="idle-resp">Escriba otro número:</span> 6.5
+<span class="idle-resp">Escriba otro número:</span>
+<span class="idle-resp">La lista de números es: [4.0, 10.0, 12.0, 6.5]
+Escriba un número:</span> 7
+
+<span class="idle-resp">El número de la lista más alejado de 7.0 es 12.0</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Ejercicio 4</h2>
+
+      <ol>
+        <li>Escriba un programa que pida el grosor de las barras y la separación entre barras y dibuje una rejilla con caracteres producto (*).
+          <p>Comprobaciones a realizar:</p>
+          <ul>
+            <li>Ambos valores deben ser positivos.</li>
+          </ul>
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">REJA</span>
+<span class="idle-resp">Grosor de los barrotes:</span> 3
+<span class="idle-resp">Separación entre barrotes:</span> 2
+<span class="idle-resp">    * * *     * * *
+    * * *     * * *
+* * * * * * * * * * * *
+* * * * * * * * * * * *
+* * * * * * * * * * * *
+    * * *     * * *
+    * * *     * * *
+* * * * * * * * * * * *
+* * * * * * * * * * * *
+* * * * * * * * * * * *
+    * * *     * * *
+    * * *     * * *</span>
+</pre>
+          </div>
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">REJA</span>
+<span class="idle-resp">Grosor de los barrotes:</span> 2
+<span class="idle-resp">Separación entre barrotes:</span> 4
+<span class="idle-resp">        * *         * *
+        * *         * *
+        * *         * *
+        * *         * *
+* * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * *
+        * *         * *
+        * *         * *
+        * *         * *
+        * *         * *
+* * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * *
+        * *         * *
+        * *         * *
+        * *         * *
+        * *         * *</span>
+</pre>
+          </div>
+        </li>
+        <li>Modifique el programa anterior de manera que también pida el número de
+          barrotes a dibujar:
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">REJA</span>
+<span class="idle-resp">Grosor de los barrotes:</span> 2
+<span class="idle-resp">Separación entre barrotes:</span> 3
+<span class="idle-resp">Número de barrotes:</span> 3
+<span class="idle-resp">      * *       * *       * *
+      * *       * *       * *
+      * *       * *       * *
+* * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * *
+      * *       * *       * *
+      * *       * *       * *
+      * *       * *       * *
+* * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * *
+      * *       * *       * *
+      * *       * *       * *
+      * *       * *       * *
+* * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * *
+      * *       * *       * *
+      * *       * *       * *
+      * *       * *       * *  </span>
+</pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de junio de 2014</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

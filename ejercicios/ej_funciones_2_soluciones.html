@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (2). Funciones. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Funciones - Soluciones (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Funciones (2)</h2>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_funciones_2.html">ejercicios (2) de funciones</a>.</p>
+
+    <p><strong>Nota</strong>: En algunas soluciones los nombres de los parámetros se han elegido a propósito distintos de los nombres de las variables en el programa principal, pero en otros se han elegido los mismos nombres. Esa elección no afecta al resultado de los programas, por lo que se podría haber hecho al revés en cada caso.</p>
+
+    <section id="ejercicio-1-1">
+      <h2><a href="ej_funciones_2.html#ejercicio-1-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 1-1</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def rectangulo(ancho, alto):
+    for i in range(alto):
+        for j in range(ancho):
+            print("* ", end="")
+        print()
+
+anchura = int(input("Anchura del rectángulo: "))
+altura = int(input("Altura del rectángulo: "))
+rectangulo(anchura, altura)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-1-2">
+      <h2><a href="ej_funciones_2.html#ejercicio-1-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 1-2</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def rectangulo(ancho, alto, letra):
+    for i in range(alto):
+        for j in range(ancho):
+            print(letra, end=" ")
+        print()
+
+anchura = int(input("Anchura del rectángulo: "))
+altura = int(input("Altura del rectángulo: "))
+caracter = input("Carácter a utilizar: ")
+rectangulo(anchura, altura, caracter)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-1">
+      <h2><a href="ej_funciones_2.html#ejercicio-2-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 2-1</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def creciente(ancho):
+    for i in range(1, ancho + 1):
+        for j in range(i):
+            print("* ", end="")
+        print()
+
+def decreciente(ancho):
+    for i in range(1, ancho):
+        for j in range(ancho - i):
+            print("* ", end="")
+        print()
+
+anchura = int(input("Anchura del triángulo: "))
+creciente(anchura)
+decreciente(anchura)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-2">
+      <h2><a href="ej_funciones_2.html#ejercicio-2-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 2-2</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def creciente(ancho):
+    for i in range(1, ancho + 1):
+        for j in range(i):
+            print("* ", end="")
+        print()
+
+def decreciente(ancho):
+    for i in range(1, ancho):
+        for j in range(ancho - i):
+            print("* ", end="")
+        print()
+
+anchura = int(input("Anchura del triángulo: "))
+for i in range(anchura, 0, -1):
+    creciente(i)
+    decreciente(i)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3-1">
+      <h2><a href="ej_funciones_2.html#ejercicio-3-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 3-1</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def es_bisiesto(t):
+    return t % 400 == 0 or (t % 100 != 0 and t % 4 == 0)
+
+print("Comprobador de años bisiestos")
+fecha = int(input("Escriba un año y le diré si es bisiesto: "))
+if es_bisiesto(fecha):
+    print("El año", fecha, "es un año bisiesto.")
+else:
+    print("El año", fecha, "no es un año bisiesto.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3-2">
+      <h2><a href="ej_funciones_2.html#ejercicio-3-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 3-2</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def es_bisiesto(t):
+    return t % 400 == 0 or (t % 100 != 0 and t % 4 == 0)
+
+print("Contador de años bisiestos")
+inicio = int(input("Escriba un año: "))
+print("Escriba otro año posterior a", str(inicio) + ": ", end="")
+final = int(input())
+while final &lt; inicio:
+    print(final, "no es mayor que", str(inicio) + ". Inténtelo de nuevo: ",
+          end="")
+    final = int(input())
+
+contador = 0
+for i in range(inicio, final + 1):
+    if es_bisiesto(i):
+        contador += 1
+
+print("De", inicio, "a", final, "hay", final - inicio + 1, "años,",
+      contador, "de ellos bisiestos.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4-1">
+      <h2><a href="ej_funciones_2.html#ejercicio-4-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 4-1</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def crea_lista():
+    numero = int(input("Dígame cuántas palabras tiene la lista: "))
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    return lista
+
+lista = crea_lista()
+print("La lista creada es:", lista())</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4-2">
+      <h2><a href="ej_funciones_2.html#ejercicio-4-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 4-2</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def crea_lista(contador):
+    print("Dígame cuántas palabras tiene la lista", str(contador) + ": ", end="")
+    numero = int(input())
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    return lista
+
+print("Generador de listas")
+numero = int(input("¿Cuántas listas quiere escribir? "))
+for i in range(1, numero + 1):
+    print("La lista", i, "es:", crea_lista(i))</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4-3">
+      <h2><a href="ej_funciones_2.html#ejercicio-4-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 4-3</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def crea_lista(contador):
+    print("Dígame cuántas palabras tiene la lista", str(contador) + ": ", end="")
+    numero = int(input())
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    return lista
+
+print("Generador de listas")
+numero = int(input("¿Cuántas listas quiere escribir? "))
+
+listas = []
+for i in range(1, numero + 1):
+    listas += [crea_lista(i)]
+
+for i in range(numero):
+    print("La lista", i + 1, "es:", listas[i])</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5-1">
+      <h2><a href="ej_funciones_2.html#ejercicio-5-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 5-1</h2>
+
+       <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+    </section>
+
+    <section id="ejercicio-5-2">
+      <h2><a href="ej_funciones_2.html#ejercicio-5-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 5-2</h2>
+
+       <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+    </section>
+
+    <section id="ejercicio-5-3">
+      <h2><a href="ej_funciones_2.html#ejercicio-5-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (2) - 5-3</h2>
+
+       <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 1 de junio de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demostraciones de fórmulas matemáticas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
+  </head>
+
+  <body>
+    <h1>Demostraciones de fórmulas matemáticas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Demostraciones de fórmulas matemáticas</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ecuacion-primer-grado">Ecuación de primer grado</a>
+          <li><a href="#ecuacion-segundo-grado">Ecuación de segundo grado</a>
+          <li><a href="#sucesiones-aritmeticas">Sucesiones aritméticas</a></li>
+          <li><a href="#distancia-puntos">Distancia entre dos puntos</a></li>
+          <li><a href="#ecuacion-circunferencia">Ecuación circunferencia</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se incluyen las demostraciones de algunas de las fórmulas matemáticas elementales de la lección <a href="formulas.html">Fórmulas matemáticas</a>.</p>
+
+    <section  id="ecuacion-primer-grado">
+      <h2>Demostración de la resolución de la ecuación de primer grado</h2>
+
+      <p>En la ecuación de primer grado:</p>
+
+      <p>`a x + b = 0`</p>
+
+      <ul>
+        <li>Si `a = 0` y `b = 0`, la ecuación tiene infinitas soluciones, puesto que cualquier número `x` cumple la ecuación: `0x + 0 = 0`
+        </li>
+        <li>Si `a = 0` y `b != 0`, la ecuación no tiene soluciones, puesto que ningún número `x` cumple la ecuación: `0x + b = 0`
+        </li>
+        <li>Si `a != 0`, despejando `x` en la ecuación encontramos la fómula: `x_1 = (-b) / a`
+        </li>
+      </ul>
+    </section>
+
+    <section  id="ecuacion-segundo-grado">
+      <h2>Demostración de la resolución de la ecuación de segundo grado</h2>
+
+      <p>A partir de la ecuación de segundo grado: `a x^2 + b x + c = 0`</p>
+
+      <p>Dividiendo entre `a` obtenemos la expresión (1): `x^2 + b / a x + c /a = 0`</p>
+
+      <p>Teniendo en cuenta que: `(x + b / (2a))^2 = x^2 + b / a x + b^2 /(4a)`</p>
+
+      <p>Pasando el último término al lado izquierdo obtenemos la expresión (2): `x^2 + b / a x = (x + b / (2a))^2 - b^2 /(4a^2)`</p>
+
+      <p>Sustituyendo la expresión (2) en la expresión (1): `(x + b / (2a))^2 - b^2 /(4a^2) + c /a = 0`</p>
+
+      <p>Por tanto: `(x + b / (2a))^2 = b^2 /(4a^2) - c /a`</p>
+
+      <p>Es decir: `(x + b / (2a))^2 = b^2 /(4a^2) - (4ac) /(4a^2)`</p>
+
+      <p>Es decir: `(x + b / (2a))^2 = (b^2 - 4ac) /(4a^2)`</p>
+
+      <p>La solución depende entonces del signo de `(b^2 - 4ac) /(4 a^2)`, que es el mismo que el signo de `b^2 - 4ac` ya que `4 a^2` es siempre positivo:</p>
+
+      <ul>
+        <li>Si `b^2-4ac &lt; 0`, la ecuación no tiene soluciones, ya que `(x + b / (2a))^2` no puede ser negativa por ser un cuadrado</li>
+        <li>Si `b^2-4ac = 0`, la ecuación quedaría: `(x + b / (2a))^2 = 0`
+          <p>Haciendo raíz cuadrada a ambos lados: `x + b / (2a) = 0`</p>
+          <p>Despejando `x` encontramos la solución: `x_1 = (-b) / (2a)`</p></li>
+        <li>Si `b^2-4ac &gt; 0`, la ecuación quedaría: `(x + b / (2a))^2 = (b^2 - 4ac) /(4a^2)`
+          <p>Haciendo raíz cuadrada a ambos lados: `x + b / (2a) = +-sqrt((b^2 - 4ac) /(4a^2))`</p>
+          <p>Es decir: `x + b / (2a) = +-sqrt(b^2 - 4ac) / sqrt(4a^2)`</p>
+          <p>Es decir: `x + b / (2a) = +-sqrt(b^2 - 4ac) / (2a)`</p>
+          <p>Despejando: `x = -b/(2a) +-sqrt(b^2 - 4ac) / (2a)`</p>
+          <p>Es decir: `x = (-b +-sqrt(b^2 - 4ac)) / (2a)`</p>
+          <p>La ecuación tiene entonces dos soluciones: `x_1 = (-b + sqrt(b^2-4ac)) / (2a)`, `x_2 = (-b - sqrt(b^2-4ac)) / (2a)`</p></li>
+      </ul>
+    </section>
+
+    <section  id="sucesiones-aritmeticas">
+      <h2>Demostración del término general de una sucesión aritmética</h2>
+
+      <p>En una sucesión aritmética la diferencia entre dos términos es constante, es decir, `U_(n+1) - U_n = d`</p>
+
+      <p>Por tanto, `U_1 - U_0 = d`, es decir, `U_1 = U_0 + d`.</p>
+
+      <p>Y por tanto, `U_2 = U_1 + d = (U_0 + d) + d = U_0 + 2 d`</p>
+
+      <p>De la misma manera, `U_3 = U_2 + d = (U_0 + 2 d) + d = U_0 + 3 d`</p>
+
+      <p>De la misma manera, `U_4 = U_3 + d = (U_0 + 3 d) + d = U_0 + 4 d`</p>
+
+      <p>En general, podemos escribir la fórmula buscada:</p>
+
+      <p>`U_n = U_0 + n * d`</p>
+    </section>
+
+    <section id="distancia-puntos">
+      <h2>Demostración de la distancia entre dos puntos</h2>
+
+      <p><img alt="Distancia entre dos puntos" src="../img/matematicas/mates_distancia_puntos_2.svg" width="319" height="224" /></p>
+
+      <p>Como se ve en el dibujo anterior, el triángulo ACB es rectángulo en C. El teorema de Pitágoras para este triángulo nos relaciona la distancia `d` entre los puntos `A(x_1, y_1)` y `B(x_2, y_2)` con sus coordenadas:</p>
+
+      <p>`d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2`</p>
+
+      <p>Haciendo raíces cuadradas en ambos lados de la ecuación, obtenemos la fórmula buscada:</p>
+      <p>`d = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2)`</p>
+    </section>
+
+    <section  id="ecuacion-circunferencia">
+      <h2>Demostración de la ecuación de la circunferencia</h2>
+
+      <p>Una circunferencia es el conjunto de puntos que se encuentra a una distancia fija de un punto (el centro de la circunferencia).</p>
+
+      <p><img alt="Circunferencia" src="../img/matematicas/mates_ecuacion_circunferencia_2.svg" width="362" height="314" /></p>
+
+      <p>Como se ve en el dibujo anterior, el triángulo CBM es rectángulo en B. El teorema de Pitágoras para este triángulo es la ecuación de la circunferencia de centro `C(x_1, y_1)` y radio `R`:</p>
+
+      <p>`(x - x_1)^2 + (y - y_1)^2 = R^2`</p>
+
+      <p>que también se puede escribir expresando `y` en función de `x` como:</p>
+
+      <p>`y = y_1 +- sqrt(R^2 - (x - x_1)^2)`</p>
+
+      <p>... teniendo en cuenta que `x` toma valores entre `x_1 - R` y `x_1 + R`, es decir:</p>
+
+      <p>`x_1 - R &le; x &le; x_1 + R`</p>
+
+      <p><strong>Nota</strong>: El ± de la fórmula anterior significa que para cada valor de <em><strong>x</strong></em> hay dos posibles valores de <em><strong>y</strong></em>, que se calculan sumando o restando la raíz cuadrada.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de nayo de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

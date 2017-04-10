@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bucle while. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Bucle <span class="idle-rese">while</span></h1>
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Elementos</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#bucle-while">El bucle <span class="idle-rese">while</span></a></li>
+          <li><a href="#bucles-infinitos">Bucles infinitos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se tratan los bucles <span class="idle-rese">while</span>.</p>
+
+    <section id="bucle-while">
+      <h2>El bucle <span class="idle-rese">while</span></h2>
+
+      <p>Un bucle <span class="idle-rese">while</span> permite repetir la ejecución de un grupo de instrucciones mientras se cumpla una condición (es decir, mientras la condición tenga el valor <span class="idle-rese">True</span>) .</p>
+
+      <p>La sintaxis del bucle <span class="idle-rese">while</span> es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-rese">while</span> condicion:
+    <span class="idle-rese">cuerpo del bucle</span>
+</pre>
+      </div>
+
+      <p>Cuando llega a un bucle <span class="idle-rese">while</span>, Python evalúa la condición y, si es cierta, ejecuta el cuerpo del bucle. Una vez ejecutado el cuerpo del bucle, se repite el proceso (se evalúa de nuevo la condición y, si es cierta, se ejecuta de nuevo el cuerpo del bucle) una y otra vez mientras la condición sea cierta. Únicamente cuando la condición sea falsa, el cuerpo del bucle no se ejecutará y continuará la ejecución del resto del programa.</p>
+
+      <p>La variable o las variables que aparezcan en la condición se suelen llamar variables de control. Las variables de control deben definirse antes del bucle <span class="idle-rese">while</span> y modificarse en el bucle <span class="idle-rese">while</span>.</p>
+
+      <hr class="corta" />
+
+      <p>Por ejemplo, el siguiente programa escribe los números del 1 al 3:</p>
+
+      <div class="diapo" style="height: 18em">
+        <div id="Paso10">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2
+3
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso11">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><pre><span class="conborde">i = 1</span>
+<code class="language-python">while i &lt;= 3:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, da el valor 1 a la variable i. La variable se utilizará como variable de control en el bucle <span class="idle-rese">while</span> posterior.</p>
+
+          <p class="control">
+            <a href="#Paso10"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso12"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso12">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 3</span>:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. Un bucle está controlado por la condición. Si la condición se cumple, se ejecutan las instrucciones del cuerpo del bucle.</p>
+
+          <p>En este caso la condición es que la variable de control sea inferior a 3. Como i vale 1, la condición se cumple, así que se pasa a ejecutar las instrucciones del bucle, en este caso dos instrucciones.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso13"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso13">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    <span class="conborde">print(i)</span>
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">1</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 1.</p>
+
+          <p class="control">
+            <a href="#Paso12"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso14"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso14">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    print(i)
+    <span class="conborde">i += 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">1</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se añade 1 a la variable de control i.</p>
+
+          <p>En este caso, como la variable de control i valía 1, ahora toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso13"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso15"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso15">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 3</span>:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">1</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 3. Como i vale 2, la condición se cumple, así que se ejecutan de nuevo las instrucciones del cuerpo del bucle.</p>
+
+          <p class="control">
+            <a href="#Paso14"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso16"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso16">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    <span class="conborde">print(i)</span>
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+<span class="conborde">2</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 2.</p>
+
+          <p class="control">
+            <a href="#Paso15"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso17"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso17">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    print(i)
+    <span class="conborde">i += 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se añade 1 a la variable de control i.</p>
+
+          <p>En este caso, como la variable de control i valía 2, ahora toma el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso16"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso18"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso18">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 3</span>:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 3. Como i vale 3, la condición se cumple, así que se ejecutan de nuevo las instrucciones del cuerpo del bucle.</p>
+
+          <p class="control">
+            <a href="#Paso17"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso19"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso19">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    <span class="conborde">print(i)</span>
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2
+<span class="conborde">3</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 3.</p>
+
+          <p class="control">
+            <a href="#Paso18"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso110"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso110">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    print(i)
+    <span class="conborde">i += 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2
+3</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se añade 1 a la variable de control i.</p>
+
+          <p>En este caso, como la variable de control i valía 3, ahora toma el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso19"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso111"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso111">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 3</span>:
+    print(i)
+    i += 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2
+3</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 3. Como i vale 4, la condición ya no se cumple, por lo que el bucle se termina.</p>
+
+          <p class="control">
+            <a href="#Paso110"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso112"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso112">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 1 - Paso 12</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 3:
+    print(i)
+    i += 1
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+2
+3
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa imprime la expresión <samp>Programa terminado</samp>.</p>
+
+          <p class="control">
+            <a href="#Paso111"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>El ejemplo anterior se podría haber programado con un bucle <span class="idle-rese">for</span>. La ventaja de un bucle <span class="idle-rese">while</span> es que la variable de control se puede modificar con mayor flexibilidad, como en el ejemplo siguiente: </p>
+
+      <div class="diapo" style="height: 18em">
+        <div id="Paso20">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13
+40
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso21">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><pre><span class="conborde">i = 1</span>
+<code class="language-python">while i &lt;= 50:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, da el valor 1 a la variable i. La variable se utilizará como variable de control en el bucle <span class="idle-rese">while</span> posterior.</p>
+
+          <p class="control">
+            <a href="#Paso20"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso22"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso22">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 50</span>:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. Un bucle está controlado por la condición. Si la condición se cumple, se ejecutan las instrucciones del cuerpo del bucle.</p>
+
+          <p>En este caso la condición es que la variable de control sea inferior a 50. Como i vale 1, la condición se cumple, así que se pasa a ejecutar las instrucciones del bucle, en este caso dos instrucciones.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso23"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso23">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    <span class="conborde">print(i)</span>
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">1</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 1.</p>
+
+          <p class="control">
+            <a href="#Paso22"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso24"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso24">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    <span class="conborde">i = 3*i + 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">1</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se modifica la variable de control i, multiplicando su valor por 3 y sumando 1.</p>
+
+          <p>En este caso, como la variable de control i valía 1, ahora toma el valor 4 (3*1 + 1).</p>
+
+          <p class="control">
+            <a href="#Paso23"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso25"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso25">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 50</span>:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">1</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 50. Como i vale 4, la condición se cumple, así que se ejecutan de nuevo las instrucciones del cuerpo del bucle.</p>
+
+          <p class="control">
+            <a href="#Paso24"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso26"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso26">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    <span class="conborde">print(i)</span>
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+<span class="conborde">4</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 4.</p>
+
+          <p class="control">
+            <a href="#Paso25"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso27"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso27">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    <span class="conborde">i = 3*i + 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se modifica la variable de control i, multiplicando su valor por 3 y sumando 1.</p>
+
+          <p>En este caso, como la variable de control i valía 4, ahora toma el valor 13 (3*4 + 1).</p>
+
+          <p class="control">
+            <a href="#Paso26"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso28"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso28">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 50</span>:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 50. Como i vale 13, la condición se cumple, así que se ejecutan de nuevo las instrucciones del cuerpo del bucle.</p>
+
+          <p class="control">
+            <a href="#Paso27"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso29"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso29">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    <span class="conborde">print(i)</span>
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+<span class="conborde">13</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 13.</p>
+
+          <p class="control">
+            <a href="#Paso28"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso210"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso210">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    <span class="conborde">i = 3*i + 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se modifica la variable de control i, multiplicando su valor por 3 y sumando 1.</p>
+
+          <p>En este caso, como la variable de control i valía 13, ahora toma el valor 40 (3*13 + 1).</p>
+
+          <p class="control">
+            <a href="#Paso29"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso211"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso211">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 50</span>:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 50. Como i vale 40, la condición se cumple, así que se ejecutan de nuevo las instrucciones del cuerpo del bucle.</p>
+
+          <p class="control">
+            <a href="#Paso210"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso212"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso212">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 12</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    <span class="conborde">print(i)</span>
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13
+<span class="conborde">40</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción imprime el valor de i, es decir, 40.</p>
+
+          <p class="control">
+            <a href="#Paso211"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso213"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso213">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 13</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    <span class="conborde">i = 3*i + 1</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13
+40</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se modifica la variable de control i, multiplicando su valor por 3 y sumando 1.</p>
+
+          <p>En este caso, como la variable de control i valía 40, ahora toma el valor 121 (3*40 + 1).</p>
+
+          <p class="control">
+            <a href="#Paso212"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso214"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso214">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 14</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while <span class="conborde">i &lt;= 50</span>:
+    print(i)
+    i = 3*i + 1
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13
+40</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 50. Como i vale 121, la condición ya no se cumple, por lo que el bucle se termina.</p>
+
+          <p class="control">
+            <a href="#Paso213"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso215"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso215">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 2 - Paso 15</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 50:
+    print(i)
+    i = 3*i + 1
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">1
+4
+13
+40
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa imprime la expresión <samp>Programa terminado</samp>.</p>
+
+          <p class="control">
+            <a href="#Paso214"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>Otra ventaja del bucle <span class="idle-rese">while</span> es que el número de iteraciones no está definida antes de empezar el bucle, por ejemplo porque los datos los proporciona el usuario. Por ejemplo, el siguiente ejemplo pide un número positivo al usuario una y otra vez hasta que el usuario lo haga correctamente:</p>
+
+      <div class="diapo" style="height: 18em">
+        <div id="Paso30">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <div>
+                    <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                  </div>
+                </td>
+                <td><pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> 9
+<span class="idle-resp">Gracias por su colaboración</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso31">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python"><span class="conborde">numero = int(input("Escriba un número positivo: "))</span>
+while numero &lt; 0:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">Escriba un número positivo:</span></span> <span class="conborde">-4</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, se pide al usuario que escriba un número positivo. En el ejemplo, el usuario escribe un número negativo (-4) y ese número se guarda en la variable de control "numero".</p>
+
+          <p class="control">
+            <a href="#Paso30"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso32"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso32">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while <span class="conborde">numero &lt; 0</span>:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td><pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecuta el bucle. Un bucle está controlado por la condición. Si la condición se cumple, se ejecutan las instrucciones del cuerpo del bucle.</p>
+
+          <p>En este caso la condición es que la variable de control sea inferior a 0. Como "numero" vale -4, la condición se cumple, así que se pasa a ejecutar las instrucciones del bucle, en este caso dos instrucciones.</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso33"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso33">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    <span class="conborde">print("¡Ha escrito un número negativo! Inténtelo de nuevo")</span>
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="conborde"><span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción avisa que se ha escrito un número negativo.</p>
+
+          <p class="control">
+            <a href="#Paso32"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso34"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso34">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    <span class="conborde">numero = int(input("Escriba un número positivo: "))</span>
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="conborde"><span class="idle-resp">Escriba un número positivo:</span></span> <span class="conborde">-8</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se vuelve a pedir al usuario que escriba un número positivo. En el ejemplo, el usuario escribe un número negativo (-8) y ese número se guarda en la variable de control "numero".</p>
+
+          <p>En este caso, la variable de control "numero" toma el valor -8.</p>
+
+          <p class="control">
+            <a href="#Paso33"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso35"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso35">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while <span class="conborde">numero &lt; 0</span>:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 0. Como "numero" vale -8, la condición se cumple, así que se pasa a ejecutar las instrucciones del bucle, en este caso dos instrucciones.</p>
+
+          <p class="control">
+            <a href="#Paso34"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso36"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso36">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    <span class="conborde">print("¡Ha escrito un número negativo! Inténtelo de nuevo")</span>
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+<span class="idle-resp"><span class="conborde">¡Ha escrito un número negativo! Inténtelo de nuevo</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>La primera instrucción avisa que se ha escrito un número negativo.</p>
+
+          <p class="control">
+            <a href="#Paso35"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso37"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso37">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    <span class="conborde">numero = int(input("Escriba un número positivo: "))</span>
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp"><span class="conborde">Escriba un número positivo:</span></span> <span class="conborde">9</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se vuelve a pedir al usuario que escriba un número positivo.</p>
+
+          <p>En el ejemplo, el usuario escribe por fin un número positivo (9) y ese número se guarda en la variable de control "numero". En este caso, la variable de control "numero" toma el valor 9.</p>
+
+          <p class="control">
+            <a href="#Paso36"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso38"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso38">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while <span class="conborde">numero &lt; 0</span>:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+print("Gracias por su colaboración")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> 9
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se vuelve a evaluar la condición del bucle.</p>
+
+          <p>Se comprueba si la variable de control es inferior a 0. Como "numero" vale 9, la condición no se cumple, así que se pasa a ejecutar las instrucciones del bucle, por lo que el bucle se termina.</p>
+
+          <p class="control">
+            <a href="#Paso37"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso39"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso39">
+          <p><strong>Ejemplo de bucle <span class="idle-rese">while</span> 3 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">numero = int(input("Escriba un número positivo: "))
+while numero &lt; 0:
+    print("¡Ha escrito un número negativo! Inténtelo de nuevo")
+    numero = int(input("Escriba un número positivo: "))
+<span class="conborde">print("Gracias por su colaboración")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Escriba un número positivo:</span> -4
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> -8
+<span class="idle-resp">¡Ha escrito un número negativo! Inténtelo de nuevo</span>
+<span class="idle-resp">Escriba un número positivo:</span> 9
+<span class="idle-resp"><span class="conborde">Gracias por su colaboración</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La última instrucción del programa agradece al usuario su colaboración.</p>
+
+          <p class="control">
+            <a href="#Paso38"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="bucles-infinitos">
+      <h2>Bucles infinitos</h2>
+
+      <p>Si la condición del bucle se cumple siempre, el bucle no terminará nunca de ejecutarse y tendremos lo que se denomina un <strong>bucle infinito</strong>. Aunque a veces es necesario utilizar bucles infinitos en un programa, normalmente se deben a errores que se deben corregir.</p>
+
+      <p>Los bucles infinitos no intencionados deben evitarse pues significan perder el control del programa. Para interrumpir un bucle infinito, hay que pulsar la combinación de teclas <span class="teclado">Ctrl+C</span>. Al interrumpir un programa se mostrará un mensaje de error similar a éste:</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-come">Traceback (most recent call last):
+  File "ejemplo.py", line 3, in &lt;module&gt;
+    print(i)
+KeyboardInterrupt</span>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Por desgracia, es fácil programar involuntariamente un bucle infinito, por lo que es inevitable hacerlo de vez en cuando, sobre todo cuando se está aprendiendo a programar.</p>
+
+      <p>Estos algunos ejemplos de bucles infinitos:</p>
+      <ul>
+        <li>El programador ha olvidado modificar la variable de control dentro del bucle y el programa imprimirá números 1 indefinidamente:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i &lt;= 10:
+    print(i, end=" ")</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">1 1 1 1 1 1 1 1 ...</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El programador ha escrito una condición que se cumplirá siempre y el programa imprimirá números consecutivos indefinidamente:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i > 0:
+    print(i, end=" ")
+    i += 1</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">1 2 3 4 5 6 7 8 9 10 11 ...</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Se aconseja expresar las condiciones como desigualdades en vez de comparar valores. En el ejemplo siguiente, el programador ha escrito una condición que se cumplirá siempre y el programa imprimirá números consecutivos indefinidamente:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">i = 1
+while i != 100:
+    print(i, end=" ")
+    i += 2</code>
+</pre>
+                </td>
+                <td>
+                  <pre><span class="idle-resp">1 3 5 7 9 11 ... 97 99 101 ...</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

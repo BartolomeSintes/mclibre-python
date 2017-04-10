@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables (2). Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Variables (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Variables (2)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#variables-objetos">Variables y objetos</a></li>
+          <li><a href="#variables-crear">Crear variables</a></li>
+          <li><a href="#variables-modificar">Modificar variable</a></li>
+          <li><a href="#variables-objeto">Varias variables, un objeto</a></li>
+          <li><a href="#variables-objeto-mutable">Modificar objeto mutable</a>
+            <ul>
+              <li><a href="#variables-modificar-no-objeto">Modificar variable, no objeto</a></li>
+              <li><a href="#variables-modificar-objeto">Modificar variable y objeto</a></li>
+            </ul>
+          </li>
+          <li><a href="#lista-copiar">Copiar una lista</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata la relación entre variables y objetos en Python, haciendo hincapié en la modificación de variables.</p>
+
+    <section id="variables-objetos">
+      <h2>Variables y objetos</h2>
+
+      <p>Para entender cómo funcionan las variables en Python, hace falta tener en cuenta tres aspectos: </p>
+      <ul>
+        <li>Los valores (números, cadenas, listas, etc.) se almacenan en objetos.</li>
+        <li>Hay dos tipos de objetos:
+          <ul>
+            <li>objetos inmutables (que no pueden cambiar su valor) como números, cadenas o tuplas,</li>
+            <li>objetos mutables (que pueden cambiar) como listas y diccionarios.</li>
+          </ul>
+        </li>
+        <li>El acceso a los valores almacenados en los objetos se realiza mediante variables, asignando las variables a los objetos.</li>
+        <li>Las variables son simples etiquetas para hacer referencia a los objetos y son independientes de ellos.</li>
+      </ul>
+    </section>
+
+    <section id="variables-crear">
+      <h2>Creación de variables</h2>
+
+      <p>Cuando se asigna por primera vez un valor a una variable, Python:</p>
+      <ul>
+        <li>crea un objeto para almacenar el valor (si no existe todavía), </li>
+        <li>crea la variable </li>
+        <li>asocia la variable al objeto.</li>
+      </ul>
+
+      <p>El valor de la variable es el valor almacenado por el objeto.</p>
+    </section>
+
+    <section id="variables-modificar">
+      <h2>Modificación de variables</h2>
+
+      <p>Cuando se asigna un nuevo valor a a una variable creada anteriormente, el valor de la variable será el nuevo valor almacenado, pero con respecto a los objetos (que son los que realmente almacenan los valores) pueden darse tres situaciones:</p>
+      <ul>
+        <li>que el objeto original sea inmutable y no pueda almacenar el nuevo valor. En este caso, la variable se asocia a un objeto distinto que contiene el nuevo valor.</li>
+        <li>que el objeto original sea mutable, pero que no se modifique. En este caso, la variable se asocia a un objeto distinto que contiene el nuevo valor.</li>
+        <li>que el objeto original sea mutable y pase a contener el nuevo valor. En este caso, la variable puede seguir asociada al mismo objeto.</li>
+      </ul>
+
+      <p>Los tres ejemplos siguientes, ilustran estas tres situaciones. Los ejemplos están acompañados de dibujos en los que se muestran los objetos (con los valores que almacenan) y las variables (como etiquetas asociadas a los objetos).</p>
+      <ul>
+        <li>Objeto inmutable
+
+          <div class="diapo" style="height: 19em">
+
+            <div id="Paso10">
+              <p><strong>Cambio de valor de una variable (objetos inmutables)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">10</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">20</span>
+</pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_1_2.png" width="250" height="150" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso11"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso11">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = 10</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_1_1.png" width="250" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor 10, Python crea el objeto "número entero 10" y le asocia la etiqueta "a". El objeto número entero es inmutable, es decir, no puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso10"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso12"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso12">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">10</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_1_1.png" width="250" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor 10.</p>
+              <p class="control">
+                <a href="#Paso11"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso13"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso13">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">10</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = 20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_1_2.png" width="250" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor 20, Python crea el objeto "número entero 20" y le asocia la etiqueta "a", que deja de estar asociada al objeto "número entero 10".</p>
+              <p class="control">
+                <a href="#Paso12"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso14"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso14">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">10</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_1_3.png" width="250" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor 20.</p>
+
+              <p class="control">
+                <a href="#Paso13"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+        <li>Objeto mutable que no se modifica
+
+          <div class="diapo" style="height: 19em">
+
+            <div id="Paso20">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [20, 21]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[20, 21]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_2_2.png" width="330" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso21"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso21">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [10, 11]</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_2_1.png" width="330" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [10, 11], Python crea el objeto "lista [10, 11]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso20"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso22"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso22">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">[10, 11]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_2_1.png" width="330" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor [10, 11].</p>
+              <p class="control">
+                <a href="#Paso21"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso23"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso23">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [20, 21]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_2_2.png" width="330" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [20, 21], Python crea el objeto "lista [20, 21]" y le asocia la etiqueta "a", que deja de estar asociada al objeto "lista [10, 11]".</p>
+              <p class="control">
+                <a href="#Paso22"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso24"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso24">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [20, 21]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">[20, 21]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_2_3.png" width="330" height="150" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor [20, 21].</p>
+              <p class="control">
+                <a href="#Paso23"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+        <li>Objeto mutable que sí se modifica
+
+          <div class="diapo" style="height: 19em">
+
+            <div id="Paso30">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[20, 11]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_3_2.png" width="330" height="95" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso31"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso31">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [10, 11]</span></pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_3_1.png" width="330" height="95" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [10, 11], Python crea el objeto "lista [10, 11]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso30"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso32"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso32">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">[10, 11]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_3_1.png" width="330" height="95" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor [10, 11].</p>
+              <p class="control">
+                <a href="#Paso31"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso33"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso33">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a[0] = 20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_3_2.png" width="330" height="95" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar al primer elemento de la lista (a[0]) el valor 20, Python modifica el primer elemento del objeto, que contiene ahora la lista [20, 11]. A diferencia de los ejemplos anteriores, no se crea un nuevo objeto, sino que se modifica el objeto ya existente.</p>
+              <p class="control">
+                <a href="#Paso32"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso34"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso34">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a
+<span class="idle-resp">[10, 11]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a</span>
+<span class="idle-resp">[20, 11]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_3_3.png" width="330" height="95" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de la variable, se muestra el valor [20, 11].</p>
+              <p class="control">
+                <a href="#Paso33"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="variables-objeto">
+      <h2>Cómo afecta la modificación de una variable a otras variables</h2>
+
+      <p>En Python, al modificar una variable se pueden modificar otras variables. Eso ocurre cuando al modificar una variable se modifique el objeto y haya otras variables haciendo referencia al mismo objeto</p>
+
+      <p>Para entenderlo, vamos a repetir los tres ejemplos anteriores introduciendo una segunda variable y observando qué ocurre en cada caso.</p>
+
+      <ul>
+        <li>Objeto inmutable
+          <div class="diapo" style="height: 21em">
+            <div id="Paso40">
+              <p><strong>Cambio de valor de una variable (objetos inmutables)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">(10, 10)</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">(20, 10)</span>
+</pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_4_3.png" width="250" height="175" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso41"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso41">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = 10</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_4_1.png" width="250" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor 10, Python crea el objeto "número entero 10" y le asocia la etiqueta "a". El objeto número entero es inmutable, es decir, no puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso40"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso42"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso42">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_4_2.png" width="250" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+              <p class="control">
+                <a href="#Paso41"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso43"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso43">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">(10, 10)</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_4_2.png" width="250" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores (10,10). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+              <p class="control">
+                <a href="#Paso42"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso44"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso44">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">(10, 10)</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = 20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_4_3.png" width="250" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor 20, Python crea el objeto "número entero 20" y le asocia la etiqueta "a", que deja de estar asociada al objeto "número entero 10".</p>
+              <p class="control">
+                <a href="#Paso43"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso45"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso45">
+              <p><strong>Cambio de valor de una variable (objetos inmutables) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">(10, 10)</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">(20, 10)</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_4_4.png" width="250" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores (20, 10). Las variables "a" y "b" tienen ahora valores distintos ya que están asociadas a objetos distintos. Fíjese en que al modificar una variable no se ha modificado la otra.</p>
+              <p class="control">
+                <a href="#Paso44"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+        <li>Objeto mutable que no se modifica
+          <div class="diapo" style="height: 21em">
+            <div id="Paso50">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [20, 21]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([20, 21], [10, 11])</span>
+</pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_5_3.png" width="330" height="175" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso51"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso51">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [10, 11]</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_5_1.png" width="330" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [10, 11], Python crea el objeto "lista [10, 11]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso50"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso52"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso52">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_5_2.png" width="330" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+              <p class="control">
+                <a href="#Paso51"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso53"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso53">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([10, 11], [10, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_5_2.png" width="330" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([10, 11], [10, 11]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+              <p class="control">
+                <a href="#Paso52"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso54"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso54">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [20, 21]</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_5_3.png" width="330" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [20, 21], Python crea el objeto "lista [20, 21]" y le asocia la etiqueta "a", que deja de estar asociada al objeto "lista [10, 11]".</p>
+              <p class="control">
+                <a href="#Paso53"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso55"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso55">
+              <p><strong>Cambio de valor de una variable (objetos mutables que no se modifican) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [20, 21]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([20, 21], [10, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_5_4.png" width="330" height="175" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([20, 21], [10, 11]. Las variables tienen ahora valores distintos ya que están asociadas a objetos distintos. Fíjese en que al modificar una variable no se ha modificado la otra.</p>
+              <p class="control">
+                <a href="#Paso54"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+        <li>Objeto mutable que sí se modifica
+
+          <div class="diapo" style="height: 21em">
+
+            <div id="Paso60">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([20, 11], [20, 11])</span>
+</pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_6_3.png" width="330" height="115" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso61"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso61">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [10, 11]</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_1.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [10, 11], Python crea el objeto "lista [10, 11]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso60"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso62"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso62">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_2.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+              <p class="control">
+                <a href="#Paso61"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso63"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso63">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([10, 11], [10, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_2.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([10, 11], [10, 11]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+              <p class="control">
+                <a href="#Paso62"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso64"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso64">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a[0] = 20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_3.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar al primer elemento de la lista (a[0]) el valor 20, Python modifica el primer elemento del objeto, que contiene ahora la lista [20, 11].</p>
+              <p class="control">
+                <a href="#Paso63"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso65"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso65">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([20, 11], [20, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_4.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([20, 11], [20, 11]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+              <p class="control">
+                <a href="#Paso64"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+          <p>En este último caso, si al cambiar la variable se cambia el objeto, da lo mismo qué variable cambie el objeto:</p>
+
+          <div class="diapo" style="height: 21em">
+
+            <div id="Paso70">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> b[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([20, 11], [20, 11])</span>
+</pre>
+                    </td>
+                    <td><img alt="Variables" src="../img/variables/variables_6_3.png" width="330" height="115" /></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+              <p class="control">
+                <a href="#Paso71"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso71">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [10, 11]</span></pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_1.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar a la variable "a" el valor [10, 11], Python crea el objeto "lista [10, 11]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+              <p class="control">
+                <a href="#Paso70"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso72"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso72">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_2.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+              <p class="control">
+                <a href="#Paso71"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso73"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso73">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([10, 11], [10, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_2.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([10, 11], [10, 11]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+              <p class="control">
+                <a href="#Paso72"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso74"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso74">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b[0] = 20</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_3.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al asignar al primer elemento de la lista (b[0]) el valor 20, Python modifica el primer elemento del objeto, que contiene ahora la lista [20, 11].</p>
+              <p class="control">
+                <a href="#Paso73"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso75"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso75">
+              <p><strong>Cambio de valor de una variable (objeto mutable que sí se modifica) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10, 11]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([10, 11], [10, 11])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> b[0] = 20
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([20, 11], [20, 11])</span>
+</pre>
+                    </td>
+                    <td><p><img alt="Variables" src="../img/variables/variables_6_4.png" width="330" height="115" /></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Al pedir el valor de las variables, se muestran los valores ([20, 11], [20, 11]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+              <p class="control">
+                <a href="#Paso74"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="variables-objeto-mutable">
+      <h2>Modificación de variables asociadas a listas</h2>
+
+      <p>Los objetos inmutables no se pueden modificar de ninguna manera. Cuando una variable está asociada a un objeto inmutable, al modificar la variable no se modifica el objeto, sino que la variable se asocia a un nuevo objeto.</p>
+
+      <p>Sin embargo, los objetos mutables se pueden modificar. Cuando una variable está asociada a un objeto mutable, al modificar la variable se puede modificar el objeto en algunos casos, pero no en otros.</p>
+
+      <p>Veamos en el caso de las listas las diferentes maneras de modificar la variable y en qué casos no modifica el objeto y en qué casos sí.</p>
+
+      <section id="variables-modificar-no-objeto">
+        <h3>Modificación de variables que no modifican las listas</h3>
+        <ul>
+          <li>El operador <strong>+</strong> no modifica el objeto, como muestra el ejemplo siguiente:
+
+            <div class="diapo" style="height: 21em">
+
+              <div id="Paso110">
+                <p><strong>Cambio de valor de una variable (a = a + [4])</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = a + [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><img alt="Variables" src="../img/variables/variables_11_3.png" width="370" height="174" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+                <p class="control">
+                  <a href="#Paso111"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso111">
+                <p><strong>Cambio de valor de una variable (a = a + [4]) - Paso 1</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_11_1.png" width="370" height="174" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+                <p class="control">
+                  <a href="#Paso110"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso112"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso112">
+                <p><strong>Cambio de valor de una variable (a = a + [4]) - Paso 2</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_11_2.png" width="370" height="174" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+                <p class="control">
+                  <a href="#Paso111"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso113"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso113">
+                <p><strong>Cambio de valor de una variable (a = a + [4]) - Paso 3</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_11_2.png" width="370" height="174" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+                <p class="control">
+                  <a href="#Paso112"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso114"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso114">
+                <p><strong>Cambio de valor de una variable (a = a + [4]) - Paso 4</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = a + [4]</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_11_3.png" width="370" height="174" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>El operador + crea un nuevo objeto con los valores del antiguo añadiéndole el valor [4], es decir, Python crea el objeto "lista [1, 2, 3, 4]" y le asocia la etiqueta "a", que deja de estar asociada al objeto "lista [1, 2, 3]".</p>
+                <p class="control">
+                  <a href="#Paso113"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso115"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso115">
+                <p><strong>Cambio de valor de una variable (a = a + [4]) - Paso 5</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = a + [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_11_4.png" width="370" height="174" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3, 4], [1, 2, 3]. Las variables tienen ahora valores distintos ya que están asociadas a objetos distintos. Fíjese en que al modificar una variable no se ha modificado la otra.</p>
+                <p class="control">
+                  <a href="#Paso114"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="variables-modificar-objeto">
+        <h3>Modificación de variables que modifican las listas</h3>
+        <ul>
+          <li>El operador <strong>+=</strong> sí que modifica el objeto, como muestra el ejemplo siguiente:
+            <div class="diapo" style="height: 21em">
+              <div id="Paso120">
+                <p><strong>Cambio de valor de una variable (a += [4])</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a += [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3, 4])</span>
+</pre>
+                      </td>
+                      <td><img alt="Variables" src="../img/variables/variables_12_3.png" width="372" height="116" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+                <p class="control">
+                  <a href="#Paso121"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso121">
+                <p><strong>Cambio de valor de una variable (a += [4]) - Paso 1</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_1.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+                <p class="control">
+                  <a href="#Paso120"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso122"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso122">
+                <p><strong>Cambio de valor de una variable (a += [4]) - Paso 2</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_2.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+                <p class="control">
+                  <a href="#Paso121"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso123"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso123">
+                <p><strong>Cambio de valor de una variable (a += [4]) - Paso 3</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_2.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+                <p class="control">
+                  <a href="#Paso122"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso124"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso124">
+                <p><strong>Cambio de valor de una variable (a += [4]) - Paso 4</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a += [4]</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_3.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>El operador += añade el valor [4] al objeto, que contiene ahora la lista [1, 2, 3, 4].</p>
+                <p class="control">
+                  <a href="#Paso123"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso125"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso125">
+                <p><strong>Cambio de valor de una variable (a += [4]) - Paso 5</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a += [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3, 4])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_4.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3, 4], [1, 2, 3, 4]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+                <p class="control">
+                  <a href="#Paso124"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+              </div>
+            </div>
+          </li>
+          <li>El método <strong>append()</strong> sí que modifica el objeto, como muestra el ejemplo siguiente:
+
+            <div class="diapo" style="height: 21em">
+
+              <div id="Paso130">
+                <p><strong>Cambio de valor de una variable (a.append(4))</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a.append(4)
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3, 4])</span>
+</pre>
+                      </td>
+                      <td><img alt="Variables" src="../img/variables/variables_12_3.png" width="372" height="116" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+                <p class="control">
+                  <a href="#Paso131"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso131">
+                <p><strong>Cambio de valor de una variable (a.append(4)) - Paso 1</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_1.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+                <p class="control">
+                  <a href="#Paso130"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso132"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso132">
+                <p><strong>Cambio de valor de una variable (a.append(4)) - Paso 2</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_2.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+                <p class="control">
+                  <a href="#Paso131"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso133"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso133">
+                <p><strong>Cambio de valor de una variable (a.append(4)) - Paso 3</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_2.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+                <p class="control">
+                  <a href="#Paso132"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso134"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso134">
+                <p><strong>Cambio de valor de una variable (a.append(4)) - Paso 4</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a.append(4)</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_3.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>El método append añade el valor [4] al objeto, que contiene ahora la lista [1, 2, 3, 4].</p>
+                <p class="control">
+                  <a href="#Paso133"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso135"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso135">
+                <p><strong>Cambio de valor de una variable (a.append(4)) - Paso 5</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a.append(4)
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3, 4], [1, 2, 3, 4])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_12_4.png" width="372" height="116" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3, 4], [1, 2, 3, 4]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+                <p class="control">
+                  <a href="#Paso134"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+              </div>
+            </div>
+          </li>
+          <li>Modificando un valor de una lista sí que modifica el objeto, como muestra el ejemplo siguiente:
+
+            <div class="diapo" style="height: 21em">
+
+              <div id="Paso140">
+                <p><strong>Cambio de valor de una variable (a[1] = 4)</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1] = 4
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 4, 3], [1, 4, 3])</span>
+</pre>
+                      </td>
+                      <td><img alt="Variables" src="../img/variables/variables_13_3.png" width="330" height="115" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+                <p class="control">
+                  <a href="#Paso141"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso141">
+                <p><strong>Cambio de valor de una variable (a[1] = 4) - Paso 1</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_1.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+                <p class="control">
+                  <a href="#Paso140"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso142"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso142">
+                <p><strong>Cambio de valor de una variable (a[1] = 4) - Paso 2</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_2.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+                <p class="control">
+                  <a href="#Paso141"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso143"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso143">
+                <p><strong>Cambio de valor de una variable (a[1] = 4) - Paso 3</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_2.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+                <p class="control">
+                  <a href="#Paso142"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso144"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso144">
+                <p><strong>Cambio de valor de una variable (a[1] = 4) - Paso 4</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a[1] = 4</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_3.png" width="330" height="115" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al modificar un valor de la lista se modifica el objeto, que contiene ahora la lista [1, 4, 3].</p>
+                <p class="control">
+                  <a href="#Paso143"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso145"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso145">
+                <p><strong>Cambio de valor de una variable (a[1] = 4) - Paso 5</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1] = 4
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 4, 3], [1, 4, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_4.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 4, 3], [1, 4, 3]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+                <p class="control">
+                  <a href="#Paso144"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+              </div>
+            </div>
+          </li>
+          <li>Modificando un valor de una sublista sí que modifica el objeto, como muestra el ejemplo siguiente:
+
+            <div class="diapo" style="height: 21em">
+
+              <div id="Paso150">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4])</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1:2] = [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 4, 3], [1, 4, 3])</span>
+</pre>
+                      </td>
+                      <td><img alt="Variables" src="../img/variables/variables_13_3.png" width="330" height="115" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+                <p class="control">
+                  <a href="#Paso151"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso151">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4]) - Paso 1</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_1.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+                <p class="control">
+                  <a href="#Paso150"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso152"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso152">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4]) - Paso 2</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_2.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al asignar la variable "a" a la variable "b", Python asocia la etiqueta "b" al mismo objeto que "a".</p>
+                <p class="control">
+                  <a href="#Paso151"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso153"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso153">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4]) - Paso 3</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_2.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor ya que están asociadas al mismo objeto.</p>
+                <p class="control">
+                  <a href="#Paso152"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso154"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso154">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4]) - Paso 4</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a[1:2] = [4]</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_3.png" width="330" height="115" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al modificar una sublista de la lista se modifica el objeto, que contiene ahora la lista [1, 4, 3].</p>
+                <p class="control">
+                  <a href="#Paso153"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso155"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso155">
+                <p><strong>Cambio de valor de una variable (a[1:2] = [4]) - Paso 5</strong></p>
+
+                <table class="ejemplo">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1:2] = [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 4, 3], [1, 4, 3])</span>
+</pre>
+                      </td>
+                      <td><p><img alt="Variables" src="../img/variables/variables_13_4.png" width="330" height="114" /></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p>Al pedir el valor de las variables, se muestran los valores ([1, 4, 3], [1, 4, 3]. Las variables tienen ahora el mismo valor ya que están asociadas al mismo objeto. Fíjese en que al modificar una variable se ha modificado la otra.</p>
+                <p class="control">
+                  <a href="#Paso154"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </section>
+
+    <section id="lista-copiar">
+      <h2>Copiar una lista</h2>
+
+      <p>Como se comenta en la <a href="python_listas.html#listas-copiar">lección de Listas</a>, para copiar una lista hay que utilizar la notación de sublistas. De esta manera se consiguen tener dos objetos independientes, como muestra el ejemplo siguiente</p>
+
+      <div class="diapo" style="height: 21em">
+
+        <div id="Paso210">
+          <p><strong>Copiar una lista </strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a[:]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1] = [4]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 4, 3], [1, 2, 3])</span>
+</pre>
+                </td>
+                <td><img alt="Variables" src="../img/variables/variables_21_3.png" width="330" height="184" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este ejemplo utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso211"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+</p>
+        </div>
+
+        <div id="Paso211">
+          <p><strong>Copiar una lista - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><pre><span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a = [1, 2, 3]</span></pre>
+                </td>
+                <td><p><img alt="Variables" src="../img/variables/variables_21_1.png" width="330" height="184" /></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al asignar a la variable "a" el valor [1, 2, 3], Python crea el objeto "lista [1, 2, 3]" y le asocia la etiqueta "a". El objeto lista es mutable, es decir, puede cambiar.</p>
+
+          <p class="control">
+            <a href="#Paso210"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso212"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+</p>
+        </div>
+
+        <div id="Paso212">
+          <p><strong>Copiar una lista - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">b = a[:]</span>
+</pre>
+                </td>
+                <td><p><img alt="Variables" src="../img/variables/variables_21_2.png" width="330" height="184" /></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al asignar la variable "b" a una sublista de la variable "a" (aunque en este caso la sublista incluya toda la lista), Python crea un nuevo objeto con el mismo contenido y le asocia la etiqueta "b".</p>
+
+          <p class="control">
+            <a href="#Paso211"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso213"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+</p>
+        </div>
+
+        <div id="Paso213">
+          <p><strong>Copiar una lista - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a[:]
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+</pre>
+                </td>
+                <td><p><img alt="Variables" src="../img/variables/variables_21_2.png" width="330" height="184" /></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al pedir el valor de las variables, se muestran los valores ([1, 2, 3], [1, 2, 3]). Las variables tienen el mismo valor aunque estén asociadas a objetos distintos.</p>
+
+          <p class="control">
+            <a href="#Paso212"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso214"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+</p>
+        </div>
+
+        <div id="Paso214">
+          <p><strong>Copiar una lista - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a[:]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a[1] = 4</span>
+</pre>
+                </td>
+                <td><p><img alt="Variables" src="../img/variables/variables_21_3.png" width="330" height="184" /></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al modificar un valor de la lista se modifica el objeto, que contiene ahora la lista [1, 4, 3].</p>
+
+          <p class="control">
+            <a href="#Paso213"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso215"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+</p>
+        </div>
+
+        <div id="Paso215">
+          <p><strong>Copiar una lista - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a = [1, 2, 3]
+<span class="idle-prompt">&gt;&gt;&gt;</span> b = a[:]
+<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
+<span class="idle-resp">([1, 2, 3], [1, 2, 3])</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> a[1] = 4
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="conborde">a, b</span>
+<span class="idle-resp">([1, 4, 3], [1, 2, 3])</span>
+</pre>
+                </td>
+                <td><p><img alt="Variables" src="../img/variables/variables_21_4.png" width="330" height="184" /></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al pedir el valor de las variables, se muestran los valores ([1, 4, 3], [1, 2, 3]. Las variables tienen ahora valores distintos ya que están asociadas a objetos distintos. Fíjese en que al modificar una variable no se ha modificado la otra.</p>
+
+          <p class="control">
+            <a href="#Paso214"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 22 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

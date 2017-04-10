@@ -1,0 +1,115 @@
+/* PRISM.CSS
+   Bartolomé Sintes Marco
+   http://www.mclibre.org
+
+   Hoja de estilo para prism.js
+
+   4 de abril de 2017
+*/
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("fonts/inconsolata.woff2");
+}
+
+/* Estilo para Python imitando a IDLE */
+
+code { font-family: "Inconsolata", monospace; line-height: 120%; /* font-weight: bold; */ }
+
+code.language-python { }
+/* si se cambia aquí line-eight, hay que cambiar line-height también en los números de línea */
+
+code.language-python .built-in-function { color: #800080; } /* functions from standard library */
+code.language-python .built_in   { color: #FF7700; } /* built-in objects (None, False, True and Ellipsis)         */
+code.language-python .class-name {                 } /* class header class SomeName(...):                         */
+code.language-python .comment    { color: #FF0000; } /* comment                                                   */
+code.language-python .decorator  {                 } /* @-decorator for functions                                 */
+code.language-python .function   { color: #0000FF; } /* function header def some_name(...):                       */
+code.language-python .keyword    { color: #FF7700; } /* keyword                                                   */
+code.language-python .number     {                 } /* number                                                    */
+code.language-python .title      { color: #0000FF; } /* name of a function or a class inside a header             */
+code.language-python .params     {                 } /* everything inside parentheses in a function or class header */
+code.language-python .prompt     { color: #770000; } /* IDLE prompt */
+code.language-python .string     { color: #00AA00; } /* string (of any type)                                      */
+
+/* Esta clase la añadía a mano para highlight. Lo podré quitar cuando las quite */
+code.language-python .funcion .keyword { color: #800080; } /* functions from standard library */
+
+/* Estilo para HTML imitando a Brackets */
+/* Tengo pendiente comprobar los nombres de las clases en prism */
+
+code.language-markup { }
+
+code.language-markup .tag         { color: #446FBD; } /* any tag from "<" till ">"              */
+code.language-markup .punctuation { color: #446FBD; } /*                                        */
+code.language-markup .attr-name   { color: #6D8600; } /* tag's attribute with or without value  */
+code.language-markup .attr-value  { color: #E88501; } /* attribute's value                      */
+code.language-markup .comment     { color: #535353; } /* comment                                */
+code.language-markup .pi          { color: #535353; } /* processing instruction (<? ... ?>)     */
+code.language-markup .doctype     { color: #535353; } /* <!DOCTYPE ... > declaration            */
+code.language-markup .cdata       { color: #E88501; } /* CDATA section                          */
+
+/* Estilo para CSS imitando a Brackets */
+/* Pasado a media a Prism */
+
+code.language-css { }
+
+pre code.language-css .atrule        { color: #8757AD; }          /* @-rule till first "{" or ";"       */
+pre code.language-css .comment       { color: #535353; }          /* comment                            */
+pre code.language-css .string        { color: #E88501; }          /* string within a value              */
+pre code.language-css .function      { color: #E88501; } /* CSS function within a value        */
+pre code.language-css .important     { color: rgb( 63,127,127); } /* "!important" symbol                */
+pre code.language-css .property      { color: #8757AD; }          /* property name inside a rule        */
+pre code.language-css .selector      { color: #446FBD; }          /* tag in selectors                   */
+
+pre code.language-css .hljs-id            { color: #446FBD; }          /* #some_name in selectors            */
+pre code.language-css .hljs-class         { color: #446FBD; }          /* .some_name in selectors            */
+pre code.language-css .hljs-attr_selector { color: rgb( 63,127,127); } /* attribute selector ([])            */
+pre code.language-css .hljs-pseudo        { color: #535353; }          /* pseudo classes/elements            */
+pre code.language-css .hljs-rules         { color: #000000; }          /* everything from "{" till "}"       */
+pre code.language-css .hljs-value         { color: #E88501; }          /* property value inside a rule       */
+pre code.language-css .hljs-number        { color: #6D8600; }          /* number within a value              */
+pre code.language-css .hljs-hexcolor      { color: #E88501; }          /* hex color (#FFFFFF) within a value */
+
+/* CSS para números de línea */
+
+pre.line-numbers {
+  position: relative;
+  padding-left: 2.8em;
+  counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+  position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -2.8em;
+  width: 2em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  line-height: 137%;
+  border-right: 1px solid #999;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}

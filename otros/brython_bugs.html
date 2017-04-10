@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bugs de Brython. Brython. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.cssXXXX" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+    <script type="text/python3">
+from browser import document
+from random import randrange
+from browser import timer
+
+# Programa para comprobar los bugs 379 y 412
+
+negacion = ("", "not ")
+yo = (" and ", " or ")
+
+def e2_escribe():
+    global e2_contador_evaluados, e2_contador_incorrectos, e2_encontradas
+    # genera cadena al azar
+    e2_cadena_sp = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena =  e2_cadena_sp
+    tmp = yo[randrange(0, 2)]
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+    tmp2 = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena_sp += tmp2
+    e2_cadena += tmp2
+    if tmp == " and ": # Añado parentesis porque Brython 3.2.4 no evaluaba bien las expresiones
+        e2_cadena = "(" + e2_cadena + ")"
+    tmp = yo[randrange(0, 2)]
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+    tmp = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+
+    document["e2_actual"].clear()
+    document["e2_actual"] <= e2_cadena + " **** " + e2_cadena_sp
+    # evalua y da resultados
+    e2_contador_evaluados += 1
+    if eval(e2_cadena) != eval(e2_cadena_sp) and not (e2_cadena_sp in e2_encontradas):
+        e2_contador_incorrectos += 1
+        document["e2_errores"] <= e2_cadena_sp + "\n"
+        e2_encontradas += [e2_cadena_sp]
+    document["e2_resultados"].clear()
+    document["e2_resultados"] <= "Evaluados: " + str(e2_contador_evaluados) + "  Errores encontrados: " + str(e2_contador_incorrectos)
+
+def e2_start(ev):
+    global idtimer, e2_contador_evaluados, e2_contador_incorrectos
+    idtimer = timer.set_interval(e2_escribe, 10)
+    e2_contador_evaluados = e2_contador_incorrectos = 0
+    e2_encontradas = []
+    document["e2_resultados"].clear()
+    document["e2_errores"].clear()
+
+def e2_stop(ev):
+    timer.clear_timeout(idtimer)
+
+e2_contador_evaluados = 0
+e2_contador_incorrectos = 0
+e2_encontradas = []
+
+document["e2_start"].bind("click", e2_start)
+document["e2_stop"].bind("click", e2_stop)
+
+    </script>
+  </head>
+
+  <body onload="brython(0)">
+    <h1>Bugs de Brython</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+    </nav>
+
+    <hr />
+
+    <h2>Bug 379: eval() does not work properly (possible bug). Bug 412: some logical expressions are incorrectly evaluated</h2>
+
+    <p>Genera al azar expresiones lógicas con y sin paréntesis y compara cómo las evalúa Brython. Si dan distintas, las escribe.</p>
+
+    <div class="ejercicio">
+      <p><button id="e2_start">Empezar</button></p>
+      <p><button id="e2_stop">Acabar</button></p>
+      <p id="e2_actual"></p>
+      <p id="e2_resultados"></p>
+      <pre id="e2_errores"></pre>
+    </div>
+    <hr />
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 7 de abril de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

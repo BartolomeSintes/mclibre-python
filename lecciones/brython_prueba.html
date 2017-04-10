@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>AÃ±adir elementos en una imagen SVG. Brython 5</title>
+  <link rel="stylesheet" type="text/css" href="estilo.css" />
+  <script type="text/javascript" src="http://brython.info/src/brython_dist.js">
+  </script>
+  <script type="text/python3">
+  from browser import document
+  import browser.svg as svg
+  document["imagen"] <= svg.line(x1=10, y1=25, x2=290, y2=25, stroke="green", stroke_width=3)
+  document["imagen"] <= svg.circle(cx=100, cy=200, r=50, stroke="red", stroke_width=2, fill="pink")
+  document["imagen"] <= svg.rect(x=200, y=150, width=50, height=80, stroke="blue", stroke_width=1, fill="lightblue")
+  document["imagen"] <= svg.ellipse(cx=150, cy=100, rx=100, ry=50, stroke="black", stroke_width=2, fill="gray")
+  </script>
+</head>
+
+<body onload="brython()">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="300" height="300" viewBox="0 0 300 300"
+    style="background-color: lightgray" id="imagen">
+  </svg>
+</body>
+</html>

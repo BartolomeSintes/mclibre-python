@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (1). Brython. SVG. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos SVG - Brython - Soluciones (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>SVG - Brython (1)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">1 - Puntos</a></li>
+          <li><a href="#ejercicio-2">2 - Líneas</a></li>
+          <li><a href="#ejercicio-3">3 - Rectángulos, polígonos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_svg_brython_1.html">ejercicios SVG Brython (1)</a>.</p>
+
+    <section id="ejercicio-1">
+    <h2>Gráficos SVG Brython (1) - 1 - Puntos</h2>
+
+    <table class="ejemplo">
+      <tbody>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 1. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=300, cy=0,   r=5, fill="black")
+document["imagen"] &lt;= svg.circle(cx=0,   cy=0,   r=5, fill="blue")
+document["imagen"] &lt;= svg.circle(cx=0,   cy=300, r=5, fill="green")
+document["imagen"] &lt;= svg.circle(cx=300, cy=300, r=5, fill="red")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_1.png" alt="SVG Brython (1) 1 1" title="SVG Brython (1) 1 1" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 2. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=300, cy=0,   r=5, fill="red")
+document["imagen"] &lt;= svg.circle(cx=150, cy=0,   r=5, fill="green")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=5, fill="black")
+document["imagen"] &lt;= svg.circle(cx=300, cy=150, r=5, fill="blue")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_2.png" alt="SVG Brython (1) 1 2" title="SVG Brython (1) 1 2" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 3. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=0,   cy=0,   r=5, fill="red")
+document["imagen"] &lt;= svg.circle(cx=100, cy=100, r=5, fill="black")
+document["imagen"] &lt;= svg.circle(cx=200, cy=200, r=5, fill="blue")
+document["imagen"] &lt;= svg.circle(cx=300, cy=300, r=5, fill="green")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_3.png" alt="SVG Brython (1) 1 3" title="SVG Brython (1) 1 3" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 4. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=0,   cy=150, r=5, fill="#000")
+document["imagen"] &lt;= svg.circle(cx=75,  cy=150, r=5, fill="#333")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=5, fill="#555")
+document["imagen"] &lt;= svg.circle(cx=225, cy=150, r=5, fill="#777")
+document["imagen"] &lt;= svg.circle(cx=300, cy=150, r=5, fill="#999")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_4.png" alt="SVG Brython (1) 1 4" title="SVG Brython (1) 1 4" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 5. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=150, cy=50,  r=25, fill="blue")
+document["imagen"] &lt;= svg.circle(cx=150, cy=100, r=25, fill="red")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=25, fill="black")
+document["imagen"] &lt;= svg.circle(cx=150, cy=200, r=25, fill="green")
+document["imagen"] &lt;= svg.circle(cx=150, cy=250, r=25, fill="purple")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_5.png" alt="SVG Brython (1) 1 5" title="SVG Brython (1) 1 5" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 1 6. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=150, fill="black")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=125, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=100, fill="black")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=75,  fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=50,  fill="black")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150, r=25,  fill="white")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_1_6.png" alt="SVG Brython (1) 1 6" title="SVG Brython (1) 1 6" width="324" height="324" /></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+
+    <section id="ejercicio-2">
+    <h2>Gráficos SVG Brython (1) - 2 - Líneas</h2>
+
+    <table class="ejemplo">
+      <tbody>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 1. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=0,    y1=-150, x2=0,   y2=150, stroke="green", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-150, y1=0,    x2=150, y2=0,   stroke="green", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_1.png" alt="SVG Brython (1) 2 1" title="SVG Brython (1) 2 1" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 2. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=0,    y1=-75,  x2=150, y2=-75, stroke="blue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-150, y1=75,   x2=0,   y2=75,  stroke="blue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=75,   y1=0,    x2=75,  y2=150, stroke="blue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-75,  y1=-150, x2=-75, y2=0,   stroke="blue", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_2.png" alt="SVG Brython (1) 2 2" title="SVG Brython (1) 2 2" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 3. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=-150, y1=0,   x2=0,   y2=-150, stroke="purple", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-150, y1=150, x2=150, y2=-150, stroke="purple", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=0,    y1=150, x2=150, y2=0,    stroke="purple", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_3.png" alt="SVG Brython (1) 2 3" title="SVG Brython (1) 2 3" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 4. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=-150, y1=-150, x2=-50, y2=-50, stroke="chocolate", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=150,  y1=-150, x2=50,  y2=-50, stroke="chocolate", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-150, y1=150,  x2=-50, y2=50,  stroke="chocolate", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=150,  y1=150,  x2=50,  y2=50,  stroke="chocolate", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_4.png" alt="SVG Brython (1) 2 4" title="SVG Brython (1) 2 4" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 5. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=-150, y1=50,  x2=150, y2=50,   stroke="steelblue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-150, y1=-50, x2=150, y2=-50,  stroke="steelblue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-50,  y1=150, x2=-50, y2=-150, stroke="steelblue", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=50,   y1=150, x2=50,  y2=-150, stroke="steelblue", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_5.png" alt="SVG Brython (1) 2 5" title="SVG Brython (1) 2 5" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 2 6. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.line(x1=-50, y1=-150, x2=150,  y2=50,  stroke="teal", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=50,  y1=-150, x2=-150, y2=50,  stroke="teal", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=-50, y1=150,  x2=150,  y2=-50, stroke="teal", stroke_width=1)
+document["imagen"] &lt;= svg.line(x1=50,  y1=150,  x2=-150, y2=-50, stroke="teal", stroke_width=1)
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_2_6.png" alt="SVG Brython (1) 2 6" title="SVG Brython (1) 2 6" width="324" height="324" /></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+
+    <section id="ejercicio-3">
+    <h2>Gráficos SVG Brython (1) - 3 - Rectángulos, polígonos</h2>
+
+    <table class="ejemplo">
+      <tbody>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 1. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.rect(x=0,   y=75, width=150, height=150, stroke="black", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.rect(x=150, y=75, width=150, height=150, stroke="black", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=75,  cy=150, r=50, stroke="black", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=225, cy=150, r=50, stroke="black", stroke_width=1, fill="white")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_1.png" alt="SVG Brython (1) 3 1" title="SVG Brython (1) 3 1" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 2. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.rect(x=0,  y=0,   width=300, height=300, stroke="blue", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.rect(x=50, y=100, width=200, height=200, stroke="blue", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=50, r=50, stroke="blue", fill="white")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_2.png" alt="SVG Brython (1) 3 2" title="SVG Brython (1) 3 2" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 3. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.circle(cx=75,  cy=75,  r=75, stroke="orangered", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=225, cy=75,  r=75, stroke="orangered", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=75,  cy=225, r=75, stroke="orangered", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=225, cy=225, r=75, stroke="orangered", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.rect(x=75, y=75, width=150, height=150, stroke="orangered", stroke_width=1, fill="none")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_3.png" alt="SVG Brython (1) 3 3" title="SVG Brython (1) 3 3" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 4. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.polygon(points="  0,150  75,75 150,150  75,225", stroke="indigo", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.polygon(points="150,150 225,75 300,150 225,225", stroke="indigo", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=75,  r=50, stroke="indigo", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=225, r=50, stroke="indigo", stroke_width=1, fill="white")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_4.png" alt="SVG Brython (1) 3 4" title="SVG Brython (1) 3 4" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 5. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.polygon(points="  0,100 100,0 300,200 200,300", stroke="seagreen", stroke_width=1, fill="none")
+document["imagen"] &lt;= svg.polygon(points="300,100 200,0   0,200 100,300", stroke="seagreen", stroke_width=1, fill="none")
+document["imagen"] &lt;= svg.circle(cx=150, cy=150,  r=50, stroke="seagreen", stroke_width=1, fill="none")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_5.png" alt="SVG Brython (1) 3 5" title="SVG Brython (1) 3 5" width="324" height="324" /></td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;SVG (2) 3 6. Ejercicios SVG (2). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
+  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
+  &lt;script type="text/python3"&gt;
+from browser import document
+import browser.svg as svg
+
+document["imagen"] &lt;= svg.polygon(points="0,150 150,0 300,150 150,300", stroke="sienna", stroke_width=1, fill="none")
+document["imagen"] &lt;= svg.circle(cx=30,  cy=30,  r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=270, cy=30,  r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=90,  r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=90,  cy=150, r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=210, cy=150, r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=150, cy=210, r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=30,  cy=270, r=30, stroke="sienna", stroke_width=1, fill="white")
+document["imagen"] &lt;= svg.circle(cx=270, cy=270, r=30, stroke="sienna", stroke_width=1, fill="white")
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="brython()"&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-10 -10 320 320"
+    style="border: black 1px solid" id="imagen"&gt;
+  &lt;/svg&gt;
+&lt;/html&gt;</code></pre>
+          </td>
+          <td><img src="../img/ejercicios/svg_brython_1/svg_brython_1_3_6.png" alt="SVG Brython (1) 3 6" title="SVG Brython (1) 3 6" width="324" height="324" /></td>
+        </tr>
+      </tbody>
+    </table>
+</section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 21 de marzo de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

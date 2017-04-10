@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fórmulas matemáticas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
+  </head>
+
+  <body>
+    <h1>Fórmulas matemáticas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Fórmulas matemáticas</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ecuacion-primer-grado">Ecuación de primer grado</a>
+          <li><a href="#ecuacion-segundo-grado">Ecuación de segundo grado</a>
+          <li><a href="#sistema-ecuaciones-primer-grado">Sistema de ecuaciones</a>
+          <li><a href="#sucesiones-aritmeticas">Sucesiones aritméticas</a></li>
+          <li><a href="#ecuacion-recta">Ecuación recta</a></li>
+          <!--          <li><a href="#transformaciones-lineales">Transformaciones lineales</a></li> -->
+          <li><a href="#distancia-puntos">Distancia entre dos puntos</a></li>
+          <li><a href="#ecuacion-circunferencia">Ecuación circunferencia</a></li>
+          <li><a href="#coordenadas-polares">Coordenadas polares</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se incluyen algunas fórmulas matemáticas elementales. La demostración de algunas de estas fórmulas se encuentra en la lección <a href="formulas_demostraciones.html">Demostración de fórmulas matemáticas</a>.</p>
+
+    <section  id="ecuacion-primer-grado">
+      <h2>Resolución de la ecuación de primer grado</h2>
+
+      <p>Una ecuación de primer grado es una ecuación del tipo:</p>
+
+      <p>`a x + b = 0`</p>
+
+      <p>donde `a` y `b` son números cualesquiera.</p>
+
+      <p>Si `x` es un número real, la ecuación puede tener 0, 1 o infinitas soluciones, dependiendo de los valores de `a` y `b`:</p>
+
+      <ul>
+        <li>Si `a = 0` y `b = 0`, la ecuación tiene infinitas soluciones</li>
+        <li>Si `a = 0` y `b != 0`, la ecuación no tiene solución</li>
+        <li>Si `a != 0`, la ecuación tiene una solución única: `x_1 = (-b) / a`</li>
+      </ul>
+    </section>
+
+    <section  id="ecuacion-segundo-grado">
+      <h2>Resolución de la ecuación de segundo grado</h2>
+
+      <p>Una ecuación de segundo grado es una ecuación del tipo:</p>
+
+      <p>`a x^2 + b x + c = 0`</p>
+
+      <p>donde `a`, `b` y `c` son números cualesquiera.</p>
+
+      <p><strong>Nota</strong>: Para que se trate de una ecuación de segundo grado, `a` tiene que ser distinta de 0. Si `a = 0`, se trataría de una ecuación de primer grado.</p>
+
+      <p>Si `x` es un número real, la ecuación puede tener 0, 1 o 2 soluciones, dependiendo del valor de `b^2-4ac`:</p>
+
+      <ul>
+        <li>Si `b^2-4ac &lt; 0`, la ecuación no tiene solución</li>
+        <li>Si `b^2-4ac = 0`, la ecuación tiene una solución doble: `x_1 = (-b) / (2a)`</li>
+        <li>Si `b^2-4ac &gt; 0`, la ecuación tiene dos soluciones distintas: `x_1 = (-b + sqrt(b^2-4ac)) / (2a)`, `x_2 = (-b - sqrt(b^2-4ac)) / (2a)`</li>
+      </ul>
+    </section>
+
+    <section id="sistema-ecuaciones-primer-grado">
+      <h2>Resolución del sistema de ecuaciones de primer grado</h2>
+
+      <p>Un sistema de ecuaciones de primer grado es un sistema del tipo:</p>
+
+      <p>`{ (a_1 x + b_1 y = c_1), (a_2 x + b_2 y = c_2) :}`</p>
+
+      <p>donde `a_1`, `b_1`, `c_1`, `a_2`, `b_2` y `c_2` son números cualesquiera.</p>
+
+      <p>Las soluciones de un sistema de ecuaciones se suelen expresar escribiendo:</p>
+
+      <p>`x = x_1` e `y = y_1`</p>
+
+      <p>o escribiendo:</p>
+
+      <p>`(x_1, y_1)`</p>
+
+      <p>Un sistema de ecuaciones de primer grado puede tener 0, 1 o infinitas soluciones, dependiendo del valor de `a_1 b_2 - a_2 b_1` y de `c_1` y `c_2`:</p>
+
+      <ul>
+        <li>Si `a_1 b_2 - a_2 b_1 = 0` y `c_1 != c_2`, el sistema no tiene solución.</li>
+        <li>Si `a_1 b_2 - a_2 b_1 = 0` y `c_1 = c_2`, el sistema tiene infinitas soluciones del tipo `(x, (c_1 - a_1 x) / b_1)` donde `x` es cualquier número real.</li>
+        <li>Si `a_1 b_2 - a_2 b_1 != 0`, la ecuación tiene una única solución: `((c_1 b_2 - c_2 b_1) / (a_1 b_2 - a_2 b_1), (a_1 c_2 - a_2 c_1) / (a_1 b_2 - a_2 b_1))`</li>
+      </ul>
+    </section>
+
+    <section  id="sucesiones-aritmeticas">
+      <h2>Sucesiones aritméticas</h2>
+
+      <p>Una sucesión artimética (o progresión aritmética) es una serie ordenada de números ...</p>
+
+      <p>`U_n = { U_0, U_1, U_2, U_3, U_4, ...}`</p>
+
+      <p>en la que la diferencia entre dos valores (también llamados <i>términos</i>) consecutivos es siempre la misma:</p>
+
+      <p>`U_(n+1) - U_n = d`</p>
+
+      <p>Por ejemplo, la sucesión ...</p>
+
+      <p>`U_n = { 10, 13, 16, 19, 22, ...}`</p>
+
+      <p>es una sucesión aritmética de diferencia 3 porque la diferencia entre dos términos consecutivos es siempre 3:</p>
+
+      <p>`U_1 - U_0 = 13 - 10 = 3`</p>
+
+      <p>`U_2 - U_1 = 16 - 13 = 3`</p>
+
+      <p>`U_3 - U_2 = 19 - 16 = 3`</p>
+
+      <p>Es importante señalar que el índice n que identifica a los términos de la sucesión empieza desde 0, es decir, que el primer término de la sucesión es el término `U_0`, el segundo término es el término `U_1`, etc.</p>
+
+      <section>
+        <h3>Término general de una sucesión aritmética</h3>
+
+        <p>Se puede calcular cualquier término de una sucesión aritmética calculando todos los valores intermedios o mediante la fórmula del término general de una sucesión aritmética:</p>
+
+        <p>`U_n = U_0 + n * d`</p>
+
+        <p>La expresión del término general de una sucesión aritmética permite calcular fácilmente tantos valores como deseemos.</p>
+
+        <p>Por ejemplo, si queremos generar los veinte primeros valores de la sucesión {7, 12, 17, 22, 27, 32, ...} habrá que tener en cuenta que se trata de una sucesión aritmética cuyo primer término es 7 y cuya diferencia es 5, por lo tanto el término general es: `U_n = 7 + 5 * n`. Para generar en Python los primeros 20 valores bastaría escribir el programa:</p>
+
+        <div class="codigo">
+          <pre>
+<code class="language-python">for i in range(20):
+    print(7 + 5*n)</code>
+</pre>
+        </div>
+      </section>
+
+      <p>O por ejemplo, si queremos generar los treinta primeros valores de la sucesión {100, 98, 96, 94, ...} habrá que tener en cuenta que se trata de una sucesión aritmética cuyo primer término es 100 y cuya diferencia es -2, por lo tanto el término general es: `U_n = 100 - 2 * n`. Para generar en Python los primeros 30 valores bastaría escribir el programa:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(30):
+    print(100 - 2*n)</code>
+</pre>
+      </div>
+    </section>
+
+    <section  id="ecuacion-recta">
+      <h2>Ecuación de la recta que pasa por dos puntos</h2>
+
+      <p><img alt="Ecuación de la recta que pasa por dos puntos" src="../img/matematicas/mates_recta_por_dos_puntos.svg" width="329" height="222" /></p>
+
+      <p>La ecuación de la recta que pasa por dos puntos `A(x_1, y_1)` y `B(x_2, y_2)` es:</p>
+
+      <ul>
+        <li>Si la recta es una recta vertical, es decir, si las abcisas coinciden (`x_1 = x_2`), la ecuación es `x = x_1`</li>
+        <li>Si la recta es una recta horizontal, es decir, si las ordenadas coinciden (`y_1 = y_2`), la ecuación es `y = y_1`</li>
+        <li>Si la recta es una recta oblicua, la ecuación es: <br />
+          `(y - y_1) / (x-x_1) = (y_2 - y_1) / (x_2 - x_1)`<br />
+          que también se puede escribir, expresando `y` en función de `x`, como:<br />
+          `y = (y_2 - y_1) / (x_2 - x_1) x + (x_2 y_1 - x_1 y_2) / (x_2 - x_1)`</li>
+      </ul>
+    </section>
+
+    <!--
+<section  id="transformaciones-lineales">
+<h2>Transformaciones lineales</h2>
+
+<p>A menudo necesitamos transformar una serie de valores que se encuentran en un rango en otra serie que se encuentre en otro rango.</p>
+
+<p>Por ejemplo, tenemos los valores [15, 50, 40] que se encuentran en el rango [0-50] y queremos convertir esos valores en valores proporcionales que se encuentren en el rango [0, 300].</p>
+
+<p>Los valores que sabemos convertir son:</p>
+<ul>
+<li>el más pequeño: el valor 0, aunque no está entre la lista de valores, lo queremos convertir en 0.</li>
+<li>el más grande: el valor 50, el mayor de la lista inicial, lo queremos convertir en 300</li>
+</ul>
+
+<p>Este problema es equivalente al de encontrar la ecuación de la recta que pasa por dos puntos en los que:</p>
+<ul>
+<li>la abcisa (coordenada X) es el valor inicial</li>
+<li>la ordenada (coordenada y) es el valor final</li>
+</ul>
+
+<p class="captura"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_11.png" width="328" height="223" /></p>
+
+<p>Sustituyendo en la fórmula de la ecuación que pasa por dos puntos ...</p>
+
+<p class="captura"><img alt="Ecuación de la recta que pasa por dos puntos" src="../img/matematicas/mates_recta_3.png" width="360" height="100" /></p>
+
+<p>... los puntos (0, 0) y (50, 300) obtenemos:</p>
+
+<p class="captura"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_12.png" width="370" height="100" /></p>
+
+<p>que quedaría finalmente como:</p>
+
+<p class="captura"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_13.png" width="110" height="60" /></p>
+
+<p>Así, la lista de valores [15, 50, 40] se convertiría en la lista [90, 300, 240].</p>
+<hr class="corta" />
+
+<p>En general, para transformar una lista de valores [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ..., x<sub>n</sub>] en valores del rango [M, N] se podría emplear la fórmula:</p>
+
+<p class="captura resaltado"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_14.png" width="650" height="90" /></p>
+
+<p>donde max(x<sub>i</sub>) y min(x<sub>i</sub>) son el valor máximo y mínimo respectivamente de la lista de valores [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ..., x<sub>n</sub>].</p>
+
+<hr class="corta" />
+
+<p>En el caso en el que al valor inicial 0 le correspondiera el valor final 0 (aunque la lista de valores no contenga el valor 0), la fórmula se
+simplificaría:</p>
+
+<p class="captura"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_15.png" width="470" height="90" /></p>
+
+<p>y quedaría finalmente como:</p>
+
+<p class="captura resaltado"><img alt="Transformaciones lineales" src="../img/matematicas/mates_recta_16.png" width="190" height="90" /></p>
+</section>
+-->
+
+    <section id="distancia-puntos">
+      <h2>Distancia entre dos puntos</h2>
+
+      <p><img alt="Distancia entre dos puntos" src="../img/matematicas/mates_distancia_puntos_1.svg" width="309" height="223" /></p>
+
+      <p>La distancia `d` entre los puntos `A(x_1, y_1)` y `B(x_2, y_2)` es:</p>
+
+      <p>`d = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2)`</p>
+    </section>
+
+    <section  id="ecuacion-circunferencia">
+      <h2>Ecuación de la circunferencia</h2>
+
+      <p><img alt="Circunferencia" src="../img/matematicas/mates_ecuacion_circunferencia_1.svg" width="363" height="314" /></p>
+
+      <p>La ecuación de la circunferencia de centro `C(x_1, y_1)` y radio `R` es:</p>
+
+      <p>`(x - x_1)^2 + (y - y_1)^2 = R^2`</p>
+
+      <p>que también se puede escribir expresando `y` en función de `x` como:</p>
+
+      <p>`y = y_1 +- sqrt(R^2 - (x - x_1)^2)`</p>
+
+      <p>... teniendo en cuenta que `x` toma valores entre `x_1 - R` y `x_1 + R`, es decir:</p>
+
+      <p>`x_1 - R &le; x &le; x_1 + R`</p>
+
+      <p><strong>Nota</strong>: El ± de la fórmula anterior significa que para cada valor de <em><strong>x</strong></em> hay dos posibles valores de <em><strong>y</strong></em>, que se calculan sumando o restando la raíz cuadrada.</p>
+    </section>
+
+    <section  id="coordenadas-polares">
+      <h2>Coordenadas polares</h2>
+
+      <p>Las coordenadas polares consisten en identificar un punto por su distancia al origen (R) y el ángulo (&alpha;) que forma el semieje X con la línea que une el origen con el punto:</p>
+
+      <p class="captura"><img alt="Coordenadas polares" src="../img/matematicas/mates_circulo_11.png" width="229" height="220" /></p>
+
+      <p>Las relaciones entre coordenadas polares y coordenadas cartesianas son:</p>
+
+      <p>`{ (x = R * cos(alpha)), (y = R * sin(alpha)) :}` y `{ (R = sqrt(x^2 + y^2)), (alpha = arctan(y / x)) :}`</p>
+
+      <p>y también se dan las relaciones `alpha = arccos(x / R)`y `alpha = arcsin(y / R)`</p>
+
+      <hr class="corta" />
+
+      <p>Si la circunferencia no está centrada en el origen:</p>
+
+      <p class="captura"><img alt="Coordenadas polares" src="../img/matematicas/mates_circulo_21.png" width="353" height="304" /></p>
+
+      <p>las relaciones entre coordenadas polares y cartesianas son:</p>
+
+      <p>`{ (x = x_1 + R * cos(alpha)), (y = y_1 + R * sin(alpha)) :}` y `{ (R = sqrt((x - x_1)^2 + (y - y_1)^2)), (alpha = arctan((y - y_1) / (x - x_1))) :}`</p>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de mayo de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (2). El módulo turtle. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos: el módulo turtle - Ejercicios (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Módulo turtle (2)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">A. Figuras de tamaño variable</a></li>
+          <li><a href="#ejercicio-2">B. Bucles</a></li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección sobre <a href="../lecciones/python_turtle_2.html">el módulo turtle (2)</a>, aunque en el apartado B se utilizan también bucles, tratados en la lección <a href="../lecciones/python_for.html">bucle for (1)</a>. Los ejercicios están separados en dos bloques:</p>
+
+    <p>Se pueden consultar unas <a href="ej_turtle_2_soluciones.html">posibles soluciones</a>.</p>
+
+    <p><strong>Notas</strong>:</p>
+    <ul>
+      <li>Las capturas corresponden al resultado de la ejecución del programa, sin cambiar el tamaño de la ventana ni mover las barras de desplazamiento.</li>
+      <li>Salvo que se indique lo contrario en el enunciado, los tamaños y distancias no tiene por qué coincidir exactamente con el ejemplo, basta con mantener las proporciones.</li>
+    </ul>
+
+    <section id="ejercicio-1">
+      <h2>A. Figuras de tamaño variable</h2>
+
+      <section id="ejercicio-1-1">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-1-1"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - A-1 - Figuras</h3>
+
+        <p>Escriba ocho programas que soliciten el tamaño del dibujo y generen los siguientes dibujos (la flecha roja indica el tamaño que ha escrito el usuario, el programa no debe dibujarla).</p>
+
+        <p><strong>Nota</strong>: En este ejercicio, las figuras están más o menos centradas en el origen, por lo que algunos puntos tendrán coordenadas negativas.</p>
+
+        <ol class="captura">
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_1.png" width="266" height="288" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_2.png" width="266" height="288" /></li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_3.png" width="266" height="288" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_4.png" width="266" height="288" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_030.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_5.png" width="266" height="288" /></li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_6.png" width="266" height="288" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_030.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_7.png" width="266" height="288" /></li>
+          <li>
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A1" src="../img/ejercicios/turtle_2/turtle_2_a_1_8.png" width="266" height="288" />
+          </li>
+        </ol>
+      </section>
+
+      <section id="ejercicio-1-2">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-1-2"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) A-2 - Letras </h3>
+
+        <p>Escriba ocho programas que soliciten el tamaño del dibujo y generen los siguientes dibujos (la flecha roja indica el tamaño que ha escrito el usuario, el programa no debe dibujarla).</p>
+
+        <p><strong>Nota</strong>: En este ejercicio, las figuras están en el primer cuadrante, es decir, los puntos no tienen coordenadas negativas.</p>
+
+        <ol class="captura">
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_030.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_1.png" width="316" height="250" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_2.png" width="316" height="220" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_050.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_3.png" width="416" height="250" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_100.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_4.png" width="266" height="180" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_050.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_5.png" width="436" height="200" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_150.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_6.png" width="391" height="170" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_050.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_7.png" width="366" height="240" />
+          </li>
+          <li>
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_1_150.png" width="196" height="124" />
+            <img alt="Turtle (2) A2" src="../img/ejercicios/turtle_2/turtle_2_a_2_8.png" width="391" height="250" />
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>B. Bucles</h2>
+
+      <section id="ejercicio-2-1">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-2-1"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - B-1 - Puntos en en semieje positivo</h3>
+        <ol>
+          <li>Escriba un programa que solicite un número entre 0 y 10 y dibuje ese número de puntos formando una línea horizontal desde el origen (el usuario tendrá que ampliar la ventana para ver todos los puntos). La separación entre puntos será de 50 píxeles y el grosor de los puntos 10 píxeles:
+            <p class="captura">
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_a1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_a3.png" width="550" height="188" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que el programa solicite también la separación entre puntos (entre 10 y 50 píxeles):
+            <p class="captura">
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_b1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_b2.png" width="216" height="124" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_b3.png" width="266" height="188" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que se escriba sobre el punto el número de punto.
+            <p class="captura"><img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_c1.png" width="266" height="188" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que se puedan solicitar hasta 100 puntos y que el espacio de dibujo contenga el dibujo completo (de manera que con las barras de desplazamiento se pueda ver todo el dibujo, sin necesidad de modificar la ventana):
+            <p class="captura">
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_d1.png" width="266" height="188" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_d2.png" width="266" height="188" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que:
+            <ul>
+              <li>el programa solicite también el grosor de los puntos (entre 3 y 50 píxeles)</li>
+              <li>que la separación sea como mínimo el grosor de los puntos, como máximo 5 veces el grosor y el valor predeterminado debe ser el valor medio entre el mínimo y el máximo.</li>
+            </ul>
+            <p class="captura">
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_e1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_e2.png" width="196" height="124" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_e3.png" width="219" height="124" />
+            </p>
+            <p class="captura">
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_e4.png" width="266" height="188" />
+              <img alt="Turtle (2) B-1" src="../img/ejercicios/turtle_2/turtle_2_b_1_e5.png" width="266" height="188" />
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="ejercicio-2-2">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-2-2"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - B-2 - Puntos centrados</h3>
+
+        <ol>
+          <li>Modifique los programas del ejercicio anterior de manera que los puntos se dibujen centrados en la ventana:
+            <p class="captura">
+              <img alt="Turtle (2) B-2" src="../img/ejercicios/turtle_2/turtle_2_b_2_a1.png" width="266" height="188" />
+              <img alt="Turtle (2) B-2" src="../img/ejercicios/turtle_2/turtle_2_b_2_a2.png" width="266" height="188" />
+            </p>
+            <p><strong>Ayuda</strong>: Si n es el número de puntos, el ancho total del dibujo es 50 * (n-1) y la abcisa del primer punto es -50 * (n-1) / 2</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="ejercicio-2-3">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-2-3"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - B-3 - Puntos </h3>
+
+        <ol>
+          <li>Escriba un programa que solicite el número de puntos (entre 2 y 20) y su grosor (entre 10 y 30 píxeles) y dibuje los puntos formando una línea horizontal desde el origen (el usuario tendrá que ampliar la ventana para ver todos los puntos):
+            <p class="captura">
+              <img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_a1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_a2.png" width="196" height="124" />
+              <img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_a3.png" width="266" height="188" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que el color de los puntos vaya cambiando del negro al blanco:
+            <p class="captura"><img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_b1.png" width="446" height="188" /></p>
+            <p><strong>Ayuda</strong>: Si n es el número de puntos, el color va cambiando en cada punto 1 / n (o 255 / n, según el modo de color utilizado).</p>
+          </li>
+          <li>Modifique el programa del apartado 1 de manera que se dibuje un cuadrado de puntos:
+            <p class="captura"><img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_c1.png" width="300" height="245" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que se dibuje un cuadrado de puntos del negro al blanco:
+            <p class="captura"><img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_d1.png" width="422" height="265" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que se dibuje un cuadrado de puntos del negro al blanco:
+            <p class="captura"><img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_e1.png" width="419" height="250" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que se dibuje un cuadrado de puntos del negro al blanco:
+            <p class="captura"><img alt="Turtle (2) B-3" src="../img/ejercicios/turtle_2/turtle_2_b_3_f1.png" width="424" height="250" /></p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="ejercicio-2-4">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-2-4"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - B-4 - Líneas</h3>
+
+        <ol>
+          <li>Escriba un programa que dibuje once líneas verticales, separadas 20 píxeles y de 200 píxeles de longitud, con la esquina inferior izquierda del dibujo en el origen del sistema de coordenadas:
+            <p class="captura"><img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_a.png" width="436" height="250" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que solicite el número de líneas (el dibujo resultante debe tener forma cuadrada, es decir, la altura de las líneas debe ser igual al ancho del dibujo):
+            <p class="captura">
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_b1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_b2.png" width="436" height="250" />
+            </p>
+            <p class="captura">
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_b3.png" width="196" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_b4.png" width="436" height="250" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que solicite también la separación entre líneas (el dibujo resultante debe tener forma cuadrada, es decir, la altura de las líneas debe ser igual al ancho del dibujo):
+            <p class="captura">
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_c1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_c2.png" width="197" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_c3.png" width="436" height="250" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que dibuje una rejilla cuadrada.
+            <p class="captura">
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_d1.png" width="196" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_d2.png" width="197" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_d3.png" width="436" height="250" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que dibuje una rejilla rectangular.
+            <p class="captura">
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_e1.png" width="198" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_e2.png" width="266" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_e3.png" width="251" height="124" />
+              <img alt="Turtle (2) B-4" src="../img/ejercicios/turtle_2/turtle_2_b_4_e4.png" width="436" height="250" />
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="ejercicio-2-5">
+        <h3><a href="ej_turtle_2_soluciones.html#ejercicio-2-5"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>turtle (2) - B-5 - Cuadrados</h3>
+
+        <ol>
+          <li>Escriba un programa que dibuje un cuadrado de 50 píxeles de lado, con la esquina inferior izquierda en el origen del sistema de coordenadas:
+            <p class="captura"><img alt="Turtle (2) 05" src="../img/ejercicios/turtle_2/turtle_2_b_5_a.png" width="436" height="250" /></p>
+          </li>
+          <li>Modifique el programa anterior de manera que solicite el tamaño del cuadrado:
+            <p class="captura">
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_b1.png" width="210" height="124" />
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_b2.png" width="436" height="250" />
+            </p>
+          </li>
+          <li>Modifique el programa anterior de manera que pida además cuántos cuadrados quiere dibujar. Los cuadrados se dibujarán en horizontal separados el ancho del cuadrado.
+            <p class="captura">
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_c1.png" width="210" height="124" />
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_c2.png" width="196" height="124" />
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_c3.png" width="700" height="250" />
+            </p>
+          </li>
+          <li>Modifique el programa del apartado 2 de manera que pida además cuántos cuadrados quiere dibujar. Los cuadrados se dibujarán con la esquina inferior izquierda en el origen, aumentando su tamaño 20 píxeles cada vez.
+            <p class="captura">
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_d1.png" width="244" height="124" />
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_d2.png" width="196" height="124" />
+              <img alt="Turtle (2) B-5" src="../img/ejercicios/turtle_2/turtle_2_b_5_d3.png" width="436" height="250" />
+            </p>
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 26 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>SVG (3) 0 4 1. Ejercicios SVG (3). Brython. Python. Bartolomé Sintes Marco</title>
+  <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+  <script type="text/python3">
+from browser import document
+import browser.svg as svg
+
+for i in range(5):
+    document["imagen"] <= svg.line(x1=-150, y1=-150+60*i, x2=150-60*i, y2=150, stroke="black", stroke_width=1)
+    document["imagen"] <= svg.line(x1=-150+60*i, y1=-150, x2=150, y2=150-60*i, stroke="black", stroke_width=1)
+  </script>
+</head>
+
+<body onload="brython()">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="320" height="320" viewBox="-160 -160 320 320"
+    style="border: black 1px solid" id="imagen">
+  </svg>
+</body>
+</html>

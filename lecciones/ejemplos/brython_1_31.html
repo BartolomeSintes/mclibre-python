@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Programa con errores. Brython. Python</title>
+  <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+  <script type="text/python3">
+from browser import document
+import browser.svg as svg
+
+document["imagen"] <= svg.circle(cx=150, cy=150, r=150, stroke="red", stroke_width=2, fill="pink")
+  </script>
+</head>
+
+<body onload="brython()">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="300" height="300" viewBox="0 0 300 300"
+    style="border: black 1px solid" id="imagen">
+  </svg>
+</body>
+</html>

@@ -1,0 +1,4050 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (1). Funciones. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Funciones - Soluciones (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Funciones (1)</h2>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_funciones_1.html">ejercicios (1) de funciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2><a href="ej_funciones_1.html#ejercicio-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 1</h2>
+
+      <div class="diapo" style="height: 340px;">
+
+        <div id="Paso010">
+          <p><strong>Funciones 1 - (01)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">33
+43</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso011"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso011">
+          <p><strong>Funciones 1 - (01) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    return
+
+<span class="conborde">a = 33</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 33.</p>
+
+          <p class="control">
+            <a href="#Paso010"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso012"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso012">
+          <p><strong>Funciones 1 - (01) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    return
+
+a = 33
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso011"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso013"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso013">
+          <p><strong>Funciones 1 - (01) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">global a</span>
+    print(a)
+    a += 10
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que declara global la variable "a", es decir, que la          variable "a" del programa principal y la variable "a" de la función subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso012"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso014"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso014">
+          <p><strong>Funciones 1 - (01) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    <span class="conborde">print(a)</span>
+    a += 10
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">33</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a". Como la variable "a" de la función subrutina() es la misma que la variable "a" del programa principal, se escribe el valor 33.</p>
+
+          <p class="control">
+            <a href="#Paso013"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso015"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso015">
+          <p><strong>Funciones 1 - (01) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    <span class="conborde">a += 10</span>
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">33</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se aumenta el valor de la variable "a" en 10 unidades, pasando a valer 43 (33 + 10).</p>
+
+          <p class="control">
+            <a href="#Paso014"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso016"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso016">
+          <p><strong>Funciones 1 - (01) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    <span class="conborde">return</span>
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">33</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso015"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso017"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso017">
+          <p><strong>Funciones 1 - (01) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    return
+
+a = 33
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">33
+<span class="conborde">43</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es ahora 43, puesto que la función subrutina() ha modificado su valor.</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso016"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2><a href="ej_funciones_1.html#ejercicio-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 2</h2>
+
+      <div class="diapo" style="height: 390px;">
+
+        <div id="Paso020">
+          <p><strong>Funciones 1 - (02)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a = 21
+    return
+
+subrutina()
+a = 20
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 7, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 3, in subrutina
+    print(a)
+NameError: global name 'a' is not defined</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso021"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso021">
+          <p><strong>Funciones 1 - (02) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a = 21
+    return
+
+<span class="conborde">subrutina()</span>
+a = 20
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso020"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso022"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso022">
+          <p><strong>Funciones 1 - (02) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">global a</span>
+    print(a)
+    a = 21
+    return
+
+subrutina()
+a = 20
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 7, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 3, in subrutina
+    print(a)
+NameError: global name 'a' is not defined</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función subrutina() son la misma variable.</p>
+
+          <p>Pero como en el programa principal todavía no se ha definido la variable "a", se produce un error y el programa termina. Nótese que el error se produce aunque en el programa principal se defina la variable "a" más adelante. Lo importante es que cuando se llama a la función subrutina()la variable no está todavía definida.</p>
+
+          <p class="control">
+            <a href="#Paso021"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2><a href="ej_funciones_1.html#ejercicio-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 3</h2>
+
+      <div class="diapo" style="height: 340px;">
+
+        <div id="Paso030">
+          <p><strong>Funciones 1 - (03)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    a = 10
+    print(a)
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">10
+10</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso031"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso031">
+          <p><strong>Funciones 1 - (03) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    a = 10
+    print(a)
+    return
+
+<span class="conborde">a = 33</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 33.</p>
+
+          <p class="control">
+            <a href="#Paso030"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso032"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso032">
+          <p><strong>Funciones 1 - (03) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    a = 10
+    print(a)
+    return
+
+a = 33
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso031"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso033"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso033">
+          <p><strong>Funciones 1 - (03) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">global a</span>
+    a = 10
+    print(a)
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso032"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso034"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso034">
+          <p><strong>Funciones 1 - (03) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    <span class="conborde">a = 10</span>
+    print(a)
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se establece el valor de la variable "a" igual a 10.</p>
+
+          <p class="control">
+            <a href="#Paso033"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso035"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso035">
+          <p><strong>Funciones 1 - (03) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    a = 10
+    <span class="conborde">print(a)</span>
+    return
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">10</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se escribe el valor de la variable "a". Como la variable "a" de la función subrutina() es la misma que la variable "a" del programa principal, se escribe el valor 33.</p>
+
+          <p class="control">
+            <a href="#Paso034"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso036"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso036">
+          <p><strong>Funciones 1 - (03) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    <span class="conborde">return</span>
+
+a = 33
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">10</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso035"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso037"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso037">
+          <p><strong>Funciones 1 - (03) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    global a
+    print(a)
+    a += 10
+    return
+
+a = 33
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">10
+<span class="conborde">10</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es ahora 10, puesto que la función subrutina() ha modificado su valor.</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso036"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2><a href="ej_funciones_1.html#ejercicio-4"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 4</h2>
+
+      <div class="diapo" style="height: 400px;">
+
+        <div id="Paso040">
+          <p><strong>Funciones 1 - (04)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    nonlocal a
+    print(a)
+    a = 32
+    return
+
+a = 31
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><img alt="IDLE. Aviso de error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso041"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso041">
+          <p><strong>Funciones 1 - (04) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">nonlocal a</span>
+    print(a)
+    a = 32
+    return
+
+a = 31
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><img alt="IDLE. Aviso de error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Realmente este program no llega ni siquiera a ejecutarse.</p>
+
+          <p>Al analizar la corrección sintáctica del programa, Python descubre que en la función subrutina() se declara una variable como <span class="idle-rese">nonlocal</span>, que significa que la variable está definida en un ámbito superior (que no es el programa principal, porque si no debería declararse como global). Pero como no existe ningún ámbito intermedio entre la función subrutina() y el programa principal, esa variable no puede estar definida en ningún sitio, por lo que se genera un error.</p>
+
+          <p class="control">
+            <a href="#Paso040"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2><a href="ej_funciones_1.html#ejercicio-5"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 5</h2>
+
+      <div class="diapo" style="height: 375px;">
+
+        <div id="Paso050">
+          <p><strong>Funciones 1 - (05)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    print(a)
+    a = 11
+    return
+
+a = 10
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 7, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 2, in subrutina
+    print(a)
+UnboundLocalError: local variable 'a' referenced before assignment</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso051"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso051">
+          <p><strong>Funciones 1 - (05) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    print(a)
+    a = 11
+    return
+
+<span class="conborde">a = 10</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 10.</p>
+
+          <p class="control">
+            <a href="#Paso050"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso052"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso052">
+          <p><strong>Funciones 1 - (05) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    print(a)
+    a = 11
+    return
+
+a = 10
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso051"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso053"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso053">
+          <p><strong>Funciones 1 - (05) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">print(a)</span>
+    a = 11
+    return
+
+a = 10
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 7, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 2, in subrutina
+    print(a)
+UnboundLocalError: local variable 'a' referenced before assignment</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que pretende imprimir la variable "a".</p>
+
+          <p>Como dentro de la función subrutina() se define la variable "a", Python la considera <span class="idle-rese">local</span>, es decir, distinta de la variable "a" del programa principal. Pero como en esta instrucción se intenta imprimir el valor de la variable sin haberle dado valor antes, se produce un error y el programa se interrumpe.</p>
+
+          <p class="control">
+            <a href="#Paso052"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2><a href="ej_funciones_1.html#ejercicio-6"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 6</h2>
+
+      <div class="diapo" style="height: 380px;">
+
+        <div id="Paso060">
+          <p><strong>Funciones 1 - (06)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    return
+
+a = 4
+b = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">3
+4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso061"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso061">
+          <p><strong>Funciones 1 - (06) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    return
+
+<span class="conborde">a = 4</span>
+b = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso060"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso062"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso062">
+          <p><strong>Funciones 1 - (06) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    return
+
+a = 4
+<span class="conborde">b = 3</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se crea la variable "b", con el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso061"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso063"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso063">
+          <p><strong>Funciones 1 - (06) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    return
+
+a = 4
+b = 3
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso062"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso064"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso064">
+          <p><strong>Funciones 1 - (06) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    <span class="conborde">a = b</span>
+    print(a)
+    return
+
+a = 4
+b = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La primera instrucción de la función subrutina() iguala "b" a "a".</p>
+          <ul>
+            <li>Al asignarle valor a la variable "a", la variable "a" es una variable local, es decir, distinta a la variable "a" del programa principal</li>
+            <li>Al utilizar el valor de la variable "b" sin haberla definido antes, Python entiende que la variable "b" es libre, en este caso, <span class="idle-rese">global</span>, puesto que "b" está definida en el programa principal.</li>
+          </ul>
+
+          <p>Por tanto, la variable "a" local toma el valor de la variable <span class="idle-rese">global</span> "b", es decir, 3.</p>
+
+          <p class="control">
+            <a href="#Paso063"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso065"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso065">
+          <p><strong>Funciones 1 - (06) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    <span class="conborde">print(a)</span>
+    return
+
+a = 4
+b = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se escribe el valor de "a", es decir, 3.</p>
+
+          <p class="control">
+            <a href="#Paso064"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso066"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso066">
+          <p><strong>Funciones 1 - (06) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    <span class="conborde">return</span>
+
+a = 4
+b = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">3</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina()</p>
+
+          <p class="control">
+            <a href="#Paso065"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso067"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso067">
+          <p><strong>Funciones 1 - (06) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    a = b
+    print(a)
+    return
+
+a = 4
+b = 3
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">3
+<span class="conborde">4</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es ahora 4, puesto que se trata de la variable "a" del programa principal, que no ha modificado su valor.</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso066"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2><a href="ej_funciones_1.html#ejercicio-7"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 7</h2>
+
+      <div class="diapo" style="height: 480px;">
+
+        <div id="Paso070">
+          <p><strong>Funciones 1 - (07)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10
+30
+30</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso071"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso071">
+          <p><strong>Funciones 1 - (07) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+<span class="conborde">a = 10</span>
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 10.</p>
+
+          <p class="control">
+            <a href="#Paso070"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso072"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso072">
+          <p><strong>Funciones 1 - (07) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+<span class="conborde">subrutina_1()</span>
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina_1()</p>
+
+          <p class="control">
+            <a href="#Paso071"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso073"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso073">
+          <p><strong>Funciones 1 - (07) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    <span class="conborde">a = 20</span>
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina_1() , que establece el valor de la variable "a". Al establecer valor sin haberla declarado antes global o <span class="idle-rese">nonlocal</span>, Python considera esta variable como local. Por tanto, la variable "a" de la función subrutina_1() es distinta de la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso072"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso074"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso074">
+          <p><strong>Funciones 1 - (07) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    <span class="conborde">print(a)</span>
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">20</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 33.</p>
+
+          <p class="control">
+            <a href="#Paso073"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso075"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso075">
+          <p><strong>Funciones 1 - (07) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    <span class="conborde">return</span>
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">20</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina_1() y continúa la ejecución del programa tras la llamada a la función subrutina_1()</p>
+
+          <p class="control">
+            <a href="#Paso074"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso076"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso076">
+          <p><strong>Funciones 1 - (07) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+<span class="conborde">print(a)</span>
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+<span class="conborde">10</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina_1() , se vuelve al programa principal. Se escribe el valor de la variable "a", es decir 10, puesto que se trata de la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso075"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso077"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso077">
+          <p><strong>Funciones 1 - (07) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+<span class="conborde">subrutina_2()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina_2() .</p>
+
+          <p class="control">
+            <a href="#Paso076"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso078"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso078">
+          <p><strong>Funciones 1 - (07) - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    <span class="conborde">global a</span>
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina_2() , que declara la variable "a" como variable global. Por tanto, la variable "a" de la función subrutina_2() es la misma que la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso077"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso079"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso079">
+          <p><strong>Funciones 1 - (07) - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    <span class="conborde">a = 30</span>
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se establece el valor de la variable "a" en 30.</p>
+
+          <p class="control">
+            <a href="#Paso078"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso0710"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso0710">
+          <p><strong>Funciones 1 - (07) - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    <span class="conborde">print(a)</span>
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10
+<span class="conborde">30</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 30.</p>
+
+          <p class="control">
+            <a href="#Paso079"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso0711"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso0711">
+          <p><strong>Funciones 1 - (07) - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    <span class="conborde">return</span>
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10
+30</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función y continúa la ejecución del programa tras la llamada a la función subrutina_2().</p>
+
+          <p class="control">
+            <a href="#Paso0710"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso0712"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso0712">
+          <p><strong>Funciones 1 - (07) - Paso 12</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina_1():
+    a = 20
+    print(a)
+    return
+
+def subrutina_2():
+    global a
+    a = 30
+    print(a)
+    return
+
+a = 10
+subrutina_1()
+print(a)
+subrutina_2()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">20
+10
+30
+<span class="conborde">30</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función, se vuelve al programa principal. Se escribe el valor de la variable "a" que es ahora 30, puesto que la función ha modificado su valor.</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso0711"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-8">
+      <h2><a href="ej_funciones_1.html#ejercicio-8"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 8</h2>
+
+      <div class="diapo" style="height: 450px;">
+
+        <div id="Paso080">
+          <p><strong>Funciones 1 - (08)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+3</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso081"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso081">
+          <p><strong>Funciones 1 - (08) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 3</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso080"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso082"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso082">
+          <p><strong>Funciones 1 - (08) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso081"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso083"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso083">
+          <p><strong>Funciones 1 - (08) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    <span class="conborde">a = 4</span>
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función, que establece el valor de la variable "a". Al establecer valor sin haberla declarado antes <span class="idle-rese">global</span> o nonlocal, Python considera esta variable como local. Por tanto, la variable "a" de la función es distinta de la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso082"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso084"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso084">
+          <p><strong>Funciones 1 - (08) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    <span class="conborde">sub_subrutina()</span>
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La función subrutina() contiene a su vez una función llamada sub_subrutina(). A continuación se realiza la llamada a la función sub_subrutina() desde la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso083"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso085"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso085">
+          <p><strong>Funciones 1 - (08) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        <span class="conborde">a = 5</span>
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función, que establece el valor de la variable "a". Al establecer valor sin haberla declarado antes <span class="idle-rese">global</span> o nonlocal, Python considera esta variable como local. Por tanto, la variable "a" de la función es distinta de la variable "a" de la función subrutina() o de la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso084"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso086"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso086">
+          <p><strong>Funciones 1 - (08) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        <span class="conborde">print(a)</span>
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 5.</p>
+
+          <p class="control">
+            <a href="#Paso085"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso087"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso087">
+          <p><strong>Funciones 1 - (08) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        <span class="conborde">return</span>
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función y continúa la ejecución del programa tras la llamada a la función sub_subrutina().</p>
+
+          <p>En este caso, eso significa volver a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso086"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso088"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso088">
+          <p><strong>Funciones 1 - (08) - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    <span class="conborde">print(a)</span>
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+<span class="conborde">4</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función sub_subrutina(), se vuelve a la función subrutina(). Se escribe el valor de la variable "a" que es 4, puesto que se trata de la variable "a" de la función subrutina(), que no ha modificado su valor.</p>
+
+          <p class="control">
+            <a href="#Paso087"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso089"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso089">
+          <p><strong>Funciones 1 - (08) - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    <span class="conborde">return</span>
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p>En este caso, eso significa volver al programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso088"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso0810"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso0810">
+          <p><strong>Funciones 1 - (08) - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+<span class="conborde">3</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función, se vuelve al programa principal. Se escribe el valor de la variable "a" que es 3, puesto que se trata de la variable "a" del programa principal, que no ha modificado su valor.</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso089"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-9">
+      <h2><a href="ej_funciones_1.html#ejercicio-9"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 9</h2>
+
+      <div class="diapo" style="height: 490px;">
+
+        <div id="Paso090">
+          <p><strong>Funciones 1 - (09)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 3
+        print(a)
+        a = 5
+        return
+
+    a = 3
+    sub_subrutina()
+    print(a)
+    return
+
+a = 4
+sub_subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 14, in &lt;module&gt;
+    sub_subrutina()
+NameError: name 'sub_subrutina' is not defined</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso091"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso091">
+          <p><strong>Funciones 1 - (09) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 3
+        print(a)
+        a = 5
+        return
+
+    a = 3
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 4</span>
+sub_subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso090"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso092"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso092">
+          <p><strong>Funciones 1 - (09) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 3
+        print(a)
+        a = 5
+        return
+
+    a = 3
+    sub_subrutina()
+    print(a)
+    return
+
+a = 4
+<span class="conborde">sub_subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 14, in &lt;module&gt;
+    sub_subrutina()
+NameError: name 'sub_subrutina' is not defined</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función sub_subrutina().</p>
+
+          <p>El problema es que la función sub_subrutina() no está definida en el programa principal, si no en el interior de la función subrutina(), por lo que la función no es accesible desde el programa principal. Al llamar a una función que no está definida en el programa principal, se produce un error.</p>
+
+          <p class="control">
+            <a href="#Paso091"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-10">
+      <h2><a href="ej_funciones_1.html#ejercicio-10"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 10</h2>
+
+      <div class="diapo" style="height: 480px;">
+
+        <div id="Paso100">
+          <p><strong>Funciones 1 - (10)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+4</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso101"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso101">
+          <p><strong>Funciones 1 - (10) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 3</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso100"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso102"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso102">
+          <p><strong>Funciones 1 - (10) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso101"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso103"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso103">
+          <p><strong>Funciones 1 - (10) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    <span class="conborde">global a</span>
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso102"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso104"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso104">
+          <p><strong>Funciones 1 - (10) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    <span class="conborde">a = 4</span>
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se establece el valor de la variable "a" en 4.</p>
+
+          <p class="control">
+            <a href="#Paso103"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso105"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso105">
+          <p><strong>Funciones 1 - (10) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    <span class="conborde">sub_subrutina()</span>
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La función subrutina() contiene a su vez una función llamada sub_subrutina(). A continuación se realiza la llamada a la función sub_subrutina() desde la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso104"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso106"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso106">
+          <p><strong>Funciones 1 - (10) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        <span class="conborde">a = 5</span>
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función sub_subrutina(), que establece el valor de la variable "a". Al establecer valor sin haberla declarado antes global o <span class="idle-rese">nonlocal</span>, Python considera esta variable como local. Por tanto, la variable "a" de la función sub_subrutina() es distinta de la variable "a" del programa principal (que es la misma que la variable "a" de la función subrutina()).</p>
+
+          <p>Se establece el valor de la variable "a" de la función subrutina() en 5.</p>
+
+          <p class="control">
+            <a href="#Paso105"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso107"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso107">
+          <p><strong>Funciones 1 - (10) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        <span class="conborde">print(a)</span>
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 5.</p>
+
+          <p class="control">
+            <a href="#Paso106"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso108"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso108">
+          <p><strong>Funciones 1 - (10) - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        <span class="conborde">return</span>
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función sub_subrutina() y continúa la ejecución del programa tras la llamada a la función sub_subrutina().</p>
+
+          <p>En este caso, eso significa volver a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso107"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso109"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso109">
+          <p><strong>Funciones 1 - (10) - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    <span class="conborde">print(a)</span>
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+<span class="conborde">4</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función sub_subrutina(), se vuelve a la función subrutina(). Se escribe el valor de la variable "a" que es 4, puesto que se trata de la variable "a" de la función subrutina(), que no ha modificado su valor.</p>
+
+          <p class="control">
+            <a href="#Paso108"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1010"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1010">
+          <p><strong>Funciones 1 - (10) - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    <span class="conborde">return</span>
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+4</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p>En este caso, eso significa volver al programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso109"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1011"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1011">
+          <p><strong>Funciones 1 - (10) - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+<span class="conborde">4</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es 4, puesto que se trata de la variable "a" del programa principal, que se ha modificado en la función subrutina().</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso1010"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-11">
+      <h2><a href="ej_funciones_1.html#ejercicio-11"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 11</h2>
+
+      <div class="diapo" style="height: 470px;">
+
+        <div id="Paso110">
+          <p><strong>Funciones 1 - (11)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+5
+5</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso111"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso111">
+          <p><strong>Funciones 1 - (11) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 3</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso110"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso112"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso112">
+          <p><strong>Funciones 1 - (11) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso111"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso113"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso113">
+          <p><strong>Funciones 1 - (11) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    <span class="conborde">global a</span>
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso112"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso114"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso114">
+          <p><strong>Funciones 1 - (11) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    <span class="conborde">a = 4</span>
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se establece el valor de la variable "a" en 4.</p>
+
+          <p class="control">
+            <a href="#Paso113"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso115"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso115">
+          <p><strong>Funciones 1 - (11) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    <span class="conborde">sub_subrutina()</span>
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La función subrutina() contiene a su vez una función llamada sub_subrutina(). A continuación se realiza la llamada a la función sub_subrutina() desde la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso114"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso116"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso116">
+          <p><strong>Funciones 1 - (11) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        <span class="conborde">global a </span>
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función sub_subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función sub_subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso115"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso117"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso117">
+          <p><strong>Funciones 1 - (11) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        <span class="conborde">a = 5</span>
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se establece el valor de la variable "a" en 5.</p>
+
+          <p class="control">
+            <a href="#Paso116"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso118"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso118">
+          <p><strong>Funciones 1 - (11) - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        <span class="conborde">print(a)</span>
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 5.</p>
+
+          <p class="control">
+            <a href="#Paso117"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso119"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso119">
+          <p><strong>Funciones 1 - (11) - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        <span class="conborde">return</span>
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función sub_subrutina() y continúa la ejecución del programa tras la llamada a la función sub_subrutina().</p>
+
+          <p>En este caso, eso significa volver a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso118"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1110"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1110">
+          <p><strong>Funciones 1 - (11) - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    <span class="conborde">print(a)</span>
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+<span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función sub_subrutina(), se vuelve a la función subrutina(). Se escribe el valor de la variable "a" que es 5, puesto que es la misma que la variable "a" de la función sub_subrutina() (y la del programa principal).</p>
+
+          <p class="control">
+            <a href="#Paso119"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1111"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1111">
+          <p><strong>Funciones 1 - (11) - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    <span class="conborde">return</span>
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+5</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p>En este caso, eso significa volver al programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso1110"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1112"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1112">
+          <p><strong>Funciones 1 - (11) - Paso 12</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+5
+<span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es 5, puesto que se trata de la variable "a" del programa principal, que es la misma de las funciones subrutina() y sub_subrutina().</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso1111"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-12">
+      <h2><a href="ej_funciones_1.html#ejercicio-12"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 12</h2>
+
+      <div class="diapo" style="height: 490px;">
+
+        <div id="Paso120">
+          <p><strong>Funciones 1 - (12)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a += 3
+        print(a)
+        return
+
+    a += 3
+    sub_subrutina()
+    print(a)
+    return
+
+a = 4
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 13, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 7, in subrutina
+    a += 3
+UnboundLocalError: local variable 'a' referenced before assignment</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso121"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso121">
+          <p><strong>Funciones 1 - (12) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a += 3
+        print(a)
+        return
+
+    a += 3
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 4</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso120"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso122"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso122">
+          <p><strong>Funciones 1 - (12) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a += 3
+        print(a)
+        return
+
+    a += 3
+    sub_subrutina()
+    print(a)
+    return
+
+a = 4
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación, se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso121"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso123"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso123">
+          <p><strong>Funciones 1 - (12) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        a += 3
+        print(a)
+        return
+
+    <span class="conborde">a += 3</span>
+    sub_subrutina()
+    print(a)
+    return
+
+a = 4
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejercicio.py", line 13, in &lt;module&gt;
+    subrutina()
+  File "ejercicio.py", line 7, in subrutina
+    a += 3
+UnboundLocalError: local variable 'a' referenced before assignment</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que pretende modificar la variable "a".</p>
+
+          <p>La instrucción "a += 3" es equivalente a la instrucción "a = a + 3". Como esa instrucción asigna un valor a la variable "a", Python la considera <span class="idle-rese">local</span>, es decir, distinta de la variable "a" del programa principal. Pero como el operador += necesita el valor de la variable "a" (para añadirle 3 unidades) y no se le ha dado valor antes en la función subrutina(), se produce un error y el programa se interrumpe.</p>
+
+          <p class="control">
+            <a href="#Paso122"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejercicio-13">
+      <h2><a href="ej_funciones_1.html#ejercicio-13"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Funciones (1) - 13</h2>
+
+      <div class="diapo" style="height: 470px;">
+
+        <div id="Paso130">
+          <p><strong>Funciones 1 - (13)</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+5</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El programa que se muestra arriba a la izquierda escribirá el resultado que se muestra arriba a la derecha.</p>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso131"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso131">
+          <p><strong>Funciones 1 - (13) - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    global a
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+<span class="conborde">a = 3</span>
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a", con el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso130"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso132"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso132">
+          <p><strong>Funciones 1 - (13) - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+<span class="conborde">subrutina()</span>
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso131"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso133"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso133">
+          <p><strong>Funciones 1 - (13) - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    <span class="conborde">a = 4</span>
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función subrutina(), que establece el valor de la variable "a". Al establecer valor sin haberla declarado antes global o <span class="idle-rese">nonlocal</span>, Python considera esta variable como local. Por tanto, la variable "a" de la función subrutina() es distinta de la variable "a" del programa principal.</p>
+
+          <p>Se establece el valor de la variable "a" de la función subrutina() en 4.</p>
+
+          <p class="control">
+            <a href="#Paso132"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso134"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso134">
+          <p><strong>Funciones 1 - (13) - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    <span class="conborde">sub_subrutina()</span>
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La función subrutina() contiene a su vez una función llamada sub_subrutina(). A continuación se realiza la llamada a la función sub_subrutina() desde la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso133"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso135"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso135">
+          <p><strong>Funciones 1 - (13) - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        <span class="conborde">global a </span>
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función sub_subrutina(), que declara global la variable "a", es decir, que la variable "a" del programa principal y la variable "a" de la función sub_subrutina() son la misma variable.</p>
+
+          <p class="control">
+            <a href="#Paso134"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso136"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso136">
+          <p><strong>Funciones 1 - (13) - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        <span class="conborde">a = 5</span>
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se establece el valor de la variable "a" de la función sub_subrutina() (que es la misma que la variable "a" del programa principal) en 5.</p>
+
+          <p class="control">
+            <a href="#Paso135"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso137"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso137">
+          <p><strong>Funciones 1 - (13) - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        <span class="conborde">print(a)</span>
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">5</span></span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el valor de la variable "a", es decir, 5.</p>
+
+          <p class="control">
+            <a href="#Paso136"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso138"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso138">
+          <p><strong>Funciones 1 - (13) - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        <span class="conborde">return</span>
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función sub_subrutina() y continúa la ejecución del programa tras la llamada a la función sub_subrutina().</p>
+
+          <p>En este caso, eso significa volver a la función subrutina().</p>
+
+          <p class="control">
+            <a href="#Paso137"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso139"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso139">
+          <p><strong>Funciones 1 - (13) - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    <span class="conborde">print(a)</span>
+    return
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+<span class="conborde">4</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función sub_subrutina(), se vuelve a la función subrutina(). Se escribe el valor de la variable "a" de la función subrutina(), que es 4, puesto que es una variable local, distinta de la variable "a" del programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso138"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1310"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1310">
+          <p><strong>Funciones 1 - (13) - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    <span class="conborde">return</span>
+
+a = 3
+subrutina()
+print(a)</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">5
+4</span></pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción return indica el final de la función subrutina() y continúa la ejecución del programa tras la llamada a la función subrutina().</p>
+
+          <p>En este caso, eso significa volver al programa principal.</p>
+
+          <p class="control">
+            <a href="#Paso139"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso1311"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso1311">
+          <p><strong>Funciones 1 - (13) - Paso 11</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def subrutina():
+    def sub_subrutina():
+        global a
+        a = 5
+        print(a)
+        return
+
+    a = 4
+    sub_subrutina()
+    print(a)
+    return
+
+a = 3
+subrutina()
+<span class="conborde">print(a)</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">5
+4
+<span class="conborde">5</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Al terminar la función subrutina(), se vuelve al programa principal. Se escribe el valor de la variable "a" que es 5, puesto que se trata de la variable "a" del programa principal, que ha sido modificada en la función sub_subrutina().</p>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso1310"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" /></p>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 25 de marzo de 2013 </p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

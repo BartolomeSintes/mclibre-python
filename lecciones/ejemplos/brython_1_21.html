@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Añadir elementos en una imagen SVG. Brython. Python</title>
+  <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+  <script type="text/python3">
+from browser import document
+import browser.svg as svg
+
+document["imagen"] <= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", stroke_width=3)
+  </script>
+</head>
+
+<body onload="brython()">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="200" height="200" viewBox="0 0 200 200"
+    style="border: black 1px solid" id="imagen">
+  </svg>
+</body>
+</html>

@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciones (2). Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Funciones (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Funciones (2)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#argumentos-devolucion">Argumentos y devolución</a></li>
+          <li><a href="#conflictos-nombres">Conflictos entre nombres</a></li>
+          <li><a href="#paso-valor-referencia">Paso por valor / referencia</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se tratan conceptos relativos a las funciones. Antes de leer esta lección se recomienda leer la lección <a href="python_funciones_1.html">Funciones (1)</a>:</p>
+
+    <section id="argumentos-devolucion">
+      <h2>Argumentos y devolución de valores</h2>
+
+      <p>Las funciones en Python admiten argumentos en su llamada y permiten devolver valores. Estas posiblidades permiten crear funciones más útiles y fácilmente reutilizables.</p>
+
+      <p>En este apartado se muestran estos conceptos mediante cuatro ejemplos. En ellos, no se pretende encontrar la mejor solución al problema planteado, sino simplemente introducir los conceptos de argumentos y devolución de valores.</p>
+
+      <hr class="corta" />
+
+      <p>Aunque las funciones en Python pueden acceder a cualquier variable del programa declarándolas como variables globales o no locales, se necesita saber el nombre de las variables, como muestra el ejemplo siguiente:</p>
+
+      <div class="diapo" style="height: 325px;">
+        <div id="Paso10">
+          <p><strong>Ejemplo de función 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso11">
+          <p><strong>Ejemplo de función 1 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+<span class="conborde">a = 3</span>
+b = 5
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a".</p>
+
+          <p class="control">
+            <a href="#Paso10"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso12"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso12">
+          <p><strong>Ejemplo de función 1 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+a = 3
+<span class="conborde">b = 5</span>
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la segunda instrucción se crea la variable "b".</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso13"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso13">
+          <p><strong>Ejemplo de función 1 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+a = 3
+b = 5
+<span class="conborde">escribe_media()</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso12"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso14"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso14">
+          <p><strong>Ejemplo de función 1 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    <span class="conborde">media = (a + b) / 2</span>
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función, que calcula la media de las variables "a" y "b" que, como no se les asigna valor en la función, Python considera variables globales.</p>
+
+          <p class="control">
+            <a href="#Paso13"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso15"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso15">
+          <p><strong>Ejemplo de función 1 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    <span class="conborde">print(f"La media de {a} y {b} es: {media}")</span>
+    return
+
+a = 3
+b = 5
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">La media de 3 y 5 es: 4.0</span></span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el resultado de la operación.</p>
+
+          <p class="control">
+            <a href="#Paso14"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso16"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso16">
+          <p><strong>Ejemplo de función 1 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    <span class="conborde">return</span>
+
+a = 3
+b = 5
+escribe_media()
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">La media de 3 y 5 es: 4.0</span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso15"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso17"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso17">
+          <p><strong>Ejemplo de función 1 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media():
+    media = (a + b) / 2
+    print(f"La media de {a} y {b} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media()
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso16"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>El problema de una función de este tipo es que es muy difícil de reutilizar en otros programas o incluso en el mismo programa, ya que sólo es capaz de hacer la media de las variables "a" y "b". Si en el programa no se utilizan esos nombres de variables, la función no funcionaría.</p>
+      <hr class="corta" />
+
+      <p>Para evitar ese problema, las funciones admiten argumentos, es decir, permiten que se les envíen valores con los que trabajar. De esa manera, las funciones se pueden reutilizar más fácilmente, como muestra el ejemplo siguiente:</p>
+
+      <div class="diapo" style="height: 325px;">
+        <div id="Paso20">
+          <p><strong>Ejemplo de función 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso21">
+          <p><strong>Ejemplo de función 2 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+<span class="conborde">a = 3</span>
+b = 5
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a".</p>
+
+          <p class="control">
+            <a href="#Paso20"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso22"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso22">
+          <p><strong>Ejemplo de función 2 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+a = 3
+<span class="conborde">b = 5</span>
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la segunda instrucción se crea la variable "b".</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso23"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso23">
+          <p><strong>Ejemplo de función 2 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+a = 3
+b = 5
+<span class="conborde">escribe_media(a, b)</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>A continuación se realiza la llamada a la función. De acuerdo con la definición de la función, se deben enviar dos argumentos. En este caso, se envían las variables "a" y "b".</p>
+
+          <p class="control">
+            <a href="#Paso22"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso24"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso24">
+          <p><strong>Ejemplo de función 2 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    <span class="conborde">media = (x + y) / 2</span>
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función, que calcula la media de los argumentos "x" e "y". Los argumentos cogen su valor de los la llamada de la función. En esta caso la variable "x" toma su valor de la variable "a" y la variable "y" lo hace de "b".</p>
+
+          <p class="control">
+            <a href="#Paso23"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso25"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso25">
+          <p><strong>Ejemplo de función 2 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    <span class="conborde">print(f"La media de {x} y {y} es: {media}")</span>
+    return
+
+a = 3
+b = 5
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">La media de 3 y 5 es: 4.0</span></span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el resultado de la operación.</p>
+
+          <p class="control">
+            <a href="#Paso24"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso26"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso26">
+          <p><strong>Ejemplo de función 2 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    <span class="conborde">return</span>
+
+a = 3
+b = 5
+escribe_media(a, b)
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp">La media de 3 y 5 es: 4.0</span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso25"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso27"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso27">
+          <p><strong>Ejemplo de función 2 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def escribe_media(x, y):
+    media = (x + y) / 2
+    print(f"La media de {x} y {y} es: {media}")
+    return
+
+a = 3
+b = 5
+escribe_media(a, b)
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso26"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>Esta función puede ser utilizada con más flexibilidad que la del ejemplo anterior, puesto que el programador puede elegir a qué valores aplicar la función.</p>
+
+      <p>Pero esta función tiene todavía un inconveniente. Como las variables locales de una función son inaccesibles desde los niveles superiores, el programa principal no puede utilizar la variable "media" calculada por la función y tiene que ser la función la que escriba el valor. Pero eso complica la reutilización de la función, porque aunque es probable que en otro programa nos interese una función que calcule la media, es más difícil que nos interese que escriba el valor nada más calcularlo.</p>
+
+      <hr class="corta" />
+
+      <p>Para evitar ese problema, las funciones pueden devolver valores, es decir, pueden enviar valores al programa o función de nivel superior. De esa manera, las funciones se pueden reutilizar más fácilmente, como muestra el ejemplo siguiente:</p>
+
+      <div class="diapo" style="height: 325px;">
+        <div id="Paso30">
+          <p><strong>Ejemplo de función 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+b = 5
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso31">
+          <p><strong>Ejemplo de función 3 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+<span class="conborde">a = 3</span>
+b = 5
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crea la variable "a".</p>
+
+          <p class="control">
+            <a href="#Paso30"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso32"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso32">
+          <p><strong>Ejemplo de función 3 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+<span class="conborde">b = 5</span>
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la segunda instrucción se crea la variable "b".</p>
+
+          <p class="control">
+            <a href="#Paso31"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso33"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso33">
+          <p><strong>Ejemplo de función 3 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+b = 5
+media = <span class="conborde">calcula_media(a, b)</span>
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La tercera instrucción guarda en la variable "media" el valor que devuelve la función calcula_media(). Pero en primer lugar se ejecuta la llamada a la función. De acuerdo con la definición de la función, se deben enviar dos argumentos. En este caso, se envían las variables "a" y "b".</p>
+
+          <p class="control">
+            <a href="#Paso32"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso34"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso34">
+          <p><strong>Ejemplo de función 3 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    <span class="conborde">resultado = (x + y) / 2</span>
+    return resultado
+
+a = 3
+b = 5
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función, que calcula la media de los argumentos "x" e "y". Los argumentos cogen su valor de los la llamada de la función. En esta caso la variable "x" toma su valor de la variable "a" y la variable "y" lo hace de "b".</p>
+
+          <p class="control">
+            <a href="#Paso33"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso35"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso35">
+          <p><strong>Ejemplo de función 3 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    <span class="conborde">return resultado</span>
+
+a = 3
+b = 5
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción <span class="idle-rese">return</span> indica el final de la función pero también el valor que devuelve la función. La ejecución del programa continúa tras la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso34"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso36"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso36">
+          <p><strong>Ejemplo de función 3 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+b = 5
+<span class="conborde">media = calcula_media(a, b)</span>
+print(f"La media de {a} y {b} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El valor devuelto por la función se guarda en la variable "media".</p>
+
+          <p class="control">
+            <a href="#Paso35"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso37"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso37">
+          <p><strong>Ejemplo de función 3 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+b = 5
+media = calcula_media(a, b)
+<span class="conborde">print(f"La media de {a} y {b} es: {media}")</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">La media de 3 y 5 es: 4.0</span></span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el resultado de la operación.</p>
+
+          <p class="control">
+            <a href="#Paso36"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso38"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso38">
+          <p><strong>Ejemplo de función 3 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(x, y):
+    resultado = (x + y) / 2
+    return resultado
+
+a = 3
+b = 5
+media = calcula_media(a, b)
+print(f"La media de {a} y {b} es: {media}")
+<span class="conborde">print("Programa terminado")</span></code></pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3 y 5 es: 4.0
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso37"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>Esta función puede ser utilizada con más flexibilidad que la del ejemplo anterior, puesto que el programador puede elegir qué hacer con el valor calculado por la función.</p>
+
+      <p>Pero esta función tiene todavía un inconveniente y es que sólo calcula la media de dos valores. Sería más interesante que la función calculara la media de cualquier cantidad de valores.</p>
+
+      <hr class="corta" />
+
+      <p>Para evitar ese problema, las funciones pueden admitir una cantidad indeterminada de valores, como muestra el ejemplo siguiente:</p>
+
+      <div class="diapo" style="height: 325px;">
+        <div id="Paso40">
+          <p><strong>Ejemplo de función 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3, 5 y 10 es: 6.0
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso41">
+          <p><strong>Ejemplo de función 4 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+<span class="conborde">a, b, c = 3, 5, 10</span>
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crean las variables "a", "b" y "c".</p>
+
+          <p class="control">
+            <a href="#Paso40"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso42"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso42">
+          <p><strong>Ejemplo de función 4 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = <span class="conborde">calcula_media(a, b, c)</span>
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La segunda instrucción guarda en la variable "media" el valor que devuelve la función calcula_media(). Pero en primer lugar se ejecuta la llamada a la función. De acuerdo con la definición de la función, se puede enviar cualquier número de argumentos. En este caso, se envían las variables "a", "b" y "c".</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso43"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso43">
+          <p><strong>Ejemplo de función 4 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    <span class="conborde">total = 0</span>
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la primera instrucción de la función. Para calcular la media, el programa va a sumar todos los argumentos recibidos y dividir por el número de argumentos recibidos. Para calcular el total, se utiliza una variable auxiliar llamada "total" cuyo valor inicial es 0..</p>
+
+          <p class="control">
+            <a href="#Paso42"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso44"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso44">
+          <p><strong>Ejemplo de función 4 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0</code></pre>
+                  <pre class="conborde">
+<code class="language-python">    for i in args:
+        total += i</code></pre>
+                  <pre>
+<code class="language-python">    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El bucle se ejecutará tantas veces como argumentos se hayan recibido, puesto que args es una tupla con tantos elementos como como argumentos.</p>
+
+          <p class="control">
+            <a href="#Paso43"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso45"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso45">
+          <p><strong>Ejemplo de función 4 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    <span class="conborde">resultado = total / len(args)</span>
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Finalmente se divide el total por el número de elementos.</p>
+
+          <p class="control">
+            <a href="#Paso44"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso46"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso46">
+          <p><strong>Ejemplo de función 4 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    <span class="conborde">return resultado</span>
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción <span class="idle-rese">return</span> indica el final de la función pero también el valor que devuelve la función. La ejecución del programa continúa tras la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso45"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso47"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso47">
+          <p><strong>Ejemplo de función 4 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+<span class="conborde">media = calcula_media(a, b, c)</span>
+print(f"La media de {a}, {b} y {c} es: {media}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>El valor devuelto por la función se guarda en la variable "media".</p>
+
+          <p class="control">
+            <a href="#Paso46"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso48"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso48">
+          <p><strong>Ejemplo de función 4 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+<span class="conborde">print(f"La media de {a}, {b} y {c} es: {media}")</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><pre><span class="idle-resp"><span class="conborde">La media de 3, 5 y 10 es: 6.0</span></span></pre></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se escribe el resultado de la operación.</p>
+
+          <p class="control">
+            <a href="#Paso47"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso49"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso49">
+          <p><strong>Ejemplo de función 4 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media(*args):
+    total = 0
+    for i in args:
+        total += i
+    resultado = total / len(args)
+    return resultado
+
+a, b, c = 3, 5, 10
+media = calcula_media(a, b, c)
+print(f"La media de {a}, {b} y {c} es: {media}")
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">La media de 3, 5 y 10 es: 6.0
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso48"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+
+      <p>Esta última función puede ser utilizada con más flexibilidad que las anteriores, puesto que el programador puede elegir de cuántos valores hacer la media y qué hacer con el valor calculado por la función.</p>
+
+      <hr />
+
+      <p>Las funciones pueden devolver varios valores simultáneamente, como muestra el siguiente ejemplo:</p>
+
+      <div class="diapo" style="height: 500px;">
+        <div id="Paso500">
+          <p><strong>Ejemplo de función 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Datos: 3 5 10 12
+Media: 7.5
+Desviación típica: 3.640054944640259
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso501"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso501">
+          <p><strong>Ejemplo de función 5 - Paso 1</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+<span class="conborde">a, b, c, d = 3, 5, 10, 12</span>
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En la primera instrucción se crean las variables "a", "b", "c" y "d".</p>
+
+          <p class="control">
+            <a href="#Paso500"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso502"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso502">
+          <p><strong>Ejemplo de función 5 - Paso 2</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = <span class="conborde">calcula_media_desviacion(a, b, c, d)</span>
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La segunda instrucción guarda en las variables "media" y desviacion_tipica los valores que devuelve la función calcula_media_desviacion(). Pero en primer lugar se ejecuta la llamada a la función. De acuerdo con la definición de la función, se puede enviar cualquier número de argumentos. En este caso, se envían las variables "a", "b", "c" y "d".</p>
+
+          <p class="control">
+            <a href="#Paso501"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso503"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso503">
+          <p><strong>Ejemplo de función 5 - Paso 3</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):</code>
+</pre>
+                  <pre class="conborde">
+<code class="language-python">    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)</code>
+</pre>
+                  <pre>
+<code class="language-python">    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Las tres primeras instrucciones de la función calculan la media aritmética de los valores recibidos, como en el ejemplo anterior.</p>
+
+          <p class="control">
+            <a href="#Paso502"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso504"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso504">
+          <p><strong>Ejemplo de función 5 - Paso 4</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)</code>
+</pre>
+                  <pre class="conborde">
+<code class="language-python">    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5</code>
+</pre>
+                  <pre>
+<code class="language-python">    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Las tres siguientes instrucciones de la función calculan la desviación típica de los valores recibidos, de forma similar a la media.</p>
+
+          <p class="control">
+            <a href="#Paso503"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso505"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso505">
+          <p><strong>Ejemplo de función 5 - Paso 5</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    <span class="conborde">return media, desviacion</span>
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>La instrucción <span class="idle-rese">return</span> indica el final de la función pero también los valores que devuelve la función (en este caso, tanto la media como la desviación). La ejecución del programa continúa tras la llamada a la función.</p>
+
+          <p class="control">
+            <a href="#Paso504"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso506"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso506">
+          <p><strong>Ejemplo de función 5 - Paso 6</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+<span class="conborde">media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)</span>
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Los valores devueltos por la función se guardan en las variables "media" y "desviacion_tipica".</p>
+
+          <p class="control">
+            <a href="#Paso505"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso507"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso507">
+          <p><strong>Ejemplo de función 5 - Paso 7</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+<span class="conborde">print(f"Datos: {a} {b} {c} {d}")</span>
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td><span class="idle-resp"><span class="conborde">Datos: 3 5 10 12</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Las últimas instrucciones escriben los datos y resultados.</p>
+
+          <p class="control">
+            <a href="#Paso506"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso508"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso508">
+          <p><strong>Ejemplo de función 5 - Paso 8</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+<span class="conborde">print(f"Media: {media}")</span>
+print(f"Desviación típica: {desviacion_tipica}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Datos: 3 5 10 12
+<span class="conborde">Media: 7.5</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Las últimas instrucciones escriben los datos y resultados.</p>
+
+          <p class="control">
+            <a href="#Paso507"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso509"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso509">
+          <p><strong>Ejemplo de función 5 - Paso 9</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+<span class="conborde">print(f"Desviación típica: {desviacion_tipica}")</span>
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Datos: 3 5 10 12
+Media: 7.5
+<span class="conborde">Desviación típica: 3.640054944640259</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Las últimas instrucciones escriben los datos y resultados.</p>
+
+          <p class="control">
+            <a href="#Paso508"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <a href="#Paso510"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          </p>
+        </div>
+
+        <div id="Paso510">
+          <p><strong>Ejemplo de función 5 - Paso 10</strong></p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def calcula_media_desviacion(*args):
+    total = 0
+    for i in args:
+        total += i
+    media = total / len(args)
+    total = 0
+    for i in args:
+        total += (i - media) ** 2
+    desviacion = (total / len(args)) ** 0.5
+    return media, desviacion
+
+a, b, c, d = 3, 5, 10, 12
+media, desviacion_tipica = calcula_media_desviacion(a, b, c, d)
+print(f"Datos: {a} {b} {c} {d}")
+print(f"Media: {media}")
+print(f"Desviación típica: {desviacion_tipica}")
+<span class="conborde">print("Programa terminado")</span></code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Datos: 3 5 10 12
+Media: 7.5
+Desviación típica: 3.640054944640259
+<span class="conborde">Programa terminado</span></span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso509"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+            <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="conflictos-nombres">
+      <h2>Conflictos entre nombres de parámetros y nombre de variables globales</h2>
+
+      <p>En Python no se producen conflictos entre los nombres de los parámetros y los nombres de las variables globales. Es decir, el nombre de un parámetro puede coincidir o no con el de una variable global, pero Python no los confunde: en el ámbito de la función el parámetro hace siempre referencia al dato recibido y no a la variable global y los programas producen el mismo resultado.</p>
+
+      <p>Eso nos facilita reutilizar funciones en otros programas sin tener que preocuparnos por este detalle.</p>
+
+      <p>Aunque, como siempre, dependiendo de si a la función se le envía como parámetro un objeto mutable o inmutable, la función podrá modificar o no al objeto. En los dos siguientes ejemplos, el parámetro de la función ("b") se llama igual que una de las dos variables del programa principal. En los dos ejemplos se llama dos veces a la función, enviando cada vez una de las dos variables ("a" y "b").</p>
+      <ul>
+        <li><strong>Ejemplo de conflicto entre nombre de parámetro y nombre de variable global. Objeto mutable</strong>
+          <p>Como en este caso las variables son listas (objetos mutables), la función modifica la lista que se envía como argumento: primero se modifica la lista "a" y a continuación la lista "b". La lista modificada no depende del nombre del parámetro en la función (que es "b"), sino de la variable enviada como argumento ("a" o "b").</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def cambia(b):
+    b += [5]
+    return
+
+a, b = [3], [4]
+print(f"Al principio        : a = {a} b = {b}")
+cambia(a)
+print(f"Después de cambia(a): a = {a} b = {b}")
+cambia(b)
+print(f"Después de cambia(b): a = {a} b = {b}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Al principio        : a = [3] b = [4]
+Después de cambia(a): a = [3, 5] b = [4]
+Después de cambia(b): a = [3, 5] b = [4, 5]
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li><strong>Ejemplo de conflicto entre nombre de parámetro y nombre de variable global. Objeto inmutable </strong>
+          <p>Como en este caso las variables son números enteros (objetos inmutables), la función no puede modificar los números que se envían como argumentos, ni la variable "a" ni la variable "b".</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">def cambia(b):
+    b += 1
+    return
+
+a, b = 3, 4
+print(f"Al principio        : a = {a} b = {b}")
+cambia(a)
+print(f"Después de cambia(a): a = {a} b = {b}")
+cambia(b)
+print(f"Después de cambia(b): a = {a} b = {b}")
+print("Programa terminado")</code>
+</pre>
+                </td>
+                <td>
+                  <pre>
+<span class="idle-resp">Al principio        : a = 3 b = 4
+Después de cambia(a): a = 3 b = 4
+Después de cambia(b): a = 3 b = 4
+Programa terminado</span>
+</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <section id="paso-valor-referencia">
+      <h2>Paso por valor o paso por referencia</h2>
+
+      <p>En los lenguajes en los que las variables son "cajas" en las que se guardan valores, cuando se envía una variable como argumento en una llamada a una función suelen existir dos posiblidades:</p>
+      <ul>
+        <li>paso por valor: se envía simplemente el valor de la variable, en cuyo caso la función no puede modificar la variable, pues la función sólo conoce su valor, pero no la variable que lo almacenaba.</li>
+        <li>paso por referencia: se envía la dirección de memoria de la variable, en cuyo caso la función sí que puede modificar la variable.</li>
+      </ul>
+
+      <p>En Python no se hace ni una cosa ni otra. En Python cuando se envía una variable como argumento en una llamada a una función lo que se envía es la referencia al objeto al que hace referencia la variable. Dependiendo de si el objeto es mutable o inmutable, la función podrá modificar o no el objeto.</p>
+      <ul>
+        <li>En el ejemplo siguiente, la variable enviada a la función es una variable que hace referencia a un objeto inmutable.
+
+          <div class="diapo" style="height: 375px;">
+            <div id="Paso600">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+a = 3
+print(id(3), id(4))
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+505894336
+505894352
+4
+3
+505894336</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+              <p class="control">
+                <a href="#Paso601"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso601">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+<span class="conborde">print(id(3), id(4))</span>
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td><pre><span class="idle-resp"><span class="conborde">505894336 505894352</span></span></pre></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>En la primera instrucción se escriben los identificadores de los objetos inmutables número 3 y número 4.</p>
+              <p class="control">
+                <a href="#Paso600"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso602"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso602">
+              <p><strong>Ejemplo de paso de variables (objeto inmutable) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+<span class="conborde">a = 3</span>
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td><pre><span class="idle-resp">505894336 505894352</span></pre></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>En la segunda instrucción se crea la variable "a", que hace referencia al número 3.</p>
+              <p class="control">
+                <a href="#Paso601"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso603"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso603">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+<span class="conborde">print(id(a))</span>
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+<span class="conborde">505894336</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>En la segunda instrucción se escribe el identificador de la variable "a", que coincide con el del objeto número 3.</p>
+
+              <p class="control">
+                <a href="#Paso602"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso604"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso604">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(<span class="conborde">aumenta(a)</span>)
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>A continuación se ejecuta la llamada a la función. De acuerdo con la definición de la función, se envía el argumento, en este caso, se envía la variable "a". En Python, enviar una variable significa enviar el identificador del objeto al que hace referencia la variable.</p>
+
+              <p class="control">
+                <a href="#Paso603"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso605"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso605">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+<span class="conborde">    print(id(x))</span>
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+<span class="idle-resp"><span class="conborde">505894336</span></span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se ejecuta la primera instrucción de la función, que escribe el identificador de la variable local de la función "x", que es el mismo que el de la variable del programa principal "a" (que es el mismo del objeto "3").</p>
+
+              <p class="control">
+                <a href="#Paso604"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso606"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso606">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 6</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    <span class="conborde">x += 1</span>
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+505894336</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La segunda instrucción aumenta el valor de la variable "x", de 3 a 4, por lo que la variable "x" pasa de hacer referencia al objeto número 3 a hacer referencia al objeto número 4.</p>
+
+              <p class="control">
+                <a href="#Paso605"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso607"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso607">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 7</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    <span class="conborde">print(id(x))</span>
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+505894336
+<span class="conborde">505894352</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La tercera instrucción de la función vuelve a escribr el identificador de la variable local de la función "x", que es ahora el mismo que el del objeto número 4.</p>
+
+              <p class="control">
+                <a href="#Paso606"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso608"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso608">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 8</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    <span class="conborde">return x</span>
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+505894336
+<span class="conborde">505894352</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La instrucción <span class="idle-rese">return</span> indica el final de la función pero también el valor que devuelve la función, que en este caso es la variable "x" (realmente es el identificador de la variable "x", que es el identificador del objeto número 4). La ejecución del programa continua tras la llamada a la función.</p>
+
+              <p class="control">
+                <a href="#Paso607"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso609"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso609">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 9</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+<span class="conborde">print(aumenta(a))</span>
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+<span class="idle-resp">505894336
+505894352
+<span class="conborde">4</span></span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se imprime el valor devuelto por la función (4).</p>
+
+              <p class="control">
+                <a href="#Paso608"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso610"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso610">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 10</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+<span class="conborde">print(a)</span>
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+<span class="idle-resp">505894336
+505894352
+4
+<span class="conborde">3</span></span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se imprime el valor de la variable "a", que sigue siendo 3, pues la función no ha modificado su valor.</p>
+
+              <p class="control">
+                <a href="#Paso609"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso611"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso611">
+              <p><strong>Ejemplo de paso de variable (objeto inmutable) - Paso 11</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += 1
+    print(id(x))
+    return x
+
+print(id(3), id(4))
+a = 3
+print(id(a))
+print(aumenta(a))
+print(a)
+<span class="conborde">print(id(a))</span></code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">505894336 505894352
+505894336
+<span class="idle-resp">505894336
+505894352
+4
+3
+<span class="conborde">505894336</span></span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se imprime el identificador de la variable "a", que sigue siendo el del objeto número 3, y el programa termina.</p>
+
+              <p class="control">
+                <a href="#Paso610"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />              </p>
+            </div>
+          </div>
+        </li>
+        <li>En el ejemplo siguiente, la variable enviada a la función es una variable que hace referencia a un objeto mutable.
+
+          <div class="diapo" style="height: 375px;">
+            <div id="Paso700">
+              <p><strong>Ejemplo de paso de variable (objeto mutable)</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512
+[3, 1]
+[3, 1]
+45688512</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+              <p class="control">
+                <a href="#Paso701"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso701">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 1</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+   print(id(x))
+    x += [1]
+   print(id(x))
+    return x
+
+<span class="conborde">a = [3]</span>
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>En la primera instrucción se crea la variable "a", que hace referencia a la lista [3].</p>
+
+              <p class="control">
+                <a href="#Paso700"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso702"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso702">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 2</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+<span class="conborde">print(id(a))</span>
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td><pre><span class="idle-resp"><span class="conborde">45688512</span></span></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>En la segunda instrucción se escribe el identificador de la variable "a".</p>
+
+              <p class="control">
+                <a href="#Paso701"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso703"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso703">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 3</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(<span class="conborde">aumenta(a)</span>)
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td><pre><span class="idle-resp">45688512</span></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>A continuación se ejecuta la llamada a la función. De acuerdo con la definición de la función, se envía el argumento, en este caso, se envía la variable "a". En Python, enviar una variable significa enviar el identificador del objeto al que hace referencia la variable.</p>
+
+              <p class="control">
+                <a href="#Paso702"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso704"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso704">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 4</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    <span class="control"><span class="conborde">print(id(x))</span></span>
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se ejecuta la primera instrucción de la función, que escribe el identificador de la variable local de la función "x", que es el mismo que el de la variable del programa principal "a".</p>
+
+              <p class="control">
+                <a href="#Paso703"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso705"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso705">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 5</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    <span class="conborde">x += [1]</span>
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La segunda instrucción añade el elemento [1] a la lista "x", de [3] a [3, 1]. Como las listas son objetos mutables y la asignación aumentada += modifica el objeto, no se crea un nueva lista sino que se modifica la lista a la que hace referencia la variable "x" (que es la misma a la que hace referencia la variable del programa principal "a").</p>
+
+              <p class="control">
+                <a href="#Paso704"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso706"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso706">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 6</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    <span class="conborde">print(id(x))</span>
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La tercera instrucción de la función vuelve a escribr el identificador de la variable local de la función "x", que sigue siendo la misma.</p>
+
+              <p class="control">
+                <a href="#Paso705"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso707"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso707">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 7</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    <span class="conborde">return x</span>
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512</span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>La instrucción <span class="idle-rese">return</span> indica el final de la función pero también el valor que devuelve la función, que en este caso es la variable "x" (realmente es el identificador de la variable "x", que es el identificador de la lista [3, 1]). La ejecución del programa continua tras la llamada a la función.</p>
+
+              <p class="control">
+                <a href="#Paso706"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso708"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso708">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 8</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+<span class="conborde">print(aumenta(a))</span>
+print(a)
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512
+<span class="conborde">[3, 1]</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Se imprime el valor devuelto por la función ([3, 1]).</p>
+              <p class="control">
+                <a href="#Paso707"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso709"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso709">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso
+                9</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+<span class="conborde">print(a)</span>
+print(id(a))</code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512
+[3, 1]
+<span class="conborde">[3, 1]</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se imprime el valor de la variable "a", que es ahora [3, 1], pues la función ha modificado la lista.</p>
+
+              <p class="control">
+                <a href="#Paso708"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <a href="#Paso710"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+              </p>
+            </div>
+
+            <div id="Paso710">
+              <p><strong>Ejemplo de paso de variable (objeto mutable) - Paso 10</strong></p>
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">def aumenta(x):
+    print(id(x))
+    x += [1]
+    print(id(x))
+    return x
+
+a = [3]
+print(id(a))
+print(aumenta(a))
+print(a)
+<span class="conborde">print(id(a))</span></code>
+</pre>
+                    </td>
+                    <td>
+                      <pre>
+<span class="idle-resp">45688512
+45688512
+45688512
+[3, 1]
+[3, 1]
+<span class="conborde">45688512</span></span>
+</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>Se imprime el identificador de la variable "a", que sigue siendo el mismo, y el programa termina.</p>
+
+              <p class="control">
+                <a href="#Paso709"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

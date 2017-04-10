@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo turtle (1). Gráficos. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Gráficos: el módulo turtle (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Módulo turtle (1)</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#modulo-turtle">módulo turtle</a></li>
+          <li><a href="#ventana-dibujo">ventana: setup(), title()</a></li>
+          <li><a href="#area-dibujo">área de dibujo: screensize()</a></li>
+          <li><a href="#dibujar">dibujar</a></li>
+          <li><a href="#show-hide">showturtle(), hideturtle()</a></li>
+          <li><a href="#dibujar-lineas">dibujar líneas</a>
+            <ul>
+              <li><a href="#goto-setx-sety">goto(), setx(), sety()</a></li>
+              <li><a href="#penup-pendown">penup(), pendown()</a></li>
+              <li><a href="#pensize">pensize()</a></li>
+              <li><a href="#pencolor-colormode">pencolor(), colormode()</a></li>
+            </ul>
+          </li>
+          <li><a href="#dot">puntos: dot()</a></li>
+          <li><a href="#rellenar">rellenar</a></li>
+          <li><a href="#circle">círculos: circle()</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se trata la creación de gráficos usando el módulo turtle.</p>
+
+    <section id="modulo-turtle">
+      <h2>El módulo turtle</h2>
+
+      <p>En 1967 Wally Feurzeig y Seymour Papert crearon Logo, un lenguaje de programación con fines educativos. Ese lenguaje incluía las llamadas "gráficas tortuga".</p>
+
+      <p>La "tortuga" de Logo es un cursor al que se le pueden dar órdenes de movimiento (avance, retroceso o giro) y que puede ir dejando un rastro sobre la pantalla. Moviendo adecuadamente la tortuga se pueden conseguir dibujar todo tipo de figuras.</p>
+
+      <p>Python incluye un módulo llamado "turtle" que permite crear gráficos de tortuga.</p>
+
+      <p>En esta lección se explica cómo utilizar el módulo turtle para crear dibujos sencillos, pero sin utilizar la tortuga.</p>
+
+      <p>Para utilizar el módulo turtle sólo hace falta importarlo:</p>
+
+      <ul>
+        <li>Si se va a escribir código no orientado a objetos:
+          <div class="codigo">
+            <pre><code class="language-python">from turtle import *</code></pre>
+          </div>
+        </li>
+        <li>Si se va a escribir código orientado a objetos:
+          <div class="codigo">
+            <pre><code class="language-python">import turtle</code></pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ventana-dibujo">
+      <h2>La ventana de dibujo: setup() y title()</h2>
+
+      <p>El módulo turtle dibuja en una ventana distinta a la ventana de IDLE. Esta ventana de dibujo se crea al ejecutar un programa y se mantiene al acabar la ejecución del programa, pero se destruye al volver a ejecutar el programa).</p>
+
+      <p>La función <strong>setup(ancho, alto, posicionX, posicionY)</strong> permite definir el tamaño y la posición inicial de la ventana. Los cuatro argumentos de la función son (en píxeles):</p>
+      <ul>
+        <li>ancho: ancho de la ventana.</li>
+        <li>alto: alto de la ventana.</li>
+        <li>posicionX: posición horizontal de la ventana. Los valores positivos se miden desde el borde izquierdo de la pantalla, los negativos desde el borde derecho de la pantalla.</li>
+        <li>posicionY: posición vertical de la ventana. Los valores positivos se miden desde el borde superior de la pantalla, los negativos desde el borde inferior de la pantalla.</li>
+      </ul>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+        <code class="language-python">
+from turtle import *
+
+setup(640, 480, 0, 0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función setup()" src="../img/turtle/turtle_setup_1.png" width="160" height="115" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>La función <strong>title()</strong> permite definir el título de la ventana, que se muestra en el borde superior de la ventana.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+title("Ejemplo de ventana")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función title()" src="../img/turtle/turtle_title.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si no se usa la función <strong>setup()</strong>, la ventana se crea en el centro de la pantalla (para que se cree la ventana tiene que aparecer alguna función del módulo turtle):</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+title("Ejemplo de ventana")</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Ventana predeterminada" src="../img/turtle/turtle_setup_2.png" width="160" height="115" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>El tamaño de la ventana de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(250, 100, 0, 0)
+title("Ejemplo de ventana")
+hideturtle()
+dot(10, 0, 0, 0)
+setup(450, 150, 0, 0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función setup()" src="../img/turtle/turtle_setup_3.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="area-dibujo">
+      <h2>El área de dibujo: screensize()</h2>
+
+      <p>La ventana de dibujo contiene el área de dibujo, una superficie plana en la que se puede dibujar.</p>
+
+      <p>El área de dibujo tiene un tamaño inicial de 400 x 300 píxeles (en Windows), pero la función <strong>screensize(ancho, alto)</strong> permite definir el tamaño del área de dibujo, en píxeles.</p>
+
+      <p>El área de dibujo puede ser mayor o menor que la ventana de dibujo.</p>
+
+      <ul>
+        <li>Si la ventana es más grande que el área de dibujo, no se muestran barras de desplazamiento:
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(10, 10)</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Función setup()" src="../img/turtle/turtle_screensize_1.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si la ventana es más pequeña que el área de dibujo, se muestran barras de desplazamiento en la dirección en que se requieran.
+          <ul>
+            <li>En el ejemplo siguiente, están activas las dos barras de desplazamiento:
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">from turtle import *
+
+setup(150, 150, 0, 0)
+screensize(300, 300)</code>
+</pre>
+                    </td>
+                    <td><p class="captura"><img alt="Módulo turtle. Función screensize()" src="../img/turtle/turtle_screensize_2.png" width="166" height="188" /></p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+            <li>En el ejemplo siguiente, sólo se está activa la barra de desplazamiento vertical:
+
+              <table class="ejemplo">
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(400, 300)</code>
+</pre>
+                    </td>
+                    <td><p class="captura"><img alt="Módulo turtle. Función screensize()" src="../img/turtle/turtle_screensize_3.png" width="466" height="188" /></p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>En cualquier caso, el fondo del área de dibujo es del mismo color que el fondo de la ventana, por lo que no se distinguen los bordes del espacio de dibujo.</p>
+
+      <hr class="corta" />
+
+      <p>El tamaño del área de dibujo se puede modificar a lo largo de un programa, sin que se pierda el dibujo realizado anteriormente.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(250, 100, 0, 0)
+screensize(100, 100)
+hideturtle()
+dot(10, 0, 0, 0)
+screensize(200, 100)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función screensize()" src="../img/turtle/turtle_screensize_4.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Podemos dibujar fuera del área de dibujo, pero las barras de desplazamiento corresponden al tamaño del área de dibujo, por lo que utilizando las barras de desplazamiento no podemos ir más allá del tamaño definido. Para ver más allá del área de dibujo podemos hacer más grande la ventana, pero si el dibujo está más allá de la pantalla, no habría manera de llegar a él (salvo hacer en el programa más grande el área de dibujo, ya que el área de dibujo puede ser mayor que la pantalla).</p>
+    </section>
+
+    <section id="dibujar">
+      <h2>Dibujar en la ventana</h2>
+
+      <p>Dibujar gráficos de tortuga es similar a dibujar con un lápiz sobre papel. Las instrucciones de gráficos de tortuga permiten dibujar líneas y puntos, mover el lápiz de un sitio a otro, cambiar el color y grosor del trazo, colorear el interior de las figuras, etc.</p>
+
+      <p>Situar el cursor en un lugar del área de dibujo es equivalente a colocar la punta del lápiz en un punto de un papel y desplazar el cursor es equivalente a dibujar un segmento sobre el papel o desplazar el lápiz a otro punto del papel.</p>
+
+      <p>Las posiciones en el área de dibujo se localizan mediante coordenadas XY en el que cada píxel es una unidad y con origen en el centro de la ventana. La imagen siguiente muestra cuál sería la posición de los ejes de coordenadas y cuáles serían las coordenadas de un punto cualquiera.</p>
+
+      <p class="captura"><img alt="Módulo turtle. Ejes de coordenadas" src="../img/turtle/turtle_ejes.png" width="466" height="338" /></p>
+
+    </section>
+
+    <section id="show-hide">
+      <h2>La tortuga: showturtle(), hideturtle()</h2>
+
+      <p>La función <strong>showturtle()</strong> muestra el cursor (la tortuga).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(300, 150)
+
+showturtle()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función showturtle()" src="../img/turtle/turtle_showturtle_1.png" width="466" height="188" /></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Cuando se hace un dibujo, la tortuga se muestra en la posición final del dibujo (la función <strong>goto()</strong> se explica más adelante):</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(300, 150)
+
+goto(100, 0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función hideturtle()" src="../img/turtle/turtle_hideturtle_1.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La función <strong>hideturtle()</strong> oculta el cursor (la tortuga).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(300, 150)
+
+goto(100, 0)
+hideturtle()</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función hideturtle()" src="../img/turtle/turtle_hideturtle_2.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si no se quiere mostrar la tortuga, es mejor ocultarla al principio del programa, ya que el programa se ejecutará más rápido.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 150, 0, 0)
+screensize(300, 150)
+
+hideturtle()
+goto(100, 0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función hideturtle()" src="../img/turtle/turtle_hideturtle_2.png" width="466" height="188" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="dibujar-lineas">
+      <h2>Dibujar líneas</h2>
+
+      <section id="goto-setx-sety">
+        <h3>Mover el lápiz: goto(), setx() y sety()</h3>
+
+        <p>Los píxeles del área de dibujo se pueden localizar mediante un sistema de coordenadas XY centrado en el centro del área de dibujo. Al crear la ventana, el cursor se sitúa en el centro de la ventana, de coordenadas (0, 0).</p>
+
+        <p>La función <strong>goto(x, y)</strong> permite desplazar el cursor a una posición determinada del área de dibujo. En el ejemplo siguiente el cursor se muestra en la posición (0, 0) (el centro de la ventana):</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(0, 0)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función goto()" src="../img/turtle/turtle_goto_1.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si el primer goto() desplaza a un punto distinto, se dibuja la línea entre el punto inicial (0, 0) y el indicado:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(100, 50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función goto()" src="../img/turtle/turtle_goto_2.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si se escriben varias instrucciones goto(), se van dibujando los segmentos uno a continuación del otro.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(100, 50)
+goto(100, -50)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función goto()" src="../img/turtle/turtle_goto_3.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>Las funciones <strong>setx()</strong> y <strong>sety()</strong> permiten desplazar el cursor a una posición determinada del área de dibujo. La función <strong>setx()</strong> modifica la abcisa X manteniendo la ordenada Y, mientras que la función <strong>sety()</strong> modifica la ordenada Y manteniendo la abcisa X.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(100, 50)
+sety(-50)
+setx(50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función goto()" src="../img/turtle/turtle_goto_3.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="penup-pendown">
+        <h3>Levantar y bajar el lápiz: penup() y pendown()</h3>
+
+        <p>Las funciones <strong>pendown()</strong> y <strong>penup()</strong> son equivalentes a bajar y levantar el lápiz del papel. Una vez levantado el lápiz del papel, al desplazar el lápiz ya no se dibujan segmentos. Al volver a bajar el lápiz, al desplazar el lápiz vuelven a dibujarse los fragmentos.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(100, 50)
+penup()
+goto(100, -50)
+pendown()
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función goto()" src="../img/turtle/turtle_goto_4.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="pensize">
+        <h3>Grosor del trazo: pensize()</h3>
+
+        <p>La función <strong>pensize(grosor)</strong> permite modificar el grosor del trazo.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+goto(100, 50)
+pensize(4)
+goto(100, -50)
+pensize(8)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función pensize()" src="../img/turtle/turtle_pensize_1.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="pencolor-colormode">
+        <h3>Color del trazo: pencolor() y colormode()</h3>
+
+        <p>La función <strong>pencolor(rojo, azul, verde)</strong> permite modificar el color del trazo. El color se da como combinación de rojo, azul y verde. Los valores de color se pueden dar como valores enteros entre 0 y 255 o como valores decimales entre 0 y 1. Para elegir entre un modo y otro de indicar los colores hay que utilizar la función <strong>colormode(1)</strong> o <strong>colormode(255)</strong>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(255)
+
+pencolor(255, 0, 0)
+goto(100, 50)
+pencolor(0, 255, 0)
+goto(100, -50)
+pencolor(0, 0, 255)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Funciones colormode() y pencolor()" src="../img/turtle/turtle_pencolor_1.png" width="466" height="238" /></p></td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(1)
+
+pencolor(1, 0, 0)
+goto(100, 50)
+pencolor(0, 1, 0)
+goto(100, -50)
+pencolor(0, 0, 1)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Funciones colormode() y pencolor()" src="../img/turtle/turtle_pencolor_1.png" width="466" height="238" /></p></td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(255)
+
+pencolor(128, 0, 0)
+goto(100, 50)
+pencolor(0, 128, 0)
+goto(100, -50)
+pencolor(0, 0, 128)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Funciones colormode() y pencolor()" src="../img/turtle/turtle_pencolor_2.png" width="466" height="238" /></p></td>
+            </tr>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(1)
+
+pencolor(0.5, 0, 0)
+goto(100, 50)
+pencolor(0, 0.5, 0)
+goto(100, -50)
+pencolor(0, 0, 0.5)
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Funciones colormode() y pencolor()" src="../img/turtle/turtle_pencolor_2.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>También se pueden utilizar los <a href="python_tk_colores.html">nombres de colores de Tk</a>, que incluyen entre otros los <a href="http://www.mclibre.org/consultar/htmlcss/css/css_color.html#svg">nombres de colores SVG</a>, en cuyo caso no hace falta utilizar la función <strong>colormode()</strong>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+
+pencolor("red")
+goto(100, 50)
+pencolor("green")
+goto(100, -50)
+pencolor("blue")
+goto(50, -50)</code>
+</pre>
+              </td>
+              <td><p class="captura"><img alt="Módulo turtle. Función pencolor()" src="../img/turtle/turtle_pencolor_3.png" width="466" height="238" /></p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="dot">
+      <h2>Dibujar puntos: dot()</h2>
+
+      <p>La función <strong>dot(grosor, color)</strong> permite dibujar un punto del grosor y color indicado en el punto en el que se encuentra el cursor. El grosor se indica en píxeles y el color se expresa como en la función <strong>pencolor()</strong> vista en el apartado anterior (entre paréntesis, como tupla, o sin paréntesis).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(255)
+
+goto(100, 50)
+dot(10, 255, 0, 0)
+goto(100, -50)
+dot(10, 0, 255, 0)
+goto(50, -50)
+dot(10, 0, 0, 255)
+goto(0,0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función dot()" src="../img/turtle/turtle_dot_1.png" width="466" height="238" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si queremos dibujar únicamente puntos, basta con levantar el lápiz (no es necesario bajarlo para dibujar puntos).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+colormode(255)
+
+penup()
+goto(100, 50)
+dot(10, 255, 0, 0)
+goto(100, -50)
+dot(10, 0, 255, 0)
+goto(50, -50)
+dot(10, 0, 0, 255)
+goto(0,0)</code>
+</pre>
+            </td>
+            <td><p class="captura"><img alt="Módulo turtle. Función dot()" src="../img/turtle/turtle_dot_2.png" width="466" height="238" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="rellenar">
+      <h2>Rellenar figuras</h2>
+
+      <p>La función <strong>begin_fill()</strong> indica a Python que las figuras que se dibujen a partir de ese momento se deben rellenar. La función <strong>end_fill()</strong> indica a Python que las figuras deben dejar de rellenarse.</p>
+
+      <p>La función <strong>fillcollor(color)</strong> permite establecer el color de relleno, de la misma manera que <a href="#pencolor-colormode">la función pencolor()</a>. El color se puede definir tanto como combinación de rojo, verde y azul, como con nombre de colores de Tk.</p>
+
+      <p>Si no se establece un color de relleno distinto, el color de relleno predeterminado es el negro.</p>
+      <ul>
+        <li>Para rellenar una figura, se debe llamar a la función begin_fill(), dibujar la figura y llamar a la función end_fill().
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(100, 0)
+goto(100, 50)
+goto(0, 50)
+goto(0, 0)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_1.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si no se establece un color de relleno distinto, el color de relleno predeterminado es el negro.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pencolor("red")
+pensize(5)
+begin_fill()
+goto(100, 0)
+goto(100, 50)
+goto(0, 50)
+goto(0, 0)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_2.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Aunque realmente no es necesario dibujar la figura completa ya que Python rellena la figura aunque no se cierre la figura (es como si Python uniera el último punto de la figura con el primero).
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(100, 0)
+goto(100, 50)
+goto(0, 50)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_3.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si las líneas de la figura se cruzan, Python rellena cada una de las partes cerradas.
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(50, 50)
+goto(100, -50)
+goto(150, 0)
+goto(0, 0)
+end_fill()</code></pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_4.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Si las líneas de la figura se cruzan, Python también rellena la figura aunque no se cierre la figura (es como si Python uniera el último punto de la figura con el primero).
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(0, 75)
+goto(100, 0)
+goto(100, 75)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_5.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Cuando se levanta el lápiz, Python incluye el trayecto en la figura a rellenar ...
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(75, 0)
+goto(75, 75)
+penup()
+goto(-100, 75)
+pendown()
+goto(-100,0)
+goto(-25, 0)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_6.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>... por lo que si se quieren dibujar figuras separadas, es mejor rellenar cada una de ellas de forma independiente ...
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(75, 0)
+goto(75, 75)
+end_fill()
+penup()
+goto(-100, 75)
+pendown()
+begin_fill()
+goto(-100,0)
+goto(-25, 0)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_7.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>... aunque si se trata de figuras cerradas a menudo no es necesario rellenarlas por separado (si los trayectos realizados con el lápiz levantado no cierran ninguna zona):
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <pre>
+<code class="language-python">from turtle import *
+
+setup(450, 200, 0, 0)
+screensize(300, 150)
+title("www.mclibre.org")
+hideturtle()
+
+pensize(5)
+fillcolor("red")
+begin_fill()
+goto(75, 0)
+goto(75, 75)
+goto(0,0)
+penup()
+goto(-100, 75)
+pendown()
+goto(-100,0)
+goto(-25, 0)
+goto(-100, 75)
+end_fill()</code>
+</pre>
+                </td>
+                <td><p class="captura"><img alt="Módulo turtle. Funciones begin_fill(), end_fill() y fillcolor()" src="../img/turtle/turtle_fill_8.png" width="466" height="238" /></p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+<section id="circle">
+    <h2>Dibujar círculos: circle()</h2>
+
+    <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Por completar ...</p>
+</section>
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 23 de marzo de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

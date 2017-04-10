@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (1). Listas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Listas - Ejercicios (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Listas (1)</h2>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_listas.html">Listas.</a></p>
+
+    <p>Se pueden consultar unas <a href="ej_listas_soluciones.html">posibles soluciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-1"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 1</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras. Para ello, el programa tiene que pedir un número y luego solicitar ese número de palabras para crear la lista. Por último, el programa tiene que escribir la lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 3
+<span class="idle-resp">Dígame la palabra 1:</span> Alberto
+<span class="idle-resp">Dígame la palabra 2:</span> Benito
+<span class="idle-resp">Dígame la palabra 3:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Alberto', 'Benito', 'Carmen']</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 0
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-2"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 2</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y diga cuántas veces aparece esa palabra en la lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Alberto
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Carmen', 'Alberto', 'Benito', 'Carmen']</span>
+<span class="idle-resp">Dígame la palabra a buscar:</span> Carmen
+<span class="idle-resp">La palabra 'Carmen' aparece 2 veces en la lista.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Alberto
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Carmen', 'Alberto', 'Benito', 'Carmen']</span>
+<span class="idle-resp">Dígame la palabra a buscar:</span> Alberto
+<span class="idle-resp">La palabra 'Alberto' aparece una vez en la lista.</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Alberto
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Carmen', 'Alberto', 'Benito', 'Carmen']</span>
+<span class="idle-resp">Dígame la palabra a buscar:</span> David
+<span class="idle-resp">La palabra 'David' no aparece en la lista.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-3"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 3</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, pida dos palabras y sustituya la primera por la segunda en la lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Alberto
+<span class="idle-resp">Dígame la palabra 2:</span> Carmen
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Alberto', 'Carmen', 'Benito', 'Carmen']</span>
+<span class="idle-resp">Sustituir la palabra:</span> Carmen
+<span class="idle-resp">por la palabra:</span> David
+<span class="idle-resp">La lista es ahora: ['Alberto', 'David', 'Benito', 'David']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-4"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 4</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y elimine esa palabra de la lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Alberto
+<span class="idle-resp">Dígame la palabra 2:</span> Carmen
+<span class="idle-resp">Dígame la palabra 3:</span> Carmen
+<span class="idle-resp">Dígame la palabra 4:</span> Benito
+<span class="idle-resp">La lista creada es: ['Alberto', 'Carmen', 'Carmen', 'Benito']</span>
+<span class="idle-resp">Palabra a eliminar:</span> Carmen
+<span class="idle-resp">La lista es ahora: ['Alberto', 'Benito']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-5"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 5</h2>
+
+      <p>Escriba un programa que permita crear dos listas de palabras y que, a continuación, elimine de la primera lista los nombres de la segunda lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 5
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Carmen
+<span class="idle-resp">Dígame la palabra 3:</span> Alberto
+<span class="idle-resp">Dígame la palabra 4:</span> Benito
+<span class="idle-resp">Dígame la palabra 5:</span> David
+<span class="idle-resp">La lista creada es: ['Carmen', 'Carmen', 'Alberto', 'Benito', 'David']</span>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista de palabras a eliminar:</span> 3
+<span class="idle-resp">Dígame la palabra 1:</span> Benito
+<span class="idle-resp">Dígame la palabra 2:</span> Juan
+<span class="idle-resp">Dígame la palabra 3:</span> Carmen
+<span class="idle-resp">La lista de palabras a eliminar es: ['Benito', 'Juan', 'Carmen']</span>
+<span class="idle-resp">La lista es ahora: ['Alberto', 'David']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-6"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 6</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, cree una segunda lista igual a la primera, pero al revés (no se trata de escribir la lista al revés, sino de crear una lista distinta).</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Alberto
+<span class="idle-resp">Dígame la palabra 2:</span> Carmen
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Daniel
+<span class="idle-resp">La lista creada es: ['Alberto', 'Carmen', 'Benito', 'Daniel']</span>
+<span class="idle-resp">La lista inversa es: ['Daniel', 'Benito', 'Carmen', 'Alberto']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-7"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 7</h2>
+
+      <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, elimine los elementos repetidos (dejando únicamente el primero de los elementos repetidos).</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Alberto
+<span class="idle-resp">Dígame la palabra 2:</span> Carmen
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La lista creada es: ['Alberto', 'Carmen', 'Benito', 'Carmen']</span>
+<span class="idle-resp">La lista sin repeticiones es: ['Alberto', 'Carmen', 'Benito']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-8">
+      <h2><a href="ej_listas_soluciones.html#ejercicio-8"><img src="../varios/iconos/icono_solucion.svg" alt="Solución del ejercicio" title="Solución del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 8</h2>
+
+      <p>Escriba un programa que permita crear dos listas de palabras y que, a continuación, escriba las siguientes listas (en las que no debe haber repeticiones):</p>
+      <ul>
+        <li>Lista de palabras que aparecen en las dos listas.</li>
+        <li>Lista de palabras que aparecen en la primera lista, pero no en la segunda.</li>
+        <li>Lista de palabras que aparecen en la segunda lista, pero no en la primera.</li>
+        <li>Lista de palabras que aparecen en ambas listas.</li>
+      </ul>
+
+      <p><strong>Nota</strong>: Para evitar las repeticiones, el programa deberá empezar eliminando los elementos repetidos en cada lista.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tiene la primera lista:</span> 4
+<span class="idle-resp">Dígame la palabra 1:</span> Carmen
+<span class="idle-resp">Dígame la palabra 2:</span> Alberto
+<span class="idle-resp">Dígame la palabra 3:</span> Benito
+<span class="idle-resp">Dígame la palabra 4:</span> Carmen
+<span class="idle-resp">La primera lista es: ['Carmen', 'Alberto', 'Benito', 'Carmen']</span>
+<span class="idle-resp">Dígame cuántas palabras tiene la segunda lista:</span> 3
+<span class="idle-resp">Dígame la palabra 1:</span> Benito
+<span class="idle-resp">Dígame la palabra 2:</span> Juan
+<span class="idle-resp">Dígame la palabra 3:</span> Carmen
+<span class="idle-resp">La segunda lista es: ['Benito', 'Juan', 'Carmen']</span>
+<span class="idle-resp">Palabras que aparecen en las dos listas: ['Carmen', 'Benito']</span>
+<span class="idle-resp">Palabras que sólo aparecen en la primera lista: ['Alberto']</span>
+<span class="idle-resp">Palabras que sólo aparecen en la segunda lista: ['Juan']</span>
+<span class="idle-resp">Todas las palabras: ['Carmen', 'Benito', 'Alberto', 'Juan']</span>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 5 de marzo de 2013</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

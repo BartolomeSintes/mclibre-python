@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (1). Listas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Listas - Soluciones (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Listas (1)</h2>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_listas.html">ejercicios de listas (1)</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2><a href="ej_listas.html#ejercicio-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 1</h2>
+
+      <ul>
+        <li>Este programa puede incluir un bucle que se ejecute tantas veces como palabras tiene la lista.</li>
+        <li>En cada iteración del bucle, se pide un valor y se añade a la lista.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)</code></pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2><a href="ej_listas.html#ejercicio-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 2</h2>
+
+      <ul>
+        <li>Para contar los elementos, este programa puede incluir un bucle que recorra la lista una vez creada.</li>
+        <li>Puesto que no se van a modificar los valores de la lista, la lista se puede recorrer directamente (<span class="idle-rese">for</span> i <span class="idle-rese">in</span> lista).</li>
+        <li>En cada iteración del bucle, se compara el valor de la lista con el valor buscado y si coinciden, se aumenta el valor de un contador.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    buscar = input("Dígame la palabra a buscar: ")
+    contador = 0
+    for i in lista:
+        if i == buscar:
+            contador += 1;
+    if contador == 0:
+        print("La palabra '" + buscar + "' no aparece en la lista.")
+    elif contador == 1:
+        print("La palabra '" + buscar + "' aparece una vez en la lista.")
+    else:
+        print("La palabra '" + buscar + "' aparece", contador, "veces en la lista.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2><a href="ej_listas.html#ejercicio-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 3</h2>
+
+      <ul>
+        <li>Para sustituir los elementos, este programa puede incluir un bucle que recorra la lista una vez creada.</li>
+        <li>Puesto que se van a modificar los valores de la lista, la lista se tiene que recorrer indirectamente (<span class="idle-rese">for</span> i <span class="idle-rese">in</span> range(<span class="idle-func">len</span>(lista))).</li>
+        <li>En cada iteración del bucle, se compara el valor de la lista con el valor buscado y si coinciden, se sustituye el valor de la lista.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    buscar = input("Sustituir la palabra: ")
+    sustituir = input("por la palabra: ")
+    for i in range(len(lista)):
+        if lista[i] == buscar:
+            lista[i] = sustituir
+    print("La lista es ahora:", lista)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2><a href="ej_listas.html#ejercicio-4"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 4</h2>
+
+      <ul>
+        <li>Para borrar los elementos, este programa puede incluir un bucle que recorra la lista una vez creada.</li>
+        <li>Puesto que se van a modificar los valores de la lista, la lista se tiene que recorrer indirectamente (<span class="idle-rese">for</span> i <span class="idle-rese">in</span> range(<span class="idle-func">len</span>(lista))).</li>
+        <li>En cada iteración del bucle, se compara el valor de la lista con el valor buscado y si coinciden, se elimina el valor de la lista.</li>
+        <li>Un detalle importante es que la lista se tiene que recorrer al revés (del último al primer elemento) por dos motivos:
+          <ul>
+            <li>Si la lista se recorre del primer al último elemento, al eliminar un elemento la lista se acorta. Como el bucle se ejecuta tantas veces como elementos tenía originalmente, al llegar a la última iteración, se estaría haciendo referencia a un elemento que ya no existe, lo que produciría un error. Si se eliminan más elementos, el error se produciría antes.</li>
+          </ul>
+          <ul>
+            <li>Si la lista se recorre del primer al último elemento, al eliminar un elemento los elementos siguientes avanzan una posición. En la siguiente iteración del bucle, se compara el elemento siguiente al borrado, por lo que el elemento que ha ocupado la posición del elemento borrado escapa a la comprobación. Este problema puede pasar desapercibido si la lista no contiene dos elementos seguidos a eliminar.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    eliminar = input("Palabra a eliminar: ")
+    for i in range(len(lista)-1, -1, -1):
+        if lista[i] == eliminar:
+            del(lista[i])
+    print("La lista es ahora:", lista)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-5">
+      <h2><a href="ej_listas.html#ejercicio-5"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 5</h2>
+
+      <ul>
+        <li>Este ejercicio es similar al anterior.</li>
+        <li>Este programa puede incluir un bucle que recorra la lista de palabras a eliminar y en cada iteración elimine una palabra.</li>
+        <li>La lista de palabras a eliminar se puede recorrer de forma directa, mientras que la lista de palabras inicial debe recorrerse de forma indirecta y al revés por los mismos motivos que en el ejercicio anterior.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    numero2 = int(input("Dígame cuántas palabras tiene la lista de palabras a eliminar: "))
+
+    if numero2 &lt; 1:
+        print("¡Imposible!")
+    else:
+        eliminar = []
+        for i in range(numero2):
+            print("Dígame la palabra", str(i + 1) + ": ", end="")
+            palabra = input()
+            eliminar += [palabra]
+        print("La lista de palabras a eliminar es:", eliminar)
+
+        for i in eliminar:
+            for j in range(len(lista)-1, -1, -1):
+                if lista[j] == i:
+                    del(lista[j])
+        print("La lista es ahora:", lista)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-6">
+      <h2><a href="ej_listas.html#ejercicio-6"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 6</h2>
+
+      <ul>
+        <li>Para crear la lista inversa, este programa puede incluir un bucle que recorra la lista una vez creada.</li>
+        <li>Puesto que no se van a modificar los valores de la lista, la lista se puede recorrer directamente (<span class="idle-rese">for</span> i <span class="idle-rese">in</span> lista).</li>
+        <li>En cada iteración del bucle, se añade el elemento de la lista inicial al principio de la lista inversa.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    inversa = []
+    for i in lista:
+        inversa = [i] + inversa
+    print("La lista inversa es:", inversa)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-7">
+      <h2><a href="ej_listas.html#ejercicio-7"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 7</h2>
+
+      <ul>
+        <li>Para eliminar los elementos repetidos, este programa puede incluir un bucle que recorra la lista una vez creada.</li>
+        <li>Puesto que se van a eliminar los valores de la lista, la lista se debe recorrer indirectamente y al revés ( <span class="idle-rese">for</span> i <span class="idle-rese">in</span> <span class="idle-func">range</span>(len(lista)-1, -1, -1)).</li>
+        <li>En cada iteración del bucle, se comprueba si el elemento se encuentra en la sublista anterior a ese elemento (desde el principio hasta el elemento anterior) y si es así, se borra.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    lista = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        lista += [palabra]
+    print("La lista creada es:", lista)
+
+    for i in range(len(lista)-1, -1, -1):
+        if lista[i] in lista[:i]:
+            del(lista[i])
+    print("La lista sin repeticiones es:", lista)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-8">
+      <h2><a href="ej_listas.html#ejercicio-8"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>Listas (1) - 8</h2>
+
+      <ul>
+        <li>El programa debe empezar pidiendo dos listas y eliminando los elementos repetidos, como en el ejercicio anterior.</li>
+        <li>Puesto que se van a eliminar los valores de la lista, la lista se debe recorrer indirectamente y al revés ( <span class="idle-rese">for</span> i <span class="idle-rese">in</span> <span class="idle-func">range</span>(len(lista)-1, -1, -1)).</li>
+        <li>En cada iteración del bucle, se comprueba si el elemento se encuentra en la sublista anterior a ese elemento (desde el principio hasta el elemento anterior) y si es así, se borra.</li>
+      </ul>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la primera lista: "))
+
+if numero &lt; 1:
+    print("¡Imposible!")
+else:
+    primera = []
+    for i in range(numero):
+        print("Dígame la palabra", str(i + 1) + ": ", end="")
+        palabra = input()
+        primera += [palabra]
+    print("La primera lista es:", primera)
+
+    for i in range(len(primera)-1, -1, -1):
+        if primera[i] in primera[:i]:
+            del(primera[i])
+    # print("La primera lista sin repeticiones es:", primera)
+
+    numero2 = int(input("Dígame cuántas palabras tiene la segunda lista: "))
+
+    if numero2 &lt; 1:
+        print("¡Imposible!")
+    else:
+        segunda = []
+        for i in range(numero2):
+            print("Dígame la palabra", str(i + 1) + ": ", end="")
+            palabra = input()
+            segunda += [palabra]
+        print("La segunda lista es:", segunda)
+
+        for i in range(len(segunda)-1, -1, -1):
+            if segunda[i] in segunda[:i]:
+                del(segunda[i])
+        # print("La segunda lista sin repeticiones es:", segunda)
+
+        comunes = []
+        for i in primera:
+            if i in segunda:
+                comunes += [i]
+        print("Palabras que aparecen en las dos listas:", comunes)
+
+        soloPrimera = []
+        for i in primera:
+            if i not in segunda:
+                soloPrimera += [i]
+        print("Palabras que sólo aparecen en la primera lista:", soloPrimera)
+
+        soloSegunda = []
+        for i in segunda:
+            if i not in primera:
+                soloSegunda += [i]
+        print("Palabras que sólo aparecen en la segunda lista:", soloSegunda)
+
+        todas = comunes + soloPrimera + soloSegunda
+        print("Todas las palabras:", todas)</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 5 de marzo de 2013 </p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen 14/04/14. Exámenes. Python. Bartolomé Sintes Marco</title>
+    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Examen 10 de abril de 2014</h1>
+
+    <nav>
+      <p>
+        <a href="../../index.html"><img src="../../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../examenes.html"><img src="../../varios/iconos/icono_school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+      </p>
+
+      <h2>Examen 10/04/14</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">Operaciones</a>
+          <li><a href="#ejercicio-2">Bucles</a>
+          <li><a href="#ejercicio-3">Dibujos bucles</a>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="ejercicio-1">
+      <h2>Ejercicio 1</h2>
+
+      <p>Escriba un programa que permita crear dos listas de palabras. Para ello, el programa tiene que pedir un número y luego solicitar ese número de palabras para crear las dos listas. A partir de esas dos listas, el programa tiene que crear dos listas:</p>
+      <ul>
+        <li>una lista que contenga los elementos de la primera lista seguidos de los elementos de la segunda lista</li>
+        <li>otra lista que contenga los elementos de ambas listas, intercalados (primero el primero de la primera lista, después el primero de la segunda lista, después el segundo de la primera lista, etc.)</li>
+      </ul>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tienen las listas:</span> 3
+
+<span class="idle-resp">Escriba la primera lista:
+Dígame la palabra 1:</span> a
+<span class="idle-resp">Dígame la palabra 2:</span> aa
+<span class="idle-resp">Dígame la palabra 3:</span> aaa
+
+<span class="idle-resp">Escriba la segunda lista:</span>
+<span class="idle-resp">Dígame la palabra 1:</span> b
+<span class="idle-resp">Dígame la palabra 2:</span> bb
+<span class="idle-resp">Dígame la palabra 3:</span> bbb
+
+<span class="idle-resp">Primera lista: ['a', 'aa', 'aaa']
+Segunda lista: ['b', 'bb', 'bbb']
+Listas seguidas: ['a', 'aa', 'aaa', 'b', 'bb', 'bbb']
+Listas intercaladas: ['a', 'b', 'aa', 'bb', 'aaa', 'bbb']</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Dígame cuántas palabras tienen las listas:</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>Ejercicio 2</h2>
+
+      <ol>
+        <li>Escriba un programa que pregunte cuántas listas se van solicitar y cuántos valores se van a pedir en cada lista:
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Dígame cuántas listas va a escribir:</span> 3
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 1:</span> 2
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 2:</span> 3
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 3:</span> 4
+<span class="idle-resp">Número de palabras a solicitar:</span> [2, 3, 4]
+</pre>
+          </div>
+        </li>
+        <li>Complete el programa anterior solicitando las listas de palabras
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Dígame cuántas listas va a escribir:</span> 3
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 1:</span> 2
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 2:</span> 3
+<span class="idle-resp">Dígame cuántas palabras va a tener la lista 3:</span> 4
+
+<span class="idle-resp">Lista 1
+Dígame la palabra 1:</span> a
+<span class="idle-resp">Dígame la palabra 2:</span> aa
+
+<span class="idle-resp">Lista 2
+Dígame la palabra 1:</span> b
+<span class="idle-resp">Dígame la palabra 2:</span> bb
+<span class="idle-resp">Dígame la palabra 3:</span> bbb
+<span class="idle-resp">Lista 3
+Dígame la palabra 1:</span> c
+<span class="idle-resp">Dígame la palabra 2:</span> cc
+<span class="idle-resp">Dígame la palabra 3:</span> ccc
+<span class="idle-resp">Dígame la palabra 4:</span> cccc
+
+<span class="idle-resp">Resultado [['a', 'aa'], ['b', 'bb', 'bbb'], ['c', 'cc', 'ccc', 'cccc']]</span>
+</pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>Ejercicio 3</h2>
+
+      <p>Escriba un programa que pida palabras hasta que el usuario repita alguna palabra y escriba la lista de pabras introducidas.</p>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Lista de palabras diferentes
+Escriba una palabra:</span> Alberto
+<span class="idle-resp">Escriba otra palabra:</span> Carmen
+<span class="idle-resp">Escriba otra palabra:</span> Bárbara
+<span class="idle-resp">Escriba otra palabra:</span> Carmen
+<span class="idle-resp">La lista de palabras diferentes es: ['Alberto', 'Carmen', 'Bárbara']</span>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<span class="idle-resp">Lista de palabras diferentes
+Escriba una palabra:</span> Alberto
+<span class="idle-resp">Escriba otra palabra:</span> Alberto
+<span class="idle-resp">La lista de palabras diferentes es: ['Alberto']</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Ejercicio 4</h2>
+
+      <ol>
+        <li>Escriba un programa que solicite dos números enteros y después vaya solicitando números enteros mientras estén situados entre los dos últimos introducidos (sin ser iguales).
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Sucesión convergente
+Escriba un número:</span> 10
+<span class="idle-resp">Escriba un número mayor que 10:</span> 40
+<span class="idle-resp">Escriba un número entre 10 y 40:</span> 30
+<span class="idle-resp">Escriba un número entre 40 y 30:</span> 38
+<span class="idle-resp">Escriba un número entre 30 y 38:</span> 37
+<span class="idle-resp">Escriba un número entre 38 y 37:</span> 37
+<span class="idle-resp">La lista de números es: [10, 40, 30, 38, 37]</span>
+</pre>
+          </div>
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Sucesión convergente
+Escriba un número:</span> 10
+<span class="idle-resp">Escriba un número mayor que 10:</span> 5
+<span class="idle-resp">5 no es mayor que 10
+Inténtelo de nuevo
+Escriba un número mayor que 10:</span> 12
+<span class="idle-resp">Escriba un número entre 10 y 12:</span> 11
+<span class="idle-resp">Escriba un número entre 11 y 12:</span> 12
+<span class="idle-resp">La lista de números es: [10, 12, 11]</span>
+</pre>
+          </div>
+        </li>
+        <li>Mejore el programa anterior de manera que el programa muestre los valores límite ordenados:
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Sucesión convergente
+Escriba un número:</span> 10
+<span class="idle-resp">Escriba un número mayor que 10:</span> 40
+<span class="idle-resp">Escriba un número entre 10 y 40:</span> 30
+<span class="idle-resp">Escriba un número entre 30 y 40:</span> 38
+<span class="idle-resp">Escriba un número entre 30 y 38:</span> 37
+<span class="idle-resp">Escriba un número entre 37 y 38:</span> 37
+<span class="idle-resp">La lista de números es: [10, 40, 30, 38, 37]</span>
+</pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de abril de 2014</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

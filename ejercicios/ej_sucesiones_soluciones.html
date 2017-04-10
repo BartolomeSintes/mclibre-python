@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones. Sucesiones aritméticas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Sucesiones aritméticas - Soluciones</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Sucesiones aritméticas</h2>
+
+      <h3><a href="ej_sucesiones.html">Enunciados</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_sucesiones.html#ejercicio-1">1 - Reconocer sucesiones</a></li>
+          <li><a href="ej_sucesiones.html#ejercicio-2">2 - Escribir fórmulas</a></li>
+          <li><a href="ej_sucesiones.html#ejercicio-3">3 - Sucesiones aritméticas</a></li>
+          <li><a href="ej_sucesiones.html#ejercicio-4">4 - Suc. no aritméticas</a></li>
+        </ul>
+      </div>
+
+      <h3>Soluciones</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-3">3 - Sucesiones aritméticas</a></li>
+          <li><a href="#ejercicio-4">4 - Suc. no aritméticas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_sucesiones.html">ejercicios de Sucesiones aritméticas</a>.</p>
+
+    <section id="ejercicio-3">
+      <h2>Sucesiones aritméticas -  03</h2>
+
+      <p>Las sucesiones se pueden generar utilizando el tipo <span class="idle-func">range</span>() con un único argumento:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(10):
+    print(2*i + 2, end=" ")
+print()
+
+for i in range(8):
+    print(2*i + 20, end=" ")
+print()
+
+for i in range(6):
+    print(4*i + 10, end=" ")
+print()
+
+for i in range(9):
+    print(-5*i + 40, end=" ")
+print()
+
+for i in range(10):
+    print(i + 1, end=" ")
+</code>
+</pre>
+      </div>
+
+      <p>O mediante el tipo <span class="idle-func">range</span>() con dos argumentos, (en estas soluciones el bucle empieza siempre con el valor ):</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(1, 11):
+    print(2 * i, end=" ")
+print()
+
+for i in range(1, 9):
+    print(2*i + 18, end=" ")
+print()
+
+for i in range(1, 7):
+    print(4*i + 6, end=" ")
+print()
+
+for i in range(1, 10):
+    print(-5*i + 45, end=" ")</code>
+print()
+
+for i in range(1, 11):
+    print(i, end=" ")
+</pre>
+      </div>
+
+      <p>O mediante el tipo <span class="idle-func">range</span>() con tres argumentos, para que siempre baste con imprimir i:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(2, 22, 2):
+    print(i, end=" ")
+print()
+
+for i in range(20, 36, 2):
+    print(i, end=" ")
+print()
+
+for i in range(10, 34, 4):
+    print(i, end=" ")
+print()
+
+for i in range(40, -5, -5):
+    print(i, end=" ")
+print()
+
+for i in range(1, 11, 1):
+    print(i, end=" ")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-4">
+      <h2>Sucesiones <strong>NO</strong> aritméticas - 04</h2>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(1, 11):
+    print(i ** 2, end=" ")
+print()
+
+for i in range(1, 11):
+    print(i**2 + 1, end=" ")
+print()
+
+for i in range(2, 8):
+    print(i ** 3, end=" ")
+print()
+
+for i in range(1, 7):
+    print(1.0 / i, end=" ")
+print()
+
+for i in range(1, 8):
+    print(i * (i+1), end=" ")
+print()
+
+for i in range(6):
+    print(10 ** i, end=" ")
+print()
+
+for i in range(5):
+    print(1.0 / 10**i, end=" ")
+print()
+
+for i in range(8):
+    print((-1) ** i, end=" ")</code>
+</pre>
+      </div>
+
+      <p>Si se hubiera querido utilizar el tipo <span class="idle-func">range</span>() con un único argumento, las cinco primeras secuencias hubieran sido:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">for i in range(10):
+    print((i+1) ** 2, end=" ")
+print()
+
+for i in range(10):
+    print((i+1)**2 + 1, end=" ")
+print()
+
+for i in range(6):
+    print((i+2) ** 3, end=" ")
+print()
+
+for i in range(6):
+    print(1.0 / (i+1), end=" ")
+print()
+
+for i in range(7):
+    print((i+1) * (i+2), end=" ")</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 24 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>
