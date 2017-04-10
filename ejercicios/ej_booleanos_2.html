@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (2). Expresiones lógicas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+    <script type="text/python3">
+from browser import document
+from random import randrange
+import browser.svg as svg
+
+anchoContador = 200
+respuesta = ("¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!")
+
+# Funciones comunes
+
+def dibuja_contador(num_correctas, num_incorrectas, img_correctas, img_incorrectas, cuenta):
+    global document, anchoContador
+    document[num_correctas].clear()
+    document[num_correctas] <= cuenta[1]
+    document[num_incorrectas].clear()
+    document[num_incorrectas] <= cuenta[0]
+    total = cuenta[0] + cuenta[1]
+    if total == 0:
+        total = 1
+    document[img_correctas].setAttribute("width", max(anchoContador * cuenta[1] / total, 1))
+    document[img_incorrectas].setAttribute("width", max(anchoContador * cuenta[0] / total, 1))
+
+def escala(valor):
+    global ancho_dibujo, minimo, maximo
+    return int(300 / (maximo - minimo) * (valor - minimo))
+
+def genera_valores(numero_puntos):
+    global minimo, maximo
+    separacion_minima = 10
+    margen_lateral = 30
+    tmp = [minimo]
+    inicio = minimo + margen_lateral
+    trozo = (maximo - minimo - 2 * margen_lateral) / numero_puntos
+    for i in range(numero_puntos):
+        desde = inicio + int(trozo * i)
+        hasta = inicio + int(trozo * (i + 1))
+        punto = randrange(desde, hasta)
+        tmp += [punto]
+    tmp += [maximo]
+    return tmp
+
+# Ejercicio 1
+
+def e1_nuevo(ev):
+    global document, e1_expresiones, e1_elegida, e1_puntos, e1_cuenta, e1_respondido, e1_ultimo
+    document["e1_svg"].clear()
+    document["e1_resultado"].clear()
+    e1_elegida = e1_expresiones[randrange(len(e1_expresiones))]
+    while e1_elegida == e1_ultimo:
+        e1_elegida = e1_expresiones[randrange(len(e1_expresiones))]
+    e1_ultimo = e1_elegida
+    e1_puntos = genera_valores(e1_elegida[1])
+    e1_dibuja("e1_svg", e1_elegida)
+    if not e1_respondido:
+        e1_cuenta[0] += 1
+        dibuja_contador("e1_num_correctas", "e1_num_incorrectas", "e1_img_correctas", "e1_img_incorrectas", e1_cuenta)
+    e1_respondido = False
+
+def e1_dibuja(destino, info):
+    global document, minimo, maximo, e1_puntos
+    incluidos = [-1, info[2], -1]
+    dibujo = document[destino]
+    dibujo <= svg.line(x1=0, y1=30, x2=300, y2=30, stroke_width=3, stroke="black")
+    for i in range(len(e1_puntos) - 1):
+        if eval(info[0], { "x" : randrange(e1_puntos[i]+1, e1_puntos[i+1]), "a" : e1_puntos[1] }):
+            dibujo <= svg.line(x1=escala(e1_puntos[i]), y1=30, x2=escala(e1_puntos[i+1]), y2=30, stroke="red",stroke_width=3)
+        if incluidos[i] == 1:
+            color = "red"
+        else:
+            color = "white"
+        if incluidos[i] != -1:
+            dibujo <= svg.circle(cx=escala(e1_puntos[i]), cy=30, r=5, stroke="red", stroke_width="2", fill=color)
+            dibujo <= svg.text(e1_puntos[i], x=escala(e1_puntos[i]), y=20, font_size=18, text_anchor="middle", fill="red")
+
+def e1_evalua(ev):
+    global document, minimo, maximo, e1_elegida, e1_puntos, respuesta, e1_cuenta, e1_respondido
+    incluidos = [-1, e1_elegida[2], -1]
+    expresion = document["e1_expresion"].value
+    try:
+        tmp = eval(expresion, {"x" : 1})
+    except:
+        document["e1_resultado"].clear()
+        document["e1_resultado"] <= "Revise la expresión. Parece haber algún error de sintaxis en ella."
+    else:
+        correcto = True
+        for i in range(len(e1_puntos) - 1):
+            if correcto:
+                for j in range(e1_puntos[i]+1, e1_puntos[i+1]):
+                    if correcto:
+                        try:
+                            tmp = eval(expresion, {"x" : j})
+                        except:
+                            correcto = False
+                        else:
+                            if eval(e1_elegida[0], {"x" : j, "a" : e1_puntos[1]}) != eval(expresion, {"x" : j}):
+                                correcto = False
+                if incluidos[i] != -1:
+                    try:
+                        tmp = eval(expresion, {"x" : e1_puntos[i]})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e1_elegida[0], { "x" : e1_puntos[i], "a" : e1_puntos[1] }) != eval(expresion, {"x" : e1_puntos[i]}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e1_puntos[i] + 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e1_elegida[0], { "x" : e1_puntos[i] + 0.0001220703125, "a" : e1_puntos[1] }) != eval(expresion, {"x" : e1_puntos[i] + 0.0001220703125}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e1_puntos[i] - 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e1_elegida[0], { "x" : e1_puntos[i] - 0.0001220703125, "a" : e1_puntos[1] }) != eval(expresion, {"x" : e1_puntos[i] - 0.0001220703125}):
+                            correcto = False
+        document["e1_resultado"].clear()
+        document["e1_resultado"] <= respuesta[correcto]
+        if not e1_respondido:
+            e1_cuenta[int(correcto)] += 1
+        dibuja_contador("e1_num_correctas", "e1_num_incorrectas", "e1_img_correctas", "e1_img_incorrectas", e1_cuenta)
+        if correcto:
+            e1_respondido = True
+
+def e1_reinicia(ev):
+    global e1_cuenta
+    e1_cuenta = [0, 0]
+    dibuja_contador("e1_num_correctas", "e1_num_incorrectas", "e1_img_correctas", "e1_img_incorrectas", e1_cuenta)
+
+minimo = -150
+e1_cuenta = [0,0]
+e1_ultimo = -1 # Última expresión elegida, para que no repita dos seguidas iguales
+e1_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e1_puntos = []
+maximo = 150
+ancho_dibujo = 300
+e1_expresiones = [
+    ["x > a", 1, 0],
+    ["x >= a", 1, 1],
+    ["x < a", 1, 0],
+    ["x <= a", 1, 1],
+    ["x == a", 1, 1],
+    ["x != a", 1, 0],
+]
+e1_nuevo(None)
+
+document["e1_boton"].bind("click", e1_evalua)
+document["e1_nuevo"].bind("click", e1_nuevo)
+document["e1_reinicia"].bind("click", e1_reinicia)
+
+# Ejercicio 2
+
+def e2_nuevo(ev):
+    global document, e2_expresiones, e2_elegida, e2_puntos, e2_cuenta, e2_respondido, e2_ultimo
+    document["e2_svg"].clear()
+    document["e2_resultado"].clear()
+    e2_elegida = e2_expresiones[randrange(len(e2_expresiones))]
+    while (e2_elegida == e2_ultimo):
+        e2_elegida = e2_expresiones[randrange(len(e2_expresiones))]
+    e2_ultimo = e2_elegida
+    e2_puntos = e2_genera_valores(e2_elegida[1])
+    e2_dibuja("e2_svg", e2_elegida)
+    if not e2_respondido:
+        e2_cuenta[0] += 1
+        dibuja_contador("e2_num_correctas", "e2_num_incorrectas", "e2_img_correctas", "e2_img_incorrectas", e2_cuenta)
+    e2_respondido = False
+
+def e2_genera_valores(puntos):
+    global minimo, maximo
+    separacion_minima = 20
+    margen_lateral = 30
+    tmp = [minimo]
+    inicio = minimo + margen_lateral
+    trozo = (maximo - minimo - 2 * margen_lateral) / puntos
+    for i in range(puntos):
+        desde = max(inicio, minimo + int(trozo * i))
+        hasta = min(maximo - margen_lateral, minimo + margen_lateral + int(trozo * (i + 1)))
+        punto = randrange(desde, hasta)
+        tmp += [punto]
+        inicio = max(desde, punto + separacion_minima)
+    tmp += [maximo]
+    return tmp
+
+def e2_dibuja(destino, info):
+    global document, minimo, maximo, e2_puntos
+    incluidos = [-1] + info[2] +[-1]
+    dibujo = document[destino]
+    dibujo <= svg.line(x1=0, y1=30, x2=300, y2=30, stroke_width=3, stroke="black")
+    for i in range(len(e2_puntos) - 1):
+        if eval(info[0], { "x" : randrange(e2_puntos[i]+1, e2_puntos[i+1]), "a" : e2_puntos[1], "b" : e2_puntos[2]}):
+            dibujo <= svg.line(x1=escala(e2_puntos[i]), y1=30, x2=escala(e2_puntos[i+1]), y2=30, stroke="red",stroke_width=3)
+        if incluidos[i] == 1:
+            color = "red"
+        else:
+            color = "white"
+        if incluidos[i] != -1:
+            dibujo <= svg.circle(cx=escala(e2_puntos[i]), cy=30, r=5, stroke="red", stroke_width="2", fill=color)
+            dibujo <= svg.text(e2_puntos[i], x=escala(e2_puntos[i]), y=20, font_size=18, text_anchor="middle", fill="red")
+
+def e2_evalua(ev):
+    global document, minimo, maximo, e2_elegida, e2_puntos, respuesta, e2_cuenta, e2_respondido
+    incluidos = [-1] + e2_elegida[2] + [-1]
+    expresion = document["e2_expresion"].value
+    try:
+        tmp = eval(expresion, {"x" : 1})
+    except:
+        document["e2_resultado"].clear()
+        document["e2_resultado"] <= "Revise la expresión. Parece haber algún error de sintaxis en ella."
+    else:
+        correcto = True
+        for i in range(len(e2_puntos) - 1):
+            if correcto:
+                for j in range(e2_puntos[i]+1, e2_puntos[i+1]):
+                    if correcto:
+                        try:
+                            tmp = eval(expresion, {"x" : j})
+                        except:
+                            correcto = False
+                        else:
+                            if eval(e2_elegida[0], {"x" : j, "a" : e2_puntos[1], "b" : e2_puntos[2]}) != eval(expresion, {"x" : j}):
+                                correcto = False
+                if incluidos[i] != -1:
+                    try:
+                        tmp = eval(expresion, {"x" : e2_puntos[i]})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e2_elegida[0], { "x" : e2_puntos[i], "a" : e2_puntos[1], "b" : e2_puntos[2] }) != eval(expresion, {"x" : e2_puntos[i]}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e2_puntos[i] + 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e2_elegida[0], { "x" : e2_puntos[i] + 0.0001220703125, "a" : e2_puntos[1], "b" : e2_puntos[2] }) != eval(expresion, {"x" : e2_puntos[i] + 0.0001220703125}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e2_puntos[i] - 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e2_elegida[0], { "x" : e2_puntos[i] - 0.0001220703125, "a" : e2_puntos[1], "b" : e2_puntos[2] }) != eval(expresion, {"x" : e2_puntos[i] - 0.0001220703125}):
+                            correcto = False
+        document["e2_resultado"].clear()
+        document["e2_resultado"] <= respuesta[correcto]
+        if not e2_respondido:
+            e2_cuenta[int(correcto)] += 1
+        dibuja_contador("e2_num_correctas", "e2_num_incorrectas", "e2_img_correctas", "e2_img_incorrectas", e2_cuenta)
+        if correcto:
+            e2_respondido = True
+
+def e2_reinicia(ev):
+    global e2_cuenta
+    e2_cuenta = [0, 0]
+    dibuja_contador("e2_num_correctas", "e2_num_incorrectas", "e2_img_correctas", "e2_img_incorrectas", e2_cuenta)
+
+minimo = -150
+e2_cuenta = [0,0]
+e2_ultimo = -1 # Última expresión elegida, para que no repita dos seguidas iguales
+e2_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e2_puntos = []
+maximo = 150
+ancho_dibujo = 300
+e2_expresiones = [
+# expresion, número de puntos, 1=incluido / 0=no incluido / -1=no se pinta
+    ["x == a or x == b", 2, [1, 1]],
+    ["x != a and x != b", 2, [0, 0]],
+    ["x < a or x > b", 2, [0, 0]],
+    ["x < a or x >= b", 2, [0, 1]],
+    ["x <= a or x > b", 2, [1, 0]],
+    ["x <= a or x >= b", 2, [1, 1]],
+    ["x > a and x < b", 2, [0, 0]],
+    ["x > a and x <= b", 2, [0, 1]],
+    ["x >= a and x < b", 2, [1, 0]],
+    ["x >= a and x <= b", 2, [1, 1]],
+    ["x != a and x < b", 2, [0, 0]],
+    ["x != a and x <= b", 2, [0, 1]],
+    ["x > a and x != b", 2, [0, 0]],
+    ["x >= a and x != b", 2, [1, 0]]
+]
+e2_nuevo(None)
+
+document["e2_boton"].bind("click", e2_evalua)
+document["e2_nuevo"].bind("click", e2_nuevo)
+document["e2_reinicia"].bind("click", e2_reinicia)
+
+# Ejercicio 3
+
+def e3_nuevo(ev):
+    global document, e3_expresiones, e3_elegida, e3_puntos, e3_cuenta, e3_respondido, e3_ultimo
+    document["e3_svg"].clear()
+    document["e3_resultado"].clear()
+    e3_elegida = e3_expresiones[randrange(len(e3_expresiones))]
+    while (e3_elegida == e3_ultimo):
+        e3_elegida = e3_expresiones[randrange(len(e3_expresiones))]
+    e3_ultimo = e3_elegida
+    e3_puntos = e3_genera_valores(e3_elegida[1])
+    e3_dibuja("e3_svg", e3_elegida)
+    if not e3_respondido:
+        e3_cuenta[0] += 1
+        dibuja_contador("e3_num_correctas", "e3_num_incorrectas", "e3_img_correctas", "e3_img_incorrectas", e3_cuenta)
+    e3_respondido = False
+
+def e3_genera_valores(puntos):
+    global minimo, maximo
+    separacion_minima = 40
+    margen_lateral = 30
+    tmp = [minimo]
+    inicio = minimo + margen_lateral
+    trozo = (maximo - minimo - 2 * margen_lateral) / puntos
+    for i in range(puntos):
+        desde = max(inicio, minimo + int(trozo * i))
+        hasta = min(maximo - margen_lateral, minimo + margen_lateral + int(trozo * (i + 1)))
+        punto = randrange(desde, hasta)
+        tmp += [punto]
+        inicio = max(desde, punto + separacion_minima)
+    tmp += [maximo]
+    return tmp
+
+def e3_dibuja(destino, info):
+    global document, minimo, maximo, e3_puntos
+    incluidos = [-1] + info[2] +[-1]
+    dibujo = document[destino]
+    dibujo <= svg.line(x1=0, y1=30, x2=300, y2=30, stroke_width=3, stroke="black")
+    for i in range(len(e3_puntos) - 1):
+        if eval(info[0], { "x" : randrange(e3_puntos[i]+1, e3_puntos[i+1]), "a" : e3_puntos[1], "b" : e3_puntos[2], "c" : e3_puntos[3]}):
+            dibujo <= svg.line(x1=escala(e3_puntos[i]), y1=30, x2=escala(e3_puntos[i+1]), y2=30, stroke="red",stroke_width=3)
+        if incluidos[i] == 1:
+            color = "red"
+        else:
+            color = "white"
+        if incluidos[i] != -1:
+            dibujo <= svg.circle(cx=escala(e3_puntos[i]), cy=30, r=5, stroke="red", stroke_width="2", fill=color)
+            dibujo <= svg.text(e3_puntos[i], x=escala(e3_puntos[i]), y=20, font_size=18, text_anchor="middle", fill="red")
+
+def e3_evalua(ev):
+    global document, minimo, maximo, e3_elegida, e3_puntos, respuesta, e3_cuenta, e3_respondido
+    incluidos = [-1] + e3_elegida[2] + [-1]
+    expresion = document["e3_expresion"].value
+    try:
+        tmp = eval(expresion, {"x" : 1})
+    except:
+        document["e3_resultado"].clear()
+        document["e3_resultado"] <= "Revise la expresión. Parece haber algún error de sintaxis en ella."
+    else:
+        correcto = True
+        for i in range(len(e3_puntos) - 1):
+            if correcto:
+                for j in range(e3_puntos[i]+1, e3_puntos[i+1]):
+                    if correcto:
+                        try:
+                            tmp = eval(expresion, {"x" : j})
+                        except:
+                            correcto = False
+                        else:
+                            if eval(e3_elegida[0], {"x" : j, "a" : e3_puntos[1], "b" : e3_puntos[2], "c" : e3_puntos[3]}) != eval(expresion, {"x" : j}):
+                                correcto = False
+                if incluidos[i] != -1:
+                    try:
+                        tmp = eval(expresion, {"x" : e3_puntos[i]})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e3_elegida[0], { "x" : e3_puntos[i], "a" : e3_puntos[1], "b" : e3_puntos[2], "c" : e3_puntos[3] }) != eval(expresion, {"x" : e3_puntos[i]}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e3_puntos[i] + 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e3_elegida[0], { "x" : e3_puntos[i] + 0.0001220703125, "a" : e3_puntos[1], "b" : e3_puntos[2], "c" : e3_puntos[3] }) != eval(expresion, {"x" : e3_puntos[i] + 0.0001220703125}):
+                            correcto = False
+                    try:
+                        tmp = eval(expresion, {"x" : e3_puntos[i] - 0.0001220703125})
+                    except:
+                        correcto = False
+                    else:
+                        if eval(e3_elegida[0], { "x" : e3_puntos[i] - 0.0001220703125, "a" : e3_puntos[1], "b" : e3_puntos[2], "c" : e3_puntos[3] }) != eval(expresion, {"x" : e3_puntos[i] - 0.0001220703125}):
+                            correcto = False
+        document["e3_resultado"].clear()
+        document["e3_resultado"] <= respuesta[correcto]
+        if not e3_respondido:
+            e3_cuenta[int(correcto)] += 1
+        dibuja_contador("e3_num_correctas", "e3_num_incorrectas", "e3_img_correctas", "e3_img_incorrectas", e3_cuenta)
+        if correcto:
+            e3_respondido = True
+
+def e3_reinicia(ev):
+    global e3_cuenta
+    e3_cuenta = [0, 0]
+    dibuja_contador("e3_num_correctas", "e3_num_incorrectas", "e3_img_correctas", "e3_img_incorrectas", e3_cuenta)
+
+minimo = -150
+e3_cuenta = [0,0]
+e3_ultimo = -1 # Última expresión elegida, para que no repita dos seguidas iguales
+e3_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e3_puntos = []
+maximo = 150
+ancho_dibujo = 300
+e3_expresiones = [
+# expresion, número de puntos, 1=incluido / 0=no incluido / -1=no se pinta
+    ["x == a or  x == b or  x == c", 3, [1, 1, 1]], # caso 1
+    ["x != a and x != b and x != c", 3, [0, 0, 0]], # caso 2
+    ["x <  a or  x >  b and x <  c", 3, [0, 0, 0]], # caso 3
+    ["x <  a or  x >  b and x <= c", 3, [0, 0, 1]],
+    ["x <  a or  x >= b and x <  c", 3, [0, 1, 0]],
+    ["x <  a or  x >= b and x <= c", 3, [0, 1, 1]],
+    ["x <= a or  x >  b and x <  c", 3, [1, 0, 0]],
+    ["x <= a or  x >  b and x <= c", 3, [1, 0, 1]],
+    ["x <= a or  x >= b and x <  c", 3, [1, 1, 0]],
+    ["x <= a or  x >= b and x <= c", 3, [1, 1, 1]],
+    ["x >  a and x <  b or  x >  c", 3, [0, 0, 0]], # caso 4
+    ["x >  a and x <  b or  x >= c", 3, [0, 0, 1]],
+    ["x >  a and x <= b or  x >  c", 3, [0, 1, 0]],
+    ["x >  a and x <= b or  x >= c", 3, [0, 1, 1]],
+    ["x >= a and x <  b or  x >  c", 3, [1, 0, 0]],
+    ["x >= a and x <  b or  x >= c", 3, [1, 0, 1]],
+    ["x >= a and x <= b or  x >  c", 3, [1, 1, 0]],
+    ["x >= a and x <= b or  x >= c", 3, [1, 1, 1]],
+    ["x >  a and x != b and x != c", 3, [0, 0, 0]], # caso 5
+    ["x >= a and x != b and x != c", 3, [1, 0, 0]],
+    ["x != a and x != b and x <  c", 3, [0, 0, 0]], # caso 6
+    ["x != a and x != b and x <= c", 3, [0, 0, 1]],
+    ["x != a and x <  b or  x == c", 3, [0, 0, 1]], # caso 7
+    ["x != a and x <= b or  x == c", 3, [0, 1, 1]],
+    ["x == a or  x >  b and x != c", 3, [1, 0, 0]], # caso 8
+    ["x == a or  x >= b and x != c", 3, [1, 1, 0]],
+    ["x <  a or  x >  b and x != c", 3, [0, 0, 0]], # caso 9
+    ["x <  a or  x >= b and x != c", 3, [0, 1, 0]],
+    ["x <= a or  x >  b and x != c", 3, [1, 0, 0]],
+    ["x <= a or  x >= b and x != c", 3, [1, 1, 0]],
+    ["x != a and x <  b or  x == c", 3, [0, 0, 1]], # caso 10
+    ["x != a and x <= b or  x == c", 3, [0, 1, 1]],
+]
+e3_nuevo(None)
+
+document["e3_boton"].bind("click", e3_evalua)
+document["e3_nuevo"].bind("click", e3_nuevo)
+document["e3_reinicia"].bind("click", e3_reinicia)
+
+    </script>
+  </head>
+
+  <body onload="brython(0)">
+    <h1>Expresiones lógicas - Ejercicios (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Expresiones lógicas (2)</h2>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_booleanos.html">Booleanos</a>.</p>
+
+    <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al cargar por primera vez la página, o al recargarla, los dibujos pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
+
+    <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />En las expresiones debe utilizar sólo <strong>números enteros</strong>. Si utiliza decimales, la evaluación puede ser incorrecta.</p>
+
+    <p>Se pueden consultar también unos <a href="ej_booleanos_2_ejemplos.html">ejemplos de ejercicios resueltos</a>.</p>
+
+    <hr />
+
+    <h2>Expresiones lógicas (2) - 1</h2>
+
+    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+           width="300" height="50" viewBox="0 0 300 50"
+           style="background-color: lightgray" id="e1_svg">
+      </svg>
+
+      <p>Expresión: <input type="text" id="e1_expresion" size="50" value="x"/> <button id="e1_boton">Evaluar</button> <span id="e1_resultado"></span></p>
+      <p><button id="e1_nuevo">Nuevo dibujo</button></p>
+      <p><span id="e1_num_correctas">0</span> <img id="e1_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e1_num_incorrectas">0</span> <img id="e1_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e1_reinicia">Reiniciar contador</button></p>
+    </div>
+    <hr />
+
+    <h2>Expresiones lógicas (2) - 2</h2>
+
+    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+           width="300" height="50" viewBox="0 0 300 50"
+           style="background-color: lightgray" id="e2_svg">
+      </svg>
+
+      <p>Expresión: <input type="text" id="e2_expresion" size="50" value="x"/> <button id="e2_boton">Evaluar</button> <span id="e2_resultado"></span></p>
+      <p><button id="e2_nuevo">Nuevo dibujo</button></p>
+      <p><span id="e2_num_correctas">0</span> <img id="e2_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e2_num_incorrectas">0</span> <img id="e2_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e2_reinicia">Reiniciar contador</button></p>
+    </div>
+
+    <hr />
+
+    <h2>Expresiones lógicas (2) - 3</h2>
+
+    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+           width="300" height="50" viewBox="0 0 300 50"
+           style="background-color: lightgray" id="e3_svg">
+      </svg>
+
+      <p>Expresión: <input type="text" id="e3_expresion" size="50" value="x"/> <button id="e3_boton">Evaluar</button> <span id="e3_resultado"></span></p>
+      <p><button id="e3_nuevo">Nuevo dibujo</button></p>
+      <p><span id="e3_num_correctas">0</span> <img id="e3_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e3_num_incorrectas">0</span> <img id="e3_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e3_reinicia">Reiniciar contador</button></p>
+      <p id="e3_texto"></p>
+    </div>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 14 de febrero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

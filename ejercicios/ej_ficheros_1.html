@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (1). Ficheros. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+  <body>
+    <h1>Ficheros - Ejercicios (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Ficheros (1)</h2>
+
+      <h3>Enunciados</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1-1">A-1 - Hola, mundo!</a></li>
+          <li><a href="#ejercicio-1-2">A-2 - ¡Hola, mundo!</a></li>
+          <li><a href="#ejercicio-1-3">A-3 - Hola, mundo! válido</a></li>
+          <li><a href="#ejercicio-2-1">B-1 - Color de fondo</a></li>
+          <li><a href="#ejercicio-2-2">B-2 - Tamaño</a></li>
+          <li><a href="#ejercicio-2-3">B-3 - Tipo de letra</a></li>
+          <li><a href="#ejercicio-2-4">B-4 - Todo en css</a></li>
+        </ul>
+      </div>
+
+      <h3><a href="ej_ficheros_1_soluciones.html">Soluciones</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-1-1">A-1 - Hola, mundo!</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-1-2">A-2 - ¡Hola, mundo!</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-1-3">A-3 - Hola, mundo! válido</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-2-1">B-1 - Color de fondo</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-2-2">B-2 - Tamaño</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-2-3">B-3 - Tipo de letra</a></li>
+          <li><a href="ej_ficheros_1_soluciones.html#ejercicio-2-4">B-4 - Todo en css</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_ficheros.html">Ficheros</a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_ficheros_1_soluciones.html">posibles soluciones</a>.</p>
+
+    <p>En todos estos ejercicios se trata de crear un fichero con el contenido que se muestra en los ejemplos. Como el contenido es html, es conveniente que el fichero se abra automáticamente en el navegador para ver el resultado, aunque se aconseja ver el código fuente html del resultado en el navegador para comprobar que no hay errores.</p>
+
+    <section id="ejercicio-1-1">
+      <h2>Ficheros (1) - A-1</h2>
+
+      <p>Escriba un programa que genere una página web que salude al mundo. Es suficiente con poner la etiqueta <span class="html-eti">&lt;p></span>.</p>
+
+      <div class="ejercicio">
+        <pre><code class="language-markup">&lt;p>Hola, mundo!&lt;/p></code></pre>
+      </div>
+
+      <p>Compruebe que si añade un carácter que no está en el código ASCII original (por ejemplo, la exclamación inicial ¡), se muestran además otros caracteres (en este caso, Â). Este problema ocurre cuando el navegador no sabe que el juego de caracteres del fichero es UTF-8 y lo muestra como si fuera ASCII.</p>
+
+      <div class="ejercicio">
+        <pre><code class="language-markup">&lt;p><span class="conborde">Â¡</span>Hola, mundo!&lt;/p></code></pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_1_py27.py">Enlace a ejercicio Ficheros (1) A-1</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_1_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-1-2">
+      <h2>Ficheros (1) - A-2</h2>
+
+      <p>Mejore el programa anterior añadiendo las etiquetas mínimas para que el carácter ¡ se vea corrrectamente (aunque el html de esa página siga sin ser válido).</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;html>
+  &lt;head>
+    &lt;meta charset="utf-8" />
+  &lt;/head>
+
+  &lt;body>
+    &lt;p>¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_2_py27.py">Enlace a ejercicio Ficheros (1) A-2</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_2_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-1-3">
+      <h2>Ficheros (1) - A-3</h2>
+
+      <p>Mejore el programa anterior añadiendo las etiquetas necesarias para conseguir una página válida y que se vea correctamente en dispositivos móviles.</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
+&lt;html lang="es">
+  &lt;head>
+    &lt;meta charset="utf-8" />
+    &lt;title>Ejercicio Ficheros (1) A-3&lt;/title>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  &lt;/head>
+
+  &lt;body>
+    &lt;p>¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_3_py27.py">Enlace a ejercicio Ficheros (1) A-3</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_a_3_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-2-1">
+      <h2>Ficheros (1) - B-1</h2>
+
+      <p>Escriba un programa que genere un programa que muestre un saludo y que el color de fondo de la página sea un color elegido al azar.</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
+&lt;html lang="es">
+  &lt;head>
+    &lt;meta charset="utf-8" />
+    &lt;title>Ficheros (1) B-1&lt;/title>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  &lt;/head>
+
+  &lt;body style="background-color: hsl(<span class="conborde">303</span>, 100%, 50%)">
+    &lt;p>¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_1_py27.py">Enlace a ejercicio Ficheros (1) B-1</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_1_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-2-2">
+      <h2>Ficheros (1) - B-2</h2>
+
+      <p>Amplie el programa anterior de manera que el saludo se muestre a un tamaño también elegido al azar entre 200% y 800% (con valores múltiplos de 100).</p>
+
+      <p><strong>Nota</strong>: Para que el tamaño se muestre correctamente en el navegador, tenga en cuenta que el carácter porcentaje (%) debe estar unido al valor numérico, sin espacios.</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
+&lt;html lang="es">
+  &lt;head>
+    &lt;meta charset="utf-8" />
+    &lt;title>Ficheros (1) - B-2&lt;/title>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  &lt;/head>
+
+  &lt;body style="background-color: hsl(<span class="conborde">166</span>, 100%, 50%)">
+    &lt;p style="font-size: <span class="conborde">400%</span>">¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_2_py27.py">Enlace a ejercicio Ficheros (1) B-2</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_2_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-2-3">
+      <h2>Ficheros (1) - B-3</h2>
+
+      <p>Amplie el programa anterior de manera que el saludo se muestre con un tipo de letra elegido al azar entre las cuatro familias <span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span> y <span class="css-valor">cursive</span>.</p>
+
+        <details>
+          <summary><strong>Ayuda</strong></summary>
+          <ul>
+            <li>Para elegir una de las familias al azar, se puede:
+              <ul>
+              <li>utilizar la <a href="../lecciones/python_biblioteca_random.html#random-choice">función choice()</a> de la biblioteca random, o bien</li>
+              <li>utilizar la función randrange() de la biblioteca radom y después con un <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... elegir una familia dependiendo del valor obtenido.con el randrange()</li>
+            </ul>
+            </li>
+          </ul>
+        </details>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;!DOCTYPE html
+&lt;html lang="es">
+  &lt;head>
+    &lt;meta charset="utf-8" />
+    &lt;title>Ficheros (1) - B-3&lt;/title>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  &lt;/head>
+
+  &lt;body style="background-color: hsl(<span class="conborde">65</span>, 100%, 50%)">
+    &lt;p style="font-family: <span class="conborde">monospace</span>; font-size: <span class="conborde">800%</span>">¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <hr class="corta" />
+
+      <p class="enlace-ejercicio"><a href="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_3_py27.py">Enlace a ejercicio Ficheros (1) B-3</a></p>
+
+      <p class="ejercicio"><object type="text/html" data="http://www.mclibre.org/python/python/ficheros_1/ficheros_1_b_3_py27.py" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+    </section>
+
+    <section id="ejercicio-2-4">
+      <h2>Ficheros (1) - B-4</h2>
+
+      <p>Mejore el programa anterior haciendo que el programa genere dos ficheros: la página web y la hoja de estilo.</p>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
+&lt;html lang="es">
+  &lt;head>
+    &lt;meta charset="utf-8" />
+    &lt;title>Ficheros (1) - B-4&lt;/title>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <span class="conborde">&lt;link rel="stylesheet" type="text/css" href="ficheros_1_b_4.css" /></span>
+  &lt;/head>
+
+  &lt;body>
+    &lt;p>¡Hola, mundo!&lt;/p>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+      </div>
+
+      <div class="ejercicio">
+        <pre>
+<code class="language-css">body {
+  background-color: hsl(<span class="conborde">155</span>, 100%, 50%);
+}
+
+p {
+  font-family: <span class="conborde">monospace</span>;
+  font-size: <span class="conborde">662%</span>;
+}</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 30 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (2). ASCII bucle for. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Dibujos ASCII - Bucle <span class="idle-rese">for</span> - Soluciones (2)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>ASCII <span class="idle-rese">for</span> (2)</h2>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_ascii_2.html">ejercicios ASCII Bucle <span class="idle-rese">for</span> (2)</a>.</p>
+
+    <section id="ejercicio-1">
+      <h3><a href="ej_ascii_2.html#ejercicio-1"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 1</h3>
+
+      <ul>
+        <li>En esta figura hay que darse cuenta de que:
+          <ul>
+            <li>se necesitan bucles anidados, puesto que queremos dibujar varias líneas con varias estrellas cada una:
+              <ul>
+                <li>el bucle interior dibuja las estrellas de cada línea.</li>
+                <li>el bucle exterior hace que se dibujen varias líneas.</li>
+              </ul>
+            </li>
+            <li>como en cada línea se quiere un número de estrellas diferente, habrá que utilizar variables dependientes.
+              <ul>
+                <li>la variable de control del bucle exterior llevará la cuenta de las líneas (1, 2, 3, 4, etc.).</li>
+                <li>el bucle interior se ejecutará tantas veces como valga la variable de control del bucle exterior, para ir dibujando cada vez más estrellas.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Una posible solución es por tanto:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(1, altura + 1):
+    for j in range(i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra posible solución equivalente es que la variable de control tome los valores desde cero (0, 1, 2, 3, etc.) y que el bucle interior dibuje una estrella más que el valor de la variable de control del bucle exterior:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(altura):
+    for j in range(i + 1):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-2">
+      <h3><a href="ej_ascii_2.html#ejercicio-2"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 2</h3>
+      <ul>
+        <li>Este ejercicio es muy similar al anterior, excepto que cada vez se tienen que dibujar menos estrellas. Para ello, basta con que la variable de control del bucle exterior empiece en el valor máximo (la altura introducida por el usuario) y vaya bajando hasta 1. El programa quedaría así:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(altura, 0, -1):
+    for j in range(i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra posible solución consistiría en que:
+          <ul>
+            <li>la variable de control del bucle exterior aumente desde 0 hasta la altura (menos 1)</li>
+            <li>la variable de control del bucle interior cuente desde 0 hasta la altura menos la variable de control del bucle exterior: <span class="idle-func">range</span>(altura - i). Así, a medida que aumenta la variable de control del bucle exterior, disminuye la variable de control del bucle interior.</li>
+          </ul>
+
+          <p>El programa quedaría así:</p>
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(altura):
+    for j in range(altura - i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+
+      <p><strong>Nota</strong>: Normalmente la primera solución es más intuitiva, pero hay situaciones, como la del ejercicio siguiente, en que se tiene que utilizar la segunda solución.</p>
+    </section>
+
+    <section id="ejercicio-3">
+      <h3><a href="ej_ascii_2.html#ejercicio-3"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 3</h3>
+      <ul>
+        <li>Este ejercicio es similar al ejercicio10, dibujando en cada línea unos cuantos espacios en blanco (cada vez menos) y una estrella:
+
+          <div class="ejercicio">
+            <pre><span class="idle-resp">Altura de la línea:</span> 4</pre>
+
+            <div class="borde2">
+              <pre>
+<span class="idle-resp borde1"></span>*
+<span class="idle-resp borde1">_ </span>*
+<span class="idle-resp borde1">_ _</span>*
+<span class="idle-resp borde1">_ _ _ </span>*
+</pre>
+            </div>
+          </div>
+        </li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura de la línea: "))
+
+for i in range(altura):
+    for j in range(i):
+        print(" ", end="")
+    print("*")</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-4">
+      <h3><a href="ej_ascii_2.html#ejercicio-4"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 4</h3>
+
+      <ul>
+        <li>Este ejercicio es similar al ejercicio 12, dibujando cada vez menos espacios en blanco. Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura de la línea: "))
+
+for i in range(altura, 0, -1):
+    for j in range(i - 1):
+        print(" ", end="")
+    print("*")</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-5">
+      <h3><a href="ej_ascii_2.html#ejercicio-5"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 5</h3>
+
+      <ul>
+        <li>En este ejercicio nos podemos dar cuenta de que:
+          <ul>
+            <li>cada línea se puede dibujar dibujando unos cuantos espacios en blanco (cada vez menos) y unos cuantas estrellas (cada vez más)
+
+              <div class="ejercicio">
+                <pre><span class="idle-resp">Altura del triángulo:</span> 4</pre>
+
+                <div class="borde2">
+                  <pre>
+<span class="idle-resp borde1">_ _ _ </span><span class="idle-resp borde1">* </span>
+<span class="idle-resp borde1">_ _ </span><span class="idle-resp borde1">* * </span>
+<span class="idle-resp borde1">_ </span><span class="idle-resp borde1">* * * </span>
+<span class="idle-resp borde1"></span><span class="idle-resp borde1">* * * * </span>
+</pre>
+                </div>
+              </div>
+            </li>
+            <li>por lo que se necesitan los siguientes bucles:
+              <ul>
+                <li>un bucle exterior cuya variable de control aumente desde 1 hasta la altura (por ejemplo)</li>
+                <li>un primer bucle interior que dibuje espacios en blanco y cuya variable de control disminuya desde la altura menos la variable de control del bucle exterior hasta 0</li>
+                <li>un segundo bucle interior que dibuje estrellas y cuya variable de control aumente desde 1 hasta la variable de control del bucle exterior. Como en este segundo bucle no son importantes los valores sino la cantidad de valores se puede utilizar <span class="idle-func">range</span>(1, i+1) o <span class="idle-func">range</span>(i), para que el bucle se ejecute desde 1 hasta altura o desde 0 hasta altura - 1.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(1, altura + 1):
+    for j in range(altura - i):
+        print(" ", end="")
+    for j in range(i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra posible solución consistiría en un bucle exterior cuya variable de control desminuya desde la altura menos 1 hasta 0 y los bucles interiores utilizando esa variable de control
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(altura - 1, -1, -1):
+    for j in range(i):
+        print(" ", end="")
+    for j in range(altura - i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-6">
+      <h3><a href="ej_ascii_2.html#ejercicio-6"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 6</h3>
+
+      <ul>
+        <li>Este ejercicio es muy similar al anterior, excepto en que el número de espacios aumenta y el de estrellas se reduce.</li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(altura):
+    for j in range(i):
+        print(" ", end="")
+    for j in range(altura - i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-7">
+      <h3><a href="ej_ascii_2.html#ejercicio-7"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 7</h3>
+
+      <ul>
+        <li>En este ejercicio podemos reconocer que la figura está formada por dos figuras seguidas como las de los ejercicios 10 y 11:
+
+          <div class="ejercicio">
+            <pre><span class="idle-resp">Anchura del triángulo:</span> 3</pre>
+
+            <div class="borde2">
+              <pre>
+<span class="idle-resp borde1">* </span>
+<span class="idle-resp borde1">* * </span>
+<span class="idle-resp borde1">* * * </span>
+</pre>
+            </div>
+            <pre><!--Para separar las divisiones aterior y posterior --></pre>
+            <div class="borde2">
+              <pre>
+<span class="idle-resp borde1">* *</span>
+<span class="idle-resp borde1">* </span>
+</pre>
+            </div>
+          </div>
+        </li>
+        <li>Una posible solución es por tanto escribir dos bucles anidados como los de los ejercicios 10 y 11, excepto que el segundo bucle debe escribir una línea menos que el primero:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">anchura = int(input("Anchura del triángulo: "))
+
+for i in range(1, anchura + 1):
+    for j in range(i):
+        print("* ", end="")
+    print()
+
+for i in range(1, anchura):
+    for j in range(anchura - i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra posible solución es hacerlo todo en un único bucle anidado, pero en el que la variable de control del bucle exterior aumente y disminuya tomando como valores el número de estrellas que deben dibujarse en cada línea. Para ello se puede concatenar dos tipos <span class="idle-func">range</span>(), uno que aumente y otro que disminuya, con el operador suma (+). Dado que range() es un tipo inmutable, para poder concaternarlos es necesario convertirlos a listas con la función list().
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">anchura = int(input("Anchura del triángulo: "))
+
+for i in list(range(1, anchura)) + list(range(anchura, 0, -1)):
+    for j in range(i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-8">
+      <h3><a href="ej_ascii_2.html#ejercicio-8"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 8</h3>
+
+      <ul>
+        <li>Este ejercicios es similar al ejercicio 14, excepto que en este deben dibujarse más estrellas en cada línea
+          <ul>
+            <li>cada línea se puede dibujar dibujando unos cuantos espacios en blanco (cada vez menos) y unos cuantas estrellas (cada vez más)
+
+              <div class="ejercicio">
+                <pre><span class="idle-resp">Altura del triángulo:</span> 4</pre>
+
+                <div class="borde2">
+                  <pre>
+<span class="idle-resp borde1">_ _ _ </span><span class="idle-resp borde1">* </span>
+<span class="idle-resp borde1">_ _ </span><span class="idle-resp borde1">* * *</span>
+<span class="idle-resp borde1">_ </span><span class="idle-resp borde1">* * * * *</span>
+<span class="idle-resp borde1"></span><span class="idle-resp borde1">* * * * * * *</span>
+</pre>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(1, altura+1):
+    for j in range(altura - i):
+        print(" ", end="")
+    for j in range(1, 2 * i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra solución sería ver en la figura tres bucles en cada línea:
+
+          <div class="ejercicio">
+            <pre><span class="idle-resp">Altura del triángulo:</span> 4</pre>
+
+            <div class="borde2">
+              <pre>
+<span class="idle-resp borde1">_ _ _ </span><span class="idle-resp borde1">* </span><span class="idle-resp borde1"></span>
+<span class="idle-resp borde1">_ _ </span><span class="idle-resp borde1">* * </span><span class="idle-resp borde1">* </span>
+<span class="idle-resp borde1">_ </span><span class="idle-resp borde1">* * * </span><span class="idle-resp borde1">* * </span>
+<span class="idle-resp borde1"></span><span class="idle-resp borde1">* * * * </span><span class="idle-resp borde1">* * * </span>
+</pre>
+            </div>
+          </div>
+        </li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del triángulo: "))
+
+for i in range(1, altura+1):
+    for j in range(altura - i):
+        print(" ", end="")
+    for j in range(1, i + 1):
+        print("* ", end="")
+    for j in range(1, i):
+        print("* ", end="")
+    print()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-9">
+      <h3><a href="ej_ascii_2.html#ejercicio-9"><img src="../varios/iconos/icono_enunciado.svg" alt="Enunciado del ejercicio" title="Enunciado del ejercicio" width="48" height="48" class="d" /></a>ASCII - Bucle <span class="idle-rese">for</span> (2) - 9</h3>
+
+      <ul>
+        <li>En este ejericicio hay que darse cuenta de que la primera línea es diferente al resto, y el resto es similar al ejercicio 17.
+
+          <div class="ejercicio">
+            <pre>
+<span class="idle-resp">Altura del triángulo:</span> 4
+<span class="idle-resp borde1">_ _ _ </span>*<span class="idle-resp borde1"></span>
+</pre>
+
+            <div class="borde2">
+              <pre>
+<span class="idle-resp borde1">_ _ </span>*<span class="idle-resp borde1">_</span>*
+<span class="idle-resp borde1">_ </span>*<span class="idle-resp borde1">_ _ _ </span>*
+<span class="idle-resp borde1"></span>*<span class="idle-resp borde1">_ _ _ _ _</span>*
+</pre>
+            </div>
+          </div>
+        </li>
+        <li>Una posible solución sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del dibujo: "))
+
+for i in range(1, altura):
+    print(" ", end="")
+print("*")
+
+for i in range(1, altura):
+    for j in range(1, altura - i):
+        print(" ", end="")
+    print("* ", end="")
+    for j in range(1, 2 * i):
+        print(" ", end="")
+    print("*")</code>
+</pre>
+          </div>
+        </li>
+        <li>Otra posible solución en las que los range comienzan en 0 sería:
+
+          <div class="codigo">
+            <pre>
+<code class="language-python">altura = int(input("Altura del dibujo: "))
+
+for i in range(altura - 1):
+    print(" ", end="")
+print("*")
+
+for i in range(altura - 1):
+    for j in range(altura - i - 2):
+        print(" ", end="")
+    print("* ", end="")
+    for j in range(2*i + 1):
+        print(" ", end="")
+    print("*")</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 20 de marzo de 2014</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

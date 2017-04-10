@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones (1). Ficheros. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Ficheros - Soluciones (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Ficheros (1)</h2>
+
+      <h3><a href="ej_ficheros_1.html">Enunciados</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_ficheros_1.html#ejercicio-1-1">A-1 - Hola, mundo!</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-1-2">A-2 - ¡Hola, mundo!</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-1-3">A-3 - Hola, mundo! válido</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-2-1">B-1 - Color de fondo</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-2-2">B-2 - Tamaño</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-2-3">B-3 - Tipo de letra</a></li>
+          <li><a href="ej_ficheros_1.html#ejercicio-2-4">B-4 - Todo en css</a></li>
+        </ul>
+      </div>
+
+      <h3>Soluciones</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1-1">A-1 - Hola, mundo!</a></li>
+          <li><a href="#ejercicio-1-2">A-2 - ¡Hola, mundo!</a></li>
+          <li><a href="#ejercicio-1-3">A-3 - Hola, mundo! válido</a></li>
+          <li><a href="#ejercicio-2-1">B-1 - Color de fondo</a></li>
+          <li><a href="#ejercicio-2-2">B-2 - Tamaño</a></li>
+          <li><a href="#ejercicio-2-3">B-3 - Tipo de letra</a></li>
+          <li><a href="#ejercicio-2-4">B-4 - Todo en css</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_ficheros_1.html">ejercicios de Ficheros</a>.</p>
+
+    <section id="ejercicio-1-1">
+      <h2>Ficheros (1) - A-1</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+
+ruta = "ficheros_1_1.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;p>Hola, mundo!&lt;/p>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-1-2">
+      <h2>Ficheros (1) - A-2</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+
+ruta = "ficheros_1_2.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;html>", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-1-3">
+      <h2>Ficheros (1) - A-3</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+
+ruta = "ficheros_1_3.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (1) A-3&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-1">
+      <h2>Ficheros (1) - B-1</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+from random import randrange
+
+ruta = "ficheros_1_b_1.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    color = randrange(0, 361)
+
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (1) - B-1&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
+    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-2">
+      <h2>Ficheros (1) - B-2</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+from random import randrange
+
+ruta = "ficheros_1_b_2.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    color = randrange(0, 361)
+    tamanyo = randrange(200, 801, 100)
+
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (1) - B-2&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
+    print(f"    &lt;p style=\"font-size: {tamanyo}%\">¡Hola, mundo!&lt;/p>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-3">
+      <h2>Ficheros (1) - B-3</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+from random import randrange, choice
+
+ruta = "ficheros_1_b_3.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    color = randrange(0, 361)
+    tamanyo = randrange(200, 801, 100)
+    fuente = choice(["serif", "sans-serif", "monospace", "cursive"])
+
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (1) - B-3&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
+    print(f"    &lt;p style=\"font-family: {fuente}; font-size: {tamanyo}%\">¡Hola, mundo!&lt;/p>",
+          file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-2-4">
+      <h2>Ficheros (1) - B-4</h2>
+
+      <p>Una posible solución es:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import webbrowser
+from random import randrange, choice
+
+ruta_css = "ficheros_1_b_4.css"
+
+with open(ruta_css, mode="w", encoding="utf-8") as fichero:
+    color = randrange(0, 361)
+    tamanyo = randrange(200, 801, 100)
+    fuente = choice(["serif", "sans-serif", "monospace", "cursive"])
+
+    print("body {", file=fichero)
+    print(f"  background-color: hsl({color}, 100%, 50%);", file=fichero)
+    print("}", file=fichero)
+    print("", file=fichero)
+    print("p {", file=fichero)
+    print(f"  font-family: {fuente};", file=fichero)
+    print(f"  font-size: {tamanyo}%;", file=fichero)
+    print("}", file=fichero)
+
+
+ruta_html = "ficheros_1_b_4.html"
+
+with open(ruta_html, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (1) - B-4&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print(f"    &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"{ruta_css}\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta_html)</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (1). Bucle for. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script type="text/javascript" src="../varios/prism.js"></script>
+  </head>
+
+  <body>
+    <h1>Bucle <span class="idle-rese">for</span> - Ejercicios (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Bucle <span class="idle-rese">for</span> (1)</h2>
+
+      <h3>Enunciados</h3>
+      <div class="toc">
+        <ul>
+          <li><a href="#ejercicio-1">A - Bucles</a>
+            <ul>
+              <li><a href="#ejercicio-1-1">1 - Pares e impares</a></li>
+              <li><a href="#ejercicio-1-2">2 - Divisores</a></li>
+              <li><a href="#ejercicio-1-3">3 - Mayores que el primero</a></li>
+              <li><a href="#ejercicio-1-4">4 - Mayores que el anterior</a></li>
+            </ul>
+          </li>
+          <li><a href="#ejercicio-2">B - Contadores</a>
+            <ul>
+              <li><a href="#ejercicio-2-1">1 - Negativos</a></li>
+              <li><a href="#ejercicio-2-2">2 - Contador pares/impares</a></li>
+              <li><a href="#ejercicio-2-3">3 - Número primo</a></li>
+            </ul>
+          </li>
+          <li><a href="#ejercicio-3">C - Acumuladores</a>
+            <ul>
+              <li><a href="#ejercicio-3-1">1 - Suma de valores</a></li>
+              <li><a href="#ejercicio-3-2">2 - Suma entre valores</a></li>
+              <li><a href="#ejercicio-3-3">3 - Mayor, menor y media</a></li>
+              <li><a href="#ejercicio-3-4">4 - Factorial</a></li>
+            </ul>
+          </li>
+          <li><a href="#ejercicios-ampliacion">Ejercicios de ampliación</a></li>
+        </ul>
+      </div>
+
+      <h3><a href="ej_for_1_soluciones.html">Soluciones</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_for_1_soluciones.html#ejercicio-1">A - Bucles</a>
+            <ul>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-1-1">1 - Pares e impares</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-1-2">2 - Divisores</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-1-3">3 - Mayores que el primero</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-1-4">4 - Mayores que el anterior</a></li>
+            </ul>
+          </li>
+          <li><a href="ej_for_1_soluciones.html#ejercicio-2">B - Contadores</a>
+            <ul>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-2-1">1 - Negativos</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-2-2">2 - Contador pares/impares</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-2-3">3 - Número primo</a></li>
+            </ul>
+          </li>
+          <li><a href="ej_for_1_soluciones.html#ejercicio-3">C - Acumuladores</a>
+            <ul>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-3-1">1 - Suma de valores</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-3-2">2 - Suma entre valores</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-3-3">3 - Mayor, menor y media</a></li>
+              <li><a href="ej_for_1_soluciones.html#ejercicio-3-4">4 - Factorial</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python_for.html">bucle <span class="idle-rese">for</span> (1)</a>.</p>
+
+    <p>Se pueden consultar unas <a href="ej_for_1_soluciones.html">posibles soluciones</a>.</p>
+
+    <section id="ejercicio-1">
+      <h2>A. Bucles</h2>
+
+      <section id="ejercicio-1-1">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+
+        <p>Escriba un programa que pida dos números enteros y escriba qué números son pares y cuáles impares desde el primero hasta el segundo.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">PARES E IMPARES</span>
+<span class="idle-resp">Escriba un número entero:</span> 6
+<span class="idle-resp">Escriba un número entero mayor o igual que 6:</span> 2
+<span class="idle-resp">¡Le he pedido un número entero mayor que 6!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">PARES E IMPARES</span>
+<span class="idle-resp">Escriba un número entero:</span> 4
+<span class="idle-resp">Escriba un número entero mayor o igual que 4:</span> 8
+<span class="idle-resp">El número 4 es par</span>
+<span class="idle-resp">El número 5 es impar</span>
+<span class="idle-resp">El número 6 es par</span>
+<span class="idle-resp">El número 7 es impar</span>
+<span class="idle-resp">El número 8 es par</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">PARES E IMPARES</span>
+<span class="idle-resp">Escriba un número entero:</span> 5
+<span class="idle-resp">Escriba un número entero mayor o igual que 5:</span> 5
+<span class="idle-resp">El número 5 es impar</span>
+</pre>
+        </div>
+
+        <p><strong>Notas</strong>:</p>
+        <ul>
+          <li>Un número es par cuando el resto de su división entre dos es cero (<var>numero</var> % 2 == 0) e impar cuando no lo es.</li>
+        </ul>
+      </section>
+
+      <section id="ejercicio-1-2">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+
+        <p>Escriba un programa que pida un número entero mayor que cero y que escriba sus divisores.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">DIVISORES</span>
+<span class="idle-resp">Escriba un número mayor que cero:</span> -5
+<span class="idle-resp">¡Le he pedido un número entero mayor que cero!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">DIVISORES</span>
+<span class="idle-resp">Escriba un número entero mayor que cero:</span> 200
+<span class="idle-resp">Los divisores de 200 son 1 2 4 5 8 10 20 25 40 50 100 200</span>
+</pre>
+        </div>
+
+        <p><strong>Notas</strong>:</p>
+        <ul>
+          <li>Un número es divisible por otro cuando el resto de su división es cero (<var>numero</var> % <var>divisor</var> == 0).</li>
+          <li>Se puede hacer un programa más rápido, teniendo en cuenta que los divisores son siempre menores (o iguales) que la mitad del número. Es decir, no hace falta probar todos los números entre 1 y el propio número, sino únicamente hasta la mitad. Si se hace así, no hay que olvidarse de añadir el propio número a la lista de divisores.</li>
+        </ul>
+      </section>
+
+      <section id="ejercicio-1-3">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+
+        <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea mayor que el primero.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYORES QUE EL PRIMERO</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYORES QUE EL PRIMERO</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 4
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba un número más grande que 6:</span> 10
+<span class="idle-resp">Escriba un número más grande que 6:</span> 3
+<span class="idle-resp">¡3 no es mayor que 6!</span>
+<span class="idle-resp">Escriba un número más grande que 6:</span> 9
+<span class="idle-resp">Gracias por su colaboración</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-1-4">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - A-4 (ejercicio 2 examen 1 de junio de 2012 turno mañana)</h3>
+
+        <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea mayor que el anterior.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYORES QUE EL ANTERIOR</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYORES QUE EL ANTERIOR</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 4
+<span class="idle-resp">Escriba un número:</span> 6
+<span class="idle-resp">Escriba un número más grande que 6:</span> 10
+<span class="idle-resp">Escriba un número más grande que 10:</span> 8
+<span class="idle-resp">¡8 no es mayor que 10!</span>
+<span class="idle-resp">Escriba un número más grande que 8:</span> 9
+<span class="idle-resp">Gracias por su colaboración</span>
+</pre>
+        </div>
+      </section>
+    </section>
+
+    <section id="ejercicio-2">
+      <h2>B. Contadores</h2>
+
+      <section id="ejercicio-2-1">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+
+        <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números y escriba cuántos negativos ha introducido.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMEROS NEGATIVOS</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMEROS NEGATIVOS</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 2
+<span class="idle-resp">Escriba el número 1:</span> 56
+<span class="idle-resp">Escriba el número 2:</span> -22
+<span class="idle-resp">Ha escrito 1 número negativo</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMEROS NEGATIVOS</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 5
+<span class="idle-resp">Escriba el número 1:</span> 56
+<span class="idle-resp">Escriba el número 2:</span> -22
+<span class="idle-resp">Escriba el número 3:</span> 98
+<span class="idle-resp">Escriba el número 4:</span> -30
+<span class="idle-resp">Escriba el número 5:</span> -30
+<span class="idle-resp">Ha escrito 3 números negativos</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-2-2">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - B-2 (examen 14 de junio de 2012)</h3>
+
+        <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y diga al final cuántos han sido pares y cuántos impares.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">CONTADOR DE PARES E IMPARES</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">CONTADOR DE PARES E IMPARES</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 5
+<span class="idle-resp">Escriba el valor 1:</span> 4
+<span class="idle-resp">Escriba el valor 2:</span> 3
+<span class="idle-resp">Escriba el valor 3:</span> 6
+<span class="idle-resp">Escriba el valor 4:</span> 8
+<span class="idle-resp">Escriba el valor 5:</span> 7
+<span class="idle-resp">Ha escrito 3 números pares y 2 números impares</span>
+<span class="idle-resp">Gracias por su colaboración</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-2-3">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
+
+        <p>Escriba un programa que pida un número entero mayor que 1 y que escriba si el número es un número primo o no.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMERO PRIMO</span>
+<span class="idle-resp">Escriba un número mayor que 1:</span> -5
+<span class="idle-resp">¡Le he pedido un número entero mayor que 1!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMERO PRIMO</span>
+<span class="idle-resp">Escriba un número entero mayor que 1:</span> 127
+<span class="idle-resp">127 es primo</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMERO PRIMO</span>
+<span class="idle-resp">Escriba un número entero mayor que 1:</span> 200
+<span class="idle-resp">200 no es primo</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">NÚMERO PRIMO</span>
+<span class="idle-resp">Escriba un número entero mayor que 1:</span> 67867967
+<span class="idle-resp">67867967 es primo</span>
+</pre>
+        </div>
+
+        <p><strong>Notas</strong>:</p>
+        <ul>
+          <li>Un número entero mayor que 1 es primo si es divisible únicamente por 1 y por sí mismo.</li>
+          <li>Una manera de comprobar si un número es primo es contar cuántos divisores tiene el número (probando todos los números entre 1 y el propio número). Si sólo tiene dos divisores (1 y el propio número), es que el número es primo. En este ejercicio se puede aprovechar el bucle del <a href="#ejercicio-1-2">ejercicio A-2</a>.</li>
+          <li>Otra manera (equivalente a la anterior) de comprobar si un número es primo es contar cuántos divisores tiene el número (probando todos los números entre 2 y el propio número menos uno). Si no tiene ningún divisor, es que el número es primo.</li>
+          <li>Se puede hacer un programa mucho más rápido, teniendo en cuenta que no es necesario comprobar todos los números entre 1 y el propio número. Basta con comprobar hasta la raíz cuadrada del número, puesto que si un número tiene un divisor mayor que su raíz cuadrada también lo tendrá menor que su raíz cuadrada.</li>
+          <li>Se puede hacer un programa todavía mucho más rápido, teniendo en cuenta que no es necesario saber cuántos divisores tiene un número para saber que es primo, ya que en cuanto encontremos un divisor (diferente de 1 y el propio número), ya sabemos que el número no es primo. Pero para poder escribir un programa que haga eso (interrumpir la búsqueda), necesitamos usar un bucle <span class="idle-rese">while</span>, que veremos más adelante.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="ejercicio-3">
+      <h2>C. Acumuladores</h2>
+
+      <section id="ejercicio-3-1">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - C-1</h3>
+
+        <p>Escriba un programa que pregunte cuantos números se van a introducir, pida esos números (que puedan ser decimales) y calcule su suma.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">SUMA DE VALORES</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">SUMA DE VALORES</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 5
+<span class="idle-resp">Escriba el número 1:</span> 25
+<span class="idle-resp">Escriba el número 2:</span> 30
+<span class="idle-resp">Escriba el número 3:</span> 10.5
+<span class="idle-resp">Escriba el número 4:</span> 14
+<span class="idle-resp">Escriba el número 5:</span> 23
+<span class="idle-resp">La suma de los números que ha escrito es 102.5</span>
+</pre>
+        </div>
+      </section>
+
+      <section id="ejercicio-3-2">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - C-2</h3>
+
+        <p>Escriba un programa que pida dos números enteros y escriba la suma de todos los enteros desde el primer número hasta el segundo.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">SUMA ENTRE VALORES</span>
+<span class="idle-resp">Escriba un número entero:</span> 7
+<span class="idle-resp">Escriba un número entero mayor que 7:</span> 7
+<span class="idle-resp">¡Le he pedido un número entero mayor que 7!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">SUMA ENTRE VALORES</span>
+<span class="idle-resp">Escriba un número entero:</span> 30
+<span class="idle-resp">Escriba un número entero mayor que 30:</span> 32
+<span class="idle-resp">La suma desde 30 hasta 32 es 93</span>
+</pre>
+        </div>
+
+        <p>Mejore el programa anterior haciendo que el programa escriba la suma realizada</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">SUMA ENTRE VALORES</span>
+<span class="idle-resp">Escriba un número entero:</span> 10
+<span class="idle-resp">Escriba un número entero mayor que 10:</span> 15
+<span class="idle-resp">La suma desde 10 hasta 15 es 75</span>
+<span class="idle-resp">10 + 11 + 12 + 13 + 14 + 15 = 75</span>
+</pre>
+        </div>
+
+        <p><strong>Nota</strong>:</p>
+        <ul>
+          <li>Este programa debe incluir dos bucles <span class="idle-rese">for</span>: uno para calcular la suma y a continuación otro para escribir la última línea (con la suma de todos los números).</li>
+        </ul>
+      </section>
+
+      <section id="ejercicio-3-3">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - C-3</h3>
+
+        <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y escriba el mayor, el menor y la media aritmética.</p>
+
+        <p>Se recuerda que la media aritmética de un conjunto de valores es la suma de esos valores dividida por la cantidad de valores.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYOR, MENOR Y MEDIA ARITMÉTICA</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
+<span class="idle-resp">¡Imposible!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">MAYOR, MENOR Y MEDIA ARITMÉTICA</span>
+<span class="idle-resp">¿Cuántos valores va a introducir?</span> 5
+<span class="idle-resp">Escriba el número 1:</span> 25
+<span class="idle-resp">Escriba el número 2:</span> 100
+<span class="idle-resp">Escriba el número 3:</span> 7
+<span class="idle-resp">Escriba el número 4:</span> 90
+<span class="idle-resp">Escriba el número 5:</span> 14
+<span class="idle-resp">El número más pequeño de los introducidos es 7.0</span>
+<span class="idle-resp">El número más grande de los introducidos es 100.0</span>
+<span class="idle-resp">La media de los números introducidos es 47.2</span>
+</pre>
+        </div>
+
+        <p><strong>Notas</strong>:</p>
+        <ul>
+          <li>Para encontrar el mínimo se puede utilizar una variable auxiliar (<var>minimo</var>) para guardar el valor más pequeño.<br />
+            El valor inicial de esa variable tiene que ser el primer valor que escriba el usuario.<br />
+            Cada vez que se introduce un valor, si es menor que <var>mínimo</var>, se debe guardar ese valor en la variable <var>minimo</var>.</li>
+          <li>Para encontrar el máximo se puede utilizar una variable auxiliar (<var>maximo</var>) para guardar el valor más grande.<br />
+            El valor inicial de esa variable tiene que ser el primer valor que escriba el usuario.<br />
+            Cada vez que se introduce un valor, si es mayor que <var>máximo</var>, se debe guardar ese valor en la variable <var>maximo</var>.</li>
+          <li>Para encontrar la media se puede utilizar una variable auxiliar (<var>suma</var>) para guardar la suma de valores.<br />
+            El valor inicial de esa variable tiene que ser el primer valor que escriba el usuario.<br />
+            Cada vez que se introduce un valor, se suma a la variable <var>suma</var>.<br />
+            Finalmente, la media aritmética es la suma dividida por el número de valores.</li>
+          <li>El primer valor introducido no se debe tratar como los siguientes (el primer valor se guarda en las variables), por lo que la petición del primer valor se debe hacer antes del bucle de peticiones.</li>
+        </ul>
+      </section>
+
+      <section id="ejercicio-3-4">
+        <h3>Bucle <span class="idle-rese">for</span> (1) - C-4</h3>
+
+        <p>Escriba un programa que pida un número entero mayor que cero y calcule su factorial.</p>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">FACTORIAL</span>
+<span class="idle-resp">Escriba un número entero mayor que cero:</span> -5
+<span class="idle-resp">¡Le he pedido un número entero mayor que cero!</span>
+</pre>
+        </div>
+
+        <div class="ejercicio">
+          <pre>
+<span class="idle-resp">FACTORIAL</span>
+<span class="idle-resp">Escriba un número entero mayor que cero:</span> 5
+<span class="idle-resp">El factorial de 5 es 120</span>
+</pre>
+        </div>
+
+        <p><strong>Notas</strong>:</p>
+        <ul>
+          <li>El factorial de un entero (que se escribe con una exclamación, factorial de 5 se escribe 5!) es el producto de los enteros hasta dicho número. Es decir 5! = 5 * 4 * 3 * 2 * 1 = 120, o lo que es lo mismo, 1 * 2 * 3 * 4 * 5.</li>
+          <li>Por definición, el factorial de 0 es 1, es decir 0! = 1, por lo que el programa podría admitir también el 0.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="ejercicios-ampliacion">
+      <h2>Más ejercicios</h2>
+      <ul>
+        <li><a href="../examenes/11-12/examen_120601_2.html#ejercicio-2">ejercicio 2 examen 1 de enero de 2012 turno tardes</a></li>
+        <li><a href="../examenes/12-13/examen_130129.html#ejercicio-3">ejercicio 3 examen 29 de enero de 2013</a></li>
+        <li><a href="../examenes/13-14/examen_140307.html#ejercicio-2">ejercicio 2 examen 7 de marzo de 2014</a></li>
+        <li><a href="../examenes/15-16/examen_160525.html#ejercicio-2">ejercicio 2 examen 25 de mayo de 2016</a></li>
+        <li><a href="../examenes/15-16/examen_160608.html#ejercicio-2">ejercicio 2 examen 8 de junio de 2016</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

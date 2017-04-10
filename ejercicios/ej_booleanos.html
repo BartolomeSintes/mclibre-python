@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios (1). Expresiones lógicas. Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="Estilo mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <script type="text/javascript" src="http://brython.info/src/brython_dist.js"></script>
+    <script type="text/python3">
+from browser import document
+from random import randrange
+
+negacion = ("", "not ")
+yo = (" and ", " or ")
+comparacion = (" < ", " <= ", "> ", ">= ", " == ", " != ")
+variables = "abcdefghijklmnopqrstuvwxyz"
+anchoContador = 200
+respuesta = ("¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!")
+
+# Ejercicio 1
+
+def e1_dibuja_contador():
+    global document, e1_cuenta, e1_respondido, anchoContador
+    document["e1_num_correctas"].clear()
+    document["e1_num_correctas"] <= e1_cuenta[1]
+    document["e1_num_incorrectas"].clear()
+    document["e1_num_incorrectas"] <= e1_cuenta[0]
+    total = e1_cuenta[0] + e1_cuenta[1]
+    if total == 0:
+        total = 1
+    document["e1_img_correctas"].setAttribute("width", max(anchoContador * e1_cuenta[1] / total, 1))
+    document["e1_img_incorrectas"].setAttribute("width", max(anchoContador * e1_cuenta[0] / total, 1))
+
+def e1_nuevo(ev):
+    global e1_cadena, document, negacion, e1_cuenta, e1_respondido
+    document["e1_enunciado"].clear()
+    document["e1_resultado"].clear()
+    e1_cadena = negacion[randrange(0, 2)] + str(bool(randrange(0, 2))) + yo[randrange(0, 2)] + negacion[randrange(0, 2)] + str(bool(randrange(0, 2)))
+    document["e1_enunciado"] <= e1_cadena
+    if not e1_respondido:
+        e1_cuenta[0] += 1
+        e1_dibuja_contador()
+    e1_respondido = False
+
+def e1_compruebaV(ev):
+    global e1_cadena, document, e1_cuenta, e1_respondido
+    document["e1_resultado"].clear()
+    document["e1_resultado"] <= respuesta[eval(e1_cadena)]
+    if not e1_respondido:
+        e1_cuenta[int(eval(e1_cadena))] += 1
+    e1_dibuja_contador()
+    e1_respondido = True
+
+def e1_compruebaF(ev):
+    global e1_cadena, document, e1_cuenta, e1_respondido
+    document["e1_resultado"].clear()
+    document["e1_resultado"] <= respuesta[not(eval(e1_cadena))]
+    if not e1_respondido:
+        e1_cuenta[int(not(eval(e1_cadena)))] += 1
+    e1_dibuja_contador()
+    e1_respondido = True
+
+def e1_reinicia(ev):
+    global e1_cuenta
+    e1_cuenta = [0, 0]
+    e1_dibuja_contador()
+
+e1_cadena = ""
+e1_cuenta = [0,0]
+e1_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e1_nuevo(None)
+
+document["e1_v"].bind("click", e1_compruebaV)
+document["e1_f"].bind("click", e1_compruebaF)
+document["e1_nuevo"].bind("click", e1_nuevo)
+document["e1_reinicia"].bind("click", e1_reinicia)
+
+# Ejercicio 2
+
+def e2_dibuja_contador():
+    global document, e2_cuenta, e2_respondido, anchoContador
+    document["e2_num_correctas"].clear()
+    document["e2_num_correctas"] <= e2_cuenta[1]
+    document["e2_num_incorrectas"].clear()
+    document["e2_num_incorrectas"] <= e2_cuenta[0]
+    total = e2_cuenta[0] + e2_cuenta[1]
+    if total == 0:
+        total = 1
+    document["e2_img_correctas"].setAttribute("width", max(anchoContador * e2_cuenta[1] / total, 1))
+    document["e2_img_incorrectas"].setAttribute("width", max(anchoContador * e2_cuenta[0] / total, 1))
+
+def e2_nuevo(ev):
+    global e2_cadena, document, negacion, e2_cuenta, e2_respondido
+    document["e2_enunciado"].clear()
+    document["e2_resultado"].clear()
+    e2_cadena_sp = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena =  e2_cadena_sp
+    tmp = yo[randrange(0, 2)]
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+    tmp2 = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena_sp += tmp2
+    e2_cadena += tmp2
+    if tmp == " and ": # Añado parentesis porque Brython 3.2.4 no evaluaba bien las expresiones
+        e2_cadena = "(" + e2_cadena + ")"
+    tmp = yo[randrange(0, 2)]
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+    tmp = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
+    e2_cadena_sp += tmp
+    e2_cadena += tmp
+    document["e2_enunciado"] <= e2_cadena_sp
+    if not e2_respondido:
+        e2_cuenta[0] += 1
+        e2_dibuja_contador()
+    e2_respondido = False
+
+def e2_compruebaV(ev):
+    global e2_cadena, document, e2_cuenta, e2_respondido
+    document["e2_resultado"].clear()
+    document["e2_resultado"] <= respuesta[eval(e2_cadena)]
+    if not e2_respondido:
+        e2_cuenta[int(eval(e2_cadena))] += 1
+    e2_dibuja_contador()
+    e2_respondido = True
+
+def e2_compruebaF(ev):
+    global e2_cadena, document, e2_cuenta, e2_respondido
+    document["e2_resultado"].clear()
+    document["e2_resultado"] <= respuesta[not(eval(e2_cadena))]
+    if not e2_respondido:
+        e2_cuenta[int(not(eval(e2_cadena)))] += 1
+    e2_dibuja_contador()
+    e2_respondido = True
+
+def e2_reinicia(ev):
+    global document, e2_cuenta
+    e2_cuenta = [0, 0]
+    e2_dibuja_contador()
+
+e2_cadena = ""
+e2_cuenta = [0,0]
+e2_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e2_nuevo(None)
+
+document["e2_v"].bind("click", e2_compruebaV)
+document["e2_f"].bind("click", e2_compruebaF)
+document["e2_nuevo"].bind("click", e2_nuevo)
+document["e2_reinicia"].bind("click", e2_reinicia)
+
+# Ejercicio 3
+
+def e3_dibuja_contador():
+    global document, e3_cuenta, e3_respondido, anchoContador
+    document["e3_num_correctas"].clear()
+    document["e3_num_correctas"] <= e3_cuenta[1]
+    document["e3_num_incorrectas"].clear()
+    document["e3_num_incorrectas"] <= e3_cuenta[0]
+    total = e3_cuenta[0] + e3_cuenta[1]
+    if total == 0:
+        total = 1
+    document["e3_img_correctas"].setAttribute("width", max(anchoContador * e3_cuenta[1] / total, 1))
+    document["e3_img_incorrectas"].setAttribute("width", max(anchoContador * e3_cuenta[0] / total, 1))
+
+def e3_nuevo(ev):
+    global e3_cadena, document, negacion, comparacion, variables, e3_variable, e3_cuenta, e3_respondido
+    maximo = 10
+    var = variables[randrange(0, len(variables))]
+    e3_variable.clear()
+    e3_variable = { var : randrange(0, maximo) }
+    document["e3_enunciado"].clear()
+    document["e3_resultado"].clear()
+    document["e3_variable"].clear()
+    document["e3_variable"] <= var
+    document["e3_valor"].clear()
+    document["e3_valor"] <= e3_variable[var]
+
+    e3_cadena_sp = negacion[randrange(0,2)]
+    e3_cadena =  e3_cadena_sp + "("
+    if randrange(0, 2):
+        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+    else:
+        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+    e3_cadena_sp += tmp
+    e3_cadena += tmp + ")"
+    document["e3_enunciado"] <= e3_cadena_sp
+    if not e3_respondido:
+        e3_cuenta[0] += 1
+        e3_dibuja_contador()
+    e3_respondido = False
+
+def e3_compruebaV(ev):
+    global e3_cadena, document, e3_variable, e3_cuenta, e3_respondido
+    document["e3_resultado"].clear()
+    document["e3_resultado"] <= respuesta[eval(e3_cadena, e3_variable)]
+    if not e3_respondido:
+        e3_cuenta[int(eval(e3_cadena, e3_variable))] += 1
+    e3_dibuja_contador()
+    e3_respondido = True
+
+def e3_compruebaF(ev):
+    global e3_cadena, document, e3_variable, e3_cuenta, e3_respondido
+    document["e3_resultado"].clear()
+    document["e3_resultado"] <= respuesta[not(eval(e3_cadena, e3_variable))]
+    if not e3_respondido:
+        e3_cuenta[int(not(eval(e3_cadena, e3_variable)))] += 1
+    e3_dibuja_contador()
+    e3_respondido = True
+
+def e3_reinicia(ev):
+    global document, e3_cuenta
+    e3_cuenta = [0, 0]
+    e3_dibuja_contador()
+
+e3_cadena = ""
+e3_variable = {}
+e3_cuenta = [0,0]
+e3_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e3_nuevo(None)
+
+document["e3_v"].bind("click", e3_compruebaV)
+document["e3_f"].bind("click", e3_compruebaF)
+document["e3_nuevo"].bind("click", e3_nuevo)
+document["e3_reinicia"].bind("click", e3_reinicia)
+
+# Ejercicio 4
+
+def e4_dibuja_contador():
+    global document, e4_cuenta, e4_respondido, anchoContador
+    document["e4_num_correctas"].clear()
+    document["e4_num_correctas"] <= e4_cuenta[1]
+    document["e4_num_incorrectas"].clear()
+    document["e4_num_incorrectas"] <= e4_cuenta[0]
+    total = e4_cuenta[0] + e4_cuenta[1]
+    if total == 0:
+        total = 1
+    document["e4_img_correctas"].setAttribute("width", max(anchoContador * e4_cuenta[1] / total, 1))
+    document["e4_img_incorrectas"].setAttribute("width", max(anchoContador * e4_cuenta[0] / total, 1))
+
+def e4_nuevo(ev):
+    global e4_cadena, document, negacion, comparacion, variables, e4_variable, e4_cuenta, e4_respondido
+    maximo = 10
+    var = variables[randrange(0, len(variables))]
+    e4_variable.clear()
+    e4_variable = { var : randrange(0, maximo) }
+    document["e4_enunciado"].clear()
+    document["e4_resultado"].clear()
+    document["e4_variable"].clear()
+    document["e4_variable"] <= var
+    document["e4_valor"].clear()
+    document["e4_valor"] <= e4_variable[var]
+
+    e4_cadena_sp = negacion[randrange(0,2)]
+    e4_cadena =  e4_cadena_sp + "("
+    if randrange(0, 2):
+        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+    else:
+        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+    e4_cadena_sp += tmp
+    e4_cadena += tmp + ")"
+    tmp = yo[randrange(0, 2)] + negacion[randrange(0,2)]
+    e4_cadena_sp += tmp
+    e4_cadena += tmp + "("
+    if randrange(0, 2):
+        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+    else:
+        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+    e4_cadena_sp += tmp
+    e4_cadena += tmp + ")"
+    document["e4_enunciado"] <= e4_cadena_sp
+    if not e4_respondido:
+        e4_cuenta[0] += 1
+        e4_dibuja_contador()
+    e4_respondido = False
+
+def e4_compruebaV(ev):
+    global e4_cadena, document, e4_variable, e4_cuenta, e4_respondido
+    document["e4_resultado"].clear()
+    document["e4_resultado"] <= respuesta[eval(e4_cadena, e4_variable)]
+    if not e4_respondido:
+        e4_cuenta[int(eval(e4_cadena, e4_variable))] += 1
+    e4_dibuja_contador()
+    e4_respondido = True
+
+def e4_compruebaF(ev):
+    global e4_cadena, document, e4_variable, e4_cuenta, e4_respondido
+    document["e4_resultado"].clear()
+    document["e4_resultado"] <= respuesta[not(eval(e4_cadena, e4_variable))]
+    if not e4_respondido:
+        e4_cuenta[int(not(eval(e4_cadena, e4_variable)))] += 1
+    e4_dibuja_contador()
+    e4_respondido = True
+
+def e4_reinicia(ev):
+    global document, e4_cuenta
+    e4_cuenta = [0, 0]
+    e4_dibuja_contador()
+
+e4_cadena = ""
+e4_variable = {}
+e4_cuenta = [0,0]
+e4_respondido = True # Para que la primera vez que se dibuja el contador no cuente como fallo
+e4_nuevo(None)
+
+document["e4_v"].bind("click", e4_compruebaV)
+document["e4_f"].bind("click", e4_compruebaF)
+document["e4_nuevo"].bind("click", e4_nuevo)
+document["e4_reinicia"].bind("click", e4_reinicia)
+
+    </script>
+  </head>
+
+  <body onload="brython(0)">
+    <h1>Expresiones lógicas - Ejercicios (1)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Expresiones lógicas (1)</h2>
+    </nav>
+
+    <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_booleanos.html">Booleanos</a>.</p>
+
+    <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al cargar por primera vez la página, o al recargarla, las expresiones lógicas pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
+
+    <hr />
+
+    <h2>Expresiones lógicas (1) - 1</h2>
+
+    <p>Evalúe mentalmente la expresión lógica y haga clic en el resultado (True o False). Automáticamente se le indicará si ha dado la respuesta correcta. Haga clic en "Nueva pregunta" para mostrar una nueva expresión lógica.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Si se pide una nueva expresión sin evaluar la anterior, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <p>Expresión a evaluar: <span class="idle-rese" id="e1_enunciado"></span></p>
+      <p>Indique el resultado: <button id="e1_v">True</button> <button id="e1_f">False</button> <span id="e1_resultado"></span></p>
+      <p><button id="e1_nuevo">Nueva pregunta</button></p>
+      <p><span id="e1_num_correctas">0</span> <img id="e1_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e1_num_incorrectas">0</span> <img id="e1_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e1_reinicia">Reiniciar contador</button></p>
+    </div>
+    <hr />
+
+    <h2>Expresiones lógicas (1) - 2</h2>
+
+    <p>Evalúe mentalmente la expresión lógica y haga clic en el resultado (True o False). Automáticamente se le indicará si ha dado la respuesta correcta. Haga clic en "Nueva pregunta" para mostrar una nueva expresión lógica.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Si se pide una nueva expresión sin evaluar la anterior, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <p>Expresión a evaluar: <span class="idle-rese" id="e2_enunciado"></span></p>
+      <p>Indique el resultado: <button id="e2_v">True</button> <button id="e2_f">False</button> <span id="e2_resultado"></span></p>
+      <p><button id="e2_nuevo">Nueva pregunta</button></p>
+      <p><span id="e2_num_correctas">0</span> <img id="e2_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e2_num_incorrectas">0</span> <img id="e2_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e2_reinicia">Reiniciar contador</button></p>
+    </div>
+    <hr />
+
+    <h2>Expresiones lógicas (1) - 3</h2>
+
+    <p>Evalúe mentalmente la expresión lógica y haga clic en el resultado (True o False). Automáticamente se le indicará si ha dado la respuesta correcta. Haga clic en "Nueva pregunta" para mostrar una nueva expresión lógica.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Si se pide una nueva expresión sin evaluar la anterior, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <p>Expresión a evaluar: <span class="idle-rese" id="e3_enunciado"></span></p>
+      <p>para el valor <span id="e3_variable"></span> = <span id="e3_valor"></span></p>
+      <p>Indique el resultado: <button id="e3_v">True</button> <button id="e3_f">False</button> <span id="e3_resultado"></span></p>
+      <p><button id="e3_nuevo">Nueva pregunta</button></p>
+      <p><span id="e3_num_correctas">0</span> <img id="e3_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e3_num_incorrectas">0</span> <img id="e3_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e3_reinicia">Reiniciar contador</button></p>
+    </div>
+    <hr />
+
+    <h2>Expresiones lógicas (1) - 4</h2>
+
+    <p>Evalúe mentalmente la expresión lógica y haga clic en el resultado (True o False). Automáticamente se le indicará si ha dado la respuesta correcta. Haga clic en "Nueva pregunta" para mostrar una nueva expresión lógica.</p>
+
+    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Si se pide una nueva expresión sin evaluar la anterior, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+
+    <div class="ejercicio">
+      <p>Expresión a evaluar: <span class="idle-rese" id="e4_enunciado"></span></p>
+      <p>para el valor <span id="e4_variable"></span> = <span id="e4_valor"></span></p>
+      <p>Indique el resultado: <button id="e4_v">True</button> <button id="e4_f">False</button> <span id="e4_resultado"></span></p>
+      <p><button id="e4_nuevo">Nueva pregunta</button></p>
+      <p><span id="e4_num_correctas">0</span> <img id="e4_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+      <p><span id="e4_num_incorrectas">0</span> <img id="e4_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+      <p><button id="e4_reinicia">Reiniciar contador</button></p>
+    </div>
+    <hr />
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 17 de febrero de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>
