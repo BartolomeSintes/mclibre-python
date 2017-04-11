@@ -35,11 +35,13 @@
 
     <section id="ejercicio-resuelto-1">
       <h3>Gráficos SVG Ficheros (2) - 1 - Una fórmula, una forma</h3>
-      <p>Queremos completar la página web que se muestra a continuación a la izquierda de manera que se muestre el dibujo que se muestra a la derecha:</p>
+
+      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
       <table class="ejemplo">
         <tbody>
           <tr>
+            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_1_1.png" alt="SVG Brython (2) 0 1 Enunciado" title="SVG Brython (2) 0 1 Enunciado" width="324" height="324" /></td>
             <td>
               <pre><code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
@@ -58,7 +60,6 @@
 &lt;/html></code>
 </pre>
             </td>
-            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_1_1.png" alt="SVG Brython (2) 0 1 Enunciado" title="SVG Brython (2) 0 1 Enunciado" width="324" height="324" /></td>
           </tr>
         </tbody>
       </table>
@@ -127,7 +128,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(11):
-        print(f"     &lt;line x1=\"{30*i}\" y1=\"0\" x2=\"{30*i}\" y2=\"300\" stroke=\"black\" stroke-width=1 />", file=fichero)
+        print(f"     &lt;line x1=\"{30*i}\" y1=\"0\" x2=\"{30*i}\" y2=\"300\" stroke=\"black\" "
+              f"stroke-width=1 />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -141,11 +143,13 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     <section id="ejercicio-resuelto-2">
       <h3>Gráficos SVG Ficheros (2) - 2 - Varias fórmulas, una forma</h3>
-      <p>Queremos completar la página web que se muestra a continuación a la izquierda de manera que se muestre el dibujo que se muestra a la derecha:</p>
+
+      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
       <table class="ejemplo">
         <tbody>
           <tr>
+            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_2_1.png" alt="SVG Brython (2) 0 2 Enunciado" title="SVG Brython (2) 0 2 Enunciado" width="324" height="324" /></td>
             <td>
               <pre><code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
@@ -164,7 +168,6 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/html></code>
 </pre>
             </td>
-            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_2_1.png" alt="SVG Brython (2) 0 2 Enunciado" title="SVG Brython (2) 0 2 Enunciado" width="324" height="324" /></td>
           </tr>
         </tbody>
       </table>
@@ -234,7 +237,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(6):
-        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" stroke-width=1 />", file=fichero)
+        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" "
+              f"stroke-width=1 />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -248,11 +252,13 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     <section id="ejercicio-resuelto-3">
       <h3>Gráficos SVG Ficheros (2) - 3 - Varias fórmulas, una forma</h3>
-      <p>Queremos completar la página web que se muestra a continuación a la izquierda de manera que se muestre el dibujo que se muestra a la derecha:</p>
+
+      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
       <table class="ejemplo">
         <tbody>
           <tr>
+            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_3_1.png" alt="SVG Brython (2) 0 3 Enunciado" title="SVG Brython (2) 0 3 Enunciado" width="324" height="324" /></td>
             <td>
               <pre><code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
@@ -271,7 +277,6 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/html></code>
 </pre>
             </td>
-            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_3_1.png" alt="SVG Brython (2) 0 3 Enunciado" title="SVG Brython (2) 0 3 Enunciado" width="324" height="324" /></td>
           </tr>
         </tbody>
       </table>
@@ -332,7 +337,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      width=\"320\" height=\"320\" viewBox=\"-20 -20 640 640\"", file=fichero)
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(3):
-        print(f"     &lt;rect x=\"{50+100*i}\" y=\"50\" width=\"{500-200*i}\" height=\"{150+150*i}\" stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)
+        print(f"     &lt;rect x=\"{50+100*i}\" y=\"50\" width=\"{500-200*i}\" height=\"{150+150*i}\" "
+              f"stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -346,11 +352,13 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     <section id="ejercicio-resuelto-4">
       <h3>Gráficos SVG Ficheros (2) - 4 - Varias fórmulas, varias formas</h3>
-      <p>Queremos completar la página web que se muestra a continuación a la izquierda de manera que se muestre el dibujo que se muestra a la derecha:</p>
+
+      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
       <table class="ejemplo">
         <tbody>
           <tr>
+            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_4_1.png" alt="SVG Brython (2) 0 4 Enunciado" title="SVG Brython (2) 0 4 Enunciado" width="324" height="324" /></td>
             <td>
               <pre><code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
@@ -369,7 +377,6 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/html></code>
 </pre>
             </td>
-            <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_4_1.png" alt="SVG Brython (2) 0 4 Enunciado" title="SVG Brython (2) 0 4 Enunciado" width="324" height="324" /></td>
           </tr>
         </tbody>
       </table>
@@ -463,8 +470,10 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(5):
-        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"{150-60*i}\" y2=\"150\" stroke=\"black\" stroke-width=1 />", file=fichero)
-        print(f"     &lt;line x1=\"{-150+60*i}\" y1=\"-150\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" stroke-width=1 />", file=fichero)
+        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"{150-60*i}\" y2=\"150\" "
+              f"stroke=\"black\" stroke-width=1 />", file=fichero)
+        print(f"     &lt;line x1=\"{-150+60*i}\" y1=\"-150\" x2=\"150\" y2=\"{150-60*i}\" "
+              f"stroke=\"black\" stroke-width=1 />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -476,9 +485,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
       </ul>
     </section>
 
-
     <footer>
-      <p class="ultmod">Última modificación de esta página: 3 de abril de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 11 de abril de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
