@@ -50,8 +50,6 @@
 
     <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_svg_brython_3.html">ejercicios SVG Ficheros (3)</a>.</p>
 
-    <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Las soluciones están pedientes de escribir.</p>
-
     <section id="ejercicio-1">
       <h2>Gráficos SVG Ficheros (3) - 1</h2>
 
@@ -61,35 +59,38 @@
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_1.png" alt="SVG Ficheros (3) 1 1" title="SVG Ficheros (3) 1 1" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 1. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(4):
-    for j in range(11):
-        document["imagen"] &lt;= svg.circle(cx=30*j, cy=30*i, r=5, fill="black")
+ruta = "svg_ficheros_3_1_1.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-1. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(4):
+        for j in range(11):
+            print(f"      &lt;circle cx=\"{30 * j}\" cy=\"{30 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_1.png" alt="SVG Ficheros (3) 1 1" title="SVG Ficheros (3) 1 1" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -138,9 +139,10 @@ Y:     0   30   60   90 --> 30*i
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(4):
-    for j in range(11):
-        document["imagen"] &lt;= svg.circle(cx=30*j, cy=30*i, r=5, fill="black")</code>
+<code class="language-python">    for i in range(4):
+        for j in range(11):
+            print(f"      &lt;circle cx=\"{30 * j}\" cy=\"{30 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -151,36 +153,38 @@ Y:     0   30   60   90 --> 30*i
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_2.png" alt="SVG Ficheros (3) 1 2" title="SVG Ficheros (3) 1 2" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 2. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(9):
-    for j in range(6):
-        document["imagen"] &lt;= svg.circle(cx=60*j, cy=30*i, r=5, fill="black")
+ruta = "svg_ficheros_3_1_2.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-2. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(9):
+        for j in range(6):
+            print(f"      &lt;circle cx=\"{60 * j}\" cy=\"{30 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_2.png" alt="SVG Ficheros (3) 1 2" title="SVG Ficheros (3) 1 2" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -229,9 +233,10 @@ Y:     0   30   60   90   120  150  180  210  240 --> 30*i
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(9):
-    for j in range(6):
-        document["imagen"] &lt;= svg.circle(cx=60*j, cy=30*i, r=5, fill="black")</code>
+<code class="language-python">    for i in range(9):
+        for j in range(6):
+            print(f"      &lt;circle cx=\"{60 * j}\" cy=\"{30 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -242,37 +247,38 @@ Y:     0   30   60   90   120  150  180  210  240 --> 30*i
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_3.png" alt="SVG Ficheros (3) 1 3" title="SVG Ficheros (3) 1 3" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 3. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(4):
-    for j in range(8):
-        document["imagen"] &lt;= svg.circle(cx=60*j+60, cy=60*i+60, r=60,
-                                         stroke="black", stroke_width=1, fill="none")
+ruta = "svg_ficheros_3_1_3.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-3. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(4):
+        for j in range(8):
+            print(f"      &lt;circle cx=\"{60*j + 60}\" cy=\"{60*i + 60}\" r=\"60\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_3.png" alt="SVG Ficheros (3) 1 3" title="SVG Ficheros (3) 1 3" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -322,10 +328,10 @@ Y:    60  120  180  240 --> 60*i + 60
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(4):
-    for j in range(8):
-        document["imagen"] &lt;= svg.circle(cx=60*j+60, cy=60*i+60, r=60,
-                                         stroke="black", stroke_width=1, fill="none")</code>
+<code class="language-python">    for i in range(4):
+        for j in range(8):
+            print(f"      &lt;circle cx=\"{60*j + 60}\" cy=\"{60*i + 60}\" r=\"60\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -335,37 +341,38 @@ Y:    60  120  180  240 --> 60*i + 60
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_4.png" alt="SVG Ficheros (3) 1 4" title="SVG Ficheros (3) 1 4" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 4. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(4):
-    for j in range(12):
-        document["imagen"] &lt;= svg.rect(x=40*j, y=40*i, width=20, height=20,
-                                       stroke="black", stroke_width=1, fill="none")
+ruta = "svg_ficheros_3_1_4.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-4. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(4):
+        for j in range(12):
+            print(f"      &lt;rect x=\"{40 * j}\" y=\"{40 * i}\" width=\"20\" height=\"20\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_4.png" alt="SVG Ficheros (3) 1 4" title="SVG Ficheros (3) 1 4" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -415,10 +422,10 @@ Y:     0   40   80  120 --> 40*i
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(4):
-    for j in range(12):
-        document["imagen"] &lt;= svg.rect(x=40*j, y=40*i, width=20, height=20,
-                                       stroke="blue", stroke_width=1, fill="none")</code>
+<code class="language-python">    for i in range(4):
+        for j in range(12):
+            print(f"      &lt;rect x=\"{40 * j}\" y=\"{40 * i}\" width=\"20\" height=\"20\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -429,37 +436,38 @@ Y:     0   40   80  120 --> 40*i
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_5.png" alt="SVG Ficheros (3) 1 5" title="SVG Ficheros (3) 1 5" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 5. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(4):
-    for j in range(20):
-        document["imagen"] &lt;= svg.rect(x=30*j, y=80*i, width=20, height=20,
-                                       stroke="black", stroke_width=1, fill="none")
+ruta = "svg_ficheros_3_1_5.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-5. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(4):
+        for j in range(20):
+            print(f"      &lt;rect x=\"{30 * j}\" y=\"{80 * i}\" width=\"20\" height=\"20\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_5.png" alt="SVG Ficheros (3) 1 5" title="SVG Ficheros (3) 1 5" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -509,10 +517,10 @@ Y:     0   80  160  240 --> 80*i
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(4):
-    for j in range(20):
-        document["imagen"] &lt;= svg.rect(x=30*j, y=80*i, width=20, height=20,
-                                       stroke="blue", stroke_width=1, fill="none")</code>
+<code class="language-python">    for i in range(4):
+        for j in range(20):
+            print(f"      &lt;rect x=\"{30 * j}\" y=\"{80 * i}\" width=\"20\" height=\"20\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -522,37 +530,38 @@ Y:     0   80  160  240 --> 80*i
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_6.png" alt="SVG Ficheros (3) 1 6" title="SVG Ficheros (3) 1 6" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 1 6. Ejercicios SVG (). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(12):
-        document["imagen"] &lt;= svg.rect(x=50*j, y=50*i, width=46, height=46,
-                                       stroke="black", stroke_width=1, fill="none")
+ruta = "svg_ficheros_3_1_6.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 1-6. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(12):
+            print(f"      &lt;rect x=\"{50 * j}\" y=\"{50 * i}\" width=\"46\" height=\"46\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_1_6.png" alt="SVG Ficheros (3) 1 6" title="SVG Ficheros (3) 1 6" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -600,10 +609,10 @@ Y:     0   50  100  150  200  250 --> 50*i
         <p>El bucle anidado podría ser:</p>
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(6):
-    for j in range(12):
-        document["imagen"] &lt;= svg.rect(x=50*j, y=50*i, width=46, height=46,
-                                       stroke="blue", stroke_width=1, fill="none")</code>
+<code class="language-python">    for i in range(6):
+        for j in range(12):
+            print(f"      &lt;rect x=\"{50 * j}\" y=\"{50 * i}\" width=\"46\" height=\"46\" "
+                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -618,39 +627,42 @@ Y:     0   50  100  150  200  250 --> 50*i
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_1.png" alt="SVG Ficheros (3) 2 1" title="SVG Ficheros (3) 2 1" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 1. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(5):
-    for j in range(10):
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+40, y2=60*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+40, y1=60*i, x2=60*j, y2=60*i+40,
-                                       stroke="black", stroke_width=1)
+ruta = "svg_ficheros_3_2_1.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-1. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(5):
+        for j in range(10):
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + 40}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 40}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_1.png" alt="SVG Ficheros (3) 2 1" title="SVG Ficheros (3) 2 1" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -767,12 +779,14 @@ Y:     40 100  160  220  280 --> 60*i+40
 
         <div class="codigo">
           <pre class="line-numbers">
-<code class="language-python">for i in range(5):
-    for j in range(10):
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+40, y2=60*i+40,
-                                      stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+40, y1=60*i, x2=60*j, y2=60*i+40,
-                                      stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(5):
+        for j in range(10):
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + 40}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 40}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
         <p>Cada uno de los parámetros del dibujo interviene en el bucle:</p>
@@ -781,34 +795,38 @@ Y:     40 100  160  220  280 --> 60*i+40
           <li>El número de filas del dibujo (5)
             <div class="codigo">
               <pre class="line-numbers" data-start="1">
-<code class="language-python">for i in range(<span class="conborde">5</span>):</code>
+<code class="language-python">    for i in range(<span class="conborde">5</span>):</code>
 </pre>
             </div>
           </li>
           <li>El número de cruces por fila (10)
             <div class="codigo">
               <pre class="line-numbers" data-start="2">
-<code class="language-python">    for j in range(<span class="conborde">10</span>):</code>
+<code class="language-python">        for j in range(<span class="conborde">10</span>):</code>
 </pre>
             </div>
           </li>
           <li>La separación entre cruces (60, tanto en horizontal como en vertical)
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j+40, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j+40, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{<span class="conborde">60</span> * j}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span>*j + 40}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{<span class="conborde">60</span>*j + 40}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span> * j}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
           <li>El tamaño de las cruces (40, tanto en horizontal como en vertical)
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+<span class="conborde">40</span>, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+<span class="conborde">40</span>, y1=60*i, x2=60*j, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + <span class="conborde">40</span>}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + <span class="conborde">40</span>}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
@@ -821,55 +839,60 @@ Y:     40 100  160  220  280 --> 60*i+40
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_2.png" alt="SVG Ficheros (3) 2 2" title="SVG Ficheros (3) 2 2" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 2. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(15):
-    for j in range(30):
-        document["imagen"] &lt;= svg.line(x1=20*j, y1=20*i, x2=20*j+15, y2=20*i+15,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=20*j+15, y1=20*i, x2=20*j, y2=20*i+15,
-                                       stroke="black", stroke_width=1)
+ruta = "svg_ficheros_3_2_2.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-2. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(15):
+        for j in range(30):
+            print(f"      &lt;line x1=\"{20 * j}\" y1=\"{20 * i}\" x2=\"{20*j + 15}\" "
+                  f"y2=\"{20*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{20*j + 15}\" y1=\"{20 * i}\" x2=\"{20 * j}\" "
+                  f"y2=\"{20*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_2.png" alt="SVG Ficheros (3) 2 2" title="SVG Ficheros (3) 2 2" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
 
         <p>Este ejercicio es muy similar al anterior. La diferencia con respecto al anterior es que las cruces son más pequeñas y hay más cruces.</p>
 
-        <p>Si el código del ejercicioanterior era:</p>
+        <p>Si el código del ejercicio anterior era:</p>
 
         <div class="codigo">
           <pre class="line-numbers">
-<code class="language-python">for i in range(5):
-    for j in range(10):
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+40, y2=60*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+40, y1=60*i, x2=60*j, y2=60*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(5):
+        for j in range(10):
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + 40}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 40}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
 
@@ -892,20 +915,24 @@ for i in range(15):
           <li>La separación entre cruces, de 60 a 20, tanto en horizontal como en vertical
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j+40, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j+40, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{<span class="conborde">60</span> * j}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span>*j + 40}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{<span class="conborde">60</span>*j + 40}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span> * j}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
           <li>El tamaño de las cruces, de 40 a 15, tanto en horizontal como en vertical
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+<span class="conborde">40</span>, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+<span class="conborde">40</span>, y1=60*i, x2=60*j, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + <span class="conborde">40</span>}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + <span class="conborde">40</span>}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
@@ -915,12 +942,14 @@ for i in range(15):
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(15):
-    for j in range(30):
-        document["imagen"] &lt;= svg.line(x1=20*j, y1=20*i, x2=20*j+15, y2=20*i+15,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=20*j+15, y1=20*i, x2=20*j, y2=20*i+15,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(15):
+        for j in range(30):
+            print(f"      &lt;line x1=\"{20 * j}\" y1=\"{20 * i}\" x2=\"{20*j + 15}\" "
+                  f"y2=\"{20*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{20*j + 15}\" y1=\"{20 * i}\" x2=\"{20 * j}\" "
+                  f"y2=\"{20*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -930,39 +959,42 @@ for i in range(15):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_3.png" alt="SVG Ficheros (3) 2 3" title="SVG Ficheros (3) 2 3" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 3. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(7):
-    for j in range(15):
-        document["imagen"] &lt;= svg.line(x1=40*j, y1=40*i, x2=40*j+40, y2=40*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=40*j+40, y1=40*i, x2=40*j, y2=40*i+40,
-                                       stroke="black", stroke_width=1)
+ruta = "svg_ficheros_3_2_3.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-3. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(7):
+        for j in range(15):
+            print(f"      &lt;line x1=\"{40 * j}\" y1=\"{40 * i}\" x2=\"{40*j + 40}\" "
+                  f"y2=\"{40*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{40*j + 40}\" y1=\"{40 * i}\" x2=\"{40 * j}\" "
+                  f"y2=\"{40*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_3.png" alt="SVG Ficheros (3) 2 3" title="SVG Ficheros (3) 2 3" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -978,12 +1010,14 @@ for i in range(7):
 
         <div class="codigo">
           <pre class="line-numbers">
-<code class="language-python">for i in range(5):
-    for j in range(10):
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+40, y2=60*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+40, y1=60*i, x2=60*j, y2=60*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(5):
+        for j in range(10):
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + 40}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 40}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
 
@@ -1006,20 +1040,24 @@ for i in range(7):
           <li>La separación entre cruces, de 60 a 40, tanto en horizontal como en vertical
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j+40, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=<span class="conborde">60</span>*j+40, y1=<span class="conborde">60</span>*i, x2=<span class="conborde">60</span>*j, y2=<span class="conborde">60</span>*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{<span class="conborde">60</span> * j}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span>*j + 40}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{<span class="conborde">60</span>*j + 40}\" y1=\"{<span class="conborde">60</span> * i}\" x2=\"{<span class="conborde">60</span> * j}\" "
+                  f"y2=\"{<span class="conborde">60</span>*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
           <li>El tamaño de las cruces sigue siendo de 40, tanto en horizontal como en vertical
             <div class="codigo">
               <pre class="line-numbers" data-start="3">
-<code class="language-python">        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i, x2=60*j+<span class="conborde">40</span>, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+<span class="conborde">40</span>, y1=60*i, x2=60*j, y2=60*i+<span class="conborde">40</span>,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60 * i}\" x2=\"{60*j + <span class="conborde">40</span>}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + <span class="conborde">40</span>}\" y1=\"{60 * i}\" x2=\"{60 * j}\" "
+                  f"y2=\"{60*i + <span class="conborde">40</span>}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
             </div>
           </li>
@@ -1029,12 +1067,14 @@ for i in range(7):
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(7):
-    for j in range(15):
-        document["imagen"] &lt;= svg.line(x1=40*j, y1=40*i, x2=40*j+40, y2=20*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=40*j+40, y1=40*i, x2=40*j, y2=40*i+40,
-                                       stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(7):
+        for j in range(15):
+            print(f"      &lt;line x1=\"{40 * j}\" y1=\"{40 * i}\" x2=\"{40*j + 40}\" "
+                  f"y2=\"{40*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{40*j + 40}\" y1=\"{40 * i}\" x2=\"{40 * j}\" "
+                  f"y2=\"{40*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -1044,38 +1084,42 @@ for i in range(7):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_4.png" alt="SVG Ficheros (3) 2 4" title="SVG Ficheros (3) 2 4" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 4. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(8):
-        document["imagen"] &lt;= svg.line(x1=40*j+20, y1=40*i, x2=40*j+20, y2=40*i+20,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=40*j+10, y1=40*i+10, x2=40*j+30, y2=40*i+10,
-                                       stroke="black", stroke_width=1)
-  &lt;/script&gt;
-&lt;/head&gt;
+ruta = "svg_ficheros_3_2_4.html"
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-4. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(8):
+            print(f"      &lt;line x1=\"{40*j + 20}\" y1=\"{40 * i}\" x2=\"{40*j + 20}\" "
+                  f"y2=\"{40*i + 20}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{40*j + 10}\" y1=\"{40*i + 10}\" x2=\"{40*j + 30}\" "
+                  f"y2=\"{40*i + 10}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_4.png" alt="SVG Ficheros (3) 2 4" title="SVG Ficheros (3) 2 4" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1194,12 +1238,14 @@ Y:    10   50   90  130  170 --> 40*i+10
 
         <div class="codigo">
           <pre>
-<code class="language-python">for i in range(6):
-    for j in range(8):
-        document["imagen"] &lt;= svg.line(x1=40*j+20, y1=40*i, x2=40*j+20, y2=40*i+20,
-                                      stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=40*j+10, y1=40*i+10, x2=40*j+30, y2=40*i+10,
-                                      stroke="black", stroke_width=1)</code>
+<code class="language-python">    for i in range(6):
+        for j in range(8):
+            print(f"      &lt;line x1=\"{40*j + 20}\" y1=\"{40 * i}\" x2=\"{40*j + 20}\" "
+                  f"y2=\"{40*i + 20}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{40*j + 10}\" y1=\"{40*i + 10}\" x2=\"{40*j + 30}\" "
+                  f"y2=\"{40*i + 10}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -1209,42 +1255,48 @@ Y:    10   50   90  130  170 --> 40*i+10
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_5.png" alt="SVG Ficheros (3) 2 5" title="SVG Ficheros (3) 2 5" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 5. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(11):
-        document["imagen"] &lt;= svg.line(x1=50*j+10, y1=50*i, x2=50*j+50, y2=50*i+10,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=50*j+50, y1=50*i+10, x2=50*j+40, y2=50*i+50,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=50*j+40, y1=50*i+50, x2=50*j, y2=50*i+40,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=50*j, y1=50*i+40, x2=50*j+10, y2=50*i,
-                                       stroke="black", stroke_width=1)
-  &lt;/script&gt;
-&lt;/head&gt;
+ruta = "svg_ficheros_3_2_5.html"
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-5. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(11):
+            print(f"      &lt;line x1=\"{50*j + 10}\" y1=\"{50 * i}\" x2=\"{50*j + 50}\" "
+                  f"y2=\"{50*i + 10}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{50*j + 50}\" y1=\"{50*i + 10}\" x2=\"{50*j + 40}\" "
+                  f"y2=\"{50*i + 50}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{50*j + 40}\" y1=\"{50*i + 50}\" x2=\"{50 * j}\" "
+                  f"y2=\"{50*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{50*j}\" y1=\"{50*i + 40}\" x2=\"{50*j + 10}\" "
+                  f"y2=\"{50 * i}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_5.png" alt="SVG Ficheros (3) 2 5" title="SVG Ficheros (3) 2 5" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1255,50 +1307,60 @@ for i in range(6):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_6.png" alt="SVG Ficheros (3) 2 6" title="SVG Ficheros (3) 2 6" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 6. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(4):
-    for j in range(9):
-        document["imagen"] &lt;= svg.line(x1=60*j+30, y1=60*i, x2=60*j+30, y2=60*i+15,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+30, y1=60*i+45, x2=60*j+30, y2=60*i+60,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=60*i+30, x2=60*j+15, y2=60*i+30,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+45, y1=60*i+30, x2=60*j+60, y2=60*i+30,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+30, y1=60*i+15, x2=60*j+45, y2=60*i+30,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+45, y1=60*i+30, x2=60*j+30, y2=60*i+45,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+30, y1=60*i+45, x2=60*j+15, y2=60*i+30,
-                                       stroke="black", stroke_width=1)
-        document["imagen"] &lt;= svg.line(x1=60*j+15, y1=60*i+30, x2=60*j+30, y2=60*i+15,
-                                       stroke="black", stroke_width=1)
-  &lt;/script&gt;
-&lt;/head&gt;
+ruta = "svg_ficheros_3_2_6.html"
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 2-6. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(4):
+        for j in range(9):
+            print(f"      &lt;line x1=\"{60*j + 30}\" y1=\"{60 * i}\" x2=\"{60*j + 30}\" "
+                  f"y2=\"{60*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 30}\" y1=\"{60*i + 45}\" x2=\"{60*j + 30}\" "
+                  f"y2=\"{60*i + 60}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"{60*i + 30}\" x2=\"{60*j + 15}\" "
+                  f"y2=\"{60*i + 30}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 45}\" y1=\"{60*i + 30}\" x2=\"{60*j + 60}\" "
+                  f"y2=\"{60*i + 30}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 30}\" y1=\"{60*i + 15}\" x2=\"{60*j + 45}\" "
+                  f"y2=\"{60*i + 30}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 45}\" y1=\"{60*i + 30}\" x2=\"{60*j + 30}\" "
+                  f"y2=\"{60*i + 45}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 30}\" y1=\"{60*i + 45}\" x2=\"{60*j + 15}\" "
+                  f"y2=\"{60*i + 30}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+            print(f"      &lt;line x1=\"{60*j + 15}\" y1=\"{60*i + 30}\" x2=\"{60*j + 30}\" "
+                  f"y2=\"{60*i + 15}\" stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
+
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_2_6.png" alt="SVG Ficheros (3) 2 6" title="SVG Ficheros (3) 2 6" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1314,37 +1376,39 @@ for i in range(4):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_1.png" alt="SVG Ficheros (3) 3 1" title="SVG Ficheros (3) 3 1" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 1. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(6):
-        document["imagen"] &lt;= svg.line(x1=120*j, y1=0, x2=120*i, y2=300,
-                                       stroke="black", stroke_width=1)
+ruta = "svg_ficheros_3_3_1.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-1. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(6):
+            print(f"      &lt;line x1=\"{120 * j}\" y1=\"0\" x2=\"{120*i}\" y2=\"300\" "
+                  f"stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_1.png" alt="SVG Ficheros (3) 3 1" title="SVG Ficheros (3) 3 1" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1355,37 +1419,39 @@ for i in range(6):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_2.png" alt="SVG Ficheros (3) 3 2" title="SVG Ficheros (3) 3 2" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 2. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(11):
-    for j in range(11):
-        document["imagen"] &lt;= svg.line(x1=60*j, y1=0, x2=60*i, y2=300,
-                                       stroke="black", stroke_width=1)
+ruta = "svg_ficheros_3_3_2.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-2. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(11):
+        for j in range(11):
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"0\" x2=\"{60*i}\" y2=\"300\" "
+                  f"stroke=\"black\" stroke-width=\"1\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_2.png" alt="SVG Ficheros (3) 3 2" title="SVG Ficheros (3) 3 2" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1396,39 +1462,40 @@ for i in range(11):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_3.png" alt="SVG Ficheros (3) 3 3" title="SVG Ficheros (3) 3 3" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 3. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(12):
-        document["imagen"] &lt;= svg.circle(cx=50*j, cy=50*i, r=5,
-                                         fill="black")
-        document["imagen"] &lt;= svg.circle(cx=50*j+25, cy=50*i+25, r=5,
-                                         fill="red")
+ruta = "svg_ficheros_3_3_3.html"
 
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-3. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(12):
+            print(f"      &lt;circle cx=\"{50 * j}\" cy=\"{50 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)
+            print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
+                  f"fill=\"red\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_3.png" alt="SVG Ficheros (3) 3 3" title="SVG Ficheros (3) 3 3" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1439,42 +1506,42 @@ for i in range(6):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_4.png" alt="SVG Ficheros (3) 3 4" title="SVG Ficheros (3) 3 4" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 4. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(6):
-    for j in range(12):
-        document["imagen"] &lt;= svg.circle(cx=50*j, cy=50*i, r=5,
-                                         fill="black")
+ruta = "svg_ficheros_3_3_4.html"
 
-for i in range(5):
-    for j in range(11):
-        document["imagen"] &lt;= svg.circle(cx=50*j+25, cy=50*i+25, r=5,
-                                         fill="red")
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-4. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(6):
+        for j in range(12):
+            print(f"      &lt;circle cx=\"{50 * j}\" cy=\"{50 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)
+    for i in range(5):
+        for j in range(11):
+            print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
+                  f"fill=\"red\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-  &lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_4.png" alt="SVG Ficheros (3) 3 4" title="SVG Ficheros (3) 3 4" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1485,42 +1552,42 @@ for i in range(5):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_5.png" alt="SVG Ficheros (3) 3 5" title="SVG Ficheros (3) 3 5" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 5. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(7):
-    for j in range(13):
-        document["imagen"] &lt;= svg.circle(cx=50*j, cy=50*i, r=5,
-                                         fill="black")
+ruta = "svg_ficheros_3_3_5.html"
 
-for i in range(6):
-    for j in range(12):
-        document["imagen"] &lt;= svg.circle(cx=50*j+25, cy=50*i+25, r=5,
-                                         fill="black")
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-5. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(7):
+        for j in range(13):
+            print(f"      &lt;circle cx=\"{50 * j}\" cy=\"{50 * i}\" r=\"5\" fill=\"black\" />",
+                  file=fichero)
+    for i in range(6):
+        for j in range(12):
+            print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
+                  f"fill=\"black\" />", file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-  &lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_5.png" alt="SVG Ficheros (3) 3 5" title="SVG Ficheros (3) 3 5" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1531,41 +1598,44 @@ for i in range(6):
         <table class="ejemplo">
           <tbody>
             <tr>
+              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_6.png" alt="SVG Ficheros (3) 3 6" title="SVG Ficheros (3) 3 6" width="624" height="324" /></td>
               <td>
                 <pre>
-<code class="language-markup">&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;SVG (4) 2 6. Ejercicios SVG (4). Brython. Python. Bartolomé Sintes Marco&lt;/title&gt;
-  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
-  &lt;script type="text/python3"&gt;
-from browser import document
-import browser.svg as svg
+<code class="language-python">import webbrowser
 
-for i in range(5):
-    for j in range(10):
-        document["imagen"] &lt;= svg.rect(x=60*j, y=60*i, width=40, height=40,
-                                       stroke="black", stroke_width=1, fill="none")
+ruta = "svg_ficheros_3_3_6.html"
 
-for i in range(4):
-    for j in range(9):
-        document["imagen"] &lt;= svg.rect(x=60*j+30, y=60*i+30, width=40, height=40,
-                                       stroke="black", stroke_width=1, fill="none")
-  &lt;/script&gt;
-&lt;/head&gt;
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html>", file=fichero)
+    print("&lt;html lang=\"es\">", file=fichero)
+    print("  &lt;head>", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
+    print("    &lt;title>Ficheros (3) 3-6. SVG. Ejercicios. Python&lt;/title>", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+          file=fichero)
+    print("  &lt;/head>", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body>", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"620\" height=\"320\" viewBox=\"-10 -10 620 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\">", file=fichero)
+    for i in range(5):
+        for j in range(10):
+            print(f"      &lt;rect x=\"{60 * j}\" y=\"{60 * i}\" width=\"40\" "
+                  f"height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
+                  file=fichero)
+    for i in range(4):
+        for j in range(9):
+            print(f"      &lt;rect x=\"{60*j + 30}\" y=\"{60*i + 30}\" width=\"40\" "
+                  f"height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
+                  file=fichero)
+    print("    &lt;/svg>", file=fichero)
+    print("  &lt;/body>", file=fichero)
+    print("&lt;/html>", file=fichero)
 
-&lt;body onload="brython()"&gt;
-  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="620" height="320" viewBox="-10 -10 620 320"
-    style="border: black 1px solid" id="imagen"&gt;
-  &lt;/svg&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
+    webbrowser.open(ruta)</code>
 </pre>
               </td>
-              <td><img src="../img/ejercicios/svg_ficheros_3/svg_ficheros_3_3_6.png" alt="SVG Ficheros (3) 3 6" title="SVG Ficheros (3) 3 6" width="624" height="324" /></td>
             </tr>
           </tbody>
         </table>
@@ -1573,7 +1643,7 @@ for i in range(4):
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 10 de abril de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 12 de abril de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
