@@ -21,6 +21,17 @@
 
       <h2>SVG - Ficheros (3)</h2>
 
+      <h3><a href="ej_svg_ficheros_3.html">Enunciados</a></h3>
+      <div class="toc">
+        <ul>
+          <li><a href="ej_svg_ficheros_3.html#introduccion">Introducción</a></li>
+          <li><a href="ej_svg_ficheros_3.html#ejercicio-1">Ejercicio 1</a></li>
+          <li><a href="ej_svg_ficheros_3.html#ejercicio-2">Ejercicio 2</a></li>
+          <li><a href="ej_svg_ficheros_3.html#ejercicio-3">Ejercicio 3</a></li>
+        </ul>
+      </div>
+
+      <h3>Soluciones</h3>
       <div class="toc">
         <ul>
           <li><a href="#ejercicio-1">Ejercicio 1</a><br />
@@ -48,7 +59,7 @@
       </div>
     </nav>
 
-    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_svg_brython_3.html">ejercicios SVG Ficheros (3)</a>.</p>
+    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej_svg_ficheros_3.html">ejercicios SVG Ficheros (3)</a>.</p>
 
     <section id="ejercicio-1">
       <h2>Gráficos SVG Ficheros (3) - 1</h2>
@@ -271,7 +282,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(4):
         for j in range(8):
             print(f"      &lt;circle cx=\"{60*j + 60}\" cy=\"{60*i + 60}\" r=\"60\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -331,7 +342,7 @@ Y:    60  120  180  240 --> 60*i + 60
 <code class="language-python">    for i in range(4):
         for j in range(8):
             print(f"      &lt;circle cx=\"{60*j + 60}\" cy=\"{60*i + 60}\" r=\"60\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -365,7 +376,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(4):
         for j in range(12):
             print(f"      &lt;rect x=\"{40 * j}\" y=\"{40 * i}\" width=\"20\" height=\"20\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -425,7 +436,7 @@ Y:     0   40   80  120 --> 40*i
 <code class="language-python">    for i in range(4):
         for j in range(12):
             print(f"      &lt;rect x=\"{40 * j}\" y=\"{40 * i}\" width=\"20\" height=\"20\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -460,7 +471,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(4):
         for j in range(20):
             print(f"      &lt;rect x=\"{30 * j}\" y=\"{80 * i}\" width=\"20\" height=\"20\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -520,7 +531,7 @@ Y:     0   80  160  240 --> 80*i
 <code class="language-python">    for i in range(4):
         for j in range(20):
             print(f"      &lt;rect x=\"{30 * j}\" y=\"{80 * i}\" width=\"20\" height=\"20\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -554,7 +565,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(6):
         for j in range(12):
             print(f"      &lt;rect x=\"{50 * j}\" y=\"{50 * i}\" width=\"46\" height=\"46\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -612,7 +623,7 @@ Y:     0   50  100  150  200  250 --> 50*i
 <code class="language-python">    for i in range(6):
         for j in range(12):
             print(f"      &lt;rect x=\"{50 * j}\" y=\"{50 * i}\" width=\"46\" height=\"46\" "
-                  f"stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
+                  "stroke=\"black\" stroke-width=\"1\" fill=\"none\" />", file=fichero)</code>
 </pre>
         </div>
       </section>
@@ -1287,7 +1298,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
             print(f"      &lt;line x1=\"{50*j + 40}\" y1=\"{50*i + 50}\" x2=\"{50 * j}\" "
                   f"y2=\"{50*i + 40}\" stroke=\"black\" stroke-width=\"1\" />",
                   file=fichero)
-            print(f"      &lt;line x1=\"{50*j}\" y1=\"{50*i + 40}\" x2=\"{50*j + 10}\" "
+            print(f"      &lt;line x1=\"{50 * j}\" y1=\"{50*i + 40}\" x2=\"{50*j + 10}\" "
                   f"y2=\"{50 * i}\" stroke=\"black\" stroke-width=\"1\" />",
                   file=fichero)
     print("    &lt;/svg>", file=fichero)
@@ -1399,9 +1410,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(6):
         for j in range(6):
-            print(f"      &lt;line x1=\"{120 * j}\" y1=\"0\" x2=\"{120*i}\" y2=\"300\" "
-                  f"stroke=\"black\" stroke-width=\"1\" />",
-                  file=fichero)
+            print(f"      &lt;line x1=\"{120 * j}\" y1=\"0\" x2=\"{120 * i}\" y2=\"300\" "
+                  "stroke=\"black\" stroke-width=\"1\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -1442,9 +1452,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("      style=\"border: black 1px solid\">", file=fichero)
     for i in range(11):
         for j in range(11):
-            print(f"      &lt;line x1=\"{60 * j}\" y1=\"0\" x2=\"{60*i}\" y2=\"300\" "
-                  f"stroke=\"black\" stroke-width=\"1\" />",
-                  file=fichero)
+            print(f"      &lt;line x1=\"{60 * j}\" y1=\"0\" x2=\"{60 * i}\" y2=\"300\" "
+                  "stroke=\"black\" stroke-width=\"1\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -1488,7 +1497,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
             print(f"      &lt;circle cx=\"{50 * j}\" cy=\"{50 * i}\" r=\"5\" fill=\"black\" />",
                   file=fichero)
             print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
-                  f"fill=\"red\" />", file=fichero)
+                  "fill=\"red\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -1534,7 +1543,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(5):
         for j in range(11):
             print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
-                  f"fill=\"red\" />", file=fichero)
+                  "fill=\"red\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -1580,7 +1589,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(6):
         for j in range(12):
             print(f"      &lt;circle cx=\"{50*j + 25}\" cy=\"{50*i + 25}\" r=\"5\" "
-                  f"fill=\"black\" />", file=fichero)
+                  "fill=\"black\" />", file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
     print("&lt;/html>", file=fichero)
@@ -1622,12 +1631,12 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     for i in range(5):
         for j in range(10):
             print(f"      &lt;rect x=\"{60 * j}\" y=\"{60 * i}\" width=\"40\" "
-                  f"height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
+                  "height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
                   file=fichero)
     for i in range(4):
         for j in range(9):
             print(f"      &lt;rect x=\"{60*j + 30}\" y=\"{60*i + 30}\" width=\"40\" "
-                  f"height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
+                  "height=\"40\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" />",
                   file=fichero)
     print("    &lt;/svg>", file=fichero)
     print("  &lt;/body>", file=fichero)
@@ -1643,7 +1652,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 13 de abril de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 24 de abril de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
