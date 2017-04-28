@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programación con Python       */
 /*                                          */
-/* 27 de abril de 2017                      */
+/* 28 de abril de 2017                      */
 /*                                          */
 
 /* CSS común */
@@ -510,6 +510,7 @@ div.diapo p.control {
 .css-funcion      { color: #4700FF; }
 
 /* Estilo para Python imitando a IDLE */
+.idle-prompt { color: #770000; }
 .idle-resp   { color: #0000FF; }
 .idle-rese   { color: #FF7700; }
 .idle-cade   { color: #00AA00; }

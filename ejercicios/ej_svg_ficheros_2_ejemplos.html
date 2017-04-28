@@ -43,7 +43,8 @@
           <tr>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_1_1.png" alt="SVG Brython (2) 0 1 Enunciado" title="SVG Brython (2) 0 1 Enunciado" width="324" height="324" /></td>
             <td>
-              <pre><code class="language-markup">&lt;!DOCTYPE html>
+              <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
   &lt;meta charset="utf-8" />
@@ -103,14 +104,16 @@ Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
         </li>
         <li>Por tanto el bucle que generaría las líneas sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">for i in range(11):
+            <pre>
+<code class="language-python">for i in range(11):
     print(f"     &lt;line x1={30*i} y1=0 x2={30*i} y2=300 stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
           </div>
         </li>
         <li>Y el programa completo sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">import webbrowser
+            <pre>
+<code class="language-python">import webbrowser
 
 ruta = "svg_ficheros_2_ejemplo_1.html"
 
@@ -151,7 +154,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
           <tr>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_2_1.png" alt="SVG Brython (2) 0 2 Enunciado" title="SVG Brython (2) 0 2 Enunciado" width="324" height="324" /></td>
             <td>
-              <pre><code class="language-markup">&lt;!DOCTYPE html>
+              <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
   &lt;meta charset="utf-8" />
@@ -212,14 +216,16 @@ Y:   150    90    30   -30   -90  -150 -->  150-60*i
         </li>
         <li>Por tanto el bucle que generaría las líneas sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">    for i in range(6):
+            <pre>
+<code class="language-python">    for i in range(6):
         print(f"     &lt;line x1=-150 y1={-150+60*i} x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
           </div>
         </li>
         <li>Y el programa completo sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">import webbrowser
+            <pre>
+<code class="language-python">import webbrowser
 
 ruta = "svg_ficheros_2_ejemplo_2.html"
 
@@ -260,7 +266,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
           <tr>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_3_1.png" alt="SVG Brython (2) 0 3 Enunciado" title="SVG Brython (2) 0 3 Enunciado" width="324" height="324" /></td>
             <td>
-              <pre><code class="language-markup">&lt;!DOCTYPE html>
+              <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
   &lt;meta charset="utf-8" />
@@ -312,14 +319,16 @@ Alto:   150   300   450 -->  150 + 150*i
         </li>
         <li>Por tanto el bucle que generaría los rectángulos sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">    for i in range(3):
+            <pre>
+<code class="language-python">    for i in range(3):
         print(f"     &lt;rect x={50+100*i} y=50 width={500-200*i} height={150+150*i} stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)</code>
 </pre>
           </div>
         </li>
         <li>Y el programa completo sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">import webbrowser
+            <pre>
+<code class="language-python">import webbrowser
 
 ruta = "svg_ficheros_2_ejemplo_3.html"
 
@@ -360,7 +369,8 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
           <tr>
             <td><img src="../img/ejercicios/svg_ficheros_2/svg_ficheros_0_4_1.png" alt="SVG Brython (2) 0 4 Enunciado" title="SVG Brython (2) 0 4 Enunciado" width="324" height="324" /></td>
             <td>
-              <pre><code class="language-markup">&lt;!DOCTYPE html>
+              <pre>
+<code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
   &lt;meta charset="utf-8" />
@@ -444,7 +454,8 @@ Y:   150    90    30   -30   -60  -->  150-60*i
 
         <li>Por tanto el bucle que generaría las líneas sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">    for i in range(5):
+            <pre>
+<code class="language-python">    for i in range(5):
         print(f"     &lt;line x1=-150 y1={-150+60*i} x2={150-60*i} y2=150 stroke=\"black\" stroke-width=1 />", file=fichero)
         print(f"     &lt;line x1={-150+60*i} y1=-150 x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
@@ -452,7 +463,8 @@ Y:   150    90    30   -30   -60  -->  150-60*i
         </li>
         <li>Y el programa completo sería el siguiente:
           <div class="codigo">
-            <pre><code class="language-python">import webbrowser
+            <pre>
+<code class="language-python">import webbrowser
 
 ruta = "svg_ficheros_2_ejemplo_4.html"
 
