@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programación con Python       */
 /*                                          */
-/* 25 de abril de 2017                      */
+/* 27 de abril de 2017                      */
 /*                                          */
 
 /* CSS común */
@@ -22,15 +22,8 @@ html {
   text-align: justify;
 }
 
-pre {
-  font-family: "Inconsolata", monospace;
-}
-
-.python-resul pre {
-  white-space: pre-wrap;
-}
-
 section {
+  clear: both;
   border-top: solid 2px black;
   margin-top: 1em;
   padding-top: 0;
@@ -42,6 +35,33 @@ section section {
 
 footer {
   margin-top: 2em;
+}
+
+h1 {
+  margin-left: 75px;
+  font-size: 200%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+h4 {
+  font-size: 105%;
+  font-weight: bold;
+}
+
+pre {
+  font-family: "Inconsolata", monospace;
+}
+
+.python-resul pre {
+  white-space: pre-wrap;
 }
 
 p.d {
@@ -77,7 +97,7 @@ p.i {
   clear: both;
 }
 
-.menu {
+.soft-menu {
   background-color: #D4D0C8;
   font-family: serif;
 }
@@ -97,30 +117,6 @@ p.resaltado {
   font-family: monospace;
   font-size: 120%;
   font-weight: bold;
-}
-
-h1 {
-  font-size: 200%;
-  text-align: center;
-  margin-left: 75px;
-}
-
-h1#indice {
-  margin-left: 150px;
-}
-
-h2 {
-  font-size: 120%;
-}
-
-h3 {
-  font-size: 105%;
-}
-
-h4 {
-  font-size: 100%;
-  font-weight: normal;
-  text-decoration: underline;
 }
 
 p {
@@ -345,62 +341,15 @@ div.diapo p.control {
   right: 0;
 }
 
-/* Clases para fragmentos de código en texto */
-
-/* Estilo para CSS imitando a Brackets */
-.css-sele         { color: #446FBD; font-weight: bold; }
-.css-prop         { color: #8757AD; font-weight: bold; }
-.css-valor        { color: #E88501; font-weight: bold; }
-.css-numero       { color: #8E8600; font-weight: bold; }
-.css-unidad       { color: #8E8600; font-weight: bold; }
-.css-pseudo       { color: #535353; font-weight: bold; }
-.css-arroba       { color: #8757AD; font-weight: bold; }
-
-/* Estilo para HTML imitando a Brackets */
-.html-eti        { color: #446FBD; font-weight: bold; }
-.html-atri       { color: #6D8600; font-weight: bold; }
-.html-atri-valor { color: #E88501; font-weight: bold; }
-
-/* Estilo para Python imitando a IDLE */
-.idle-prompt { color: #770000; }
-.idle-resp   { color: #0000FF; }
-.idle-rese   { color: #FF7700; }
-.idle-cade   { color: #00AA00; }
-.idle-erro   { color: #FF0000; }
-.idle-errbg  { background-color: #FC7674; }
-.idle-func   { color: #800080; }
-.idle-fundef { color: #0000FF; }
-.idle-come   { color: #FF0000; }
-.idle-menu   { background-color: #D4D0C8; font-family: serif;}
-.idle-otro   { color: black; }
-
-/* PYTHON */
-
-/* Para soluciones ejercicios for (2) y for (3) */
-
-.borde1 { border: black 2px solid; display: inline-block; padding: 5px;  margin: 5px;}
-.borde1b { border: black 2px dotted; display: inline-block; padding: 5px;  margin: 5px;}
-.borde1bb { border: black 2px dotted; display: block; padding: 5px;  margin: 5px;}
-.borde2 { border: black 3px dashed; display: inline-block; padding: 5px; }
-.borde3 { border: black 3px double; display: inline-block; padding: 5px; }
-.borde-transparente { border: white 3px dashed; display: block; padding: 5px;}
-.borde2 span {line-height: 100%; }
-
-/* Menú  */
-
-@media print {
-  html {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 /* Pantallas pequeñas */
-
 @media screen and (max-width: 768px) {
   html {
     margin-left: 1em;
     margin-right: 1em;
+  }
+
+  h1#indice {
+    margin-left: 140px;
   }
 
   nav {
@@ -539,3 +488,45 @@ div.diapo p.control {
     page-break-inside:avoid;
   }
 }
+
+/* CSS específico apuntes Python */
+
+/* Clases para fragmentos de código en texto */
+
+/* Estilo para HTML imitando a Brackets */
+.html-eti        { color: #446FBD; }
+.html-atri       { color: #6D8600; }
+.html-atri-valor { color: #E88501; }
+
+/* Estilo para CSS imitando a Brackets */
+.css-sele         { color: #446FBD; }
+.css-prop         { color: #8757AD; }
+.css-feature      { color: #8757AD; }
+.css-valor        { color: #E88501; }
+.css-numero       { color: #8E8600; }
+.css-unidad       { color: #8E8600; }
+.css-pseudo       { color: #535353; }
+.css-arroba       { color: #8757AD; }
+.css-funcion      { color: #4700FF; }
+
+/* Estilo para Python imitando a IDLE */
+.idle-resp   { color: #0000FF; }
+.idle-rese   { color: #FF7700; }
+.idle-cade   { color: #00AA00; }
+.idle-erro   { color: #FF0000; }
+.idle-errbg  { background-color: #FC7674; }
+.idle-func   { color: #800080; }
+.idle-fundef { color: #0000FF; }
+.idle-come   { color: #FF0000; }
+.idle-menu   { background-color: #D4D0C8; font-family: serif;}
+.idle-otro   { color: black; }
+
+/* Para soluciones ejercicios for (2) y for (3) */
+.borde1 { border: black 2px solid; display: inline-block; padding: 5px;  margin: 5px;}
+.borde1b { border: black 2px dotted; display: inline-block; padding: 5px;  margin: 5px;}
+.borde1bb { border: black 2px dotted; display: block; padding: 5px;  margin: 5px;}
+.borde2 { border: black 3px dashed; display: inline-block; padding: 5px; }
+.borde3 { border: black 3px double; display: inline-block; padding: 5px; }
+.borde-transparente { border: white 3px dashed; display: block; padding: 5px;}
+.borde2 span {line-height: 100%; }
+
