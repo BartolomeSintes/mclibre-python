@@ -437,18 +437,28 @@ div.diapo p.control {
     text-decoration: none;
   }
 
-  nav ul, nav ol {
+  nav ul {
     margin-top: 0;
     padding-left: 1em;
+  }
+
+  nav ol {
+    margin-top: 0;
+    padding-left: 2em;
   }
 
   nav ul li, nav ol li {
     margin: 0 0 0.1em 0.1em;
   }
 
-  nav ul ul, nav ol ol{
+  nav ul ul {
     margin: 0;
     padding-left: 0.5em;
+  }
+
+  nav ul ol {
+    margin: 0;
+    padding-left: 1em;
   }
 
   nav ul ul li, nav ol ol li {
