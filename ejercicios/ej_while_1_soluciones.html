@@ -116,23 +116,29 @@ print("Programa terminado")</code>
 
       <div class="codigo">
         <pre>
-<code class="language-python">objetivo = int(input("Escriba la cantidad de números a solicitar: "))
+<code class="language-python">objetivo = int(input("Escriba la cantidad de números positivos a solicitar: "))
 while objetivo &lt; 1:
     objetivo = int(input("La cantidad debe ser mayor que 0. Inténtelo de nuevo: "))
 
 print()
 numero = int(input("Escriba un número: "))
-cantidad = 1
+total = 1
+if numero > 0:
+    cantidad = 1
+else:
+    cantidad = 0
 
 while cantidad &lt; objetivo:
-    cantidad += 1
-    segundo = int(input("Escriba otro número: "))
+    numero = int(input("Escriba otro número: "))
+    if numero > 0:
+        cantidad += 1
+    total += 1
 
 print()
 if cantidad == 1:
     print("Ha escrito 1 número positivo.")
 else:
-    print("Ha escrito", cantidad, "números positivos.")
+    print("Ha escrito", total, "números,", objetivo, "de ellos positivos.")
 print("Programa terminado")</code>
 </pre>
       </div>
@@ -288,7 +294,7 @@ print("Programa terminado")</code>
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 8 de mayo de 2016</p>
+      <p class="ultmod">Última modificación de esta página: 1 de mayo de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
