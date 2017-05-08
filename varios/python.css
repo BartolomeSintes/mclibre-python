@@ -1,15 +1,15 @@
 @charset "utf-8";
 
-/* INICIACIÓN A LA PROGRAMACIÓN CON PYTHON  */
+/* INICIACION A LA PROGRAMACION CON PYTHON  */
 /* Bartolome Sintes Marco                   */
 /* http://www.mclibre.org                   */
 /*                                          */
-/* CSS curso: Programación con Python       */
+/* CSS curso: Programacion con Python       */
 /*                                          */
-/* 6 de mayo de 2017                        */
+/* 8 de mayo de 2017                        */
 /*                                          */
 
-/* CSS común */
+/* CSS comun */
 
 @font-face {
   font-family: "Inconsolata";
@@ -217,42 +217,6 @@ td {
   vertical-align: top;
 }
 
-table.ejemplo {
-  width: 97%;
-  border-spacing: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-table.ejemplo td {
-  width: auto;
-  border: black 2px solid;
-  padding: 3px 5px 3px;
-  background-color: white;
-}
-
-table.ejemplo p {
-  margin: 0 0 1px;
-}
-
-table.ejemplo td.python-resul {
-  color: blue;
-}
-
-table.ejemplo td.python-console {
-  background-color: black;
-  color: white;
-}
-
-table.ejemplo td.sinborde {
-  border: none;
-}
-
-table.ejemplo pre {
-  line-height: 120%;
-}
-
 col.centrado {
   padding: 0 10px;
   text-align: center;
@@ -311,7 +275,7 @@ p.enlace-ejercicio {
   text-align: right;
 }
 
-/* Para ejemplos de ejecución de código */
+/* Para ejemplos de ejecucion de codigo */
 div.diapo {
   overflow: hidden;
   position: relative;
@@ -341,7 +305,7 @@ div.diapo p.control {
   right: 0;
 }
 
-/* Para ejemplos de ejecución de código */
+/* Para ejemplos de ejecucion de codigo */
 div.diapo2 {
   overflow: hidden;
   position: relative;
@@ -609,9 +573,9 @@ div.filaflex pre {
   }
 }
 
-/* CSS específico apuntes Python */
+/* CSS especifico apuntes Python */
 
-/* Clases para fragmentos de código en texto */
+/* Clases para fragmentos de codigo en texto */
 
 /* Estilo para HTML imitando a Brackets */
 .html-eti        { color: #446FBD; }

@@ -158,35 +158,29 @@ print("+ ")</code>
               </div>
             </div>
           </li>
-          <li>Por un lado, cada línea de la figura está formada por varias estrellas. Eso nos dice que tendremos que escribir un bucle como este (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
+          <li>Por un lado, cada línea de la figura está formada por varias estrellas. Eso nos dice que tendremos que escribir un bucle como este (se han rodeado con un borde tanto el código que genera el dibujo como el propio dibujo):
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
-
-                      <div class="borde1">
-                        <pre>
+            <div class="filaflex nogrow">
+              <div class="codigo">
+                <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+                <div class="conborde">
+                  <pre>
 <code class="language-python">for j in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="ejercicio">
-                      <pre>
+                </div>
+              </div>
+
+              <div class="ejercicio">
+                <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
-<span class="idle-resp borde1">* * * * *</span>
+<div class="conborde">
+<span class="idle-resp">* * * * *</span>
+</div>
 </pre>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
           <li>Pero por otro lado, la figura contiene varias veces la misma línea. Eso nos dice que tendremos que escribir un bucle para generar varias líneas, es decir un bucle que contiene otro bucle (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
 

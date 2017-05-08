@@ -52,11 +52,9 @@
       <ul>
         <li>El siguiente programa ejecuta la función punto() cada vez que se hace clic en la ventana de tortuga. La función simplemente dibuja un punto en el lugar en el que se ha hecho clic.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -72,18 +70,15 @@ def punto(x, y):
 onscreenclick(punto)
 mainloop()</code>
 </pre>
-                </td>
-                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_1.png" width="466" height="238" /></p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_1.png" width="466" height="238" /></p></div>
+          </div>
         </li>
         <li>El siguiente programa ejecuta además la función cuadro() cada vez que se hace clic con el botón derecho. La función cuadro() simplemente dibuja un cuadro en el lugar en el que se ha hecho clic derecho.
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -109,18 +104,15 @@ onscreenclick(punto)
 onscreenclick(cuadro, 3)
 mainloop()</code>
 </pre>
-                </td>
-                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_2.png" width="466" height="238" /></p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_2.png" width="466" height="238" /></p></div>
+          </div>
         </li>
         <li>El siguiente programa ejecuta además las funciones punto() y cuadro() cada vez que se hace clic con el botón central del ratón. Para que se asocien las dos funciones al clic central, la segunda llamada incluye el tercer argumento <span class="idle-rese">True</span>.
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -148,11 +140,10 @@ onscreenclick(punto, 2)
 onscreenclick(cuadro, 2, True)
 mainloop()</code>
 </pre>
-                </td>
-                <td><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_3.png" width="466" height="238" /></p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><p class="captura"><img alt="Módulo turtle. Función onscreenclick()" src="../img/turtle/turtle_onscreenclick_3.png" width="466" height="238" /></p></div>
+          </div>
         </li>
       </ul>
     </section>
@@ -170,11 +161,9 @@ mainloop()</code>
       <ul>
         <li>El siguiente programa pone en marcha un temporizador que al cabo de un segundo llama a la función punto(). La función punto() dibuja un punto al azar en la ventana y vuelve a poner en marcha un temporizador, por lo que el programa no acaba nunca. Este programa no necesita llamar a la función mainloop(), puesto que el programa no responde a eventos de ratón o teclado.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from turtle import *
 from random import randint
 
@@ -192,11 +181,10 @@ def punto():
 
 ontimer(punto, 1000)</code>
 </pre>
-                </td>
-                <td><p class="captura"><img alt="Módulo turtle. Función ontimer()" src="../img/turtle/turtle_ontimer_1.png" width="466" height="238" /></p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><p class="captura"><img alt="Módulo turtle. Función ontimer()" src="../img/turtle/turtle_ontimer_1.png" width="466" height="238" /></p></div>
+          </div>
         </li>
       </ul>
     </section>
