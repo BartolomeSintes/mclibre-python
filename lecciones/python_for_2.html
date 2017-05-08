@@ -49,25 +49,22 @@
 
       <p>Se dice que las variables de los bucles son <strong>independientes</strong> cuando los valores que toma la variable de control del bucle interno <strong>no</strong> dependen del valor de la variable de control del bucle externo. Por ejemplo:</p>
 
-      <div class="diapo" style="height: 16em">
+      <div class="diapo2" style="height: 16em">
         <div id="Paso110">
           <p><strong>Ejemplo de bucle anidado (variables independientes)</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -79,21 +76,18 @@
         <div id="Paso111">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [<span class="conborde">0</span>, 1, 2]<span class="idle-func"></span>:
     for j in [0, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>Se ejecuta el bucle externo.</p>
 
@@ -108,21 +102,18 @@
         <div id="Paso112">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [<span class="conborde">0</span>, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -137,21 +128,18 @@
         <div id="Paso113">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp"><span class="conborde">i vale 0 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp"><span class="conborde">i vale 0 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -166,21 +154,18 @@
         <div id="Paso114">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [0, <span class="conborde">1</span>]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -195,21 +180,18 @@
         <div id="Paso115">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br /><span class="conborde">i vale 0 y j vale 1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br /><span class="conborde">i vale 0 y j vale 1</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -224,21 +206,18 @@
         <div id="Paso116">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [0, <span class="conborde">1</span>, 2]<span class="idle-func"></span>:
     for j in [0, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle interno, se retoma el bucle externo.</p>
 
@@ -253,21 +232,18 @@
         <div id="Paso117">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [<span class="conborde">0</span>, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -282,21 +258,18 @@
         <div id="Paso118">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 8</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br /><span class="conborde">i vale 1 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br /><span class="conborde">i vale 1 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -311,21 +284,18 @@
         <div id="Paso119">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 9</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [0, <span class="conborde">1</span>]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -341,21 +311,18 @@
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso
             10</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br /><span class="conborde">i vale 1 y j vale 1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br /><span class="conborde">i vale 1 y j vale 1</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -371,21 +338,18 @@
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso
             11</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [0, 1, <span class="conborde">2</span>]<span class="idle-func"></span>:
     for j in [0, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle, se retoma el bucle externo.</p>
 
@@ -401,21 +365,18 @@
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso
             12</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [<span class="conborde">0</span>, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -430,21 +391,18 @@
         <div id="Paso1113">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 13</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br /><span class="conborde">i vale 2 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br /><span class="conborde">i vale 2 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -459,21 +417,18 @@
         <div id="Paso1114">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 14</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for <span class="conborde">j</span> in [0, <span class="conborde">1</span>]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -488,21 +443,18 @@
         <div id="Paso1115">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 15</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br /><span class="conborde">i vale 2 y j vale 1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br /><span class="conborde">i vale 2 y j vale 1</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -517,21 +469,18 @@
         <div id="Paso1116">
           <p><strong>Ejemplo de bucle anidado (variables independientes) - Paso 16</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [0, 1, 2]:
     for j in [0, 1]:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle externo, el programa termina.</p>
 
@@ -551,47 +500,40 @@
 
       <p>El siguiente programa es equivalente al ejemplo anterior:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(3):
     for j in range(2):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-            </td>
-            <td>
-              <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <pre><span class="idle-resp">i vale 0 y j vale 0<br />i vale 0 y j vale 1<br />i vale 1 y j vale 0<br />i vale 1 y j vale 1<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Al escribir bucles anidados, hay que prestar atención al sangrado de las instrucciones, ya que ese sangrado indica a Python si una instrucción forma parte de un bloque u otro. En los tres siguientes programas la única diferencia es el sangrado de la última instrucción:</p>
 
-      <div class="diapo" style="height: 16em">
+      <div class="diapo2" style="height: 16em">
         <div id="Paso120">
           <p><strong>Ejemplo de sangrado en bucle anidado (1)</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 3</span> </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 3</span> </pre>
+            </div>
+          </div>
 
           <p>En este caso, la última instrucción forma parte del cuerpo del bucle interno. Por tanto el valor de i se escribe cada vez que se ejecuta el bucle interno.</p>
 
@@ -605,22 +547,19 @@
         <div id="Paso121">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [<span class="conborde">1</span>, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>Se ejecuta el bucle externo.</p>
 
@@ -635,22 +574,19 @@
         <div id="Paso122">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -665,22 +601,19 @@
         <div id="Paso123">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -695,22 +628,19 @@
         <div id="Paso124">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 <span class="conborde">1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 <span class="conborde">1</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (1).</p>
 
@@ -723,22 +653,19 @@
         <div id="Paso125">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -753,22 +680,19 @@
         <div id="Paso126">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -783,22 +707,19 @@
         <div id="Paso127">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 <span class="conborde">1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 <span class="conborde">1</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (1).</p>
 
@@ -811,22 +732,19 @@
         <div id="Paso128">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 8</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, <span class="conborde">2</span>, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle interno, se retoma el bucle externo.</p>
 
@@ -841,22 +759,19 @@
         <div id="Paso129">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 9</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">çfor i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -871,22 +786,19 @@
         <div id="Paso1210">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 10</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -901,22 +813,19 @@
         <div id="Paso1211">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 11</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 <span class="conborde">2</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 <span class="conborde">2</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (2).</p>
 
@@ -929,22 +838,19 @@
         <div id="Paso1212">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 12</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -959,22 +865,19 @@
         <div id="Paso1213">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 13</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -989,22 +892,19 @@
         <div id="Paso1214">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 14</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 <span class="conborde">2</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 <span class="conborde">2</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (2).</p>
 
@@ -1017,22 +917,19 @@
         <div id="Paso1215">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 15</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, 2, <span class="conborde">3</span>]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle, se retoma el bucle externo.</p>
 
@@ -1047,22 +944,19 @@
         <div id="Paso1216">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 16</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -1077,22 +971,19 @@
         <div id="Paso1217">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 17</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -1107,22 +998,19 @@
         <div id="Paso1218">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 18</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 <span class="conborde">3</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 <span class="conborde">3</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (3).</p>
 
@@ -1135,22 +1023,19 @@
         <div id="Paso1219">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 19</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -1165,22 +1050,19 @@
         <div id="Paso1220">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 20</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -1195,22 +1077,19 @@
         <div id="Paso1221">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 21</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 <span class="conborde">3</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 <span class="conborde">3</span></span></pre>
+            </div>
+          </div>
 
           <p>La segunda instrucción del bloque imprime el valor de i (3).</p>
 
@@ -1223,22 +1102,19 @@
         <div id="Paso1222">
           <p><strong>Ejemplo de sangrado en bucle anidado (1) - Paso 22</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
         print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 1 12 1 11 2 12 2 11 3 12 3</span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle externo, el programa termina.</p>
 
@@ -1248,26 +1124,23 @@
         </div>
       </div>
 
-      <div class="diapo" style="height: 16em">
+      <div class="diapo2" style="height: 16em">
         <div id="Paso130">
           <p><strong>Ejemplo de sangrado en bucle anidado (2)</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 11 12 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 11 12 3</span></pre>
+            </div>
+          </div>
 
           <p>En este caso, la última instrucción forma parte del cuerpo del bucle externo, pero no del interno. Por tanto el valor de i se escribe cada vez que se ha terminado de ejecutar el bucle interno.</p>
 
@@ -1281,22 +1154,19 @@
         <div id="Paso131">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [<span class="conborde">1</span>, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>Se ejecuta el bucle externo.</p>
 
@@ -1311,22 +1181,19 @@
         <div id="Paso132">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno y una instrucción <span class="idle-func">print</span>.</p>
 
@@ -1341,22 +1208,19 @@
         <div id="Paso133">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -1371,22 +1235,19 @@
         <div id="Paso134">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -1401,22 +1262,19 @@
         <div id="Paso135">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -1431,22 +1289,19 @@
         <div id="Paso136">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 <span class="conborde">1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 <span class="conborde">1</span></span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle interno, se ejecuta la siguiente instrucción, que imprime el valor de i (1).</p>
 
@@ -1459,22 +1314,19 @@
         <div id="Paso137">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, <span class="conborde">2</span>, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bloque de instrucciones que forman el bucle externo, se retoma el bucle externo.</p>
 
@@ -1489,22 +1341,19 @@
         <div id="Paso138">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 8</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta por segunda vez el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno y una instrucción <span class="idle-func">print</span>.</p>
 
@@ -1519,22 +1368,19 @@
         <div id="Paso139">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 9</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -1549,22 +1395,19 @@
         <div id="Paso1310">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 10</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -1579,22 +1422,19 @@
         <div id="Paso1311">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 11</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -1609,22 +1449,19 @@
         <div id="Paso1312">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 12</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 <span class="conborde">2</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 <span class="conborde">2</span></span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle interno, se ejecuta la siguiente instrucción, que imprime el valor de i (2).</p>
 
@@ -1637,22 +1474,19 @@
         <div id="Paso1313">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 13</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, 2, <span class="conborde">3</span>]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bloque de instrucciones que forman el bucle externo, se retoma el bucle externo.</p>
 
@@ -1667,22 +1501,19 @@
         <div id="Paso1314">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 14</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta por tercera vez el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno y una instrucción <span class="idle-func">print</span>.</p>
 
@@ -1697,22 +1528,19 @@
         <div id="Paso1315">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 15</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -1727,22 +1555,19 @@
         <div id="Paso1316">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 16</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -1757,22 +1582,19 @@
         <div id="Paso1317">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 17</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -1787,22 +1609,19 @@
         <div id="Paso1318">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 18</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 11 12 <span class="conborde">3</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 11 12 <span class="conborde">3</span></span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle interno, se ejecuta la siguiente instrucción, que imprime el valor de i (3).</p>
 
@@ -1815,22 +1634,19 @@
         <div id="Paso1319">
           <p><strong>Ejemplo de sangrado en bucle anidado (2) - Paso 19</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
     print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 1 11 12 2 11 12 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 1 11 12 2 11 12 3</span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle externo, el programa termina.</p>
 
@@ -1840,26 +1656,23 @@
         </div>
       </div>
 
-      <div class="diapo" style="height: 16em">
+      <div class="diapo2" style="height: 16em">
         <div id="Paso140">
           <p><strong>Ejemplo de sangrado en bucle anidado (3)</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 11 12 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 11 12 3</span></pre>
+            </div>
+          </div>
 
           <p>En este caso, la última instrucción no forma forma parte de ningún bucle. Por tanto el valor de i se escribe una sola vez, al terminarse de ejecutar el bucle externo.</p>
 
@@ -1873,22 +1686,19 @@ print(i, end=" ")</code>
         <div id="Paso141">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [<span class="conborde">1</span>, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>Se ejecuta el bucle externo.</p>
 
@@ -1903,22 +1713,19 @@ print(i, end=" ")</code>
         <div id="Paso142">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno.</p>
 
@@ -1933,22 +1740,19 @@ print(i, end=" ")</code>
         <div id="Paso143">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp"><span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -1963,22 +1767,19 @@ print(i, end=" ")</code>
         <div id="Paso144">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -1993,22 +1794,19 @@ print(i, end=" ")</code>
         <div id="Paso145">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -2023,22 +1821,19 @@ print(i, end=" ")</code>
         <div id="Paso146">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, <span class="conborde">2</span>, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bloque de instrucciones que forman el bucle externo, se retoma el bucle externo.</p>
 
@@ -2053,22 +1848,19 @@ print(i, end=" ")</code>
         <div id="Paso147">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta por segunda vez el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno.</p>
 
@@ -2083,22 +1875,19 @@ print(i, end=" ")</code>
         <div id="Paso148">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 8</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2113,22 +1902,19 @@ print(i, end=" ")</code>
         <div id="Paso149">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 9</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -2143,22 +1929,19 @@ print(i, end=" ")</code>
         <div id="Paso1410">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 10</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -2173,22 +1956,19 @@ print(i, end=" ")</code>
         <div id="Paso1411">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 11</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, 2, <span class="conborde">3</span>]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bloque de instrucciones que forman el bucle externo, se retoma el bucle externo.</p>
 
@@ -2203,22 +1983,19 @@ print(i, end=" ")</code>
         <div id="Paso1412">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 12</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [<span class="conborde">11</span>, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecuta por tercera vez el bloque de instrucciones del bucle externo, formado en este caso por el bucle interno.</p>
 
@@ -2233,22 +2010,19 @@ print(i, end=" ")</code>
         <div id="Paso1413">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 13</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 <span class="conborde">11</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 <span class="conborde">11</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2263,22 +2037,19 @@ print(i, end=" ")</code>
         <div id="Paso1414">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 14</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in [11, <span class="conborde">12</span>]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 11</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 11</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -2293,22 +2064,19 @@ print(i, end=" ")</code>
         <div id="Paso1415">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 15</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         <span class="conborde">print(j, end=" ")</span>
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 11 <span class="conborde">12</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 11 <span class="conborde">12</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
 
@@ -2323,22 +2091,19 @@ print(i, end=" ")</code>
         <div id="Paso1416">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 16</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 <span class="conborde">print(i, end=" ")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 11 12 <span class="conborde">3</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 11 12 <span class="conborde">3</span></span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle interno, se ejecuta la siguiente instrucción, que imprime el valor de i (3).</p>
 
@@ -2351,22 +2116,19 @@ print(i, end=" ")</code>
         <div id="Paso1417">
           <p><strong>Ejemplo de sangrado en bucle anidado (3) - Paso 17</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in [11, 12]:
         print(j, end=" ")
 print(i, end=" ")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">11 12 11 12 11 12 3</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">11 12 11 12 11 12 3</span></pre>
+            </div>
+          </div>
 
           <p>Una vez ejecutada la última instrucción, el programa termina.</p>
 
@@ -2382,19 +2144,17 @@ print(i, end=" ")</code>
 
       <p>En Python se puede incluso utilizar la misma variable en los dos bucles anidados porque Python las trata como si fueran dos variables distintas. Por ejemplo:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(3):
     print(f"i (externa) vale {i}")
     for i in range(2):
         print(f"i (interna) vale {i}")</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">i (externa) vale 0
 i (interna) vale 0
 i (interna) vale 1
@@ -2405,10 +2165,8 @@ i (externa) vale 2
 i (interna) vale 0
 i (interna) vale 1</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <p>De todas formas, este uso no se recomienda porque da lugar a programas difíciles de interpretar y además no es habitual en otros lenguajes de programación. Se aconseja utilizar siempre nombres de variables distintos.</p>
     </section>
@@ -2418,25 +2176,22 @@ i (interna) vale 1</span>
 
       <p>Se dice que las variables de los bucles son <strong>dependientes</strong> cuando los valores que toma la variable de control del bucle interno dependen del valor de la variable de control del bucle externo. Por ejemplo:</p>
 
-      <div class="diapo" style="height: 16em">
+      <div class="diapo2" style="height: 16em">
         <div id="Paso20">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br />i vale 3 y j vale 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br />i vale 3 y j vale 2</span></pre>
+            </div>
+          </div>
 
           <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -2449,21 +2204,18 @@ i (interna) vale 1</span>
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso
             1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [<span class="conborde">1</span>, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>Se ejecuta el bucle externo.</p>
 
@@ -2478,21 +2230,18 @@ i (interna) vale 1</span>
         <div id="Paso22">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -2509,21 +2258,18 @@ i (interna) vale 1</span>
         <div id="Paso23">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp"><span class="conborde">i vale 1 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp"><span class="conborde">i vale 1 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2538,21 +2284,18 @@ i (interna) vale 1</span>
         <div id="Paso24">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, <span class="conborde">2</span>, 3]<span class="idle-func"></span>:
     for j in range(i):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle interno, se retoma el bucle externo.</p>
 
@@ -2567,22 +2310,19 @@ i (interna) vale 1</span>
         <div id="Paso25">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0</span></pre>
-                  <pre></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0</span></pre>
+              <pre></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -2599,21 +2339,18 @@ i (interna) vale 1</span>
         <div id="Paso26">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br /><span class="conborde">i vale 2 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br /><span class="conborde">i vale 2 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2628,21 +2365,18 @@ i (interna) vale 1</span>
         <div id="Paso27">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -2657,21 +2391,18 @@ i (interna) vale 1</span>
         <div id="Paso28">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 8</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br /><span class="conborde">i vale 2 y j vale 1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br /><span class="conborde">i vale 2 y j vale 1</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2686,21 +2417,18 @@ i (interna) vale 1</span>
         <div id="Paso29">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 9</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for <span class="conborde">i</span> in [1, 2, <span class="conborde">3</span>]<span class="idle-func"></span>:
     for j in range(i):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>Una vez terminado el bucle interno, se retoma el bucle externo.</p>
 
@@ -2715,21 +2443,18 @@ i (interna) vale 1</span>
         <div id="Paso210">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 10</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque, en este caso, el bucle interno.</p>
 
@@ -2746,21 +2471,18 @@ i (interna) vale 1</span>
         <div id="Paso211">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 11</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br /><span class="conborde">i vale 3 y j vale 0</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br /><span class="conborde">i vale 3 y j vale 0</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2775,21 +2497,18 @@ i (interna) vale 1</span>
         <div id="Paso212">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 12</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -2804,21 +2523,18 @@ i (interna) vale 1</span>
         <div id="Paso213">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 13</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0<br /><span class="conborde">i vale 3 y j vale 1</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0<br /><span class="conborde">i vale 3 y j vale 1</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2833,21 +2549,18 @@ i (interna) vale 1</span>
         <div id="Paso214">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 14</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for <span class="conborde">j</span> in <span class="conborde">range(i)</span>:
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 2<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1</span></pre>
+            </div>
+          </div>
 
           <p>A continuación continúa la ejecución del bucle interno.</p>
 
@@ -2863,21 +2576,18 @@ i (interna) vale 1</span>
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso
             15</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         <span class="conborde">print(f"i vale {i} y j vale {j}")</span></code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br /><span class="conborde">i vale 3 y j vale 2</span></span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br /><span class="conborde">i vale 3 y j vale 2</span></span></pre>
+            </div>
+          </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
@@ -2892,21 +2602,18 @@ i (interna) vale 1</span>
         <div id="Paso216">
           <p><strong>Ejemplo de bucle anidado (variables dependientes) 1 - Paso 16</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">for i in [1, 2, 3]<span class="idle-func"></span>:
     for j in range(i):
         print(f"i vale {i} y j vale {j}")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br />i vale 3 y j vale 2</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <pre><span class="idle-resp">i vale 1 y j vale 0<br />i vale 2 y j vale 0<br />i vale 2 y j vale 1<br />i vale 3 y j vale 0<br />i vale 3 y j vale 1<br />i vale 3 y j vale 2</span></pre>
+            </div>
+          </div>
 
           <p>Una vez completado el bucle externo, el programa termina.</p>
 

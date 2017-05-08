@@ -58,15 +58,13 @@
 
       <p>El ejemplo siguiente muestra un programa que contiene una función y el resultado de la ejecución de ese programa.</p>
 
-      <div class="diapo" style="height: 22em">
+      <div class="diapo2" style="height: 22em">
         <div id="Paso10">
           <p><strong>Ejemplo de función</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
@@ -77,18 +75,17 @@ licencia()
 print("Programa terminado.")
 </code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.
 Copyright 2013 Bartolomé Sintes Marco
 Licencia CC-BY-SA 4.0
 Programa terminado.</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -100,27 +97,25 @@ Programa terminado.</span>
         <div id="Paso11">
           <p><strong>Ejemplo de función - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <div class="conborde"><pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre class="conborde">
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
     return</code>
-</pre></div>
-                  <pre>
+</pre>
+              <pre>
 <code class="language-python">
 print("Este programa no hace nada interesante.")
 licencia()
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado">
+            </div>
+          </div>
 
           <p>La definición de la función no provoca ninguna salida del programa. Las instrucciones que forman parte de la función se ejecutan únicamente cuando se llama a la función en el programa.</p>
 
@@ -133,11 +128,9 @@ print("Programa terminado.")</code>
         <div id="Paso12">
           <p><strong>Ejemplo de función - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
@@ -147,12 +140,11 @@ print("Programa terminado.")</code>
 licencia()
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp conborde">Este programa no hace nada interesante.</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><pre><span class="idle-resp conborde">Este programa no hace nada interesante.</span></pre>
+            </div>
+          </div>
 
           <p>La primera instrucción que se ejecuta es la que está después de la definición de la función.</p>
 
@@ -165,11 +157,9 @@ print("Programa terminado.")</code>
         <div id="Paso13">
           <p><strong>Ejemplo de función - Paso 3</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
@@ -179,13 +169,12 @@ print("Este programa no hace nada interesante.")
 <span class="conborde">licencia()</span>
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td>
-                  <pre><span class="idle-resp">Este programa no hace nada interesante.</span></pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado">
+              <pre><span class="idle-resp">Este programa no hace nada interesante.</span></pre>
+            </div>
+          </div>
 
           <p>A continuación se encuentra la llamada a la función. Como tal, la llamada no produce ninguna salida del programa, pero hace que a continuación se ejecuten las instrucciones incluidas en la función.</p>
 
@@ -198,11 +187,9 @@ print("Programa terminado.")</code>
         <div id="Paso14">
           <p><strong>Ejemplo de función - Paso 4</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     <span class="conborde">print("Copyright 2013 Bartolomé Sintes Marco")</span>
     print("Licencia CC-BY-SA 4.0")
@@ -212,16 +199,15 @@ print("Este programa no hace nada interesante.")
 licencia()
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.
 <span class="conborde">Copyright 2013 Bartolomé Sintes Marco</span></span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>Se ejecuta la primera instrucción de la función.</p>
 
@@ -234,11 +220,9 @@ print("Programa terminado.")</code>
         <div id="Paso15">
           <p><strong>Ejemplo de función - Paso 5</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     <span class="conborde">print("Licencia CC-BY-SA 4.0")</span>
@@ -248,17 +232,16 @@ print("Este programa no hace nada interesante.")
 licencia()
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.
 Copyright 2013 Bartolomé Sintes Marco
 <span class="conborde">Licencia CC-BY-SA 4.0</span></span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>Se ejecuta la segunda instrucción de la función.</p>
 
@@ -271,11 +254,9 @@ Copyright 2013 Bartolomé Sintes Marco
         <div id="Paso16">
           <p><strong>Ejemplo de función - Paso 6</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
@@ -285,17 +266,16 @@ print("Este programa no hace nada interesante.")
 licencia()
 print("Programa terminado.")</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.
 Copyright 2013 Bartolomé Sintes Marco
 Licencia CC-BY-SA 4.0</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
 
@@ -308,11 +288,9 @@ Licencia CC-BY-SA 4.0</span>
         <div id="Paso17">
           <p><strong>Ejemplo de función - Paso 7</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">def licencia():
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
@@ -322,18 +300,17 @@ print("Este programa no hace nada interesante.")
 licencia()
 <span class="conborde">print("Programa terminado.")</span></code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.
 Copyright 2013 Bartolomé Sintes Marco
 Licencia CC-BY-SA 4.0
 <span class="conborde">Programa terminado.</span></span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>Se ejecuta la última instrucción del programa y el programa termina.</p>
 
@@ -345,15 +322,13 @@ Licencia CC-BY-SA 4.0
 
       <p>El ejemplo siguiente muestra un programa incorrecto que intenta utilizar una función antes de haberla definido.</p>
 
-      <div class="diapo" style="height: 22em">
+      <div class="diapo2" style="height: 22em">
         <div id="Paso110">
           <p><strong>Ejemplo de función incorrecta</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">print("Este programa no hace nada interesante.")
 licencia()
 print("Programa terminado.")
@@ -364,19 +339,18 @@ def licencia():
     return
 </code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.</span>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
     licencia()
 NameError: name 'licencia' is not defined</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -388,11 +362,9 @@ NameError: name 'licencia' is not defined</span>
         <div id="Paso111">
           <p><strong>Ejemplo de función incorrecta - Paso 1</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python"><span class="conborde">print("Este programa no hace nada interesante.")</span>
 licencia()
 print("Programa terminado.")
@@ -403,11 +375,11 @@ def licencia():
     return
 </code>
 </pre>
-                </td>
-                <td><pre><span class="idle-resp conborde">Este programa no hace nada interesante.</span></pre></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+
+            <div class="resultado"><pre><span class="idle-resp conborde">Este programa no hace nada interesante.</span></pre>
+            </div>
+          </div>
 
           <p>La primera instrucción escribe una frase en la pantalla.</p>
 
@@ -420,11 +392,9 @@ def licencia():
         <div id="Paso112">
           <p><strong>Ejemplo de función incorrecta - Paso 2</strong></p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">print("Este programa no hace nada interesante.")
 <span class="conborde">licencia()</span>
 print("Programa terminado.")
@@ -435,21 +405,20 @@ def licencia():
     return
 </code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">Este programa no hace nada interesante.</span>
 </pre>
-                  <pre class="conborde">
+              <pre class="conborde">
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
     licencia()
 NameError: name 'licencia' is not defined</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
 
           <p>A continuación se encuentra la llamada a la función. Pero como esta función no se ha definido todavía, se produce un mensaje de error y se detiene la ejecución del programa.</p>
 
@@ -513,15 +482,13 @@ NameError: name 'licencia' is not defined</span>
         <ul>
           <li>Si no se han declarado como globales o no locales, las variables <strong>a las que se asigna valor</strong> en una función se consideran variables <strong>locales</strong>, es decir, sólo existen en la propia función, incluso cuando en el programa exista una variable con el mismo nombre, como muestra el siguiente ejemplo:
 
-            <div class="diapo" style="height: 19em">
+            <div class="diapo2" style="height: 19em">
               <div id="Paso30">
                 <p><strong>Ejemplo de variable local 1</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -531,16 +498,15 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td>
-                        <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">2
 5</span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -552,11 +518,9 @@ print(a)</code>
               <div id="Paso31">
                 <p><strong>Ejemplo de variable local 1 - Paso 1</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -566,11 +530,10 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado">                </div>
+                </div>
 
                 <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
 
@@ -583,11 +546,9 @@ print(a)</code>
               <div id="Paso32">
                 <p><strong>Ejemplo de variable local 1 - Paso 2</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -597,11 +558,10 @@ a = 5
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado">                </div>
+                </div>
 
                 <p>A continuación se llama a la función subrutina().</p>
 
@@ -614,11 +574,9 @@ print(a)</code>
               <div id="Paso33">
                 <p><strong>Ejemplo de variable local 1 - Paso 3</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">a = 2</span>
     print(a)
@@ -628,12 +586,11 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado">
+                  </div>
+                </div>
 
                 <p>La primera instrucción de la función asigna el valor 2 a la variable "a".</p>
 
@@ -646,11 +603,9 @@ print(a)</code>
               <div id="Paso34">
                 <p><strong>Ejemplo de variable local 1 - Paso 4</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     <span class="conborde">print(a)</span>
@@ -660,11 +615,10 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td><span class="conborde"><span class="idle-resp">2</span></span></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"><span class="conborde"><span class="idle-resp">2</span></span></div>
+                </div>
 
                 <p>La segunda instrucción escribe el valor de la variable "a", es decir, 2.</p>
 
@@ -677,11 +631,9 @@ print(a)</code>
               <div id="Paso35">
                 <p><strong>Ejemplo de variable local 1 - Paso 5</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -691,11 +643,10 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td><pre><span class="idle-resp">2</span></pre></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"><pre><span class="idle-resp">2</span></pre></div>
+                </div>
 
                 <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
 
@@ -708,11 +659,9 @@ print(a)</code>
               <div id="Paso36">
                 <p><strong>Ejemplo de variable local 1 - Paso 6</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -722,16 +671,15 @@ a = 5
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                      </td>
-                      <td>
-                        <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">2
 <span class="conborde">5</span></span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>La última instrucción del programa escribe de nuevo el valor de "a", pero el valor que se escribe no es 2, sino 5, ya que la variable "a" del programa es distinta de la variable "a" de la función, aunque se llamen igual.</p>
 
@@ -743,15 +691,13 @@ subrutina()
           </li>
           <li>Las variables <strong>locales</strong> sólo existen en la propia función y no son accesibles desde niveles superiores, como puede verse en el siguiente ejemplo:
 
-            <div class="diapo" style="height: 18em">
+            <div class="diapo2" style="height: 18em">
               <div id="Paso20">
                 <p><strong>Ejemplo de variable local 2</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -760,19 +706,18 @@ subrutina()
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td>
-                        <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">2</span>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 7, in &lt;module&gt;
     print(a)
 NameError: name 'a' is not defined</span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -784,11 +729,9 @@ NameError: name 'a' is not defined</span>
               <div id="Paso21">
                 <p><strong>Ejemplo de variable local 2 - Paso 1</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -797,11 +740,10 @@ NameError: name 'a' is not defined</span>
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"></div>
+                </div>
 
                 <p>La primera instrucción del programa llama a la función subrutina().</p>
 
@@ -814,11 +756,9 @@ print(a)</code>
               <div id="Paso22">
                 <p><strong>Ejemplo de variable local 2 - Paso 2</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">a = 2</span>
     print(a)
@@ -827,11 +767,10 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"></div>
+                </div>
 
                 <p>La primera instrucción de la función asigna el valor 2 a la variable "a".</p>
 
@@ -844,11 +783,9 @@ print(a)</code>
               <div id="Paso23">
                 <p><strong>Ejemplo de variable local 2 - Paso 3</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     <span class="conborde">print(a)</span>
@@ -857,11 +794,10 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td><span class="conborde"><span class="idle-resp">2</span></span></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"><span class="conborde"><span class="idle-resp">2</span></span></div>
+                </div>
 
                 <p>La segunda instrucción escribe el valor de la variable "a", es decir, 2.</p>
 
@@ -874,11 +810,9 @@ print(a)</code>
               <div id="Paso24">
                 <p><strong>Ejemplo de variable local 2 - Paso 4</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -887,11 +821,10 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td><pre><span class="idle-resp">2</span></pre></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"><pre><span class="idle-resp">2</span></pre></div>
+                </div>
 
                 <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
 
@@ -904,11 +837,9 @@ print(a)</code>
               <div id="Paso25">
                 <p><strong>Ejemplo de variable local 2 - Paso 5</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     a = 2
     print(a)
@@ -917,18 +848,17 @@ print(a)</code>
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                      </td>
-                      <td>
-                        <pre><span class="idle-resp">2</span></pre>
-                        <pre class="conborde"><span class="idle-erro">Traceback (most recent call last):
+                  </div>
+
+                  <div class="resultado">
+                    <pre><span class="idle-resp">2</span></pre>
+                    <pre class="conborde"><span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 7, in &lt;module&gt;
     print(a)
 NameError: name 'a' is not defined</span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>La última instrucción del programa da error porque la variable "a" no existe para el programa, ya que se creó en la función.</p>
 
@@ -940,15 +870,13 @@ NameError: name 'a' is not defined</span>
           </li>
           <li>Si en el interior de una función <strong>se asigna valor</strong> a una variable que no se ha declarado como global o no local, esa variable es <strong>local</strong> a todos los efectos. Por ello el siguiente programa da error:
 
-            <div class="diapo" style="height: 23em">
+            <div class="diapo2" style="height: 23em">
               <div id="Paso40">
                 <p><strong>Ejemplo de variable local 3</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     a = 2
@@ -959,9 +887,10 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td>
-                        <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 8, in &lt;module&gt;
     subrutina()
@@ -969,10 +898,8 @@ print(a)</code>
     print(a)
 UnboundLocalError: local variable 'a' referenced before assignment</span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
@@ -984,11 +911,9 @@ UnboundLocalError: local variable 'a' referenced before assignment</span>
               <div id="Paso41">
                 <p><strong>Ejemplo de variable local 3 - Paso 1</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     a = 2
@@ -999,11 +924,10 @@ UnboundLocalError: local variable 'a' referenced before assignment</span>
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"></div>
+                </div>
 
                 <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
 
@@ -1016,11 +940,9 @@ print(a)</code>
               <div id="Paso42">
                 <p><strong>Ejemplo de variable local 3 - Paso 2</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     a = 2
@@ -1031,11 +953,10 @@ a = 5
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+
+                  <div class="resultado"></div>
+                </div>
 
                 <p>A continuación se llama a la función subrutina().</p>
 
@@ -1048,11 +969,9 @@ print(a)</code>
               <div id="Paso43">
                 <p><strong>Ejemplo de variable local 3 - Paso 3</strong></p>
 
-                <table class="ejemplo">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">print(a)</span>
     a = 2
@@ -1063,9 +982,10 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                      </td>
-                      <td>
-                        <pre class="conborde">
+                  </div>
+
+                  <div class="resultado">
+                    <pre class="conborde">
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 8, in &lt;module&gt;
     subrutina()
@@ -1073,10 +993,8 @@ print(a)</code>
     print(a)
 UnboundLocalError: local variable 'a' referenced before assignment</span>
 </pre>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                  </div>
+                </div>
 
                 <p>La primera instrucción de la función produce un mensaje de error. El motivo es que en la función se asigna valor a la variable "a" (concretamente en la segunda instrucción) y por tanto Python la considera variable local. Como la primera instrucción quiere imprimir el valor de "a", pero a esa variable todavía no se le ha dado valor en la función (el valor de la variable "a" del programa principal no cuenta pues se trata de variables distintas, aunque se llamen igual), se produce el mensaje de error.</p>
 
@@ -1092,20 +1010,18 @@ UnboundLocalError: local variable 'a' referenced before assignment</span>
       <section id="variables-libres">
         <h3>Variables libres globales o no locales</h3>
 
+        <p>Si a una variable <strong>no se le asigna valor</strong> en una función, Python la considera <strong>libre</strong> y busca su valor en los niveles superiores de esa función, empezando por el inmediatamente superior y continuando hasta el programa principal. Si a la variable se le asigna valor en algún nivel intermedio la variable se considera <strong>no local</strong> y si se le asigna en el programa principal la variable se considera <strong>global</strong>, como muestran los siguientes ejemplos:</p>
+
         <ul>
-          <li>Si a una variable <strong>no se le asigna valor</strong> en una función, Python la considera <strong>libre</strong> y busca su valor en los niveles superiores de esa función, empezando por el inmediatamente superior y continuando hasta el programa principal. Si a la variable se le asigna valor en algún nivel intermedio la variable se considera <strong>no local</strong> y si se le asigna en el programa principal la variable se considera <strong>global</strong>, como muestran los siguientes ejemplos:
-            <ul>
-              <li>En el ejemplo siguiente, la variable libre "a" de la función subrutina() se considera global porque obtiene su valor del programa principal:
+          <li>En el ejemplo siguiente, la variable libre "a" de la función subrutina() se considera global porque obtiene su valor del programa principal:
 
-                <div class="diapo" style="height: 20em">
-                  <div id="Paso50">
-                    <p><strong>Ejemplo de variable libre global</strong></p>
+            <div class="diapo2" style="height: 20em">
+              <div id="Paso50">
+                <p><strong>Ejemplo de variable libre global</strong></p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1114,32 +1030,29 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">5
 5</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso51"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso51">
-                    <p><strong>Ejemplo de variable libre global - Paso 1</strong></p>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso51"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso51">
+                <p><strong>Ejemplo de variable libre global - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1148,28 +1061,25 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
-
-                    <p class="control">
-                      <a href="#Paso50"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso52"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso52">
-                    <p><strong>Ejemplo de variable libre global - Paso 2</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
+
+                <p class="control">
+                  <a href="#Paso50"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso52"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso52">
+                <p><strong>Ejemplo de variable libre global - Paso 2</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1178,28 +1088,25 @@ a = 5
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso51"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso53"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso53">
-                    <p><strong>Ejemplo de variable libre global - Paso 3</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso51"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso53"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso53">
+                <p><strong>Ejemplo de variable libre global - Paso 3</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">print(a)</span>
     return
@@ -1208,28 +1115,25 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><span class="conborde"><span class="idle-resp">5</span></span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>En la función subrutina(), la variable "a" es libre puesto que no se le asigna valor. Su valor se busca en los niveles superiores, por orden. En este caso, el nivel inmediatamente superior es el programa principal. Como en él hay una variable que también se llama "a", Python coge de ella el valor (en este caso, 5) y lo imprime. Para la función subrutina(), la variable "a" es una variable global, porque su valor proviene del programa principal.</p>
-
-                    <p class="control">
-                      <a href="#Paso52"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso54"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso54">
-                    <p><strong>Ejemplo de variable libre global - Paso 4</strong></p>
+                  <div class="resultado"><span class="conborde"><span class="idle-resp">5</span></span>                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>En la función subrutina(), la variable "a" es libre puesto que no se le asigna valor. Su valor se busca en los niveles superiores, por orden. En este caso, el nivel inmediatamente superior es el programa principal. Como en él hay una variable que también se llama "a", Python coge de ella el valor (en este caso, 5) y lo imprime. Para la función subrutina(), la variable "a" es una variable global, porque su valor proviene del programa principal.</p>
+
+                <p class="control">
+                  <a href="#Paso52"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso54"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso54">
+                <p><strong>Ejemplo de variable libre global - Paso 4</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     <span class="conborde">return</span>
@@ -1238,29 +1142,26 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp">5</span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso53"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso55"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso55">
-                    <p><strong>Ejemplo de variable libre global - Paso 5</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp">5</span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+                <p class="control">
+                  <a href="#Paso53"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso55"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso55">
+                <p><strong>Ejemplo de variable libre global - Paso 5</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1269,36 +1170,33 @@ a = 5
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">5
 <span class="conborde">5</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La última instrucción del programa escribe de nuevo el valor de "a", que sigue siendo 5 pues la función no ha modificado el valor de la variable.</p>
-
-                    <p class="control">
-                      <a href="#Paso54"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
                   </div>
                 </div>
-              </li>
-              <li>En el ejemplo siguiente, la variable libre "a" de la función sub_subrutina() se considera no local porque obtiene su valor de una función intermedia:
 
-                <div class="diapo" style="height: 27em">
-                  <div id="Paso100">
-                    <p><strong>Ejemplo de variable libre no local</strong></p>
+                <p>La última instrucción del programa escribe de nuevo el valor de "a", que sigue siendo 5 pues la función no ha modificado el valor de la variable.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso54"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
+          </li>
+          <li>En el ejemplo siguiente, la variable libre "a" de la función sub_subrutina() se considera no local porque obtiene su valor de una función intermedia:
+
+            <div class="diapo2" style="height: 28em">
+              <div id="Paso100">
+                <p><strong>Ejemplo de variable libre no local</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1313,33 +1211,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 3
 4</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso101"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso101">
-                    <p><strong>Ejemplo de variable libre no local - Paso 1</strong></p>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso101"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso101">
+                <p><strong>Ejemplo de variable libre no local - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1354,28 +1249,25 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción del programa asigna el valor 4 a la variable "a".</p>
-
-                    <p class="control">
-                      <a href="#Paso100"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso102"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso102">
-                    <p><strong>Ejemplo de variable libre no local - Paso 2</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción del programa asigna el valor 4 a la variable "a".</p>
+
+                <p class="control">
+                  <a href="#Paso100"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso102"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso102">
+                <p><strong>Ejemplo de variable libre no local - Paso 2</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1390,28 +1282,25 @@ a = 4
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso101"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso103"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso103">
-                    <p><strong>Ejemplo de variable libre no local - Paso 3</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso101"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso103"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso103">
+                <p><strong>Ejemplo de variable libre no local - Paso 3</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1426,28 +1315,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción de la función subrutina() asigna el valor 3 a la variable "a", así que esta variable "a" será una variable local.</p>
-
-                    <p class="control">
-                      <a href="#Paso102"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso104"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso104">
-                    <p><strong>Ejemplo de variable libre no local - Paso 4</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción de la función subrutina() asigna el valor 3 a la variable "a", así que esta variable "a" será una variable local.</p>
+
+                <p class="control">
+                  <a href="#Paso102"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso104"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso104">
+                <p><strong>Ejemplo de variable libre no local - Paso 4</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1462,28 +1348,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función sub_subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso103"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso105"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso105">
-                    <p><strong>Ejemplo de variable libre no local - Paso 5</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función sub_subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso103"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso105"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso105">
+                <p><strong>Ejemplo de variable libre no local - Paso 5</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         <span class="conborde">print(a)</span>
@@ -1498,29 +1381,26 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>En la función sub_subrutina(), la variable "a" es libre puesto que no se le asigna valor. Su valor se busca en los niveles superiores, por orden. En este caso, el nivel inmediatamente superior es la función subrutina(). Como en ella hay una variable local que también se llama "a", Python coge de ella el valor (en este caso, 3) y lo imprime. Para la función sub_subrutina(), la variable "a" es una variable no local, porque su valor proviene de una función intermedia.</p>
-
-                    <p class="control">
-                      <a href="#Paso104"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso106"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso106">
-                    <p><strong>Ejemplo de variable libre no local - Paso 6</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>En la función sub_subrutina(), la variable "a" es libre puesto que no se le asigna valor. Su valor se busca en los niveles superiores, por orden. En este caso, el nivel inmediatamente superior es la función subrutina(). Como en ella hay una variable local que también se llama "a", Python coge de ella el valor (en este caso, 3) y lo imprime. Para la función sub_subrutina(), la variable "a" es una variable no local, porque su valor proviene de una función intermedia.</p>
+
+                <p class="control">
+                  <a href="#Paso104"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso106"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso106">
+                <p><strong>Ejemplo de variable libre no local - Paso 6</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1535,29 +1415,26 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp">3</span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso105"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso107"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso107">
-                    <p><strong>Ejemplo de variable libre no local - Paso 7</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp">3</span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+                <p class="control">
+                  <a href="#Paso105"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso107"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso107">
+                <p><strong>Ejemplo de variable libre no local - Paso 7</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1572,33 +1449,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 <span class="conborde">3</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La tercera instrucción de la función subrutina() escribe el valor de la variable local "a", es decir, 3.</p>
-
-                    <p class="control">
-                      <a href="#Paso106"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso108"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso108">
-                    <p><strong>Ejemplo de variable libre no local - Paso 8</strong></p>
+                <p>La tercera instrucción de la función subrutina() escribe el valor de la variable local "a", es decir, 3.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso106"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso108"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso108">
+                <p><strong>Ejemplo de variable libre no local - Paso 8</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1613,33 +1487,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 3</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso107"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso109"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso109">
-                    <p><strong>Ejemplo de variable libre no local - Paso 9</strong></p>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso107"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso109"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso109">
+                <p><strong>Ejemplo de variable libre no local - Paso 9</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         print(a)
@@ -1654,37 +1525,34 @@ a = 4
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 3
 <span class="conborde">4</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La última instrucción del programa escribe el valor de la variable global "a", 4.</p>
-
-                    <p class="control">
-                      <a href="#Paso108"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
                   </div>
                 </div>
-              </li>
-              <li>Si a una variable que Python considera libre (porque no se le asigna valor en la función) tampoco se le asigna valor en niveles superiores, Python dará un mensaje de error, como muestra el programa siguiente:
 
-                <div class="diapo" style="height: 21em">
-                  <div id="Paso60">
-                    <p><strong>Ejemplo de variable libre no definida</strong></p>
+                <p>La última instrucción del programa escribe el valor de la variable global "a", 4.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso108"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
+          </li>
+          <li>Si a una variable que Python considera libre (porque no se le asigna valor en la función) tampoco se le asigna valor en niveles superiores, Python dará un mensaje de error, como muestra el programa siguiente:
+
+            <div class="diapo2" style="height: 21em">
+              <div id="Paso60">
+                <p><strong>Ejemplo de variable libre no definida</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1692,9 +1560,10 @@ subrutina()
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 5, in &lt;module&gt;
     subrutina()
@@ -1702,26 +1571,22 @@ print(a)</code>
     print(a)
 NameError: global name 'a' is not defined</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso61"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso61">
-                    <p><strong>Ejemplo de variable libre no definida - Paso 1</strong></p>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso61"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso61">
+                <p><strong>Ejemplo de variable libre no definida - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     print(a)
     return
@@ -1729,28 +1594,25 @@ NameError: global name 'a' is not defined</span>
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción del programa llama a la función subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso60"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso62"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso62">
-                    <p><strong>Ejemplo de variable libre no definida - Paso 2</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción del programa llama a la función subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso60"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso62"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso62">
+                <p><strong>Ejemplo de variable libre no definida - Paso 2</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">print(a)</span>
     return
@@ -1758,9 +1620,10 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre class="conborde">
+                  </div>
+
+                  <div class="resultado">
+                    <pre class="conborde">
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 5, in &lt;module&gt;
     subrutina()
@@ -1768,22 +1631,18 @@ print(a)</code>
     print(a)
 NameError: global name 'a' is not defined</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Como la función no asigna valor a la variable "a", Python la considera variable libre y busca su valor en niveles superiores, en este caso el programa principal. Pero como en el programa principal tampoco se asigna valor a la variable "a", se produce un error.</p>
-
-                    <p><strong>Nota</strong>: El programa hubiera dado error de todas formas en la última instrucción del programa, que también imprimía el valor de la variable "a" no definida.</p>
-
-                    <p class="control">
-                      <a href="#Paso61"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
                   </div>
                 </div>
-              </li>
-            </ul>
+
+                <p>Como la función no asigna valor a la variable "a", Python la considera variable libre y busca su valor en niveles superiores, en este caso el programa principal. Pero como en el programa principal tampoco se asigna valor a la variable "a", se produce un error.</p>
+
+                <p><strong>Nota</strong>: El programa hubiera dado error de todas formas en la última instrucción del programa, que también imprimía el valor de la variable "a" no definida.</p>
+
+                <p class="control">
+                  <a href="#Paso61"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
           </li>
         </ul>
       </section>
@@ -1791,20 +1650,18 @@ NameError: global name 'a' is not defined</span>
       <section id="variables-global-nonlocal">
         <h3>Variables declaradas <span class="idle-rese">global</span> o <span class="idle-rese">nonlocal</span></h3>
 
+        <p>Si queremos asignar valor a una variable en una subrutina, pero no queremos que Python la considere local, debemos declararla en la función como <span class="idle-rese">global</span> o <span class="idle-rese">nonlocal</span>, como muestran los ejemplos siguientes:</p>
+
         <ul>
-          <li>Si queremos asignar valor a una variable en una subrutina, pero no queremos que Python la considere local, debemos declararla en la función como <span class="idle-rese">global</span> o <span class="idle-rese">nonlocal</span>, como muestran los ejemplos siguientes:
-            <ul>
-              <li>En el ejemplo siguiente la variable se declara como <span class="idle-rese">global</span>, para que su valor sea el del programa principal:
+          <li>En el ejemplo siguiente la variable se declara como <span class="idle-rese">global</span>, para que su valor sea el del programa principal:
 
-                <div class="diapo" style="height: 20em">
-                  <div id="Paso70">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span></strong></p>
+            <div class="diapo2" style="height: 20em">
+              <div id="Paso70">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span></strong></p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -1815,32 +1672,29 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">5
 1</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso71"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso71">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 1</strong></p>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso71"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso71">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -1851,28 +1705,25 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
-
-                    <p class="control">
-                      <a href="#Paso70"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso72"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso72">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span>- Paso 2</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción del programa asigna el valor 5 a la variable "a".</p>
+
+                <p class="control">
+                  <a href="#Paso70"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso72"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso72">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span>- Paso 2</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -1883,28 +1734,25 @@ a = 5
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso71"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso73"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso73">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 3</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso71"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso73"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso73">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 3</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     <span class="conborde">global a</span>
     print(a)
@@ -1915,28 +1763,25 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Al declarar global la variable "a", la variable "a" de la función y la variable "a" del programa principal son la misma variable.</p>
-
-                    <p class="control">
-                      <a href="#Paso72"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso74"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso74">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 4</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>Al declarar global la variable "a", la variable "a" de la función y la variable "a" del programa principal son la misma variable.</p>
+
+                <p class="control">
+                  <a href="#Paso72"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso74"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso74">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 4</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     <span class="conborde">print(a)</span>
@@ -1947,28 +1792,25 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><span class="conborde"><span class="idle-resp">5</span></span></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La segunda instrucción de la función escribe el valor de la variable "a", es decir, 5, puesto que se trata de la misma variable "a" del programa principal.</p>
-
-                    <p class="control">
-                      <a href="#Paso73"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso75"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso75">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 5</strong></p>
+                  <div class="resultado"><span class="conborde"><span class="idle-resp">5</span></span>                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La segunda instrucción de la función escribe el valor de la variable "a", es decir, 5, puesto que se trata de la misma variable "a" del programa principal.</p>
+
+                <p class="control">
+                  <a href="#Paso73"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso75"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso75">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 5</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -1979,29 +1821,26 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp">5</span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La siguiente instrucción cambia el valor de la variable "a" a 1.</p>
-
-                    <p class="control">
-                      <a href="#Paso74"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso76"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso76">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 6</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp">5</span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La siguiente instrucción cambia el valor de la variable "a" a 1.</p>
+
+                <p class="control">
+                  <a href="#Paso74"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso76"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso76">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 6</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -2012,29 +1851,26 @@ a = 5
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp">5</span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso75"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso77"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso77">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 7</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp">5</span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+                <p class="control">
+                  <a href="#Paso75"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso77"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso77">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">global</span> - Paso 7</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     global a
     print(a)
@@ -2045,36 +1881,33 @@ a = 5
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">5
 <span class="conborde">1</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La última instrucción del programa escribe el valor de la variable global "a", que es ahora 1, puesto que la función ha modificado el valor de la variable.</p>
-
-                    <p class="control">
-                      <a href="#Paso76"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
                   </div>
                 </div>
-              </li>
-              <li>En el ejemplo siguiente la variable se declara como <span class="idle-rese">nonlocal</span>, para que su valor sea el de la función intermedia:
 
-                <div class="diapo" style="height: 27em">
-                  <div id="Paso900">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span></strong></p>
+                <p>La última instrucción del programa escribe el valor de la variable global "a", que es ahora 1, puesto que la función ha modificado el valor de la variable.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso76"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
+          </li>
+          <li>En el ejemplo siguiente la variable se declara como <span class="idle-rese">nonlocal</span>, para que su valor sea el de la función intermedia:
+
+            <div class="diapo2" style="height: 29em">
+              <div id="Paso900">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span></strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2091,33 +1924,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 1
 4</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso901"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso901">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 1</strong></p>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso901"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso901">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2134,28 +1964,25 @@ print(a)</code>
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción del programa asigna el valor 4 a la variable "a".</p>
-
-                    <p class="control">
-                      <a href="#Paso900"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso902"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso902">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 2</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción del programa asigna el valor 4 a la variable "a".</p>
+
+                <p class="control">
+                  <a href="#Paso900"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso902"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso902">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 2</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2172,28 +1999,25 @@ a = 4
 <span class="conborde">subrutina()</span>
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso901"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso903"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso903">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 3</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso901"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso903"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso903">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 3</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2210,28 +2034,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción de la función subrutina() asigna el valor 3 a la variable "a", así que esta variable "a" será una variable local.</p>
-
-                    <p class="control">
-                      <a href="#Paso902"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso904"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso904">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 4</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción de la función subrutina() asigna el valor 3 a la variable "a", así que esta variable "a" será una variable local.</p>
+
+                <p class="control">
+                  <a href="#Paso902"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso904"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso904">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 4</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2248,28 +2069,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>A continuación se llama a la función sub_subrutina().</p>
-
-                    <p class="control">
-                      <a href="#Paso903"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso905"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso905">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 5</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>A continuación se llama a la función sub_subrutina().</p>
+
+                <p class="control">
+                  <a href="#Paso903"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso905"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso905">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 5</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         <span class="conborde">nonlocal a</span>
@@ -2286,28 +2104,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Al declarar <span class="idle-rese">nonlocal</span> la variable "a", Python busca en los niveles superiores, por orden, una variable que también se llame "a", que en este caso se encuentra en la función subrutina(). Python toma el valor de esa variable, es decir, 3.</p>
-
-                    <p class="control">
-                      <a href="#Paso904"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso906"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso906">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 6</strong></p>
+                  <div class="resultado">                </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>Al declarar <span class="idle-rese">nonlocal</span> la variable "a", Python busca en los niveles superiores, por orden, una variable que también se llame "a", que en este caso se encuentra en la función subrutina(). Python toma el valor de esa variable, es decir, 3.</p>
+
+                <p class="control">
+                  <a href="#Paso904"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso906"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso906">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 6</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2324,29 +2139,26 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La primera instrucción de la función sub_subrutina() escribe el valor de la variable no local "a", es decir, 3.</p>
-
-                    <p class="control">
-                      <a href="#Paso905"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso907"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso907">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 7</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La primera instrucción de la función sub_subrutina() escribe el valor de la variable no local "a", es decir, 3.</p>
+
+                <p class="control">
+                  <a href="#Paso905"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso907"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso907">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 7</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2363,29 +2175,26 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La segunda instrucción de la función sub_subrutina() cambia el valor de la variable "a" a 1.</p>
-
-                    <p class="control">
-                      <a href="#Paso906"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso908"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso908">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 8</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp"><span class="conborde">3</span></span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La segunda instrucción de la función sub_subrutina() cambia el valor de la variable "a" a 1.</p>
+
+                <p class="control">
+                  <a href="#Paso906"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso908"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso908">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 8</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2402,29 +2211,26 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><pre><span class="idle-resp">3</span></pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso907"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso909"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso909">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 9</strong></p>
+                  <div class="resultado"><pre><span class="idle-resp">3</span></pre>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
+
+                <p class="control">
+                  <a href="#Paso907"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso909"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso909">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 9</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2441,33 +2247,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 <span class="conborde">1</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La tercera instrucción de la función subrutina() escribe el valor de la variable local "a", es decir, 1.</p>
-
-                    <p class="control">
-                      <a href="#Paso908"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso910"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso910">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 10</strong></p>
+                <p>La tercera instrucción de la función subrutina() escribe el valor de la variable local "a", es decir, 1.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso908"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso910"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso910">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 10</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2484,33 +2287,30 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 1</span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
-
-                    <p class="control">
-                      <a href="#Paso909"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <a href="#Paso911"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
+                </div>
 
-                  <div id="Paso911">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 11</strong></p>
+                <p>La instrucción <span class="idle-rese">return</span> indica el final de la función y continúa la ejecución del programa tras la llamada a la función.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso909"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <a href="#Paso911"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso911">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> - Paso 11</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2527,37 +2327,34 @@ a = 4
 subrutina()
 <span class="conborde">print(a)</span></code>
 </pre>
-                          </td>
-                          <td>
-                            <pre>
+                  </div>
+
+                  <div class="resultado">
+                    <pre>
 <span class="idle-resp">3
 1
 <span class="conborde">4</span></span>
 </pre>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>La última instrucción del programa escribe el valor de la variable global "a", que sigue siendo 4, puesto que ninguna función la ha modificado.</p>
-
-                    <p class="control">
-                      <a href="#Paso910"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
                   </div>
                 </div>
-              </li>
-              <li>Si a una variable declarada <span class="idle-rese">global</span> o <span class="idle-rese">nonlocal</span> en una función no se le asigna valor en el nivel superior correspondiente, Python dará un error de sintaxis, como muestra el programa siguiente:
 
-                <div class="diapo" style="height: 35em">
-                  <div id="Paso1000">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> no definida</strong></p>
+                <p>La última instrucción del programa escribe el valor de la variable global "a", que sigue siendo 4, puesto que ninguna función la ha modificado.</p>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p class="control">
+                  <a href="#Paso910"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
+          </li>
+          <li>Si a una variable declarada <span class="idle-rese">global</span> o <span class="idle-rese">nonlocal</span> en una función no se le asigna valor en el nivel superior correspondiente, Python dará un error de sintaxis, como muestra el programa siguiente:
+
+            <div class="diapo2" style="height: 32em">
+              <div id="Paso1000">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> no definida</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2573,28 +2370,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><p class="captura"><img alt="Python - Error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-                    <p class="control">
-                      <a href="#Paso1001"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-                    </p>
                   </div>
 
-                  <div id="Paso1001">
-                    <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> no definida - Paso 1</strong></p>
+                  <div class="resultado"><p class="captura"><img alt="Python - Error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></p>
+                  </div>
+                </div>
 
-                    <table class="ejemplo">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <pre>
+                <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+                <p class="control">
+                  <a href="#Paso1001"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+                </p>
+              </div>
+
+              <div id="Paso1001">
+                <p><strong>Ejemplo de variable declarada <span class="idle-rese">nonlocal</span> no definida - Paso 1</strong></p>
+
+                <div class="filaflex">
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">def subrutina():
     def sub_subrutina():
         nonlocal a
@@ -2610,28 +2404,25 @@ a = 4
 subrutina()
 print(a)</code>
 </pre>
-                          </td>
-                          <td><p class="captura"><img alt="Python - Error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  </div>
 
-                    <p>El programa no llega a ejecutarse puesto que Python detecta un error de sintaxis.</p>
-
-                    <ul>
-                      <li>La variable "a" de la función subrutina() es una variable libre global. Es una variable libre porque no está definida en la función. Python busca su valor en un nivel superior, que para esa función es el programa principal. En el programa principal sí que hay una variable "a", por lo que la variable "a" de la función subrutina() se considera global. Python tomaría su valor de la variable "a" del programa principal.</li>
-                      <li>La variable "a" de la función sub_subrutina() está declarada como <span class="idle-rese">nonlocal</span>, por lo que Python busca su valor en una función superior que no sea el programa principal. El problema es que la variable "a" de la función subrutina() es global, así que Python no la puede tomar para dar valor a la variable "a" de la función sub_subrutina().</li>
-                      <li>Ante la imposibilidad de dar valor a la variable "a" de la función sub_subrutina() se produce un error de sintaxis.</li>
-                    </ul>
-
-                    <p class="control">
-                      <a href="#Paso1000"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-                      <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+                  <div class="resultado"><p class="captura"><img alt="Python - Error de sintaxis" src="../img/error_de_sintaxis.png" width="284" height="161" /></p>
                   </div>
                 </div>
-              </li>
-            </ul>
+
+                <p>El programa no llega a ejecutarse puesto que Python detecta un error de sintaxis.</p>
+
+                <ul>
+                  <li>La variable "a" de la función subrutina() es una variable libre global. Es una variable libre porque no está definida en la función. Python busca su valor en un nivel superior, que para esa función es el programa principal. En el programa principal sí que hay una variable "a", por lo que la variable "a" de la función subrutina() se considera global. Python tomaría su valor de la variable "a" del programa principal.</li>
+                  <li>La variable "a" de la función sub_subrutina() está declarada como <span class="idle-rese">nonlocal</span>, por lo que Python busca su valor en una función superior que no sea el programa principal. El problema es que la variable "a" de la función subrutina() es global, así que Python no la puede tomar para dar valor a la variable "a" de la función sub_subrutina().</li>
+                  <li>Ante la imposibilidad de dar valor a la variable "a" de la función sub_subrutina() se produce un error de sintaxis.</li>
+                </ul>
+
+                <p class="control">
+                  <a href="#Paso1000"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+                  <img src="../varios/iconos/icono_vacio.svg" alt="" width="48" height="48" />                    </p>
+              </div>
+            </div>
           </li>
         </ul>
       </section>

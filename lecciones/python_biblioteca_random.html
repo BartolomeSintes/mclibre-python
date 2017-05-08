@@ -46,68 +46,59 @@
       <ul>
         <li>Si se importa la biblioteca entera, se debe escribir el nombre de la biblioteca y el de la función separada por un punto, como muestra el siguiente ejemplo:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">import random
 
 print(random.randrange(10))</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">4</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
         </li>
         <li>Si se importa únicamente una función, se debe escribir simplemente el nombre de la función, como muestra el siguiente ejemplo:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from random import randrange
 
 print(randrange(10))</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">1</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
         </li>
         <li>Si se importan varias funciones, los nombres de las funciones deben separarse como comas (,), como muestra el siguiente ejemplo:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td>
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">from random import randrange, choice
 
 print(randrange(10))
 print(choice(["uno", "dos", "tres"]))</code>
 </pre>
-                </td>
-                <td>
-                  <pre>
+            </div>
+
+            <div class="resultado">
+              <pre>
 <span class="idle-resp">5</span>
 <span class="idle-resp">dos</span>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -118,24 +109,21 @@ print(choice(["uno", "dos", "tres"]))</code>
 
       <p>La función <strong>randint(<em>a</em>, <em>b</em>)</strong> genera un número entero entre <i>a</i> y <i>b</i>, ambos incluidos. <i>a</i> debe ser inferior o igual a <i>b</i>.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import randint
 
 print(randint(10, 20))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">12</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <section id="random-randrange">
@@ -143,52 +131,53 @@ print(randint(10, 20))</code>
 
       <p>La función <strong>randrange(<em>a</em>, <em>b</em>, <em>c</em>)</strong> genera un número entero entre los valores generados por <span class="idle-func">range</span>(<em>a</em>, <em>b</em>, <em>c</em>). Como ocurre con <span class="idle-func">range</span>(), la función <strong>randrange()</strong> admite uno, dos o tres argumentos.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import randrange
 
 print(randrange(10))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">9</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import randrange
 
 print(randrange(10, 110))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">61</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import randrange
 
 print(randrange(10, 110, 10))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">80</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <section id="random-random">
@@ -196,24 +185,21 @@ print(randrange(10, 110, 10))</code>
 
       <p>La función <strong>random()</strong> genera un número decimal entre 0 y 1 (puede generar 0, pero no 1).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import random
 
 print(random())</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">0.5310449231726346</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <section id="random-uniform">
@@ -221,24 +207,21 @@ print(random())</code>
 
       <p>La función <strong>uniform(<em>a</em>, <em>b</em>)</strong> genera un número decimal entre <i>a</i> y <i>b</i> (puede generar <i>a</i> y, debido a la forma de redondear de Python, puede que genere <i>b</i> o no).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import uniform
 
 print(uniform(5, 8))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">6.216950987513291</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <section id="random-choice">
@@ -246,67 +229,69 @@ print(uniform(5, 8))</code>
 
       <p>La función <strong>choice(<em>secuencia</em>)</strong> elige un valor al azar en un conjunto de elementos. Cualquier tipo de datos enumerable (tupla, lista, cadena, range) puede utilizarse como conjunto de elementos.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import choice
 
 print(choice((14, 15, 20, 150)))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">14</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import choice
 
 print(choice([14, 15, 20, 150]))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">20</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import choice
 
 print(choice("AEIOU"))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">E</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">from random import choice
 
 print((choice(range(10))))</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-resp">4</span>
 </pre>
-            </td>
-          </tr>
-          <tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <p>En el caso de conjuntos y diccionarios (que en Python 3 no son elementos iterables, sino iteradores), no se puede utilizar la función <strong>choice()</strong>.</p>

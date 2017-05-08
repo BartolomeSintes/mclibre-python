@@ -91,7 +91,7 @@ pre.line-numbers > code {
   left: -2.8em;
   width: 2em; /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
-  line-height: 137%;
+  line-height: 120%;
   border-right: 1px solid #999;
 
   -webkit-user-select: none;

@@ -467,24 +467,21 @@ IndexError: list assignment index out of range</span>
       <ul>
         <li>Una forma es recorrer directamente los elementos de la lista, es decir, que la variable de control del bucle tome los valores de la lista que     estamos recorriendo:
 
-          <div class="diapo" style="height: 16em">
+          <div class="diapo2" style="height: 14em">
             <div id="Paso10">
               <p><strong>Recorrer una lista directamente</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in letras:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B C</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B C</span></pre></div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
               <p class="control">
@@ -495,20 +492,17 @@ for i in letras:
             <div id="Paso11">
               <p><strong>Recorrer una lista directamente - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 for i in letras:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -520,20 +514,17 @@ for i in letras:
             <div id="Paso12">
               <p><strong>Recorrer una lista directamente - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">letras</span>:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista <var>letras</var>.</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor <span class="idle-cade">"A"</span>.</p>
               <p class="control">
@@ -545,20 +536,17 @@ for <span class="conborde">i</span> in <span class="conborde">letras</span>:
             <div id="Paso13">
               <p><strong>Recorrer una lista directamente - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in letras:
     <span class="conborde">print(i, end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp conborde">A</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp conborde">A</span></pre></div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de <var>i</var>, es decir, <span class="idle-cade">"A"</span>.</p>
               <p class="control">
@@ -570,20 +558,17 @@ for i in letras:
             <div id="Paso14">
               <p><strong>Recorrer una lista directamente - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">letras</span>:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A</span></pre></div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de la lista <var>letras</var>.</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor <span class="idle-cade">"B"</span>.</p>
               <p class="control">
@@ -595,20 +580,17 @@ for <span class="conborde">i</span> in <span class="conborde">letras</span>:
             <div id="Paso15">
               <p><strong>Recorrer una lista directamente - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in letras:
     <span class="conborde">print(i, end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A <span class="conborde">B</span></span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A <span class="conborde">B</span></span></pre></div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de <var>i</var>, es decir, <span class="idle-cade">"B"</span>.</p>
               <p class="control">
@@ -620,20 +602,17 @@ for i in letras:
             <div id="Paso16">
               <p><strong>Recorrer una lista directamente - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">letras</span>:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B</span></pre></div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de la lista <var>letras</var>.</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor <span class="idle-cade">"C"</span>.</p>
               <p class="control">
@@ -645,20 +624,17 @@ for <span class="conborde">i</span> in <span class="conborde">letras</span>:
             <div id="Paso17">
               <p><strong>Recorrer una lista directamente - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in letras:
     <span class="conborde">print(i, end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B <span class="conborde">C</span></span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B <span class="conborde">C</span></span></pre></div>
+              </div>
               <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de <var>i</var>, es decir, <span class="idle-cade">"C"</span>.</p>
 
@@ -671,20 +647,17 @@ for i in letras:
             <div id="Paso18">
               <p><strong>Recorrer una lista directamente - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in letras:
     print(i, end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B C</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B C</span></pre></div>
+              </div>
               <p>Una vez completado el bucle, el programa termina.</p>
               <p class="control">
                 <a href="#Paso17"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -694,25 +667,21 @@ for i in letras:
         </li>
         <li>La otra forma es recorrer indirectamente los elementos de la lista, es decir, que la variable de control del bucle tome como valores los índices de la lista que estamos recorriendo (0,1 ,2 , etc.). En este caso, para acceder a los valores de la lista hay que utilizar letras[i]:
 
-          <div class="diapo" style="height: 16em">
-
+          <div class="diapo2" style="height: 15em">
             <div id="Paso20">
               <p><strong>Recorrer una lista indirectamente</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B C</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B C</span></pre></div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
               <p class="control">
                 <a href="#Paso21"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
@@ -722,20 +691,17 @@ for i in range(len(letras)):
             <div id="Paso21">
               <p><strong>Recorrer una lista indirectamente - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 for i in range(len(letras)):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -747,20 +713,17 @@ for i in range(len(letras)):
             <div id="Paso22">
               <p><strong>Recorrer una lista indirectamente - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
               <p class="control">
@@ -772,20 +735,17 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso23">
               <p><strong>Recorrer una lista indirectamente - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras))::
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp conborde">A</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp conborde">A</span></pre></div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[0], es decir, <span class="idle-cade">"A"</span>.</p>
               <p class="control">
@@ -797,20 +757,17 @@ for i in range(len(letras))::
             <div id="Paso24">
               <p><strong>Recorrer una lista indirectamente - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A</span></pre></div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
               <p class="control">
@@ -822,20 +779,17 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso25">
               <p><strong>Recorrer una lista indirectamente - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras))::
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A <span class="conborde">B</span></span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A <span class="conborde">B</span></span></pre></div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del
                 bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[1], es decir, <span class="idle-cade">"B"</span>.</p>
@@ -848,21 +802,18 @@ for i in range(len(letras))::
             <div id="Paso26">
               <p><strong>Recorrer una lista indirectamente - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B</span></pre>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
               <p class="control">
@@ -874,20 +825,17 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso27">
               <p><strong>Recorrer una lista indirectamente - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras))::
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B <span class="conborde">C</span></span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B <span class="conborde">C</span></span></pre></div>
+              </div>
               <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[2], es decir, <span class="idle-cade">"C"</span>.</p>
 
@@ -900,20 +848,17 @@ for i in range(len(letras))::
             <div id="Paso28">
               <p><strong>Recorrer una lista indirectamente - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">A B C</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">A B C</span></pre></div>
+              </div>
               <p>Una vez completado el bucle, el programa termina.</p>
               <p class="control">
                 <a href="#Paso27"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -929,25 +874,21 @@ for i in range(len(letras)):
       <ul>
         <li>recorrer una lista al revés
 
-          <div class="diapo" style="height: 16em">
-
+          <div class="diapo2" style="height: 15em">
             <div id="Paso30">
               <p><strong>Recorrer una lista al revés</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)-1, -1, -1):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C B A</span></pre></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C B A</span></pre></div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
               <p class="control">
                 <a href="#Paso31"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
@@ -957,20 +898,17 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso31">
               <p><strong>Recorrer una lista al revés - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 for i in range(len(letras)-1, -1, -1):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -982,20 +920,17 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso32">
               <p><strong>Recorrer una lista al revés - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras)-1 devuelve el valor 2 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1) devuelve <span class="idle-func">range</span>(2, -1, -1), es decir [2, 1, 0]. Es decir, que la variable de control va a tomar valores de [2, 1, 0]</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
               <p class="control">
@@ -1007,21 +942,18 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso33">
               <p><strong>Recorrer una lista al revés - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)-1, -1, -1):
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp conborde">C</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp conborde">C</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[2], es decir, <span class="idle-cade">"C"</span>.</p>
               <p class="control">
@@ -1033,21 +965,18 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso34">
               <p><strong>Recorrer una lista al revés - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C</span></pre>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
               <p class="control">
@@ -1059,21 +988,18 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso35">
               <p><strong>Recorrer una lista al revés - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)-1, -1, -1):
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C <span class="conborde">B</span></span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C <span class="conborde">B</span></span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del
                 bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[1], es decir, <span class="idle-cade">"B"</span>.</p>
@@ -1086,21 +1012,18 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso36">
               <p><strong>Recorrer una lista al revés - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C B</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C B</span></pre>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
               <p class="control">
@@ -1112,21 +1035,18 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso37">
               <p><strong>Recorrer una lista al revés - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)-1, -1, -1):
     <span class="conborde">print(letras[i], end="")</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C B <span class="conborde">A</span></span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C B <span class="conborde">A</span></span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
               <p>En este caso el bloque consta de una sola instrucción que imprime el valor de letras[<var>i</var>], es decir, letras[0], es decir, "A".</p>
               <p class="control">
@@ -1138,21 +1058,18 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso38">
               <p><strong>Recorrer una lista al revés - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 for i in range(len(letras)-1, -1, -1):
     print(letras[i], end=" ")
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">C B A</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">C B A</span></pre>
+                </div>
+              </div>
               <p>Una vez completado el bucle, el programa termina.</p>
               <p class="control">
                 <a href="#Paso37"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -1162,34 +1079,30 @@ for i in range(len(letras)-1, -1, -1):
         </li>
         <li>modificar los elementos de una lista
 
-          <div class="diapo" style="height: 17em">
-
+          <div class="diapo2" style="height: 17em">
             <div id="Paso40">
               <p><strong>Recorrer y modificar una lista</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
 ['X', 'X', 'X']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
               <p class="control">
                 <a href="#Paso41"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
@@ -1199,22 +1112,19 @@ for i in range(len(letras)):
             <div id="Paso41">
               <p><strong>Recorrer y modificar una lista - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -1226,23 +1136,20 @@ for i in range(len(letras)):
             <div id="Paso42">
               <p><strong>Recorrer y modificar una lista - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 <span class="conborde">print(letras)</span>
 for i in range(len(letras)):
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
               <p class="control">
                 <a href="#Paso41"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -1253,23 +1160,20 @@ for i in range(len(letras)):
             <div id="Paso43">
               <p><strong>Recorrer y modificar una lista - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
               <p class="control">
@@ -1281,23 +1185,20 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso44">
               <p><strong>Recorrer y modificar una lista - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     <span class="conborde">letras[i] = "X"</span>
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque modifica el valor de letras[<var>i</var>], es decir, de letras[0].</p>
               <p class="control">
@@ -1309,27 +1210,24 @@ for i in range(len(letras)):
             <div id="Paso45">
               <p><strong>Recorrer y modificar una lista - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 <span class="conborde">['X', 'B', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, cuyo primer término ya no es <span class="idle-cade">"A"</span>, sino <span class="idle-cade">"X"</span>.</p>
               <p class="control">
@@ -1341,24 +1239,21 @@ for i in range(len(letras)):
             <div id="Paso46">
               <p><strong>Recorrer y modificar una lista - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor "1".</p>
               <p class="control">
@@ -1370,24 +1265,21 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso47">
               <p><strong>Recorrer y modificar una lista - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     <span class="conborde">letras[i] = "X"</span>
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque modifica el valor de letras[i], es decir, de letras[1].</p>
               <p class="control">
@@ -1399,26 +1291,23 @@ for i in range(len(letras)):
             <div id="Paso48">
               <p><strong>Recorrer y modificar una lista - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 <span class="conborde">['X', 'X', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, cuyo segundo término ya no es <span class="idle-cade">"B"</span>, sino <span class="idle-cade">"X"</span>.</p>
               <p class="control">
@@ -1430,26 +1319,23 @@ for i in range(len(letras)):
             <div id="Paso49">
               <p><strong>Recorrer y modificar una lista - Paso 9</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
     letras[i] = "X"
     print(letras)
 </code>    </pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor "2".</p>
               <p class="control">
@@ -1461,28 +1347,25 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso410">
               <p><strong>Recorrer y modificar una lista - Paso 10</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     <span class="conborde">letras[i] = "X"</span>
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, cuyo tercer término ya no es <span class="idle-cade">"C"</span>, sino <span class="idle-cade">"X"</span>.</p>
               <p class="control">
@@ -1494,29 +1377,26 @@ for i in range(len(letras)):
             <div id="Paso411">
               <p><strong>Recorrer y modificar una lista - Paso 11</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
 <span class="conborde">['X', 'X', 'X']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es i y toma el valor "2".</p>
               <p class="control">
@@ -1528,29 +1408,26 @@ for i in range(len(letras)):
             <div id="Paso412">
               <p><strong>Recorrer y modificar una lista - Paso 12</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
     letras[i] = "X"
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
 ['X', 'X', 'X']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>Una vez completado el bucle, el programa termina.</p>
               <p class="control">
                 <a href="#Paso411"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -1561,16 +1438,13 @@ for i in range(len(letras)):
         <li>eliminar elementos de la lista
           <p>Para eliminar los elementos de una lista necesitamos recorrer la lista al revés. Si recorremos la lista de principio a fin, al eliminar un valor de la lista, la lista se acorta y cuando intentamos acceder a los últimos valores se produce un error de índice fuera de rango, como muestra el siguiente ejemplo en el que se eliminan los valores de una lista que valen <span class="idle-cade">"B"</span>:</p>
 
-          <div class="diapo" style="height: 20em">
-
+          <div class="diapo2" style="height: 19em">
             <div id="Paso50">
               <p><strong>Eliminar valores de una lista (incorrecto)</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1578,9 +1452,10 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']</span>
@@ -1589,10 +1464,8 @@ for i in range(len(letras)):
     if letras[i] == "B":
 IndexError: list index out of range</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
               <p class="control">
                 <a href="#Paso51"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
@@ -1602,11 +1475,9 @@ IndexError: list index out of range</span>
             <div id="Paso51">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 print(letras)
 for i in range(len(letras)):
@@ -1614,11 +1485,10 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -1630,11 +1500,9 @@ for i in range(len(letras)):
             <div id="Paso52">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 <span class="conborde">print(letras)</span>
 for i in range(len(letras)):
@@ -1642,12 +1510,11 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
               <p class="control">
                 <a href="#Paso51"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -1658,11 +1525,9 @@ for i in range(len(letras)):
             <div id="Paso53">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
@@ -1670,12 +1535,11 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
               <p class="control">
@@ -1687,11 +1551,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso54">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1699,12 +1561,11 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[0] es igual a <span class="idle-cade">"B"</span>. Como no lo es, no ejecuta el cuerpo de la condición.</p>
               <p class="control">
@@ -1716,11 +1577,9 @@ for i in range(len(letras)):
             <div id="Paso55">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1728,16 +1587,15 @@ for i in range(len(letras)):
         del letras[i]
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 <span class="conborde">['A', 'B', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, que no se ha modificado.</p>
               <p class="control">
@@ -1749,11 +1607,9 @@ for i in range(len(letras)):
             <div id="Paso56">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
@@ -1761,16 +1617,15 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
               <p class="control">
@@ -1782,11 +1637,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso57">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1794,16 +1647,15 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[1] es igual a <span class="idle-cade">"B"</span>. Como sí lo es, se ejecuta el cuerpo de la condición.</p>
               <p class="control">
@@ -1815,11 +1667,9 @@ for i in range(len(letras)):
             <div id="Paso58">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1827,16 +1677,15 @@ for i in range(len(letras)):
         <span class="conborde">del letras[i]</span>
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del cuerpo de la condición.</p>
               <p>En este caso el cuerpo consta de una sola instrucción que elimina el elemento letras[<var>i</var>], es decir, letras[1].</p>
               <p class="control">
@@ -1848,11 +1697,9 @@ for i in range(len(letras)):
             <div id="Paso59">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 9</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1860,17 +1707,16 @@ for i in range(len(letras)):
         del letras[i]
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 <span class="conborde">['A', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, que ha perdido el elemento <span class="idle-cade">"B"</span>.</p>
               <p class="control">
@@ -1882,11 +1728,9 @@ for i in range(len(letras)):
             <div id="Paso510">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 10</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras))</span>:
@@ -1894,17 +1738,16 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2]. Es importante señalar que <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) no se evalúa en cada iteración, sino que se evalúa en la primera iteración y se recorre en las siguientes.</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
               <p class="control">
@@ -1916,11 +1759,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras))
             <div id="Paso511">
               <p><strong>Eliminar valores de una lista (incorrecto) - Paso 11</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)):
@@ -1928,9 +1769,10 @@ for i in range(len(letras)):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']</span>
@@ -1939,10 +1781,8 @@ for i in range(len(letras)):
     if letras[i] == "B":
 IndexError: list index out of range</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan por tercera vez las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[2] es igual a <span class="idle-cade">"B"</span>. Como letras[2] no existe (porque la lista tiene ahora sólo dos elementos), se produce un error y el programa se interrumpe.</p>
               <p class="control">
@@ -1952,16 +1792,13 @@ IndexError: list index out of range</span>
           </div>
           <p>La solución es recorrer la lista en orden inverso, de manera que aunque se eliminen elementos y la lista se acorte, los valores que todavía no se han recorrido siguen existiendo en la misma posición que al principio.</p>
 
-          <div class="diapo" style="height: 20em">
-
+          <div class="diapo2" style="height: 19em">
             <div id="Paso60">
               <p><strong>Eliminar valores de una lista (correcto)</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -1969,18 +1806,17 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
 ['A', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
               <p class="control">
                 <a href="#Paso61"><img src="../varios/iconos/icono_siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
@@ -1990,11 +1826,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso61">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 1</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python"><span class="conborde">letras = ["A", "B", "C"]</span>
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2002,11 +1836,10 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"></div>
+              </div>
               <p>Se ejecuta la primera instrucción del programa.</p>
               <p>En este caso, define la lista <var>letras</var>.</p>
               <p class="control">
@@ -2018,11 +1851,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso62">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 2</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 <span class="conborde">print(letras)</span>
 for i in range(len(letras)-1, -1, -1):
@@ -2030,12 +1861,11 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
               <p class="control">
                 <a href="#Paso61"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
@@ -2046,11 +1876,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso63">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 3</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
@@ -2058,12 +1886,11 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras)-1 devuelve el valor 2 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1) devuelve <span class="idle-func">range</span>(2, -1, -1), es decir [2, 1, 0]. Es decir, que la variable de control va a tomar valores de [2, 1, 0]</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
               <p class="control">
@@ -2075,11 +1902,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso64">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 4</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2087,12 +1912,11 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+
+                <div class="resultado"><pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[2] es igual a <span class="idle-cade">"B"</span>. Como no lo es no ejecuta el cuerpo de la condición.</p>
               <p class="control">
@@ -2104,11 +1928,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso65">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 5</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2116,16 +1938,15 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 <span class="conborde">['A', 'B', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, que no se ha modificado.</p>
               <p class="control">
@@ -2137,11 +1958,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso66">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 6</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
@@ -2149,16 +1968,15 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0].</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
               <p class="control">
@@ -2170,11 +1988,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso67">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 7</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2182,16 +1998,15 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[1] es igual a <span class="idle-cade">"B"</span>. Como sí lo es, se ejecuta el cuerpo de la condición.</p>
               <p class="control">
@@ -2203,11 +2018,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso68">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 8</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2215,16 +2028,15 @@ for i in range(len(letras)-1, -1, -1):
         <span class="conborde">del letras[i]</span>
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan las instrucciones del cuerpo de la condición.</p>
               <p>En este caso el cuerpo consta de una sola instrucción que elimina el elemento letras[<var>i</var>], es decir, letras[1].</p>
               <p class="control">
@@ -2236,11 +2048,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso69">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 9</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2248,17 +2058,16 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 <span class="conborde">['A', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, que ha perdido el elemento <span class="idle-cade">"B"</span>.</p>
               <p class="control">
@@ -2270,11 +2079,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso610">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 10</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-1, -1, -1)</span>:
@@ -2282,17 +2089,16 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0]. Es importante señalar que <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) no se evalúa en cada iteración, sino que se evalúa en la primera iteración y se recorre en las siguientes.</p>
               <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
               <p class="control">
@@ -2304,11 +2110,9 @@ for <span class="conborde">i</span> in <span class="conborde">range(len(letras)-
             <div id="Paso611">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 11</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2316,17 +2120,16 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
               <p>En este caso la primera instrucción del bloque comprueba si letras[<var>i</var>], es decir, letras[0] es igual a <span class="idle-cade">"B"</span>. Como no lo es, no se ejecuta el cuerpo de la condición.</p>
               <p class="control">
@@ -2338,11 +2141,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso612">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 12</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2350,18 +2151,17 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     <span class="conborde">print(letras)</span>
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
 <span class="conborde">['A', 'C']</span></span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>A continuación se ejecuta la segunda instrucción del bloque.</p>
               <p>Esta instrucción escribe la lista <var>letras</var>, que ha perdido el elemento <span class="idle-cade">"B"</span>.</p>
               <p class="control">
@@ -2373,11 +2173,9 @@ for i in range(len(letras)-1, -1, -1):
             <div id="Paso613">
               <p><strong>Eliminar valores de una lista (correcto) - Paso 13</strong></p>
 
-              <table class="ejemplo">
-                <tbody>
-                  <tr>
-                    <td>
-                      <pre>
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
 <code class="language-python">letras = ["A", "B", "C"]
 print(letras)
 for i in range(len(letras)-1, -1, -1):
@@ -2385,18 +2183,17 @@ for i in range(len(letras)-1, -1, -1):
         del letras[i]
     print(letras)
 </code></pre>
-                    </td>
-                    <td>
-                      <pre>
+                </div>
+
+                <div class="resultado">
+                  <pre>
 <span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
 ['A', 'C']</span>
 </pre>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                </div>
+              </div>
               <p>Una vez completado el bucle, el programa termina.</p>
               <p class="control">
                 <a href="#Paso612"><img src="../varios/iconos/icono_anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>

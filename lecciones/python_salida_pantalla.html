@@ -70,26 +70,20 @@
 
       <p>La función <span class="idle-func">print</span>() permite mostrar texto en pantalla. El texto a mostrar se escribe como argumento de la función:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><pre><code class="language-python">print("Hola")</code></pre></td>
-            <td class="python-resul"><pre>Hola</pre></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="filaflex">
+        <div class="codigo"><pre><code class="language-python">print("Hola")</code></pre></div>
+
+        <div class="resultado"><pre><span class="idle-resp">Hola</span></pre></div>
+      </div>
 
       <p>Las cadenas se pueden delimitar tanto por comillas dobles (") como por
         comillas simples (').</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><pre><code class="language-python">print('Hola')</code></pre></td>
-            <td class="python-resul"><pre>Hola</pre></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="filaflex">
+        <div class="codigo"><pre><code class="language-python">print('Hola')</code></pre></div>
+
+        <div class="resultado"><pre><span class="idle-resp">Hola</span></pre></div>
+      </div>
 
       <p><strong>Nota</strong>: En estos apuntes se utilizan normalmente comillas dobles.</p>
 
@@ -97,194 +91,166 @@
 
       <p>La función <span class="idle-func">print</span>() admite varios argumentos seguidos. En el programa, los argumentos deben separarse por comas. Los argumentos se muestran en el mismo orden y en la misma línea, separados por espacios:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><pre><code class="language-python">print("Hola", "Adios")</code></pre></td>
-            <td class="python-resul"><pre>Hola Adios</pre></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="filaflex">
+        <div class="codigo"><pre><code class="language-python">print("Hola", "Adios")</code></pre></div>
+
+        <div class="resultado"><pre><span class="idle-resp">Hola Adios</span></pre></div>
+      </div>
 
       <p>Al final de cada <span class="idle-func">print</span>(), Python añade automáticamente un salto de línea:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola")
 print("Adios")</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-Hola
-Adios
+        </div>
+
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">Hola
+Adios</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <p>Para generar una línea en blanco, se puede escribir una orden <span class="idle-func">print</span>() sin argumentos.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola")
 print()
 print("Adios")</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-Hola
+        </div>
 
-Adios</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">Hola
+
+Adios</span></pre>
+        </div>
+      </div>
 
       <p>Si no se quiere que Python añada un salto de línea al final de un <span class="idle-func">print</span>(), se debe añadir al final el argumento end=<span class="idle-cade">""</span>:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola", end="")
 print("Adios")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>HolaAdios</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">HolaAdios</span></pre></div>
+      </div>
 
       <p>En el ejemplo anterior, las dos cadenas se muestran pegadas. Si se quieren separar los argumentos en la salida, hay que incluir los espacios deseados (bien en la cadena, bien en el argumento end):</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola.<span class="conborde"> </span>", end="")
 print("Adios")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>Hola. Adios</pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola.", end="<span class="conborde"> </span>")
 print("Adios")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>Hola. Adios</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
+      </div>
 
       <hr class="corta" />
 
       <p>Como las comillas indican el principio y el final de una cadena, si se escriben comillas dentro de comillas se produce un error de sintaxis.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><pre><code class="language-python">print("Un tipo le dice a otro: "¿Cómo estás?"")</code></pre></td>
-            <td class="python-resul"><img alt="Aviso: Error de sintaxis (cadena incorrecta)" src="../img/error_cadena.png" width="260" height="161" title="Aviso: Error de sintaxis (cadena incorrecta)" /></td>
-          </tr>
-          <tr>
-            <td><pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre></td>
-            <td class="python-resul"><img alt="Aviso: Error de sintaxis (cadena incorrecta)" src="../img/error_cadena.png" width="260" height="161" title="Aviso: Error de sintaxis (cadena incorrecta)" /></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="filaflex">
+        <div class="codigo"><pre><code class="language-python">print("Un tipo le dice a otro: "¿Cómo estás?"")</code></pre></div>
+
+        <div class="resultado"><img alt="Aviso: Error de sintaxis (cadena incorrecta)" src="../img/error_cadena.png" width="260" height="161" title="Aviso: Error de sintaxis (cadena incorrecta)" /></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo"><pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre></div>
+
+        <div class="resultado"><img alt="Aviso: Error de sintaxis (cadena incorrecta)" src="../img/error_cadena.png" width="260" height="161" title="Aviso: Error de sintaxis (cadena incorrecta)" /></div>
+      </div>
 
       <p><strong>Nota</strong>: Si nos fijamos en la forma como IDLE colorea la instrucción, podemos darnos cuenta de que hay un error en ella. Como las cadenas empiezan y acaban con cada comilla, IDLE identifica dos cadenas y un texto en medio que no sabe lo que es.</p>
 
       <p>Para incluir comillas dentro de comillas, se puede escribir una contrabarra (\) antes de la comilla para que Python reconozca la comilla como carácter, no como delimitador de la cadena:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Un tipo le dice a otro: \"¿Cómo estás?\"")
 print('Y el otro le contesta: \'¡Pues anda que tú!\'')</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-Un tipo le dice a otro: "¿Cómo estás?"
-Y el otro le contesta: '¡Pues anda que tú!'
+        </div>
+
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">Un tipo le dice a otro: "¿Cómo estás?"
+Y el otro le contesta: '¡Pues anda que tú!'</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <p>O escribir comillas distintas a las utilizadas como delimitador de la cadena:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Un tipo le dice a otro: '¿Cómo estás?'")
 print('Y el otro le contesta: "¡Pues anda que tú!"')</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-Un tipo le dice a otro: '¿Cómo estás?'
-Y el otro le contesta: "¡Pues anda que tú!"
+        </div>
+
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">Un tipo le dice a otro: '¿Cómo estás?'
+Y el otro le contesta: "¡Pues anda que tú!"</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>La función <span class="idle-func">print</span>() permite incluir variables o expresiones como argmento, lo que nos permite combinar texto y variables:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">nombre = "Pepe"
 edad = 25
 print("Me llamo", nombre, "y tengo", edad, "años.")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>Me llamo Pepe y tengo 25 años.</pre>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">semanas = 4
 print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>En 4 semanas hay 28 días.</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
+      </div>
 
       <hr class="corta" />
 
@@ -303,184 +269,160 @@ print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 
       <p>La función <span class="idle-func">print</span>() muestra los argumentos separados por espacios, lo que a veces no es conveniente . En el ejemplo siguiente el signo de exclamación se muestra separado de la palabra.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">nombre = "Pepe"
 print("¡Hola,", nombre, "!")</code>
 </pre>
-            </td>
-            <td class="python-resul"><pre>¡Hola, Pepe<span class="conborde"> </span>!</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado"><pre><span class="idle-resp">¡Hola, Pepe<span class="conborde"> </span>!</span></pre></div>
+      </div>
 
       <p>Para eliminar ese espacio, se puede reducir el número de argumentos, concatenando texto y variables con el operador suma (+):</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">nombre = "Pepe"
 print("¡Hola,", nombre + "!")
 print("¡Hola, " + nombre + "!")</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-¡Hola, Pepe!
-¡Hola, Pepe!
+        </div>
+
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">¡Hola, Pepe!
+¡Hola, Pepe!</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <p>Pero hay que tener cuidado, porque no se pueden concatenar cadenas y números con el operador suma (+):</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-python">fecha = 2017
 print("¡Feliz " + fecha + "!")</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <pre>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
     print("¡Feliz " + fecha + "!")
 TypeError: Can't convert 'int' object to str
 implicitly</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <p>En este caso, hay que convertir los números a cadenas con la función <span class="idle-func">str</span>() antes de concatenarlos:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><pre>
+      <div class="filaflex">
+        <div class="codigo"><pre>
 <code class="language-python">fecha = 2017
 print("¡Feliz", fecha, "!")
 print("¡Feliz", str(fecha) + "!")
 print("¡Feliz " + str(fecha) + "!")</code>
 </pre>
-            </td>
-            <td class="python-resul">
-              <pre>
-¡Feliz 2017 !
+        </div>
+
+        <div class="resultado">
+          <pre>
+<span class="idle-resp">¡Feliz 2017 !
 ¡Feliz 2017!
-¡Feliz 2017!
+¡Feliz 2017!</span>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
 
       <section id="cadenas-f">
         <h3>Cadenas "f"</h3>
 
         <p>En Python 3.6 se ha añadido (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">nombre = "Pepe"
 edad = 25
 print(f"Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
-              </td>
-              <td class="python-resul"><pre>Me llamo Pepe y tengo 25 años.</pre>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <pre>
+          </div>
+
+          <div class="resultado"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">semanas = 4
 print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
 </pre>
-              </td>
-              <td class="python-resul"><pre>En 4 semanas hay 28 días.</pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+
+          <div class="resultado"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
+        </div>
 
         <p>Esta notación no añade espacios que en la notación "clásica" aparecían al incluir varios argumentos separados por comas:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td><pre>
+        <div class="filaflex">
+          <div class="codigo"><pre>
 <code class="language-python">fecha = 2017
 print("¡Feliz", fecha, "!")
 print("¡Feliz", str(fecha) + "!")
 print("¡Feliz " + str(fecha) + "!")
 print(f"¡Feliz {fecha}!")</code>
 </pre>
-              </td>
-              <td class="python-resul">
-                <pre>
-¡Feliz 2017 !
+          </div>
+
+          <div class="resultado">
+            <pre>
+<span class="idle-resp">¡Feliz 2017 !
 ¡Feliz 2017!
 ¡Feliz 2017!
-¡Feliz 2017!
+¡Feliz 2017!</span>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+        </div>
 
         <hr class="corta" />
 
         <p>Si no se escribe la letra f antes de la cadena, Python no sustituye los valores de las variables ni calcula las expresiones.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">nombre = "Pepe"
 edad = 25
 print("Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
-              </td>
-              <td class="python-resul"><pre>Me llamo {nombre} y tengo {edad} años.</pre></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+
+          <div class="resultado"><pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre></div>
+        </div>
 
         <hr class="corta" />
 
         <p>Si se quieren escribir los carácteres { o } se deben escribir duplicados.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">nombre = "Pepe"
 edad = 25
 print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
       f"en este caso {nombre}.")</code>
 </pre>
-              </td>
-              <td class="python-resul"><pre>Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</pre></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+
+          <div class="resultado"><pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre></div>
+        </div>
 
         <hr class="corta" />
 
