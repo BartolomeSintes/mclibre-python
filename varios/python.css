@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 8 de mayo de 2017                        */
+/* 9 de mayo de 2017                        */
 /*                                          */
 
 /* CSS comun */
@@ -58,10 +58,6 @@ h4 {
 
 pre {
   font-family: "Inconsolata", monospace;
-}
-
-.python-resul pre {
-  white-space: pre-wrap;
 }
 
 p.d {
@@ -287,7 +283,7 @@ div.filaflex.nogrow div:not([class="icono"]) {
   flex-grow: 0;
 }
 
-div.nogrow h2 {
+div.filaflex.nogrow h2 {
   margin: 0;
 }
 
@@ -296,6 +292,11 @@ div.filaflex div:not([class="icono"]) {
   flex-grow: 1;
   margin: 3px;
   padding: 2px 10px 0;
+}
+
+div.filaflex div.nogrow {
+  width: auto;
+  flex-grow: 0;
 }
 
 div.filaflex div.columnaflex {
