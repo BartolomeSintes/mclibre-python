@@ -467,7 +467,7 @@ IndexError: list assignment index out of range</span>
       <ul>
         <li>Una forma es recorrer directamente los elementos de la lista, es decir, que la variable de control del bucle tome los valores de la lista que     estamos recorriendo:
 
-          <div class="diapo2" style="height: 14em">
+          <div class="diapo" style="height: 14em">
             <div id="Paso10">
               <p><strong>Recorrer una lista directamente</strong></p>
 
@@ -667,7 +667,7 @@ for i in letras:
         </li>
         <li>La otra forma es recorrer indirectamente los elementos de la lista, es decir, que la variable de control del bucle tome como valores los índices de la lista que estamos recorriendo (0,1 ,2 , etc.). En este caso, para acceder a los valores de la lista hay que utilizar letras[i]:
 
-          <div class="diapo2" style="height: 15em">
+          <div class="diapo" style="height: 15em">
             <div id="Paso20">
               <p><strong>Recorrer una lista indirectamente</strong></p>
 
@@ -874,7 +874,7 @@ for i in range(len(letras)):
       <ul>
         <li>recorrer una lista al revés
 
-          <div class="diapo2" style="height: 15em">
+          <div class="diapo" style="height: 15em">
             <div id="Paso30">
               <p><strong>Recorrer una lista al revés</strong></p>
 
@@ -1079,7 +1079,7 @@ for i in range(len(letras)-1, -1, -1):
         </li>
         <li>modificar los elementos de una lista
 
-          <div class="diapo2" style="height: 17em">
+          <div class="diapo" style="height: 17em">
             <div id="Paso40">
               <p><strong>Recorrer y modificar una lista</strong></p>
 
@@ -1438,7 +1438,7 @@ for i in range(len(letras)):
         <li>eliminar elementos de la lista
           <p>Para eliminar los elementos de una lista necesitamos recorrer la lista al revés. Si recorremos la lista de principio a fin, al eliminar un valor de la lista, la lista se acorta y cuando intentamos acceder a los últimos valores se produce un error de índice fuera de rango, como muestra el siguiente ejemplo en el que se eliminan los valores de una lista que valen <span class="idle-cade">"B"</span>:</p>
 
-          <div class="diapo2" style="height: 19em">
+          <div class="diapo" style="height: 19em">
             <div id="Paso50">
               <p><strong>Eliminar valores de una lista (incorrecto)</strong></p>
 
@@ -1792,7 +1792,7 @@ IndexError: list index out of range</span>
           </div>
           <p>La solución es recorrer la lista en orden inverso, de manera que aunque se eliminen elementos y la lista se acorte, los valores que todavía no se han recorrido siguen existiendo en la misma posición que al principio.</p>
 
-          <div class="diapo2" style="height: 19em">
+          <div class="diapo" style="height: 19em">
             <div id="Paso60">
               <p><strong>Eliminar valores de una lista (correcto)</strong></p>
 

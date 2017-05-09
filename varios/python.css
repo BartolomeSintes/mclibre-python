@@ -190,7 +190,6 @@ img.i {
 pre {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 110%;
 }
 
 .conborde {
@@ -203,14 +202,6 @@ code.conborde {
 
 table.conborde, table.conborde td, table.conborde th {
   border: black 1px solid;
-}
-
-table.indice h2 {
-  margin: 0;
-}
-
-table.indice td {
-  vertical-align: top;
 }
 
 td {
@@ -226,15 +217,15 @@ ul {
   margin-top: -1px;
 }
 
-div.codigo {
+div.codigo, div.resultado, div.ejemplo-ejercicio {
   clear: both;
-  width: 95%;
   border: 2px black solid;
-  margin: 10px auto;
+  margin: 5px 10px;
   padding: 5px;
   background-color: white;
   color: black;
-  font-family: "Inconsolata";
+  font-family: "Inconsolata", monospace;
+  font-size: 110%;
   line-height: 120%;
 }
 
@@ -242,40 +233,19 @@ div.codigo p {
   margin: 0;
 }
 
-div.ejercicio {
-  clear: both;
-  border: 2px black solid;
-  margin: 10px 50px;
-  padding: 5px;
-  background-color: white;
-}
-
-div.ejercicio p {
-  margin: 2px;
-}
-
-object.ejercicio {
-  width: 90%;
+div.ejemplo-ejercicio object {
+  width: 100%;
   height: 400px;
-  border: 2px solid black;
-}
-
-object.ejemplo {
-  width: 90%;
-  border: 2px solid black ;
-}
-
-p.ejercicio {
-  text-align: center;
 }
 
 p.enlace-ejercicio {
-  margin-right: 5%;
+  margin-right: 10px;
   font-size: 80%;
   text-align: right;
 }
 
 /* Para ejemplos de ejecucion de codigo */
+
 div.diapo {
   overflow: hidden;
   position: relative;
@@ -285,16 +255,9 @@ div.diapo {
   line-height: 110%;
 }
 
-div.diapo pre {
+div.diapo > div {
   position: relative;
-  width: 98%;
-  height: 98%;
-  padding: 10px 0;
-}
-
-div.diapo div {
-  position: relative;
-  width: 98%;
+  width: 99%;
   height: 98%;
   padding: 5px;
 }
@@ -305,42 +268,13 @@ div.diapo p.control {
   right: 0;
 }
 
-/* Para ejemplos de ejecucion de codigo */
-div.diapo2 {
-  overflow: hidden;
-  position: relative;
-  height: 20em;
-  border: black 2px dotted;
-  margin-bottom: 10px;
-  line-height: 110%;
-}
-
-_div.diapo2 pre {
-  position: relative;
-  width: 98%;
-  height: 98%;
-  padding: 10px 0;
-}
-
-div.diapo2 > div {
-  position: relative;
-  width: 98%;
-  height: 98%;
-  padding: 5px;
-}
-
-div.diapo2 p.control {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
 div.filaflex {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  margin-bottom: 10px;
+  margin: 5px 0px;
 }
 
 div.filaflex.cabecera {
@@ -383,27 +317,13 @@ div.filaflex div.icono {
   padding: 5px;
 }
 
-div.filaflex div.resultado {
-  border: 2px black solid;
-  font-family: "Inconsolata";
-  line-height: 150%;
-}
-
-div.filaflex div.resultado object {
-  _display: block;
-  _overflow: auto;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-} /* He tenido que poner div.resultado y width para Chrome */
-
 div.filaflex pre {
   margin: 5px 0;
   white-space: pre-wrap;
 }
 
-
 /* Pantallas pequeñas */
+
 @media screen and (max-width: 768px) {
   html {
     margin-left: 1em;
@@ -442,7 +362,7 @@ div.filaflex pre {
     display: none;
   }
 
-  table.ejemplo td, table.indice td {
+  table.ejemplo td {
     display: block;
     width: 100%;
     margin-bottom: 5px;
@@ -471,10 +391,11 @@ div.filaflex pre {
 }
 
 /* Pantallas grandes */
+
 @media screen and (min-width: 768px) {
   html {
     margin-left: 12em;
-    margin-right: 2em;
+    margin-right: 1em;
   }
 
   nav {
@@ -541,6 +462,7 @@ div.filaflex pre {
 }
 
 /* Impresora */
+
 @media print {
   html {
     margin-left: 5px;
@@ -557,7 +479,7 @@ div.filaflex pre {
   }
 
   code {
-    font-size: 100 !important;
+    font-size: 100% !important;
   }
 
   pre {
@@ -578,11 +500,13 @@ div.filaflex pre {
 /* Clases para fragmentos de codigo en texto */
 
 /* Estilo para HTML imitando a Brackets */
+
 .html-eti        { color: #446FBD; }
 .html-atri       { color: #6D8600; }
 .html-atri-valor { color: #E88501; }
 
 /* Estilo para CSS imitando a Brackets */
+
 .css-sele         { color: #446FBD; }
 .css-prop         { color: #8757AD; }
 .css-feature      { color: #8757AD; }
@@ -594,6 +518,7 @@ div.filaflex pre {
 .css-funcion      { color: #4700FF; }
 
 /* Estilo para Python imitando a IDLE */
+
 .idle-prompt { color: #770000; }
 .idle-resp   { color: #0000FF; }
 .idle-rese   { color: #FF7700; }
@@ -607,6 +532,7 @@ div.filaflex pre {
 .idle-otro   { color: black; }
 
 /* Para soluciones ejercicios for (2) y for (3) */
+
 .borde1 { border: black 2px solid; display: inline-block; padding: 5px;  margin: 5px;}
 .borde1b { border: black 2px dotted; display: inline-block; padding: 5px;  margin: 5px;}
 .borde1bb { border: black 2px dotted; display: block; padding: 5px;  margin: 5px;}
