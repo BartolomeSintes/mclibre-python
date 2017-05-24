@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 9 de mayo de 2017                        */
+/* 24 de mayo de 2017                        */
 /*                                          */
 
 /* CSS comun */
@@ -343,10 +343,6 @@ div.filaflex pre {
     padding-left: 0.2em;
     font-size: 80%;
     text-align: left;
-  }
-
-  nav h2 {
-    display: none;
   }
 
   nav p {

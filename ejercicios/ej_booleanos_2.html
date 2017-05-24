@@ -461,7 +461,9 @@ document["e3_reinicia"].bind("click", e3_reinicia)
         <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
       </p>
 
-      <h2>Expresiones lógicas (2)</h2>
+      <div class="toc">
+        <h2>Expresiones lógicas (2)</h2>
+      </div>
     </nav>
 
     <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python_booleanos.html">Booleanos</a>.</p>
@@ -472,68 +474,69 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
     <p>Se pueden consultar también unos <a href="ej_booleanos_2_ejemplos.html">ejemplos de ejercicios resueltos</a>.</p>
 
-    <hr />
+    <section id="ejercicio-1">
+      <h2>Expresiones lógicas (2) - 1</h2>
 
-    <h2>Expresiones lógicas (2) - 1</h2>
+      <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
 
-    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+      <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
 
-    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+      <div class="ejemplo-ejercicio">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="300" height="50" viewBox="0 0 300 50"
+             style="background-color: lightgray" id="e1_svg">
+        </svg>
 
-    <div class="ejemplo-ejercicio">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-           width="300" height="50" viewBox="0 0 300 50"
-           style="background-color: lightgray" id="e1_svg">
-      </svg>
+        <p>Expresión: <input type="text" id="e1_expresion" size="50" value="x"/> <button id="e1_boton">Evaluar</button> <span id="e1_resultado"></span></p>
+        <p><button id="e1_nuevo">Nuevo dibujo</button></p>
+        <p><span id="e1_num_correctas">0</span> <img id="e1_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+        <p><span id="e1_num_incorrectas">0</span> <img id="e1_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+        <p><button id="e1_reinicia">Reiniciar contador</button></p>
+      </div>
+    </section>
 
-      <p>Expresión: <input type="text" id="e1_expresion" size="50" value="x"/> <button id="e1_boton">Evaluar</button> <span id="e1_resultado"></span></p>
-      <p><button id="e1_nuevo">Nuevo dibujo</button></p>
-      <p><span id="e1_num_correctas">0</span> <img id="e1_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e1_num_incorrectas">0</span> <img id="e1_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
-      <p><button id="e1_reinicia">Reiniciar contador</button></p>
-    </div>
-    <hr />
+    <section id="ejercicio-2">
+      <h2>Expresiones lógicas (2) - 2</h2>
 
-    <h2>Expresiones lógicas (2) - 2</h2>
+      <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
 
-    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+      <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
 
-    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
+      <div class="ejemplo-ejercicio">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="300" height="50" viewBox="0 0 300 50"
+             style="background-color: lightgray" id="e2_svg">
+        </svg>
 
-    <div class="ejemplo-ejercicio">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-           width="300" height="50" viewBox="0 0 300 50"
-           style="background-color: lightgray" id="e2_svg">
-      </svg>
+        <p>Expresión: <input type="text" id="e2_expresion" size="50" value="x"/> <button id="e2_boton">Evaluar</button> <span id="e2_resultado"></span></p>
+        <p><button id="e2_nuevo">Nuevo dibujo</button></p>
+        <p><span id="e2_num_correctas">0</span> <img id="e2_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+        <p><span id="e2_num_incorrectas">0</span> <img id="e2_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+        <p><button id="e2_reinicia">Reiniciar contador</button></p>
+      </div>
+    </section>
 
-      <p>Expresión: <input type="text" id="e2_expresion" size="50" value="x"/> <button id="e2_boton">Evaluar</button> <span id="e2_resultado"></span></p>
-      <p><button id="e2_nuevo">Nuevo dibujo</button></p>
-      <p><span id="e2_num_correctas">0</span> <img id="e2_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e2_num_incorrectas">0</span> <img id="e2_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
-      <p><button id="e2_reinicia">Reiniciar contador</button></p>
-    </div>
+    <section id="ejercicio-3">
+      <h2>Expresiones lógicas (2) - 3</h2>
 
-    <hr />
+      <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
 
-    <h2>Expresiones lógicas (2) - 3</h2>
+      <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
 
-    <p>El dibujo inferior representa la recta real. Escriba la expresión matemática que corresponde a la parte resaltada en rojo (la variable debe ser <strong>x</strong>). Un círculo rojo indica que el número está incluido, mientras que un círculo blanco indica que el número no está incluido.</p>
+      <div class="ejemplo-ejercicio">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="300" height="50" viewBox="0 0 300 50"
+             style="background-color: lightgray" id="e3_svg">
+        </svg>
 
-    <p>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</p>
-
-    <div class="ejemplo-ejercicio">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-           width="300" height="50" viewBox="0 0 300 50"
-           style="background-color: lightgray" id="e3_svg">
-      </svg>
-
-      <p>Expresión: <input type="text" id="e3_expresion" size="50" value="x"/> <button id="e3_boton">Evaluar</button> <span id="e3_resultado"></span></p>
-      <p><button id="e3_nuevo">Nuevo dibujo</button></p>
-      <p><span id="e3_num_correctas">0</span> <img id="e3_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e3_num_incorrectas">0</span> <img id="e3_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
-      <p><button id="e3_reinicia">Reiniciar contador</button></p>
-      <p id="e3_texto"></p>
-    </div>
+        <p>Expresión: <input type="text" id="e3_expresion" size="50" value="x"/> <button id="e3_boton">Evaluar</button> <span id="e3_resultado"></span></p>
+        <p><button id="e3_nuevo">Nuevo dibujo</button></p>
+        <p><span id="e3_num_correctas">0</span> <img id="e3_img_correctas" src="../img/franja_verde.png" height="10" alt="Correctas" /></p>
+        <p><span id="e3_num_incorrectas">0</span> <img id="e3_img_incorrectas" src="../img/franja_roja.png" height="10" alt="Incorrectas" /></p>
+        <p><button id="e3_reinicia">Reiniciar contador</button></p>
+        <p id="e3_texto"></p>
+      </div>
+    </section>
 
     <footer>
       <p class="ultmod">Última modificación de esta página: 14 de febrero de 2017</p>

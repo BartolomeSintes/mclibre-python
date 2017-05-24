@@ -77,22 +77,25 @@ document["e2_stop"].bind("click", e2_stop)
         <a href="../index.html"><img src="../varios/iconos/icono_python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
         <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
       </p>
+
+      <div class="toc">
+        <h2>Bugs de Brython</h2>
+      </div>
     </nav>
 
-    <hr />
+    <section id="bug-379">
+      <h2>Bug 379: eval() does not work properly (possible bug). Bug 412: some logical expressions are incorrectly evaluated</h2>
 
-    <h2>Bug 379: eval() does not work properly (possible bug). Bug 412: some logical expressions are incorrectly evaluated</h2>
+      <p>Genera al azar expresiones lógicas con y sin paréntesis y compara cómo las evalúa Brython. Si dan distintas, las escribe.</p>
 
-    <p>Genera al azar expresiones lógicas con y sin paréntesis y compara cómo las evalúa Brython. Si dan distintas, las escribe.</p>
-
-    <div class="codigo">
-      <p><button id="e2_start">Empezar</button></p>
-      <p><button id="e2_stop">Acabar</button></p>
-      <p id="e2_actual"></p>
-      <p id="e2_resultados"></p>
-      <pre id="e2_errores"></pre>
-    </div>
-    <hr />
+      <div class="codigo">
+        <p><button id="e2_start">Empezar</button></p>
+        <p><button id="e2_stop">Acabar</button></p>
+        <p id="e2_actual"></p>
+        <p id="e2_resultados"></p>
+        <pre id="e2_errores"></pre>
+      </div>
+    </section>
 
     <footer>
       <p class="ultmod">Última modificación de esta página: 7 de abril de 2016</p>

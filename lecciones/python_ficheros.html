@@ -19,9 +19,9 @@
         <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
       </p>
 
-      <h2>Ficheros</h2>
-
       <div class="toc">
+        <h2>Ficheros</h2>
+
         <ul>
           <li><a href="#with-as"><span class="idle-rese">with</span> ... <span class="idle-rese">as</span></a></li>
           <li><a href="#modos-escritura">Modos de escritura</a></li>
@@ -105,35 +105,35 @@
       <p>Los tres ejemplos siguientes muestran la diferencia entre cada uno de los modos de escritura:</p>
       <ul>
         <li>[w] Cada vez que se ejecuta este programa, se crea nuevamente el fichero, por lo que este sólo contiene la palabra Hola.
-                    <div class="codigo">
-        <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">ruta = "prueba.txt"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
 </pre>
-      </div>
-</li>
+          </div>
+        </li>
         <li>[x] Al ejecutar por segunda vez este programa (o a la primera si el fichero ya existe), se genera un error.
-                    <div class="codigo">
-        <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">ruta = "prueba.txt"
 
 with open(ruta, mode="x", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
 </pre>
-      </div>
-</li>
+          </div>
+        </li>
         <li>[a] Cada vez que se ejecuta este programa se añade al fichero una línea con la palabra Hola.
-                    <div class="codigo">
-        <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">ruta = "prueba.txt"
 
 with open(ruta, mode="a", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
 </pre>
-      </div>
-</li>
+          </div>
+        </li>
       </ul>
 
     </section>
