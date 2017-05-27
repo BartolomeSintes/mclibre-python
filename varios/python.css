@@ -6,14 +6,14 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 24 de mayo de 2017                        */
+/* 28 de mayo de 2017                       */
 /*                                          */
 
 /* CSS comun */
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("fonts/inconsolata.woff2");
+  src: url("fonts/inconsolata.woff");
 }
 
 html {
@@ -38,7 +38,6 @@ footer {
 }
 
 h1 {
-  margin-left: 75px;
   font-size: 200%;
   text-align: center;
 }
@@ -56,63 +55,19 @@ h4 {
   font-weight: bold;
 }
 
-pre {
-  font-family: "Inconsolata", monospace;
+pre, pre code {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Inconsolata", monospace;  /* Chrome user agent style sheet */
 }
 
-p.d {
-  text-align: right;
-}
-
-p.i {
-  text-align: right;
-}
-
-.captura img {
-  border: black 2px dotted;
-  padding: 5px;
-  vertical-align: middle;
-}
-
-.captura svg {
-  border: black 2px dotted;
-  padding: 5px;
-  vertical-align: middle;
-}
-
-.captura {
-  text-align: center;
-}
-
-.incompleto {
-  background-color: #FFFFFF;
-  color: red;
-}
-
-.limpia {
+hr {
   clear: both;
 }
 
-.soft-menu {
-  background-color: #D4D0C8;
-  font-family: serif;
-}
-
-p.resaltado {
-  display: inline-block;
-  border: black 1px solid;
-  margin: 5px;
-  padding: 5px;
-}
-
-.resaltado img {
-  border-color: red;
-}
-
-.teclado {
-  font-family: monospace;
-  font-size: 120%;
-  font-weight: bold;
+hr.corta {
+  clear: both;
+  width: 50%;
 }
 
 p {
@@ -124,10 +79,6 @@ p.aviso {
   margin:10px;
   padding: 10px;
   color:red;
-}
-
-.centrado {
-  text-align: center;
 }
 
 p.ultmod {
@@ -142,50 +93,78 @@ p.licencia {
   text-align: left;
 }
 
-p.enlace-ejemplo {
-  margin-right: 2%;
-  font-size: 80%;
-  text-align: right;
+p.separador {
+  height: 10px;
 }
 
-samp {
-  font-size: 130%
-}
-
-hr {
-  width: 100%;
-  clear: both;
-}
-
-hr.corta {
-  width: 50%;
+.centrado {
   text-align: center;
-  clear: both;
-  margin-top: 10px;
-  margin-bottom: 0;
 }
 
-img#vpp {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  border:none;
+a img {
+  border: none;
 }
 
-img.d {
+img.derecha {
   float: right;
-  margin-left : 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
-img.i {
+img.izquierda {
   float: left;
   margin-right: 10px;
   margin-bottom: 5px;
 }
 
-pre {
-  margin-top: 0;
-  margin-bottom: 0;
+.limpia {
+  clear: both;
+}
+
+.soft-atajo-teclado {
+  font-family: monospace;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.soft-menu {
+  background-color: #D4D0C8;
+  font-family: serif;
+}
+
+.incompleto {
+  color: red;
+}
+
+.captura {
+  text-align: center;
+}
+
+.captura img, .captura svg {
+  border: black 2px dotted;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+p.resaltado {
+  display: inline-block;
+  border: black 1px solid;
+  margin: 5px;
+  padding: 5px;
+}
+
+.resaltado img {
+  border-color: red;
+}
+
+kbd {
+  font-family: monospace;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+samp {
+  font-size: 130%
 }
 
 .conborde {
@@ -204,64 +183,8 @@ td {
   vertical-align: top;
 }
 
-col.centrado {
-  padding: 0 10px;
-  text-align: center;
-}
-
 ul {
   margin-top: -1px;
-}
-
-div.codigo, div.resultado, div.ejemplo-ejercicio {
-  clear: both;
-  border: 2px black solid;
-  margin: 5px 10px;
-  padding: 5px;
-  background-color: white;
-  color: black;
-  font-family: "Inconsolata", monospace;
-  font-size: 110%;
-  line-height: 120%;
-}
-
-div.codigo p {
-  margin: 0;
-}
-
-div.ejemplo-ejercicio object {
-  width: 100%;
-  height: 400px;
-}
-
-p.enlace-ejercicio {
-  margin-right: 10px;
-  font-size: 80%;
-  text-align: right;
-}
-
-/* Para ejemplos de ejecucion de codigo */
-
-div.diapo {
-  overflow: hidden;
-  position: relative;
-  height: 20em;
-  border: black 2px dotted;
-  margin-bottom: 10px;
-  line-height: 110%;
-}
-
-div.diapo > div {
-  position: relative;
-  width: 99%;
-  height: 98%;
-  padding: 5px;
-}
-
-div.diapo p.control {
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 div.filaflex {
@@ -270,6 +193,7 @@ div.filaflex {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
+  clear: both;
   margin: 5px 0px;
 }
 
@@ -283,15 +207,13 @@ div.filaflex.nogrow div:not([class="icono"]) {
   flex-grow: 0;
 }
 
-div.filaflex.nogrow h2 {
+div.filaflex.nogrow h2, div.filaflex.nogrow h3 {
   margin: 0;
 }
 
 div.filaflex div:not([class="icono"]) {
   width: 100px;
   flex-grow: 1;
-  margin: 3px;
-  padding: 2px 10px 0;
 }
 
 div.filaflex div.nogrow {
@@ -313,9 +235,29 @@ div.filaflex div.columnaflex div {
   width: auto;
 }
 
-div.filaflex div.icono {
+div.filaflex div.icono-navegadores {
   flex-grow: 0;
-  padding: 5px;
+  width: 50px;
+}
+
+div.filaflex div.icono-navegadores-vacio {
+  flex-grow: 0;
+  width: 50px;
+}
+
+div.filaflex div.icono-ok {
+  flex-grow: 0;
+  width: 40px;
+}
+
+div.filaflex div.icono-xhtml-ok {
+  flex-grow: 0;
+  width: 120px;
+}
+
+div.filaflex div.icono-enlace {
+  flex-grow: 0;
+  width: 40px;
 }
 
 div.filaflex pre {
@@ -323,50 +265,79 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
+div.codigo, div.resultado {
+  clear: both;
+  border: 2px black solid;
+  margin: 5px 10px;
+  padding: 5px;
+  background-color: white;
+  color: black;
+  font-family: "Inconsolata", monospace;
+  font-size: 110%;
+  line-height: 120%;
+}
+
+/* Para ejemplos de ejecucion de codigo */
+
+div.diapo {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  height: 20em;
+  border: black 2px dotted;
+  margin-bottom: 10px;
+  line-height: 110%;
+}
+
+div.diapo > div {
+  position: relative;
+  width: 99%;
+  height: 98%;
+  padding: 5px;
+}
+
+div.diapo p.control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 /* Pantallas pequeñas */
 
 @media screen and (max-width: 768px) {
   html {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-
-  h1#indice {
-    margin-left: 140px;
+    margin-left: 40px;
+    margin-right: 5px;
   }
 
   nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 8em;
+    width: 50px;
     padding-left: 0.2em;
     font-size: 80%;
     text-align: left;
   }
 
-  nav p {
-    font-size: 350%;
-    margin: 5px 0 0;
+  nav.portada {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  nav a {
+  nav p, div.nav p {
+    margin: 5px 0 0;
+    font-size: 350%;
+  }
+
+  nav a, div.nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav div.toc {
+  nav div.toc, div.nav div.toc {
     display: none;
-  }
-
-  table.ejemplo td {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
-  }
-
-  h1 {
-    margin-left: 2.5em;
   }
 
   pre {
@@ -376,14 +347,31 @@ div.filaflex pre {
 
   div.filaflex {
     display: block;
+    margin-bottom: 15px;
   }
 
   div.filaflex.cabecera {
     display: none;
   }
 
-   div.filaflex div:not([class="icono"]) {
+  div.filaflex div:not([class="icono"]) {
     width: auto;
+  }
+
+  div.filaflex div.icono-navegadores-vacio {
+    display: none;
+  }
+
+  div.diapo {
+    height: auto !important;
+  }
+
+  div.diapo p.control {
+    display: none;
+  }
+
+  p.oculta-small {
+    display: none;
   }
 }
 
@@ -395,7 +383,7 @@ div.filaflex pre {
     margin-right: 1em;
   }
 
-  nav {
+  nav, div.nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -405,55 +393,55 @@ div.filaflex pre {
     text-align: left;
   }
 
-  nav h2 {
+  nav h2, div.nav h2 {
     margin: 0;
     padding: 0;
     font-size: 110%;
     text-align: left;
   }
 
-  nav h3 {
+  nav h3, div.nav h3 {
     margin: 10px 0 0;
     padding: 0;
     font-size: 105%;
     text-align: left;
   }
 
-  nav p {
+  nav p, div.nav p {
     margin: 5px 0 0;
     font-size: 350%;
   }
 
-  nav a {
+  nav a , div.nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav ul {
+  nav ul, div.nav ul {
     margin-top: 0;
     padding-left: 1em;
   }
 
-  nav ol {
+  nav ol, div.nav ol {
     margin-top: 0;
     padding-left: 2em;
   }
 
-  nav ul li, nav ol li {
+  nav ul li, nav ol li, div.nav ul li, div.nav ol li {
     margin: 0 0 0.1em 0.1em;
   }
 
-  nav ul ul {
+  nav ul ul, div.nav ul ul {
     margin: 0;
     padding-left: 0.5em;
   }
 
-  nav ul ol {
+  nav ul ol, div.nav ul ol {
     margin: 0;
     padding-left: 1em;
   }
 
-  nav ul ul li, nav ol ol li {
+  nav ul ul li, nav ol ol li, div.nav ul ul li, div.nav ol ol li   {
     margin: 0;
   }
 }
@@ -467,11 +455,7 @@ div.filaflex pre {
     margin-top: 0;
   }
 
-  nav p {
-    display: none;
-  }
-
-  nav h2 {
+  nav {
     display: none;
   }
 
@@ -481,10 +465,6 @@ div.filaflex pre {
 
   pre {
     white-space: pre-wrap !important;
-  }
-
-  p.volver-principio {
-    display: none;
   }
 
   tr {
