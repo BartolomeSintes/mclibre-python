@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 28 de mayo de 2017                       */
+/* 31 de mayo de 2017                       */
 /*                                          */
 
 /* CSS comun */
@@ -55,6 +55,10 @@ h4 {
   font-weight: bold;
 }
 
+h2, h3, h4 {
+  clear: both;
+}
+
 pre, pre code {
   margin-top: 0;
   margin-bottom: 0;
@@ -76,15 +80,15 @@ p {
 
 p.aviso {
   border-left: 2px red solid;
-  margin:10px;
+  margin: 10px;
   padding: 10px;
   color:red;
 }
 
 p.ultmod {
   clear: both;
-  border-top: black 1px solid;
-  margin-top: 10px;
+  border-top: black 2px solid;
+  margin-top: 1px;
   padding-top: 2px;
   text-align: left;
 }
@@ -97,7 +101,7 @@ p.separador {
   height: 10px;
 }
 
-.centrado {
+.mcl-centrado {
   text-align: center;
 }
 
@@ -117,6 +121,10 @@ img.izquierda {
   margin-bottom: 5px;
 }
 
+img.vmedio {
+  vertical-align: middle;
+}
+
 .soft-atajo-teclado {
   font-family: monospace;
   font-size: 120%;
@@ -130,6 +138,14 @@ img.izquierda {
 
 .incompleto {
   color: red;
+}
+
+.conborde {
+  border: blue 2px solid;
+}
+
+code.conborde {
+  display: inline-block;
 }
 
 .captura {
@@ -153,34 +169,15 @@ p.resaltado {
   border-color: red;
 }
 
+math {
+  font-family: sans-serif;
+  font-size: 105%;
+}
+
 kbd {
   font-family: monospace;
   font-size: 120%;
   font-weight: bold;
-}
-
-samp {
-  font-size: 130%
-}
-
-.conborde {
-  border: blue 2px solid;
-}
-
-code.conborde {
-  display: inline-block;
-}
-
-table.conborde, table.conborde td, table.conborde th {
-  border: black 1px solid;
-}
-
-td {
-  vertical-align: top;
-}
-
-ul {
-  margin-top: -1px;
 }
 
 div.filaflex {
@@ -196,6 +193,7 @@ div.filaflex {
 div.filaflex.cabecera {
   margin-bottom: -5px;
   padding-bottom: 0;
+  text-align: center;
 }
 
 div.filaflex.nogrow div:not([class="icono"]) {
@@ -234,26 +232,31 @@ div.filaflex div.columnaflex div {
 div.filaflex div.icono-navegadores {
   flex-grow: 0;
   width: 50px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-navegadores-vacio {
   flex-grow: 0;
   width: 50px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-ok {
   flex-grow: 0;
   width: 40px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-xhtml-ok {
   flex-grow: 0;
   width: 120px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-enlace {
   flex-grow: 0;
   width: 40px;
+  /* no tiene margin-top porque uso la clase en div.cabecera */
 }
 
 div.filaflex pre {
@@ -265,7 +268,7 @@ div.codigo, div.resultado {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
-  padding: 5px;
+  padding: 0;
   background-color: white;
   color: black;
   font-family: "Inconsolata", monospace;
@@ -273,9 +276,73 @@ div.codigo, div.resultado {
   line-height: 120%;
 }
 
+div.codigo {
+  padding: 0 5px;
+}
+
+div.resultado object {
+  width: 100%;
+}
+
+table.mcl-listado {
+  border-collapse: collapse;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table.mcl-listado tr {
+  border-bottom: black 1px solid;
+}
+
+table.mcl-listado tr.titulo {
+  border: none;
+}
+
+table.mcl-listado tr.titulo td {
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+table.mcl-listado tr.cabecera td {
+  border: none;
+  font-weight: bolder;
+}
+
+table.mcl-franjas thead tr, table.mcl-franjas tbody tr:nth-child(even) {
+  background-color: #eee;
+  color: black;
+}
+
+table.mcl-centrado {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+td.mcl-centrado, th.mcl-centrado, tbody.mcl-centrado {
+  text-align: center;
+}
+
+table.conborde, table.conborde td, table.conborde th {
+  border: black 1px solid;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  vertical-align: top;
+}
+
+ul {
+  margin-top: -1px;
+}
+
 /* Para ejemplos de ejecucion de codigo */
 
-div.diapo {
+div.mcl-diapo {
   flex-grow: 1;
   overflow: hidden;
   position: relative;
@@ -285,20 +352,45 @@ div.diapo {
   line-height: 110%;
 }
 
-div.diapo > div {
+div.mcl-diapo > div {
   position: relative;
   width: 99%;
   height: 98%;
   padding: 5px;
 }
 
-div.diapo p.control {
+div.mcl-diapo p.control {
   position: absolute;
   bottom: 0;
   right: 0;
 }
 
-/* Pantallas pequeñas */
+/* Enlaces a normas */
+
+h2.con-aside, h3.con-aside, h4-con-aside {
+  float: left;
+}
+
+.enlace-norma {
+  float: right;
+  margin-left: 10px;
+}
+
+.enlace-norma > p {
+  float: left;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.enlace-norma a {
+  text-decoration: none;
+}
+
+.enlace-norma + p {
+  clear: left;
+}
+
+/* Pantallas estrechas */
 
 @media screen and (max-width: 768px) {
   html {
@@ -322,17 +414,17 @@ div.diapo p.control {
     margin-right: auto;
   }
 
-  nav p, div.nav p {
+  nav p {
     margin: 5px 0 0;
     font-size: 350%;
   }
 
-  nav a, div.nav a {
+  nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav div.toc, div.nav div.toc {
+  nav div.toc {
     display: none;
   }
 
@@ -358,11 +450,11 @@ div.diapo p.control {
     display: none;
   }
 
-  div.diapo {
+  div.mcl-diapo {
     height: auto !important;
   }
 
-  div.diapo p.control {
+  div.mcl-diapo p.control {
     display: none;
   }
 
@@ -371,7 +463,7 @@ div.diapo p.control {
   }
 }
 
-/* Pantallas grandes */
+/* Pantallas anchas */
 
 @media screen and (min-width: 768px) {
   html {
@@ -379,7 +471,7 @@ div.diapo p.control {
     margin-right: 1em;
   }
 
-  nav, div.nav {
+  nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -389,55 +481,55 @@ div.diapo p.control {
     text-align: left;
   }
 
-  nav h2, div.nav h2 {
+  nav h2 {
     margin: 0;
     padding: 0;
     font-size: 110%;
     text-align: left;
   }
 
-  nav h3, div.nav h3 {
+  nav h3 {
     margin: 10px 0 0;
     padding: 0;
     font-size: 105%;
     text-align: left;
   }
 
-  nav p, div.nav p {
+  nav p {
     margin: 5px 0 0;
     font-size: 350%;
   }
 
-  nav a , div.nav a {
+  nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav ul, div.nav ul {
+  nav ul {
     margin-top: 0;
     padding-left: 1em;
   }
 
-  nav ol, div.nav ol {
+  nav ol {
     margin-top: 0;
     padding-left: 2em;
   }
 
-  nav ul li, nav ol li, div.nav ul li, div.nav ol li {
+  nav ul li, nav ol li {
     margin: 0 0 0.1em 0.1em;
   }
 
-  nav ul ul, div.nav ul ul {
+  nav ul ul {
     margin: 0;
     padding-left: 0.5em;
   }
 
-  nav ul ol, div.nav ul ol {
+  nav ul ol {
     margin: 0;
     padding-left: 1em;
   }
 
-  nav ul ul li, nav ol ol li, div.nav ul ul li, div.nav ol ol li   {
+  nav ul ul li, nav ol ol li {
     margin: 0;
   }
 }
@@ -455,6 +547,10 @@ div.diapo p.control {
     display: none;
   }
 
+  div.icono-enlace {
+    display: none;
+  }
+
   code {
     font-size: 100% !important;
   }
@@ -464,11 +560,13 @@ div.diapo p.control {
   }
 
   tr {
-    page-break-inside:avoid;
+    page-break-inside: avoid;
+  }
+
+  .noprint {
+    display: none
   }
 }
-
-/* CSS especifico apuntes Python */
 
 /* Clases para fragmentos de codigo en texto */
 
@@ -480,15 +578,15 @@ div.diapo p.control {
 
 /* Estilo para CSS imitando a Brackets */
 
-.css-sele         { color: #446FBD; }
-.css-prop         { color: #8757AD; }
-.css-feature      { color: #8757AD; }
-.css-valor        { color: #E88501; }
-.css-numero       { color: #8E8600; }
-.css-unidad       { color: #8E8600; }
-.css-pseudo       { color: #535353; }
-.css-arroba       { color: #8757AD; }
-.css-funcion      { color: #4700FF; }
+.css-sele    { color: #446FBD; }
+.css-prop    { color: #8757AD; }
+.css-feature { color: #8757AD; }
+.css-valor   { color: #E88501; }
+.css-numero  { color: #8E8600; }
+.css-unidad  { color: #8E8600; }
+.css-pseudo  { color: #535353; }
+.css-arroba  { color: #8757AD; }
+.css-funcion { color: #4700FF; }
 
 /* Estilo para Python imitando a IDLE */
 
@@ -503,6 +601,17 @@ div.diapo p.control {
 .idle-come   { color: #FF0000; }
 .idle-menu   { background-color: #D4D0C8; font-family: serif;}
 .idle-otro   { color: black; }
+
+/* Estilo para XML imitando a XML Copy Editor*/
+
+.xml-tag     { color: #0000FF; } /* any tag from "<" till ">"  */
+.xml-attr    { color: #FC0204; } /* tag's attribute            */
+.xml-pi      { color: #0000FF; }
+.xml-comment { color: #808080; } /* comment                    */
+.xsl-i       { color: #0000FF; }
+.xsl-atri    { color: #FC0204; }
+
+/* CSS especifico apuntes Python */
 
 /* Para soluciones ejercicios for (2) y for (3) */
 
