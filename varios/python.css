@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 1 de junio de 2017                       */
+/* 14 de junio de 2017                      */
 /*                                          */
 
 /* CSS comun */
@@ -63,6 +63,7 @@ pre, pre code {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "Inconsolata", monospace;  /* Chrome user agent style sheet */
+  line-height: 120%;
 }
 
 hr {
@@ -168,6 +169,14 @@ img.vmedio {
   outline: red 2px solid;
 }
 
+.numero-circulo {
+  float: left;
+  margin-left: -60px;
+  margin-top: 10px;
+  font-size: 300%;
+  line-height: 1px;
+}
+
 math {
   font-family: sans-serif;
   font-size: 105%;
@@ -263,7 +272,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.codigo, div.resultado {
+div.codigo, div.resultado, div.resultado-object {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
@@ -271,15 +280,13 @@ div.codigo, div.resultado {
   background-color: white;
   color: black;
   font-family: "Inconsolata", monospace;
-  font-size: 110%;
-  line-height: 120%;
 }
 
 div.codigo {
   padding: 0 5px;
 }
 
-div.resultado object {
+div.resultado-object object {
   width: 100%;
 }
 
@@ -323,7 +330,11 @@ td.mcl-centrado, th.mcl-centrado, tbody.mcl-centrado {
   text-align: center;
 }
 
-table.tabla-con-borde, table.tabla-con-borde td, table.tabla-con-borde th {
+table.tabla-con-borde {
+  border: #B2B2B2 1px solid;
+}
+
+table.tabla-con-borde td, table.tabla-con-borde th {
   border: black 1px solid;
 }
 
@@ -569,6 +580,11 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   .noprint {
     display: none
   }
+}
+
+/* Ejemplos de archivos de configuracion */
+
+code.language-configuracion {
 }
 
 /* Clases para fragmentos de codigo en texto */
