@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 14 de junio de 2017                      */
+/* 16 de junio de 2017                      */
 /*                                          */
 
 /* CSS comun */
@@ -152,7 +152,7 @@ img.vmedio {
   text-align: center;
 }
 
-.captura img, .captura svg {
+.captura img, .captura svg, .captura iframe {
   border: black 2px dotted;
   padding: 5px;
   vertical-align: middle;
@@ -167,6 +167,11 @@ img.vmedio {
 .codigo-resaltado-caja {
   display: inline-block;
   outline: red 2px solid;
+}
+
+.codigo-modificacion {
+  color: red;
+  font-weight: bold;
 }
 
 .numero-circulo {
@@ -279,15 +284,22 @@ div.codigo, div.resultado, div.resultado-object {
   padding: 0;
   background-color: white;
   color: black;
-  font-family: "Inconsolata", monospace;
 }
 
 div.codigo {
   padding: 0 5px;
+  font-family: "Inconsolata", monospace;
 }
 
 div.resultado-object object {
   width: 100%;
+}
+
+div.aviso-antiguo {
+  border: red 3px solid;
+  margin: 0 50px;
+  padding: 20px;
+  background-color: #FFBABA;
 }
 
 table.mcl-listado {
@@ -582,9 +594,15 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   }
 }
 
-/* Ejemplos de archivos de configuracion */
+/* Lenguajes pendientes de incluir en highlight.js */
 
 code.language-configuracion {
+}
+
+code.language-shell {
+}
+
+code.language-sql {
 }
 
 /* Clases para fragmentos de codigo en texto */
@@ -629,6 +647,16 @@ code.language-configuracion {
 .xml-comment { color: #808080; } /* comment                    */
 .xsl-i       { color: #0000FF; }
 .xsl-atri    { color: #FC0204; }
+
+/* Estilo para PHP imitando a Eclipse PDT */
+
+.php-con { font-weight: bold; } /* Constante                    */
+.php-del { font-weight: bold; } /* Delimitador de fragmento php */
+.php-dir { font-weight: bold; } /* Directiva de php.ini         */
+.php-fun { font-weight: bold; } /* Funcion                      */
+.php-ope { font-weight: bold; } /* Operador                     */
+.php-res { font-weight: bold; } /* Palabra reservada            */
+.php-var { font-weight: bold; } /* Variable                     */
 
 /* CSS especifico apuntes Python */
 

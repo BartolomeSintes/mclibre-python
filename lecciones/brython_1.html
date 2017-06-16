@@ -72,13 +72,13 @@
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
   &lt;title&gt;Brython. Python&lt;/title&gt;
-<span class="codigo-resaltado-caja">  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;</span>
+<span class="codigo-resaltado">  &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;</span>
 <span class="codigo-resaltado-caja">  &lt;script type="text/python3"&gt;
 # Aquí se escribiría el programa de Python
   &lt;/script&gt;</span>
 &lt;/head&gt;
 
-<span class="codigo-resaltado-caja">&lt;body onload="brython()"&gt;</span>
+<span class="codigo-resaltado">&lt;body onload="brython()"&gt;</span>
   &lt;p&gt;Esta página es HTML 5 válido.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code>
@@ -187,7 +187,7 @@
   &lt;/script&gt;
 &lt;/head&gt;
 
-<span class="codigo-resaltado-caja">&lt;body onload="brython()"&gt;</span>
+<span class="codigo-resaltado">&lt;body onload="brython()"&gt;</span>
   &lt;p&gt;Esta página es HTML 5 válido.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code>
@@ -237,7 +237,7 @@ document["destino"] &lt;= "¡Hola, mundo!"</span>
 &lt;/head&gt;
 
 &lt;body onload="brython()"&gt;
-<span class="codigo-resaltado-caja">  &lt;p id="destino"&gt;&lt;/p&gt;</span>
+<span class="codigo-resaltado">  &lt;p id="destino"&gt;&lt;/p&gt;</span>
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
@@ -273,7 +273,7 @@ document["destino"] &lt;= "¡Hola, mundo!"
   &lt;/script&gt;
 &lt;/head&gt;
 
-<span class="codigo-resaltado-caja">&lt;body onload="brython()"&gt;</span>
+<span class="codigo-resaltado">&lt;body onload="brython()"&gt;</span>
   &lt;p id="destino"&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code>
@@ -304,7 +304,7 @@ document["destino"] &lt;= "¡Hola, mundo!"
   &lt;title&gt;Añadir texto en un elemento HTML. Brython. Python&lt;/title&gt;
   &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
   &lt;script type="text/python3"&gt;
-<span class="codigo-resaltado-caja">from browser import document</span>
+<span class="codigo-resaltado">from browser import document</span>
 
 document["destino"] &lt;= "¡Hola, mundo!"
   &lt;/script&gt;
@@ -343,7 +343,7 @@ document["destino"] &lt;= "¡Hola, mundo!"
   &lt;script type="text/python3"&gt;
 from browser import document
 
-<span class="codigo-resaltado-caja">document["destino"] &lt;= "¡Hola, mundo!"</span>
+<span class="codigo-resaltado">document["destino"] &lt;= "¡Hola, mundo!"</span>
   &lt;/script&gt;
 &lt;/head&gt;
 
@@ -391,7 +391,7 @@ document["destino"] &lt;= "¡Hola, mundo!"
 &lt;/head&gt;
 
 &lt;body onload="brython()"&gt;
-<span class="codigo-resaltado-caja">  &lt;p id="destino"&gt;&lt;/p&gt;</span>
+<span class="codigo-resaltado">  &lt;p id="destino"&gt;&lt;/p&gt;</span>
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
@@ -485,7 +485,7 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
   &lt;/script&gt;
 &lt;/head&gt;
 
-<span class="codigo-resaltado-caja">&lt;body onload="brython()"&gt;</span>
+<span class="codigo-resaltado">&lt;body onload="brython()"&gt;</span>
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
     width="200" height="200" viewBox="0 0 200 200"
     style="border: black 1px solid" id="imagen"&gt;
@@ -524,7 +524,7 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
   &lt;title&gt;Añadir elementos en una imagen SVG. Brython. Python&lt;/title&gt;
   &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
   &lt;script type="text/python3"&gt;
-<span class="codigo-resaltado-caja">from browser import document</span>
+<span class="codigo-resaltado">from browser import document</span>
 import browser.svg as svg
 
 document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", stroke_width=3)
@@ -571,7 +571,7 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
   &lt;script type="text/javascript" src="http://brython.info/src/brython_dist.js"&gt;&lt;/script&gt;
   &lt;script type="text/python3"&gt;
 from browser import document
-<span class="codigo-resaltado-caja">import browser.svg as svg</span>
+<span class="codigo-resaltado">import browser.svg as svg</span>
 
 document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", stroke_width=3)
   &lt;/script&gt;
