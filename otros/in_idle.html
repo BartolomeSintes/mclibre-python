@@ -38,7 +38,7 @@
 
       <p>Al abrir IDLE con el acceso directo <span class="soft-menu">Inicio &gt; Todos los programas &gt; Python 3.6 &gt; IDLE (Python 3.6)</span>, se abrirá la ventana principal de IDLE, como muestra la imagen siguiente.</p>
 
-      <p class="captura"><img alt="IDLE: Ventana principal" src="../img/idle/idle_1.png" width="685" height="400" title="IDLE: Ventana principal" /></p>
+      <p class="captura"><img src="../img/idle/idle_1.png" alt="IDLE: Ventana principal" width="685" height="400" title="IDLE: Ventana principal" /></p>
 
       <p>Esta ventana indica la versión de Python instalada.</p>
 
@@ -128,10 +128,13 @@ NameError: name 'hola' is not defined</span>
 
       <p>El inconveniente de la ventana principal de IDLE es que para repetir una orden hay que volver a escribirla. Si simplemente queremos practicar órdenes sencillas la ventana principal de IDLE es suficiente, pero si se trata de un programa más complejo es conveniente guardar el programa en un archivo para poderlo recuperar posteriormente. Como además normalmente los programas no salen bien a la primera, eso permite corregir los errores sin tener que volver a escribir todo.</p>
 
-      <div class="mcl-diapo" style="height: 45em;">
+      <div class="mcl-diapo" style="height: 47em;">
         <div id="d1">
           <p><strong>Guardar los programas en archivos - Paso 1</strong></p>
-          <p class="captura"><img alt="IDLE. Menú File &gt; New File" src="../img/idle/idle_2.png" width="800" height="540" title="IDLE. Menú File &gt; New File" /></p>
+
+          <p class="captura">
+            <img src="../img/idle/idle_2.png" alt="IDLE. Menú File &gt; New File" title="IDLE. Menú File &gt; New File"width="800" height="540"  />
+          </p>
 
           <p>Para crear un archivo de programa con IDLE, abra una nueva ventana mediante el menú <span class="idle-menu">File &gt; New File</span> (o el atajo de teclado <kbd>Ctrl+N</kbd>).</p>
 
@@ -143,7 +146,9 @@ NameError: name 'hola' is not defined</span>
         <div id="d2">
           <p><strong>Guardar los programas en archivos - Paso 2</strong></p>
 
-          <p class="captura"><img alt="IDLE. Ventana principal y ventana secundaria" src="../img/idle/idle_3.png" width="800" height="540" title="IDLE. Ventana principal y ventana secundaria" /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_3.png" alt="IDLE. Ventana principal y ventana secundaria" title="IDLE. Ventana principal y ventana secundaria" width="800" height="540" />
+          </p>
 
           <p>Al elegir esta opción se abrirá una nueva ventana como la de la imagen.</p>
 
@@ -156,12 +161,16 @@ NameError: name 'hola' is not defined</span>
         <div id="d3">
           <p><strong>Guardar los programas en archivos - Paso 3</strong></p>
 
-          <p class="captura"><img alt="IDLE. Ventana principal y ventana secundaria" src="../img/idle/idle_4.png" width="800" height="540" title="IDLE. Ventana principal y ventana secundaria" /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_4.png" alt="IDLE. Ventana principal y ventana secundaria" title="IDLE. Ventana principal y ventana secundaria" width="800" height="540" />
+          </p>
 
           <p>En esta ventana ya no aparece el simbolo de petición porque es simplemente un editor de texto (que también colorea las palabras, si el archivo se ha guardado con la extensión .py). Escriba por ejemplo el programa:</p>
 
-          <p><span class="idle-func">print</span>(<span class="idle-cade">"Hola, mundo"</span>)<br />
-            <span class="idle-func">print</span>(<span class="idle-cade">"Adios, mundo"</span>)</p>
+          <div class="codigo">
+            <p><span class="idle-func">print</span>(<span class="idle-cade">"Hola, mundo"</span>)<br />
+              <span class="idle-func">print</span>(<span class="idle-cade">"Adios, mundo"</span>)</p>
+          </div>
 
           <p>Habrá observado que en esta ventana, cuando se pulsa Intro, no se ejecuta la orden, sino que simplemente se pasa a la línea siguiente.</p>
 
@@ -174,7 +183,9 @@ NameError: name 'hola' is not defined</span>
         <div id="d4">
           <p><strong>Guardar los programas en archivos - Paso 4</strong></p>
 
-          <p class="captura"><img alt="IDLE. Menú File &gt; Save as ..." src="../img/idle/idle_5.png" width="800" height="540" title="IDLE. Menú File &gt; Save as ..." /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_5.png" alt="IDLE. Menú File &gt; Save as ..." title="IDLE. Menú File &gt; Save as ..." width="800" height="540" />
+          </p>
 
           <p>Para poder ejecutar el programa, primero es necesario guardar el programa en el disco duro del ordenador. Elija la opción del menú <span class="idle-menu">File &gt; Save</span> o <span class="idle-menu">File &gt; Save As ...</span> para guardar el archivo (también puede utilizar el atajo de teclado <kbd>Ctrl+S</kbd>).</p>
 
@@ -187,7 +198,9 @@ NameError: name 'hola' is not defined</span>
         <div id="d5">
           <p><strong>Guardar los programas en archivos - Paso 5</strong></p>
 
-          <p class="captura"><img alt="IDLE. Archivo guardado" src="../img/idle/idle_6.png" width="800" height="540" title="IDLE. Archivo guardado" /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_6.png" alt="IDLE. Archivo guardado" title="IDLE. Archivo guardado" width="800" height="540" />
+          </p>
 
           <p>La primera vez que guarde un programa se abrirá la ventana de diálogo estándar de Windows. Una vez elegida la carpeta y el nombre del archivo, <strong>no olvide escribir también la extensión .py</strong>. Si no escribe la extensión, IDLE no colorea las palabras. Una vez guardado el programa, el nombre del archivo aparece en la barra de título de la ventana.</p>
 
@@ -200,7 +213,9 @@ NameError: name 'hola' is not defined</span>
         <div id="d6">
           <p><strong>Guardar los programas en archivos - Paso 6</strong></p>
 
-          <p class="captura"><img alt="IDLE. Menú Run &gt; Run Module" src="../img/idle/idle_7.png" width="800" height="540" title="IDLE. Menú Run &gt; Run Module" /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_7.png" alt="IDLE. Menú Run &gt; Run Module" title="IDLE. Menú Run &gt; Run Module" width="800" height="540" />
+          </p>
 
           <p>Una vez haya guardado el programa, puede ejecutarlo mediante la opción del menú <span class="idle-menu">Run &gt; Run module</span> (también puede utilizar la tecla <kbd>F5</kbd>).</p>
 
@@ -213,7 +228,9 @@ NameError: name 'hola' is not defined</span>
         <div id="d7">
           <p><strong>Guardar los programas en archivos - Paso 7</strong></p>
 
-          <p class="captura"><img alt="IDLE. Ejecución de un programa" src="../img/idle/idle_8.png" width="800" height="540" title="IDLE. Ejecución de un programa" /></p>
+          <p class="captura">
+            <img src="../img/idle/idle_8.png" alt="IDLE. Ejecución de un programa" title="IDLE. Ejecución de un programa" width="800" height="540" />
+          </p>
 
           <p>La salida del programa se mostrará en la ventana principal de IDLE.</p>
 
