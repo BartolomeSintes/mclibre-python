@@ -73,7 +73,7 @@
       <div class="filaflex">
         <div class="codigo"><pre><code class="language-python">print("Hola")</code></pre></div>
 
-        <div class="resultado"><pre><span class="idle-resp">Hola</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Hola</span></pre></div>
       </div>
 
       <p>Las cadenas se pueden delimitar tanto por comillas dobles (") como por
@@ -82,7 +82,7 @@
       <div class="filaflex">
         <div class="codigo"><pre><code class="language-python">print('Hola')</code></pre></div>
 
-        <div class="resultado"><pre><span class="idle-resp">Hola</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Hola</span></pre></div>
       </div>
 
       <p><strong>Nota</strong>: En estos apuntes se utilizan normalmente comillas dobles.</p>
@@ -94,7 +94,7 @@
       <div class="filaflex">
         <div class="codigo"><pre><code class="language-python">print("Hola", "Adios")</code></pre></div>
 
-        <div class="resultado"><pre><span class="idle-resp">Hola Adios</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Hola Adios</span></pre></div>
       </div>
 
       <p>Al final de cada <span class="idle-func">print</span>(), Python añade automáticamente un salto de línea:</p>
@@ -107,7 +107,7 @@ print("Adios")</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">Hola
 Adios</span>
@@ -126,7 +126,7 @@ print("Adios")</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">Hola
 
@@ -144,7 +144,7 @@ print("Adios")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">HolaAdios</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">HolaAdios</span></pre></div>
       </div>
 
       <p>En el ejemplo anterior, las dos cadenas se muestran pegadas. Si se quieren separar los argumentos en la salida, hay que incluir los espacios deseados (bien en la cadena, bien en el argumento end):</p>
@@ -157,7 +157,7 @@ print("Adios")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
       </div>
 
       <div class="filaflex">
@@ -168,7 +168,7 @@ print("Adios")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Hola. Adios</span></pre></div>
       </div>
 
       <hr class="corta" />
@@ -178,13 +178,13 @@ print("Adios")</code>
       <div class="filaflex">
         <div class="codigo"><pre><code class="language-python">print("Un tipo le dice a otro: "¿Cómo estás?"")</code></pre></div>
 
-        <div class="resultado"><img src="../img/error_cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
+        <div class="resultado-captura"><img src="../img/error_cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
       </div>
 
       <div class="filaflex">
         <div class="codigo"><pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre></div>
 
-        <div class="resultado"><img src="../img/error_cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
+        <div class="resultado-captura"><img src="../img/error_cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
       </div>
 
       <p><strong>Nota</strong>: Si nos fijamos en la forma como IDLE colorea la instrucción, podemos darnos cuenta de que hay un error en ella. Como las cadenas empiezan y acaban con cada comilla, IDLE identifica dos cadenas y un texto en medio que no sabe lo que es.</p>
@@ -199,7 +199,7 @@ print('Y el otro le contesta: \'¡Pues anda que tú!\'')</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">Un tipo le dice a otro: "¿Cómo estás?"
 Y el otro le contesta: '¡Pues anda que tú!'</span>
@@ -217,7 +217,7 @@ print('Y el otro le contesta: "¡Pues anda que tú!"')</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">Un tipo le dice a otro: '¿Cómo estás?'
 Y el otro le contesta: "¡Pues anda que tú!"</span>
@@ -238,7 +238,7 @@ print("Me llamo", nombre, "y tengo", edad, "años.")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre></div>
       </div>
 
       <div class="filaflex">
@@ -249,7 +249,7 @@ print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
       </div>
 
       <hr class="corta" />
@@ -277,7 +277,7 @@ print("¡Hola,", nombre, "!")</code>
 </pre>
         </div>
 
-        <div class="resultado"><pre><span class="idle-resp">¡Hola, Pepe<span class="codigo-resaltado"> </span>!</span></pre></div>
+        <div class="resultado-idle"><pre><span class="idle-resp">¡Hola, Pepe<span class="codigo-resaltado"> </span>!</span></pre></div>
       </div>
 
       <p>Para eliminar ese espacio, se puede reducir el número de argumentos, concatenando texto y variables con el operador suma (+):</p>
@@ -291,7 +291,7 @@ print("¡Hola, " + nombre + "!")</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">¡Hola, Pepe!
 ¡Hola, Pepe!</span>
@@ -309,7 +309,7 @@ print("¡Feliz " + fecha + "!")</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
@@ -331,7 +331,7 @@ print("¡Feliz " + str(fecha) + "!")</code>
 </pre>
         </div>
 
-        <div class="resultado">
+        <div class="resultado-idle">
           <pre>
 <span class="idle-resp">¡Feliz 2017 !
 ¡Feliz 2017!
@@ -354,8 +354,7 @@ print(f"Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
           </div>
 
-          <div class="resultado"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
-          </div>
+          <div class="resultado-idle"><pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre></div>
         </div>
 
         <div class="filaflex">
@@ -366,7 +365,7 @@ print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
 </pre>
           </div>
 
-          <div class="resultado"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
+          <div class="resultado-idle"><pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre></div>
         </div>
 
         <p>Esta notación no añade espacios que en la notación "clásica" aparecían al incluir varios argumentos separados por comas:</p>
@@ -381,7 +380,7 @@ print(f"¡Feliz {fecha}!")</code>
 </pre>
           </div>
 
-          <div class="resultado">
+          <div class="resultado-idle">
             <pre>
 <span class="idle-resp">¡Feliz 2017 !
 ¡Feliz 2017!
@@ -404,7 +403,7 @@ print("Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
           </div>
 
-          <div class="resultado"><pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre></div>
+          <div class="resultado-idle"><pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre></div>
         </div>
 
         <hr class="corta" />
@@ -421,7 +420,7 @@ print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
 </pre>
           </div>
 
-          <div class="resultado"><pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre></div>
+          <div class="resultado-idle"><pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre></div>
         </div>
 
         <hr class="corta" />
