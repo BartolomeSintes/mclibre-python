@@ -53,7 +53,7 @@ def genera_punto(e):
 def nuevo_punto(e):
     global document
     document[e["svg"]].clear()
-    document[e["resultado"]].clear()
+    document[e["result"]].clear()
     e["XY"], e["XYDibujo"] = genera_punto(e)
     document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
     document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
@@ -81,12 +81,12 @@ def evalua_punto(e):
         respuestaX1 = int(document[e["x1"]].value)
         respuestaY1 = int(document[e["y1"]].value)
     except:
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= "Revise su respuesta. Debe escribir números enteros."
+        document[e["result"]].clear()
+        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
     else:
         correcto = respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1]
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= respuesta[correcto]
+        document[e["result"]].clear()
+        document[e["result"]] <= respuesta[correcto]
         if not e["respondido"]:
             e["cuenta"][int(correcto)] += 1
         dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
@@ -110,7 +110,7 @@ def e11_reinicia(ev):
 e11 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e11_svg", "resultado": "e11_resultado", "x1": "e11_x1", "y1": "e11_y1", "tmp":  "e11_tmp", "salto" : "e11_salto",
+    "svg": "e11_svg", "result": "e11_resultado", "x1": "e11_x1", "y1": "e11_y1", "tmp":  "e11_tmp", "salto" : "e11_salto",
     "numCorrectas": "e11_num_correctas", "numIncorrectas" : "e11_num_incorrectas", "imgCorrectas": "e11_img_correctas", "imgIncorrectas": "e11_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -138,7 +138,7 @@ def e12_reinicia(ev):
 e12 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10,  "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e12_svg", "resultado": "e12_resultado", "x1": "e12_x1", "y1": "e12_y1", "tmp":  "e12_tmp","salto" : "e12_salto",
+    "svg": "e12_svg", "result": "e12_resultado", "x1": "e12_x1", "y1": "e12_y1", "tmp":  "e12_tmp","salto" : "e12_salto",
     "numCorrectas": "e12_num_correctas", "numIncorrectas" : "e12_num_incorrectas", "imgCorrectas": "e12_img_correctas", "imgIncorrectas": "e12_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -166,7 +166,7 @@ def e13_reinicia(ev):
 e13 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25,  "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e13_svg", "resultado": "e13_resultado", "x1": "e13_x1", "y1": "e13_y1", "tmp":  "e13_tmp", "salto" : "e13_salto",
+    "svg": "e13_svg", "result": "e13_resultado", "x1": "e13_x1", "y1": "e13_y1", "tmp":  "e13_tmp", "salto" : "e13_salto",
     "numCorrectas": "e13_num_correctas", "numIncorrectas" : "e13_num_incorrectas", "imgCorrectas": "e13_img_correctas", "imgIncorrectas": "e13_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -218,7 +218,7 @@ def e14_reinicia(ev):
 e14 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1,  "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e14_svg", "resultado": "e14_resultado", "x1": "e14_x1", "y1": "e14_y1", "tmp":  "e14_tmp", "salto" : "e14_salto",
+    "svg": "e14_svg", "result": "e14_resultado", "x1": "e14_x1", "y1": "e14_y1", "tmp":  "e14_tmp", "salto" : "e14_salto",
     "numCorrectas": "e14_num_correctas", "numIncorrectas" : "e14_num_incorrectas", "imgCorrectas": "e14_img_correctas", "imgIncorrectas": "e14_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -251,7 +251,7 @@ def genera_rectangulo(e):
 def nuevo_rectangulo(e):
     global document
     document[e["svg"]].clear()
-    document[e["resultado"]].clear()
+    document[e["result"]].clear()
     e["XY"], e["XYDibujo"] = genera_rectangulo(e)
     document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
     document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
@@ -281,12 +281,12 @@ def evalua_rectangulo(e):
         respuestaWidth = int(document[e["width"]].value)
         respuestaHeight = int(document[e["height"]].value)
     except:
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= "Revise su respuesta. Debe escribir números enteros."
+        document[e["result"]].clear()
+        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
     else:
         correcto = respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1] and respuestaWidth == e["XY"][2] and respuestaHeight == e["XY"][3]
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= respuesta[correcto]
+        document[e["result"]].clear()
+        document[e["result"]] <= respuesta[correcto]
         if not e["respondido"]:
             e["cuenta"][int(correcto)] += 1
         dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
@@ -310,7 +310,7 @@ def e21_reinicia(ev):
 e21 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e21_svg", "resultado": "e21_resultado", "x1": "e21_x1", "y1": "e21_y1", "width": "e21_width", "height": "e21_height", "tmp": "e21_tmp", "salto" : "e21_salto",
+    "svg": "e21_svg", "result": "e21_resultado", "x1": "e21_x1", "y1": "e21_y1", "width": "e21_width", "height": "e21_height", "tmp": "e21_tmp", "salto" : "e21_salto",
     "numCorrectas": "e21_num_correctas", "numIncorrectas" : "e21_num_incorrectas", "imgCorrectas": "e21_img_correctas", "imgIncorrectas": "e21_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -338,7 +338,7 @@ def e22_reinicia(ev):
 e22 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e22_svg", "resultado": "e22_resultado", "x1": "e22_x1", "y1": "e22_y1", "width": "e22_width", "height": "e22_height", "tmp": "e22_tmp", "salto" : "e22_salto",
+    "svg": "e22_svg", "result": "e22_resultado", "x1": "e22_x1", "y1": "e22_y1", "width": "e22_width", "height": "e22_height", "tmp": "e22_tmp", "salto" : "e22_salto",
     "numCorrectas": "e22_num_correctas", "numIncorrectas" : "e22_num_incorrectas", "imgCorrectas": "e22_img_correctas", "imgIncorrectas": "e22_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -366,7 +366,7 @@ def e23_reinicia(ev):
 e23 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e23_svg", "resultado": "e23_resultado", "x1": "e23_x1", "y1": "e23_y1", "width": "e23_width", "height": "e23_height", "tmp": "e23_tmp", "salto" : "e23_salto",
+    "svg": "e23_svg", "result": "e23_resultado", "x1": "e23_x1", "y1": "e23_y1", "width": "e23_width", "height": "e23_height", "tmp": "e23_tmp", "salto" : "e23_salto",
     "numCorrectas": "e23_num_correctas", "numIncorrectas" : "e23_num_incorrectas", "imgCorrectas": "e23_img_correctas", "imgIncorrectas": "e23_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -416,7 +416,7 @@ def e24_reinicia(ev):
 e24 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e24_svg", "resultado": "e24_resultado", "x1": "e24_x1", "y1": "e24_y1", "width": "e24_width", "height": "e24_height", "tmp": "e24_tmp", "salto" : "e24_salto",
+    "svg": "e24_svg", "result": "e24_resultado", "x1": "e24_x1", "y1": "e24_y1", "width": "e24_width", "height": "e24_height", "tmp": "e24_tmp", "salto" : "e24_salto",
     "numCorrectas": "e24_num_correctas", "numIncorrectas" : "e24_num_incorrectas", "imgCorrectas": "e24_img_correctas", "imgIncorrectas": "e24_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -453,7 +453,7 @@ def genera_linea(e):
 def nuevo_linea(e):
     global document
     document[e["svg"]].clear()
-    document[e["resultado"]].clear()
+    document[e["result"]].clear()
     e["XY"], e["XYDibujo"] = genera_linea(e)
     document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
     document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
@@ -483,12 +483,12 @@ def evalua_linea(e):
         respuestaX2 = int(document[e["x2"]].value)
         respuestaY2 = int(document[e["y2"]].value)
     except:
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= "Revise su respuesta. Debe escribir números enteros."
+        document[e["result"]].clear()
+        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
     else:
         correcto = (respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1] and respuestaX2 == e["XY"][2] and respuestaY2 == e["XY"][3]) or (respuestaX1 == e["XY"][2] and respuestaY1 == e["XY"][3] and respuestaX2 == e["XY"][0] and respuestaY2 == e["XY"][1])
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= respuesta[correcto]
+        document[e["result"]].clear()
+        document[e["result"]] <= respuesta[correcto]
         if not e["respondido"]:
             e["cuenta"][int(correcto)] += 1
         dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
@@ -512,7 +512,7 @@ def e31_reinicia(ev):
 e31 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e31_svg", "resultado": "e31_resultado", "x1": "e31_x1", "y1": "e31_y1", "x2": "e31_x2", "y2": "e31_y2", "tmp":  "e31_tmp", "salto" : "e31_salto",
+    "svg": "e31_svg", "result": "e31_resultado", "x1": "e31_x1", "y1": "e31_y1", "x2": "e31_x2", "y2": "e31_y2", "tmp":  "e31_tmp", "salto" : "e31_salto",
     "numCorrectas": "e31_num_correctas", "numIncorrectas" : "e31_num_incorrectas", "imgCorrectas": "e31_img_correctas", "imgIncorrectas": "e31_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -540,7 +540,7 @@ def e32_reinicia(ev):
 e32 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e32_svg", "resultado": "e32_resultado", "x1": "e32_x1", "y1": "e32_y1", "x2": "e32_x2", "y2": "e32_y2", "tmp":  "e32_tmp", "salto" : "e32_salto",
+    "svg": "e32_svg", "result": "e32_resultado", "x1": "e32_x1", "y1": "e32_y1", "x2": "e32_x2", "y2": "e32_y2", "tmp":  "e32_tmp", "salto" : "e32_salto",
     "numCorrectas": "e32_num_correctas", "numIncorrectas" : "e32_num_incorrectas", "imgCorrectas": "e32_img_correctas", "imgIncorrectas": "e32_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -568,7 +568,7 @@ def e33_reinicia(ev):
 e33 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e33_svg", "resultado": "e33_resultado", "x1": "e33_x1", "y1": "e33_y1", "x2": "e33_x2", "y2": "e33_y2", "tmp":  "e33_tmp", "salto" : "e33_salto",
+    "svg": "e33_svg", "result": "e33_resultado", "x1": "e33_x1", "y1": "e33_y1", "x2": "e33_x2", "y2": "e33_y2", "tmp":  "e33_tmp", "salto" : "e33_salto",
     "numCorrectas": "e33_num_correctas", "numIncorrectas" : "e33_num_incorrectas", "imgCorrectas": "e33_img_correctas", "imgIncorrectas": "e33_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -618,7 +618,7 @@ def e34_reinicia(ev):
 e34 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e34_svg", "resultado": "e34_resultado", "x1": "e34_x1", "y1": "e34_y1", "x2": "e34_x2", "y2": "e34_y2", "tmp":  "e34_tmp", "salto" : "e34_salto",
+    "svg": "e34_svg", "result": "e34_resultado", "x1": "e34_x1", "y1": "e34_y1", "x2": "e34_x2", "y2": "e34_y2", "tmp":  "e34_tmp", "salto" : "e34_salto",
     "numCorrectas": "e34_num_correctas", "numIncorrectas" : "e34_num_incorrectas", "imgCorrectas": "e34_img_correctas", "imgIncorrectas": "e34_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -650,7 +650,7 @@ def genera_circulo(e):
 def nuevo_circulo(e):
     global document
     document[e["svg"]].clear()
-    document[e["resultado"]].clear()
+    document[e["result"]].clear()
     e["XY"], e["XYDibujo"] = genera_circulo(e)
     document[e["svg"]] <= svg.circle(cx=e["XYDibujo"][0], cy=e["XYDibujo"][1], r=e["XYDibujo"][2], stroke="red", stroke_width=1, fill="lightgray")
     document[e["svg"]] <= svg.circle(cx=e["XYDibujo"][0], cy=e["XYDibujo"][1], r=e["grosorPunto"], stroke="red", stroke_width=1, fill="red")
@@ -680,12 +680,12 @@ def evalua_circulo(e):
         respuestaCy = int(document[e["cy"]].value)
         respuestaR = int(document[e["r"]].value)
     except:
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= "Revise su respuesta. Debe escribir números enteros."
+        document[e["result"]].clear()
+        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
     else:
         correcto = respuestaCx == e["XY"][0] and respuestaCy == e["XY"][1] and respuestaR == e["XY"][2]
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= respuesta[correcto]
+        document[e["result"]].clear()
+        document[e["result"]] <= respuesta[correcto]
         if not e["respondido"]:
             e["cuenta"][int(correcto)] += 1
         dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
@@ -709,7 +709,7 @@ def e41_reinicia(ev):
 e41 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e41_svg", "resultado": "e41_resultado", "cx": "e41_cx", "cy": "e41_cy", "r": "e41_r", "tmp":  "e41_tmp", "salto": "e41_salto",
+    "svg": "e41_svg", "result": "e41_resultado", "cx": "e41_cx", "cy": "e41_cy", "r": "e41_r", "tmp":  "e41_tmp", "salto": "e41_salto",
     "numCorrectas": "e41_num_correctas", "numIncorrectas" : "e41_num_incorrectas", "imgCorrectas": "e41_img_correctas", "imgIncorrectas": "e41_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -737,7 +737,7 @@ def e42_reinicia(ev):
 e42 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e42_svg", "resultado": "e42_resultado", "cx": "e42_cx", "cy": "e42_cy", "r": "e42_r", "tmp":  "e42_tmp", "salto": "e42_salto",
+    "svg": "e42_svg", "result": "e42_resultado", "cx": "e42_cx", "cy": "e42_cy", "r": "e42_r", "tmp":  "e42_tmp", "salto": "e42_salto",
     "numCorrectas": "e42_num_correctas", "numIncorrectas" : "e42_num_incorrectas", "imgCorrectas": "e42_img_correctas", "imgIncorrectas": "e42_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -765,7 +765,7 @@ def e43_reinicia(ev):
 e43 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e43_svg", "resultado": "e43_resultado", "cx": "e43_cx", "cy": "e43_cy", "r": "e43_r", "tmp":  "e43_tmp", "salto": "e43_salto",
+    "svg": "e43_svg", "result": "e43_resultado", "cx": "e43_cx", "cy": "e43_cy", "r": "e43_r", "tmp":  "e43_tmp", "salto": "e43_salto",
     "numCorrectas": "e43_num_correctas", "numIncorrectas" : "e43_num_incorrectas", "imgCorrectas": "e43_img_correctas", "imgIncorrectas": "e43_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -810,7 +810,7 @@ def e44_reinicia(ev):
 e44 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
     "grosorPunto" : 2,
     # Elementos HTML
-    "svg": "e44_svg", "resultado": "e44_resultado", "cx": "e44_cx", "cy": "e44_cy", "r": "e44_r", "tmp":  "e44_tmp", "salto": "e44_salto",
+    "svg": "e44_svg", "result": "e44_resultado", "cx": "e44_cx", "cy": "e44_cy", "r": "e44_r", "tmp":  "e44_tmp", "salto": "e44_salto",
     "numCorrectas": "e44_num_correctas", "numIncorrectas" : "e44_num_incorrectas", "imgCorrectas": "e44_img_correctas", "imgIncorrectas": "e44_img_incorrectas",
     "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
     }
@@ -871,7 +871,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e11_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e11_svg">
@@ -890,7 +890,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e12_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e12_svg">
@@ -909,7 +909,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e13_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e13_svg">
@@ -928,7 +928,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e14_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="280" height="280" viewBox="0 0 280 280"
              style="background-color: lightgray" id="e14_svg">
@@ -947,7 +947,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x1, y1), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e21_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e21_svg">
@@ -966,7 +966,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x1, y1), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e22_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e22_svg">
@@ -985,7 +985,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x1, y1), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e23_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e23_svg">
@@ -1004,7 +1004,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x1, y1), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e24_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="280" height="280" viewBox="0 0 280 280"
              style="background-color: lightgray" id="e24_svg">
@@ -1023,7 +1023,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e31_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e31_svg">
@@ -1042,7 +1042,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e32_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e32_svg">
@@ -1061,7 +1061,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e33_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e33_svg">
@@ -1080,7 +1080,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e34_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="280" height="280" viewBox="0 0 280 280"
              style="background-color: lightgray" id="e34_svg">
@@ -1099,7 +1099,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e41_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e41_svg">
@@ -1118,7 +1118,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e42_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e42_svg">
@@ -1137,7 +1137,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e43_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="260" height="260" viewBox="0 0 260 260"
              style="background-color: lightgray" id="e43_svg">
@@ -1156,7 +1156,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
       <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e44_salto"></strong>.</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
              width="280" height="280" viewBox="0 0 280 280"
              style="background-color: lightgray" id="e44_svg">

@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 16 de junio de 2017                      */
+/* 30 de junio de 2017                      */
 /*                                          */
 
 /* CSS comun */
@@ -277,7 +277,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.codigo, div.resultado, div.resultado-object {
+div.codigo, div[class^="resultado"], div[class^="enunciado"] {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;

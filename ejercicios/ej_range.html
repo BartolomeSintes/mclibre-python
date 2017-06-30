@@ -30,7 +30,7 @@ def dibuja_contador(num_correctas, num_incorrectas, img_correctas, img_incorrect
 
 def nuevo(e, argumentos):
     global document
-    document[e["resultado"]].clear()
+    document[e["result"]].clear()
     if argumentos == 1:
         lista = range(randrange(0, 5))
     if argumentos == 2:
@@ -78,8 +78,8 @@ def evalua(e):
     except:
         #document[e["tmp"]].clear()
         #document[e["tmp"]] <= str(e["expresion"]) + " "
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= "Revise la expresión. Parece haber algún error de sintaxis en ella."
+        document[e["result"]].clear()
+        document[e["result"]] <= "Revise la expresión. Parece haber algún error de sintaxis en ella."
     else:
         correcto = True
         if len(e["elegida"]) != len(usuario):
@@ -88,8 +88,8 @@ def evalua(e):
             for i in range(len(e["elegida"])):
                 if e["elegida"][i] != usuario[i]:
                     correcto = False
-        document[e["resultado"]].clear()
-        document[e["resultado"]] <= respuesta[correcto]
+        document[e["result"]].clear()
+        document[e["result"]] <= respuesta[correcto]
         if not e["respondido"]:
             e["cuenta"][int(correcto)] += 1
         dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
@@ -114,9 +114,9 @@ def e1_reinicia(ev):
   global e1
   reinicia(e1)
 
-e1 = { "resultado": "e1_resultado", "enunciado": "e1_enunciado", "expresion": "e1_expresion",
+e1 = { "result": "e1_resultado", "enunciado": "e1_enunciado", "expresion": "e1_expresion",
     "numCorrectas": "e1_num_correctas", "numIncorrectas": "e1_num_incorrectas", "imgCorrectas": "e1_img_correctas", "imgIncorrectas": "e1_img_incorrectas", "tmp": "e1_tmp",
-    "elegida": [], "resultado": "e1_resultado",
+    "elegida": [], "result": "e1_resultado",
     "cuenta": [0, 0], "ultimo" : -1, "respondido": True,}
 
 e1_nuevo(None)
@@ -139,9 +139,9 @@ def e2_reinicia(ev):
   global e2
   reinicia(e2)
 
-e2 = { "resultado": "e2_resultado", "enunciado": "e2_enunciado", "expresion": "e2_expresion",
+e2 = { "result": "e2_resultado", "enunciado": "e2_enunciado", "expresion": "e2_expresion",
     "numCorrectas": "e2_num_correctas", "numIncorrectas": "e2_num_incorrectas", "imgCorrectas": "e2_img_correctas", "imgIncorrectas": "e2_img_incorrectas", "tmp": "e2_tmp",
-    "elegida": [], "resultado": "e2_resultado",
+    "elegida": [], "result": "e2_resultado",
     "cuenta": [0, 0], "ultimo" : -1, "respondido": True,}
 
 e2_nuevo(None)
@@ -164,9 +164,9 @@ def e3_reinicia(ev):
   global e3
   reinicia(e3)
 
-e3 = { "resultado": "e3_resultado", "enunciado": "e3_enunciado", "expresion": "e3_expresion",
+e3 = { "result": "e3_resultado", "enunciado": "e3_enunciado", "expresion": "e3_expresion",
     "numCorrectas": "e3_num_correctas", "numIncorrectas": "e3_num_incorrectas", "imgCorrectas": "e3_img_correctas", "imgIncorrectas": "e3_img_incorrectas", "tmp": "e3_tmp",
-    "elegida": [], "resultado": "e3_resultado",
+    "elegida": [], "result": "e3_resultado",
     "cuenta": [0, 0], "ultimo" : -1, "respondido": True,}
 
 e3_nuevo(None)
@@ -232,7 +232,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un tipo <span class="idle-func">range</span>() que sea equivalente a la lista mostrada:</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <p>Enunciado: <span id="e1_enunciado" class="idle-resp"></span> </p>
         <p>Expresión: <input type="text" id="e1_expresion" size="50" value="range("/> <button id="e1_boton">Evaluar</button> <span id="e1_resultado"></span></p>
         <p><button id="e1_nuevo">Nuevo enunciado</button></p>
@@ -248,7 +248,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un tipo <span class="idle-func">range</span>() que sea equivalente a la lista mostrada:</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <p>Enunciado: <span id="e2_enunciado" class="idle-resp"></span> </p>
         <p>Expresión: <input type="text" id="e2_expresion" size="50" value="range("/> <button id="e2_boton">Evaluar</button> <span id="e2_resultado"></span></p>
         <p><button id="e2_nuevo">Nuevo enunciado</button></p>
@@ -263,7 +263,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un tipo <span class="idle-func">range</span>() que sea equivalente a la lista mostrada:</p>
 
-      <div class="resultado">
+      <div class="enunciado-test">
         <p>Enunciado: <span id="e3_enunciado" class="idle-resp"></span> </p>
         <p>Expresión: <input type="text" id="e3_expresion" size="50" value="range("/> <button id="e3_boton">Evaluar</button> <span id="e3_resultado"></span></p>
         <p><button id="e3_nuevo">Nuevo enunciado</button></p>
@@ -280,7 +280,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p><strong>Nota</strong>: Para cada lista será necesario incluir un <span class="idle-func">print</span>(<span class="idle-func">list</span>(<span class="idle-func">range</span>( ... )))</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS FIJAS
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -303,7 +303,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida un número entero mayor que cero y escriba varias listas de números consecutivos, como indican los ejemplos siguientes:</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS A PARTIR DE VALOR</span>
 <span class="idle-resp">Escriba un número entero mayor que 0:</span> 0
@@ -311,7 +311,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS A PARTIR DE VALOR</span>
 <span class="idle-resp">Escriba un número entero mayor que 0:</span> 5
@@ -323,7 +323,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS A PARTIR DE VALOR</span>
 <span class="idle-resp">Escriba un número entero mayor que 0:</span> 1
@@ -341,7 +341,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida un número entero y escriba una lista de números consecutivos del 0 al valor dado.</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS DE CERO A VALOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 9
@@ -349,7 +349,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS DE CERO A VALOR</span>
 <span class="idle-resp">Escriba un número entero:</span> -5
@@ -357,7 +357,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS DE CERO A VALOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 0
@@ -371,7 +371,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida dos números enteros (el segundo mayor que el primero) y escriba varias listas de números consecutivos, como indican los siguientes ejemplos:</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS ENTRE DOS NÚMEROS</span>
 <span class="idle-resp">Escriba un número entero:</span> 8
@@ -380,7 +380,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS ENTRE DOS NÚMEROS</span>
 <span class="idle-resp">Escriba un número entero:</span> 5
@@ -393,7 +393,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTAS ENTRE DOS NÚMEROS</span>
 <span class="idle-resp">Escriba un número entero:</span> -2
@@ -412,7 +412,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida dos números enteros y escriba la lista de números consecutivos de uno a otro, en orden creciente o decreciente.</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE UN VALOR A OTRO</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 3
@@ -421,7 +421,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE UN VALOR A OTRO</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 16
@@ -430,7 +430,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE UN VALOR A OTRO</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 5
@@ -445,7 +445,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida dos números enteros y escriba la lista de números consecutivos que hay entre ellos, de menor a mayor.</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE MENOR A MAYOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 4
@@ -454,7 +454,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE MENOR A MAYOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 10
@@ -463,7 +463,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE MENOR A MAYOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 4
@@ -472,7 +472,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE MENOR A MAYOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 5
@@ -481,7 +481,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">LISTA DE MENOR A MAYOR</span>
 <span class="idle-resp">Escriba un número entero:</span> 5
@@ -496,7 +496,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida dos números enteros m y n y escriba una lista de n números consecutivos a partir de m.</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">VALORES CONSECUTIVOS</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 4
@@ -505,7 +505,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">VALORES CONSECUTIVOS</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 4
@@ -514,7 +514,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">VALORES CONSECUTIVOS</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 4
@@ -529,7 +529,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida dos números enteros y escriba la lista de números pares que hay entre ellos (incluidos ellos mismos si son pares)..</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">PARES ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 6
@@ -538,7 +538,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">PARES ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 3
@@ -547,7 +547,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">PARES ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 6
@@ -556,7 +556,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">PARES ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 8
@@ -571,7 +571,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
       <p>Escriba un programa que pida tres números enteros y escriba la lista de números múltiplos del tercero que hay entre los dos primeros (incluidos ellos mismos si son múltiplos del número indicado):</p>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">MÚLTIPLOS ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 5
@@ -580,7 +580,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">MÚLTIPLOS ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 9
@@ -590,7 +590,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">MÚLTIPLOS ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 9
@@ -601,7 +601,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">MÚLTIPLOS ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 9
@@ -612,7 +612,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 </pre>
       </div>
 
-      <div class="resultado">
+      <div class="resultado-idle">
         <pre>
 <span class="idle-resp">MÚLTIPLOS ENTRE VALORES</span>
 <span class="idle-resp">Escriba el número entero inicial:</span> 7
