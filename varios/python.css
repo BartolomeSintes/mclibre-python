@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 4 de julio de 2017                       */
+/* 1 de septiembre de 2017                  */
 /*                                          */
 
 /* CSS comun */
@@ -172,6 +172,10 @@ img.vmedio {
 .codigo-modificacion {
   color: red;
   font-weight: bold;
+}
+
+.no-justificado {
+  text-align: left;
 }
 
 .numero-circulo {
