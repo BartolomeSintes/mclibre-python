@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bugs de Brython. Brython. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <script src="http://brython.info/src/brython_dist.js"></script>
-    <script type="text/python3">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bugs de Brython. Brython. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <script src="http://brython.info/src/brython_dist.js"></script>
+  <script type="text/python3">
 from browser import document
 from random import randrange
 from browser import timer
@@ -67,42 +67,42 @@ document["e2_start"].bind("click", e2_start)
 document["e2_stop"].bind("click", e2_stop)
 
     </script>
-  </head>
+</head>
 
-  <body onload="brython(0)">
-    <h1>Bugs de Brython</h1>
+<body onload="brython(0)">
+  <h1>Bugs de Brython</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Bugs de Brython</h2>
-      </div>
-    </nav>
+    <div class="toc">
+      <h2>Bugs de Brython</h2>
+    </div>
+  </nav>
 
-    <section id="bug-379">
-      <h2>Bug 379: eval() does not work properly (possible bug). Bug 412: some logical expressions are incorrectly evaluated</h2>
+  <section id="bug-379">
+    <h2>Bug 379: eval() does not work properly (possible bug). Bug 412: some logical expressions are incorrectly evaluated</h2>
 
-      <p>Genera al azar expresiones lógicas con y sin paréntesis y compara cómo las evalúa Brython. Si dan distintas, las escribe.</p>
+    <p>Genera al azar expresiones lógicas con y sin paréntesis y compara cómo las evalúa Brython. Si dan distintas, las escribe.</p>
 
-      <div class="codigo">
-        <p><button id="e2_start">Empezar</button></p>
-        <p><button id="e2_stop">Acabar</button></p>
-        <p id="e2_actual"></p>
-        <p id="e2_resultados"></p>
-        <pre id="e2_errores"></pre>
-      </div>
-    </section>
+    <div class="codigo">
+      <p><button id="e2_start">Empezar</button></p>
+      <p><button id="e2_stop">Acabar</button></p>
+      <p id="e2_actual"></p>
+      <p id="e2_resultados"></p>
+      <pre id="e2_errores"></pre>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 7 de abril de 2016</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 7 de abril de 2016</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

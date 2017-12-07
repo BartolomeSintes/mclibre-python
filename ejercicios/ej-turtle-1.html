@@ -1,171 +1,170 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicios (1). El módulo turtle. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios (1). El módulo turtle. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Gráficos: el módulo turtle - Ejercicios (1)</h1>
+<body>
+  <h1>Gráficos: el módulo turtle - Ejercicios (1)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Módulo turtle (1)</h2>
+
+      <h3>Enunciados</h3>
+      <ul>
+        <li><a href="#ejercicio-1">A - Ventana de tortuga</a>
+          <ol>
+            <li><a href="#ejercicio-1-1">Posición</a></li>
+            <li><a href="#ejercicio-1-2">Tamaño</a></li>
+          </ol>
+        </li>
+        <li><a href="#ejercicio-2">B - Puntos y líneas</a>
+          <ol>
+            <li><a href="#ejercicio-2-1">Puntos</a></li>
+            <li><a href="#ejercicio-2-2">Líneas</a></li>
+            <li><a href="#ejercicio-2-3">Puntos y líneas</a></li>
+          </ol>
+        </li>
+      </ul>
+
+      <h3><a href="ej-turtle-1-soluciones.html">Soluciones</a></h3>
+      <ul>
+        <li><a href="ej-turtle-1-soluciones.html#ejercicio-1">A - Ventana de tortuga</a>
+          <ol>
+            <li><a href="ej-turtle-1-soluciones.html#ejercicio-1-1">Posición</a></li>
+            <li><a href="ej-turtle-1-soluciones.html#ejercicio-1-2">Tamaño</a></li>
+          </ol>
+        </li>
+        <li><a href="ej-turtle-1-soluciones.html#ejercicio-2">B - Puntos y líneas</a>
+          <ol>
+            <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-1">Puntos</a></li>
+            <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-2">Líneas</a></li>
+            <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-3">Puntos y líneas</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en la lección sobre <a href="../lecciones/python-turtle-1.html">el módulo turtle</a>.</p>
+
+  <p>Se pueden consultar unas <a href="ej-turtle-1-soluciones.html">posibles soluciones</a>.</p>
+
+  <p><strong>Notas</strong>:</p>
+  <ul>
+    <li>Las capturas corresponden al resultado de la ejecución del programa, sin cambiar el tamaño de la ventana ni mover las barras de desplazamiento.</li>
+    <li>Salvo que se indique lo contrario en el enunciado, los tamaños y distancias no tiene por qué coincidir exactamente con el ejemplo, basta con mantener las proporciones.</li>
+  </ul>
+
+  <section id="ejercicio-1">
+    <h2>A. Ventana de tortuga</h2>
+
+    <section id="ejercicio-1-1">
+      <h3>turtle (1) - A-1</h3>
+
+      <p>Escriba dos programas que abran las ventanas de dibujo en las posiciones que se muestran en las imágenes siguientes:</p>
+
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-1-1.png" alt="Turtle (1) A-1 1" width="320" height="230" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-1-2.png" alt="Turtle (1) A-1 2" width="320" height="230" />
+      </p>
+    </section>
+
+    <section id="ejercicio-1-2">
+      <h3>turtle (1) - A-2</h3>
+
+      <p>Escriba seis programas que abran las ventanas de dibujo siguientes (con las mismas barras de desplazamiento):</p>
+
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-1.png" alt="Turtle (1) A-2 1" width="216" height="238" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-2.png" alt="Turtle (1) A-2 2" width="216" height="238" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-3.png" alt="Turtle (1) A-2 3" width="216" height="238" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-4.png" alt="Turtle (1) A-2 4" width="216" height="238" />
       </p>
 
-      <div class="toc">
-        <h2>Módulo turtle (1)</h2>
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-5.png" alt="Turtle (1) A-2 5" width="416" height="238" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-a-2-6.png" alt="Turtle (1) A-2 6" width="416" height="238" />
+      </p>
+    </section>
+  </section>
 
-        <h3>Enunciados</h3>
-        <ul>
-          <li><a href="#ejercicio-1">A - Ventana de tortuga</a>
-            <ol>
-              <li><a href="#ejercicio-1-1">Posición</a></li>
-              <li><a href="#ejercicio-1-2">Tamaño</a></li>
-            </ol>
-          </li>
-          <li><a href="#ejercicio-2">B - Puntos y líneas</a>
-            <ol>
-              <li><a href="#ejercicio-2-1">Puntos</a></li>
-              <li><a href="#ejercicio-2-2">Líneas</a></li>
-              <li><a href="#ejercicio-2-3">Puntos y líneas</a></li>
-            </ol>
-          </li>
-        </ul>
+  <section id="ejercicio-2">
+    <h2>B. Puntos y líneas</h2>
 
-        <h3><a href="ej-turtle-1-soluciones.html">Soluciones</a></h3>
-        <ul>
-          <li><a href="ej-turtle-1-soluciones.html#ejercicio-1">A - Ventana de tortuga</a>
-            <ol>
-              <li><a href="ej-turtle-1-soluciones.html#ejercicio-1-1">Posición</a></li>
-              <li><a href="ej-turtle-1-soluciones.html#ejercicio-1-2">Tamaño</a></li>
-            </ol>
-          </li>
-          <li><a href="ej-turtle-1-soluciones.html#ejercicio-2">B - Puntos y líneas</a>
-            <ol>
-              <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-1">Puntos</a></li>
-              <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-2">Líneas</a></li>
-              <li><a href="ej-turtle-1-soluciones.html#ejercicio-2-3">Puntos y líneas</a></li>
-            </ol>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <section id="ejercicio-2-1">
+      <h3>turtle (1) - B-1</h3>
 
-    <p>Estos ejercicios corresponden a lo explicado en la lección sobre <a href="../lecciones/python-turtle-1.html">el módulo turtle</a>.</p>
+      <p>Escriba seis programas que dibujen los siguientes puntos:</p>
 
-    <p>Se pueden consultar unas <a href="ej-turtle-1-soluciones.html">posibles soluciones</a>.</p>
+      <p><strong>Nota</strong>: En el dibujo 5 se supone que los círculos se tocan unos a otros.</p>
 
-    <p><strong>Notas</strong>:</p>
-    <ul>
-      <li>Las capturas corresponden al resultado de la ejecución del programa, sin cambiar el tamaño de la ventana ni mover las barras de desplazamiento.</li>
-      <li>Salvo que se indique lo contrario en el enunciado, los tamaños y distancias no tiene por qué coincidir exactamente con el ejemplo, basta con mantener las proporciones.</li>
-    </ul>
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-1.png" alt="Turtle (1) B-1 1" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-2.png" alt="Turtle (1) B-1 2" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-3.png" alt="Turtle (1) B-1 3" width="266" height="288" />
+      </p>
 
-    <section id="ejercicio-1">
-      <h2>A. Ventana de tortuga</h2>
-
-      <section id="ejercicio-1-1">
-        <h3>turtle (1) - A-1</h3>
-
-        <p>Escriba dos programas que abran las ventanas de dibujo en las posiciones que se muestran en las imágenes siguientes:</p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-1-1.png" alt="Turtle (1) A-1 1" width="320" height="230" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-1-2.png" alt="Turtle (1) A-1 2" width="320" height="230" />
-        </p>
-      </section>
-
-      <section id="ejercicio-1-2">
-        <h3>turtle (1) - A-2</h3>
-
-        <p>Escriba seis programas que abran las ventanas de dibujo siguientes (con las
-          mismas barras de desplazamiento):</p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-1.png" alt="Turtle (1) A-2 1" width="216" height="238" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-2.png" alt="Turtle (1) A-2 2" width="216" height="238" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-3.png" alt="Turtle (1) A-2 3" width="216" height="238" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-4.png" alt="Turtle (1) A-2 4" width="216" height="238" />
-        </p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-5.png" alt="Turtle (1) A-2 5" width="416" height="238" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-a-2-6.png" alt="Turtle (1) A-2 6" width="416" height="238" />
-        </p>
-      </section>
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-4.png" alt="Turtle (1) B-1 4" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-5.png" alt="Turtle (1) B-1 5" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-1-6.png" alt="Turtle (1) B-1 6" width="266" height="288" />
+      </p>
     </section>
 
-    <section id="ejercicio-2">
-      <h2>B. Puntos y líneas</h2>
+    <section id="ejercicio-2-2">
+      <h3>turtle (1) - B-2</h3>
 
-      <section id="ejercicio-2-1">
-        <h3>turtle (1) - B-1</h3>
+      <p>Escriba seis programas que dibujen las siguientes líneas:</p>
 
-        <p>Escriba seis programas que dibujen los siguientes puntos:</p>
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-1.png" alt="Turtle (1) B-2 1" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-2.png" alt="Turtle (1) B-2 2" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-3.png" alt="Turtle (1) B-2 3" width="266" height="288" />
+      </p>
 
-        <p><strong>Nota</strong>: En el dibujo 5 se supone que los círculos se tocan unos a otros.</p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-1.png" alt="Turtle (1) B-1 1" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-2.png" alt="Turtle (1) B-1 2" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-3.png" alt="Turtle (1) B-1 3" width="266" height="288" />
-        </p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-4.png" alt="Turtle (1) B-1 4" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-5.png" alt="Turtle (1) B-1 5" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-1-6.png" alt="Turtle (1) B-1 6" width="266" height="288" />
-        </p>
-      </section>
-
-      <section id="ejercicio-2-2">
-        <h3>turtle (1) - B-2</h3>
-
-        <p>Escriba seis programas que dibujen las siguientes líneas:</p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-1.png" alt="Turtle (1) B-2 1" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-2.png" alt="Turtle (1) B-2 2" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-3.png" alt="Turtle (1) B-2 3" width="266" height="288" />
-        </p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-4.png" alt="Turtle (1) B-2 4" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-5.png" alt="Turtle (1) B-2 5" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-2-6.png" alt="Turtle (1) B-2 6" width="266" height="288" />
-        </p>
-      </section>
-
-      <section id="ejercicio-2-3">
-        <h3>turtle (1) - B-3</h3>
-
-        <p>Escriba cuatro programas que generen los siguientes dibujos:</p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-3-1.png" alt="Turtle (1) B-3 1" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-3-2.png" alt="Turtle (1) B-3 2" width="266" height="288" />
-        </p>
-
-        <p class="captura">
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-3-3.png" alt="Turtle (1) B-3 3" width="266" height="288" />
-          <img src="../img/ejercicios/turtle-1/turtle-1-b-3-4.png" alt="Turtle (1) B-3 4" width="266" height="288" />
-        </p>
-      </section>
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-4.png" alt="Turtle (1) B-2 4" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-5.png" alt="Turtle (1) B-2 5" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-2-6.png" alt="Turtle (1) B-2 6" width="266" height="288" />
+      </p>
     </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 6 de marzo de 2015</p>
+    <section id="ejercicio-2-3">
+      <h3>turtle (1) - B-3</h3>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+      <p>Escriba cuatro programas que generen los siguientes dibujos:</p>
+
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-3-1.png" alt="Turtle (1) B-3 1" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-3-2.png" alt="Turtle (1) B-3 2" width="266" height="288" />
+      </p>
+
+      <p class="captura">
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-3-3.png" alt="Turtle (1) B-3 3" width="266" height="288" />
+        <img src="../img/ejercicios/turtle-1/turtle-1-b-3-4.png" alt="Turtle (1) B-3 4" width="266" height="288" />
+      </p>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 6 de marzo de 2015</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

@@ -1,52 +1,52 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variables (3). Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables (3). Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+</head>
 
-  <body>
-    <h1>Variables (3)</h1>
+<body>
+  <h1>Variables (3)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Variables (3)</h2>
+    <div class="toc">
+      <h2>Variables (3)</h2>
 
-        <ul>
-          <li><a href="#objetos">Objetos</a></li>
-          <li><a href="#objetos-crear-destruir">Crear y destruir objetos</a></li>
-          <li><a href="#variables-objetos">Variables</a></li>
-          <li><a href="#variables-mutables-inmutables">Objetos</a>
-            <ul>
-              <li><a href="#variables-inmutables">Objetos inmutables</a></li>
-              <li><a href="#variables-mutables">Objetos mutables</a></li>
-            </ul>
-          </li>
-          <li><a href="#objetos-crear-destruir-2">Crear y destruir objetos (2)</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>En esta lección se comentan aspectos avanzados de las variables.</p>
-
-    <section id="objetos">
-      <h2>Objetos: identificador, tipo y valor</h2>
-
-      <p>En Python, cada dato (número, cadena, lista, etc.) que aparece en un programa es un objeto. Cada objeto tiene un identificador, un tipo y un valor:</p>
       <ul>
-        <li>identificador:
-          <p>Cada objeto tiene un identificador único que se puede conocer mediante la función <span class="idle-func">id</span>():</p>
+        <li><a href="#objetos">Objetos</a></li>
+        <li><a href="#objetos-crear-destruir">Crear y destruir objetos</a></li>
+        <li><a href="#variables-objetos">Variables</a></li>
+        <li><a href="#variables-mutables-inmutables">Objetos</a>
+          <ul>
+            <li><a href="#variables-inmutables">Objetos inmutables</a></li>
+            <li><a href="#variables-mutables">Objetos mutables</a></li>
+          </ul>
+        </li>
+        <li><a href="#objetos-crear-destruir-2">Crear y destruir objetos (2)</a></li>
+      </ul>
+    </div>
+  </nav>
 
-          <div class="codigo">
-            <pre>
+  <p>En esta lección se comentan aspectos avanzados de las variables.</p>
+
+  <section id="objetos">
+    <h2>Objetos: identificador, tipo y valor</h2>
+
+    <p>En Python, cada dato (número, cadena, lista, etc.) que aparece en un programa es un objeto. Cada objeto tiene un identificador, un tipo y un valor:</p>
+    <ul>
+      <li>identificador:
+        <p>Cada objeto tiene un identificador único que se puede conocer mediante la función <span class="idle-func">id</span>():</p>
+
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(5)      <span class="idle-come"># Este es el identificador del objeto número entero "5"</span>
 <span class="idle-resp">505894368</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(3.14)   <span class="idle-come"># Este es el identificador del objeto número decimal "3.14"</span>
@@ -56,15 +56,15 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>([3, 4]) <span class="idle-come"># Este es el identificador del objeto lista "[3, 4]"</span>
 <span class="idle-resp">47108264</span>
 </pre>
-          </div>
+        </div>
 
-          <p>En la versión de Python para Windows (programada en C, por lo que a veces se denomina CPython), el identificador de un objeto es su posición en la memoria del ordenador, pero podría ser cualquier otro valor, lo único importante es que cada objeto tenga un identificador distinto.</p>
-        </li>
-        <li>tipo:
-          <p>Cada objeto tiene un tipo que se puede conocer mediante la función <span class="idle-func">type</span>():</p>
+        <p>En la versión de Python para Windows (programada en C, por lo que a veces se denomina CPython), el identificador de un objeto es su posición en la memoria del ordenador, pero podría ser cualquier otro valor, lo único importante es que cada objeto tenga un identificador distinto.</p>
+      </li>
+      <li>tipo:
+        <p>Cada objeto tiene un tipo que se puede conocer mediante la función <span class="idle-func">type</span>():</p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(5)
 <span class="idle-resp">&lt;class 'int'&gt;</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(3.14)
@@ -74,24 +74,23 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>([3, 4])
 <span class="idle-resp">&lt;class 'list'&gt;</span>
 </pre>
-          </div>
-        </li>
-        <li>valor:<br />
-          El valor que contiene el objeto es el propio dato.</li>
-      </ul>
-    </section>
+        </div>
+      </li>
+      <li>valor:<br /> El valor que contiene el objeto es el propio dato.</li>
+    </ul>
+  </section>
 
-    <section id="objetos-crear-destruir">
-      <h2>Creación y destrucción de objetos</h2>
+  <section id="objetos-crear-destruir">
+    <h2>Creación y destrucción de objetos</h2>
 
-      <p>Python crea los objetos a medida que se necesitan y los destruye cuando ya no necesitan (y ninguna variable hace referencia a ellos).</p>
+    <p>Python crea los objetos a medida que se necesitan y los destruye cuando ya no necesitan (y ninguna variable hace referencia a ellos).</p>
 
-      <p>Cuando se destuye y crea un nuevo objeto, el identificador puede o no coincidir con identificadores utilizados anteriormente</p>
+    <p>Cuando se destuye y crea un nuevo objeto, el identificador puede o no coincidir con identificadores utilizados anteriormente</p>
 
-      <p>En Windows, en el caso de los números enteros pequeños Python parece no destruir los objetos (o puede que les asigne el mismo identificador). En el ejemplo siguiente, se observa como los objetos "5" y "6" tienen siempre el mismo identificador.</p>
+    <p>En Windows, en el caso de los números enteros pequeños Python parece no destruir los objetos (o puede que les asigne el mismo identificador). En el ejemplo siguiente, se observa como los objetos "5" y "6" tienen siempre el mismo identificador.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(5)
 <span class="idle-resp">505911024</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(6)
@@ -101,12 +100,12 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(6)
 <span class="idle-resp">505911040</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Pero normalmente, los objetos se crean y se destruyen a medida que se usan y dejan de usar. En los ejemplos siguiente, se observa como los objetos (números grandes o cadenas) tienen cada vez un identificador distinto:</p>
+    <p>Pero normalmente, los objetos se crean y se destruyen a medida que se usan y dejan de usar. En los ejemplos siguiente, se observa como los objetos (números grandes o cadenas) tienen cada vez un identificador distinto:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(12345)
 <span class="idle-resp">50573840</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(12346)
@@ -116,10 +115,10 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(12346)
 <span class="idle-resp">50573536</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"hola"</span>)
 <span class="idle-resp">50654720</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"adios"</span>)
@@ -129,12 +128,12 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"adios"</span>)
 <span class="idle-resp">50654688</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Si una variable hace referencia a un objeto, el objeto ya no destruye. En el ejemplo siguiente, se observa como el objeto <span class="idle-cade">"hola"</span> mantiene el mismo identificador debido a que la variable "a" hace referencia a él.</p>
+    <p>Si una variable hace referencia a un objeto, el objeto ya no destruye. En el ejemplo siguiente, se observa como el objeto <span class="idle-cade">"hola"</span> mantiene el mismo identificador debido a que la variable "a" hace referencia a él.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = <span class="idle-cade">"hola"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"hola"</span>)
 <span class="idle-resp">50651296</span>
@@ -147,52 +146,52 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"hola"</span>)
 <span class="idle-resp">50651296</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="variables-objetos">
-      <h2>Variables</h2>
+  <section id="variables-objetos">
+    <h2>Variables</h2>
 
-      <p>En Python, las variables son simples referencias a los objetos. Una variable es una especie de etiqueta o de alias para referirnos al objeto.</p>
+    <p>En Python, las variables son simples referencias a los objetos. Una variable es una especie de etiqueta o de alias para referirnos al objeto.</p>
 
-      <p>En Python las variables también tienen identificador, tipo y valor, pero esas tres características son las del objeto al que hace referencia.</p>
+    <p>En Python las variables también tienen identificador, tipo y valor, pero esas tres características son las del objeto al que hace referencia.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Cuando asignamos un valor a una variable, lo que estamos creando es una etiqueta para referirnos al objeto que contiene el dato.</p>
+    <p>Cuando asignamos un valor a una variable, lo que estamos creando es una etiqueta para referirnos al objeto que contiene el dato.</p>
 
-      <p>Por ejemplo, si a una variable se le asigna el número 5, Python crea el objeto número 5 y la variable hace referencia a ese objeto, como se comprueba en el ejemplo siguiente:</p>
+    <p>Por ejemplo, si a una variable se le asigna el número 5, Python crea el objeto número 5 y la variable hace referencia a ese objeto, como se comprueba en el ejemplo siguiente:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(5)  <span class="idle-come"># Este es el identificador del objeto número entero "5"</span>
 <span class="idle-resp">505894368</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a)  <span class="idle-come"># El identificador de la variable a es el mismo que el del número entero "5"</span>
 <span class="idle-resp">505894368</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Python crea el objeto "número 5" cuando ve que en el programa se va a utilizar un 5. En el ejemplo anterior se crearía el objeto y después se ejecutaría la función <span class="idle-func">id</span> () que obtiene el identificador del objeto. Si la primera instrucción hubiera sido la asignación de la variable, de la misma forma se hubiera creado primero el objeto "número 5" y después se le hubiera asociado la etiqueta "a" a dicho objeto.</p>
+    <p>Python crea el objeto "número 5" cuando ve que en el programa se va a utilizar un 5. En el ejemplo anterior se crearía el objeto y después se ejecutaría la función <span class="idle-func">id</span> () que obtiene el identificador del objeto. Si la primera instrucción hubiera sido la asignación de la variable, de la misma forma se hubiera creado primero el objeto "número 5" y después se le hubiera asociado la etiqueta "a" a dicho objeto.</p>
 
-      <p>Lógicamente, el tipo de una variable coincide con el tipo del objeto al que hace referencia la variable, como se comprueba en el ejemplo siguiente:</p>
+    <p>Lógicamente, el tipo de una variable coincide con el tipo del objeto al que hace referencia la variable, como se comprueba en el ejemplo siguiente:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(5)  <span class="idle-come"># El tipo del objeto número entero "5" es int</span>
 <span class="idle-resp">&lt;class 'int'&gt;</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(a)  <span class="idle-come"># El tipo de la variable a el mismo que el del objeto número entero "5" </span>
 <span class="idle-resp">&lt;class 'int'&gt;</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Cuando cambiamos el valor de una variable, en la mayoría de los casos la variable pasa simplemente de hacer referencia a un objeto a hacer referencia a otro (aunque en algunos casos se puede estar modificando el valor del objeto, como se verá más adelante en esta lección), como se comprueba en el ejemplo siguiente:</p>
+    <p>Cuando cambiamos el valor de una variable, en la mayoría de los casos la variable pasa simplemente de hacer referencia a un objeto a hacer referencia a otro (aunque en algunos casos se puede estar modificando el valor del objeto, como se verá más adelante en esta lección), como se comprueba en el ejemplo siguiente:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(1)
 <span class="idle-resp">505894304</span>   <span class="idle-come"># Este es el identificador del objeto "1"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(2)
@@ -207,27 +206,27 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(b)   <span class="idle-come"># ... la variable "b" tiene el mismo identificador que el objeto "2"</span>
 <span class="idle-resp">505894320</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="variables-mutables-inmutables">
-      <h2>Variables, objetos mutables y objetos inmutables</h2>
+  <section id="variables-mutables-inmutables">
+    <h2>Variables, objetos mutables y objetos inmutables</h2>
 
-      <p>En Python algunos tipos de objetos son inmutables, pero otros objetos son mutables:</p>
+    <p>En Python algunos tipos de objetos son inmutables, pero otros objetos son mutables:</p>
+    <ul>
+      <li>Los <strong>objetos inmutables</strong> son objetos que no se pueden modificar. Por ejemplo, los números, las cadenas y las tuplas son objetos inmutables.</li>
+      <li>Los <strong>objetos mutables</strong> son objetos que se pueden modificar. Por ejemplo, las listas y diccionarios son objetos mutables.</li>
+    </ul>
+
+    <section id="variables-inmutables">
+      <h3>Variables y objetos inmutables</h3>
+
+      <p>Como los objetos inmutables no se pueden modificar, al modificar las variables que hacen referencia a objetos inmutables, las variables pasan siempre a hacer referencia a otros objetos.</p>
+
       <ul>
-        <li>Los <strong>objetos inmutables</strong> son objetos que no se pueden modificar. Por ejemplo, los números, las cadenas y las tuplas son objetos inmutables.</li>
-        <li>Los <strong>objetos mutables</strong> son objetos que se pueden modificar. Por ejemplo, las listas y diccionarios son objetos mutables.</li>
-      </ul>
-
-      <section id="variables-inmutables">
-        <h3>Variables y objetos inmutables</h3>
-
-        <p>Como los objetos inmutables no se pueden modificar, al modificar las variables que hacen referencia a objetos inmutables, las variables pasan siempre a hacer referencia a otros objetos.</p>
-
-        <ul>
-          <li>Como hemos visto antes ...
-            <div class="codigo">
-              <pre>
+        <li>Como hemos visto antes ...
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(5), <span class="idle-func">id</span>(7)
 <span class="idle-resp">(505894368, 505894400)</span>  <span class="idle-come"># Estos son los identificadores de los objetos "5" y "7"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5               <span class="idle-come"># La etiqueta "a" se asigna al objeto "5" y ...</span>
@@ -242,26 +241,26 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)        <span class="idle-come"># La variable "b" hace ahora referencia al objeto "7"</span>
 <span class="idle-resp">(505894368, 505894400)</span>
 </pre>
-            </div>
+          </div>
 
-            <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
+          <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
 
-            <div class="codigo">
-              <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b = b + 2           <span class="idle-come"># Pero si "aumentamos" el valor de b en dos unidades ...</span></pre>
-            </div>
+          <div class="codigo">
+            <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b = b + 2           <span class="idle-come"># Pero si "aumentamos" el valor de b en dos unidades ...</span></pre>
+          </div>
 
-            <p>... en realidad Python no aumenta el valor de "b" sino que:</p>
+          <p>... en realidad Python no aumenta el valor de "b" sino que:</p>
 
-            <ul>
-              <li>evalúa la expresión de la derecha de la igualdad, es decir, suma 5 (el valor del objeto al que hace referencia la variable "b" en ese momento) y 2, obteniendo el valor "7"</li>
-              <li>crea el objeto que contiene el resultado (el objeto "7") (en el programa del ejemplo, el objeto 7 ya existía porque habíamos pedido su identificador antes, pero si no hubiera existido todavía, se hubiera creado en ese momento)</li>
-              <li>asigna la variable "b" al objeto "7"</li>
-            </ul>
-          </li>
-          <li>Lo mismo ocurriría en el caso de las cadenas de texto, otro tipo de objeto inmutable:
+          <ul>
+            <li>evalúa la expresión de la derecha de la igualdad, es decir, suma 5 (el valor del objeto al que hace referencia la variable "b" en ese momento) y 2, obteniendo el valor "7"</li>
+            <li>crea el objeto que contiene el resultado (el objeto "7") (en el programa del ejemplo, el objeto 7 ya existía porque habíamos pedido su identificador antes, pero si no hubiera existido todavía, se hubiera creado en ese momento)</li>
+            <li>asigna la variable "b" al objeto "7"</li>
+          </ul>
+        </li>
+        <li>Lo mismo ocurriría en el caso de las cadenas de texto, otro tipo de objeto inmutable:
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(<span class="idle-cade">"hola"</span>), <span class="idle-func">id</span>(<span class="idle-cade">"hola y adios"</span>)
 <span class="idle-resp">(47477152, 42474696)</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = <span class="idle-cade">"hola"</span>
@@ -276,23 +275,23 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)
 <span class="idle-resp">(47477152, 47475752)</span>
 </pre>
-            </div>
+          </div>
 
-            <p>En este ejemplo podemos observar que el id de la primera cadena <span class="idle-cade">"hola y adios"</span> (aquella cuyo identificador se solicita en la primera instrucción) no es el mismo que el de la que aparece más adelante (al añadirle <span class="idle-cade">" y adios"</span> a <span class="idle-cade">"hola"</span>), pero eso se debe a que Python ha destruido y vuelto a crear el objeto entre medias.</p>
-          </li>
-        </ul>
+          <p>En este ejemplo podemos observar que el id de la primera cadena <span class="idle-cade">"hola y adios"</span> (aquella cuyo identificador se solicita en la primera instrucción) no es el mismo que el de la que aparece más adelante (al añadirle <span class="idle-cade">" y adios"</span> a <span class="idle-cade">"hola"</span>), pero eso se debe a que Python ha destruido y vuelto a crear el objeto entre medias.</p>
+        </li>
+      </ul>
 
-      </section>
+    </section>
 
-      <section id="variables-mutables">
-        <h3>Variables y objetos mutables</h3>
+    <section id="variables-mutables">
+      <h3>Variables y objetos mutables</h3>
 
-        <p>Sin embargo, en el caso de los objetos mutables tenemos dos posibilidades: modificar las variables o modificar los objetos mutables a los que hacen referencia. Por ejemplo, en el caso de las listas:</p>
+      <p>Sin embargo, en el caso de los objetos mutables tenemos dos posibilidades: modificar las variables o modificar los objetos mutables a los que hacen referencia. Por ejemplo, en el caso de las listas:</p>
 
-        <ol>
-          <li>En algunos casos las variables pasan a hacer referencia a otros objetos, como ocurría con los objetos inmutables.
-            <div class="codigo">
-              <pre>
+      <ol>
+        <li>En algunos casos las variables pasan a hacer referencia a otros objetos, como ocurría con los objetos inmutables.
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [5]           <span class="idle-come"># La variable "a" se asigna al objeto "lista [5]" y ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a             <span class="idle-come"># ... la variable "b" se asigna al mismo objeto que "a" ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)      <span class="idle-come"># ... por eso "a" y "b" tienen el mismo identificador</span>
@@ -303,26 +302,26 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b              <span class="idle-come"># ... y por eso "a" y "b" son distintos.</span>
 <span class="idle-resp">([5], [5, 6])</span>
 </pre>
-            </div>
+          </div>
 
-            <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
+          <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
 
-            <div class="codigo">
-              <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b = b + [6]       <span class="idle-come"># Pero si añadimos un elemento a "b" ...</span></pre>
-            </div>
+          <div class="codigo">
+            <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b = b + [6]       <span class="idle-come"># Pero si añadimos un elemento a "b" ...</span></pre>
+          </div>
 
-            <p>... en realidad Python no añade un elemento a "b" sino que:</p>
+          <p>... en realidad Python no añade un elemento a "b" sino que:</p>
 
-            <ul>
-              <li>evalúa la expresión de la derecha de la igualdad, es decir, añade el elemento "6" a una lista [5], obteniendo la lista [5, 6]</li>
-              <li>crea el objeto [5, 6]</li>
-              <li>asigna la variable "b" al objeto [5, 6]</li>
-            </ul>
-          </li>
-          <li>En otros casos sí que se modifican los objetos los objetos mutables a los que hacen referencia las variables:
+          <ul>
+            <li>evalúa la expresión de la derecha de la igualdad, es decir, añade el elemento "6" a una lista [5], obteniendo la lista [5, 6]</li>
+            <li>crea el objeto [5, 6]</li>
+            <li>asigna la variable "b" al objeto [5, 6]</li>
+          </ul>
+        </li>
+        <li>En otros casos sí que se modifican los objetos los objetos mutables a los que hacen referencia las variables:
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [5]          <span class="idle-come"># La variable "a" identifica a la lista [5] ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a            <span class="idle-come"># ... la variable "b" identifica al mismo valor que a...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)     <span class="idle-come"># ... por eso "a" y "b" tienen el mismo identificador</span>
@@ -333,25 +332,25 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b             <span class="idle-come"># ... que ha cambiado con respecto a su valor inicial</span>
 <span class="idle-resp">([5, 6], [5, 6])</span>
 </pre>
-            </div>
+          </div>
 
-            <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
+          <p>En este ejemplo, cuando modificamos el valor de la variable b ...</p>
 
-            <div class="codigo">
-              <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b += [6]       <span class="idle-come"># Pero si añadimos un elemento a b usando += ...</span></pre>
-            </div>
+          <div class="codigo">
+            <pre><span class="idle-prompt">&gt;&gt;&gt;</span> b += [6]       <span class="idle-come"># Pero si añadimos un elemento a b usando += ...</span></pre>
+          </div>
 
-            <p>... en realidad Python:</p>
+          <p>... en realidad Python:</p>
 
-            <ul>
-              <li>sí que añade el elemento "6" al objeto lista [5], convirtiéndola en la lista [5, 6]</li>
-              <li>tanto "a" como "b" siguen haciendo referencia a la misma lista, que ahora es [5, 6]</li>
-            </ul>
+          <ul>
+            <li>sí que añade el elemento "6" al objeto lista [5], convirtiéndola en la lista [5, 6]</li>
+            <li>tanto "a" como "b" siguen haciendo referencia a la misma lista, que ahora es [5, 6]</li>
+          </ul>
 
-            <p>Lo mismo pasaría si se utilizara el método append():</p>
+          <p>Lo mismo pasaría si se utilizara el método append():</p>
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [5]          <span class="idle-come"># La variable "a" identifica a la lista [5] ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a            <span class="idle-come"># ... la variable "b" identifica al mismo valor que a...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)     <span class="idle-come"># ... por eso "a" y "b" tienen el mismo identificador</span>
@@ -362,68 +361,68 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b             <span class="idle-come"># ... que ha cambiado con respecto a su valor inicial</span>
 <span class="idle-resp">([5, 6], [5, 6])</span>
 </pre>
-            </div>
-          </li>
-        </ol>
-      </section>
+          </div>
+        </li>
+      </ol>
     </section>
+  </section>
 
-    <section id="objetos-crear-destruir-2">
-      <h2>Más sobre creación y destrucción de objetos</h2>
+  <section id="objetos-crear-destruir-2">
+    <h2>Más sobre creación y destrucción de objetos</h2>
 
-      <ul>
-        <li>Los objetos mutables son todos distintos, es decir, Python crea objetos cada vez que utilizamos un dato. Por ejemplo, en el caso de las listas:
-          <div class="codigo">
-            <pre>
+    <ul>
+      <li>Los objetos mutables son todos distintos, es decir, Python crea objetos cada vez que utilizamos un dato. Por ejemplo, en el caso de las listas:
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [5]          <span class="idle-come"># Al crear dos variables con la misma lista ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = [5]
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)     <span class="idle-come"># ... Python crea dos objetos y cada variable hace referencia a uno de ellos.</span>
 <span class="idle-resp">(45346248, 46530272)</span>
 </pre>
-          </div>
-        </li>
-        <li>En el caso de objetos inmutables, Python a veces crea objetos distintos y a veces no.
-          <p>Por ejemplo, en el caso de los números enteros pequeños (o cadenas) sólo crea un objeto: </p>
+        </div>
+      </li>
+      <li>En el caso de objetos inmutables, Python a veces crea objetos distintos y a veces no.
+        <p>Por ejemplo, en el caso de los números enteros pequeños (o cadenas) sólo crea un objeto: </p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5              <span class="idle-come"># Al crear dos variables que hacen referencia al mismo valor ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)       <span class="idle-come"># ... Python crea un sólo objeto</span>
 <span class="idle-resp">(505894368, 505894368)</span>
 </pre>
-          </div>
+        </div>
 
-          <p>Pero en el caso de los decimales, crea objetos distintos.</p>
+        <p>Pero en el caso de los decimales, crea objetos distintos.</p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 3.14         <span class="idle-come"># Al crear dos variables que hacen referencia al mismo valor ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = 3.14
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)     <span class="idle-come"># ... Python crea dos objetos</span>
 <span class="idle-resp">(46981696, 46981744)</span>
 </pre>
-          </div>
-        </li>
-        <li>Al escribir tuplas de identificadores de valores distintos, en el caso de objetos inmutables Python crea varios objetos, pero en el caso de objetos mutables Python parece crear sólo uno:
+        </div>
+      </li>
+      <li>Al escribir tuplas de identificadores de valores distintos, en el caso de objetos inmutables Python crea varios objetos, pero en el caso de objetos mutables Python parece crear sólo uno:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(3), <span class="idle-func">id</span>(4)        <span class="idle-come"># Al crear una tupla de dos identificadores de números ...</span>
 <span class="idle-resp">(505894336, 505894352)</span>  <span class="idle-come"># ... Python crea los dos objetos.</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>([3]), <span class="idle-func">id</span>([4])    <span class="idle-come"># Pero al crear una tupla de dos identificadores de listas ...</span>
 <span class="idle-resp">(46530272, 46530272)  </span>  <span class="idle-come"># ... Python parece crear un único objeto.</span>
 </pre>
-          </div>
+        </div>
 
-          <p>Lo que ocurre es que como el objeto "lista [3]" no se utiliza para nada más (no hay ninguna variable haciendo referencia a él), nada más crearlo se destruye. Al crear el objeto "lista [4]", Python le da el mismo identificador que había utilizado antes.</p>
+        <p>Lo que ocurre es que como el objeto "lista [3]" no se utiliza para nada más (no hay ninguna variable haciendo referencia a él), nada más crearlo se destruye. Al crear el objeto "lista [4]", Python le da el mismo identificador que había utilizado antes.</p>
 
-          <p><strong>Nota</strong>: Obtuve esta aclaración haciendo <a href="https://groups.google.com/forum/?fromgroups=#!topic/comp.lang.python/6aDJhtuEC68">una consulta</a> en la <a href="https://groups.google.com/forum/?fromgroups=#!forum/comp.lang.python">lista comp.lang.python</a>.</p>
-        </li>
-        <li>Las tuplas son objetos inmutables, es decir, que no se pueden modificar:
+        <p><strong>Nota</strong>: Obtuve esta aclaración haciendo <a href="https://groups.google.com/forum/?fromgroups=#!topic/comp.lang.python/6aDJhtuEC68">una consulta</a> en la <a href="https://groups.google.com/forum/?fromgroups=#!forum/comp.lang.python">lista comp.lang.python</a>.</p>
+      </li>
+      <li>Las tuplas son objetos inmutables, es decir, que no se pueden modificar:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = (3, 5)
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">(3, 5)</span>
@@ -435,12 +434,12 @@ TypeError: 'tuple' object does not support item assignment</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">(3, 5)</span>
 </pre>
-          </div>
+        </div>
 
-          <p>Pero si una tupla incluye objetos mutables, aunque se produzca un error por intentar un objeto inmutable, el objeto mutable sí que se modifica:</p>
+        <p>Pero si una tupla incluye objetos mutables, aunque se produzca un error por intentar un objeto inmutable, el objeto mutable sí que se modifica:</p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = ([3], [5])
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">([3], [5])</span>
@@ -452,14 +451,14 @@ TypeError: 'tuple' object does not support item assignment</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">([3, 4], [5])</span>
 </pre>
-          </div>
+        </div>
 
-          <p>La explicación es que el objeto tupla está formado por dos objetos listas y Python primero modifica el objeto lista (lo que está permitido) pero después detecta que se ha intentado modificar el objeto tupla (lo que no está permitido).</p>
+        <p>La explicación es que el objeto tupla está formado por dos objetos listas y Python primero modifica el objeto lista (lo que está permitido) pero después detecta que se ha intentado modificar el objeto tupla (lo que no está permitido).</p>
 
-          <p>Para modificar el objeto mutable sin generar mensajes de error, debemos utilizar el método append():</p>
+        <p>Para modificar el objeto mutable sin generar mensajes de error, debemos utilizar el método append():</p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = ([3], [5])
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">([3], [5])</span>
@@ -467,17 +466,17 @@ TypeError: 'tuple' object does not support item assignment</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">([3, 4], [5])</span>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 12 de marzo de 2014</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 12 de marzo de 2014</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

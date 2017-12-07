@@ -1,62 +1,62 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soluciones (4). Ficheros. SVG. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones (4). Ficheros. SVG. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Gráficos SVG - Ficheros - Soluciones (4): Bucles anidados</h1>
+<body>
+  <h1>Gráficos SVG - Ficheros - Soluciones (4): Bucles anidados</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>SVG - Ficheros (4)</h2>
+    <div class="toc">
+      <h2>SVG - Ficheros (4)</h2>
 
-        <h3><a href="ej-svg-ficheros-4.html">Enunciados</a></h3>
-        <ul>
-          <li><a href="ej-svg-ficheros-4.html#ejercicio-1">1 - Bucles simples</a></li>
-          <li><a href="ej-svg-ficheros-4.html#ejercicio-2">2 - Bucles anidados</a></li>
-        </ul>
+      <h3><a href="ej-svg-ficheros-4.html">Enunciados</a></h3>
+      <ul>
+        <li><a href="ej-svg-ficheros-4.html#ejercicio-1">1 - Bucles simples</a></li>
+        <li><a href="ej-svg-ficheros-4.html#ejercicio-2">2 - Bucles anidados</a></li>
+      </ul>
 
-        <h3>Soluciones</h3>
-        <ul>
-          <li><a href="#ejercicio-1">1 - Bucles simples</a><br />
-            <a href="#ejercicio-1-1">1</a> -
-            <a href="#ejercicio-1-2">2</a> -
-            <a href="#ejercicio-1-3">3</a> -
-            <a href="#ejercicio-1-4">4</a> -
-            <a href="#ejercicio-1-5">5</a></li>
-          <li><a href="#ejercicio-2">2 - Bucles anidados</a><br />
-            <a href="#ejercicio-2-1">1</a> -
-            <a href="#ejercicio-2-2">2</a> -
-            <a href="#ejercicio-2-3">3</a></li>
-        </ul>
-      </div>
-    </nav>
+      <h3>Soluciones</h3>
+      <ul>
+        <li><a href="#ejercicio-1">1 - Bucles simples</a><br />
+          <a href="#ejercicio-1-1">1</a> -
+          <a href="#ejercicio-1-2">2</a> -
+          <a href="#ejercicio-1-3">3</a> -
+          <a href="#ejercicio-1-4">4</a> -
+          <a href="#ejercicio-1-5">5</a></li>
+        <li><a href="#ejercicio-2">2 - Bucles anidados</a><br />
+          <a href="#ejercicio-2-1">1</a> -
+          <a href="#ejercicio-2-2">2</a> -
+          <a href="#ejercicio-2-3">3</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-svg-ficheros-4.html">ejercicios SVG Ficheros (4)</a>.</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-svg-ficheros-4.html">ejercicios SVG Ficheros (4)</a>.</p>
 
-    <section id="ejercicio-1">
-      <h2>Gráficos SVG Ficheros (4) - 1</h2>
+  <section id="ejercicio-1">
+    <h2>Gráficos SVG Ficheros (4) - 1</h2>
 
-      <section id="ejercicio-1-1">
-        <h3>Gráficos SVG Ficheros (4) - 1 - Figura 1</h3>
+    <section id="ejercicio-1-1">
+      <h3>Gráficos SVG Ficheros (4) - 1 - Figura 1</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-1.png" alt="SVG Ficheros (4) 1 1" title="SVG Ficheros (4) 1 1" width="324" height="324" /></div>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-1.png" alt="SVG Ficheros (4) 1 1" title="SVG Ficheros (4) 1 1" width="324" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-1-1.html"
@@ -86,18 +86,18 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-2">
-        <h3>Gráficos SVG Ficheros (4) - 1 - Figura 2</h3>
+    <section id="ejercicio-1-2">
+      <h3>Gráficos SVG Ficheros (4) - 1 - Figura 2</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-2.png" alt="SVG Ficheros (4) 1 2" title="SVG Ficheros (4) 1 2" width="324" height="324" /></div>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-2.png" alt="SVG Ficheros (4) 1 2" title="SVG Ficheros (4) 1 2" width="324" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-1-2.html"
@@ -131,18 +131,18 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-3">
-        <h3>Gráficos SVG Ficheros (4) - 1 - Figura 3</h3>
+    <section id="ejercicio-1-3">
+      <h3>Gráficos SVG Ficheros (4) - 1 - Figura 3</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-3.png" alt="SVG Ficheros (4) 1 3" title="SVG Ficheros (4) 1 3" width="324" height="324" /></div>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-3.png" alt="SVG Ficheros (4) 1 3" title="SVG Ficheros (4) 1 3" width="324" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-1-3.html"
@@ -174,17 +174,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-4">
-        <h3>Gráficos SVG Ficheros (4) - 1 - Figura 4</h3>
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-4.png" alt="SVG Ficheros (4) 1 4" title="SVG Ficheros (4) 1 4" width="324" height="324" /></div>
+    <section id="ejercicio-1-4">
+      <h3>Gráficos SVG Ficheros (4) - 1 - Figura 4</h3>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-4.png" alt="SVG Ficheros (4) 1 4" title="SVG Ficheros (4) 1 4" width="324" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-1-4.html"
@@ -216,18 +216,18 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-5">
-        <h3>Gráficos SVG Ficheros (4) - 1 - Figura 5</h3>
+    <section id="ejercicio-1-5">
+      <h3>Gráficos SVG Ficheros (4) - 1 - Figura 5</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-5.png" alt="SVG Ficheros (4) 1 5" title="SVG Ficheros (4) 1 5" width="324" height="324" /></div>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-5.png" alt="SVG Ficheros (4) 1 5" title="SVG Ficheros (4) 1 5" width="324" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-1-5.html"
@@ -266,23 +266,23 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
-
+      </div>
     </section>
 
-    <section id="ejercicio-2">
-      <h2>Gráficos SVG Ficheros (4) - 2</h2>
+  </section>
 
-      <section id="ejercicio-2-1">
-        <h3>Gráficos SVG Ficheros (4) - 2 - Figura 1</h3>
+  <section id="ejercicio-2">
+    <h2>Gráficos SVG Ficheros (4) - 2</h2>
 
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-1.png" alt="SVG Ficheros (4) 2 1" title="SVG Ficheros (4) 2 1" width="624" height="324" /></div>
+    <section id="ejercicio-2-1">
+      <h3>Gráficos SVG Ficheros (4) - 2 - Figura 1</h3>
 
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-1.png" alt="SVG Ficheros (4) 2 1" title="SVG Ficheros (4) 2 1" width="624" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-2-1.html"
@@ -317,17 +317,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-2">
-        <h3>Gráficos SVG Ficheros (4) - 2 - Figura 2</h3>
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-2.png" alt="SVG Ficheros (4) 2 2" title="SVG Ficheros (4) 2 2" width="624" height="324" /></div>
+    <section id="ejercicio-2-2">
+      <h3>Gráficos SVG Ficheros (4) - 2 - Figura 2</h3>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-2.png" alt="SVG Ficheros (4) 2 2" title="SVG Ficheros (4) 2 2" width="624" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-2-2.html"
@@ -363,17 +363,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     webbrowser.open(ruta)
 </code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-3">
-        <h3>Gráficos SVG Ficheros (4) - 2 - Figura 3</h3>
-        <div class="filaflex">
-          <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-3.png" alt="SVG Ficheros (4) 2 3" title="SVG Ficheros (4) 2 3" width="624" height="324" /></div>
+    <section id="ejercicio-2-3">
+      <h3>Gráficos SVG Ficheros (4) - 2 - Figura 3</h3>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-3.png" alt="SVG Ficheros (4) 2 3" title="SVG Ficheros (4) 2 3" width="624" height="324" /></div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-4-2-3.html"
@@ -406,17 +406,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de abril de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de abril de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

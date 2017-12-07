@@ -1,56 +1,56 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Examen 25/05/16. Exámenes. Python. Bartolomé Sintes Marco</title>
-    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../../varios/favicon.ico" />
-    <link rel="stylesheet" href="../../varios/prism-python.css" />
-    <script src="../../varios/prism.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen 25/05/16. Exámenes. Python. Bartolomé Sintes Marco</title>
+  <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../varios/favicon.ico" />
+  <link rel="stylesheet" href="../../varios/prism-python.css" />
+  <script src="../../varios/prism.js"></script>
 
-  </head>
+</head>
 
-  <body>
-    <h1>Examen 25 de mayo de 2016</h1>
+<body>
+  <h1>Examen 25 de mayo de 2016</h1>
 
-    <nav>
-      <p>
-        <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-        <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Examen 25/05/16</h2>
-
-        <ul>
-          <li><a href="#ejercicio-1">Operaciones</a>
-          <li><a href="#ejercicio-2">Bucles</a>
-          <li><a href="#ejercicio-3">SVG formas</a>
-          <li><a href="#ejercicio-4">SVG bucles</a>
-          <li><a href="#ejercicio-5">SVG bucles anidados</a>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="ejercicio-1">
-      <h2>Ejercicio 1</h2>
-
-      <p>Escriba un programa que calcule el primer dígito de control de una cuenta bancaria, el que corresponde al código de entidad y oficina.</p>
+    <div class="toc">
+      <h2>Examen 25/05/16</h2>
 
       <ul>
-        <li>Las cuatro cifras del código de entidad se multiplican, de izquierda a derecha, por 4, 8, 5 y 10, respectivamente.</li>
-        <li>Las cuatro cifras del número de oficina se multiplican, de izquierda a derecha por 9, 7, 3 y 6, respectivamente.</li>
-        <li>Se suman los resultados de las multiplicaciones anteriores.</li>
-        <li>Se divide por 11 y se toma el resto.</li>
-        <li>El dígito de control es la diferencia entre 11 y el resto anterior. Si el resultado es 10, el dígito de control es 1. Si el resultado es 11, el dígito de control es 0</li>
+        <li><a href="#ejercicio-1">Operaciones</a></li>
+        <li><a href="#ejercicio-2">Bucles</a></li>
+        <li><a href="#ejercicio-3">SVG formas</a></li>
+        <li><a href="#ejercicio-4">SVG bucles</a></li>
+        <li><a href="#ejercicio-5">SVG bucles anidados</a></li>
       </ul>
+    </div>
+  </nav>
 
-      <p>Dígitos de control de ejemplo: 0375 1281 => 3; 0038 3676 => 1; 9517 5646 => 0; 8194 7118 => 7</p>
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
 
-      <div class="resultado-idle">
-        <pre>
+    <p>Escriba un programa que calcule el primer dígito de control de una cuenta bancaria, el que corresponde al código de entidad y oficina.</p>
+
+    <ul>
+      <li>Las cuatro cifras del código de entidad se multiplican, de izquierda a derecha, por 4, 8, 5 y 10, respectivamente.</li>
+      <li>Las cuatro cifras del número de oficina se multiplican, de izquierda a derecha por 9, 7, 3 y 6, respectivamente.</li>
+      <li>Se suman los resultados de las multiplicaciones anteriores.</li>
+      <li>Se divide por 11 y se toma el resto.</li>
+      <li>El dígito de control es la diferencia entre 11 y el resto anterior. Si el resultado es 10, el dígito de control es 1. Si el resultado es 11, el dígito de control es 0</li>
+    </ul>
+
+    <p>Dígitos de control de ejemplo: 0375 1281 => 3; 0038 3676 => 1; 9517 5646 => 0; 8194 7118 => 7</p>
+
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">DIGITO DE CONTROL CUENTA CORRIENTE</span>
 
 <span class="idle-resp">Escriba el primer dígito de la entidad: </span> 2
@@ -67,10 +67,10 @@
 
 <span class="idle-resp">Programa terminado</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">DIGITO DE CONTROL CUENTA CORRIENTE</span>
 
 <span class="idle-resp">Escriba el primer dígito de la entidad: </span> -2
@@ -87,17 +87,17 @@
 
 <span class="idle-resp">Programa terminado</span>
 </pre>
-      </div>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="ejercicio-2">
-      <h2>Ejercicio 2</h2>
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
 
-      <p>Escriba un programa que pida primero cuántos números se van a escribir, que pida a continuación esa cantidad de números y al final diga tanto la suma de los números pares introducidos como la suma de los númeos impares introducidos.</p>
+    <p>Escriba un programa que pida primero cuántos números se van a escribir, que pida a continuación esa cantidad de números y al final diga tanto la suma de los números pares introducidos como la suma de los númeos impares introducidos.</p>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">SUMADOR DE PARES E IMPARES</span>
 
 <span class="idle-resp">¿Cuántos números va a escribir?</span> 4
@@ -112,29 +112,29 @@
 
 <span class="idle-resp">Programa terminado</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">SUMADOR DE PARES E IMPARES</span>
 
 <span class="idle-resp">¿Cuántos números va a escribir?</span> -3
 
 <span class="idle-resp">Programa terminado</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-3">
-      <h2>Ejercicio 3</h2>
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
 
-      <p>Cree las imágenes SVG a partir de las plantillas.</p>
+    <p>Cree las imágenes SVG a partir de las plantillas.</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/160525-svg-3.png" alt="Ejercicio 3" title="Ejercicio 3" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/160525-svg-3.png" alt="Ejercicio 3" title="Ejercicio 3" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -154,20 +154,20 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-4">
-      <h2>Ejercicio 4</h2>
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
 
-      <p>Cree las imágenes SVG a partir de las plantillas.</p>
+    <p>Cree las imágenes SVG a partir de las plantillas.</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/160525-svg-4-1.png" alt="Ejercicio 4 1" title="Ejercicio 4 1" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/160525-svg-4-1.png" alt="Ejercicio 4 1" title="Ejercicio 4 1" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -187,14 +187,14 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/160525-svg-4-2.png" alt="Ejercicio 4 2" title="Ejercicio 4 2" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/160525-svg-4-2.png" alt="Ejercicio 4 2" title="Ejercicio 4 2" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -214,20 +214,20 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-5">
-      <h2>Ejercicio 5</h2>
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
 
-      <p>Cree la imagen SVG a partir de la plantilla. Los cuadrados tienen <strong>30px</strong> de lado.</p>
+    <p>Cree la imagen SVG a partir de la plantilla. Los cuadrados tienen <strong>30px</strong> de lado.</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/160525-svg-5.png" alt="Ejercicio 5" title="Ejercicio 5" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/160525-svg-5.png" alt="Ejercicio 5" title="Ejercicio 5" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -247,16 +247,16 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 25 de mayo de 2016</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 25 de mayo de 2016</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

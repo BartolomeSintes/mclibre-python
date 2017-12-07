@@ -1,460 +1,465 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historia. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Historia de Python</h1>
+<body>
+  <h1>Historia de Python</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Historia de Python</h2>
+    <div class="toc">
+      <h2>Historia de Python</h2>
 
-        <ul>
-          <li><a href="#versiones">Versiones de Python</a></li>
-          <li><a href="#transicion">De Python 2 a Python 3</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="versiones">
-      <h2>Versiones de Python</h2>
-
-      <p>Guido van Rossum ideó el lenguaje Python a finales de los 80 y comenzó a implementarlo en diciembre de 1989. En febrero de 1991 publicó la primera versión pública, la versión 0.9.0. La versión 1.0 se publicó en enero de 1994, la versión 2.0 se publicó en octubre de 2000 y la versión 3.0 se publicó en diciembre de 2008. El desarrollo de Python lo lleva a cabo un colectivo de programadores que trabaja bajo el paraguas de la fundación <a href="https://www.python.org/psf/">Python Software Foundation</a>, pero Guido van Rossum sigue dirigiendo el desarrollo de Python.</p>
-
-      <p>Las versiones de Python se identifican por tres números X.Y.Z, en la que:</p>
       <ul>
-        <li>X corresponde a las grandes versiones de Python (1, 2 y 3), incompatibles entre sí:
-
-          <p>Los principales cambios introducidos en Python 2 fueron las cadenas Unicode, las comprensiones de listas, las asignaciones aumentadas, los nuevos métodos de cadenas y el recolector de basura para referencias cíclicas.</p>
-
-          <p>Los principales cambios introducidos en Python 3 fueron la separación entre cadenas Unicode y datos binarios, la función print(), cambios en la sintaxis, tipos de datos, comparadores, etc.</p>
-
-          <p>Por el momento, no hay planes de crear una nueva versión Python 4, incompatible con las anteriores.</p>
-        </li>
-        <li>Y corresponde a versiones importantes en las que se introducen novedades en el lenguaje pero manteniendo la compatibilidad (salvo excepciones).
-
-          <p>Desde hace unos años, las versiones X.Y se publican aproximadamente cada año y medio y se mantienen durante cinco años, excepto la versión 2.7, que se mantendrá por lo menos durante diez años, hasta 2020.</p>
-        </li>
-        <li>Z corresponde a versiones menores que se publican durante el período de mantenimiento, en las que sólo se corrigen errores y fallos de seguridad.
-
-          <p>Normalmente, se publica una última versión X.Y.Z justo antes de que una versión X.Y deje de mantenerse. Algunas empresas comerciales ofrecen el mantenimiento de versiones antiguas una vez acabado el mantenimiento oficial.</p>
-        </li>
+        <li><a href="#versiones">Versiones de Python</a></li>
+        <li><a href="#transicion">De Python 2 a Python 3</a></li>
       </ul>
+    </div>
+  </nav>
 
-      <p>La imagen siguiente muestra la fecha de publicación de las versiones importantes de Python, en cada una de las tres grandes versiones, Python 1, Python 2 y Python 3. Las versiones indicadas con punto rojo se consideran obsoletas, las versiones indicadas con punto negro siguen publicando actualizaciones, las versiones indicadas con punto blanco corresponden a versiones futuras con fechas ya previstas.</p>
+  <section id="versiones">
+    <h2>Versiones de Python</h2>
 
-      <p class="captura" title="Versiones principales de Python">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="930" viewBox="-50 -60 880 250" style="font-size: 12px">
-          <line x1="35" y1="10" x2="280" y2="10" stroke-width="3" stroke="red" />
-          <line x1="280" y1="5" x2="280" y2="15" stroke-width="3" stroke="red" />
-          <text x="-40" y="15" text-anchor="start" fill="red" style="font-size: 130%; font-weight: bold">Python 1</text>
-          <line x1="35" y1="70" x2="820" y2="70" stroke-width="3" stroke="black" />
-          <text x="-40" y="75" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python 2</text>
-          <line x1="35" y1="130" x2="820" y2="130" stroke-width="3" stroke="black" />
-          <text x="-40" y="135" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python 3</text>
+    <p>Guido van Rossum ideó el lenguaje Python a finales de los 80 y comenzó a implementarlo en diciembre de 1989. En febrero de 1991 publicó la primera versión pública, la versión 0.9.0. La versión 1.0 se publicó en enero de 1994, la versión 2.0 se publicó en octubre de 2000 y la versión 3.0 se publicó en diciembre de 2008. El desarrollo de Python lo lleva a cabo un colectivo de programadores que trabaja bajo el paraguas de la fundación <a href="https://www.python.org/psf/">Python Software Foundation</a>, pero Guido van Rossum sigue dirigiendo el desarrollo de Python.</p>
 
-          <line x1="60" y1="-50" x2="60" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="75" y="-40" text-anchor="middle">94</text>
-          <text x="75" y="170" text-anchor="middle">94</text>
-          <line x1="90" y1="-50" x2="90" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="105" y="-40" text-anchor="middle">95</text>
-          <text x="105" y="170" text-anchor="middle">95</text>
-          <line x1="120" y1="-50" x2="120" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="135" y="-40" text-anchor="middle">96</text>
-          <text x="135" y="170" text-anchor="middle">96</text>
-          <line x1="150" y1="-50" x2="150" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="165" y="-40" text-anchor="middle">97</text>
-          <text x="165" y="170" text-anchor="middle">97</text>
-          <line x1="180" y1="-50" x2="180" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="195" y="-40" text-anchor="middle">98</text>
-          <text x="195" y="170" text-anchor="middle">98</text>
-          <line x1="210" y1="-50" x2="210" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="225" y="-40" text-anchor="middle">99</text>
-          <text x="225" y="170" text-anchor="middle">99</text>
-          <line x1="240" y1="-50" x2="240" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="255" y="-40" text-anchor="middle">00</text>
-          <text x="255" y="170" text-anchor="middle">00</text>
-          <line x1="270" y1="-50" x2="270" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="285" y="-40" text-anchor="middle">01</text>
-          <text x="285" y="170" text-anchor="middle">01</text>
-          <line x1="300" y1="-50" x2="300" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="315" y="-40" text-anchor="middle">02</text>
-          <text x="315" y="170" text-anchor="middle">02</text>
-          <line x1="330" y1="-50" x2="330" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="345" y="-40" text-anchor="middle">03</text>
-          <text x="345" y="170" text-anchor="middle">03</text>
-          <line x1="360" y1="-50" x2="360" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="375" y="-40" text-anchor="middle">04</text>
-          <text x="375" y="170" text-anchor="middle">04</text>
-          <line x1="390" y1="-50" x2="390" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="405" y="-40" text-anchor="middle">05</text>
-          <text x="405" y="170" text-anchor="middle">05</text>
-          <line x1="420" y1="-50" x2="420" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="435" y="-40" text-anchor="middle">06</text>
-          <text x="435" y="170" text-anchor="middle">06</text>
-          <line x1="450" y1="-50" x2="450" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="465" y="-40" text-anchor="middle">07</text>
-          <text x="465" y="170" text-anchor="middle">07</text>
-          <line x1="480" y1="-50" x2="480" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="495" y="-40" text-anchor="middle">08</text>
-          <text x="495" y="170" text-anchor="middle">08</text>
-          <line x1="510" y1="-50" x2="510" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="525" y="-40" text-anchor="middle">09</text>
-          <text x="525" y="170" text-anchor="middle">09</text>
-          <line x1="540" y1="-50" x2="540" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="555" y="-40" text-anchor="middle">10</text>
-          <text x="555" y="170" text-anchor="middle">10</text>
-          <line x1="570" y1="-50" x2="570" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="585" y="-40" text-anchor="middle">11</text>
-          <text x="585" y="170" text-anchor="middle">11</text>
-          <line x1="600" y1="-50" x2="600" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="615" y="-40" text-anchor="middle">12</text>
-          <text x="615" y="170" text-anchor="middle">12</text>
-          <line x1="630" y1="-50" x2="630" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="645" y="-40" text-anchor="middle">13</text>
-          <text x="645" y="170" text-anchor="middle">13</text>
-          <line x1="660" y1="-50" x2="660" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="675" y="-40" text-anchor="middle">14</text>
-          <text x="675" y="170" text-anchor="middle">14</text>
-          <line x1="690" y1="-50" x2="690" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="705" y="-40" text-anchor="middle">15</text>
-          <text x="705" y="170" text-anchor="middle">15</text>
-          <line x1="720" y1="-50" x2="720" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="735" y="-40" text-anchor="middle">16</text>
-          <text x="735" y="170" text-anchor="middle">16</text>
-          <line x1="750" y1="-50" x2="750" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="765" y="-40" text-anchor="middle">17</text>
-          <text x="765" y="170" text-anchor="middle">17</text>
-          <line x1="780" y1="-50" x2="780" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="795" y="-40" text-anchor="middle">18</text>
-          <text x="795" y="170" text-anchor="middle">18</text>
-          <line x1="810" y1="-50" x2="810" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-
-          <circle cx="61" cy="10" r="5" fill="red" />
-          <text x="61" y="0" text-anchor="middle" fill="red" style="font-weight: bold">1.0</text>
-          <circle cx="83" cy="10" r="5" fill="red" />
-          <text x="83" y="30" text-anchor="middle" fill="red" style="font-weight: bold;">1.1</text>
-          <circle cx="98" cy="10" r="5" fill="red" />
-          <text x="98" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.2</text>
-          <circle cx="113" cy="10" r="5" fill="red" />
-          <text x="113" y="30" text-anchor="middle" fill="red" style="font-weight: bold;">1.3</text>
-          <circle cx="144" cy="10" r="5" fill="red" />
-          <text x="144" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.4</text>
-          <circle cx="180" cy="10" r="5" fill="red" />
-          <text x="180" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.5</text>
-          <circle cx="260" cy="10" r="5" fill="red" />
-          <text x="260" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.6</text>
-
-          <circle cx="264" cy="70" r="5" fill="red" />
-          <text x="264" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.0</text>
-          <circle cx="279" cy="70" r="5" fill="red" />
-          <text x="279" y="90" text-anchor="middle" fill="red" style="font-weight: bold">2.1</text>
-          <circle cx="299" cy="70" r="5" fill="red" />
-          <text x="299" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.2</text>
-          <circle cx="347" cy="70" r="5" fill="red" />
-          <text x="347" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.3</text>
-          <circle cx="388" cy="70" r="5" fill="red" />
-          <text x="388" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.4</text>
-          <circle cx="442" cy="70" r="5" fill="red" />
-          <text x="442" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.5</text>
-          <circle cx="503" cy="70" r="5" fill="red" />
-          <text x="503" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.6</text>
-          <circle cx="555" cy="70" r="5" fill="black" />
-          <text x="555" y="60" text-anchor="middle" fill="black" style="font-weight: bold">2.7</text>
-
-          <circle cx="508" cy="130" r="5" fill="red" />
-          <text x="508" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.0</text>
-          <circle cx="525" cy="130" r="5" fill="red" />
-          <text x="525" y="150" text-anchor="middle" fill="red" style="font-weight: bold">3.1</text>
-          <circle cx="574" cy="130" r="5" fill="red" />
-          <text x="574" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.2</text>
-          <circle cx="623" cy="130" r="5" fill="red" />
-          <text x="623" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.3</text>
-          <circle cx="666" cy="130" r="5" fill="black" />
-          <text x="666" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.4</text>
-          <circle cx="711" cy="130" r="5" fill="black" />
-          <text x="711" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.5</text>
-          <circle cx="750" cy="130" r="5" fill="black" />
-          <text x="750" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.6</text>
-          <circle cx="794" cy="130" r="5" fill="white" stroke="black" stroke-width="2" />
-          <text x="794" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.7</text>
-        </svg>
-      </p>
-
-      <p>La imagen siguiente muestra la fecha de publicación de las últimas versiones menores de Python. Las versiones indicadas en rojo se consideran obsoletas, las versiones indicadas con punto blanco corresponden a versiones futuras con fechas ya previstas.</p>
-
-      <p class="captura" title="Versiones de Python">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="990" viewBox="-50 -60 940 350" style="font-size: 12px">
-          <polyline points="105,40 105,0 880,0" stroke-width="3" stroke="black" fill="none"/>
-          <line x1="35" y1="40" x2="880" y2="40" stroke-width="3" stroke="black" />
-          <text x="-40" y="45" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python</text>
-          <polyline points="688,40 688,80 880,80" stroke-width="3" stroke="black" fill="none"/> <!-- 3.6 -->
-          <polyline points="573,40 573,120 880,120" stroke-width="3" stroke="black" fill="none"/> <!-- 3.5 -->
-          <polyline points="438,40 438,160 880,160" stroke-width="3" stroke="black" fill="none"/> <!-- 3.4 -->
-          <polyline points="307,40 307,200 757,200" stroke-width="3" stroke="red" fill="none"/> <!-- 3.3 -->
-          <line x1="757" y1="195" x2="757" y2="205" stroke-width="3" stroke="red" />
-          <polyline points="162,40 162,240 611,240" stroke-width="3" stroke="red" fill="none"/> <!-- 3.2 -->
-          <line x1="611" y1="235" x2="611" y2="245" stroke-width="3" stroke="red" />
-
-          <line x1="60" y1="-50" x2="60" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="105" y="-40" text-anchor="middle">2010</text>
-          <text x="105" y="280" text-anchor="middle">2010</text>
-          <line x1="150" y1="-50" x2="150" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="195" y="-40" text-anchor="middle">2011</text>
-          <text x="195" y="280" text-anchor="middle">2011</text>
-          <line x1="240" y1="-50" x2="240" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="285" y="-40" text-anchor="middle">2012</text>
-          <text x="285" y="280" text-anchor="middle">2012</text>
-          <line x1="330" y1="-50" x2="330" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="375" y="-40" text-anchor="middle">2013</text>
-          <text x="375" y="280" text-anchor="middle">2013</text>
-          <line x1="420" y1="-50" x2="420" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="465" y="-40" text-anchor="middle">2014</text>
-          <text x="465" y="280" text-anchor="middle">2014</text>
-          <line x1="510" y1="-50" x2="510" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="555" y="-40" text-anchor="middle">2015</text>
-          <text x="555" y="280" text-anchor="middle">2015</text>
-          <line x1="600" y1="-50" x2="600" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="645" y="-40" text-anchor="middle">2016</text>
-          <text x="645" y="280" text-anchor="middle">2016</text>
-          <line x1="690" y1="-50" x2="690" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="735" y="-40" text-anchor="middle">2017</text>
-          <text x="735" y="280" text-anchor="middle">2017</text>
-          <line x1="780" y1="-50" x2="780" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-          <text x="825" y="-40" text-anchor="middle">2018</text>
-          <text x="825" y="280" text-anchor="middle">2018</text>
-          <line x1="870" y1="-50" x2="870" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
-
-          <circle cx="141" cy="0" r="5" fill="black" />
-          <text x="141" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.1</text>
-          <circle cx="190" cy="0" r="5" fill="black" />
-          <text x="190" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.2</text>
-          <circle cx="265" cy="0" r="5" fill="black" />
-          <text x="265" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.3</text>
-          <circle cx="354" cy="0" r="5" fill="black" />
-          <text x="354" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.4</text>
-          <circle cx="363" cy="0" r="5" fill="black" />
-          <text x="363" y="20" text-anchor="middle" fill="black" style="font-weight: bold">2.7.5</text>
-          <circle cx="407" cy="0" r="5" fill="black" />
-          <text x="407" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.6</text>
-          <circle cx="457" cy="0" r="5" fill="black" />
-          <text x="457" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.7</text>
-          <circle cx="465" cy="0" r="5" fill="black" />
-          <text x="465" y="20" text-anchor="middle" fill="black" style="font-weight: bold">2.7.8</text>
-          <circle cx="505" cy="0" r="5" fill="black" />
-          <text x="505" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.9</text>
-          <circle cx="545" cy="0" r="5" fill="black" />
-          <text x="545" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.10</text>
-          <circle cx="594" cy="0" r="5" fill="black" />
-          <text x="594" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.11</text>
-          <circle cx="644" cy="0" r="5" fill="black" />
-          <text x="644" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.12</text>
-          <circle cx="687" cy="0" r="5" fill="black" />
-          <text x="687" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.13</text>
-          <circle cx="754" cy="0" r="5" fill="black" />
-          <text x="754" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.14</text>
-
-          <circle cx="105" cy="40" r="5" fill="black" />
-          <text x="90" y="30" text-anchor="middle" fill="black" style="font-weight: bold">2.7</text>
-          <circle cx="162" cy="40" r="5" fill="red" />
-          <text x="162" y="30" text-anchor="middle" fill="red" style="font-weight: bold">3.2</text>
-          <circle cx="307" cy="40" r="5" fill="red" />
-          <text x="307" y="30" text-anchor="middle" fill="red" style="font-weight: bold">3.3</text>
-          <circle cx="438" cy="40" r="5" fill="black" />
-          <text x="438" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.4</text>
-          <circle cx="573" cy="40" r="5" fill="black" />
-          <text x="573" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.5</text>
-          <circle cx="688" cy="40" r="5" fill="black" />
-          <text x="688" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.6</text>
-          <circle cx="821" cy="40" r="5" fill="white" stroke="black" stroke-width="2" />
-          <text x="821" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.7</text>
-
-          <circle cx="197" cy="240" r="5" fill="red" />
-          <text x="197" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.1</text>
-          <circle cx="211" cy="240" r="5" fill="red" />
-          <text x="211" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.2</text>
-          <circle cx="265" cy="240" r="5" fill="red" />
-          <text x="265" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.3</text>
-          <circle cx="354" cy="240" r="5" fill="red" />
-          <text x="354" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.4</text>
-          <circle cx="363" cy="240" r="5" fill="red" />
-          <text x="363" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.5</text>
-          <circle cx="490" cy="240" r="5" fill="red" />
-          <text x="490" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.6</text>
-
-          <circle cx="354" cy="200" r="5" fill="red" />
-          <text x="354" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.1</text>
-          <circle cx="367" cy="200" r="5" fill="red" />
-          <text x="367" y="218" text-anchor="middle" fill="red" style="font-weight: bold">3.3.2</text>
-          <circle cx="409" cy="200" r="5" fill="red" />
-          <text x="406" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.3</text>
-          <circle cx="430" cy="200" r="5" fill="red" />
-          <text x="430" y="220" text-anchor="middle" fill="red" style="font-weight: bold">3.3.4</text>
-          <circle cx="437" cy="200" r="5" fill="red" />
-          <text x="440" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.5</text>
-          <circle cx="490" cy="200" r="5" fill="red" />
-          <text x="490" y="220" text-anchor="middle" fill="red" style="font-weight: bold">3.3.6</text>
-          <circle cx="755" cy="200" r="5" fill="red" />
-          <text x="755" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.7</text>
-
-          <circle cx="454" cy="160" r="5" fill="black" />
-          <text x="454" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.1</text>
-          <circle cx="491" cy="160" r="5" fill="black" />
-          <text x="491" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.2</text>
-          <circle cx="524" cy="160" r="5" fill="black" />
-          <text x="524" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.3</text>
-          <circle cx="598" cy="160" r="5" fill="black" />
-          <text x="598" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.4</text>
-          <circle cx="644" cy="160" r="5" fill="black" />
-          <text x="644" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.5</text>
-          <circle cx="694" cy="160" r="5" fill="black" />
-          <text x="694" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.6</text>
-          <circle cx="745" cy="160" r="5" fill="black" />
-          <text x="745" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.7</text>
-
-          <circle cx="594" cy="120" r="5" fill="black" />
-          <text x="594" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.1</text>
-          <circle cx="644" cy="120" r="5" fill="black" />
-          <text x="644" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.2</text>
-          <circle cx="694" cy="120" r="5" fill="black" />
-          <text x="694" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.3</text>
-          <circle cx="744" cy="120" r="5" fill="black" />
-          <text x="744" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.4</text>
-
-          <circle cx="710" cy="80" r="5" fill="black" />
-          <text x="710" y="70" text-anchor="middle" fill="black" style="font-weight: bold">3.6.1</text>
-          <circle cx="739" cy="80" r="5" fill="black" />
-          <text x="739" y="100" text-anchor="middle" fill="black" style="font-weight: bold">3.6.2</text>
-          <circle cx="758" cy="80" r="5" fill="black" />
-          <text x="758" y="70" text-anchor="middle" fill="black" style="font-weight: bold">3.6.3</text>
-          <circle cx="777" cy="80" r="5" fill="white" stroke="black" stroke-width="2" />
-          <text x="777" y="100" text-anchor="middle" fill="black" style="font-weight: bold">3.6.4</text>
-        </svg>
-      </p>
-
-      <p>Es posible tener instalados en el ordenador varias versiones de Python pero, salvo que sea necesario para la ejecución de programas o paquetes incompatibles, se recomienda instalar siempre la última versión disponible.</p>
-    </section>
-
-    <h3>Referencias</h3>
+    <p>Las versiones de Python se identifican por tres números X.Y.Z, en la que:</p>
     <ul>
-      <li>Principales novedades en Python:
-        <ul>
-          <li>Python 2.X:
-            <a href="https://docs.python.org/2/whatsnew/2.0.html">2.0</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.1.html">2.1</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.2.html">2.2</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.3.html">2.3</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.4.html">2.4</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.5.html">2.5</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.6.html">2.6</a> -
-            <a href="https://docs.python.org/2/whatsnew/2.7.html">2.7</a></li>
-          <li>Python 3.X:
-            <a href="https://docs.python.org/3.0/whatsnew/3.0.html">3.0</a> -
-            <a href="https://docs.python.org/3.1/whatsnew/3.1.html">3.1</a> -
-            <a href="https://docs.python.org/3.2/whatsnew/3.2.html">3.2</a> -
-            <a href="https://docs.python.org/3.3/whatsnew/3.3.html">3.3</a> -
-            <a href="https://docs.python.org/3.4/whatsnew/3.4.html">3.4</a> -
-            <a href="https://docs.python.org/3.5/whatsnew/3.5.html">3.5</a> -
-            <a href="https://docs.python.org/3.6/whatsnew/3.6.html">3.6</a> -
-            <a href="https://docs.python.org/3.7/whatsnew/3.7.html">3.7</a></li>
-        </ul>
+      <li>X corresponde a las grandes versiones de Python (1, 2 y 3), incompatibles entre sí:
+
+        <p>Los principales cambios introducidos en Python 2 fueron las cadenas Unicode, las comprensiones de listas, las asignaciones aumentadas, los nuevos métodos de cadenas y el recolector de basura para referencias cíclicas.</p>
+
+        <p>Los principales cambios introducidos en Python 3 fueron la separación entre cadenas Unicode y datos binarios, la función print(), cambios en la sintaxis, tipos de datos, comparadores, etc.</p>
+
+        <p>Por el momento, no hay planes de crear una nueva versión Python 4, incompatible con las anteriores.</p>
       </li>
-      <li>Sobre los <a href="http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html">cambios en Python 3 (Nick Coghlan)</a></li>
-      <li>Planificación de la publicación de cada versión (release schedules):
-        <ul>
-          <li>Python 2.X:
-            <a href="https://www.python.org/dev/peps/pep-0361/">2.6</a> -
-            <a href="https://www.python.org/dev/peps/pep-0373/">2.7</a> -
-            <a href="https://www.python.org/dev/peps/pep-0404/">2.8</a> </li>
-          <li>Python 3.X:
-            <a href="https://www.python.org/dev/peps/pep-0361/">3.0</a> -
-            <a href="https://www.python.org/dev/peps/pep-0375/">3.1</a> -
-            <a href="https://www.python.org/dev/peps/pep-0392/">3.2</a> -
-            <a href="https://www.python.org/dev/peps/pep-0398/">3.3</a> -
-            <a href="https://www.python.org/dev/peps/pep-0429/">3.4</a> -
-            <a href="https://www.python.org/dev/peps/pep-0478/">3.5</a> -
-            <a href="https://www.python.org/dev/peps/pep-0494/">3.6</a> -
-            <a href="https://www.python.org/dev/peps/pep-0537/">3.7</a></li>
-        </ul>
+      <li>Y corresponde a versiones importantes en las que se introducen novedades en el lenguaje pero manteniendo la compatibilidad (salvo excepciones).
+
+        <p>Desde hace unos años, las versiones X.Y se publican aproximadamente cada año y medio y se mantienen durante cinco años, excepto la versión 2.7, que se mantendrá por lo menos durante diez años, hasta 2020.</p>
+      </li>
+      <li>Z corresponde a versiones menores que se publican durante el período de mantenimiento, en las que sólo se corrigen errores y fallos de seguridad.
+
+        <p>Normalmente, se publica una última versión X.Y.Z justo antes de que una versión X.Y deje de mantenerse. Algunas empresas comerciales ofrecen el mantenimiento de versiones antiguas una vez acabado el mantenimiento oficial.</p>
       </li>
     </ul>
 
-    <section id="transicion">
-      <h2>Transición de Python 2 a Python 3</h2>
+    <p>La imagen siguiente muestra la fecha de publicación de las versiones importantes de Python, en cada una de las tres grandes versiones, Python 1, Python 2 y Python 3. Las versiones indicadas con punto rojo se consideran obsoletas, las versiones indicadas con punto negro siguen publicando actualizaciones, las versiones indicadas con punto blanco corresponden a versiones futuras con fechas ya previstas.</p>
 
-      <p>La transición de Python 2 a Python 3 ha resultado mucho más costosa de lo esperado, debido a que Python 3 introdujo muchos cambios en el lenguaje y obligaba a reescribir prácticamente todos los programas (aunque se han creado herramientas para ayudar en ese proceso).</p>
+    <p class="captura" title="Versiones principales de Python">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="930" viewBox="-50 -60 880 250" style="font-size: 12px">
+        <line x1="35" y1="10" x2="280" y2="10" stroke-width="3" stroke="red" />
+        <line x1="280" y1="5" x2="280" y2="15" stroke-width="3" stroke="red" />
+        <text x="-40" y="15" text-anchor="start" fill="red" style="font-size: 130%; font-weight: bold">Python 1</text>
+        <line x1="35" y1="70" x2="820" y2="70" stroke-width="3" stroke="black" />
+        <text x="-40" y="75" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python 2</text>
+        <line x1="35" y1="130" x2="820" y2="130" stroke-width="3" stroke="black" />
+        <text x="-40" y="135" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python 3</text>
 
-      <p>La intención inicial era haber terminado Python 2 con la versión 2.6, pero en 2010 se tuvo que publicar la versión 2.7, incorporando parte de las novedades de Python 3. Además, el período de mantenimiento de Python 2.7 se tuvo que duplicar de los cinco años habituales a diez, hasta 2020.</p>
+        <line x1="60" y1="-50" x2="60" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="75" y="-40" text-anchor="middle">94</text>
+        <text x="75" y="170" text-anchor="middle">94</text>
+        <line x1="90" y1="-50" x2="90" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="105" y="-40" text-anchor="middle">95</text>
+        <text x="105" y="170" text-anchor="middle">95</text>
+        <line x1="120" y1="-50" x2="120" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="135" y="-40" text-anchor="middle">96</text>
+        <text x="135" y="170" text-anchor="middle">96</text>
+        <line x1="150" y1="-50" x2="150" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="165" y="-40" text-anchor="middle">97</text>
+        <text x="165" y="170" text-anchor="middle">97</text>
+        <line x1="180" y1="-50" x2="180" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="195" y="-40" text-anchor="middle">98</text>
+        <text x="195" y="170" text-anchor="middle">98</text>
+        <line x1="210" y1="-50" x2="210" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="225" y="-40" text-anchor="middle">99</text>
+        <text x="225" y="170" text-anchor="middle">99</text>
+        <line x1="240" y1="-50" x2="240" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="255" y="-40" text-anchor="middle">00</text>
+        <text x="255" y="170" text-anchor="middle">00</text>
+        <line x1="270" y1="-50" x2="270" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="285" y="-40" text-anchor="middle">01</text>
+        <text x="285" y="170" text-anchor="middle">01</text>
+        <line x1="300" y1="-50" x2="300" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="315" y="-40" text-anchor="middle">02</text>
+        <text x="315" y="170" text-anchor="middle">02</text>
+        <line x1="330" y1="-50" x2="330" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="345" y="-40" text-anchor="middle">03</text>
+        <text x="345" y="170" text-anchor="middle">03</text>
+        <line x1="360" y1="-50" x2="360" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="375" y="-40" text-anchor="middle">04</text>
+        <text x="375" y="170" text-anchor="middle">04</text>
+        <line x1="390" y1="-50" x2="390" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="405" y="-40" text-anchor="middle">05</text>
+        <text x="405" y="170" text-anchor="middle">05</text>
+        <line x1="420" y1="-50" x2="420" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="435" y="-40" text-anchor="middle">06</text>
+        <text x="435" y="170" text-anchor="middle">06</text>
+        <line x1="450" y1="-50" x2="450" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="465" y="-40" text-anchor="middle">07</text>
+        <text x="465" y="170" text-anchor="middle">07</text>
+        <line x1="480" y1="-50" x2="480" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="495" y="-40" text-anchor="middle">08</text>
+        <text x="495" y="170" text-anchor="middle">08</text>
+        <line x1="510" y1="-50" x2="510" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="525" y="-40" text-anchor="middle">09</text>
+        <text x="525" y="170" text-anchor="middle">09</text>
+        <line x1="540" y1="-50" x2="540" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="555" y="-40" text-anchor="middle">10</text>
+        <text x="555" y="170" text-anchor="middle">10</text>
+        <line x1="570" y1="-50" x2="570" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="585" y="-40" text-anchor="middle">11</text>
+        <text x="585" y="170" text-anchor="middle">11</text>
+        <line x1="600" y1="-50" x2="600" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="615" y="-40" text-anchor="middle">12</text>
+        <text x="615" y="170" text-anchor="middle">12</text>
+        <line x1="630" y1="-50" x2="630" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="645" y="-40" text-anchor="middle">13</text>
+        <text x="645" y="170" text-anchor="middle">13</text>
+        <line x1="660" y1="-50" x2="660" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="675" y="-40" text-anchor="middle">14</text>
+        <text x="675" y="170" text-anchor="middle">14</text>
+        <line x1="690" y1="-50" x2="690" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="705" y="-40" text-anchor="middle">15</text>
+        <text x="705" y="170" text-anchor="middle">15</text>
+        <line x1="720" y1="-50" x2="720" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="735" y="-40" text-anchor="middle">16</text>
+        <text x="735" y="170" text-anchor="middle">16</text>
+        <line x1="750" y1="-50" x2="750" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="765" y="-40" text-anchor="middle">17</text>
+        <text x="765" y="170" text-anchor="middle">17</text>
+        <line x1="780" y1="-50" x2="780" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="795" y="-40" text-anchor="middle">18</text>
+        <text x="795" y="170" text-anchor="middle">18</text>
+        <line x1="810" y1="-50" x2="810" y2="180" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
 
-      <hr class="corta" />
+        <circle cx="61" cy="10" r="5" fill="red" />
+        <text x="61" y="0" text-anchor="middle" fill="red" style="font-weight: bold">1.0</text>
+        <circle cx="83" cy="10" r="5" fill="red" />
+        <text x="83" y="30" text-anchor="middle" fill="red" style="font-weight: bold;">1.1</text>
+        <circle cx="98" cy="10" r="5" fill="red" />
+        <text x="98" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.2</text>
+        <circle cx="113" cy="10" r="5" fill="red" />
+        <text x="113" y="30" text-anchor="middle" fill="red" style="font-weight: bold;">1.3</text>
+        <circle cx="144" cy="10" r="5" fill="red" />
+        <text x="144" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.4</text>
+        <circle cx="180" cy="10" r="5" fill="red" />
+        <text x="180" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.5</text>
+        <circle cx="260" cy="10" r="5" fill="red" />
+        <text x="260" y="0" text-anchor="middle" fill="red" style="font-weight: bold;">1.6</text>
 
-      <p>Un primer obstáculo en el proceso de transición de Python 2 a Python 3 ha sido la propia disponibilidad de Python 3 en las distribuciones GNU/Linux. Muchas herramientas internas de las distribuciones están escritas en Python y su conversión de Python 2 a Python 3 no era fácil, por lo que las distribuciones no podían pasar simplemente de incluir una versión a otra.</p>
+        <circle cx="264" cy="70" r="5" fill="red" />
+        <text x="264" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.0</text>
+        <circle cx="279" cy="70" r="5" fill="red" />
+        <text x="279" y="90" text-anchor="middle" fill="red" style="font-weight: bold">2.1</text>
+        <circle cx="299" cy="70" r="5" fill="red" />
+        <text x="299" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.2</text>
+        <circle cx="347" cy="70" r="5" fill="red" />
+        <text x="347" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.3</text>
+        <circle cx="388" cy="70" r="5" fill="red" />
+        <text x="388" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.4</text>
+        <circle cx="442" cy="70" r="5" fill="red" />
+        <text x="442" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.5</text>
+        <circle cx="503" cy="70" r="5" fill="red" />
+        <text x="503" y="60" text-anchor="middle" fill="red" style="font-weight: bold">2.6</text>
+        <circle cx="555" cy="70" r="5" fill="black" />
+        <text x="555" y="60" text-anchor="middle" fill="black" style="font-weight: bold">2.7</text>
 
-      <p>Hasta 2015, Python 2 siguió siendo la versión predeterminada de Python en la mayoría de distribuciones GNU/Linux (aunque se podía instalar Python 3 sin problemas en ellas). Felizmente, esta situación está en vías de solución:</p>
+        <circle cx="508" cy="130" r="5" fill="red" />
+        <text x="508" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.0</text>
+        <circle cx="525" cy="130" r="5" fill="red" />
+        <text x="525" y="150" text-anchor="middle" fill="red" style="font-weight: bold">3.1</text>
+        <circle cx="574" cy="130" r="5" fill="red" />
+        <text x="574" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.2</text>
+        <circle cx="623" cy="130" r="5" fill="red" />
+        <text x="623" y="120" text-anchor="middle" fill="red" style="font-weight: bold">3.3</text>
+        <circle cx="666" cy="130" r="5" fill="black" />
+        <text x="666" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.4</text>
+        <circle cx="711" cy="130" r="5" fill="black" />
+        <text x="711" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.5</text>
+        <circle cx="750" cy="130" r="5" fill="black" />
+        <text x="750" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.6</text>
+        <circle cx="794" cy="130" r="5" fill="white" stroke="black" stroke-width="2" />
+        <text x="794" y="120" text-anchor="middle" fill="black" style="font-weight: bold">3.7</text>
+      </svg>
+    </p>
 
+    <p>La imagen siguiente muestra la fecha de publicación de las últimas versiones menores de Python. Las versiones indicadas en rojo se consideran obsoletas, las versiones indicadas con punto blanco corresponden a versiones futuras con fechas ya previstas.</p>
+
+    <p class="captura" title="Versiones de Python">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="990" viewBox="-50 -60 940 350" style="font-size: 12px">
+        <polyline points="105,40 105,0 880,0" stroke-width="3" stroke="black" fill="none" />
+        <line x1="35" y1="40" x2="880" y2="40" stroke-width="3" stroke="black" />
+        <text x="-40" y="45" text-anchor="start" fill="black" style="font-size: 130%; font-weight: bold">Python</text>
+        <polyline points="688,40 688,80 880,80" stroke-width="3" stroke="black" fill="none" />
+        <!-- 3.6 -->
+        <polyline points="573,40 573,120 880,120" stroke-width="3" stroke="black" fill="none" />
+        <!-- 3.5 -->
+        <polyline points="438,40 438,160 880,160" stroke-width="3" stroke="black" fill="none" />
+        <!-- 3.4 -->
+        <polyline points="307,40 307,200 757,200" stroke-width="3" stroke="red" fill="none" />
+        <!-- 3.3 -->
+        <line x1="757" y1="195" x2="757" y2="205" stroke-width="3" stroke="red" />
+        <polyline points="162,40 162,240 611,240" stroke-width="3" stroke="red" fill="none" />
+        <!-- 3.2 -->
+        <line x1="611" y1="235" x2="611" y2="245" stroke-width="3" stroke="red" />
+
+        <line x1="60" y1="-50" x2="60" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="105" y="-40" text-anchor="middle">2010</text>
+        <text x="105" y="280" text-anchor="middle">2010</text>
+        <line x1="150" y1="-50" x2="150" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="195" y="-40" text-anchor="middle">2011</text>
+        <text x="195" y="280" text-anchor="middle">2011</text>
+        <line x1="240" y1="-50" x2="240" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="285" y="-40" text-anchor="middle">2012</text>
+        <text x="285" y="280" text-anchor="middle">2012</text>
+        <line x1="330" y1="-50" x2="330" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="375" y="-40" text-anchor="middle">2013</text>
+        <text x="375" y="280" text-anchor="middle">2013</text>
+        <line x1="420" y1="-50" x2="420" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="465" y="-40" text-anchor="middle">2014</text>
+        <text x="465" y="280" text-anchor="middle">2014</text>
+        <line x1="510" y1="-50" x2="510" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="555" y="-40" text-anchor="middle">2015</text>
+        <text x="555" y="280" text-anchor="middle">2015</text>
+        <line x1="600" y1="-50" x2="600" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="645" y="-40" text-anchor="middle">2016</text>
+        <text x="645" y="280" text-anchor="middle">2016</text>
+        <line x1="690" y1="-50" x2="690" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="735" y="-40" text-anchor="middle">2017</text>
+        <text x="735" y="280" text-anchor="middle">2017</text>
+        <line x1="780" y1="-50" x2="780" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+        <text x="825" y="-40" text-anchor="middle">2018</text>
+        <text x="825" y="280" text-anchor="middle">2018</text>
+        <line x1="870" y1="-50" x2="870" y2="280" stroke-width="1" stroke-dasharray="5,5" stroke="grey" />
+
+        <circle cx="141" cy="0" r="5" fill="black" />
+        <text x="141" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.1</text>
+        <circle cx="190" cy="0" r="5" fill="black" />
+        <text x="190" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.2</text>
+        <circle cx="265" cy="0" r="5" fill="black" />
+        <text x="265" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.3</text>
+        <circle cx="354" cy="0" r="5" fill="black" />
+        <text x="354" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.4</text>
+        <circle cx="363" cy="0" r="5" fill="black" />
+        <text x="363" y="20" text-anchor="middle" fill="black" style="font-weight: bold">2.7.5</text>
+        <circle cx="407" cy="0" r="5" fill="black" />
+        <text x="407" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.6</text>
+        <circle cx="457" cy="0" r="5" fill="black" />
+        <text x="457" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.7</text>
+        <circle cx="465" cy="0" r="5" fill="black" />
+        <text x="465" y="20" text-anchor="middle" fill="black" style="font-weight: bold">2.7.8</text>
+        <circle cx="505" cy="0" r="5" fill="black" />
+        <text x="505" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.9</text>
+        <circle cx="545" cy="0" r="5" fill="black" />
+        <text x="545" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.10</text>
+        <circle cx="594" cy="0" r="5" fill="black" />
+        <text x="594" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.11</text>
+        <circle cx="644" cy="0" r="5" fill="black" />
+        <text x="644" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.12</text>
+        <circle cx="687" cy="0" r="5" fill="black" />
+        <text x="687" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.13</text>
+        <circle cx="754" cy="0" r="5" fill="black" />
+        <text x="754" y="-10" text-anchor="middle" fill="black" style="font-weight: bold">2.7.14</text>
+
+        <circle cx="105" cy="40" r="5" fill="black" />
+        <text x="90" y="30" text-anchor="middle" fill="black" style="font-weight: bold">2.7</text>
+        <circle cx="162" cy="40" r="5" fill="red" />
+        <text x="162" y="30" text-anchor="middle" fill="red" style="font-weight: bold">3.2</text>
+        <circle cx="307" cy="40" r="5" fill="red" />
+        <text x="307" y="30" text-anchor="middle" fill="red" style="font-weight: bold">3.3</text>
+        <circle cx="438" cy="40" r="5" fill="black" />
+        <text x="438" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.4</text>
+        <circle cx="573" cy="40" r="5" fill="black" />
+        <text x="573" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.5</text>
+        <circle cx="688" cy="40" r="5" fill="black" />
+        <text x="688" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.6</text>
+        <circle cx="821" cy="40" r="5" fill="white" stroke="black" stroke-width="2" />
+        <text x="821" y="30" text-anchor="middle" fill="black" style="font-weight: bold">3.7</text>
+
+        <circle cx="197" cy="240" r="5" fill="red" />
+        <text x="197" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.1</text>
+        <circle cx="211" cy="240" r="5" fill="red" />
+        <text x="211" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.2</text>
+        <circle cx="265" cy="240" r="5" fill="red" />
+        <text x="265" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.3</text>
+        <circle cx="354" cy="240" r="5" fill="red" />
+        <text x="354" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.4</text>
+        <circle cx="363" cy="240" r="5" fill="red" />
+        <text x="363" y="230" text-anchor="middle" fill="red" style="font-weight: bold">3.2.5</text>
+        <circle cx="490" cy="240" r="5" fill="red" />
+        <text x="490" y="258" text-anchor="middle" fill="red" style="font-weight: bold">3.2.6</text>
+
+        <circle cx="354" cy="200" r="5" fill="red" />
+        <text x="354" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.1</text>
+        <circle cx="367" cy="200" r="5" fill="red" />
+        <text x="367" y="218" text-anchor="middle" fill="red" style="font-weight: bold">3.3.2</text>
+        <circle cx="409" cy="200" r="5" fill="red" />
+        <text x="406" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.3</text>
+        <circle cx="430" cy="200" r="5" fill="red" />
+        <text x="430" y="220" text-anchor="middle" fill="red" style="font-weight: bold">3.3.4</text>
+        <circle cx="437" cy="200" r="5" fill="red" />
+        <text x="440" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.5</text>
+        <circle cx="490" cy="200" r="5" fill="red" />
+        <text x="490" y="220" text-anchor="middle" fill="red" style="font-weight: bold">3.3.6</text>
+        <circle cx="755" cy="200" r="5" fill="red" />
+        <text x="755" y="190" text-anchor="middle" fill="red" style="font-weight: bold">3.3.7</text>
+
+        <circle cx="454" cy="160" r="5" fill="black" />
+        <text x="454" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.1</text>
+        <circle cx="491" cy="160" r="5" fill="black" />
+        <text x="491" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.2</text>
+        <circle cx="524" cy="160" r="5" fill="black" />
+        <text x="524" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.3</text>
+        <circle cx="598" cy="160" r="5" fill="black" />
+        <text x="598" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.4</text>
+        <circle cx="644" cy="160" r="5" fill="black" />
+        <text x="644" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.5</text>
+        <circle cx="694" cy="160" r="5" fill="black" />
+        <text x="694" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.6</text>
+        <circle cx="745" cy="160" r="5" fill="black" />
+        <text x="745" y="150" text-anchor="middle" fill="black" style="font-weight: bold">3.4.7</text>
+
+        <circle cx="594" cy="120" r="5" fill="black" />
+        <text x="594" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.1</text>
+        <circle cx="644" cy="120" r="5" fill="black" />
+        <text x="644" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.2</text>
+        <circle cx="694" cy="120" r="5" fill="black" />
+        <text x="694" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.3</text>
+        <circle cx="744" cy="120" r="5" fill="black" />
+        <text x="744" y="110" text-anchor="middle" fill="black" style="font-weight: bold">3.5.4</text>
+
+        <circle cx="710" cy="80" r="5" fill="black" />
+        <text x="710" y="70" text-anchor="middle" fill="black" style="font-weight: bold">3.6.1</text>
+        <circle cx="739" cy="80" r="5" fill="black" />
+        <text x="739" y="100" text-anchor="middle" fill="black" style="font-weight: bold">3.6.2</text>
+        <circle cx="758" cy="80" r="5" fill="black" />
+        <text x="758" y="70" text-anchor="middle" fill="black" style="font-weight: bold">3.6.3</text>
+        <circle cx="777" cy="80" r="5" fill="white" stroke="black" stroke-width="2" />
+        <text x="777" y="100" text-anchor="middle" fill="black" style="font-weight: bold">3.6.4</text>
+      </svg>
+    </p>
+
+    <p>Es posible tener instalados en el ordenador varias versiones de Python pero, salvo que sea necesario para la ejecución de programas o paquetes incompatibles, se recomienda instalar siempre la última versión disponible.</p>
+  </section>
+
+  <h3>Referencias</h3>
+  <ul>
+    <li>Principales novedades en Python:
       <ul>
-        <li>Fedora hizo la transición a Python 3.4 en Fedora 23 (publicada en noviembre de 2015) [<a href="https://fedoraproject.org/wiki/Changes/Python_3_as_Default">wiki de Fedora</a>]. Eso quiere decir que RedHat Linux 8 (sin fecha de publicación prevista) usará Python 3. Posteriormente, Fedora 24 (publicada en junio de 2016) incluyó Python 3.5  y Fedora 26 (publicada en julio de 2017) incluye Python 3.6.</li>
-
-        <li>Ubuntu hizo la transición a Python 3.5 en Ubuntu 16.04 (publicada en abril de 2016) [<a href="https://wiki.ubuntu.com/Python/Python35Transition">wiki de Ubuntu</a> y seguramente incluirá Python 3.6 en Ubuntu 18.04 (prevista en abril de 2018) [<a href="https://wiki.ubuntu.com/Python/Python36Transition">wiki de Ubuntu</a>].</li>
-
-        <li>En abril de 2015 Debian empezó a discutir los planes de transición a Python 3. Debian 9 (publicado en junio de 2017) incluye Python 2.7.13 y Python 3.5.3 y debería pasar completamente a Python 3 en Debian 10 (que se espera publicar en 2019) [<a href="https://lwn.net/Articles/642334/">artículo de Linux Week News del 29/04/15</a>].</li>
-
-        <li>La mayoría de componentes de <a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, son <a href="https://wiki.openstack.org/wiki/Python3">compatibles con Python 3</a>, pero no parece que Python 3 vaya a ser la versión predeterminada por lo menos hasta la versión Pike, que seguramente se publicará en octubre de 2017</li>
+        <li>Python 2.X:
+          <a href="https://docs.python.org/2/whatsnew/2.0.html">2.0</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.1.html">2.1</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.2.html">2.2</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.3.html">2.3</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.4.html">2.4</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.5.html">2.5</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.6.html">2.6</a> -
+          <a href="https://docs.python.org/2/whatsnew/2.7.html">2.7</a></li>
+        <li>Python 3.X:
+          <a href="https://docs.python.org/3.0/whatsnew/3.0.html">3.0</a> -
+          <a href="https://docs.python.org/3.1/whatsnew/3.1.html">3.1</a> -
+          <a href="https://docs.python.org/3.2/whatsnew/3.2.html">3.2</a> -
+          <a href="https://docs.python.org/3.3/whatsnew/3.3.html">3.3</a> -
+          <a href="https://docs.python.org/3.4/whatsnew/3.4.html">3.4</a> -
+          <a href="https://docs.python.org/3.5/whatsnew/3.5.html">3.5</a> -
+          <a href="https://docs.python.org/3.6/whatsnew/3.6.html">3.6</a> -
+          <a href="https://docs.python.org/3.7/whatsnew/3.7.html">3.7</a></li>
       </ul>
-
-      <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que se vayan a seguir publicando actualizaciones de seguridad de Python 2.7 hasta 2020, como mínimo.</p>
-
-      <hr class="corta" />
-
-      <p>Un segundo obstáculo en el proceso de transición de Python 2 a Python 3 (y que ha afectado además a todos los sistemas operativos) ha sido la disponibilidad de las bibliotecas.</p>
-
-      <p>Python cuenta con un gran número de bibliotecas, cuyo repositorio oficial es <a href="https://pypi.python.org/pypi">PyPI</a> (Python Package Index), que facilitan la programación de aplicaciones complejas. Cuando se publicó Python 3, la inmensa mayoría de bibliotecas sólo estaban disponibles para Python 2 y, lógicamente, si un programa necesitaba alguna biblioteca que sólo estaba disponible para Python 2, el programa no se podía pasar tampoco a Python 3.</p>
-
-      <p>Poco a poco, la mayoría de bibliotecas de Python han ido publicando versiones para Python 3, por lo que este problema también está en vías de solución.</p>
-
-      <p>En marzo de 2016, un <a href="https://blogs.msdn.microsoft.com/pythonengineering/2016/03/08/python-3-is-winning/">estudio de empleados de Microsoft</a> señalaba que por aquel entonces algo más del 50% de las bibliotecas estaban disponibles tanto para Python 2 como para Python 3, un 25% estaban disponibles sólo para Python 2 y un poco menos del 25% estaban disponibles sólo para Python 3, pero la tendencia parecía indicar que a mediados de 2016 Python 3 pasaría a ser la versión más popular.</p>
-
-      <p>Varias páginas web hacen un seguimiento de la compatibilidad con Python 3 de las bibliotecas más populares</p>
+    </li>
+    <li>Sobre los <a href="http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html">cambios en Python 3 (Nick Coghlan)</a></li>
+    <li>Planificación de la publicación de cada versión (release schedules):
       <ul>
-        <li><a href="https://python3wos.appspot.com/">Python 3 Wall of Superpowers</a> y <a href="http://py3readiness.org/">Python 3 Readiness</a> muestran cómo la inmensa mayoría de las bibliotecas más populares ya están disponibles en Python 3</li>
-        <li>la distribución GNU/Linux Fedora lleva el seguimiento de los paquetes de Python que forman parte de la distribución: <a href="http://fedora.portingdb.xyz/">paquetes</a> y <a href="http://fedora.portingdb.xyz/history/">evolución</a>.</li>
+        <li>Python 2.X:
+          <a href="https://www.python.org/dev/peps/pep-0361/">2.6</a> -
+          <a href="https://www.python.org/dev/peps/pep-0373/">2.7</a> -
+          <a href="https://www.python.org/dev/peps/pep-0404/">2.8</a> </li>
+        <li>Python 3.X:
+          <a href="https://www.python.org/dev/peps/pep-0361/">3.0</a> -
+          <a href="https://www.python.org/dev/peps/pep-0375/">3.1</a> -
+          <a href="https://www.python.org/dev/peps/pep-0392/">3.2</a> -
+          <a href="https://www.python.org/dev/peps/pep-0398/">3.3</a> -
+          <a href="https://www.python.org/dev/peps/pep-0429/">3.4</a> -
+          <a href="https://www.python.org/dev/peps/pep-0478/">3.5</a> -
+          <a href="https://www.python.org/dev/peps/pep-0494/">3.6</a> -
+          <a href="https://www.python.org/dev/peps/pep-0537/">3.7</a></li>
       </ul>
-    </section>
+    </li>
+  </ul>
 
-    <section id="saber-mas">
-      <h2>Para saber más</h2>
+  <section id="transicion">
+    <h2>Transición de Python 2 a Python 3</h2>
 
-      <ul>
-        <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2017">PyCon 2017</a> (mayo 2017)</li>
-        <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/723251/">Python Language Summit 2017</a> (mayo 2017)</li>
-        <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/playlist?list=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm">EuroPyhton 2016</a> (julio 2016)</li>
-        <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/688969/">Python Language Summit 2016</a> (junio 2016)</li>
-        <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2016">PyCon 2016</a> (junio 2016)</li>
-        <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/playlist?list=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP">EuroPyhton 2015</a> (julio 2015)</li>
-        <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/639773/">Python Language Summit 2015</a> (abril 2015)</li>
-        <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2015">PyCon 2015</a> (abril 2015)</li>
-      </ul>
-    </section>
+    <p>La transición de Python 2 a Python 3 ha resultado mucho más costosa de lo esperado, debido a que Python 3 introdujo muchos cambios en el lenguaje y obligaba a reescribir prácticamente todos los programas (aunque se han creado herramientas para ayudar en ese proceso).</p>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 7 de octubre de 2017</p>
+    <p>La intención inicial era haber terminado Python 2 con la versión 2.6, pero en 2010 se tuvo que publicar la versión 2.7, incorporando parte de las novedades de Python 3. Además, el período de mantenimiento de Python 2.7 se tuvo que duplicar de los cinco años habituales a diez, hasta 2020.</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <hr class="corta" />
+
+    <p>Un primer obstáculo en el proceso de transición de Python 2 a Python 3 ha sido la propia disponibilidad de Python 3 en las distribuciones GNU/Linux. Muchas herramientas internas de las distribuciones están escritas en Python y su conversión de Python 2 a Python 3 no era fácil, por lo que las distribuciones no podían pasar simplemente de incluir una versión a otra.</p>
+
+    <p>Hasta 2015, Python 2 siguió siendo la versión predeterminada de Python en la mayoría de distribuciones GNU/Linux (aunque se podía instalar Python 3 sin problemas en ellas). Felizmente, esta situación está en vías de solución:</p>
+
+    <ul>
+      <li>Fedora hizo la transición a Python 3.4 en Fedora 23 (publicada en noviembre de 2015) [<a href="https://fedoraproject.org/wiki/Changes/Python_3_as_Default">wiki de Fedora</a>]. Eso quiere decir que RedHat Linux 8 (sin fecha de publicación prevista) usará Python 3. Posteriormente, Fedora 24 (publicada en junio de 2016) incluyó Python 3.5 y Fedora 26 (publicada en julio de 2017) incluye Python 3.6.</li>
+
+      <li>Ubuntu hizo la transición a Python 3.5 en Ubuntu 16.04 (publicada en abril de 2016) [<a href="https://wiki.ubuntu.com/Python/Python35Transition">wiki de Ubuntu</a> y seguramente incluirá Python 3.6 en Ubuntu 18.04 (prevista en abril de 2018) [<a href="https://wiki.ubuntu.com/Python/Python36Transition">wiki de Ubuntu</a>].</li>
+
+      <li>En abril de 2015 Debian empezó a discutir los planes de transición a Python 3. Debian 9 (publicado en junio de 2017) incluye Python 2.7.13 y Python 3.5.3 y debería pasar completamente a Python 3 en Debian 10 (que se espera publicar en 2019) [<a href="https://lwn.net/Articles/642334/">artículo de Linux Week News del 29/04/15</a>].</li>
+
+      <li>La mayoría de componentes de <a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, son <a href="https://wiki.openstack.org/wiki/Python3">compatibles con Python 3</a>, pero no parece que Python 3 vaya a ser la versión predeterminada por lo menos hasta la versión Pike, que seguramente se publicará en octubre de 2017</li>
+    </ul>
+
+    <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que se vayan a seguir publicando actualizaciones de seguridad de Python 2.7 hasta 2020, como mínimo.</p>
+
+    <hr class="corta" />
+
+    <p>Un segundo obstáculo en el proceso de transición de Python 2 a Python 3 (y que ha afectado además a todos los sistemas operativos) ha sido la disponibilidad de las bibliotecas.</p>
+
+    <p>Python cuenta con un gran número de bibliotecas, cuyo repositorio oficial es <a href="https://pypi.python.org/pypi">PyPI</a> (Python Package Index), que facilitan la programación de aplicaciones complejas. Cuando se publicó Python 3, la inmensa mayoría de bibliotecas sólo estaban disponibles para Python 2 y, lógicamente, si un programa necesitaba alguna biblioteca que sólo estaba disponible para Python 2, el programa no se podía pasar tampoco a Python 3.</p>
+
+    <p>Poco a poco, la mayoría de bibliotecas de Python han ido publicando versiones para Python 3, por lo que este problema también está en vías de solución.</p>
+
+    <p>En marzo de 2016, un <a href="https://blogs.msdn.microsoft.com/pythonengineering/2016/03/08/python-3-is-winning/">estudio de empleados de Microsoft</a> señalaba que por aquel entonces algo más del 50% de las bibliotecas estaban disponibles tanto para Python 2 como para Python 3, un 25% estaban disponibles sólo para Python 2 y un poco menos del 25% estaban disponibles sólo para Python 3, pero la tendencia parecía indicar que a mediados de 2016 Python 3 pasaría a ser la versión más popular.</p>
+
+    <p>Varias páginas web hacen un seguimiento de la compatibilidad con Python 3 de las bibliotecas más populares</p>
+    <ul>
+      <li><a href="https://python3wos.appspot.com/">Python 3 Wall of Superpowers</a> y <a href="http://py3readiness.org/">Python 3 Readiness</a> muestran cómo la inmensa mayoría de las bibliotecas más populares ya están disponibles en Python 3</li>
+      <li>la distribución GNU/Linux Fedora lleva el seguimiento de los paquetes de Python que forman parte de la distribución: <a href="http://fedora.portingdb.xyz/">paquetes</a> y <a href="http://fedora.portingdb.xyz/history/">evolución</a>.</li>
+    </ul>
+  </section>
+
+  <section id="saber-mas">
+    <h2>Para saber más</h2>
+
+    <ul>
+      <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2017">PyCon 2017</a> (mayo 2017)</li>
+      <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/723251/">Python Language Summit 2017</a> (mayo 2017)</li>
+      <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/playlist?list=PL8uoeex94UhE3FDvjacSlHFffoNEoPzzm">EuroPyhton 2016</a> (julio 2016)</li>
+      <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/688969/">Python Language Summit 2016</a> (junio 2016)</li>
+      <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2016">PyCon 2016</a> (junio 2016)</li>
+      <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/playlist?list=PL8uoeex94UhGGUH0mFb-StlZ1WYGWiJfP">EuroPyhton 2015</a> (julio 2015)</li>
+      <li>Resumen de las charlas de la <a href="https://lwn.net/Articles/639773/">Python Language Summit 2015</a> (abril 2015)</li>
+      <li>Vídeos de las conferencias de la conferencia <a href="https://www.youtube.com/c/PyCon2015">PyCon 2015</a> (abril 2015)</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 7 de octubre de 2017</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

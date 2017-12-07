@@ -1,112 +1,112 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Examen 28/06/17. Exámenes. Python. Bartolomé Sintes Marco</title>
-    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../../varios/favicon.ico" />
-    <link rel="stylesheet" href="../../varios/prism-python.css" />
-    <script src="../../varios/prism.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen 28/06/17. Exámenes. Python. Bartolomé Sintes Marco</title>
+  <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../varios/favicon.ico" />
+  <link rel="stylesheet" href="../../varios/prism-python.css" />
+  <script src="../../varios/prism.js"></script>
 
-  </head>
+</head>
 
-  <body>
-    <h1>Examen 28 de junio de 2017</h1>
+<body>
+  <h1>Examen 28 de junio de 2017</h1>
 
-    <nav>
-      <p>
-        <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-        <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+    </p>
 
-      <h2>Examen 28/06/17</h2>
+    <h2>Examen 28/06/17</h2>
 
-      <div class="toc">
-        <ul>
-          <li><a href="#ejercicio-1">Juego del 15</a>
-          <li><a href="#ejercicio-2">Fibonacci</a>
-          <li><a href="#ejercicio-3">SVG</a>
-          <li><a href="#ejercicio-4">SVG bucles</a>
-        </ul>
-      </div>
-    </nav>
+    <div class="toc">
+      <ul>
+        <li><a href="#ejercicio-1">Juego del 15</a></li>
+        <li><a href="#ejercicio-2">Fibonacci</a></li>
+        <li><a href="#ejercicio-3">SVG</a></li>
+        <li><a href="#ejercicio-4">SVG bucles</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="ejercicio-1">
-      <h3>Ejercicio 1</h3>
+  <section id="ejercicio-1">
+    <h3>Ejercicio 1</h3>
 
-      <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) sacan tres cartas al azar del 1 al 10. Gana el jugador que saque la mayor puntuación total, siempre que no se pase de quince, en cuyo caso el jugador pierde siempre.</p>
+    <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) sacan tres cartas al azar del 1 al 10. Gana el jugador que saque la mayor puntuación total, siempre que no se pase de quince, en cuyo caso el jugador pierde siempre.</p>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
-        <p><span class="idle-resp">Álvaro ha sacado un 1, un 4 y un 8.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 3.</span></p>
-        <p><span class="idle-resp">Han empatado.</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 1, un 4 y un 8.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 3.</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
-        <p><span class="idle-resp">Álvaro ha sacado un 8, un 2 y un 1.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 8, un 7 y un 2.</span></p>
-        <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 8, un 2 y un 1.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 7 y un 2.</span></p>
+      <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
-        <p><span class="idle-resp">Álvaro ha sacado un 3, un 9 y un 5.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 6.</span></p>
-        <p><span class="idle-resp">No ha ganado nadie.</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 3, un 9 y un 5.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 6.</span></p>
+      <p><span class="idle-resp">No ha ganado nadie.</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
-        <p><span class="idle-resp">Álvaro ha sacado un 7, un 1 y un 1.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 4, un 1 y un 8.</span></p>
-        <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
-      </div>
-    </section>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 7, un 1 y un 1.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 4, un 1 y un 8.</span></p>
+      <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+    </div>
+  </section>
 
-    <section id="ejercicio-2">
-      <h3>Ejercicio 2</h3>
+  <section id="ejercicio-2">
+    <h3>Ejercicio 2</h3>
 
-      <p>Una sucesión de Fibonacci es una sucesión de números en la que cada número es la suma de los dos anteriores. Escriba un programa que pida los dos primeros valores de la sucesión y la cantidad de valores a mostrar y que muestre esa cantidad de valores.</p>
+    <p>Una sucesión de Fibonacci es una sucesión de números en la que cada número es la suma de los dos anteriores. Escriba un programa que pida los dos primeros valores de la sucesión y la cantidad de valores a mostrar y que muestre esa cantidad de valores.</p>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
-        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
-        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
-        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>10</p>
-        <p><span class="idle-resp">1 1 2 3 5 8 13 21 34 55</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+      <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
+      <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
+      <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>10</p>
+      <p><span class="idle-resp">1 1 2 3 5 8 13 21 34 55</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
-        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
-        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
-        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>1</p>
-        <p><span class="idle-resp">¡Se deben mostrar al menos dos valores!</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+      <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
+      <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
+      <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>1</p>
+      <p><span class="idle-resp">¡Se deben mostrar al menos dos valores!</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
-        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>3</p>
-        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>6</p>
-        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>6</p>
-        <p><span class="idle-resp">3 6 9 15 24 39</span></p>
-      </div>
-    </section>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+      <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>3</p>
+      <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>6</p>
+      <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>6</p>
+      <p><span class="idle-resp">3 6 9 15 24 39</span></p>
+    </div>
+  </section>
 
-    <section id="ejercicio-3">
-      <h3>Ejercicio 3</h3>
+  <section id="ejercicio-3">
+    <h3>Ejercicio 3</h3>
 
-      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170628-svg-3-1.png" alt="Ejercicio 3-1" title="Ejercicio 3-1" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170628-svg-3-1.png" alt="Ejercicio 3-1" title="Ejercicio 3-1" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -123,14 +123,14 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170628-svg-3-2.png" alt="Ejercicio 3-2" title="Ejercicio 3-2" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170628-svg-3-2.png" alt="Ejercicio 3-2" title="Ejercicio 3-2" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -147,20 +147,20 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-4">
-      <h2>Ejercicio 4</h2>
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
 
-      <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles:</p>
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170628-svg-4-1.png" alt="Ejercicio 4-1" title="Ejercicio 4-1" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170628-svg-4-1.png" alt="Ejercicio 4-1" title="Ejercicio 4-1" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -177,16 +177,16 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 27 de junio de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 27 de junio de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

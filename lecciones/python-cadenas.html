@@ -1,103 +1,103 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadenas de texto. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadenas de texto. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body class="corta">
-    <h1>Cadenas de texto</h1>
+<body class="corta">
+  <h1>Cadenas de texto</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Cadenas</h2>
+    <div class="toc">
+      <h2>Cadenas</h2>
 
-        <ul>
-          <li><a href="#cadenas">Cadenas</a>
-            <ul>
-              <li><a href="#comillas-simples-dobles">Comillas simples/dobles</a></li>
-              <li><a href="#comillas-triples">Comillas triples</a></li>
-            </ul>
-          </li>
-          <li><a href="#comillas-dentro-comillas">Comillas entre comillas</a></li>
-          <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
-          <li><a href="#prompt-idle">Cadenas en prompt IDLE</a></li>
-          <li><a href="#largas">Cadenas largas</a></li>
-          <li><a href="#operaciones-cadenas">Operaciones cadenas</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#cadenas">Cadenas</a>
+          <ul>
+            <li><a href="#comillas-simples-dobles">Comillas simples/dobles</a></li>
+            <li><a href="#comillas-triples">Comillas triples</a></li>
+          </ul>
+        </li>
+        <li><a href="#comillas-dentro-comillas">Comillas entre comillas</a></li>
+        <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
+        <li><a href="#prompt-idle">Cadenas en prompt IDLE</a></li>
+        <li><a href="#largas">Cadenas largas</a></li>
+        <li><a href="#operaciones-cadenas">Operaciones cadenas</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En esta lección se tratan el tipo de datos cadena de texto (string) en Python.</p>
+  <p>En esta lección se tratan el tipo de datos cadena de texto (string) en Python.</p>
 
-    <section id="cadenas">
-      <h2>Cadenas de texto</h2>
+  <section id="cadenas">
+    <h2>Cadenas de texto</h2>
 
-      <p>Una cadena es una secuencia inmutable de caracteres Unicode, delimitada por comillas.</p>
+    <p>Una cadena es una secuencia inmutable de caracteres Unicode, delimitada por comillas.</p>
 
-      <section id="comillas-simples-dobles">
-        <h3>Comillas simples y dobles</h3>
+    <section id="comillas-simples-dobles">
+      <h3>Comillas simples y dobles</h3>
 
-        <p>Las cadenas de texto se pueden delimitar con comillas simples (') o con comillas dobles ("):</p>
+      <p>Las cadenas de texto se pueden delimitar con comillas simples (') o con comillas dobles ("):</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Esto es una cadena'</span>)
 <span class="idle-resp">Esto es una cadena</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena"</span>)
 <span class="idle-resp">Esto es una cadena</span>
 </pre>
-        </div>
+      </div>
 
-        <p>La función <span class="idle-func">print</span>(), que se comenta con más detalle en la lección <a href="python-salida-pantalla.html">Salida por pantalla</a>, muestra por pantalla el contenido de la cadena, pero no las comillas delimitadoras de las cadenas.</p>
+      <p>La función <span class="idle-func">print</span>(), que se comenta con más detalle en la lección <a href="python-salida-pantalla.html">Salida por pantalla</a>, muestra por pantalla el contenido de la cadena, pero no las comillas delimitadoras de las cadenas.</p>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>En Python las comillas dobles y las comillas simples son completamente equivalentes, pero en otros lenguajes de programación no lo son.</p>
+      <p>En Python las comillas dobles y las comillas simples son completamente equivalentes, pero en otros lenguajes de programación no lo son.</p>
 
-        <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />En otros lenguajes de programación, por ejemplo en PHP, en las cadenas delimitadas con comillas dobles las variables se sustituyen por su valor y se pueden utilizar caracteres especiales, pero en las cadenas delimitadas con comillas simples, no. Aunque en la documentación de Python se utilizan casi siempre comillas simples, en estos apuntes se utilizan casi siempre las comillas dobles porque en PHP (el <a href="http://www.mclibre.org/consultar/php/">lenguaje de programación que se trabaja en 2º curso</a>) se utilizan más las comillas dobles.</p>
+      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />En otros lenguajes de programación, por ejemplo en PHP, en las cadenas delimitadas con comillas dobles las variables se sustituyen por su valor y se pueden utilizar caracteres especiales, pero en las cadenas delimitadas con comillas simples, no. Aunque en la documentación de Python se utilizan casi siempre comillas simples, en estos apuntes se utilizan casi siempre las comillas dobles porque en PHP (el <a href="http://www.mclibre.org/consultar/php/">lenguaje de programación que se trabaja en 2º curso</a>) se utilizan más las comillas dobles.</p>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>Las cadenas se deben cerrar con las mismas comillas con las que se abrieron, de lo contrario estaremos cometiendo un error de sintaxis:</p>
+      <p>Las cadenas se deben cerrar con las mismas comillas con las que se abrieron, de lo contrario estaremos cometiendo un error de sintaxis:</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span><span class="idle-errbg">                      </span>
 <span class="idle-erro">SyntaxError: EOL while scanning string literal</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
-        </div>
+      </div>
 
-        <p>En un programa, al intentar ejecutar el programa se abriría una ventana de error:</p>
+      <p>En un programa, al intentar ejecutar el programa se abriría una ventana de error:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre><code class="language-python"><span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span></code></pre>
-          </div>
-          <div class="resultado-captura"><img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" title="Aviso: Error de delimitador de cadena" width="287" height="171" /></div>
-        </div>
-
-        <p>Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden nos ayuda a identificar que hay algo incorrecto en el programa. En el ejemplo anterior, el paréntesis de cierre se muestra de color verde, lo que indica que IDLE no identifica la comilla simple como cierre de la cadena abierta con comilla doble.</p>
-      </section>
-
-      <section id="comillas-triples">
-        <h3>Comillas triples</h3>
-
-        <p>Las comillas triples permiten que las cadenas ocupen más de una línea:</p>
-
+      <div class="filaflex">
         <div class="codigo">
-          <pre>
+          <pre><code class="language-python"><span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span></code></pre>
+        </div>
+        <div class="resultado-captura"><img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" title="Aviso: Error de delimitador de cadena" width="287" height="171" /></div>
+      </div>
+
+      <p>Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden nos ayuda a identificar que hay algo incorrecto en el programa. En el ejemplo anterior, el paréntesis de cierre se muestra de color verde, lo que indica que IDLE no identifica la comilla simple como cierre de la cadena abierta con comilla doble.</p>
+    </section>
+
+    <section id="comillas-triples">
+      <h3>Comillas triples</h3>
+
+      <p>Las comillas triples permiten que las cadenas ocupen más de una línea:</p>
+
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"""Esto es una cadena
 que ocupa
   varias líneas"""</span>)
@@ -105,232 +105,231 @@ que ocupa
 que ocupa
   varias líneas</span>
 </pre>
-        </div>
+      </div>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>Pero las comillas triples se utilizan sobre todo con una finalidad específica: la documentación de módulos, funciones, clases o métodos. Son las llamadas <i>docstrings</i>, definidas en el <a href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a>. Son cadenas que se escriben al principio del elemento describiendo lo que hace el elemento. No producen ningún resultado en el programa, pero las herramientas de documentación de Python pueden extraerlas para generar documentación automáticamente.</p>
+      <p>Pero las comillas triples se utilizan sobre todo con una finalidad específica: la documentación de módulos, funciones, clases o métodos. Son las llamadas <i>docstrings</i>, definidas en el <a href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a>. Son cadenas que se escriben al principio del elemento describiendo lo que hace el elemento. No producen ningún resultado en el programa, pero las herramientas de documentación de Python pueden extraerlas para generar documentación automáticamente.</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">def licencia():
     """Escribe la licencia de estos apuntes"""
     print("Copyright 2013 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
     return</code>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="comillas-dentro-comillas">
-      <h2>Comillas dentro de comillas</h2>
+  <section id="comillas-dentro-comillas">
+    <h2>Comillas dentro de comillas</h2>
 
-      <p>Se pueden escribir comillas simples en cadenas delimitadas con comillas dobles y viceversa:</p>
+    <p>Se pueden escribir comillas simples en cadenas delimitadas con comillas dobles y viceversa:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas dobles " delimitan cadenas.'</span>)
 <span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Pero no se pueden escribir en el interior de una cadena comillas del mismo tipo que las comillas delimitadoras:</p>
+    <p>Pero no se pueden escribir en el interior de una cadena comillas del mismo tipo que las comillas delimitadoras:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles "</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">")</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples '</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">')</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
-      </div>
+    </div>
 
-      <p>El motivo es que Python entiende que la comilla escrita en medio de la cadena está cerrando la cadena y no puede interpretar lo que viene a continuación. Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden así nos lo indica.</p>
+    <p>El motivo es que Python entiende que la comilla escrita en medio de la cadena está cerrando la cadena y no puede interpretar lo que viene a continuación. Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden así nos lo indica.</p>
 
-      <p>En un programa, obtendríamos también una ventana de error de sintaxis. Dependiendo del número y la posición de las cadenas, el mensaje de error puede
-        ser distinto:</p>
+    <p>En un programa, obtendríamos también una ventana de error de sintaxis. Dependiendo del número y la posición de las cadenas, el mensaje de error puede ser distinto:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-python">print("Las comillas dobles " delimitan cadenas<span class="idle-cade">")</span></code></pre>
-        </div>
-        <div class="resultado-captura"><img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" title="Aviso: Error de sintaxis (cadena incorrecta)" width="209" height="171" /></div>
-      </div>
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
-        </div>
-        <div class="resultado-captura"><img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
-      </div>
-
-      <hr class="corta" />
-
-      <p>Otra forma de escribir comillas en una cadena es utilizar los caracteres especiales <span class="idle-cade">\"</span> y <span class="idle-cade">\'</span> que representan los caracteres comillas dobles y simples respectivamente y que Python no interpreta en ningún caso como delimitadores de cadena:</p>
-
+    <div class="filaflex">
       <div class="codigo">
-        <pre>
+        <pre><code class="language-python">print("Las comillas dobles " delimitan cadenas<span class="idle-cade">")</span></code></pre>
+      </div>
+      <div class="resultado-captura"><img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" title="Aviso: Error de sintaxis (cadena incorrecta)" width="209" height="171" /></div>
+    </div>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
+      </div>
+      <div class="resultado-captura"><img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" title="Aviso: Error de sintaxis (cadena incorrecta)" width="260" height="161" /></div>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Otra forma de escribir comillas en una cadena es utilizar los caracteres especiales <span class="idle-cade">\"</span> y <span class="idle-cade">\'</span> que representan los caracteres comillas dobles y simples respectivamente y que Python no interpreta en ningún caso como delimitadores de cadena:</p>
+
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles \" delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Se pueden utilizar ambos caracteres especiales independientemente del delimitador utilizado</p>
+    <p>Se pueden utilizar ambos caracteres especiales independientemente del delimitador utilizado</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' y las comillas dobles \" delimitan cadenas.')</span>
 <span class="idle-resp">Las comillas simples ' y las comillas dobles " delimitan cadenas.</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas simples \' y las comillas dobles \" delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas simples ' y las comillas dobles " delimitan cadenas.</span>
 </pre>
-      </div>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="caracteres-especiales">
-      <h2>Caracteres especiales</h2>
+  <section id="caracteres-especiales">
+    <h2>Caracteres especiales</h2>
 
-      <p>Los caracteres especiales empiezan por una contrabarra (<span class="idle-cade">\</span>).</p>
-      <ul>
-        <li>Comilla doble: <span class="idle-cade">\"</span>
-          <div class="codigo">
-            <pre>
+    <p>Los caracteres especiales empiezan por una contrabarra (<span class="idle-cade">\</span>).</p>
+    <ul>
+      <li>Comilla doble: <span class="idle-cade">\"</span>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles \" delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
     </pre>
-          </div>
-        </li>
+        </div>
+      </li>
 
-        <li>Comilla simple: <span class="idle-cade">\'</span>
-          <div class="codigo">
-            <pre>
+      <li>Comilla simple: <span class="idle-cade">\'</span>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
     </pre>
-          </div>
-        </li>
+        </div>
+      </li>
 
-        <li>Salto de línea: <span class="idle-cade">\n</span>
-          <div class="codigo">
-            <pre>
+      <li>Salto de línea: <span class="idle-cade">\n</span>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Una línea\nOtra línea"</span>)
 <span class="idle-resp">Una línea
 Otra línea</span></pre>
-          </div>
-        </li>
-        <li>Tabulador: <span class="idle-cade">\t</span>
-          <div class="codigo">
-            <pre>
+        </div>
+      </li>
+      <li>Tabulador: <span class="idle-cade">\t</span>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"1\t2\t3"</span>)
 <span class="idle-resp">1       2       3</span>
 </pre>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </li>
+    </ul>
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar con todos los caracteres especiales</p>
-    </section>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar con todos los caracteres especiales</p>
+  </section>
 
-    <section id="prompt-idle">
-      <h2>Evaluación de cadenas en el prompt de IDLE</h2>
+  <section id="prompt-idle">
+    <h2>Evaluación de cadenas en el prompt de IDLE</h2>
 
-      <p>En el prompt de IDLE se pueden escribir cadenas sueltas, sin necesidad de escribir la función <span class="idle-func">print</span>(). Al pulsar Intro, IDLE evalúa la cadena y escribe el resultado, como hace cuando se escribe una expresión aritmética.</p>
+    <p>En el prompt de IDLE se pueden escribir cadenas sueltas, sin necesidad de escribir la función <span class="idle-func">print</span>(). Al pulsar Intro, IDLE evalúa la cadena y escribe el resultado, como hace cuando se escribe una expresión aritmética.</p>
 
-      <p>En la mayoría de los casos IDLE escribe el resultado entre comillas simples, para indicar que se trata de una cadena.</p>
+    <p>En la mayoría de los casos IDLE escribe el resultado entre comillas simples, para indicar que se trata de una cadena.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Esto es una cadena"</span>
 <span class="idle-resp">'Esto es una cadena'</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Esto es una cadena'</span>
 <span class="idle-resp">'Esto es una cadena'</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Si el resultado contiene únicamente comillas simples, IDLE lo escribe entre comillas dobles.</p>
+    <p>Si el resultado contiene únicamente comillas simples, IDLE lo escribe entre comillas dobles.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>
 <span class="idle-resp">"Las comillas simples ' delimitan cadenas."</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>
 <span class="idle-resp">"Las comillas dobles ' delimitan cadenas."</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Pero si aparecen ambas comillas, IDLE lo escribe entre comillas simples y las comillas simples se muestran como caracteres especiales.</p>
+    <p>Pero si aparecen ambas comillas, IDLE lo escribe entre comillas simples y las comillas simples se muestran como caracteres especiales.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Las comillas simples \' y dobles \" delimitan cadenas.'</span>
 <span class="idle-resp">'Las comillas simples \' y dobles " delimitan cadenas.'</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Las comillas simples \' y dobles \" delimitan cadenas."</span>
 <span class="idle-resp">'Las comillas simples \' y dobles " delimitan cadenas.'</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="largas">
-      <h2>Cadenas largas</h2>
+  <section id="largas">
+    <h2>Cadenas largas</h2>
 
-      <p>De acuerdo con la <a href="../otros/libro-de-estilo.html">guía de estilo oficial de Python</a>, las líneas de código no deben contener más de 79 caracteres, para facilitar la legibilidad.</p>
+    <p>De acuerdo con la <a href="../otros/libro-de-estilo.html">guía de estilo oficial de Python</a>, las líneas de código no deben contener más de 79 caracteres, para facilitar la legibilidad.</p>
 
-      <p>Si un programa contiene cadenas muy largas, las cadenas se pueden simplemente partir en varias cadenas.</p>
+    <p>Si un programa contiene cadenas muy largas, las cadenas se pueden simplemente partir en varias cadenas.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-python">print("Esta línea está cortada en dos líneas de menos de 79 caracteres "
       "partiendo la cadena en dos")</code>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="operaciones-cadenas">
-      <h2>Operaciones con cadenas</h2>
+  <section id="operaciones-cadenas">
+    <h2>Operaciones con cadenas</h2>
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar</p>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar</p>
 
-      <ul>
-        <li>concatenar cadenas</li>
-        <li>concatenar cadenas y variables</li>
-        <li>trocear cadenas ([])</li>
-      </ul>
+    <ul>
+      <li>concatenar cadenas</li>
+      <li>concatenar cadenas y variables</li>
+      <li>trocear cadenas ([])</li>
+    </ul>
 
-      <hr />
+    <hr />
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar</p>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar</p>
 
-      <ul>
-        <li>cadenas en bruto (raw)</li>
-      </ul>
-    </section>
+    <ul>
+      <li>cadenas en bruto (raw)</li>
+    </ul>
+  </section>
 
-    <section id="saber-mas">
-      <h2>Para saber más</h2>
+  <section id="saber-mas">
+    <h2>Para saber más</h2>
 
-      <ul>
-        <li><a href="https://dbader.org/blog/python-string-formatting">The 4 Major Ways to Do String Formatting in Python</a></li>
-      </ul>
-    </section>
+    <ul>
+      <li><a href="https://dbader.org/blog/python-string-formatting">The 4 Major Ways to Do String Formatting in Python</a></li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 3 de abril de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 3 de abril de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

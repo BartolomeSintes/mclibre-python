@@ -1,65 +1,65 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicios (4). Ficheros. SVG. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios (4). Ficheros. SVG. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Gráficos SVG - Ficheros - Ejercicios (4): Ilusiones ópticas</h1>
+<body>
+  <h1>Gráficos SVG - Ficheros - Ejercicios (4): Ilusiones ópticas</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>SVG - Ficheros (4)</h2>
+    <div class="toc">
+      <h2>SVG - Ficheros (4)</h2>
 
-        <h3>Enunciados</h3>
-        <ul>
-          <li><a href="#ejercicio-1">1 - Bucles simples</a></li>
-          <li><a href="#ejercicio-2">2 - Bucles anidados</a></li>
-        </ul>
+      <h3>Enunciados</h3>
+      <ul>
+        <li><a href="#ejercicio-1">1 - Bucles simples</a></li>
+        <li><a href="#ejercicio-2">2 - Bucles anidados</a></li>
+      </ul>
 
-        <h3><a href="ej-svg-ficheros-4-soluciones.html">Soluciones</a></h3>
-        <ul>
-          <li><a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1">1 - Bucles simples</a><br />
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-1">1</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-2">2</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-3">3</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-4">4</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-5">5</a></li>
-          <li><a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2">2 - Bucles anidados</a><br />
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-1">1</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-2">2</a> -
-            <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-3">3</a></li>
-        </ul>
-      </div>
-    </nav>
+      <h3><a href="ej-svg-ficheros-4-soluciones.html">Soluciones</a></h3>
+      <ul>
+        <li><a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1">1 - Bucles simples</a><br />
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-1">1</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-2">2</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-3">3</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-4">4</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-1-5">5</a></li>
+        <li><a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2">2 - Bucles anidados</a><br />
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-1">1</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-2">2</a> -
+          <a href="ej-svg-ficheros-4-soluciones.html#ejercicio-2-3">3</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>El objetivo de estos ejercicios es practicar <a href="../lecciones/python-for-2.html">los bucles <span class="idle-rese">for</span> simples</a> y <a href="../lecciones/python-for-2.html">los bucles <span class="idle-rese">for</span> anidados</a> y la creación de gráficos SVG que se tratan en las lecciones <a href="http://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> y <a href="http://www.mclibre.org/consultar/htmlcss/html/svg-formas-1.html">Formas básicas SVG</a> de los <a href="http://www.mclibre.org/consultar/htmlcss/index.html">apuntes de HTML y CSS</a>.</p>
+  <p>El objetivo de estos ejercicios es practicar <a href="../lecciones/python-for-2.html">los bucles <span class="idle-rese">for</span> simples</a> y <a href="../lecciones/python-for-2.html">los bucles <span class="idle-rese">for</span> anidados</a> y la creación de gráficos SVG que se tratan en las lecciones <a href="http://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> y <a href="http://www.mclibre.org/consultar/htmlcss/html/svg-formas-1.html">Formas básicas SVG</a> de los <a href="http://www.mclibre.org/consultar/htmlcss/index.html">apuntes de HTML y CSS</a>.</p>
 
-    <p>Cada dibujo se puede guardar en un fichero distinto que se puede llamar svg-ficheros-4_X_Y.html, donde X es el número de ejercicio e Y el número de dibujo. Las imágenes SVG se muestran con un borde negro. En cada ejercicio se proporciona una plantilla de la página html que indica la porción del plano SVG mostrado en la imagen. Las figuras se han dibujado siempre en una zona de 600px x 300px con un margen de 10px alrededor, por lo que el tamaño total de la zona visible es de 620px x 320px.</p>
+  <p>Cada dibujo se puede guardar en un fichero distinto que se puede llamar svg-ficheros-4_X_Y.html, donde X es el número de ejercicio e Y el número de dibujo. Las imágenes SVG se muestran con un borde negro. En cada ejercicio se proporciona una plantilla de la página html que indica la porción del plano SVG mostrado en la imagen. Las figuras se han dibujado siempre en una zona de 600px x 300px con un margen de 10px alrededor, por lo que el tamaño total de la zona visible es de 620px x 320px.</p>
 
-    <p>Se pueden consultar unas <a href="ej-svg-ficheros-4-soluciones.html">posibles soluciones</a>.</p>
+  <p>Se pueden consultar unas <a href="ej-svg-ficheros-4-soluciones.html">posibles soluciones</a>.</p>
 
-    <section id="ejercicio-1">
-      <h2>Gráficos SVG Ficheros (4) - 1 - Bucles simples</h2>
+  <section id="ejercicio-1">
+    <h2>Gráficos SVG Ficheros (4) - 1 - Bucles simples</h2>
 
-      <p>Cree las imágenes SVG de este ejercicio a partir de la plantilla siguiente. Los valores de la imagen SVG se han elegido para mostrar el primer cuadrante y los ejes de coordenadas. La posición de los ejes se muestra en la imagen siguiente, pero no debe mostrarse en las imágenes del ejercicio.</p>
+    <p>Cree las imágenes SVG de este ejercicio a partir de la plantilla siguiente. Los valores de la imagen SVG se han elegido para mostrar el primer cuadrante y los ejes de coordenadas. La posición de los ejes se muestra en la imagen siguiente, pero no debe mostrarse en las imágenes del ejercicio.</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-2-1-0.png" alt="Plantilla de ejercicio" title="Plantilla de ejercicio" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-2-1-0.png" alt="Plantilla de ejercicio" title="Plantilla de ejercicio" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -76,41 +76,41 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Escriba cinco programas que generen las siguientes imágenes:</p>
+    <p>Escriba cinco programas que generen las siguientes imágenes:</p>
 
-      <p style="text-align: left">
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-1.png" alt="SVG Ficheros (4) 1 1" title="SVG Ficheros (4) 1 1" width="324" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-2.png" alt="SVG Ficheros (4) 1 2" title="SVG Ficheros (4) 1 2" width="324" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-3.png" alt="SVG Ficheros (4) 1 3" title="SVG Ficheros (4) 1 3" width="324" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-4.png" alt="SVG Ficheros (4) 1 4" title="SVG Ficheros (4) 1 4" width="324" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-5.png" alt="SVG Ficheros (4) 1 5" title="SVG Ficheros (4) 1 5" width="324" height="324" />
-      </p>
+    <p style="text-align: left">
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-1.png" alt="SVG Ficheros (4) 1 1" title="SVG Ficheros (4) 1 1" width="324" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-2.png" alt="SVG Ficheros (4) 1 2" title="SVG Ficheros (4) 1 2" width="324" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-3.png" alt="SVG Ficheros (4) 1 3" title="SVG Ficheros (4) 1 3" width="324" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-4.png" alt="SVG Ficheros (4) 1 4" title="SVG Ficheros (4) 1 4" width="324" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-1-5.png" alt="SVG Ficheros (4) 1 5" title="SVG Ficheros (4) 1 5" width="324" height="324" />
+    </p>
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
 
-      <p>Notas:</p>
+    <p>Notas:</p>
 
-      <ul>
-        <li>La primera imagen es la <a href="https://en.wikipedia.org/wiki/Ehrenstein_illusion">ilusión de Ehrenstein</a></li>
-        <li>La segunda imagen es la <a href="https://en.wikipedia.org/wiki/Hering_illusion">ilusión de Hering</a></li>
-      </ul>
-    </section>
+    <ul>
+      <li>La primera imagen es la <a href="https://en.wikipedia.org/wiki/Ehrenstein_illusion">ilusión de Ehrenstein</a></li>
+      <li>La segunda imagen es la <a href="https://en.wikipedia.org/wiki/Hering_illusion">ilusión de Hering</a></li>
+    </ul>
+  </section>
 
-    <section id="ejercicio-2">
-      <h2>Gráficos SVG Ficheros (4) - 2 - Bucles anidados</h2>
+  <section id="ejercicio-2">
+    <h2>Gráficos SVG Ficheros (4) - 2 - Bucles anidados</h2>
 
-      <p>Cree las imágenes SVG propuestas en los ejercicios a partir de la plantilla siguiente. Los valores de la imagen SVG se han elegido para mostrar el primer cuadrante y los ejes de coordenadas. La posición de los ejes se muestra en la imagen siguiente, pero no debe mostrarse en las imágenes del ejercicio.</p>
+    <p>Cree las imágenes SVG propuestas en los ejercicios a partir de la plantilla siguiente. Los valores de la imagen SVG se han elegido para mostrar el primer cuadrante y los ejes de coordenadas. La posición de los ejes se muestra en la imagen siguiente, pero no debe mostrarse en las imágenes del ejercicio.</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-3/svg-ficheros-3-0-0.png" alt="Plantilla de ejercicio" title="Plantilla de ejercicio" width="624" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-3/svg-ficheros-3-0-0.png" alt="Plantilla de ejercicio" title="Plantilla de ejercicio" width="624" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -128,28 +128,28 @@
 &lt;/html></code>
 </pre>
 
-        </div>
       </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Escriba tres programas que generen las siguientes imágenes:</p>
+    <p>Escriba tres programas que generen las siguientes imágenes:</p>
 
-      <p style="text-align: left">
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-1.png" alt="SVG Ficheros (4) 2 1" title="SVG Ficheros (4) 2 1" width="624" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-2.png" alt="SVG Ficheros (4) 2 2" title="SVG Ficheros (4) 2 2" width="624" height="324" />
-        <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-3.png" alt="SVG Ficheros (4) 2 3" title="SVG Ficheros (4) 2 3" width="624" height="324" />
-      </p>
+    <p style="text-align: left">
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-1.png" alt="SVG Ficheros (4) 2 1" title="SVG Ficheros (4) 2 1" width="624" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-2.png" alt="SVG Ficheros (4) 2 2" title="SVG Ficheros (4) 2 2" width="624" height="324" />
+      <img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-3.png" alt="SVG Ficheros (4) 2 3" title="SVG Ficheros (4) 2 3" width="624" height="324" />
+    </p>
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
-    </section>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por completar ...</p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 13 de abril de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 13 de abril de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

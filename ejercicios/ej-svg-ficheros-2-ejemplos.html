@@ -1,48 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejemplos de ejercicios. Ficheros (2). SVG. Brython. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejemplos de ejercicios. Ficheros (2). SVG. Brython. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>SVG - Ficheros (2) - Ejemplos de ejercicios resueltos</h1>
+<body>
+  <h1>SVG - Ficheros (2) - Ejemplos de ejercicios resueltos</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>SVG Ficheros (2) ejemplos</h2>
+    <div class="toc">
+      <h2>SVG Ficheros (2) ejemplos</h2>
 
-        <ol>
-          <li><a href="#ejercicio-resuelto-1">1 fórmula, 1 forma</a></li>
-          <li><a href="#ejercicio-resuelto-2">N fórmulas, 1 forma</a></li>
-          <li><a href="#ejercicio-resuelto-3">N fórmulas, 1 forma</a></li>
-          <li><a href="#ejercicio-resuelto-4">N fórmulas, N formas</a></li>
-        </ol>
-      </div>
-    </nav>
+      <ol>
+        <li><a href="#ejercicio-resuelto-1">1 fórmula, 1 forma</a></li>
+        <li><a href="#ejercicio-resuelto-2">N fórmulas, 1 forma</a></li>
+        <li><a href="#ejercicio-resuelto-3">N fórmulas, 1 forma</a></li>
+        <li><a href="#ejercicio-resuelto-4">N fórmulas, N formas</a></li>
+      </ol>
+    </div>
+  </nav>
 
-    <p>Se ofrecen aquí unos ejemplos de ejercicios resueltos similares a los <a href="ej-svg-ficheros-2.html">ejercicios de SVG Ficheros (2)</a>.</p>
+  <p>Se ofrecen aquí unos ejemplos de ejercicios resueltos similares a los <a href="ej-svg-ficheros-2.html">ejercicios de SVG Ficheros (2)</a>.</p>
 
-    <section id="ejercicio-resuelto-1">
-      <h3>Gráficos SVG Ficheros (2) - 1 - Una fórmula, una forma</h3>
+  <section id="ejercicio-resuelto-1">
+    <h3>Gráficos SVG Ficheros (2) - 1 - Una fórmula, una forma</h3>
 
-      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
+    <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-1.png" alt="SVG Brython (2) 0 1 Enunciado" title="SVG Brython (2) 0 1 Enunciado" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-1.png" alt="SVG Brython (2) 0 1 Enunciado" title="SVG Brython (2) 0 1 Enunciado" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -59,57 +59,57 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <ul>
-        <li>Como queremos dibujar once líneas, el programa incluirá un bucle que se ejecutará once veces, dibujando una línea en cada iteración:
-          <div class="codigo">
-            <pre>
+    <ul>
+      <li>Como queremos dibujar once líneas, el programa incluirá un bucle que se ejecutará once veces, dibujando una línea en cada iteración:
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(11):
     # instrucción que dibuja una línea</code>
 </pre>
-          </div>
-        </li>
-        <li>Si el viewbox de la imagen anterior es "-10 -10 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-2.png" alt="SVG Brython (2) 0 1 Ejes y coordenadas" title="SVG Brython (2) 0 1 Ejes y coordenadas" width="354" height="354" /></p>
-        </li>
-        <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas de izquierda a derecha, como muestra la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-3.png" alt="SVG Brython (2) 0 1 Orden de las líneas" title="SVG Brython (2) 0 1 Orden de las líneas" width="354" height="354" /></p>
-          <p>Las líneas se han numerado de 0 a 10 en vez de 1 a 11 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 10.</p>
-        </li>
-        <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-4.png" alt="SVG Brython (2) 0 1 Puntos figura" title="SVG Brython (2) 0 1 Puntos figura" width="354" height="354" /></p>
-        </li>
-        <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
-          <ul>
-            <li>En el caso de los extremos superiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
-              <pre>
+        </div>
+      </li>
+      <li>Si el viewbox de la imagen anterior es "-10 -10 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-2.png" alt="SVG Brython (2) 0 1 Ejes y coordenadas" title="SVG Brython (2) 0 1 Ejes y coordenadas" width="354" height="354" /></p>
+      </li>
+      <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas de izquierda a derecha, como muestra la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-3.png" alt="SVG Brython (2) 0 1 Orden de las líneas" title="SVG Brython (2) 0 1 Orden de las líneas" width="354" height="354" /></p>
+        <p>Las líneas se han numerado de 0 a 10 en vez de 1 a 11 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 10.</p>
+      </li>
+      <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-4.png" alt="SVG Brython (2) 0 1 Puntos figura" title="SVG Brython (2) 0 1 Puntos figura" width="354" height="354" /></p>
+      </li>
+      <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
+        <ul>
+          <li>En el caso de los extremos superiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
+            <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
 X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
 Y:     0    0    0    0    0    0    0    0    0    0    0 --> 0
 </pre>
-            </li>
-            <li>En el caso de los extremos inferiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
-              <pre>
+          </li>
+          <li>En el caso de los extremos inferiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
+            <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
 X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
 Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
 </pre>
-            </li>
-          </ul>
-        </li>
-        <li>Por tanto el bucle que generaría las líneas sería el siguiente:
-          <div class="codigo">
-            <pre>
+          </li>
+        </ul>
+      </li>
+      <li>Por tanto el bucle que generaría las líneas sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(11):
     print(f"     &lt;line x1={30*i} y1=0 x2={30*i} y2=300 stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
-          </div>
-        </li>
-        <li>Y el programa completo sería el siguiente:
-          <div class="codigo">
-            <pre>
+        </div>
+      </li>
+      <li>Y el programa completo sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-2_ejemplo_1.html"
@@ -136,21 +136,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="ejercicio-resuelto-2">
-      <h3>Gráficos SVG Ficheros (2) - 2 - Varias fórmulas, una forma</h3>
+  <section id="ejercicio-resuelto-2">
+    <h3>Gráficos SVG Ficheros (2) - 2 - Varias fórmulas, una forma</h3>
 
-      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
+    <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-1.png" alt="SVG Brython (2) 0 2 Enunciado" title="SVG Brython (2) 0 2 Enunciado" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-1.png" alt="SVG Brython (2) 0 2 Enunciado" title="SVG Brython (2) 0 2 Enunciado" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -167,58 +167,58 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <ul>
-        <li>Como queremos dibujar seis líneas, el programa incluirá un bucle que se ejecutará seis veces, dibujando una línea en cada iteración:
-          <div class="codigo">
-            <pre>
+    <ul>
+      <li>Como queremos dibujar seis líneas, el programa incluirá un bucle que se ejecutará seis veces, dibujando una línea en cada iteración:
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(6):
     # instrucción que dibuja una línea</code>
 </pre>
 
-          </div>
-        </li>
-        <li>Si el viewbox de la imagen anterior es "-150 -150 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-2.png" alt="SVG Brython (2) 0 2 Ejes y coordenadas" title="SVG Brython (2) 0 2 Ejes y coordenadas" width="354" height="354" /></p>
-        </li>
-        <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas de arriba a abajo y de izquierda a derecha, como muestra la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-3.png" alt="SVG Brython (2) 0 2 Orden de las líneas" title="SVG Brython (2) 0 2 Orden de las líneas" width="354" height="354" /></p>
-          <p>Las líneas se han numerado de 0 a 5 en vez de 1 a 6 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 5.</p>
-        </li>
-        <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-4.png" alt="SVG Brython (2) 0 2 Puntos figura" title="SVG Brython (2) 0 2 Puntos figura" width="354" height="354" /></p>
-        </li>
-        <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
-          <ul>
-            <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
-              <pre>
+        </div>
+      </li>
+      <li>Si el viewbox de la imagen anterior es "-150 -150 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-2.png" alt="SVG Brython (2) 0 2 Ejes y coordenadas" title="SVG Brython (2) 0 2 Ejes y coordenadas" width="354" height="354" /></p>
+      </li>
+      <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas de arriba a abajo y de izquierda a derecha, como muestra la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-3.png" alt="SVG Brython (2) 0 2 Orden de las líneas" title="SVG Brython (2) 0 2 Orden de las líneas" width="354" height="354" /></p>
+        <p>Las líneas se han numerado de 0 a 5 en vez de 1 a 6 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 5.</p>
+      </li>
+      <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-4.png" alt="SVG Brython (2) 0 2 Puntos figura" title="SVG Brython (2) 0 2 Puntos figura" width="354" height="354" /></p>
+      </li>
+      <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
+        <ul>
+          <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
+            <pre>
 i:     0     1     2     3     4     5     Fórmula
 X:  -150  -150  -150  -150  -150  -150 --> -150
 Y:  -150   -90   -30    30    90   150 --> -150+60*i
 </pre>
-            </li>
-            <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
-              <pre>
+          </li>
+          <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
+            <pre>
 i:     0     1     2     3     4     5     Fórmula
 X:   150   150   150   150   150   150 -->  150
 Y:   150    90    30   -30   -90  -150 -->  150-60*i
 </pre>
-            </li>
-          </ul>
-        </li>
-        <li>Por tanto el bucle que generaría las líneas sería el siguiente:
-          <div class="codigo">
-            <pre>
+          </li>
+        </ul>
+      </li>
+      <li>Por tanto el bucle que generaría las líneas sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">    for i in range(6):
         print(f"     &lt;line x1=-150 y1={-150+60*i} x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
-          </div>
-        </li>
-        <li>Y el programa completo sería el siguiente:
-          <div class="codigo">
-            <pre>
+        </div>
+      </li>
+      <li>Y el programa completo sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-2_ejemplo_2.html"
@@ -245,21 +245,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="ejercicio-resuelto-3">
-      <h3>Gráficos SVG Ficheros (2) - 3 - Varias fórmulas, una forma</h3>
+  <section id="ejercicio-resuelto-3">
+    <h3>Gráficos SVG Ficheros (2) - 3 - Varias fórmulas, una forma</h3>
 
-      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
+    <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-1.png" alt="SVG Brython (2) 0 3 Enunciado" title="SVG Brython (2) 0 3 Enunciado" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-1.png" alt="SVG Brython (2) 0 3 Enunciado" title="SVG Brython (2) 0 3 Enunciado" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -276,49 +276,49 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <ul>
-        <li>Este dibujo se puede interpretar como tres rectángulos, así que el programa incluirá un bucle que se ejecutará tres veces, dibujando un rectángulo en cada iteración:
-          <div class="codigo">
-            <pre>
+    <ul>
+      <li>Este dibujo se puede interpretar como tres rectángulos, así que el programa incluirá un bucle que se ejecutará tres veces, dibujando un rectángulo en cada iteración:
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(3):
     # instrucción que dibuja un rectángulo</code>
 </pre>
-          </div>
-        </li>
-        <li>Si el viewbox de la imagen anterior es "-20 -20 640 640", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-2.png" alt="SVG Brython (2) 0 3 Ejes y coordenadas" title="SVG Brython (2) 0 3 Ejes y coordenadas" width="354" height="354" /></p>
-        </li>
-        <li>A continuación hay que elegir en qué orden queremos dibujar los rectángulos. En este caso vamos a dibujarlos de izquierda a derecha, como muestra la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-3.png" alt="SVG Brython (2) 0 3 Orden de las líneas" title="SVG Brython (2) 0 3 Orden de las líneas" width="354" height="354" /></p>
+        </div>
+      </li>
+      <li>Si el viewbox de la imagen anterior es "-20 -20 640 640", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-2.png" alt="SVG Brython (2) 0 3 Ejes y coordenadas" title="SVG Brython (2) 0 3 Ejes y coordenadas" width="354" height="354" /></p>
+      </li>
+      <li>A continuación hay que elegir en qué orden queremos dibujar los rectángulos. En este caso vamos a dibujarlos de izquierda a derecha, como muestra la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-3.png" alt="SVG Brython (2) 0 3 Orden de las líneas" title="SVG Brython (2) 0 3 Orden de las líneas" width="354" height="354" /></p>
 
-          <p>Los rectángulos se han numerado de 0 a 2 en vez de 1 a 3 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 2.</p>
-        </li>
-        <li>Para dibujar un rectángulo debemos indicar las coordenadas del vértice superior izquierda y el ancho y el alto del rectángulo, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos y distancias (el mismo que el orden de los rectángulos).
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-4.png" alt="SVG Brython (2) 0 4 Puntos y tamaños figura" title="SVG Brython (2) 0 4 Puntos y tamaños figura" width="354" height="354" /></p>
-        </li>
-        <li>Como queremos dibujar los rectángulos mediante un bucle, debemos expresar las coordenadas de los vértices, el ancho y el alto como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
-          <pre>
+        <p>Los rectángulos se han numerado de 0 a 2 en vez de 1 a 3 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 2.</p>
+      </li>
+      <li>Para dibujar un rectángulo debemos indicar las coordenadas del vértice superior izquierda y el ancho y el alto del rectángulo, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos y distancias (el mismo que el orden de los rectángulos).
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-4.png" alt="SVG Brython (2) 0 4 Puntos y tamaños figura" title="SVG Brython (2) 0 4 Puntos y tamaños figura" width="354" height="354" /></p>
+      </li>
+      <li>Como queremos dibujar los rectángulos mediante un bucle, debemos expresar las coordenadas de los vértices, el ancho y el alto como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
+        <pre>
 i:        0     1     2      Fórmula
 X:       50   150   250 -->  50 + 100*i
 Y:       50    50    50 -->  50
 Ancho:  500   300   100 -->  500 - 200*i
 Alto:   150   300   450 -->  150 + 150*i
 </pre>
-        </li>
-        <li>Por tanto el bucle que generaría los rectángulos sería el siguiente:
-          <div class="codigo">
-            <pre>
+      </li>
+      <li>Por tanto el bucle que generaría los rectángulos sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">    for i in range(3):
         print(f"     &lt;rect x={50+100*i} y=50 width={500-200*i} height={150+150*i} stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)</code>
 </pre>
-          </div>
-        </li>
-        <li>Y el programa completo sería el siguiente:
-          <div class="codigo">
-            <pre>
+        </div>
+      </li>
+      <li>Y el programa completo sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-2_ejemplo_3.html"
@@ -345,21 +345,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="ejercicio-resuelto-4">
-      <h3>Gráficos SVG Ficheros (2) - 4 - Varias fórmulas, varias formas</h3>
+  <section id="ejercicio-resuelto-4">
+    <h3>Gráficos SVG Ficheros (2) - 4 - Varias fórmulas, varias formas</h3>
 
-      <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
+    <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-1.png" alt="SVG Brython (2) 0 4 Enunciado" title="SVG Brython (2) 0 4 Enunciado" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-1.png" alt="SVG Brython (2) 0 4 Enunciado" title="SVG Brython (2) 0 4 Enunciado" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -376,82 +376,82 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <ul>
-        <li>Este dibujo no se puede dibujar con un sólo bucle y una sola forma ya que los extremos de las líneas no se encuentran distribuidos uniformemente a lo largo de una recta. Para hacer este dibujo se podrían utilizar dos bucles consecutivos, dibujando primero en un bucle las líneas desde la línea más larga hacia abajo a la izquierda y después en otro bulce las líneas desde la línea más larga hacia arriba a la izquierda. Pero también se puede dibujar en un único bucle, dibujando en cada iteración dos líneas, desde el centro hacia los lados (la línea central se dibujaría dos veces en la primera iteración del bucle). El programa incluirá un bucle que se ejecutará cinco veces, dibujando dos líneas en cada iteración:
-          <div class="codigo">
-            <pre>
+    <ul>
+      <li>Este dibujo no se puede dibujar con un sólo bucle y una sola forma ya que los extremos de las líneas no se encuentran distribuidos uniformemente a lo largo de una recta. Para hacer este dibujo se podrían utilizar dos bucles consecutivos, dibujando primero en un bucle las líneas desde la línea más larga hacia abajo a la izquierda y después en otro bulce las líneas desde la línea más larga hacia arriba a la izquierda. Pero también se puede dibujar en un único bucle, dibujando en cada iteración dos líneas, desde el centro hacia los lados (la línea central se dibujaría dos veces en la primera iteración del bucle). El programa incluirá un bucle que se ejecutará cinco veces, dibujando dos líneas en cada iteración:
+        <div class="codigo">
+          <pre>
 <code class="language-python">for i in range(5):
     # instrucción que dibuja una línea
     # instrucción que dibuja otra línea</code>
 </pre>
-          </div>
-        </li>
-        <li>Si el viewbox de la imagen anterior es "-150 -150 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-2.png" alt="SVG Brython (2) 0 4 Ejes y coordenadas" title="SVG Brython (2) 0 4 Ejes y coordenadas" width="354" height="354" /></p>
-        </li>
-        <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas desde el centro hacia los extremos, como muestra la imagen siguiente:
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-3.png" alt="SVG Brython (2) 0 4 Orden de las líneas" title="SVG Brython (2) 0 4 Orden de las líneas" width="354" height="354" /></p>
-          <p>Las líneas se han numerado de 0 a 5 en vez de 1 a 6 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 5.</p>
-        </li>
-        <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
-          <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-4.png" alt="SVG Brython (2) 0 4 Puntos figura" title="SVG Brython (2) 0 4 Puntos figura" width="354" height="354" /></p>
-        </li>
-        <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
-          <ul>
-            <li>La primera instrucción que dibuje líneas dibujará las líneas situadas a la izquierda
-              <ul>
-                <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
-                  <pre>
+        </div>
+      </li>
+      <li>Si el viewbox de la imagen anterior es "-150 -150 320 320", los ejes de coordenadas y las coordenadas correspondientes serían los que se muestran en la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-2.png" alt="SVG Brython (2) 0 4 Ejes y coordenadas" title="SVG Brython (2) 0 4 Ejes y coordenadas" width="354" height="354" /></p>
+      </li>
+      <li>A continuación hay que elegir en qué orden queremos dibujar las líneas. En este caso vamos a dibujarlas desde el centro hacia los extremos, como muestra la imagen siguiente:
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-3.png" alt="SVG Brython (2) 0 4 Orden de las líneas" title="SVG Brython (2) 0 4 Orden de las líneas" width="354" height="354" /></p>
+        <p>Las líneas se han numerado de 0 a 5 en vez de 1 a 6 porque la variable <i>i</i> del bucle <span class="idle-rese">for</span> toma valores de 0 a 5.</p>
+      </li>
+      <li>Para dibujar una línea debemos indicar las coordenadas de los puntos situados en los extremos de las líneas, como muestra la imagen siguiente, que también indica el orden en que se van a indicar los puntos (el mismo que el orden de las líneas).
+        <p><img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-4.png" alt="SVG Brython (2) 0 4 Puntos figura" title="SVG Brython (2) 0 4 Puntos figura" width="354" height="354" /></p>
+      </li>
+      <li>Como queremos dibujar las líneas mediante un bucle, debemos expresar las coordenadas de los extremos como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
+        <ul>
+          <li>La primera instrucción que dibuje líneas dibujará las líneas situadas a la izquierda
+            <ul>
+              <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
+                <pre>
 i:     0     1     2     3     4      Fórmula
 X:  -150  -150  -150  -150  -150  --> -150
 Y:  -150   -90   -30    30    90  --> -150+60*i
 </pre>
-                </li>
-                <li>En el caso de los extremos de las líneas situados abajo, las coordenadas de los puntos y su fórmulas correspondientes son:
-                  <pre>
+              </li>
+              <li>En el caso de los extremos de las líneas situados abajo, las coordenadas de los puntos y su fórmulas correspondientes son:
+                <pre>
 i:     0     1     2     3     4       Fórmula
 X:   150    90    30   -30   -60  -->  150-60*i
 Y:   150   150   150   150   150  -->  150
 </pre>
-                </li>
-              </ul>
-            </li>
-            <li>La segunda instrucción que dibuje líneas dibujará las líneas situadas a la derecha
-              <ul>
-                <li>En el caso de los extremos de las líneas situados arriba, las coordenadas de los puntos y su fórmulas correspondientes son:
-                  <pre>
+              </li>
+            </ul>
+          </li>
+          <li>La segunda instrucción que dibuje líneas dibujará las líneas situadas a la derecha
+            <ul>
+              <li>En el caso de los extremos de las líneas situados arriba, las coordenadas de los puntos y su fórmulas correspondientes son:
+                <pre>
 i:     0     1     2     3     4      Fórmula
 X:  -150   -90   -30    30    90  --> -150+60*i
 Y:  -150  -150  -150  -150  -150  --> -150
 </pre>
-                </li>
-                <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
-                  <pre>
+              </li>
+              <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
+                <pre>
 i:     0     1     2     3     4       Fórmula
 X:   150   150   150   150   150  -->  150
 Y:   150    90    30   -30   -60  -->  150-60*i
 </pre>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
 
-        <li>Por tanto el bucle que generaría las líneas sería el siguiente:
-          <div class="codigo">
-            <pre>
+      <li>Por tanto el bucle que generaría las líneas sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">    for i in range(5):
         print(f"     &lt;line x1=-150 y1={-150+60*i} x2={150-60*i} y2=150 stroke=\"black\" stroke-width=1 />", file=fichero)
         print(f"     &lt;line x1={-150+60*i} y1=-150 x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
 </pre>
-          </div>
-        </li>
-        <li>Y el programa completo sería el siguiente:
-          <div class="codigo">
-            <pre>
+        </div>
+      </li>
+      <li>Y el programa completo sería el siguiente:
+        <div class="codigo">
+          <pre>
 <code class="language-python">import webbrowser
 
 ruta = "svg-ficheros-2_ejemplo_4.html"
@@ -480,17 +480,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
     webbrowser.open(ruta)</code>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 11 de abril de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

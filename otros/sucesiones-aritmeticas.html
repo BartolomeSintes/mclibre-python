@@ -1,359 +1,357 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sucesiones aritméticas. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-    <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sucesiones aritméticas. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+  <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
+</head>
 
-  <body>
-    <h1>Sucesiones aritméticas</h1>
+<body>
+  <h1>Sucesiones aritméticas</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Sucesiones aritméticas</h2>
+    <div class="toc">
+      <h2>Sucesiones aritméticas</h2>
 
-        <ul>
-          <li><a href="#definicion">Definición</a></li>
-          <li><a href="#termino-general">Término general</a></li>
-          <li><a href="#relacion-2-terminos">Relación entre 2 términos</a></li>
-          <li><a href="#como-formula">Sucesión como fórmula</a></li>
-          <li><a href="#obtencion-formulas">Obtención de fórmulas</a>
-            <ul>
-              <li><a href="#ejemplo-1">Ejemplo 1</a></li>
-              <li><a href="#ejemplo-2">Ejemplo 2</a></li>
-              <li><a href="#ejemplo-3">Ejemplo 3</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#definicion">Definición</a></li>
+        <li><a href="#termino-general">Término general</a></li>
+        <li><a href="#relacion-2-terminos">Relación entre 2 términos</a></li>
+        <li><a href="#como-formula">Sucesión como fórmula</a></li>
+        <li><a href="#obtencion-formulas">Obtención de fórmulas</a>
+          <ul>
+            <li><a href="#ejemplo-1">Ejemplo 1</a></li>
+            <li><a href="#ejemplo-2">Ejemplo 2</a></li>
+            <li><a href="#ejemplo-3">Ejemplo 3</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En programación, a menudo se necesita generar valores numéricos uniformemente espaciados y para ello necesitamos una fórmula que nos proporciones los valores. En matemáticas esos conjunto de valores se denominan<i> sucesiones aritméticas</i> y con un poco de entrenamiento, las fórmulas se pueden hacer de cabeza.</p>
+  <p>En programación, a menudo se necesita generar valores numéricos uniformemente espaciados y para ello necesitamos una fórmula que nos proporciones los valores. En matemáticas esos conjunto de valores se denominan<i> sucesiones aritméticas</i> y con un poco de entrenamiento, las fórmulas se pueden hacer de cabeza.</p>
 
-    <p>En esta lección se trata la teoría y la práctica de las sucesiones aritméticas. En la página de <a href="../ejercicios/ej-sucesiones.html">Ejercicios Sucesiones aritméticas</a> se puede practicar el cálculo de fórmulas.</p>
+  <p>En esta lección se trata la teoría y la práctica de las sucesiones aritméticas. En la página de <a href="../ejercicios/ej-sucesiones.html">Ejercicios Sucesiones aritméticas</a> se puede practicar el cálculo de fórmulas.</p>
 
-    <section id="definicion">
-      <h2>Qué es una una sucesión aritmética</h2>
+  <section id="definicion">
+    <h2>Qué es una una sucesión aritmética</h2>
 
-      <p>Una sucesión artimética (o progresión aritmética) es una serie ordenada de valores (también llamados <i>términos</i>) ...</p>
+    <p>Una sucesión artimética (o progresión aritmética) es una serie ordenada de valores (también llamados <i>términos</i>) ...</p>
 
-      <p>`U_n = { U_0, U_1, U_2, U_3, U_4, ...}`</p>
+    <p>`U_n = { U_0, U_1, U_2, U_3, U_4, ...}`</p>
 
-      <p>... en la que la diferencia entre dos valores consecutivos es siempre la misma:</p>
+    <p>... en la que la diferencia entre dos valores consecutivos es siempre la misma:</p>
 
-      <p class="inline-con-borde">`U_(n+1) - U_n = d`</p>
+    <p class="inline-con-borde">`U_(n+1) - U_n = d`</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Por ejemplo, la sucesión ...</p>
+    <p>Por ejemplo, la sucesión ...</p>
 
-      <p>`U_n = { 10, 13, 16, 19, 22, ...}`</p>
+    <p>`U_n = { 10, 13, 16, 19, 22, ...}`</p>
 
-      <p>es una sucesión aritmética de diferencia 3 porque la diferencia entre dos términos consecutivos es siempre 3:</p>
+    <p>es una sucesión aritmética de diferencia 3 porque la diferencia entre dos términos consecutivos es siempre 3:</p>
 
-      <p>`U_1 - U_0 = 13 - 10 = 3`</p>
+    <p>`U_1 - U_0 = 13 - 10 = 3`</p>
 
-      <p>`U_2 - U_1 = 16 - 13 = 3`</p>
+    <p>`U_2 - U_1 = 16 - 13 = 3`</p>
 
-      <p>`U_3 - U_2 = 19 - 16 = 3`</p>
+    <p>`U_3 - U_2 = 19 - 16 = 3`</p>
 
-      <p> ... etc ...</p>
+    <p> ... etc ...</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>El índice `n` que identifica a los términos de la sucesión suele empezar desde 0, es decir, que el primer término de la sucesión es el término `U_0`, el segundo término es el término `U_1`, etc.</p>
+    <p>El índice `n` que identifica a los términos de la sucesión suele empezar desde 0, es decir, que el primer término de la sucesión es el término `U_0`, el segundo término es el término `U_1`, etc.</p>
+  </section>
+
+  <section id="termino-general">
+    <h2>Término general de una sucesión aritmética</h2>
+
+    <p>En una sucesión aritmética cada término se puede calcular a partir del anterior, ya que si ...</p>
+
+    <p>`U_(n+1) - U_n = d`</p>
+
+    <p>... entonces ...</p>
+
+    <p>`U_(n+1) = U_n + d`</p>
+
+    <p>Es decir, </p>
+
+    <p>`U_1 = U_0 + d`</p>
+
+    <p>`U_2 = U_1 + d`</p>
+
+    <p>`U_3 = U_2 + d`</p>
+
+    <p> ... etc ...</p>
+
+    <hr class="corta" />
+
+    <p>Entonces, </p>
+
+    <p>`U_1 = U_0 + d`</p>
+
+    <p>`U_2 = U_1 + d = (U_0 + d) + d = U_0 + 2 * d`</p>
+
+    <p>`U_3 = U_2 + d = (U_0 + 2 * d) + d = U_0 + 3 * d`</p>
+
+    <p> ... etc ...</p>
+
+    <p>En general, podemos expresar un término cualquiera en función del primer término:</p>
+
+    <p class="inline-con-borde">`U_n = U_0 + n * d`</p>
+
+    <p>Esta fórmula expresa el término general de la sucesión y se puede escribir también como:</p>
+
+    <p class="inline-con-borde">`U_n = d * n + U_0`</p>
+
+    <hr class="corta" />
+
+    <p>Por ejemplo, la sucesión ...</p>
+
+    <p>`U_n = { 10, 13, 16, 19, 22, ...}`</p>
+
+    <p>... que es una sucesión aritmética de diferencia 3 tiene por término general:</p>
+
+    <p>`U_n = 3 * n + 10`</p>
+
+    <p>Por ejemplo, el quinto valor de la sucesión es `U_4 = 3 * 4 + 10 = 22`</p>
+
+  </section>
+
+  <section id="relacion-2-terminos">
+    <h2>Relación entre dos términos cualesquiera</h2>
+
+    <p>Se puede expresar el término general `U_n` en función de un término cualquiera `U_i`, ya que si ...</p>
+
+    <p>`U_n = U_0 + n * d`</p>
+
+    <p>... y ...</p>
+
+    <p>`U_i = U_0 + i * d`</p>
+
+    <p>... podemos escribir ...</p>
+
+    <p>`U_n = U_0 + n * d = U_0 + (i + n - i) * d = U_0 + i * d + (n - i) * d = U_i + (n - i) * d`</p>
+  </section>
+
+  <section id="como-formula">
+    <h2>Sucesiones aritméticas expresadas como fórmulas</h2>
+
+    <p>Si en vez de utilizar la notación `U_n`utilizamos la notación `f(n)`, el término general se escribiría como:</p>
+
+    <p>`f(n) = d * n + f(0)`</p>
+
+    <p>Es decir, que los términos de una sucesión aritmética se pueden calcular mediante una fórmula del tipo</p>
+
+    <p class="inline-con-borde">`f(n) = a * n + b`</p>
+
+    <p>... en la que `a` es la diferencia entre dos términos consecutivos y b el valor `f(0)`.</p>
+  </section>
+
+  <section id="obtencion-formulas">
+    <h2>Aplicación a la obtención de fórmulas</h2>
+
+    <p>El término general de una sucesión aritmética se puede emplear para obtener fórmulas a partir de valores en sucesión aritmética.</p>
+
+    <p>Si unos valores están en sucesión aritmética, sabemos por lo visto anteriormente que la fórmula será del tipo:</p>
+
+    <p class="inline-con-borde">`f(n) = a * n + b`</p>
+
+    <p>... en la que `a` es la diferencia entre dos términos consecutivos y `b` se puede calcular a partir de cualquier valor de la sucesión, como podemos ver en los siguientes ejemplos:</p>
+
+
+    <section id="ejemplo-1">
+      <h3>Ejemplo 1: Palillos</h3>
+
+      <p>Por ejemplo, consideremos estos dibujos hechos con palillos (un cuadrado, dos cuadrados, tres cuadrados, etc.):</p>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="750" viewBox="-10 -10 500 60" style="border: black 1px solid" id="imagen">
+        <line x1="2" y1="0" x2="38" y2="0" stroke="black" />
+        <line x1="2" y1="40" x2="38" y2="40" stroke="black" />
+        <line x1="0" y1="2" x2="0" y2="38" stroke="black" />
+        <line x1="40" y1="2" x2="40" y2="38" stroke="black" />
+
+        <line x1="102" y1="0" x2="138" y2="0" stroke="black" />
+        <line x1="102" y1="40" x2="138" y2="40" stroke="black" />
+        <line x1="100" y1="2" x2="100" y2="38" stroke="black" />
+        <line x1="140" y1="2" x2="140" y2="38" stroke="black" />
+        <line x1="142" y1="0" x2="178" y2="0" stroke="black" />
+        <line x1="142" y1="40" x2="178" y2="40" stroke="black" />
+        <line x1="180" y1="2" x2="180" y2="38" stroke="black" />
+
+        <line x1="252" y1="0" x2="288" y2="0" stroke="black" />
+        <line x1="252" y1="40" x2="288" y2="40" stroke="black" />
+        <line x1="250" y1="2" x2="250" y2="38" stroke="black" />
+        <line x1="290" y1="2" x2="290" y2="38" stroke="black" />
+        <line x1="292" y1="0" x2="328" y2="0" stroke="black" />
+        <line x1="292" y1="40" x2="328" y2="40" stroke="black" />
+        <line x1="330" y1="2" x2="330" y2="38" stroke="black" />
+        <line x1="332" y1="0" x2="368" y2="0" stroke="black" />
+        <line x1="332" y1="40" x2="368" y2="40" stroke="black" />
+        <line x1="370" y1="2" x2="370" y2="38" stroke="black" />
+
+        <text x="420" y="20" style="font-size: 40px">. . .</text>
+      </svg>
+
+      <p>Nos planteamos la pregunta de cuántos palillos harían falta para hacer un dibujo de 18 cuadrados (o cualquier otro número).</p>
+
+      <p>Una forma de resolver el problema sería encontrar la fórmula que relaciona el número de cuadros con el número de palillos.</p>
+
+      <p>Si escribimos los valores en una tabla, es fácil ver que se trata de una sucesión aritmética de diferencia 3:</p>
+
+      <table class="tabla-con-borde" style="text-align: center;">
+        <tbody>
+          <tr>
+            <th>Cuadros</th>
+            <td style="width: 30px">1</td>
+            <td style="width: 30px">2</td>
+            <td style="width: 30px">3</td>
+            <td style="width: 30px">...</td>
+            <td style="width: 30px">`n`</td>
+          </tr>
+          <tr>
+            <th>Palillos</th>
+            <td>4</td>
+            <td>7</td>
+            <td>10</td>
+            <td>...</td>
+            <td>`f(n)`</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La fórmula será entonces la de una sucesión aritmética:</p>
+
+      <p>`f(n) = a * n + b`</p>
+
+      <p>Como en este caso la diferencia es 3, la fórmula será:</p>
+
+      <p>`f(n) = 3 * n + b`</p>
+
+      <p>Para averiguar `b`, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 1` (un cuadrado), `f(n) = 4` (cuatro palillos), es decir:</p>
+
+      <p>`4 = 3 * 1 + b`</p>
+
+      <p>Resolviendo esta ecuación, tenemos que `b = 4 - 3 = 1`, por lo que la fórmula es:</p>
+
+      <p class="inline-con-borde">`f(n) = 3 * n + 1`</p>
+
+      <p>La respuesta a la pregunta inicial es que para hacer un dibujo de 18 cuadrados necesitaremos `f(18) = 3 * 18 + 1 = 55` palillos.</p>
     </section>
 
-    <section id="termino-general">
-      <h2>Término general de una sucesión aritmética</h2>
+    <section id="ejemplo-2">
+      <h3>Ejemplo 2</h3>
 
-      <p>En una sucesión aritmética cada término se puede calcular a partir del anterior, ya que si ...</p>
+      <p>Este método se puede aplicar a cualquier sucesión aritmética. Por ejemplo, queremos obtener la fórmula correspondiente a los siguientes valores:</p>
 
-      <p>`U_(n+1) - U_n = d`</p>
+      <table class="tabla-con-borde" style="text-align: center;">
+        <tbody>
+          <tr>
+            <th>`n`</th>
+            <td style="width: 30px">...</td>
+            <td style="width: 30px">17</td>
+            <td style="width: 30px">18</td>
+            <td style="width: 30px">19</td>
+            <td style="width: 30px">...</td>
+          </tr>
+          <tr>
+            <th>`f(n)`</th>
+            <td>...</td>
+            <td>120</td>
+            <td>135</td>
+            <td>150</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <p>... entonces ...</p>
+      <p>Como se trata de una sucesión aritmética, la fórmula será entonces:</p>
 
-      <p>`U_(n+1) = U_n + d`</p>
+      <p>`f(n) = a * n + b`</p>
 
-      <p>Es decir, </p>
+      <p>Como en este caso la diferencia es 15, la fórmula será:</p>
 
-      <p>`U_1 = U_0 + d`</p>
+      <p>`f(n) = 15 * n + b`</p>
 
-      <p>`U_2 = U_1 + d`</p>
+      <p>Para averiguar b, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 17`, `f(n) = 120`, es decir:</p>
 
-      <p>`U_3 = U_2 + d`</p>
+      <p>`120 = 15 * 17 + b`</p>
 
-      <p> ... etc ...</p>
+      <p>Resolviendo esta ecuación, tenemos que `b = 120 - 255 = -135`, por lo que la fórmula buscada es:</p>
 
-      <hr class="corta" />
-
-      <p>Entonces, </p>
-
-      <p>`U_1 = U_0 + d`</p>
-
-      <p>`U_2 = U_1 + d = (U_0 + d) + d = U_0 + 2 * d`</p>
-
-      <p>`U_3 = U_2 + d = (U_0 + 2 * d) + d = U_0 + 3 * d`</p>
-
-      <p> ... etc ...</p>
-
-      <p>En general, podemos expresar un término cualquiera en función del primer término:</p>
-
-      <p class="inline-con-borde">`U_n = U_0 + n * d`</p>
-
-      <p>Esta fórmula expresa el término general de la sucesión y se puede escribir también como:</p>
-
-      <p class="inline-con-borde">`U_n = d * n + U_0`</p>
-
-      <hr class="corta" />
-
-      <p>Por ejemplo, la sucesión ...</p>
-
-      <p>`U_n = { 10, 13, 16, 19, 22, ...}`</p>
-
-      <p>... que es una sucesión aritmética de diferencia 3 tiene por término general:</p>
-
-      <p>`U_n = 3 * n + 10`</p>
-
-      <p>Por ejemplo, el quinto valor de la sucesión es `U_4 = 3 * 4 + 10 = 22`</p>
-
+      <p class="inline-con-borde">`f(n) = 15 * n - 135`</p>
     </section>
 
-    <section id="relacion-2-terminos">
-      <h2>Relación entre dos términos cualesquiera</h2>
+    <section id="ejemplo-3">
+      <h3>Ejemplo 3</h3>
 
-      <p>Se puede expresar el término general `U_n` en función de un término cualquiera `U_i`, ya que si ...</p>
+      <p>Un caso un poco más complicado es cuando no conocemos valores consecutivos. Por ejemplo, queremos obtener la fórmula correspondiente a los siguientes valores:</p>
 
-      <p>`U_n = U_0 + n * d`</p>
+      <table class="tabla-con-borde" style="text-align: center;">
+        <tbody>
+          <tr>
+            <th>`n`</th>
+            <td style="width: 30px">...</td>
+            <td style="width: 30px">4</td>
+            <td style="width: 30px">9</td>
+            <td style="width: 30px">13</td>
+            <td style="width: 30px">...</td>
+          </tr>
+          <tr>
+            <th>`f(n)`</th>
+            <td>...</td>
+            <td>-2</td>
+            <td>13</td>
+            <td>25</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <p>... y ...</p>
+      <p>Como se trata de una sucesión aritmética, la fórmula será entonces:</p>
 
-      <p>`U_i = U_0 + i * d`</p>
+      <p>`f(n) = a * n + b`</p>
 
-      <p>... podemos escribir ...</p>
+      <p>Para calcular la diferencia, habrá que tener en cuenta que los valores no son consecutivos. Tomando cualquier pareja de valores:</p>
 
-      <p>`U_n = U_0 + n * d = U_0 + (i + n - i) * d = U_0 + i * d + (n - i) * d = U_i + (n - i) * d`</p>
+      <p>`a = (25 - 13) / (13 - 9) = 12 / 4 = 3`</p>
+
+      <p>o</p>
+
+      <p>`a = (13 - (-2)) / (9 - 4) = 15 / 5 = 3`</p>
+
+      <p>Como en este caso la diferencia es 3, la fórmula será:</p>
+
+      <p>`f(n) = 3 * n + b`</p>
+
+      <p>Para averiguar b, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 9`, `f(n) = 13`, es decir:</p>
+
+      <p>`13 = 3 * 9 + b`</p>
+
+      <p>Resolviendo esta ecuación, tenemos que `b = 13 - 27 = -14`, por lo que la fórmula buscada es:</p>
+
+      <p class="inline-con-borde">`f(n) = 3 * n - 14`</p>
     </section>
+  </section>
 
-    <section id="como-formula">
-      <h2>Sucesiones aritméticas expresadas como fórmulas</h2>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 12 de octubre de 2016</p>
 
-      <p>Si en vez de utilizar la notación `U_n`utilizamos la notación `f(n)`, el término general se escribiría como:</p>
-
-      <p>`f(n) = d * n + f(0)`</p>
-
-      <p>Es decir, que los términos de una sucesión aritmética se pueden calcular mediante una fórmula del tipo</p>
-
-      <p class="inline-con-borde">`f(n) = a * n + b`</p>
-
-      <p>... en la que `a` es la diferencia entre dos términos consecutivos y b el valor `f(0)`.</p>
-    </section>
-
-    <section id="obtencion-formulas">
-      <h2>Aplicación a la obtención de fórmulas</h2>
-
-      <p>El término general de una sucesión aritmética se puede emplear para obtener fórmulas a partir de valores en sucesión aritmética.</p>
-
-      <p>Si unos valores están en sucesión aritmética, sabemos por lo visto anteriormente que la fórmula será del tipo:</p>
-
-      <p class="inline-con-borde">`f(n) = a * n + b`</p>
-
-      <p>... en la que `a` es la diferencia entre dos términos consecutivos y `b` se puede calcular a partir de cualquier valor de la sucesión, como podemos ver en los siguientes ejemplos:</p>
-
-
-      <section id="ejemplo-1">
-        <h3>Ejemplo 1: Palillos</h3>
-
-        <p>Por ejemplo, consideremos estos dibujos hechos con palillos (un cuadrado, dos cuadrados, tres cuadrados, etc.):</p>
-
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="750" viewBox="-10 -10 500 60"
-             style="border: black 1px solid" id="imagen">
-          <line x1="2"  y1="0"  x2 ="38" y2="0" stroke="black" />
-          <line x1="2"  y1="40" x2 ="38" y2="40" stroke="black" />
-          <line x1="0"  y1="2"  x2 ="0"  y2="38" stroke="black" />
-          <line x1="40" y1="2"  x2 ="40" y2="38" stroke="black" />
-
-          <line x1="102"  y1="0" x2 ="138" y2="0" stroke="black" />
-          <line x1="102"  y1="40" x2 ="138" y2="40" stroke="black" />
-          <line x1="100"  y1="2" x2 ="100"  y2="38" stroke="black" />
-          <line x1="140" y1="2" x2 ="140" y2="38" stroke="black" />
-          <line x1="142" y1="0" x2 ="178" y2="0" stroke="black" />
-          <line x1="142" y1="40" x2 ="178" y2="40" stroke="black" />
-          <line x1="180" y1="2" x2 ="180" y2="38" stroke="black" />
-
-          <line x1="252"  y1="0" x2 ="288" y2="0" stroke="black" />
-          <line x1="252"  y1="40" x2 ="288" y2="40" stroke="black" />
-          <line x1="250"  y1="2" x2 ="250"  y2="38" stroke="black" />
-          <line x1="290" y1="2" x2 ="290" y2="38" stroke="black" />
-          <line x1="292" y1="0" x2 ="328" y2="0" stroke="black" />
-          <line x1="292" y1="40" x2 ="328" y2="40" stroke="black" />
-          <line x1="330" y1="2" x2 ="330" y2="38" stroke="black" />
-          <line x1="332" y1="0" x2 ="368" y2="0" stroke="black" />
-          <line x1="332" y1="40" x2 ="368" y2="40" stroke="black" />
-          <line x1="370" y1="2" x2 ="370" y2="38" stroke="black" />
-
-          <text x="420" y="20" style="font-size: 40px">. . .</text>
-        </svg>
-
-        <p>Nos planteamos la pregunta de cuántos palillos harían falta para hacer un dibujo de 18 cuadrados (o cualquier otro número).</p>
-
-        <p>Una forma de resolver el problema sería encontrar la fórmula que relaciona el número de cuadros con el número de palillos.</p>
-
-        <p>Si escribimos los valores en una tabla, es fácil ver que se trata de una sucesión aritmética de diferencia 3:</p>
-
-        <table class="tabla-con-borde" style="text-align: center;">
-          <tbody>
-            <tr>
-              <th>Cuadros</th>
-              <td style="width: 30px">1</td>
-              <td style="width: 30px">2</td>
-              <td style="width: 30px">3</td>
-              <td style="width: 30px">...</td>
-              <td style="width: 30px">`n`</td>
-            </tr>
-            <tr>
-              <th>Palillos</th>
-              <td>4</td>
-              <td>7</td>
-              <td>10</td>
-              <td>...</td>
-              <td>`f(n)`</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>La fórmula será entonces la de una sucesión aritmética:</p>
-
-        <p>`f(n) = a * n + b`</p>
-
-        <p>Como en este caso la diferencia es 3, la fórmula será:</p>
-
-        <p>`f(n) = 3 * n + b`</p>
-
-        <p>Para averiguar `b`, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 1` (un cuadrado), `f(n) = 4` (cuatro palillos), es decir:</p>
-
-        <p>`4 = 3 * 1 + b`</p>
-
-        <p>Resolviendo esta ecuación, tenemos que `b = 4 - 3 = 1`, por lo que la fórmula es:</p>
-
-        <p class="inline-con-borde">`f(n) = 3 * n + 1`</p>
-
-        <p>La respuesta a la pregunta inicial es que para hacer un dibujo de 18 cuadrados necesitaremos `f(18) = 3 * 18 + 1 = 55` palillos.</p>
-      </section>
-
-      <section id="ejemplo-2">
-        <h3>Ejemplo 2</h3>
-
-        <p>Este método se puede aplicar a cualquier sucesión aritmética. Por ejemplo, queremos obtener la fórmula correspondiente a los siguientes valores:</p>
-
-        <table class="tabla-con-borde" style="text-align: center;">
-          <tbody>
-            <tr>
-              <th>`n`</th>
-              <td style="width: 30px">...</td>
-              <td style="width: 30px">17</td>
-              <td style="width: 30px">18</td>
-              <td style="width: 30px">19</td>
-              <td style="width: 30px">...</td>
-            </tr>
-            <tr>
-              <th>`f(n)`</th>
-              <td>...</td>
-              <td>120</td>
-              <td>135</td>
-              <td>150</td>
-              <td>...</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Como se trata de una sucesión aritmética, la fórmula será entonces:</p>
-
-        <p>`f(n) = a * n + b`</p>
-
-        <p>Como en este caso la diferencia es 15, la fórmula será:</p>
-
-        <p>`f(n) = 15 * n + b`</p>
-
-        <p>Para averiguar b, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 17`, `f(n) = 120`, es decir:</p>
-
-        <p>`120 = 15 * 17 + b`</p>
-
-        <p>Resolviendo esta ecuación, tenemos que `b = 120 - 255 = -135`, por lo que la fórmula buscada es:</p>
-
-        <p class="inline-con-borde">`f(n) = 15 * n - 135`</p>
-      </section>
-
-      <section id="ejemplo-3">
-        <h3>Ejemplo 3</h3>
-
-        <p>Un caso un poco más complicado es cuando no conocemos valores consecutivos. Por ejemplo, queremos obtener la fórmula correspondiente a los siguientes valores:</p>
-
-        <table class="tabla-con-borde" style="text-align: center;">
-          <tbody>
-            <tr>
-              <th>`n`</th>
-              <td style="width: 30px">...</td>
-              <td style="width: 30px">4</td>
-              <td style="width: 30px">9</td>
-              <td style="width: 30px">13</td>
-              <td style="width: 30px">...</td>
-            </tr>
-            <tr>
-              <th>`f(n)`</th>
-              <td>...</td>
-              <td>-2</td>
-              <td>13</td>
-              <td>25</td>
-              <td>...</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Como se trata de una sucesión aritmética, la fórmula será entonces:</p>
-
-        <p>`f(n) = a * n + b`</p>
-
-        <p>Para calcular la diferencia, habrá que tener en cuenta que los valores no son consecutivos. Tomando cualquier pareja de valores:</p>
-
-        <p>`a = (25 - 13) / (13 - 9) = 12 / 4 = 3`</p>
-
-        <p>o</p>
-
-        <p>`a = (13 - (-2)) / (9 - 4) = 15 / 5 = 3`</p>
-
-        <p>Como en este caso la diferencia es 3, la fórmula será:</p>
-
-        <p>`f(n) = 3 * n + b`</p>
-
-        <p>Para averiguar b, basta con sustituir cualquier pareja de valores. Por ejemplo, para `n = 9`, `f(n) = 13`, es decir:</p>
-
-        <p>`13 = 3 * 9 + b`</p>
-
-        <p>Resolviendo esta ecuación, tenemos que `b = 13 - 27 = -14`, por lo que la fórmula buscada es:</p>
-
-        <p class="inline-con-borde">`f(n) = 3 * n - 14`</p>
-      </section>
-    </section>
-
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 12 de octubre de 2016</p>
-
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/informatica/">Temas de Informática</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/informatica/">Temas de Informática</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

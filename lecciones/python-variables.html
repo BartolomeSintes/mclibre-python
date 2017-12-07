@@ -1,269 +1,303 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variables. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variables. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Variables</h1>
+<body>
+  <h1>Variables</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Variables</h2>
+    <div class="toc">
+      <h2>Variables</h2>
 
-        <ul>
-          <li><a href="#variables-que-es">Qué es una variable</a>
-            <ul>
-              <li><a href="#variables-matematicas">Variables en Matemáticas</a></li>
-              <li><a href="#variables-programacion">Variables en Programación</a></li>
-              <li><a href="#variables-python">Variables en Python</a></li>
-            </ul>
-          </li>
-          <li><a href="#variables-definir">Definir una variable</a></li>
-          <li><a href="#variables-borrar">Borrar una variable</a></li>
-          <li><a href="#variables-nombres">Nombres de variables</a></li>
-          <li><a href="#variables-tipos">Tipos de variables</a></li>
-          <li><a href="#variables-idle-valores">Mostrar en IDLE</a></li>
-          <li><a href="#variables-utilizar">Utilizar variables</a></li>
-          <li><a href="#asignaciones-aumentadas">Asignaciones aumentadas</a></li>
-          <li><a href="#variables-varias">Varias variables a la vez</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#variables-que-es">Qué es una variable</a>
+          <ul>
+            <li><a href="#variables-matematicas">Variables en Matemáticas</a></li>
+            <li><a href="#variables-programacion">Variables en Programación</a></li>
+            <li><a href="#variables-python">Variables en Python</a></li>
+          </ul>
+        </li>
+        <li><a href="#variables-definir">Definir una variable</a></li>
+        <li><a href="#variables-borrar">Borrar una variable</a></li>
+        <li><a href="#variables-nombres">Nombres de variables</a></li>
+        <li><a href="#variables-tipos">Tipos de variables</a></li>
+        <li><a href="#variables-idle-valores">Mostrar en IDLE</a></li>
+        <li><a href="#variables-utilizar">Utilizar variables</a></li>
+        <li><a href="#asignaciones-aumentadas">Asignaciones aumentadas</a></li>
+        <li><a href="#variables-varias">Varias variables a la vez</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En esta lección se tratan aspectos generales de las variables.</p>
+  <p>En esta lección se tratan aspectos generales de las variables.</p>
 
-    <section id="variables-que-es">
-      <h2>Qué es una variable</h2>
+  <section id="variables-que-es">
+    <h2>Qué es una variable</h2>
 
-      <section id="variables-matematicas">
-        <h3>Variables en Matemáticas</h3>
+    <section id="variables-matematicas">
+      <h3>Variables en Matemáticas</h3>
 
-        <p>El concepto de "variable" proviene de las Matemáticas. En Matemáticas, una variable es un símbolo que forma parte de una expresión o de una fórmula. Normalmente las variables se representan mediante letras del alfabeto latino (<var>x</var>, <var>y</var>, <var>z</var>, <var>n</var>, <var>i</var>, <var>j</var>, etc.). Dependiendo del contexto, las variables significan cosas distintas. Por ejemplo:</p>
-        <ul>
-          <li>En el caso del Álgebra, una variable representa una cantidad desconocida que se relaciona con otras y que en algunos casos podemos averiguar.
+      <p>El concepto de "variable" proviene de las Matemáticas. En Matemáticas, una variable es un símbolo que forma parte de una expresión o de una fórmula. Normalmente las variables se representan mediante letras del alfabeto latino (
+        <var>x</var>,
+        <var>y</var>,
+        <var>z</var>,
+        <var>n</var>,
+        <var>i</var>,
+        <var>j</var>, etc.). Dependiendo del contexto, las variables significan cosas distintas. Por ejemplo:</p>
+      <ul>
+        <li>En el caso del Álgebra, una variable representa una cantidad desconocida que se relaciona con otras y que en algunos casos podemos averiguar.
 
-            <p>Consideremos por ejemplo la ecuación:</p>
+          <p>Consideremos por ejemplo la ecuación:</p>
 
-            <div class="codigo">
-              <pre>x + 3 = 5</pre>
-            </div>
-            <p>En este caso, la variable <var>x</var> representa una cantidad desconocida pero de la que se sabe que si se le suma 3 se obtiene 5. Resolviendo la ecuación, obtenemos inmediatamente que la variable <var>x</var> estaba representando realmente el número 2.</p>
-          </li>
-          <li>En el caso del Análisis matemático, una variable no representa una cantidad determinada, sino que representa todo un conjunto de valores:
+          <div class="codigo">
+            <pre>x + 3 = 5</pre>
+          </div>
+          <p>En este caso, la variable
+            <var>x</var> representa una cantidad desconocida pero de la que se sabe que si se le suma 3 se obtiene 5. Resolviendo la ecuación, obtenemos inmediatamente que la variable
+            <var>x</var> estaba representando realmente el número 2.</p>
+        </li>
+        <li>En el caso del Análisis matemático, una variable no representa una cantidad determinada, sino que representa todo un conjunto de valores:
 
-            <p>Consideremos por ejemplo la ecuación de la recta:</p>
+          <p>Consideremos por ejemplo la ecuación de la recta:</p>
 
-            <div class="codigo">
-              <pre>y = x + 1</pre>
-            </div>
+          <div class="codigo">
+            <pre>y = x + 1</pre>
+          </div>
 
-            <p>En este caso, la variable <var>x</var> no representa ningún valor concreto, sino que puede tomar cualquier valor numérico positivo o negativo. Para cada valor de <var>x</var> podemos calcular el valor correspondiente de la variable <var>y</var>. Si interpretamos <var>x</var> e <var>y</var> como las coordenadas de puntos en un plano y dibujamos varios puntos, podríamos ver que todos los puntos se encuentran situados en una misma recta.</p>
-          </li>
-        </ul>
-      </section>
+          <p>En este caso, la variable
+            <var>x</var> no representa ningún valor concreto, sino que puede tomar cualquier valor numérico positivo o negativo. Para cada valor de
+            <var>x</var> podemos calcular el valor correspondiente de la variable
+            <var>y</var>. Si interpretamos
+            <var>x</var> e
+            <var>y</var> como las coordenadas de puntos en un plano y dibujamos varios puntos, podríamos ver que todos los puntos se encuentran situados en una misma recta.</p>
+        </li>
+      </ul>
+    </section>
 
-      <section id="variables-programacion">
-        <h3>Variables en Programación</h3>
+    <section id="variables-programacion">
+      <h3>Variables en Programación</h3>
 
-        <p>En Programación también existe el concepto de "variable", parecido pero no idéntico al concepto matemático.</p>
+      <p>En Programación también existe el concepto de "variable", parecido pero no idéntico al concepto matemático.</p>
 
-        <p>En Programación, las variables están asociadas a variables concretos. Además, cada lenguaje de programación tiene su forma de implementar el concepto de variable, por lo que lo que se explica a continuación es válido para muchos lenguajes de programación, aunque otros lenguajes de programación permiten otras posibilidades.</p>
-        <ul>
-          <li>En muchos lenguajes de programación, una variable se puede entender como una especie de caja en la que se puede guardar un valor (por ejemplo, un valor numérico). Esa caja suele corresponder a una posición de memoria en la memoria del ordenador.</li>
-          <li>Las variables se representan también mediante letras o palabras completas: <var>x</var>, <var>y</var>, <var>a</var>, <var>b</var>, <var>nombre</var>, <var>apellidos</var>, <var>edad</var>, etc.</li>
-          <li>Cuando en esos lenguajes de programación escribimos la instrucción ...
+      <p>En Programación, las variables están asociadas a variables concretos. Además, cada lenguaje de programación tiene su forma de implementar el concepto de variable, por lo que lo que se explica a continuación es válido para muchos lenguajes de programación, aunque otros lenguajes de programación permiten otras posibilidades.</p>
+      <ul>
+        <li>En muchos lenguajes de programación, una variable se puede entender como una especie de caja en la que se puede guardar un valor (por ejemplo, un valor numérico). Esa caja suele corresponder a una posición de memoria en la memoria del ordenador.</li>
+        <li>Las variables se representan también mediante letras o palabras completas:
+          <var>x</var>,
+          <var>y</var>,
+          <var>a</var>,
+          <var>b</var>,
+          <var>nombre</var>,
+          <var>apellidos</var>,
+          <var>edad</var>, etc.</li>
+        <li>Cuando en esos lenguajes de programación escribimos la instrucción ...
 
-            <div class="codigo">
-              <pre>a = 2</pre>
-            </div>
-            <p>... lo que estamos pidiendo al programa es que guarde el valor 2 en una "caja" y que a la caja le llame <var>a</var>.</p>
+          <div class="codigo">
+            <pre>a = 2</pre>
+          </div>
+          <p>... lo que estamos pidiendo al programa es que guarde el valor 2 en una "caja" y que a la caja le llame
+            <var>a</var>.</p>
 
-            <p>En esos lenguajes, el símbolo igualdad (=) hay que entenderlo como una <strong>asignación</strong>, no como una igualdad matemática. Al escribir una igualdad, le estamos pidiendo al programa que calcule lo que hay a la derecha de la igualdad y que lo guarde en la variable que hay a la izquierda de la igualdad.</p>
+          <p>En esos lenguajes, el símbolo igualdad (=) hay que entenderlo como una <strong>asignación</strong>, no como una igualdad matemática. Al escribir una igualdad, le estamos pidiendo al programa que calcule lo que hay a la derecha de la igualdad y que lo guarde en la variable que hay a la izquierda de la igualdad.</p>
 
-            <p>En esos lenguajes, no estaría permitido escribir ...</p>
+          <p>En esos lenguajes, no estaría permitido escribir ...</p>
 
-            <div class="codigo">
-              <pre>2 = a</pre>
-            </div>
-            <p>... porque 2 no es un nombre válido de variable. Tampoco estaría permitido escribir ...</p>
+          <div class="codigo">
+            <pre>2 = a</pre>
+          </div>
+          <p>... porque 2 no es un nombre válido de variable. Tampoco estaría permitido escribir ...</p>
 
-            <div class="codigo">
-              <pre>x + 3 = 5</pre>
-            </div>
+          <div class="codigo">
+            <pre>x + 3 = 5</pre>
+          </div>
 
-            <p>... porque en el lado izquierdo no pueden aparecer operadores.</p>
-          </li>
-          <li>Una vez hemos guardado un valor en una variable, podemos hacer referencia a él a lo largo del programa. Por ejemplo, el siguiente programa ...
+          <p>... porque en el lado izquierdo no pueden aparecer operadores.</p>
+        </li>
+        <li>Una vez hemos guardado un valor en una variable, podemos hacer referencia a él a lo largo del programa. Por ejemplo, el siguiente programa ...
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 a = 2
 b = 3
 c = a + b
 </pre>
-            </div>
-            <ul>
-              <li>guarda el valor 2 en la variable <var>a</var></li>
-              <li>guarda el valor 3 en la variable <var>b</var></li>
-              <li>coge los valores guardados en las variables <var>a</var> y <var>b</var> (2 y 3), los suma (2+3) y el resultado (5) lo guarda en la variable <var>c</var>.</li>
-            </ul>
-          </li>
-          <li>La información que se guarda en una variable puede ser de muchos tipos:
-            <ul>
-              <li>números (enteros, decimales, imaginarios, en notación científica, con precisión arbitraria, en base decimal o en otras bases, etc.), </li>
-              <li>cadenas de texto (una sola letra o más letras, del juego de caracteres ASCII occidental o del juego de caracteres Unicode, etc),
-              </li>
-              <li>conjuntos de números o texto (matrices, listas, tuplas, etc.) </li>
-              <li>estructuras más complicadas (punteros, diccionarios, etc.)</li>
-            </ul>
-            <p>Cada tipo de información se almacena de forma distinta, por lo que existen diferentes tipos de variables para cada tipo de información.</p>
-          </li>
-          <li>Algunos lenguajes de programación (C, C++, Java, etc) exigen que antes de utilizar una variable se defina el tipo de información que se va a guardar en esa variable. Otros lenguajes de programación (Python, PHP, etc.) no lo exigen y es el intérprete del lenguaje el que decide el tipo de variable a utilizar en el momento que se guarda la información. Los lenguajes que requieren definir los tipos de las variables se denominan <strong>lenguajes tipificados</strong> y los que no se denominan <strong>lenguajes no tipificados</strong>. Python es un lenguaje no tipificado, aunque en Python 3.5 se ha introducido la posibilidad de <a href="https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-484">indicar los tipos de datos</a> de los argumentos de las funciones y de los valores devueltos.</li>
-        </ul>
-      </section>
-
-      <section id="variables-python">
-        <h3>Variables en Python</h3>
-
-        <p>En algunos lenguajes de programación, las variables se pueden entender como "cajas" en las que se guardan los datos, pero en Python las variables son "etiquetas" que permiten hacer referencia a los datos (que se guardan en unas "cajas" llamadas objetos).</p>
-
-        <p>Python es un <strong>lenguaje de programación orientado a objetos</strong> y su modelo de datos también está basado en objetos.</p>
-
-        <p>Para cada dato que aparece en un programa, Python crea un objeto que lo contiene. Cada objeto tiene:</p>
-        <ul>
-          <li>un identificador único (un número entero, distinto para cada objeto). El identificador permite a Python referirse al objeto sin ambigüedades.</li>
-          <li>un tipo de datos (entero, decimal, cadena de caracteres, etc.). El tipo de datos permite saber a Python qué operaciones pueden hacerse con el dato.</li>
-          <li>un valor (el propio dato).</li>
-        </ul>
-
-        <p>Así, las variables en Python no guardan los datos, sino que son simples nombres para poder hacer referencia a esos objetos. Si escribimos la instrucción ...</p>
-
-        <div class="codigo">
-          <pre>a = 2</pre>
-        </div>
-
-        <p>... Python:</p>
-        <ul>
-          <li>crea el objeto "2". Ese objeto tendrá un identificador único que se asigna en el momento de la creación y se conserva a lo largo del programa. En este caso, el objeto creado será de tipo número entero y guardará el valor 2.</li>
-          <li>asocia el nombre <var>a</var> al objeto número entero 2 creado.</li>
-        </ul>
-
-        <p>Así, al describir la instrucción anterior no habría que decir 'la variable <var>a</var> almacena el número entero 2', sino que habría que decir 'podemos llamar <var>a</var> al objeto número entero 2'. La variable <var>a</var> es como una etiqueta que nos permite hacer referencia al objeto "2", más cómoda de recordar y utilizar que el identificador del objeto.</p>
-
-        <hr class="corta" />
-
-        <p>Por otro lado, en Python se distingue entre objetos mutables y objetos inmutables:</p>
-
-        <ul>
-          <li>Los <strong>objetos inmutables</strong> son objetos que no se pueden modificar. Por ejemplo, los números, las cadenas y las tuplas son objetos inmutables</li>
-          <li>Los <strong>objetos mutables</strong> son objetos que se pueden modificar. Por ejemplo, las listas y los diccionarios son objetos mutables.</li>
-        </ul>
-
-        <p>En el caso de los objetos inmutables (como los números) no hay mucha diferencia entre considerar la variable como una caja o como una etiqueta, pero en el caso de los objetos mutables (como las listas) pensar en las variables como cajas puede llevar a error.</p>
-
-        <p>Por economía del lenguaje, en estos apuntes se utilizan expresiones como "guardar un valor en una variable" en vez de "guardar el valor en un objeto y asociar una variable al objeto", pero el alumno debe tener presente lo que ocurre en realidad en Python.</p>
-
-        <p>Más adelante en este curso, en las lecciones <a href="python-variables-2.html">Variables 2</a> y <a href="python-variables-3.html">Variables 3</a>, se profundiza en la idea de variable de Python.</p>
-      </section>
-
+          </div>
+          <ul>
+            <li>guarda el valor 2 en la variable
+              <var>a</var>
+            </li>
+            <li>guarda el valor 3 en la variable
+              <var>b</var>
+            </li>
+            <li>coge los valores guardados en las variables
+              <var>a</var> y
+              <var>b</var> (2 y 3), los suma (2+3) y el resultado (5) lo guarda en la variable
+              <var>c</var>.</li>
+          </ul>
+        </li>
+        <li>La información que se guarda en una variable puede ser de muchos tipos:
+          <ul>
+            <li>números (enteros, decimales, imaginarios, en notación científica, con precisión arbitraria, en base decimal o en otras bases, etc.), </li>
+            <li>cadenas de texto (una sola letra o más letras, del juego de caracteres ASCII occidental o del juego de caracteres Unicode, etc),
+            </li>
+            <li>conjuntos de números o texto (matrices, listas, tuplas, etc.) </li>
+            <li>estructuras más complicadas (punteros, diccionarios, etc.)</li>
+          </ul>
+          <p>Cada tipo de información se almacena de forma distinta, por lo que existen diferentes tipos de variables para cada tipo de información.</p>
+        </li>
+        <li>Algunos lenguajes de programación (C, C++, Java, etc) exigen que antes de utilizar una variable se defina el tipo de información que se va a guardar en esa variable. Otros lenguajes de programación (Python, PHP, etc.) no lo exigen y es el intérprete del lenguaje el que decide el tipo de variable a utilizar en el momento que se guarda la información. Los lenguajes que requieren definir los tipos de las variables se denominan <strong>lenguajes tipificados</strong> y los que no se denominan <strong>lenguajes no tipificados</strong>. Python es un lenguaje no tipificado, aunque en Python 3.5 se ha introducido la posibilidad de <a href="https://docs.python.org/3/whatsnew/3.5.html#whatsnew-pep-484">indicar los tipos de datos</a> de los argumentos de las funciones y de los valores devueltos.</li>
+      </ul>
     </section>
 
-    <section id="variables-definir">
-      <h2>Definir una variable</h2>
+    <section id="variables-python">
+      <h3>Variables en Python</h3>
 
-      <p>Las variables en Python se crean cuando se definen por primera vez, es decir, cuando se les asigna un valor por primera vez. Para asignar un valor a una variable se utiliza el operador de igualdad (=). A la izquierda de la igualdad se escribe el nombre de la variable y a la derecha el valor que se quiere dar a la variable.</p>
+      <p>En algunos lenguajes de programación, las variables se pueden entender como "cajas" en las que se guardan los datos, pero en Python las variables son "etiquetas" que permiten hacer referencia a los datos (que se guardan en unas "cajas" llamadas objetos).</p>
 
-      <p>En el ejemplo siguiente se almacena el número decimal 2,5 en una variable de nombre <var>x</var> (como se comenta en el apartado anterior, realmente habría que decir que se crea la etiqueta <var>x</var> para hacer referencia al objeto número decimal 2.5). Fíjese en que los números decimales se escriben con punto (.) y no con coma (,).</p>
+      <p>Python es un <strong>lenguaje de programación orientado a objetos</strong> y su modelo de datos también está basado en objetos.</p>
+
+      <p>Para cada dato que aparece en un programa, Python crea un objeto que lo contiene. Cada objeto tiene:</p>
+      <ul>
+        <li>un identificador único (un número entero, distinto para cada objeto). El identificador permite a Python referirse al objeto sin ambigüedades.</li>
+        <li>un tipo de datos (entero, decimal, cadena de caracteres, etc.). El tipo de datos permite saber a Python qué operaciones pueden hacerse con el dato.</li>
+        <li>un valor (el propio dato).</li>
+      </ul>
+
+      <p>Así, las variables en Python no guardan los datos, sino que son simples nombres para poder hacer referencia a esos objetos. Si escribimos la instrucción ...</p>
 
       <div class="codigo">
-        <pre><span class="idle-prompt">&gt;&gt;&gt;</span> x = 2.5</pre>
+        <pre>a = 2</pre>
       </div>
 
-      <p>La variable se escribe siempre a la izquierda de la igualdad. Si se escribe al revés, Python genera un mensaje de error:</p>
+      <p>... Python:</p>
+      <ul>
+        <li>crea el objeto "2". Ese objeto tendrá un identificador único que se asigna en el momento de la creación y se conserva a lo largo del programa. En este caso, el objeto creado será de tipo número entero y guardará el valor 2.</li>
+        <li>asocia el nombre
+          <var>a</var> al objeto número entero 2 creado.</li>
+      </ul>
 
-      <div class="codigo">
-        <pre>
+      <p>Así, al describir la instrucción anterior no habría que decir 'la variable
+        <var>a</var> almacena el número entero 2', sino que habría que decir 'podemos llamar
+        <var>a</var> al objeto número entero 2'. La variable
+        <var>a</var> es como una etiqueta que nos permite hacer referencia al objeto "2", más cómoda de recordar y utilizar que el identificador del objeto.</p>
+
+      <hr class="corta" />
+
+      <p>Por otro lado, en Python se distingue entre objetos mutables y objetos inmutables:</p>
+
+      <ul>
+        <li>Los <strong>objetos inmutables</strong> son objetos que no se pueden modificar. Por ejemplo, los números, las cadenas y las tuplas son objetos inmutables</li>
+        <li>Los <strong>objetos mutables</strong> son objetos que se pueden modificar. Por ejemplo, las listas y los diccionarios son objetos mutables.</li>
+      </ul>
+
+      <p>En el caso de los objetos inmutables (como los números) no hay mucha diferencia entre considerar la variable como una caja o como una etiqueta, pero en el caso de los objetos mutables (como las listas) pensar en las variables como cajas puede llevar a error.</p>
+
+      <p>Por economía del lenguaje, en estos apuntes se utilizan expresiones como "guardar un valor en una variable" en vez de "guardar el valor en un objeto y asociar una variable al objeto", pero el alumno debe tener presente lo que ocurre en realidad en Python.</p>
+
+      <p>Más adelante en este curso, en las lecciones <a href="python-variables-2.html">Variables 2</a> y <a href="python-variables-3.html">Variables 3</a>, se profundiza en la idea de variable de Python.</p>
+    </section>
+
+  </section>
+
+  <section id="variables-definir">
+    <h2>Definir una variable</h2>
+
+    <p>Las variables en Python se crean cuando se definen por primera vez, es decir, cuando se les asigna un valor por primera vez. Para asignar un valor a una variable se utiliza el operador de igualdad (=). A la izquierda de la igualdad se escribe el nombre de la variable y a la derecha el valor que se quiere dar a la variable.</p>
+
+    <p>En el ejemplo siguiente se almacena el número decimal 2,5 en una variable de nombre
+      <var>x</var> (como se comenta en el apartado anterior, realmente habría que decir que se crea la etiqueta
+      <var>x</var> para hacer referencia al objeto número decimal 2.5). Fíjese en que los números decimales se escriben con punto (.) y no con coma (,).</p>
+
+    <div class="codigo">
+      <pre><span class="idle-prompt">&gt;&gt;&gt;</span> x = 2.5</pre>
+    </div>
+
+    <p>La variable se escribe siempre a la izquierda de la igualdad. Si se escribe al revés, Python genera un mensaje de error:</p>
+
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 2.5 = x
 <span class="idle-erro">SyntaxError: can't assign to literal</span>
 </pre>
-      </div>
-      <hr class="corta" />
+    </div>
+    <hr class="corta" />
 
-      <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre:</p>
+    <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> x = 2.5
 <span class="idle-prompt">&gt;&gt;&gt;</span> x
 <span class="idle-resp">2.5</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si una variable no se ha definido previamente, escribir su nombre genera un mensaje de error:</p>
+    <p>Si una variable no se ha definido previamente, escribir su nombre genera un mensaje de error:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> x = -10
 <span class="idle-prompt">&gt;&gt;&gt;</span> y
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     y
 NameError: name 'y' is not defined</span></pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Una variable puede almacenar números, texto o estructuras más complicadas (que se verán más adelante). Si se va a almacenar texto, el texto debe escribirse entre comillas simples (') o dobles ("), que son equivalentes. A las variables que almacenan texto se les suele llamar cadenas (de texto).</p>
+    <p>Una variable puede almacenar números, texto o estructuras más complicadas (que se verán más adelante). Si se va a almacenar texto, el texto debe escribirse entre comillas simples (') o dobles ("), que son equivalentes. A las variables que almacenan texto se les suele llamar cadenas (de texto).</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre
 '<span class="idle-resp">Pepito Conejo'</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Si no se escriben comillas, Python supone que estamos haciendo referencia a otra variable (que, si no está definida, genera un mensaje de error):</p>
+    <p>Si no se escriben comillas, Python supone que estamos haciendo referencia a otra variable (que, si no está definida, genera un mensaje de error):</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = Pepe
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
     nombre = Pepe
 NameError: name 'Pepe' is not defined</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = Pepito <span class="idle-errbg">Conejo</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="variables-borrar">
-      <h2>Borrar una variable</h2>
+  <section id="variables-borrar">
+    <h2>Borrar una variable</h2>
 
-      <p>La instrucción <span class="idle-rese">del</span> borra completamente una variable.</p>
+    <p>La instrucción <span class="idle-rese">del</span> borra completamente una variable.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> nombre
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre
@@ -272,63 +306,63 @@ NameError: name 'Pepe' is not defined</span>
     nombre
 NameError: name 'nombre' is not defined</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="variables-nombres">
-      <h2>Nombres de variables</h2>
+  <section id="variables-nombres">
+    <h2>Nombres de variables</h2>
 
-      <p>Aunque no es obligatorio, se recomienda que el nombre de la variable esté relacionado con la información que se almacena en ella, para que sea más fácil entender el programa. Si el programa es trivial o mientras se está escribiendo un programa, esto no parece muy importante, pero si se consulta un programa escrito por otra persona o escrito por uno mismo pero hace tiempo, resultará mucho más fácil entender el programa si los nombres están bien elegidos.</p>
+    <p>Aunque no es obligatorio, se recomienda que el nombre de la variable esté relacionado con la información que se almacena en ella, para que sea más fácil entender el programa. Si el programa es trivial o mientras se está escribiendo un programa, esto no parece muy importante, pero si se consulta un programa escrito por otra persona o escrito por uno mismo pero hace tiempo, resultará mucho más fácil entender el programa si los nombres están bien elegidos.</p>
 
-      <p>También se acostumbra a utilizar determinados nombres de variables en algunas ocasiones, como se verá más adelante, pero esto tampoco es obligatorio.</p>
+    <p>También se acostumbra a utilizar determinados nombres de variables en algunas ocasiones, como se verá más adelante, pero esto tampoco es obligatorio.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>El nombre de una variable debe empezar por una letra o por un guión bajo (_) y puede seguir con más letras, números o guiones bajos.</p>
+    <p>El nombre de una variable debe empezar por una letra o por un guión bajo (_) y puede seguir con más letras, números o guiones bajos.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> _x = 3.8
 <span class="idle-prompt">&gt;&gt;&gt;</span> _x
 <span class="idle-resp">3.8</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> x1 = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> x
 1<span class="idle-resp">100</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento
 <span class="idle-resp">'27 de octubre de 1997'</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p class="corta">Los nombres de variables pueden contener cualquier carácter alfabético (las del alfabeto inglés, pero también ñ, ç o vocales acentuadas) y guíones bajos. Lo que no pueden incluir es espacios en blanco</p>
+    <p class="corta">Los nombres de variables pueden contener cualquier carácter alfabético (las del alfabeto inglés, pero también ñ, ç o vocales acentuadas) y guíones bajos. Lo que no pueden incluir es espacios en blanco</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha de nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 </pre>
-      </div>
+    </div>
 
-      <p><strong>Nota</strong>: En Python 2 los nombres de variables no podían contener caracteres no ingleses.</p>
+    <p><strong>Nota</strong>: En Python 2 los nombres de variables no podían contener caracteres no ingleses.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Los nombres de las variables pueden contener mayúsculas, pero tenga en cuenta que Python distingue entre mayúsculas y minúsculas (en inglés se dice que Python es "case-sensitive").</p>
+    <p>Los nombres de las variables pueden contener mayúsculas, pero tenga en cuenta que Python distingue entre mayúsculas y minúsculas (en inglés se dice que Python es "case-sensitive").</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> Nombre = <span class="idle-cade">"Numa Nigerio"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nomBre = <span class="idle-cade">"Fulanito Mengánez"</span>
@@ -338,35 +372,35 @@ NameError: name 'nombre' is not defined</span>
 <span class="idle-resp">'Numa Nigerio'</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nomBre
 <span class="idle-resp">'Fulanito Mengánez'</span></pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Cuando el nombre de una variable contiene varias palabras, se aconseja separarlas con guiones bajos para facilitar la legibilidad, aunque también se utiliza la notación <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a>, en las que las palabras no se separan pero empiezan con mayúsculas (salvo la primera palabra).</p>
+    <p>Cuando el nombre de una variable contiene varias palabras, se aconseja separarlas con guiones bajos para facilitar la legibilidad, aunque también se utiliza la notación <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a>, en las que las palabras no se separan pero empiezan con mayúsculas (salvo la primera palabra).</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fechaDeNacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p class="corta">Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (las que IDLE escribe en <span class="idle-rese">naranja</span>) están prohibidas como nombres de variables:</p>
+    <p class="corta">Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (las que IDLE escribe en <span class="idle-rese">naranja</span>) están prohibidas como nombres de variables:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">lambda</span> = 3
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Los nombres de las funciones integradas sí que se pueden utilizar como nombres de variables, pero más vale no hacerlo porque a continuación ya no se puede utilizar la función como tal:</p>
-      <div class="codigo">
-        <pre>
+    <p>Los nombres de las funciones integradas sí que se pueden utilizar como nombres de variables, pero más vale no hacerlo porque a continuación ya no se puede utilizar la función como tal:</p>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span> = 3
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-erro">Traceback (most recent call last):
@@ -374,11 +408,11 @@ NameError: name 'nombre' is not defined</span>
     print("Hola")
 TypeError: 'int' object is not callable</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Borrando con <span class="idle-rese">del</span> la variable con nombre de función, se recupera la función.</p>
-      <div class="codigo">
-        <pre>
+    <p>Borrando con <span class="idle-rese">del</span> la variable con nombre de función, se recupera la función.</p>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span> = 3
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-erro">Traceback (most recent call last):
@@ -389,141 +423,152 @@ TypeError: 'int' object is not callable</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-resp">Hola</span>
 </pre>
-      </div>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="variables-tipos">
-      <h2>Tipos de variables</h2>
+  <section id="variables-tipos">
+    <h2>Tipos de variables</h2>
 
-      <p>En el apartado anterior hay definiciones de algunos de los tipos de variables que hay en Python: números decimales, números enteros y cadenas (una o más letras).</p>
+    <p>En el apartado anterior hay definiciones de algunos de los tipos de variables que hay en Python: números decimales, números enteros y cadenas (una o más letras).</p>
 
-      <p>Aunque se definan de forma similar, para Python no es lo mismo un número entero, un número decimal o una cadena ya que, por ejemplo, dos números se pueden multiplicar pero dos cadenas no (curiosamente, una cadena sí que se puede multiplicar por un número).</p>
+    <p>Aunque se definan de forma similar, para Python no es lo mismo un número entero, un número decimal o una cadena ya que, por ejemplo, dos números se pueden multiplicar pero dos cadenas no (curiosamente, una cadena sí que se puede multiplicar por un número).</p>
 
-      <p>Por tanto, estas tres definiciones de variables no son equivalentes:</p>
+    <p>Por tanto, estas tres definiciones de variables no son equivalentes:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = 1997
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = 1997.0
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = <span class="idle-cade">"1997"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"octubre"</span>, 1997]
 </pre>
-      </div>
+    </div>
 
-      <p>En el primer caso la variable <var>fecha</var> está almacenando un número entero, en el segundo <var>fecha</var> está almacenando un número decimal y en el tercero <var>fecha</var> está almacenando una cadena de cuatro letras. En el cuarto, <var>fecha</var> está almacenando una lista (un tipo de variable que puede contener varios elementos ordenados).</p>
+    <p>En el primer caso la variable
+      <var>fecha</var> está almacenando un número entero, en el segundo
+      <var>fecha</var> está almacenando un número decimal y en el tercero
+      <var>fecha</var> está almacenando una cadena de cuatro letras. En el cuarto,
+      <var>fecha</var> está almacenando una lista (un tipo de variable que puede contener varios elementos ordenados).</p>
 
-      <p>Este ejemplo demuestra también que se puede volver a definir una variable. Python modifica el tipo de la variable automáticamente.</p>
+    <p>Este ejemplo demuestra también que se puede volver a definir una variable. Python modifica el tipo de la variable automáticamente.</p>
 
-    </section>
+  </section>
 
-    <section id="variables-idle-valores">
-      <h2>Mostrar el valor de las variables en IDLE</h2>
+  <section id="variables-idle-valores">
+    <h2>Mostrar el valor de las variables en IDLE</h2>
 
-      <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre.</p>
+    <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 2
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">2</span></pre>
-      </div>
+    </div>
 
-      <p>También se puede conocer el valor de varias variables a la vez escribiéndolas entre comas (IDLE las mostrará entre paréntesis porque Python las considera como un conjunto ordenado llamado tupla), como muestra el siguiente ejemplo:</p>
+    <p>También se puede conocer el valor de varias variables a la vez escribiéndolas entre comas (IDLE las mostrará entre paréntesis porque Python las considera como un conjunto ordenado llamado tupla), como muestra el siguiente ejemplo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = b = 2
 <span class="idle-prompt">&gt;&gt;&gt;</span> c = <span class="idle-cade">"pepe"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">2</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> c, b
 <span class="idle-resp">('pepe', 2)</span></pre>
-      </div>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="variables-utilizar">
-      <h2>Utilizar o modificar variables ya definidas</h2>
+  <section id="variables-utilizar">
+    <h2>Utilizar o modificar variables ya definidas</h2>
 
-      <p>Una vez se ha definido una variable, se puede utilizar para hacer cálculos o para definir nuevas variables, como muestran los siguientes ejemplos:</p>
+    <p>Una vez se ha definido una variable, se puede utilizar para hacer cálculos o para definir nuevas variables, como muestran los siguientes ejemplos:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 2
 <span class="idle-prompt">&gt;&gt;&gt;</span> a + 3
 <span class="idle-resp">5</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> horas = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> minutos = 60 * horas
 <span class="idle-prompt">&gt;&gt;&gt;</span> segundos = 60 * minutos
 <span class="idle-prompt">&gt;&gt;&gt;</span> segundos
 <span class="idle-resp">18000</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> horas = 1
 <span class="idle-prompt">&gt;&gt;&gt;</span> minutos = 2
 <span class="idle-prompt">&gt;&gt;&gt;</span> segundos = 3
 <span class="idle-prompt">&gt;&gt;&gt;</span> segundos + 60 * minutos + 3600 * horas
 <span class="idle-resp">3723</span>
 </pre>
-      </div>
+    </div>
 
-      <p>En caso de utilizar una variable no definida anteriormente, Python genera un mensaje de error.</p>
+    <p>En caso de utilizar una variable no definida anteriormente, Python genera un mensaje de error.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> dias = 7 * semanas
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     dias = 7 * semanas
 NameError: name 'semanas' is not defined</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Se puede redefinir una variable a partir de su propio valor. Por ejemplo</p>
+    <p>Se puede redefinir una variable a partir de su propio valor. Por ejemplo</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = a + 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">15</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Esto es posible porque el símbolo de igualdad significa siempre asignación. Lo que hace Python es calcular la expresión situada a la derecha de la igualdad y después guardar el resultado en la variable situada a la izquiereda de la igualdad. En el ejemplo, Python coge el valor almacenado en la variable <var>a</var> (10), le suma 5, y el resultado (15) lo guarda en la misma variable <var>a</var>.</p>
+    <p>Esto es posible porque el símbolo de igualdad significa siempre asignación. Lo que hace Python es calcular la expresión situada a la derecha de la igualdad y después guardar el resultado en la variable situada a la izquiereda de la igualdad. En el ejemplo, Python coge el valor almacenado en la variable
+      <var>a</var> (10), le suma 5, y el resultado (15) lo guarda en la misma variable
+      <var>a</var>.</p>
 
-      <p>Es importante tener presente que las igualdades son siempre asignaciones, nunca ecuaciones. En el ejemplo, la expresión a = a + 5 no tendría mucho sentido como ecuación (no tendría solución), pero como asignación lo que hace es aumentar en 5 el valor de la variable <var>a</var>.</p>
+    <p>Es importante tener presente que las igualdades son siempre asignaciones, nunca ecuaciones. En el ejemplo, la expresión a = a + 5 no tendría mucho sentido como ecuación (no tendría solución), pero como asignación lo que hace es aumentar en 5 el valor de la variable
+      <var>a</var>.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Es importante también tener presente que los nombres de las variables no tienen sentido real para Python, son simples etiquetas para referirse al contenido.</p>
+    <p>Es importante también tener presente que los nombres de las variables no tienen sentido real para Python, son simples etiquetas para referirse al contenido.</p>
 
-      <p>Por ejemplo, en el siguiente ejemplo se crean dos variables y se suman, aunque en el mundo real hay gente que opina que se pueden sumar <var>peras</var> y <var>manzanas</var> ;-):</p>
+    <p>Por ejemplo, en el siguiente ejemplo se crean dos variables y se suman, aunque en el mundo real hay gente que opina que se pueden sumar
+      <var>peras</var> y
+      <var>manzanas</var> ;-):</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> peras = 7
 <span class="idle-prompt">&gt;&gt;&gt;</span> manzanas = 22
 <span class="idle-prompt">&gt;&gt;&gt;</span> peras + manzanas
 <span class="idle-resp">29</span>
 </pre>
-      </div>
+    </div>
 
-      <p>O el siguiente ejemplo en el que Python permite realizar cualquier operación con las variables <var>distancia</var> y <var>tiempo</var>, aunque no tengan sentido físico (de hecho, sólo la división lo tiene, es la velocidad).</p>
+    <p>O el siguiente ejemplo en el que Python permite realizar cualquier operación con las variables
+      <var>distancia</var> y
+      <var>tiempo</var>, aunque no tengan sentido físico (de hecho, sólo la división lo tiene, es la velocidad).</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia + tiempo
@@ -533,23 +578,23 @@ NameError: name 'semanas' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
 <span class="idle-resp">25.0</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Cuando se modifica una variable, el valor anterior se pierde y no se puede recuperar (salvo si se realiza la operación contraria o hay otra variable que conserva el valor anterior).</p>
+    <p>Cuando se modifica una variable, el valor anterior se pierde y no se puede recuperar (salvo si se realiza la operación contraria o hay otra variable que conserva el valor anterior).</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Hay que tener cuidado al modificar una variable que se ha utilizado para definir otras variables, porque esto puede afectar al resto de variables:</p>
+    <p>Hay que tener cuidado al modificar una variable que se ha utilizado para definir otras variables, porque esto puede afectar al resto de variables:</p>
 
-      <p><strong>Nota</strong>: Este punto se trata con más detalle en la <a href="python-variables-2.html">lección Variables 2</a>.</p>
+    <p><strong>Nota</strong>: Este punto se trata con más detalle en la <a href="python-variables-2.html">lección Variables 2</a>.</p>
 
-      <ul>
-        <li>Si se trata objetos inmutables, el resto de variables no resultan afectadas, como muestra el siguiente ejemplo:
+    <ul>
+      <li>Si se trata objetos inmutables, el resto de variables no resultan afectadas, como muestra el siguiente ejemplo:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
     <span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
@@ -558,12 +603,12 @@ NameError: name 'semanas' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(20, 10)</span>
 </pre>
-          </div>
-        </li>
-        <li>Pero si se trata de objetos mutables y al modificar la variable se modifica el objeto, el resto de variables sí resultan afectadas, como muestra el siguiente ejemplo:
+        </div>
+      </li>
+      <li>Pero si se trata de objetos mutables y al modificar la variable se modifica el objeto, el resto de variables sí resultan afectadas, como muestra el siguiente ejemplo:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [10]
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
@@ -572,134 +617,134 @@ NameError: name 'semanas' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">([20], [20])</span>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="asignaciones-aumentadas">
-      <h2>Asignaciones aumentadas</h2>
+  <section id="asignaciones-aumentadas">
+    <h2>Asignaciones aumentadas</h2>
 
-      <p>Cuando una variabe se modifica a partir de su propio valor, se puede utilizar la denominada "<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">asignación aumentada</a>", una notación compacta que existe también en otros lenguajes de programación.</p>
+    <p>Cuando una variabe se modifica a partir de su propio valor, se puede utilizar la denominada "<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">asignación aumentada</a>", una notación compacta que existe también en otros lenguajes de programación.</p>
 
-      <p>Por ejemplo:</p>
+    <p>Por ejemplo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a += 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">15</span>
 </pre>
-      </div>
+    </div>
 
-      <p>es equivalente a:</p>
+    <p>es equivalente a:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = a + 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> a
 <span class="idle-resp">15</span>
 </pre>
-      </div>
+    </div>
 
-      <p>En general:</p>
+    <p>En general:</p>
 
-      <table>
-        <tbody class="mcl-centrado">
-          <tr>
-            <th style="padding-right: 20px;">Asignación aumentada:</th>
-            <th>es equivalente a:</th>
-          </tr>
-          <tr>
-            <td>a += b</td>
-            <td>a = a + b</td>
-          </tr>
-          <tr>
-            <td>a -= b</td>
-            <td>a = a - b</td>
-          </tr>
-          <tr>
-            <td>a *= b</td>
-            <td>a = a * b</td>
-          </tr>
-          <tr>
-            <td>a /= b</td>
-            <td>a = a / b</td>
-          </tr>
-          <tr>
-            <td>a **= b</td>
-            <td>a = a ** b</td>
-          </tr>
-          <tr>
-            <td>a //= b</td>
-            <td>a = a // b</td>
-          </tr>
-          <tr>
-            <td>a %= b</td>
-            <td>a = a % b</td>
-          </tr>
-        </tbody>
-      </table>
+    <table>
+      <tbody class="mcl-centrado">
+        <tr>
+          <th style="padding-right: 20px;">Asignación aumentada:</th>
+          <th>es equivalente a:</th>
+        </tr>
+        <tr>
+          <td>a += b</td>
+          <td>a = a + b</td>
+        </tr>
+        <tr>
+          <td>a -= b</td>
+          <td>a = a - b</td>
+        </tr>
+        <tr>
+          <td>a *= b</td>
+          <td>a = a * b</td>
+        </tr>
+        <tr>
+          <td>a /= b</td>
+          <td>a = a / b</td>
+        </tr>
+        <tr>
+          <td>a **= b</td>
+          <td>a = a ** b</td>
+        </tr>
+        <tr>
+          <td>a //= b</td>
+          <td>a = a // b</td>
+        </tr>
+        <tr>
+          <td>a %= b</td>
+          <td>a = a % b</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p><strong>Nota</strong>: Las dos notaciones son completamente equivalentes en el caso de los objetos inmutables (números, cadenas, tuplas), pero en el caso de los objetos mutables (listas, diccionarios, etc.) hay una pequeña diferencia que se comenta en <a href="python-variables-2.html">la lección Variables 2</a></p>
+    <p><strong>Nota</strong>: Las dos notaciones son completamente equivalentes en el caso de los objetos inmutables (números, cadenas, tuplas), pero en el caso de los objetos mutables (listas, diccionarios, etc.) hay una pequeña diferencia que se comenta en <a href="python-variables-2.html">la lección Variables 2</a></p>
 
-      <p>Lo que no se permite en Python son los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
+    <p>Lo que no se permite en Python son los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> a++
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="variables-varias">
-      <h2>Definir y modificar varias variables a la vez</h2>
+  <section id="variables-varias">
+    <h2>Definir y modificar varias variables a la vez</h2>
 
-      <p>En una misma línea se pueden definir simultáneamente varias variables, con el mismo valor o con valores distintos, como muestra el siguiente ejemplo:</p>
+    <p>En una misma línea se pueden definir simultáneamente varias variables, con el mismo valor o con valores distintos, como muestra el siguiente ejemplo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = b = 99
 <span class="idle-prompt">&gt;&gt;&gt;</span> c, d, e = <span class="idle-cade">"Mediterráneo"</span>, 10, [<span class="idle-cade">"pan"</span>, <span class="idle-cade">"queso"</span>]
 </pre>
-      </div>
+    </div>
 
-      <p>En el primer caso las dos variables tendrán el mismo valor. En el segundo caso la primera variable tomará el primer valor y así sucesivamente.</p>
+    <p>En el primer caso las dos variables tendrán el mismo valor. En el segundo caso la primera variable tomará el primer valor y así sucesivamente.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si el número de variables no coincide con el de valores, Python genera un mensaje de error.</p>
+    <p>Si el número de variables no coincide con el de valores, Python genera un mensaje de error.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     a, b, c = 1, 2
 ValueError: need more than 2 values to unpack</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2, 3, 4
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     a, b, c = 1, 2, 3, 4
 ValueError: too many values to unpack</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Se pueden modificar varias variables en una sola instrucción y la modificación se realiza en un solo paso.</p>
+    <p>Se pueden modificar varias variables en una sola instrucción y la modificación se realiza en un solo paso.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(5, 10)</span>
@@ -707,12 +752,12 @@ ValueError: too many values to unpack</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(10, 5)</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Obsérvese que si este procedimiento lo hubiéramos hecho paso a paso, el resultado hubiera sido distinto:</p>
+    <p>Obsérvese que si este procedimiento lo hubiéramos hecho paso a paso, el resultado hubiera sido distinto:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(5, 10)</span>
@@ -721,12 +766,12 @@ ValueError: too many values to unpack</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(10, 10)</span>
 </pre>
-      </div>
+    </div>
 
-      <p>El motivo de este resultado se entiende fácilmente mostrando los valores tras cada operación:</p>
+    <p>El motivo de este resultado se entiende fácilmente mostrando los valores tras cada operación:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(5, 10)</span>
@@ -737,15 +782,15 @@ ValueError: too many values to unpack</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a, b
 <span class="idle-resp">(10, 10)</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

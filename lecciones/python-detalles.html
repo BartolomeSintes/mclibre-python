@@ -1,139 +1,139 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Detalles del lenguaje. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalles del lenguaje. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Detalles del lenguaje Python</h1>
+<body>
+  <h1>Detalles del lenguaje Python</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Detalles</h2>
+    <div class="toc">
+      <h2>Detalles</h2>
 
-        <ul>
-          <li><a href="#division-enteros">División de enteros</a></li>
-          <li><a href="#expresiones-logicas">Evaluación expr. lógicas</a></li>
-          <li><a href="#otros">Otros</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#division-enteros">División de enteros</a></li>
+        <li><a href="#expresiones-logicas">Evaluación expr. lógicas</a></li>
+        <li><a href="#otros">Otros</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="division-enteros">
-      <h2>División de números enteros</h2>
+  <section id="division-enteros">
+    <h2>División de números enteros</h2>
 
-      <p>En Matemáticas, la división de números enteros está definida de manera que <strong>el resto sea siempre positivo</strong>. Así, estos serían en Matemáticas los resultados de cuatro divisiones en los que intervienen enteros positivos y negativos:</p>
+    <p>En Matemáticas, la división de números enteros está definida de manera que <strong>el resto sea siempre positivo</strong>. Así, estos serían en Matemáticas los resultados de cuatro divisiones en los que intervienen enteros positivos y negativos:</p>
 
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="620" viewBox="0 0 620 100" style="font-size: 30px;">
-        <text x="35" y="35" text-anchor="end">13</text>
-        <text x="90" y="35" text-anchor="end">4</text>
-        <text x="90" y="90" text-anchor="end">3</text>
-        <text x="35" y="90" text-anchor="end">1</text>
-        <line x1="50" y1="0" x2="50" y2="50" stroke-width="2" stroke="black" />
-        <line x1="50" y1="50" x2="100" y2="50" stroke-width="2" stroke="black" />
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="620" viewBox="0 0 620 100" style="font-size: 30px;">
+      <text x="35" y="35" text-anchor="end">13</text>
+      <text x="90" y="35" text-anchor="end">4</text>
+      <text x="90" y="90" text-anchor="end">3</text>
+      <text x="35" y="90" text-anchor="end">1</text>
+      <line x1="50" y1="0" x2="50" y2="50" stroke-width="2" stroke="black" />
+      <line x1="50" y1="50" x2="100" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="185" y="35" text-anchor="end">13</text>
-        <text x="240" y="35" text-anchor="end">-4</text>
-        <text x="240" y="90" text-anchor="end">-3</text>
-        <text x="185" y="90" text-anchor="end">1</text>
-        <line x1="200" y1="0" x2="200" y2="50" stroke-width="2" stroke="black" />
-        <line x1="200" y1="50" x2="250" y2="50" stroke-width="2" stroke="black" />
+      <text x="185" y="35" text-anchor="end">13</text>
+      <text x="240" y="35" text-anchor="end">-4</text>
+      <text x="240" y="90" text-anchor="end">-3</text>
+      <text x="185" y="90" text-anchor="end">1</text>
+      <line x1="200" y1="0" x2="200" y2="50" stroke-width="2" stroke="black" />
+      <line x1="200" y1="50" x2="250" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="335" y="35" text-anchor="end">-13</text>
-        <text x="390" y="35" text-anchor="end">4</text>
-        <text x="390" y="90" text-anchor="end">-4</text>
-        <text x="335" y="90" text-anchor="end">3</text>
-        <line x1="350" y1="0" x2="350" y2="50" stroke-width="2" stroke="black" />
-        <line x1="350" y1="50" x2="400" y2="50" stroke-width="2" stroke="black" />
+      <text x="335" y="35" text-anchor="end">-13</text>
+      <text x="390" y="35" text-anchor="end">4</text>
+      <text x="390" y="90" text-anchor="end">-4</text>
+      <text x="335" y="90" text-anchor="end">3</text>
+      <line x1="350" y1="0" x2="350" y2="50" stroke-width="2" stroke="black" />
+      <line x1="350" y1="50" x2="400" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="485" y="35" text-anchor="end">-13</text>
-        <text x="540" y="35" text-anchor="end">-4</text>
-        <text x="540" y="90" text-anchor="end">4</text>
-        <text x="485" y="90" text-anchor="end">3</text>
-        <line x1="500" y1="0" x2="500" y2="50" stroke-width="2" stroke="black" />
-        <line x1="500" y1="50" x2="550" y2="50" stroke-width="2" stroke="black" />
-      </svg>
+      <text x="485" y="35" text-anchor="end">-13</text>
+      <text x="540" y="35" text-anchor="end">-4</text>
+      <text x="540" y="90" text-anchor="end">4</text>
+      <text x="485" y="90" text-anchor="end">3</text>
+      <line x1="500" y1="0" x2="500" y2="50" stroke-width="2" stroke="black" />
+      <line x1="500" y1="50" x2="550" y2="50" stroke-width="2" stroke="black" />
+    </svg>
 
-      <p>Pero en los lenguajes de programación, la división de números enteros no sigue siempre esa regla.</p>
+    <p>Pero en los lenguajes de programación, la división de números enteros no sigue siempre esa regla.</p>
 
-      <p>En el caso de Python, la regla es que <strong>el resto sea del mismo signo que el divisor</strong>. Así, estos serían en Python los resultados de las cuatro divisiones del ejemplo anterior, que se obtendrían con los operadores // y %:</p>
+    <p>En el caso de Python, la regla es que <strong>el resto sea del mismo signo que el divisor</strong>. Así, estos serían en Python los resultados de las cuatro divisiones del ejemplo anterior, que se obtendrían con los operadores // y %:</p>
 
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="620" viewBox="0 0 620 100" style="font-size: 30px;">
-        <text x="35" y="35" text-anchor="end">13</text>
-        <text x="90" y="35" text-anchor="end">4</text>
-        <text x="90" y="90" text-anchor="end">3</text>
-        <text x="35" y="90" text-anchor="end">1</text>
-        <line x1="50" y1="0" x2="50" y2="50" stroke-width="2" stroke="black" />
-        <line x1="50" y1="50" x2="100" y2="50" stroke-width="2" stroke="black" />
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="620" viewBox="0 0 620 100" style="font-size: 30px;">
+      <text x="35" y="35" text-anchor="end">13</text>
+      <text x="90" y="35" text-anchor="end">4</text>
+      <text x="90" y="90" text-anchor="end">3</text>
+      <text x="35" y="90" text-anchor="end">1</text>
+      <line x1="50" y1="0" x2="50" y2="50" stroke-width="2" stroke="black" />
+      <line x1="50" y1="50" x2="100" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="185" y="35" text-anchor="end">13</text>
-        <text x="240" y="35" text-anchor="end">-4</text>
-        <text x="240" y="90" text-anchor="end">-4</text>
-        <text x="185" y="90" text-anchor="end">-3</text>
-        <line x1="200" y1="0" x2="200" y2="50" stroke-width="2" stroke="black" />
-        <line x1="200" y1="50" x2="250" y2="50" stroke-width="2" stroke="black" />
+      <text x="185" y="35" text-anchor="end">13</text>
+      <text x="240" y="35" text-anchor="end">-4</text>
+      <text x="240" y="90" text-anchor="end">-4</text>
+      <text x="185" y="90" text-anchor="end">-3</text>
+      <line x1="200" y1="0" x2="200" y2="50" stroke-width="2" stroke="black" />
+      <line x1="200" y1="50" x2="250" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="335" y="35" text-anchor="end">-13</text>
-        <text x="390" y="35" text-anchor="end">4</text>
-        <text x="390" y="90" text-anchor="end">-4</text>
-        <text x="335" y="90" text-anchor="end">3</text>
-        <line x1="350" y1="0" x2="350" y2="50" stroke-width="2" stroke="black" />
-        <line x1="350" y1="50" x2="400" y2="50" stroke-width="2" stroke="black" />
+      <text x="335" y="35" text-anchor="end">-13</text>
+      <text x="390" y="35" text-anchor="end">4</text>
+      <text x="390" y="90" text-anchor="end">-4</text>
+      <text x="335" y="90" text-anchor="end">3</text>
+      <line x1="350" y1="0" x2="350" y2="50" stroke-width="2" stroke="black" />
+      <line x1="350" y1="50" x2="400" y2="50" stroke-width="2" stroke="black" />
 
-        <text x="485" y="35" text-anchor="end">-13</text>
-        <text x="540" y="35" text-anchor="end">-4</text>
-        <text x="540" y="90" text-anchor="end">3</text>
-        <text x="485" y="90" text-anchor="end">-1</text>
-        <line x1="500" y1="0" x2="500" y2="50" stroke-width="2" stroke="black" />
-        <line x1="500" y1="50" x2="550" y2="50" stroke-width="2" stroke="black" />
-      </svg>
+      <text x="485" y="35" text-anchor="end">-13</text>
+      <text x="540" y="35" text-anchor="end">-4</text>
+      <text x="540" y="90" text-anchor="end">3</text>
+      <text x="485" y="90" text-anchor="end">-1</text>
+      <line x1="500" y1="0" x2="500" y2="50" stroke-width="2" stroke="black" />
+      <line x1="500" y1="50" x2="550" y2="50" stroke-width="2" stroke="black" />
+    </svg>
 
-      <p>Si el divisor es positivo, el resultado es el mismo, pero si el divisor es negativo, el resultado es diferente.</p>
+    <p>Si el divisor es positivo, el resultado es el mismo, pero si el divisor es negativo, el resultado es diferente.</p>
 
-      <p>Otros lenguajes siguen otras reglas. Por ejemplo, en JavaScript y en PHP el resto tiene el mismo signo que el dividendo y en otros, y en C o C++, el resultado depende del compilador.</p>
+    <p>Otros lenguajes siguen otras reglas. Por ejemplo, en JavaScript y en PHP el resto tiene el mismo signo que el dividendo y en otros, y en C o C++, el resultado depende del compilador.</p>
 
-      <p>Referencia: <a href="https://en.wikipedia.org/wiki/Modulo_operation">Resto de la división de enteros (Wikipedia)</a></p>
-    </section>
+    <p>Referencia: <a href="https://en.wikipedia.org/wiki/Modulo_operation">Resto de la división de enteros (Wikipedia)</a></p>
+  </section>
 
-    <section id="expresiones-logicas">
-      <h2>Evaluación de expresiones lógicas</h2>
+  <section id="expresiones-logicas">
+    <h2>Evaluación de expresiones lógicas</h2>
 
-      <p>Python permite utilizar valores no booleanos en las expresiones lógicas. Para evaluar las expresiones, Python convierte esos valores en booleanos. Lo curioso en estos casos es que la respuesta de Python no es un valor booleano, sino alguno de los valores de la expresión. Por ejemplo:</p>
+    <p>Python permite utilizar valores no booleanos en las expresiones lógicas. Para evaluar las expresiones, Python convierte esos valores en booleanos. Lo curioso en estos casos es que la respuesta de Python no es un valor booleano, sino alguno de los valores de la expresión. Por ejemplo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 2 <span class="idle-rese">or</span> 3
 <span class="idle-resp">2</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">and</span> 5
 <span class="idle-resp">5</span></pre>
-      </div>
+    </div>
 
-      <p>Desde el punto de vista lógico, ambas respuestas son correctas. Teniendo en cuenta que los números distintos de 0 se consideran <span class="idle-rese">True</span>, el resultado de las dos expresiones es <span class="idle-rese">True</span>. Python nos contesta con dos números distintos de cero, que considerados como booleanos, son <span class="idle-rese">True</span>.</p>
+    <p>Desde el punto de vista lógico, ambas respuestas son correctas. Teniendo en cuenta que los números distintos de 0 se consideran <span class="idle-rese">True</span>, el resultado de las dos expresiones es <span class="idle-rese">True</span>. Python nos contesta con dos números distintos de cero, que considerados como booleanos, son <span class="idle-rese">True</span>.</p>
 
-      <p>La pregunta que surge es por qué Python contesta los valores que contesta y no otros (3 en ambos casos, o cualquier otro valor distinto de cero).</p>
+    <p>La pregunta que surge es por qué Python contesta los valores que contesta y no otros (3 en ambos casos, o cualquier otro valor distinto de cero).</p>
 
-      <p>La respuesta se encuentra en la manera cómo Python evalúa las expresiones. Al evaluar las expresiones, hay un momento en que Python ya sabe la respuesta final, sin necesidad de terminar las expresiones. El valor que contesta es precisamente el valor con el que ya sabe la respuesta.</p>
+    <p>La respuesta se encuentra en la manera cómo Python evalúa las expresiones. Al evaluar las expresiones, hay un momento en que Python ya sabe la respuesta final, sin necesidad de terminar las expresiones. El valor que contesta es precisamente el valor con el que ya sabe la respuesta.</p>
 
-      <p>Por ejemplo, al evaluar 2 <span class="idle-rese">or</span> 3, como se trata de un <span class="idle-rese">or</span>, en cuanto Python evalúa el primer valor (2, o sea <span class="idle-rese">True</span>), ya sabe que el valor final va a ser <span class="idle-rese">True</span>. Por eso contesta 2.</p>
+    <p>Por ejemplo, al evaluar 2 <span class="idle-rese">or</span> 3, como se trata de un <span class="idle-rese">or</span>, en cuanto Python evalúa el primer valor (2, o sea <span class="idle-rese">True</span>), ya sabe que el valor final va a ser <span class="idle-rese">True</span>. Por eso contesta 2.</p>
 
-      <p>Sin embargo, el evaluar 3 <span class="idle-rese">and</span> 5, como se trata de un <span class="idle-rese">and</span>, Python tiene que evaluar los dos valores. Como los dos son <span class="idle-rese">True</span>, el resultado es <span class="idle-rese">True</span>. Python contesta entonces el último valor que ha evaluado, 5.</p>
+    <p>Sin embargo, el evaluar 3 <span class="idle-rese">and</span> 5, como se trata de un <span class="idle-rese">and</span>, Python tiene que evaluar los dos valores. Como los dos son <span class="idle-rese">True</span>, el resultado es <span class="idle-rese">True</span>. Python contesta entonces el último valor que ha evaluado, 5.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Los ejemplos siguientes muestran cómo Python sigue este criterio en expresiones más complejas:</p>
-      <div class="codigo">
-        <pre>
+    <p>Los ejemplos siguientes muestran cómo Python sigue este criterio en expresiones más complejas:</p>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 0 <span class="idle-rese">or</span> "" <span class="idle-rese">or</span> "Pepe" <span class="idle-rese">or</span> True
 <span class="idle-resp">'Pepe'</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3  <span class="idle-rese">and</span> "" <span class="idle-rese">and</span> 5 <span class="idle-rese">and</span> [1, 2, 3]
@@ -142,23 +142,23 @@
 <span class="idle-resp">4</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (4  <span class="idle-rese">or</span> 3) <span class="idle-rese">and</span> (2 <span class="idle-rese">or</span> 5)
 <span class="idle-resp">2</span></pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="otros">
-      <h2>Otros</h2>
+  <section id="otros">
+    <h2>Otros</h2>
 
-      <ul>
-        <li><a href="https://docs.python.org/3/faq/design.html">Python 3 Design and History FAQ</a></li>
-      </ul>
-    </section>
+    <ul>
+      <li><a href="https://docs.python.org/3/faq/design.html">Python 3 Design and History FAQ</a></li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 16 de febrero de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 16 de febrero de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

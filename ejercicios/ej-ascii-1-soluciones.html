@@ -1,100 +1,100 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soluciones (1). ASCII bucle for. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones (1). ASCII bucle for. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Dibujos ASCII - Bucle <span class="idle-rese">for</span> - Soluciones (1)</h1>
+<body>
+  <h1>Dibujos ASCII - Bucle <span class="idle-rese">for</span> - Soluciones (1)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>ASCII <span class="idle-rese">for</span> (1)</h2>
+    <div class="toc">
+      <h2>ASCII <span class="idle-rese">for</span> (1)</h2>
 
-        <h3><a href="ej-ascii-1.html">Enunciados</a></h3>
-        <ul>
-          <li><a href="ej-ascii-1.html#ejercicio-1">A. Bucles no anidados</a><br />
-            <a href="ej-ascii-1.html#ejercicio-1-1">1</a> -
-            <a href="ej-ascii-1.html#ejercicio-1-2">2</a> -
-            <a href="ej-ascii-1.html#ejercicio-1-3">3</a> -
-            <a href="ej-ascii-1.html#ejercicio-1-4">4</a>
-          </li>
-          <li><a href="ej-ascii-1.html#ejercicio-2">B. Bucles anidados (independientes)</a><br />
-            <a href="ej-ascii-1.html#ejercicio-2-1">1</a> -
-            <a href="ej-ascii-1.html#ejercicio-2-2">2</a> -
-            <a href="ej-ascii-1.html#ejercicio-2-3">3</a> -
-            <a href="ej-ascii-1.html#ejercicio-2-4">4</a> -
-            <a href="ej-ascii-1.html#ejercicio-2-5">5</a>
-          </li>
-          <li><a href="ej-ascii-1.html#ejercicio-3">C. Bucles anidados (independientes)</a><br />
-            <a href="ej-ascii-1.html#ejercicio-3-1">1</a> -
-            <a href="ej-ascii-1.html#ejercicio-3-2">2</a> -
-            <a href="ej-ascii-1.html#ejercicio-3-3">3</a> -
-            <a href="ej-ascii-1.html#ejercicio-3-4">4</a> -
-            <a href="ej-ascii-1.html#ejercicio-3-5">5</a> -
-            <a href="ej-ascii-1.html#ejercicio-3-6">6</a></li>
-        </ul>
+      <h3><a href="ej-ascii-1.html">Enunciados</a></h3>
+      <ul>
+        <li><a href="ej-ascii-1.html#ejercicio-1">A. Bucles no anidados</a><br />
+          <a href="ej-ascii-1.html#ejercicio-1-1">1</a> -
+          <a href="ej-ascii-1.html#ejercicio-1-2">2</a> -
+          <a href="ej-ascii-1.html#ejercicio-1-3">3</a> -
+          <a href="ej-ascii-1.html#ejercicio-1-4">4</a>
+        </li>
+        <li><a href="ej-ascii-1.html#ejercicio-2">B. Bucles anidados (independientes)</a><br />
+          <a href="ej-ascii-1.html#ejercicio-2-1">1</a> -
+          <a href="ej-ascii-1.html#ejercicio-2-2">2</a> -
+          <a href="ej-ascii-1.html#ejercicio-2-3">3</a> -
+          <a href="ej-ascii-1.html#ejercicio-2-4">4</a> -
+          <a href="ej-ascii-1.html#ejercicio-2-5">5</a>
+        </li>
+        <li><a href="ej-ascii-1.html#ejercicio-3">C. Bucles anidados (independientes)</a><br />
+          <a href="ej-ascii-1.html#ejercicio-3-1">1</a> -
+          <a href="ej-ascii-1.html#ejercicio-3-2">2</a> -
+          <a href="ej-ascii-1.html#ejercicio-3-3">3</a> -
+          <a href="ej-ascii-1.html#ejercicio-3-4">4</a> -
+          <a href="ej-ascii-1.html#ejercicio-3-5">5</a> -
+          <a href="ej-ascii-1.html#ejercicio-3-6">6</a></li>
+      </ul>
 
-        <h3>Soluciones</h3>
-        <ul>
-          <li><a href="#ejercicio-1">A. Bucles no anidados</a><br />
-            <a href="#ejercicio-1-1">1</a> -
-            <a href="#ejercicio-1-2">2</a> -
-            <a href="#ejercicio-1-3">3</a> -
-            <a href="#ejercicio-1-4">4</a>
-          </li>
-          <li><a href="#ejercicio-2">B. Bucles anidados (independientes)</a><br />
-            <a href="#ejercicio-2-1">1</a> -
-            <a href="#ejercicio-2-2">2</a> -
-            <a href="#ejercicio-2-3">3</a> -
-            <a href="#ejercicio-2-4">4</a> -
-            <a href="#ejercicio-2-5">5</a>
-          </li>
-          <li><a href="#ejercicio-3">C. Bucles anidados (independientes)</a><br />
-            <a href="#ejercicio-3-1">1</a> -
-            <a href="#ejercicio-3-2">2</a> -
-            <a href="#ejercicio-3-3">3</a> -
-            <a href="#ejercicio-3-4">4</a> -
-            <a href="#ejercicio-3-5">5</a> -
-            <a href="#ejercicio-3-6">6</a></li>
-        </ul>
-      </div>
-    </nav>
+      <h3>Soluciones</h3>
+      <ul>
+        <li><a href="#ejercicio-1">A. Bucles no anidados</a><br />
+          <a href="#ejercicio-1-1">1</a> -
+          <a href="#ejercicio-1-2">2</a> -
+          <a href="#ejercicio-1-3">3</a> -
+          <a href="#ejercicio-1-4">4</a>
+        </li>
+        <li><a href="#ejercicio-2">B. Bucles anidados (independientes)</a><br />
+          <a href="#ejercicio-2-1">1</a> -
+          <a href="#ejercicio-2-2">2</a> -
+          <a href="#ejercicio-2-3">3</a> -
+          <a href="#ejercicio-2-4">4</a> -
+          <a href="#ejercicio-2-5">5</a>
+        </li>
+        <li><a href="#ejercicio-3">C. Bucles anidados (independientes)</a><br />
+          <a href="#ejercicio-3-1">1</a> -
+          <a href="#ejercicio-3-2">2</a> -
+          <a href="#ejercicio-3-3">3</a> -
+          <a href="#ejercicio-3-4">4</a> -
+          <a href="#ejercicio-3-5">5</a> -
+          <a href="#ejercicio-3-6">6</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-ascii-1.html">ejercicios ASCII bucle <span class="idle-rese">for</span> (1)</a>.</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-ascii-1.html">ejercicios ASCII bucle <span class="idle-rese">for</span> (1)</a>.</p>
 
-    <section id="ejercicio-1">
-      <h2>Bucles no anidados</h2>
+  <section id="ejercicio-1">
+    <h2>Bucles no anidados</h2>
 
-      <section id="ejercicio-1-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+    <section id="ejercicio-1-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">anchura = int(input("Anchura de la línea: "))
 
 for i in range(anchura):
     print("+ ", end="")</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+    <section id="ejercicio-1-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">anchura = int(input("Anchura de la línea: "))
 
 print("+ ", end="")
@@ -102,27 +102,27 @@ for i in range(anchura - 2):
     print("- ", end="")
 print("+ ")</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+    <section id="ejercicio-1-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">altura = int(input("Altura de la figura: "))
 
 for i in range(altura):
     print("+")</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
+    <section id="ejercicio-1-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">altura = int(input("Altura de la figura: "))
 
 print("+ ")
@@ -130,104 +130,104 @@ for i in range(altura - 2):
     print("|")
 print("+ ")</code>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="ejercicio-2">
-      <h2>B. Bucles anidados (variables independientes)</h2>
+  <section id="ejercicio-2">
+    <h2>B. Bucles anidados (variables independientes)</h2>
 
-      <section id="ejercicio-2-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
-        <ul>
-          <li>Para darse cuenta de los bucles necesarios para generar la figura hay que reconocer las repeticiones en la figura. En el ejemplo siguiente se han rodeado con un borde las figuras repetidas. Se han dibujado dos tipos de borde porque la figura contiene dos tipos de repeticiones:
+    <section id="ejercicio-2-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+      <ul>
+        <li>Para darse cuenta de los bucles necesarios para generar la figura hay que reconocer las repeticiones en la figura. En el ejemplo siguiente se han rodeado con un borde las figuras repetidas. Se han dibujado dos tipos de borde porque la figura contiene dos tipos de repeticiones:
 
-            <div class="resultado-idle">
-              <pre>
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp">Altura del rectángulo:</span> 3
 </pre>
-              <div class="borde2">
-                <pre>
+            <div class="borde2">
+              <pre>
 <span class="idle-resp borde1">* * * * *</span>
 <span class="idle-resp borde1">* * * * *</span>
 <span class="idle-resp borde1">* * * * *</span>
 </pre>
-              </div>
             </div>
-          </li>
-          <li>Por un lado, cada línea de la figura está formada por varias estrellas. Eso nos dice que tendremos que escribir un bucle como este (se han rodeado con un borde tanto el código que genera el dibujo como el propio dibujo):
+          </div>
+        </li>
+        <li>Por un lado, cada línea de la figura está formada por varias estrellas. Eso nos dice que tendremos que escribir un bucle como este (se han rodeado con un borde tanto el código que genera el dibujo como el propio dibujo):
 
-            <div class="filaflex nogrow">
-              <div class="codigo">
-                <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
-                <div class="codigo-resaltado">
-                  <pre>
+          <div class="filaflex nogrow">
+            <div class="codigo">
+              <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+              <div class="codigo-resaltado">
+                <pre>
 <code class="language-python">for j in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                </div>
               </div>
+            </div>
 
-              <div class="resultado-idle">
-                <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <div class="codigo-resaltado">
 <span class="idle-resp">* * * * *</span>
 </div>
 </pre>
-              </div>
             </div>
-          </li>
-          <li>Pero por otro lado, la figura contiene varias veces la misma línea. Eso nos dice que tendremos que escribir un bucle para generar varias líneas, es decir un bucle que contiene otro bucle (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
+          </div>
+        </li>
+        <li>Pero por otro lado, la figura contiene varias veces la misma línea. Eso nos dice que tendremos que escribir un bucle para generar varias líneas, es decir un bucle que contiene otro bucle (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
-                      <div class="borde2">
-                        <pre><code class="language-python">for i in range(altura):</code></pre>
+                    <div class="borde2">
+                      <pre><code class="language-python">for i in range(altura):</code></pre>
 
-                        <div class="borde1">
-                          <pre>
+                      <div class="borde1">
+                        <pre>
 <code class="language-python">    for j in range(anchura):
         print("* ", end="")
     print()</code>
 </pre>
-                        </div>
                       </div>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp">Altura del rectángulo:</span> 3
 </pre>
 
-                      <div class="borde2">
-                        <pre>
+                    <div class="borde2">
+                      <pre>
 <span class="idle-resp borde1">* * * * *</span>
 <span class="idle-resp borde1">* * * * *</span>
 <span class="idle-resp borde1">* * * * *</span>
 </pre>
-                      </div>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Una posible solución es por tanto:
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Una posible solución es por tanto:
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 
@@ -236,151 +236,151 @@ for i in range(altura):
         print("* ", end="")
     print()</code>
 </pre>
-            </div>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-      <section id="ejercicio-2-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
-        <ul>
-          <li>En este ejercicio hay que darse cuenta de que la primera y última línea son distintas de las líneas centrales:
+    <section id="ejercicio-2-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
+      <ul>
+        <li>En este ejercicio hay que darse cuenta de que la primera y última línea son distintas de las líneas centrales:
 
-            <div class="resultado-idle">
-              <pre>
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 </pre>
-              <div class="borde-transparente">
-                <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-              </div>
+            <div class="borde-transparente">
+              <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
+            </div>
 
-              <div class="borde2">
-                <pre>
+            <div class="borde2">
+              <pre>
 <span class="idle-resp">*<span class="borde1">        </span>*
 *<span class="borde1">        </span>*</span></pre>
-              </div>
-
-              <div class="borde-transparente">
-                <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-              </div>
             </div>
-          </li>
-          <li>La primera y última línea se generan mediante un bucle simple:
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+            <div class="borde-transparente">
+              <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
+            </div>
+          </div>
+        </li>
+        <li>La primera y última línea se generan mediante un bucle simple:
 
-                      <div class="borde1">
-                        <pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">for j in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                      </div>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp borde1">* * * * *</span>
 </pre>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Las líneas centrales son similares al ejercicio anterior y requieren un bucle anidado. Por un lado, cada línea de la figura está formada por dos estrellas y varios espacios en blanco. Eso nos dice que tendremos que escribir un bucle como este (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Las líneas centrales son similares al ejercicio anterior y requieren un bucle anidado. Por un lado, cada línea de la figura está formada por dos estrellas y varios espacios en blanco. Eso nos dice que tendremos que escribir un bucle como este (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 
 print("* ", end="")</code>
 </pre>
 
-                      <div class="borde1">
-                        <pre>
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">for j in range(anchura - 2):
     print("  ", end="")</code>
 </pre>
-                      </div>
-                      <pre><code class="language-python">print("*")</code></pre>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                    <pre><code class="language-python">print("*")</code></pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 *<span class="idle-resp borde1">        </span>*
 </pre>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Esta línea se debe repetir varias veces, necesitando un bucle anidado como este:
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Esta línea se debe repetir varias veces, necesitando un bucle anidado como este:
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
 
-                      <div class="borde2">
-                        <pre>
+                    <div class="borde2">
+                      <pre>
 <code class="language-python">for i in range(altura - 2):
     print("* ", end="")</code>
 </pre>
 
-                        <div class="borde1">
-                          <pre>
+                      <div class="borde1">
+                        <pre>
 <code class="language-python">    for j in range(anchura - 2):
         print("  ", end="")</code>
 </pre>
-                        </div>
-                        <pre><code class="language-python">    print("*")</code></pre>
                       </div>
+                      <pre><code class="language-python">    print("*")</code></pre>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp">Altura del rectángulo:</span> 4
 </pre>
 
-                      <div class="borde2">
-                        <pre>
+                    <div class="borde2">
+                      <pre>
 *<span class="idle-resp borde1">        </span>*
 *<span class="idle-resp borde1">        </span>*
 </pre>
-                      </div>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado que genera las líneas centras y por último otro bucle simple que genera una línea de estrellas):
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado que genera las líneas centras y por último otro bucle simple que genera una línea de estrellas):
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 
@@ -397,27 +397,27 @@ for i in range(altura - 2):
 for i in range(anchura):
     print("* ", end="")</code>
 </pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ejercicio-2-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
+      <ul>
+        <li>En este ejercicio hay que darse cuenta de que la primera línea es distinta al resto de líneas y que el resto de líneas pueden interpretarse como la repetición de una figura en forma de U):
+
+          <div class="resultado-idle">
+            <p><span class="idle-resp">Anchura del rectángulo:</span> 6</p>
+            <p><span class="idle-resp">Altura del rectángulo:</span> 4</p>
+            <p><span class="idle-resp">Número de rectángulos en vertical:</span> 3</p>
+
+            <div class="borde-transparente">
+              <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
             </div>
-          </li>
-        </ul>
-      </section>
 
-      <section id="ejercicio-2-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
-        <ul>
-          <li>En este ejercicio hay que darse cuenta de que la primera línea es distinta al resto de líneas y que el resto de líneas pueden interpretarse como la repetición de una figura en forma de U):
-
-            <div class="resultado-idle">
-              <p><span class="idle-resp">Anchura del rectángulo:</span> 6</p>
-              <p><span class="idle-resp">Altura del rectángulo:</span> 4</p>
-              <p><span class="idle-resp">Número de rectángulos en vertical:</span> 3</p>
-
-              <div class="borde-transparente">
-                <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-              </div>
-
-              <div class="borde2">
-                <pre>
+            <div class="borde2">
+              <pre>
 <span class="idle-resp">*<span class="borde1">        </span>*
 *<span class="borde1">        </span>*</span>
 <span class="idle-resp borde1b">* * * * * *</span>
@@ -427,65 +427,122 @@ for i in range(anchura):
 <span class="idle-resp">*<span class="borde1">        </span>*
 *<span class="borde1">        </span>*</span>
 <span class="idle-resp borde1b">* * * * * *</span></pre>
-              </div>
             </div>
-          </li>
-          <li>La primera línea se puede generar mediante un bucle simple (como en ejercicios anteriores):
+          </div>
+        </li>
+        <li>La primera línea se puede generar mediante un bucle simple (como en ejercicios anteriores):
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
 
-                      <div class="borde1">
-                        <pre>
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">for i in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                      </div>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp borde1">* * * * *</span>
 </pre>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>La figura en forma de U se puede generar mediante un bucle simple seguido de un bucle anidado (como en el ejercicio anterior):
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>La figura en forma de U se puede generar mediante un bucle simple seguido de un bucle anidado (como en el ejercicio anterior):
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
 
-                      <div class="borde2">
-                        <pre>
+                    <div class="borde2">
+                      <pre>
 <code class="language-python">for j in range(altura - 2):
     print("* ", end="")</code>
 </pre>
 
-                        <div class="borde1">
-                          <pre>
+                      <div class="borde1">
+                        <pre>
 <code class="language-python">    for k in range(anchura - 2):
         print("  ", end="")</code>
 </pre>
-                        </div>
-                        <pre><code class="language-python">    print("*")</code></pre>
                       </div>
+                      <pre><code class="language-python">    print("*")</code></pre>
+                    </div>
+                    <div class="borde1b">
+                      <pre>
+<code class="language-python">for k in range(anchura):
+    print("* ", end="")</code>
+</pre>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
+<span class="idle-resp">Anchura del rectángulo:</span> 6
+<span class="idle-resp">Altura del rectángulo:</span> 4
+</pre>
+                    <div class="borde2">
+                      <pre>
+<span class="idle-resp">*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*</span>
+</pre>
+                    </div>
+                    <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Para que se repita la figura en forma de U se puede incluir el bucle anidado del ejemplo anterior en otro bucle:
+
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="codigo">
+                    <pre>
+<code class="language-python">anchura = int(input("Anchura del rectángulo: "))
+altura = int(input("Altura del rectángulo: "))
+numero = int(input("Número de rectángulos en vertical: "))</code></pre>
+
+                    <div class="borde3">
+                      <pre><code class="language-python">for i in range(numero):</code></pre>
+
+                      <div class="borde2">
+                        <pre>
+<code class="language-python">    for j in range(altura - 2):
+        print("* ", end="")</code>
+</pre>
+
+                        <div class="borde1">
+                          <pre>
+<code class="language-python">        for k in range(anchura - 2):
+            print("  ", end="")</code>
+</pre>
+                        </div>
+                        <pre><code class="language-python">        print("*")</code></pre>
+                      </div>
+
                       <div class="borde1b">
                         <pre>
 <code class="language-python">for k in range(anchura):
@@ -493,13 +550,34 @@ altura = int(input("Altura del rectángulo: "))</code>
 </pre>
                       </div>
                     </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
+                  </div>
+                </td>
+                <td>
+                  <div class="resultado-idle">
+                    <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
+<span class="idle-resp">Número de rectángulos en vertical:</span> 3
 </pre>
+                    <div class="borde3">
+                      <div class="borde2">
+                        <pre>
+<span class="idle-resp">*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*</span>
+</pre>
+                      </div>
+
+                      <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
+
+                      <div class="borde2">
+                        <pre>
+<span class="idle-resp">*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*</span>
+</pre>
+                      </div>
+
+                      <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
+
                       <div class="borde2">
                         <pre>
 <span class="idle-resp">*<span class="borde1">        </span>*
@@ -508,94 +586,16 @@ altura = int(input("Altura del rectángulo: "))</code>
                       </div>
                       <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
                     </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Para que se repita la figura en forma de U se puede incluir el bucle anidado del ejemplo anterior en otro bucle:
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado triple que dibuja las figuras en forma de U:
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="codigo">
-                      <pre>
-<code class="language-python">anchura = int(input("Anchura del rectángulo: "))
-altura = int(input("Altura del rectángulo: "))
-numero = int(input("Número de rectángulos en vertical: "))</code></pre>
-
-                      <div class="borde3">
-                        <pre><code class="language-python">for i in range(numero):</code></pre>
-
-                        <div class="borde2">
-                          <pre>
-<code class="language-python">    for j in range(altura - 2):
-        print("* ", end="")</code>
-</pre>
-
-                          <div class="borde1">
-                            <pre>
-<code class="language-python">        for k in range(anchura - 2):
-            print("  ", end="")</code>
-</pre>
-                          </div>
-                          <pre><code class="language-python">        print("*")</code></pre>
-                        </div>
-
-                        <div class="borde1b">
-                          <pre>
-<code class="language-python">for k in range(anchura):
-    print("* ", end="")</code>
-</pre>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="resultado-idle">
-                      <pre>
-<span class="idle-resp">Anchura del rectángulo:</span> 6
-<span class="idle-resp">Altura del rectángulo:</span> 4
-<span class="idle-resp">Número de rectángulos en vertical:</span> 3
-</pre>
-                      <div class="borde3">
-                        <div class="borde2">
-                          <pre>
-<span class="idle-resp">*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*</span>
-</pre>
-                        </div>
-
-                        <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-
-                        <div class="borde2">
-                          <pre>
-<span class="idle-resp">*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*</span>
-</pre>
-                        </div>
-
-                        <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-
-                        <div class="borde2">
-                          <pre>
-<span class="idle-resp">*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*</span>
-</pre>
-                        </div>
-                        <pre><span class="idle-resp borde1b">* * * * * *</span></pre>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
-          <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado triple que dibuja las figuras en forma de U:
-
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 numero = int(input("Número de rectángulos en vertical: "))
@@ -615,12 +615,12 @@ for i in range(numero):
         print("* ", end="")
     print()</code>
 </pre>
-            </div>
-          </li>
-          <li>Una solución alternativa es ver en la figura la última línea distinta de las anteriores y el resto una repetición de arcos. Los bucles son los mismos que en la solución anterior, pero en otro orden:
+          </div>
+        </li>
+        <li>Una solución alternativa es ver en la figura la última línea distinta de las anteriores y el resto una repetición de arcos. Los bucles son los mismos que en la solución anterior, pero en otro orden:
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 numero = int(input("Número de rectángulos en vertical: "))
@@ -640,17 +640,17 @@ for k in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-            </div>
-            <p><strong>Nota</strong>: En este caso, la última línea del programa podría omitirse, pues el salto de línea final no es necesario.</p>
-          </li>
-        </ul>
-      </section>
+          </div>
+          <p><strong>Nota</strong>: En este caso, la última línea del programa podría omitirse, pues el salto de línea final no es necesario.</p>
+        </li>
+      </ul>
+    </section>
 
-      <section id="ejercicio-2-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-4</h3>
+    <section id="ejercicio-2-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-4</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 numero = int(input("Número de rectángulos en horizontal: "))
@@ -669,14 +669,14 @@ for i in range(altura - 2):
 for j in range(anchura*numero - numero + 1):
     print("* ", end="")</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-5">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-5</h3>
+    <section id="ejercicio-2-5">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-5</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))
 horizontal = int(input("Número de rectángulos en horizontal: "))
@@ -698,55 +698,55 @@ for l in range(vertical):
         print("* ", end="")
     print()</code>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="ejercicio-3">
-      <h2>C. Más bucles anidados (variables independientes)</h2>
+  <section id="ejercicio-3">
+    <h2>C. Más bucles anidados (variables independientes)</h2>
 
-      <p>El procedimiento para resolver estos ejercicios es siempre el mismo: </p>
+    <p>El procedimiento para resolver estos ejercicios es siempre el mismo: </p>
+    <ul>
+      <li>Dividir mentalmente la figura en varias figuras consecutivas, de manera que cada una de las partes sean una o varias líneas idénticas.</li>
+      <li>Escribir los bucles que generan cada una de las figuras. Se recomienda no escribir todo de golpe, sino escribir primero los bucles que generan la primera parte del dibujo, a continuación los que generan la segunda parte, etc.</li>
+      <li>A veces un bucle incorrecto puede generar una figura correcta para unos valores en particular. Por ello se recomienda probar cada bucle con distintos valores que nos aseguren que el algoritmo es correcto. Una buena estrategia sería como mínimo hacer tantas pruebas como parámetros nos pide el programa y en cada prueba tomar un valor grande para uno de los parámetros y valores pequeños para el resto de valores.</li>
+    </ul>
+
+    <section id="ejercicio-3-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-1 - Letra L</h3>
       <ul>
-        <li>Dividir mentalmente la figura en varias figuras consecutivas, de manera que cada una de las partes sean una o varias líneas idénticas.</li>
-        <li>Escribir los bucles que generan cada una de las figuras. Se recomienda no escribir todo de golpe, sino escribir primero los bucles que generan la primera parte del dibujo, a continuación los que generan la segunda parte, etc.</li>
-        <li>A veces un bucle incorrecto puede generar una figura correcta para unos valores en particular. Por ello se recomienda probar cada bucle con distintos valores que nos aseguren que el algoritmo es correcto. Una buena estrategia sería como mínimo hacer tantas pruebas como parámetros nos pide el programa y en cada prueba tomar un valor grande para uno de los parámetros y valores pequeños para el resto de valores.</li>
-      </ul>
+        <li>En este ejercicio, la L podría dividirse en dos rectángulos:
 
-      <section id="ejercicio-3-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-1 - Letra L</h3>
-        <ul>
-          <li>En este ejercicio, la L podría dividirse en dos rectángulos:
-
-            <div class="resultado-idle">
-              <pre>
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Letra L
 Altura de la letra L:</span> 8
 <span class="idle-resp">Anchura de la letra L:</span> 10
 <span class="idle-resp">Grosor de la letra L:</span> 3
 </pre>
 
-              <div class="borde2">
-                <pre>
+            <div class="borde2">
+              <pre>
 * * *
 * * *
 * * *
 * * *
 * * *
 </pre>
-              </div>
-              <pre><!--Para separar las divisiones aterior y posterior --></pre>
-              <div class="borde2">
-                <pre>
+            </div>
+            <pre><!--Para separar las divisiones aterior y posterior --></pre>
+            <div class="borde2">
+              <pre>
 * * * * * * * * * *
 * * * * * * * * * *
 * * * * * * * * * *</pre>
-              </div>
             </div>
-          </li>
-          <li>Una posible solución es por tanto:
+          </div>
+        </li>
+        <li>Una posible solución es por tanto:
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <code class="language-python">print("Letra L")
 altura = int(input("Altura de la letra L: "))
 anchura = int(input("Anchura de la letra L: "))
@@ -769,16 +769,16 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-            </div>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-      <section id="ejercicio-3-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-2 - Letra C</h3>
+    <section id="ejercicio-3-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-2 - Letra C</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">print("Letra C")
 altura = int(input("Altura de la letra C: "))
 anchura = int(input("Anchura de la letra C: "))
@@ -806,14 +806,14 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-3 - Letra U</h3>
+    <section id="ejercicio-3-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-3 - Letra U</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">print("Letra U")
 altura = int(input("Altura de la letra U: "))
 anchura = int(input("Anchura de la letra U: "))
@@ -840,14 +840,14 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-4 - Letra O</h3>
+    <section id="ejercicio-3-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-4 - Letra O</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">print("Letra O")
 altura = int(input("Altura de la letra O: "))
 anchura = int(input("Anchura de la letra O: "))
@@ -879,14 +879,14 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-5">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-5 - Letra T</h3>
+    <section id="ejercicio-3-5">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-5 - Letra T</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">print("Letra T")
 altura = int(input("Altura de la letra T: "))
 anchura = int(input("Anchura de la letra T: "))
@@ -913,26 +913,26 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-        </div>
+      </div>
 
-        <p>Para escribir los espacios a la izquierda de la barra vertical, en vez del operador cociente (//):</p>
+      <p>Para escribir los espacios a la izquierda de la barra vertical, en vez del operador cociente (//):</p>
 
-        <div class="codigo">
-          <pre>        <code class="language-python">for j in range((anchura - grosor) // 2):</code></pre>
-        </div>
+      <div class="codigo">
+        <pre>        <code class="language-python">for j in range((anchura - grosor) // 2):</code></pre>
+      </div>
 
-        <p>se podría haber utilizado la división (ya que anchura y grosor son ambos o impares, por lo que su diferencia es par), pero como el resultado de una división de enteros es de tipo decimal, es necesario convertirla a entero con la función int():</p>
+      <p>se podría haber utilizado la división (ya que anchura y grosor son ambos o impares, por lo que su diferencia es par), pero como el resultado de una división de enteros es de tipo decimal, es necesario convertirla a entero con la función int():</p>
 
-        <div class="codigo">
-          <pre>        <code class="language-python">for j in range(int((anchura - grosor) / 2)):</code></pre>
-        </div>
-      </section>
+      <div class="codigo">
+        <pre>        <code class="language-python">for j in range(int((anchura - grosor) / 2)):</code></pre>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-6">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-6 - Letra H</h3>
+    <section id="ejercicio-3-6">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-6 - Letra H</h3>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-python">print("Letra H")
 altura = int(input("Altura de la letra H: "))
 anchura = int(input("Anchura de la letra H: "))
@@ -970,16 +970,16 @@ else:
             print("* ", end="")
         print()</code>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 1 de junio de 2016</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 1 de junio de 2016</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

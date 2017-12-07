@@ -1,77 +1,77 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Libro de estilo. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Libro de estilo. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Libro de estilo</h1>
+<body>
+  <h1>Libro de estilo</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Libro de estilo</h2>
-
-        <ul>
-          <li><a href="#introduccion">Introducción</a></li>
-          <li><a href="#guia-estilo">Guía de estilo oficial</a></li>
-          <li><a href="#distribuir-ventanas">Distribuir ventanas</a></li>
-          <li><a href="#nombres-carpetas-archivos">Nombres carpetas y archivos</a></li>
-          <li><a href="#comentarios">Comentarios en programas</a></li>
-          <li><a href="#cabecera">Cabecera programas</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="introduccion">
-      <h2>Introducción</h2>
-
-      <p>Una guía de estilo de un lenguaje de programación es un conjunto de recomendaciones sobre la forma de dar formato a los programas. El interés de utilizar un estilo específico es facilitar la reutilización de código y la detección de errores. Existen muchos estilos de programación y no se puede decir que uno sea mejor que otro, pero sí que es conveniente adoptar algún estilo determinado y utilizarlo de forma consistente.</p>
-
-      <p>El estilo utilizado en estos apuntes y que se recomienda sigan los alumnos se basa en la guía de estilo oficial de Python.</p>
-
-    </section>
-
-    <section id="guia-estilo">
-      <h2>Guía de estilo oficial de Python</h2>
-
-      <p>La guía de estilo oficial de Python se encuentra en el <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>. Se recogen aquí algunas de las recomendaciones de esta guía:</p>
+    <div class="toc">
+      <h2>Libro de estilo</h2>
 
       <ul>
-        <li>Sangrado
-          <p>Sangrar con espacios en vez de tabuladores (IDLE escribe espacios cuando se escribe un tabulador).</p>
-          <p>Usar 4 espacios en cada nivel de sangrado.</p>
-        </li>
-        <li>Longitud de línea
-          <p>Las líneas no deben contener más de 79 caracteres. Si una línea tiene más de 79 caracteres, se debe dividir en varias líneas.</p>
+        <li><a href="#introduccion">Introducción</a></li>
+        <li><a href="#guia-estilo">Guía de estilo oficial</a></li>
+        <li><a href="#distribuir-ventanas">Distribuir ventanas</a></li>
+        <li><a href="#nombres-carpetas-archivos">Nombres carpetas y archivos</a></li>
+        <li><a href="#comentarios">Comentarios en programas</a></li>
+        <li><a href="#cabecera">Cabecera programas</a></li>
+      </ul>
+    </div>
+  </nav>
 
-          <div class="codigo">
-            <pre>
+  <section id="introduccion">
+    <h2>Introducción</h2>
+
+    <p>Una guía de estilo de un lenguaje de programación es un conjunto de recomendaciones sobre la forma de dar formato a los programas. El interés de utilizar un estilo específico es facilitar la reutilización de código y la detección de errores. Existen muchos estilos de programación y no se puede decir que uno sea mejor que otro, pero sí que es conveniente adoptar algún estilo determinado y utilizarlo de forma consistente.</p>
+
+    <p>El estilo utilizado en estos apuntes y que se recomienda sigan los alumnos se basa en la guía de estilo oficial de Python.</p>
+
+  </section>
+
+  <section id="guia-estilo">
+    <h2>Guía de estilo oficial de Python</h2>
+
+    <p>La guía de estilo oficial de Python se encuentra en el <a href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a>. Se recogen aquí algunas de las recomendaciones de esta guía:</p>
+
+    <ul>
+      <li>Sangrado
+        <p>Sangrar con espacios en vez de tabuladores (IDLE escribe espacios cuando se escribe un tabulador).</p>
+        <p>Usar 4 espacios en cada nivel de sangrado.</p>
+      </li>
+      <li>Longitud de línea
+        <p>Las líneas no deben contener más de 79 caracteres. Si una línea tiene más de 79 caracteres, se debe dividir en varias líneas.</p>
+
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Esta línea es muy larga, tiene más de 79 caracteres, lo que dificulta su legibilidad")</code>
 </pre>
-          </div>
+        </div>
 
-          <p>Se aconseja sangrar la línea partida para distinguirla del resto del programa.</p>
+        <p>Se aconseja sangrar la línea partida para distinguirla del resto del programa.</p>
 
-          <p>Hay varias formas de partir las líneas:</p>
+        <p>Hay varias formas de partir las líneas:</p>
 
-          <ul>
-            <li>Si una expresión larga está entre paréntesis (o corchetes o llaves), la línea se puede partir en cualquier lugar, aunque se recomienda hacerlo después de comas o de un operador:
-              <ul>
-                <li>En el caso de argumentos de funciones, se recomienda hacerlo después de una coma:
+        <ul>
+          <li>Si una expresión larga está entre paréntesis (o corchetes o llaves), la línea se puede partir en cualquier lugar, aunque se recomienda hacerlo después de comas o de un operador:
+            <ul>
+              <li>En el caso de argumentos de funciones, se recomienda hacerlo después de una coma:
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python"># Aligned with opening delimiter
 foo = long_function_name(var_one, var_two,
                          var_three, var_four)
@@ -81,246 +81,253 @@ def long_function_name(
         var_four):
     print(var_one)</code>
 </pre>
-                  </div>
-                </li>
-                <li>En el caso de expresiones lógicas, pueden añadir paréntesis para poder partirlas después de un operador:
+                </div>
+              </li>
+              <li>En el caso de expresiones lógicas, pueden añadir paréntesis para poder partirlas después de un operador:
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">if (condicion1 and condicion2 and condicion3 and
     condicion4):
     print("Hola")</code>
 </pre>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>Si no hay parénteis (ni corchetes ni llaves), la línea se puede partir utilizando la contrabarra (\).
-              <ul>
-                <li>En el caso de expresiones lógicas, se aconseja hacerlo después de un operador:
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>Si no hay parénteis (ni corchetes ni llaves), la línea se puede partir utilizando la contrabarra (\).
+            <ul>
+              <li>En el caso de expresiones lógicas, se aconseja hacerlo después de un operador:
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">if condicion1 and condicion2 and condicion3 and \
     condicion4:
     print("Hola")</code>
 </pre>
-                  </div>
-                </li>
-                <li>En el caso de cadenas, se aconseja partir la cadena en varias cadenas en vez de usar la contrabarra, porque partiendo la cadena se pueden sangrar las líneas. Las cadenas se pueden separar mediante comas o se puede obviar la coma. La diferencia es que al separar con comas se añade un espacio que habría que eliminar de la cadena.
+                </div>
+              </li>
+              <li>En el caso de cadenas, se aconseja partir la cadena en varias cadenas en vez de usar la contrabarra, porque partiendo la cadena se pueden sangrar las líneas. Las cadenas se pueden separar mediante comas o se puede obviar la coma. La diferencia es que al separar con comas se añade un espacio que habría que eliminar de la cadena.
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">print(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres \
 usando una contrabarra"</span>)</code>
 </pre>
-                  </div>
+                </div>
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">print("Esta línea está cortada en dos líneas de menos de 79 caracteres",
       "partiendo la cadena en dos")</code>
 </pre>
-                  </div>
+                </div>
 
-                  <div class="codigo">
-                    <pre>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">print("Esta línea está cortada en dos líneas de menos de 79 caracteres "
       "partiendo la cadena en dos")</code>
 </pre>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>Instrucciones por línea
-          <p>Aunque Python permite escribir varias instrucciones por línea separándolas por puntos y comas (;), se recomienda escribir una única instrucción por línea.</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Instrucciones por línea
+        <p>Aunque Python permite escribir varias instrucciones por línea separándolas por puntos y comas (;), se recomienda escribir una única instrucción por línea.</p>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola"); print("Adios")</code>
 </pre>
-          </div>
+        </div>
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">print("Hola")
 print("Adios")</code>
 </pre>
-          </div>
-        </li>
-        <li>Espacios en blanco
-          <p>Evitar espacios en las siguientes situaciones:</p>
-          <ul>
-            <li><p class="first">Justo en el interior de paréntesis, corchetes o llaves:</p>
+        </div>
+      </li>
+      <li>Espacios en blanco
+        <p>Evitar espacios en las siguientes situaciones:</p>
+        <ul>
+          <li>
+            <p class="first">Justo en el interior de paréntesis, corchetes o llaves:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 Sí:  <code class="language-python">spam(ham[1], {eggs: 2})</code>
 No:  <code class="language-python">spam( ham[ 1 ], { eggs: 2 } )</code>
 </pre>
-              </div>
-            </li>
-            <li>
-              <p class="first">Justo antes de una coma, punto y coma o dos puntos:</p>
+            </div>
+          </li>
+          <li>
+            <p class="first">Justo antes de una coma, punto y coma o dos puntos:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 Sí:  <code class="language-python">if x == 4: print x, y; x, y = y, x</code>
 No:  <code class="language-python">if x == 4 : print x , y ; x , y = y , x</code>
 </pre>
-              </div>
-            </li>
-            <li><p class="first">Justo antes de abrir el paréntesis de una función:</p>
+            </div>
+          </li>
+          <li>
+            <p class="first">Justo antes de abrir el paréntesis de una función:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 Sí:  <code class="language-python">spam(1)</code>
 No:  <code class="language-python">spam (1)</code>
 </pre>
-              </div>
-            </li>
-            <li><p class="first">Justo antes de los corchetes que indican un índice:</p>
+            </div>
+          </li>
+          <li>
+            <p class="first">Justo antes de los corchetes que indican un índice:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 Sí:  <code class="language-python">dict['key'] = list[index]</code>
-No:  <code class="language-python">dict ['key'] = list [index]</pre></code>
-              </div>
-            </li>
-            <li><p class="first">No se debe alinear operadores de distintas líneas usando espacios</p>
-              <p>Sí: </p>
+No:  <code class="language-python">dict ['key'] = list [index]</pre>
+              </code>
+            </div>
+          </li>
+          <li>
+            <p class="first">No se debe alinear operadores de distintas líneas usando espacios</p>
+            <p>Sí: </p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <code class="language-python">x = 1
 y = 2
 long_variable = 3</code>
 </pre>
-              </div>
-              <p>No:</p>
+            </div>
+            <p>No:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <code class="language-python">x             = 1
 y             = 2
 long_variable = 3</code>
 </pre>
-              </div>
-            </li>
-          </ul>
-          <p>Otras recomendaciones</p>
-          <ul>
-            <li><p class="first">Escribir un espacio antes y después de los operadores: asignación (<tt class="docutils literal">=</tt>), asignación aumentada (<tt class="docutils literal">+=</tt>, <tt class="docutils literal">-=</tt> etc.), comparaciones (<tt class="docutils literal">==</tt>, <tt class="docutils literal">&lt;</tt>, <tt class="docutils literal">&gt;</tt>, <tt class="docutils literal">!=</tt>, <tt class="docutils literal">&lt;&gt;</tt>, <tt class="docutils literal">&lt;=</tt>, <tt class="docutils literal">&gt;=</tt>, <tt class="docutils literal">in</tt>, <tt class="docutils literal">not in</tt>, <tt class="docutils literal">is</tt>, <tt class="docutils literal">is not</tt>), booleanos (<tt class="docutils literal">and</tt>, <tt class="docutils literal">or</tt>, <tt class="docutils literal">not</tt>).</p>
-            </li>
-            <li><p class="first">Si se utilizan operadores con distintas prioridades, se aconseja utilizar espacios en los operadores de menor prioridad. Nunca escriba más de un espacio y escriba los mismos espacios antes y después de cada operador.</p>
+            </div>
+          </li>
+        </ul>
+        <p>Otras recomendaciones</p>
+        <ul>
+          <li>
+            <p class="first">Escribir un espacio antes y después de los operadores: asignación (<tt class="docutils literal">=</tt>), asignación aumentada (<tt class="docutils literal">+=</tt>, <tt class="docutils literal">-=</tt> etc.), comparaciones (<tt class="docutils literal">==</tt>, <tt class="docutils literal">&lt;</tt>, <tt class="docutils literal">&gt;</tt>, <tt class="docutils literal">!=</tt>, <tt class="docutils literal">&lt;&gt;</tt>, <tt class="docutils literal">&lt;=</tt>, <tt class="docutils literal">&gt;=</tt>, <tt class="docutils literal">in</tt>, <tt class="docutils literal">not in</tt>, <tt class="docutils literal">is</tt>, <tt class="docutils literal">is not</tt>), booleanos (<tt class="docutils literal">and</tt>, <tt class="docutils literal">or</tt>, <tt class="docutils literal">not</tt>).</p>
+          </li>
+          <li>
+            <p class="first">Si se utilizan operadores con distintas prioridades, se aconseja utilizar espacios en los operadores de menor prioridad. Nunca escriba más de un espacio y escriba los mismos espacios antes y después de cada operador.</p>
 
-              <p>Sí:</p>
+            <p>Sí:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <code class="language-python">i = i + 1
 submitted += 1
 x = x*2 - 1
 hypot2 = x*x + y*y
 c = (a+b) * (a-b)</code>
 </pre>
-              </div>
-              <p>No:</p>
+            </div>
+            <p>No:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <code class="language-python">i=i+1
 submitted +=1
 x = x * 2 - 1
 hypot2 = x * x + y * y
 c = (a + b) * (a - b)</code>
 </pre>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-    <section id="distribuir-ventanas">
-      <h2>Distribuir las ventanas en la pantalla</h2>
+  <section id="distribuir-ventanas">
+    <h2>Distribuir las ventanas en la pantalla</h2>
 
-      <p>Normalmente, al trabajar con IDLE se suelen tener abiertas dos ventanas: la ventana de IDLE y la del programa que estés editando. Aunque es una cuestión de gustos, una forma cómoda de trabajar es tener las dos ventanas en mosaico horizontal, con IDLE en la parte izquierda y el programa que se esté editando en la parte derecha.</p>
+    <p>Normalmente, al trabajar con IDLE se suelen tener abiertas dos ventanas: la ventana de IDLE y la del programa que estés editando. Aunque es una cuestión de gustos, una forma cómoda de trabajar es tener las dos ventanas en mosaico horizontal, con IDLE en la parte izquierda y el programa que se esté editando en la parte derecha.</p>
 
-      <p>Para conseguir esta distribución de ventanas:</p>
-      <ol>
-        <li>Abra la ventana de IDLE y la ventana del programa. Haga clic en la ventana de IDLE para seleccionarla (y que se muestre por encima de la otra):
-          <p class="captura">
-            <img src="../img/idle/escritorio-1.png" alt="Distribución de ventanas" width="400" height="287" />
-          </p>
-        </li>
-        <li>Haga clic derecho en una zona libre (sin iconos) de la barra de tareas y elija la opción <strong>Mostrar ventanas en paralelo:</strong>
-          <p class="captura">
-            <img src="../img/idle/escritorio-2.png" alt="Distribución de ventanas" width="400" height="287" />
-          </p>
-        </li>
-        <li>Las ventanas se mostrarán una junta a otra, de la forma deseada:
-          <p class="captura">
-            <img src="../img/idle/escritorio-3.png" alt="Distribución de ventanas" width="400" height="287" />
-          </p>
-        </li>
-      </ol>
-    </section>
+    <p>Para conseguir esta distribución de ventanas:</p>
+    <ol>
+      <li>Abra la ventana de IDLE y la ventana del programa. Haga clic en la ventana de IDLE para seleccionarla (y que se muestre por encima de la otra):
+        <p class="captura">
+          <img src="../img/idle/escritorio-1.png" alt="Distribución de ventanas" width="400" height="287" />
+        </p>
+      </li>
+      <li>Haga clic derecho en una zona libre (sin iconos) de la barra de tareas y elija la opción <strong>Mostrar ventanas en paralelo:</strong>
+        <p class="captura">
+          <img src="../img/idle/escritorio-2.png" alt="Distribución de ventanas" width="400" height="287" />
+        </p>
+      </li>
+      <li>Las ventanas se mostrarán una junta a otra, de la forma deseada:
+        <p class="captura">
+          <img src="../img/idle/escritorio-3.png" alt="Distribución de ventanas" width="400" height="287" />
+        </p>
+      </li>
+    </ol>
+  </section>
 
-    <section id="nombres-carpetas-archivos">
-      <h2>Poner nombres a las carpetas y archivos</h2>
+  <section id="nombres-carpetas-archivos">
+    <h2>Poner nombres a las carpetas y archivos</h2>
 
-      <p>Los programas de prueba se pueden guardar en la carpeta <strong>Mis documentos &gt; Python &gt; pruebas</strong>.</p>
+    <p>Los programas de prueba se pueden guardar en la carpeta <strong>Mis documentos &gt; Python &gt; pruebas</strong>.</p>
 
-      <p>Los ejercicios se pueden guardar en la carpeta <strong>Mis documentos &gt; Python &gt; ejercicios</strong>. Se recomienda crear una subcarpeta para cada grupo de ejercicios (operaciones aritméticas, if elif else, etc.).</p>
+    <p>Los ejercicios se pueden guardar en la carpeta <strong>Mis documentos &gt; Python &gt; ejercicios</strong>. Se recomienda crear una subcarpeta para cada grupo de ejercicios (operaciones aritméticas, if elif else, etc.).</p>
 
-      <p>Se recomienda que el nombre del programa no contenga espacios sino guiones o subrayados. Por ejemplo, <strong>aritmeticas_1.py</strong>.</p>
-    </section>
+    <p>Se recomienda que el nombre del programa no contenga espacios sino guiones o subrayados. Por ejemplo, <strong>aritmeticas_1.py</strong>.</p>
+  </section>
 
-    <section id="comentarios">
-      <h2>Comentarios en los programas</h2>
+  <section id="comentarios">
+    <h2>Comentarios en los programas</h2>
 
-      <p>Es importante añadir comentarios a los programas para que sean más comprensibles para los humanos (el ordenador ignora completamente el contenido de los comentarios). En Python un comentario empieza por el carácter almohadilla (#) y acaba al final de la línea. No es necesario comentar todas las líneas, sino sólo aquellas que lo necesiten. Por ejemplo:</p>
+    <p>Es importante añadir comentarios a los programas para que sean más comprensibles para los humanos (el ordenador ignora completamente el contenido de los comentarios). En Python un comentario empieza por el carácter almohadilla (#) y acaba al final de la línea. No es necesario comentar todas las líneas, sino sólo aquellas que lo necesiten. Por ejemplo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-python">ep = 166.386 # Factor de conversión de euros a pesetas</code>
 </pre>
-      </div>
+    </div>
 
-      <p>Se puede comentar una línea, aunque el cursor no esté situado al principio de la línea, pulsando la combinación de teclas <kbd>Alt+3</kbd>.</p>
+    <p>Se puede comentar una línea, aunque el cursor no esté situado al principio de la línea, pulsando la combinación de teclas <kbd>Alt+3</kbd>.</p>
 
-      <p>Se pueden comentar varias líneas seguidas a la vez, seleccionando con el ratón las líneas a comentar y pulsando la combinación de teclas <kbd>Alt+3</kbd>. Cada vez que se pulsa <kbd>Alt+3</kbd>, se añaden dos almohadillas a cada línea</p>
+    <p>Se pueden comentar varias líneas seguidas a la vez, seleccionando con el ratón las líneas a comentar y pulsando la combinación de teclas <kbd>Alt+3</kbd>. Cada vez que se pulsa <kbd>Alt+3</kbd>, se añaden dos almohadillas a cada línea</p>
 
-      <p>Se puede descomentar una línea, aunque el cursor no esté al principio de la línea, pulsando la combinación de teclas <kbd>Alt+4</kbd>.</p>
+    <p>Se puede descomentar una línea, aunque el cursor no esté al principio de la línea, pulsando la combinación de teclas <kbd>Alt+4</kbd>.</p>
 
-      <p>Se pueden descomentar varias líneas seguidas a la vez, seleccionando con el ratón las líneas a comentar y pulsando la combinación de teclas <kbd>Alt+4</kbd>. Cada vez que se pulsa <kbd>Alt+4</kbd>, se eliminan dos almohadillas de cada línea.</p>
-    </section>
+    <p>Se pueden descomentar varias líneas seguidas a la vez, seleccionando con el ratón las líneas a comentar y pulsando la combinación de teclas <kbd>Alt+4</kbd>. Cada vez que se pulsa <kbd>Alt+4</kbd>, se eliminan dos almohadillas de cada línea.</p>
+  </section>
 
-    <section id="cabecera">
-      <h2>Cabecera de los programas</h2>
+  <section id="cabecera">
+    <h2>Cabecera de los programas</h2>
 
-      <p>Para poder identificar qué hace cada programa, quién lo ha escrito y cuándo, se aconseja que los programas incluyan una cabecera similar a esta, hecha a base de comentarios:</p>
+    <p>Para poder identificar qué hace cada programa, quién lo ha escrito y cuándo, se aconseja que los programas incluyan una cabecera similar a esta, hecha a base de comentarios:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-python"># Archivo: XXXXXXX_XX.py
 # Autor: XXXXX XXXXXXX (nombre y apellidos)
 # Fecha: XX de XXXXXX de XXXX
 # Descripción: Ejercicio XXXXXXX. Este programa bla bla bla
 # Si la descripción es larga, escriba varias líneas</code>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 13 de febrero de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

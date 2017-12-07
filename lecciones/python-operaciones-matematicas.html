@@ -1,156 +1,156 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Números y operaciones aritméticas elementales. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Números y operaciones aritméticas elementales. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Números y operaciones aritméticas elementales</h1>
+<body>
+  <h1>Números y operaciones aritméticas elementales</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Números y operaciones</h2>
+    <div class="toc">
+      <h2>Números y operaciones</h2>
 
-        <ul>
-          <li><a href="#tipos-numericos">Tipos de datos numéricos</a>
-            <ul>
-              <li><a href="#enteros-decimales">Enteros y decimales</a></li>
-              <li><a href="#complejos">Complejos</a></li>
-            </ul>
-          </li>
-          <li><a href="#operaciones-basicas">4 operaciones básicas</a></li>
-          <li><a href="#cociente-resto">Cociente y resto división</a>
-            <ul>
-              <li><a href="#cociente-division">Cociente</a></li>
-              <li><a href="#resto-division">Resto</a></li>
-            </ul>
-          </li>
-          <li><a href="#potencias">Potencias y raíces</a></li>
-          <li><a href="#redondear">Redondear</a>
-            <ul>
-              <li><a href="#redondear-round"><span class="idle-func">round</span>()</a></li>
-              <li><a href="#redondear-floor-ceil"><span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>()</a></li>
-            </ul>
-          </li>
-          <li><a href="#decimales-binario">Decimales en binario</a></li>
-          <li><a href="#valor-absoluto">Valor absoluto</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#tipos-numericos">Tipos de datos numéricos</a>
+          <ul>
+            <li><a href="#enteros-decimales">Enteros y decimales</a></li>
+            <li><a href="#complejos">Complejos</a></li>
+          </ul>
+        </li>
+        <li><a href="#operaciones-basicas">4 operaciones básicas</a></li>
+        <li><a href="#cociente-resto">Cociente y resto división</a>
+          <ul>
+            <li><a href="#cociente-division">Cociente</a></li>
+            <li><a href="#resto-division">Resto</a></li>
+          </ul>
+        </li>
+        <li><a href="#potencias">Potencias y raíces</a></li>
+        <li><a href="#redondear">Redondear</a>
+          <ul>
+            <li><a href="#redondear-round"><span class="idle-func">round</span>()</a></li>
+            <li><a href="#redondear-floor-ceil"><span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>()</a></li>
+          </ul>
+        </li>
+        <li><a href="#decimales-binario">Decimales en binario</a></li>
+        <li><a href="#valor-absoluto">Valor absoluto</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En esta lección se tratan los tipos de datos numéricos y las operaciones aritméticas elementales en Python.</p>
+  <p>En esta lección se tratan los tipos de datos numéricos y las operaciones aritméticas elementales en Python.</p>
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Los ejemplos de esta lección muestran el resultado de ejecutar las operaciones en el prompt de IDLE.</p>
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Los ejemplos de esta lección muestran el resultado de ejecutar las operaciones en el prompt de IDLE.</p>
 
-    <section id="tipos-numericos">
-      <h2>Tipos de datos numéricos: enteros, decimales y númeroscomplejos</h2>
+  <section id="tipos-numericos">
+    <h2>Tipos de datos numéricos: enteros, decimales y númeroscomplejos</h2>
 
-      <section id="enteros-decimales">
-        <h3>Enteros y decimales</h3>
+    <section id="enteros-decimales">
+      <h3>Enteros y decimales</h3>
 
-        <p>Python distingue entre números enteros y decimales. Al escribir un número decimal, el separador entre la parte entera y la parte decimal es un punto.</p>
+      <p>Python distingue entre números enteros y decimales. Al escribir un número decimal, el separador entre la parte entera y la parte decimal es un punto.</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3
 <span class="idle-resp">3</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4.5
 <span class="idle-resp">4.5</span>
 </pre>
-        </div>
+      </div>
 
-        <p><strong>Nota</strong>:</p>
-        <ul>
-          <li><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Si se escribe una coma como separador entre la parte entera y la decimal, Python no lo entiende como separador, sino como una pareja de números (concretamente, lo entiende como una tupla de dos elementos, un tipo de datos que se comenta en la <a href="python-tupla.html">lección sobre tuplas</a>).
+      <p><strong>Nota</strong>:</p>
+      <ul>
+        <li><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Si se escribe una coma como separador entre la parte entera y la decimal, Python no lo entiende como separador, sino como una pareja de números (concretamente, lo entiende como una tupla de dos elementos, un tipo de datos que se comenta en la <a href="python-tupla.html">lección sobre tuplas</a>).
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3,5
 <span class="idle-resp">(3, 5)</span></pre>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </li>
+      </ul>
 
-        <p>Si se escribe un número con parte decimal 0, Python considera el número como número decimal.</p>
+      <p>Si se escribe un número con parte decimal 0, Python considera el número como número decimal.</p>
 
-        <div class="codigo">
-          <pre><span class="idle-prompt">&gt;&gt;&gt;</span> 3.0
+      <div class="codigo">
+        <pre><span class="idle-prompt">&gt;&gt;&gt;</span> 3.0
 <span class="idle-resp">3.0</span></pre>
-        </div>
+      </div>
 
-        <p>Se puede escribir un número decimal sin parte entera, pero lo habitual es escribir siempre la parte entera:</p>
-
-        <div class="codigo">
-          <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> .3
-<span class="idle-resp">0.3</span>
-</pre>
-        </div>
-      </section>
-
-      <section id="complejos">
-        <h3>Números complejos</h3>
-
-        <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
-
-      </section>
-    </section>
-
-    <section id="operaciones-basicas">
-      <h2>Las cuatro operaciones básicas</h2>
-
-      <p>Las cuatro operaciones aritméticas básicas son la suma (+), la resta (-), la multiplicación (*) y la división (/).</p>
-
-      <p>Al hacer operaciones en las que intervienen números enteros y decimales, el resultado es siempre decimal. En el caso de que el resultado no tenga parte decimal, Python escribe 0 como parte decimal para indicar que el resultado es un número decimal:</p>
+      <p>Se puede escribir un número decimal sin parte entera, pero lo habitual es escribir siempre la parte entera:</p>
 
       <div class="codigo">
         <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> .3
+<span class="idle-resp">0.3</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="complejos">
+      <h3>Números complejos</h3>
+
+      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+
+    </section>
+  </section>
+
+  <section id="operaciones-basicas">
+    <h2>Las cuatro operaciones básicas</h2>
+
+    <p>Las cuatro operaciones aritméticas básicas son la suma (+), la resta (-), la multiplicación (*) y la división (/).</p>
+
+    <p>Al hacer operaciones en las que intervienen números enteros y decimales, el resultado es siempre decimal. En el caso de que el resultado no tenga parte decimal, Python escribe 0 como parte decimal para indicar que el resultado es un número decimal:</p>
+
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4.5 * 3
 <span class="idle-resp">13.5</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4.5 * 2
 <span class="idle-resp">9.0</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Al sumar, restar o multiplicar números enteros, el resultado es entero.</p>
+    <p>Al sumar, restar o multiplicar números enteros, el resultado es entero.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2
 <span class="idle-resp">3</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 - 4
 <span class="idle-resp">-1</span><br /><span class="idle-prompt">&gt;&gt;&gt;</span> 5 * 6
 <span class="idle-resp">30</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Al dividir números enteros, el resultado es siempre decimal, aunque sea un número entero. Cuando Python escribe un número decimal, lo escribe siempre con parte decimal, aunque sea nula.</p>
+    <p>Al dividir números enteros, el resultado es siempre decimal, aunque sea un número entero. Cuando Python escribe un número decimal, lo escribe siempre con parte decimal, aunque sea nula.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 9 / 2
 <span class="idle-resp">4.5</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 9 / 3
 <span class="idle-resp">3.0</span>
 </pre>
-      </div>
-      <hr class="corta" />
+    </div>
+    <hr class="corta" />
 
-      <p>Dividir por cero genera un error:</p>
+    <p>Dividir por cero genera un error:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 5 / 0
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#22&gt;", line 1, in &lt;module&gt;
@@ -158,96 +158,96 @@
 ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 100 / 3
 <span class="idle-resp">33.333333333333336</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Este error se debe a que Python almacena los números decimales en binario y pasar de decimal a binario provoca errores de redondeo, como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>. Es un error que sufren casi todos los lenguajes de programación. Si necesitamos precisión absoluta, debemos utilizar bibliotecas específicas.</p>
+    <p>Este error se debe a que Python almacena los números decimales en binario y pasar de decimal a binario provoca errores de redondeo, como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>. Es un error que sufren casi todos los lenguajes de programación. Si necesitamos precisión absoluta, debemos utilizar bibliotecas específicas.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Cuando en una fórmula aparecen varias operaciones, Python las efectúa aplicando las reglas usuales de prioridad de las operaciones (primero multiplicaciones y divisiones, después sumas y restas).</p>
+    <p>Cuando en una fórmula aparecen varias operaciones, Python las efectúa aplicando las reglas usuales de prioridad de las operaciones (primero multiplicaciones y divisiones, después sumas y restas).</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2 * 3
 <span class="idle-resp">7</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 - 4 * 2
 <span class="idle-resp">2</span></pre>
-      </div>
+    </div>
 
-      <p>En caso de querer que las operaciones se realicen en otro orden, se deben utilizar paréntesis.</p>
+    <p>En caso de querer que las operaciones se realicen en otro orden, se deben utilizar paréntesis.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (5+8) / (7-2)
 <span class="idle-resp">2.6</span></pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Debido a los errores de redondeo, dos operaciones que debieran dar el mismo resultado pueden dar resultados diferentes:</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Debido a los errores de redondeo, dos operaciones que debieran dar el mismo resultado pueden dar resultados diferentes:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4 * 3 / 5
 <span class="idle-resp">2.4</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4 / 5 * 3
 <span class="idle-resp">2.4000000000000004</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Se pueden escribir sumas y restas seguidas, pero no se recomienda hacerlo porque no es una notación habitual:</p>
+    <p>Se pueden escribir sumas y restas seguidas, pero no se recomienda hacerlo porque no es una notación habitual:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 + - + 4
 <span class="idle-resp">-1</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 + - + - 4
 <span class="idle-resp">7</span>
 </pre>
-      </div>
+    </div>
 
-      <p>Lo que no se puede hacer es escribir multiplicaciones y divisiones seguidas:</p>
+    <p>Lo que no se puede hacer es escribir multiplicaciones y divisiones seguidas:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 * / 4
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="cociente-resto">
-      <h2>Cociente y resto de una división</h2>
+  <section id="cociente-resto">
+    <h2>Cociente y resto de una división</h2>
 
-      <p>El cociente y resto de una división están relacionados con el dividendo y divisor mediante la fórmula:</p>
+    <p>El cociente y resto de una división están relacionados con el dividendo y divisor mediante la fórmula:</p>
 
-      <p><img src="../img/matematicas/mates-cociente-resto.svg" alt="Cociente y resto de una división" width="541" height="283" /></p>
+    <p><img src="../img/matematicas/mates-cociente-resto.svg" alt="Cociente y resto de una división" width="541" height="283" /></p>
 
-      <p>El cociente es siempre un número entero, pero el resto puede ser entero o decimal. En Python, el resto y el divisor tienen siempre el mismo signo y en valor absoluto (sin signo) el resto es siempre inferior al divisor.</p>
+    <p>El cociente es siempre un número entero, pero el resto puede ser entero o decimal. En Python, el resto y el divisor tienen siempre el mismo signo y en valor absoluto (sin signo) el resto es siempre inferior al divisor.</p>
 
-      <p><strong>Nota</strong>: Como se comenta en la lección <a href="python-detalles.html#division-enteros">Detalles del lenguaje</a>, el cociente y el divisor de una división en la que intervienen números enteros negativos no se calcula de la misma manera en los distintos lenguajes de programación.</p>
+    <p><strong>Nota</strong>: Como se comenta en la lección <a href="python-detalles.html#division-enteros">Detalles del lenguaje</a>, el cociente y el divisor de una división en la que intervienen números enteros negativos no se calcula de la misma manera en los distintos lenguajes de programación.</p>
 
-      <section id="cociente-division">
-        <h3>Cociente de una división</h3>
+    <section id="cociente-division">
+      <h3>Cociente de una división</h3>
 
-        <p>El cociente de una división se calcula en Python con el operador //. El resultado es siempre un número entero, pero será de tipo entero o decimal dependiendo del tipo de los números empleados (en caso de ser decimal, la parte decimal es siempre cero). Por ejemplo:</p>
+      <p>El cociente de una división se calcula en Python con el operador //. El resultado es siempre un número entero, pero será de tipo entero o decimal dependiendo del tipo de los números empleados (en caso de ser decimal, la parte decimal es siempre cero). Por ejemplo:</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 // 3
 <span class="idle-resp">3</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 // 4
@@ -257,12 +257,12 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 20 // 6.0
 <span class="idle-resp">3.0</span>
 </pre>
-        </div>
+      </div>
 
-        <p>El operador cociente // tiene la misma prioridad que la división:</p>
+      <p>El operador cociente // tiene la misma prioridad que la división:</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 // 5 / 2
 <span class="idle-resp">2.5</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (26//5) / 2
@@ -270,10 +270,10 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 // (5/2)
 <span class="idle-resp">10.0</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 // 2
 <span class="idle-resp">2.0</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (26/5) // 2
@@ -281,16 +281,16 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5//2)
 <span class="idle-resp">13.0</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="resto-division">
-        <h3>Resto de una división</h3>
+    <section id="resto-division">
+      <h3>Resto de una división</h3>
 
-        <p>El resto de una división se calcula en Python con el operador %. El resultado tendrá tipo entero o decimal, de acuerdo con el resultado de la operación</p>
+      <p>El resto de una división se calcula en Python con el operador %. El resultado tendrá tipo entero o decimal, de acuerdo con el resultado de la operación</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 3
 <span class="idle-resp">1</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 4
@@ -300,12 +300,12 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10.5 % 3
 <span class="idle-resp">1.5</span>
 </pre>
-        </div>
+      </div>
 
-        <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Cuando el resultado es decimal, pueden aparecer los problemas de redondeo comentados anteriormente.</p>
+      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Cuando el resultado es decimal, pueden aparecer los problemas de redondeo comentados anteriormente.</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10.2 % 3
 <span class="idle-resp">1.1999999999999993</span> <span class="idle-come"># El resultado correcto es 1.2</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 4.2
@@ -313,12 +313,12 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10.1 % 5.1
 <span class="idle-resp">5.0</span>                <span class="idle-come"># Este resultado coincide con el resultado correcto</span>
 </pre>
-        </div>
+      </div>
 
-        <p>El operador resto % tiene la misma prioridad que la división:</p>
+      <p>El operador resto % tiene la misma prioridad que la división:</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 % 5 / 2
 <span class="idle-resp">0.5</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (26%5) / 2
@@ -326,10 +326,10 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 % (5/2)
 <span class="idle-resp">1.0</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 % 2
 <span class="idle-resp">1.2000000000000002</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (26/5) % 2
@@ -337,24 +337,23 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5%2)
 <span class="idle-resp">26.0</span>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="potencias">
-      <h2>Potencias y raíces</h2>
+  <section id="potencias">
+    <h2>Potencias y raíces</h2>
 
-      <p>Las potencias se calculan con el operador **, teniendo en cuenta que x ** y = x<sup>y</sup> .</p>
+    <p>Las potencias se calculan con el operador **, teniendo en cuenta que x ** y = x<sup>y</sup> .</p>
 
-      <p>Las potencias tienen prioridad sobre las multiplicaciones y divisiones.</p>
+    <p>Las potencias tienen prioridad sobre las multiplicaciones y divisiones.</p>
 
-      <p>Utilizando exponentes negativos o decimales se pueden calcular potencias
-        inversas o raíces n-ésimas.</p>
+    <p>Utilizando exponentes negativos o decimales se pueden calcular potencias inversas o raíces n-ésimas.</p>
 
-      <p><img src="../img/matematicas/mates-potencias.svg" alt="Potencias negativas y fraccionarias" width="466" height="159" /></p>
+    <p><img src="../img/matematicas/mates-potencias.svg" alt="Potencias negativas y fraccionarias" width="466" height="159" /></p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 2 ** 3
 <span class="idle-resp">8</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 ** -4
@@ -368,14 +367,14 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> -9 ** 0.5    <span class="idle-come"># Esto no da error porque hace primero la raíz y luego le pone el -</span>
 <span class="idle-resp">-3</span>
 </pre>
-      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>También se pueden calcular potencias o raíces mediante la función <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero x elevado a y después calcula el resto de la división por z.</p>
+    <p>También se pueden calcular potencias o raíces mediante la función <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero x elevado a y después calcula el resto de la división por z.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(2, 3)
 <span class="idle-resp">8</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(4, 0.5)
@@ -383,25 +382,25 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(2, 3, 5)
 <span class="idle-resp">3</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="redondear">
-      <h2>Redondear un número</h2>
+  <section id="redondear">
+    <h2>Redondear un número</h2>
 
-      <p>Aunque no se puede dar una regla válida en todas las situaciones, normalmente es conveniente redondear el resultado de un cálculo cuando se muestra al usuario, sobre todo si tiene muchos decimales, para facilitar su lectura.</p>
+    <p>Aunque no se puede dar una regla válida en todas las situaciones, normalmente es conveniente redondear el resultado de un cálculo cuando se muestra al usuario, sobre todo si tiene muchos decimales, para facilitar su lectura.</p>
 
-      <p>Lo que no se debe hacer nunca es redondear resultados intermedios que se vayan a utilizar en cálculos posteriores, porque el resultado final será diferente.</p>
+    <p>Lo que no se debe hacer nunca es redondear resultados intermedios que se vayan a utilizar en cálculos posteriores, porque el resultado final será diferente.</p>
 
-      <section id="redondear-round">
-        <h3>La función <span class="idle-func">round</span>()</h3>
+    <section id="redondear-round">
+      <h3>La función <span class="idle-func">round</span>()</h3>
 
-        <p>Para redondear un número (por ejemplo, cuando se muestra al usuario el resultado final de un cálculo), se puede utilizar la función <span class="idle-func">round</span>(). La función <span class="idle-func">round</span>() admite uno o dos argumentos numéricos.</p>
+      <p>Para redondear un número (por ejemplo, cuando se muestra al usuario el resultado final de un cálculo), se puede utilizar la función <span class="idle-func">round</span>(). La función <span class="idle-func">round</span>() admite uno o dos argumentos numéricos.</p>
 
-        <ul>
-          <li>Si sólo hay un argumento, la función devuelve el argumento redondeado al entero más próximo:
-            <div class="codigo">
-              <pre>
+      <ul>
+        <li>Si sólo hay un argumento, la función devuelve el argumento redondeado al entero más próximo:
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.35)
 <span class="idle-resp">4</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.62)
@@ -411,13 +410,13 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(-4.62)
 -<span class="idle-resp">5</span>
 </pre>
-            </div>
-          </li>
-          <li>Si se escriben dos argumentos, siendo el segundo un número entero, la función <span class="idle-func">round</span>() devuelve el primer argumento redondeado en la posición indicada por el segundo argumento.
-            <ul>
-              <li>Si el segundo argumento es positivo, el primer argumento se redondea con el número de decimales indicado:
-                <div class="codigo">
-                  <pre>
+          </div>
+        </li>
+        <li>Si se escriben dos argumentos, siendo el segundo un número entero, la función <span class="idle-func">round</span>() devuelve el primer argumento redondeado en la posición indicada por el segundo argumento.
+          <ul>
+            <li>Si el segundo argumento es positivo, el primer argumento se redondea con el número de decimales indicado:
+              <div class="codigo">
+                <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 2)
 <span class="idle-resp">4.35</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 1)
@@ -425,40 +424,40 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 3)
 <span class="idle-resp">4.353</span>
 </pre>
-                </div>
+              </div>
 
-                <p>Si se piden más decimales de los que tiene el número, se obtiene el primer argumento, sin cambios:</p>
-                <div class="codigo">
-                  <pre>
+              <p>Si se piden más decimales de los que tiene el número, se obtiene el primer argumento, sin cambios:</p>
+              <div class="codigo">
+                <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 7)
 <span class="idle-resp">4.353</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(435, 2)
 <span class="idle-resp">435</span>
 </pre>
-                </div>
-              </li>
-              <li>Si el segundo argumento es 0, se redondea al entero más próximo, como cuando no se escribe segundo argumento, pero la diferencia es que el resultado es decimal y no entero.
+              </div>
+            </li>
+            <li>Si el segundo argumento es 0, se redondea al entero más próximo, como cuando no se escribe segundo argumento, pero la diferencia es que el resultado es decimal y no entero.
 
-                <div class="codigo">
-                  <pre>
+              <div class="codigo">
+                <pre>
 &gt;&gt;&gt; <span class="idle-func">round</span>(4.3527, 0)
 <span class="idle-resp">4.0</span>
 &gt;&gt;&gt; <span class="idle-func">round</span>(4.3527)
 <span class="idle-resp">4</span></pre>
-                </div>
+              </div>
 
-                <p>Si el primer argumento es un número entero, el resultado sigue siendo el mismo número entero:</p>
-                <div class="codigo">
-                  <pre>
+              <p>Si el primer argumento es un número entero, el resultado sigue siendo el mismo número entero:</p>
+              <div class="codigo">
+                <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(435, 0)
 <span class="idle-resp">435</span>
 </pre>
-                </div>
-              </li>
-              <li>Si el segundo argumento es negativo, se redondea a decenas, centenas, etc.
+              </div>
+            </li>
+            <li>Si el segundo argumento es negativo, se redondea a decenas, centenas, etc.
 
-                <div class="codigo">
-                  <pre>
+              <div class="codigo">
+                <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -1)
 <span class="idle-resp">43530</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -2)
@@ -470,20 +469,20 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -5)
 <span class="idle-resp">0</span>
 </pre>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>La función <span class="idle-func">round</span>() redondea correctamente al número más próximo del orden de magnitud deseado (entero, décimas, decenas, centésimas, centenas, etc). El problema es cuando el número a redondear está justo en medio (por ejemplo, redondear 3.5 a entero, 4.85 a décimas, etc.). En Matemáticas se suele redondear siempre hacia arriba, pero en Python se sigue otro criterio:</p>
-        <ul>
-          <li>Cuando se redondea a enteros, decenas, centenas, etc., Python redondea de manera que la última cifra (la redondeada) sea par.
+      <p>La función <span class="idle-func">round</span>() redondea correctamente al número más próximo del orden de magnitud deseado (entero, décimas, decenas, centésimas, centenas, etc). El problema es cuando el número a redondear está justo en medio (por ejemplo, redondear 3.5 a entero, 4.85 a décimas, etc.). En Matemáticas se suele redondear siempre hacia arriba, pero en Python se sigue otro criterio:</p>
+      <ul>
+        <li>Cuando se redondea a enteros, decenas, centenas, etc., Python redondea de manera que la última cifra (la redondeada) sea par.
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.5)
 <span class="idle-resp">4</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.5)
@@ -493,10 +492,10 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(6.5)
 <span class="idle-resp">6</span>
 </pre>
-            </div>
+          </div>
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(450, -2)
 <span class="idle-resp">400</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(350, -2)
@@ -508,12 +507,12 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(50, -2)
 <span class="idle-resp">0</span>
 </pre>
-            </div>
-          </li>
-          <li>Cuando se redondea a décimas, centésimas, etc., Python redondea en unos casos para arriba y en otros para abajo, debido a la forma en que se representan internamente los números decimales (como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>):
+          </div>
+        </li>
+        <li>Cuando se redondea a décimas, centésimas, etc., Python redondea en unos casos para arriba y en otros para abajo, debido a la forma en que se representan internamente los números decimales (como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>):
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.15, 1)
 <span class="idle-resp">3.1</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.25, 1)
@@ -527,10 +526,10 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.65, 1)
 <span class="idle-resp">3.6</span>
 </pre>
-            </div>
+          </div>
 
-            <div class="codigo">
-              <pre>
+          <div class="codigo">
+            <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.315, 2)
 <span class="idle-resp">0.32</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.325, 2)
@@ -543,21 +542,21 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-resp">0.35</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.365, 2)
 <span class="idle-resp">0.36</span></pre>
-            </div>
-            <p>Este redondeo se debe a la forma en que Python representa internamente los números decimales. Es un problema que presentan la mayoría de lenguajes de programación y se explica en el apartado siguiente.</p>
-          </li>
-        </ul>
-      </section>
+          </div>
+          <p>Este redondeo se debe a la forma en que Python representa internamente los números decimales. Es un problema que presentan la mayoría de lenguajes de programación y se explica en el apartado siguiente.</p>
+        </li>
+      </ul>
+    </section>
 
-      <section id="redondear-floor-ceil">
-        <h3>Redondear al entero anterior o posterior: las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>()</h3>
+    <section id="redondear-floor-ceil">
+      <h3>Redondear al entero anterior o posterior: las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>()</h3>
 
-        <p>Para redondear un número al entero anterior o posterior, se pueden utilizar las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>(), que están incluidas en la biblioteca <strong>math</strong>. Estas funciones sólo admiten un argumento numérico y devuelven valores enteros.</p>
+      <p>Para redondear un número al entero anterior o posterior, se pueden utilizar las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>(), que están incluidas en la biblioteca <strong>math</strong>. Estas funciones sólo admiten un argumento numérico y devuelven valores enteros.</p>
 
-        <p>Antes de utilizar estas funciones, hay que importarlas, o se generará un error.</p>
+      <p>Antes de utilizar estas funciones, hay que importarlas, o se generará un error.</p>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(5 / 2)
 <span class="idle-come">Traceback (most recent call last):
   File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
@@ -569,10 +568,10 @@ NameError: name 'floor' is not defined</span>
     ceil(5 / 2)
 NameError: name 'ceil' is not defined</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> math <span class="idle-rese">import</span> floor
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(5 / 2)
 <span class="idle-resp">2</span>
@@ -580,93 +579,93 @@ NameError: name 'ceil' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(5 / 2)
 <span class="idle-resp">3</span>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="decimales-binario">
-      <h2>Representación de números decimales en binario</h2>
+  <section id="decimales-binario">
+    <h2>Representación de números decimales en binario</h2>
 
-      <p>En Pyhton los números decimales se almacenan internamente en binario con 53 bits de precisión (en concreto, se trata del formato de coma flotante de doble precisión de la norma IEEE-754). Cuando un programa pide a Python un cálculo con números decimales, Python convierte esos números decimales a binario, realiza la operación en binario y convierte el resultado de nuevo en decimal para mostrarselo al usuario.</p>
+    <p>En Pyhton los números decimales se almacenan internamente en binario con 53 bits de precisión (en concreto, se trata del formato de coma flotante de doble precisión de la norma IEEE-754). Cuando un programa pide a Python un cálculo con números decimales, Python convierte esos números decimales a binario, realiza la operación en binario y convierte el resultado de nuevo en decimal para mostrarselo al usuario.</p>
 
-      <p>El problema es que muchos números decimales no se pueden representarse de forma exacta en binario, por lo que los resultados no pueden ser exactos. Eso explica, por ejemplo, los resultados del ejemplo anterior:</p>
+    <p>El problema es que muchos números decimales no se pueden representarse de forma exacta en binario, por lo que los resultados no pueden ser exactos. Eso explica, por ejemplo, los resultados del ejemplo anterior:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.45, 1)
 <span class="idle-resp">3.5</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.55, 1)
 <span class="idle-resp">3.5</span>
 </pre>
-      </div>
+    </div>
 
-      <p>En el primer ejemplo, al convertir 3.45 a binario con 53 bits de precisión, el valor obtenido es realmente 3.45000000000000017763568394002504646778106689453125, es decir, ligeramente mayor que 3.45, por lo que al redondear con décimas, Python muestra el valor 3.5.</p>
+    <p>En el primer ejemplo, al convertir 3.45 a binario con 53 bits de precisión, el valor obtenido es realmente 3.45000000000000017763568394002504646778106689453125, es decir, ligeramente mayor que 3.45, por lo que al redondear con décimas, Python muestra el valor 3.5.</p>
 
-      <p>En el segundo ejemplo, al convertir 3.55 a binario con 53 bits de precisión, el valor obtenido es realmente 3.54999999999999982236431605997495353221893310546875, es decir, ligeramente inferior a 3.55, por lo que al redondear con décimas, Python muestra también el valor 3.5.</p>
+    <p>En el segundo ejemplo, al convertir 3.55 a binario con 53 bits de precisión, el valor obtenido es realmente 3.54999999999999982236431605997495353221893310546875, es decir, ligeramente inferior a 3.55, por lo que al redondear con décimas, Python muestra también el valor 3.5.</p>
 
-      <p><strong>Nota</strong>:</p>
-      <ul>
-        <li>Para ver el valor que se obtiene al convertir un número decimal a binario se puede utilizar el tipo Decimal de la biblioteca decimal:
+    <p><strong>Nota</strong>:</p>
+    <ul>
+      <li>Para ver el valor que se obtiene al convertir un número decimal a binario se puede utilizar el tipo Decimal de la biblioteca decimal:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> decimal <span class="idle-rese">import</span> Decimal
 <span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.45)
 <span class="idle-resp">Decimal('3.45000000000000017763568394002504646778106689453125')</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.55)
 <span class="idle-resp">Decimal('3.54999999999999982236431605997495353221893310546875')</span></pre>
-          </div>
-        </li>
-      </ul>
-      <hr class="corta" />
+        </div>
+      </li>
+    </ul>
+    <hr class="corta" />
 
-      <p>El problema del redondeo se agudiza cuando se hacen operaciones, puesto que los errores pueden acumularse (aunque a veces se compensan y pasan desapercibidos).</p>
+    <p>El problema del redondeo se agudiza cuando se hacen operaciones, puesto que los errores pueden acumularse (aunque a veces se compensan y pasan desapercibidos).</p>
 
-      <p>En algunos casos extremos, el error es apreciable en cálculos muy sencillos:</p>
+    <p>En algunos casos extremos, el error es apreciable en cálculos muy sencillos:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 0.1 + 0.1 + 0.1
 <span class="idle-resp">0.30000000000000004</span></pre>
-      </div>
+    </div>
 
-      <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">decimal</a> y existen bibliotecas como <a href="https://code.google.com/archive/p/mpmath">mpmath</a> que admiten precisión arbitraria.</p>
+    <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">decimal</a> y existen bibliotecas como <a href="https://code.google.com/archive/p/mpmath">mpmath</a> que admiten precisión arbitraria.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Para saber más:</p>
-      <ul>
-        <li>IEEE-754 <a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">precisión simple</a>, <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">precisión doble</a> (Wikipedia en inglés)</li>
-        <li>Manual de Python 3: <a href="https://docs.python.org/3/tutorial/floatingpoint.html">limitaciones de los decimales en Python</a></li>
-        <li>Artículo <a href="http://www.lahey.com/float.htm">The perils of Floating Point, de Bruce M. Bush</a></li>
-        <li>Arítculo <a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic, de David Goldberg</a></li>
-      </ul>
-    </section>
+    <p>Para saber más:</p>
+    <ul>
+      <li>IEEE-754 <a href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">precisión simple</a>, <a href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">precisión doble</a> (Wikipedia en inglés)</li>
+      <li>Manual de Python 3: <a href="https://docs.python.org/3/tutorial/floatingpoint.html">limitaciones de los decimales en Python</a></li>
+      <li>Artículo <a href="http://www.lahey.com/float.htm">The perils of Floating Point, de Bruce M. Bush</a></li>
+      <li>Arítculo <a href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic, de David Goldberg</a></li>
+    </ul>
+  </section>
 
-    <section id="valor-absoluto">
-      <h2>Valor absoluto</h2>
+  <section id="valor-absoluto">
+    <h2>Valor absoluto</h2>
 
-      <p>La función integrada <span class="idle-func">abs</span>() calcula el valor abosluto de un número, es decir, el valor sin signo.</p>
+    <p>La función integrada <span class="idle-func">abs</span>() calcula el valor abosluto de un número, es decir, el valor sin signo.</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(-6)
 <span class="idle-resp">6</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(7)
 <span class="idle-resp">7</span></pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Cosas que faltan: complex(real[, imag]); max(s[, args...]); min(s[, args...]);</p>
-    </section>
+  <section>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Cosas que faltan: complex(real[, imag]); max(s[, args...]); min(s[, args...]);</p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

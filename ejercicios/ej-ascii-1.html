@@ -1,173 +1,173 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicios (1). ASCII bucle for. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios (1). ASCII bucle for. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+</head>
 
-  <body>
-    <h1>Dibujos ASCII - Bucle <span class="idle-rese">for</span> - Ejercicios (1)</h1>
+<body>
+  <h1>Dibujos ASCII - Bucle <span class="idle-rese">for</span> - Ejercicios (1)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>ASCII <span class="idle-rese">for</span> (1)</h2>
+    <div class="toc">
+      <h2>ASCII <span class="idle-rese">for</span> (1)</h2>
 
-        <h3>Enunciados</h3>
-        <ul>
-          <li><a href="#ejercicio-1">A. Bucles no anidados</a><br />
-            <a href="#ejercicio-1-1">1</a> -
-            <a href="#ejercicio-1-2">2</a> -
-            <a href="#ejercicio-1-3">3</a> -
-            <a href="#ejercicio-1-4">4</a>
-          </li>
-          <li><a href="#ejercicio-2">B. Bucles anidados (independientes)</a><br />
-            <a href="#ejercicio-2-1">1</a> -
-            <a href="#ejercicio-2-2">2</a> -
-            <a href="#ejercicio-2-3">3</a> -
-            <a href="#ejercicio-2-4">4</a> -
-            <a href="#ejercicio-2-5">5</a>
-          </li>
-          <li><a href="#ejercicio-3">C. Bucles anidados (independientes)</a><br />
-            <a href="#ejercicio-3-1">1</a> -
-            <a href="#ejercicio-3-2">2</a> -
-            <a href="#ejercicio-3-3">3</a> -
-            <a href="#ejercicio-3-4">4</a> -
-            <a href="#ejercicio-3-5">5</a> -
-            <a href="#ejercicio-3-6">6</a></li>
-        </ul>
+      <h3>Enunciados</h3>
+      <ul>
+        <li><a href="#ejercicio-1">A. Bucles no anidados</a><br />
+          <a href="#ejercicio-1-1">1</a> -
+          <a href="#ejercicio-1-2">2</a> -
+          <a href="#ejercicio-1-3">3</a> -
+          <a href="#ejercicio-1-4">4</a>
+        </li>
+        <li><a href="#ejercicio-2">B. Bucles anidados (independientes)</a><br />
+          <a href="#ejercicio-2-1">1</a> -
+          <a href="#ejercicio-2-2">2</a> -
+          <a href="#ejercicio-2-3">3</a> -
+          <a href="#ejercicio-2-4">4</a> -
+          <a href="#ejercicio-2-5">5</a>
+        </li>
+        <li><a href="#ejercicio-3">C. Bucles anidados (independientes)</a><br />
+          <a href="#ejercicio-3-1">1</a> -
+          <a href="#ejercicio-3-2">2</a> -
+          <a href="#ejercicio-3-3">3</a> -
+          <a href="#ejercicio-3-4">4</a> -
+          <a href="#ejercicio-3-5">5</a> -
+          <a href="#ejercicio-3-6">6</a></li>
+      </ul>
 
-        <h3><a href="ej-ascii-1-soluciones.html">Soluciones</a></h3>
-        <ul>
-          <li><a href="ej-ascii-1-soluciones.html#ejercicio-1">A. Bucles no anidados</a><br />
-            <a href="ej-ascii-1-soluciones.html#ejercicio-1-1">1</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-1-2">2</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-1-3">3</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-1-4">4</a>
-          </li>
-          <li><a href="ej-ascii-1-soluciones.html#ejercicio-2">B. Bucles anidados (independientes)</a><br />
-            <a href="ej-ascii-1-soluciones.html#ejercicio-2-1">1</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-2-2">2</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-2-3">3</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-2-4">4</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-2-5">5</a>
-          </li>
-          <li><a href="ej-ascii-1-soluciones.html#ejercicio-3">C. Bucles anidados (independientes)</a><br />
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-1">1</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-2">2</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-3">3</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-4">4</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-5">5</a> -
-            <a href="ej-ascii-1-soluciones.html#ejercicio-3-6">6</a></li>
-        </ul>
-      </div>
-    </nav>
+      <h3><a href="ej-ascii-1-soluciones.html">Soluciones</a></h3>
+      <ul>
+        <li><a href="ej-ascii-1-soluciones.html#ejercicio-1">A. Bucles no anidados</a><br />
+          <a href="ej-ascii-1-soluciones.html#ejercicio-1-1">1</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-1-2">2</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-1-3">3</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-1-4">4</a>
+        </li>
+        <li><a href="ej-ascii-1-soluciones.html#ejercicio-2">B. Bucles anidados (independientes)</a><br />
+          <a href="ej-ascii-1-soluciones.html#ejercicio-2-1">1</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-2-2">2</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-2-3">3</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-2-4">4</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-2-5">5</a>
+        </li>
+        <li><a href="ej-ascii-1-soluciones.html#ejercicio-3">C. Bucles anidados (independientes)</a><br />
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-1">1</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-2">2</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-3">3</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-4">4</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-5">5</a> -
+          <a href="ej-ascii-1-soluciones.html#ejercicio-3-6">6</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En estos ejercicios se trata de crear dibujos geométricos sencillos utlizando caracteres ASCII, principalmente caracteres estrella (*) y espacios en blanco y en algunos casos guiones (-). En estos ejercicios se utilizan extensamente los bucles <span class="idle-rese">for</span>, simples o anidados.</p>
+  <p>En estos ejercicios se trata de crear dibujos geométricos sencillos utlizando caracteres ASCII, principalmente caracteres estrella (*) y espacios en blanco y en algunos casos guiones (-). En estos ejercicios se utilizan extensamente los bucles <span class="idle-rese">for</span>, simples o anidados.</p>
 
-    <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-for-2.html">bucle <span class="idle-rese">for</span> (2)</a> (variables <strong>independientes</strong>).</p>
+  <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-for-2.html">bucle <span class="idle-rese">for</span> (2)</a> (variables <strong>independientes</strong>).</p>
 
-    <p>Se pueden consultar unas <a href="ej-ascii-1-soluciones.html">posibles soluciones</a>.</p>
+  <p>Se pueden consultar unas <a href="ej-ascii-1-soluciones.html">posibles soluciones</a>.</p>
 
-    <section id="ejercicio-1">
-      <h2>A. Bucles no anidados</h2>
+  <section id="ejercicio-1">
+    <h2>A. Bucles no anidados</h2>
 
-      <p>Para estos primeros ejercicios no hacen falta bucles anidados, pero serán útiles en los ejercicios siguientes:</p>
+    <p>Para estos primeros ejercicios no hacen falta bucles anidados, pero serán útiles en los ejercicios siguientes:</p>
 
-      <section id="ejercicio-1-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+    <section id="ejercicio-1-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
 
-        <p>Escriba un programa que pida la anchura de una línea y la dibuje con caracteres producto (*):</p>
+      <p>Escriba un programa que pida la anchura de una línea y la dibuje con caracteres producto (*):</p>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Anchura de la línea:</span> 5
 <span class="idle-resp">* * * * *</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+    <section id="ejercicio-1-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
 
-        <p>Escriba un programa que pida la anchura de una línea y la dibuje con caracteres producto (*) y resta (-):</p>
+      <p>Escriba un programa que pida la anchura de una línea y la dibuje con caracteres producto (*) y resta (-):</p>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Anchura de la línea:</span> 5
 <span class="idle-resp">* - - - *</span>
 </pre>
-        </div>
-      </section>
-
-      <section id="ejercicio-1-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
-
-        <p>Escriba un programa que pida la altura de una figura y la dibuje con caracteres producto (*):</p>
-
-        <div class="resultado-idle">
-          <pre>
-<span class="idle-resp">Altura de la figura:</span> 5
-<span class="idle-resp">*
-*
-*
-*
-*</span>
-</pre>
-        </div>
-      </section>
-
-      <section id="ejercicio-1-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
-
-        <p>Escriba un programa que pida la altura de una figura y la dibuje con caracteres producto (*) y tubería (|):</p>
-
-        <div class="resultado-idle">
-          <pre>
-<span class="idle-resp">Altura de la figura:</span> 5
-<span class="idle-resp">*
-|
-|
-|
-*</span>
-</pre>
-        </div>
-      </section>
+      </div>
     </section>
 
-    <section id="ejercicio-2">
-      <h2>B. Bucles anidados (variables independientes)</h2>
+    <section id="ejercicio-1-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
 
-      <p>En estos ejercicios hacen falta bucles anidados, pero las variables son independientes.</p>
+      <p>Escriba un programa que pida la altura de una figura y la dibuje con caracteres producto (*):</p>
 
-      <section id="ejercicio-2-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Altura de la figura:</span> 5
+<span class="idle-resp">*
+*
+*
+*
+*</span>
+</pre>
+      </div>
+    </section>
 
-        <p>Escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*):</p>
+    <section id="ejercicio-1-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
 
-        <div class="resultado-idle">
-          <pre>
+      <p>Escriba un programa que pida la altura de una figura y la dibuje con caracteres producto (*) y tubería (|):</p>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Altura de la figura:</span> 5
+<span class="idle-resp">*
+|
+|
+|
+*</span>
+</pre>
+      </div>
+    </section>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>B. Bucles anidados (variables independientes)</h2>
+
+    <p>En estos ejercicios hacen falta bucles anidados, pero las variables son independientes.</p>
+
+    <section id="ejercicio-2-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+
+      <p>Escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*):</p>
+
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 5
 <span class="idle-resp">Altura del rectángulo:</span> 3
 <span class="idle-resp">* * * * *</span><span class="idle-resp"><br />* * * * * <br />* * * * *</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
+    <section id="ejercicio-2-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
 
-        <ol>
-          <li>Escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*) y resta (-):
-            <div class="resultado-idle">
-              <pre>
+      <ol>
+        <li>Escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*) y resta (-):
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">* * * * * *
@@ -175,11 +175,11 @@
 * - - - - *
 * * * * * *</span>
 </pre>
-            </div>
-          </li>
-          <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*) y espacios:
-            <div class="resultado-idle">
-              <pre>
+          </div>
+        </li>
+        <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*) y espacios:
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">* * * * * *
@@ -187,18 +187,18 @@
 *         *
 * * * * * *</span>
 </pre>
-            </div>
-          </li>
-        </ol>
-      </section>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-      <section id="ejercicio-2-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
+    <section id="ejercicio-2-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
 
-        <ol>
-          <li>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno debajo del otro y lo dibuje con caracteres producto (*) y espacios:
-            <div class="resultado-idle">
-              <pre>
+      <ol>
+        <li>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno debajo del otro y lo dibuje con caracteres producto (*) y espacios:
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">Número de rectángulos en vertical:</span> 3
@@ -217,12 +217,12 @@
 *           *
 * * * * * * *</span>
 </pre>
-            </div>
-          </li>
-          <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno debajo del otro y lo dibuje con caracteres producto (*) y espacios:
+          </div>
+        </li>
+        <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno debajo del otro y lo dibuje con caracteres producto (*) y espacios:
 
-            <div class="resultado-idle">
-              <pre>
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">Número de rectángulos en vertical:</span> 3
@@ -237,18 +237,18 @@
 *           *
 * * * * * * *</span>
 </pre>
-            </div>
-          </li>
-        </ol>
-      </section>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-      <section id="ejercicio-2-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-4</h3>
+    <section id="ejercicio-2-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-4</h3>
 
-        <ol>
-          <li>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:
-            <div class="resultado-idle">
-              <pre>
+      <ol>
+        <li>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">Número de rectángulos en horizontal:</span> 3
@@ -257,12 +257,12 @@
 *         *  *         *  *         *
 * * * * * *  * * * * * *  * * * * * *</span>
 </pre>
-            </div>
-          </li>
-          <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:
+          </div>
+        </li>
+        <li>A partir del programa anterior, escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:
 
-            <div class="resultado-idle">
-              <pre>
+          <div class="resultado-idle">
+            <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">Número de rectángulos en horizontal:</span> 3
@@ -271,18 +271,18 @@
 *         *         *         *
 * * * * * * * * * * * * * * * *</span>
 </pre>
-            </div>
-          </li>
-        </ol>
-      </section>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-      <section id="ejercicio-2-5">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-5</h3>
+    <section id="ejercicio-2-5">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - B-5</h3>
 
-        <p>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:</p>
+      <p>Escriba un programa que pida la anchura y altura de un rectángulo y la cantidad de rectángulos a dibujar uno al lado del otro y lo dibuje con caracteres producto (*) y espacios:</p>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Anchura del rectángulo:</span> 6
 <span class="idle-resp">Altura del rectángulo:</span> 4
 <span class="idle-resp">Número de rectángulos en horizontal:</span> 3
@@ -295,33 +295,33 @@
 *         *         *         *
 * * * * * * * * * * * * * * * *</span>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="ejercicio-3">
-      <h2>C. Más bucles anidados (variables independientes)</h2>
+  <section id="ejercicio-3">
+    <h2>C. Más bucles anidados (variables independientes)</h2>
 
-      <p>En estos ejercicios se dibujan figuras con forma de letras, utilizando bubles anidados con variables independientes.</p>
+    <p>En estos ejercicios se dibujan figuras con forma de letras, utilizando bubles anidados con variables independientes.</p>
 
-      <p>Para facilitar la creación de las figuras, en cada programa se piden ciertas condiciones sobre los valores introducidos por el usuario. Cada programa debe comprobar esas condiciones y generar mensajes de error en su caso. Al realizar las comprobaciones sobre los valores, no es necesario que el programa muestre todos los errores. Es suficiente con que muestre uno cualquiera. Lógicamente, el dibujo sólo debe mostrarse cuando no hay ningún error.</p>
+    <p>Para facilitar la creación de las figuras, en cada programa se piden ciertas condiciones sobre los valores introducidos por el usuario. Cada programa debe comprobar esas condiciones y generar mensajes de error en su caso. Al realizar las comprobaciones sobre los valores, no es necesario que el programa muestre todos los errores. Es suficiente con que muestre uno cualquiera. Lógicamente, el dibujo sólo debe mostrarse cuando no hay ningún error.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <section id="ejercicio-3-1">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-1 - Letra L</h3>
+    <section id="ejercicio-3-1">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-1 - Letra L</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra L y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra L y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al grosor de la línea.</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al grosor de la línea.</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra L
 Altura de la letra L:</span> 9
 <span class="idle-resp">Anchura de la letra L:</span> 5
@@ -336,10 +336,10 @@ Altura de la letra L:</span> 9
 * * * * *
 * * * * *</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra L
 Altura de la letra L:</span> 5
 <span class="idle-resp">Anchura de la letra L:</span> 3
@@ -350,33 +350,33 @@ Altura de la letra L:</span> 5
 *
 * * * </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra L
 Altura de la letra L:</span> 4
 <span class="idle-resp">Anchura de la letra L:</span> 5
 <span class="idle-resp">Grosor de la letra L:</span> 0
 <span class="idle-resp">Los tres valores deben ser positivos.</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-2">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-2 - Letra C</h3>
+    <section id="ejercicio-3-2">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-2 - Letra C</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra C y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra C y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al doble del grosor de la línea.</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al doble del grosor de la línea.</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra C
 Altura de la letra C:</span> 3
 <span class="idle-resp">Anchura de la letra C:</span> 2
@@ -385,10 +385,10 @@ Altura de la letra C:</span> 3
 *
 * *  </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra C
 Altura de la letra C:</span> 5
 <span class="idle-resp">Anchura de la letra C:</span> 9
@@ -399,33 +399,33 @@ Altura de la letra C:</span> 5
 * * * * * * * * *
 * * * * * * * * *</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra C
 Altura de la letra C:</span> 8
 <span class="idle-resp">Anchura de la letra C:</span> 6
 <span class="idle-resp">Grosor de la letra C:</span> 5
 <span class="idle-resp">La altura debe ser mayor que el doble del grosor.</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-3">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-3 - Letra U</h3>
+    <section id="ejercicio-3-3">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-3 - Letra U</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra C y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra C y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al grosor de la línea.</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al grosor de la línea.</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra U
 Altura de la letra U:</span> 6
 <span class="idle-resp">Anchura de la letra U:</span> 4
@@ -437,10 +437,10 @@ Altura de la letra U:</span> 6
 *     *
 * * * *  </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra U
 Altura de la letra U:</span> 5
 <span class="idle-resp">Anchura de la letra U:</span> 11
@@ -451,33 +451,33 @@ Altura de la letra U:</span> 5
 * * * * * * * * * * *
 * * * * * * * * * * *</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra U
 Altura de la letra U:</span> 5
 <span class="idle-resp">Anchura de la letra U:</span> 6
 <span class="idle-resp">Grosor de la letra U:</span> 3
 <span class="idle-resp">La anchura debe ser mayor que el doble del grosor.</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-4">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-4 - Letra O</h3>
+    <section id="ejercicio-3-4">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-4 - Letra O</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra O y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra O y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al doble del grosor de la línea.</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al doble del grosor de la línea.</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra O
 Altura de la letra O:</span> 7
 <span class="idle-resp">Anchura de la letra O:</span> 8
@@ -490,10 +490,10 @@ Altura de la letra O:</span> 7
 * * * * * * * *
 * * * * * * * *</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra O
 Altura de la letra O:</span> 10
 <span class="idle-resp">Anchura de la letra O:</span> 8
@@ -509,34 +509,34 @@ Altura de la letra O:</span> 10
 * * * * * * * *
 * * * * * * * *  </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra O
 Altura de la letra O:</span> 7
 <span class="idle-resp">Anchura de la letra O: </span>6
 <span class="idle-resp">Grosor de la letra O:</span> 3
 <span class="idle-resp">La anchura debe ser mayor que el doble del grosor.</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-5">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-5 - Letra T</h3>
+    <section id="ejercicio-3-5">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-5 - Letra T</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra T y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra T y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al menos en dos unidades al grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al grosor de la línea.</li>
-          <li>Anchura y grosor deben ser ambos pares o ambos impares (para que la barra vertical de la T esté centrada horizontalmente).</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al menos en dos unidades al grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al grosor de la línea.</li>
+        <li>Anchura y grosor deben ser ambos pares o ambos impares (para que la barra vertical de la T esté centrada horizontalmente).</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra T
 Altura de la letra T:</span> 5
 <span class="idle-resp">Anchura de la letra T:</span> 4
@@ -547,10 +547,10 @@ Altura de la letra T:</span> 5
   * *
   * * </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra T
 Altura de la letra T:</span> 5
 <span class="idle-resp">Anchura de la letra T:</span> 11
@@ -561,44 +561,44 @@ Altura de la letra T:</span> 5
         * * *
         * * * </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra T
 Altura de la letra T:</span> 8
 <span class="idle-resp">Anchura de la letra T:</span> 9
 <span class="idle-resp">Grosor de la letra T:</span> 2
 <span class="idle-resp">La anchura y el grosor deben ser ambos pares o ambos impares</span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra T
 Altura de la letra T:</span> 6
 <span class="idle-resp">Anchura de la letra T:</span> 5
 <span class="idle-resp">Grosor de la letra T:</span> 5
 <span class="idle-resp">La anchura debe ser al menos dos unidades mayor que el grosor.</span>
 </pre>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-3-6">
-        <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-6 - Letra H</h3>
+    <section id="ejercicio-3-6">
+      <h3>ASCII - Bucle <span class="idle-rese">for</span> (1) - C-6 - Letra H</h3>
 
-        <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra H y la dibuje con caracteres producto (*).</p>
+      <p>Escriba un programa que pida la altura, la anchura y el grosor de una letra H y la dibuje con caracteres producto (*).</p>
 
-        <p>Comprobaciones a realizar:</p>
-        <ul>
-          <li>Los tres valores deben ser positivos.</li>
-          <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
-          <li>La altura de la letra debe ser superior al menos en dos unidades al grosor de la línea.</li>
-          <li>Altura y grosor deben ser ambos pares o ambos impares (para que la barra horizontal de la H esté centrada verticalmente).</li>
-        </ul>
+      <p>Comprobaciones a realizar:</p>
+      <ul>
+        <li>Los tres valores deben ser positivos.</li>
+        <li>La anchura de la letra debe ser superior al doble del grosor de la línea.</li>
+        <li>La altura de la letra debe ser superior al menos en dos unidades al grosor de la línea.</li>
+        <li>Altura y grosor deben ser ambos pares o ambos impares (para que la barra horizontal de la H esté centrada verticalmente).</li>
+      </ul>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra H
 Altura de la letra H:</span> 11
 <span class="idle-resp">Anchura de la letra H:</span> 13
@@ -615,10 +615,10 @@ Altura de la letra H:</span> 11
 * * *               * * *
 * * *               * * * </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra H
 Altura de la letra H:</span> 10
 <span class="idle-resp">Anchura de la letra H:</span> 7
@@ -634,26 +634,26 @@ Altura de la letra H:</span> 10
 * *       * *
 * *       * * </span>
 </pre>
-        </div>
+      </div>
 
-        <div class="resultado-idle">
-          <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Letra H
 Altura de la letra H:</span> 7
 <span class="idle-resp">Anchura de la letra H:</span> 5
 <span class="idle-resp">Grosor de la letra H:</span> 2
 <span class="idle-resp">La altura y el grosor deben ser ambos pares o ambos impares </span>
 </pre>
-        </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 20 de marzo de 2014</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 20 de marzo de 2014</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

@@ -1,61 +1,61 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Examen 10/06/13. Exámenes. Python. Bartolomé Sintes Marco</title>
-    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../../varios/favicon.ico" />
-    <link rel="stylesheet" href="../../varios/prism-python.css" />
-    <script src="../../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen 10/06/13. Exámenes. Python. Bartolomé Sintes Marco</title>
+  <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../varios/favicon.ico" />
+  <link rel="stylesheet" href="../../varios/prism-python.css" />
+  <script src="../../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Examen 10 de junio de 2013</h1>
+<body>
+  <h1>Examen 10 de junio de 2013</h1>
 
-    <nav>
-      <p>
-        <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-        <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Examen 10/06/13</h2>
-
-        <ul>
-          <li><a href="#ejercicio-1">Operaciones</a>
-          <li><a href="#ejercicio-2">Dibujos bucles</a>
-          <li><a href="#ejercicio-3">Bucles y listas</a>
-          <li><a href="#ejercicio-4">Bucle <span class="idle-rese">while</span></a>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="ejercicio-1">
-      <h2>Ejercicio 1</h2>
-
-      <p>Escriba un programa que admita los coeficientes de un sistema de dos ecuaciones con dos incógnitas y que muestre las soluciones de la ecuación:</p>
+    <div class="toc">
+      <h2>Examen 10/06/13</h2>
 
       <ul>
-        <li>Los sistemas de dos ecuaciones pueden tener infinitas soluciones, una solución o ninguna solución.
-          <ul>
-            <li>si <strong>a1*b2-a2*b1</strong> y <strong>b1*c2-b2*c1</strong> son cero, el sistema tiene infinitas parejas de soluciones x e -a1/b1*x+c1/a1, para cualquier valor de x.</li>
-            <li>si <strong>a1*b2-a2*b1</strong> no es cero, el sistema tiene una solución x = (c1*b2-c2*b1)/(a1*b2-a2*b1) e y = (a1*c2-a2*c1)/(a1*b2-a2*b1).</li>
-            <li>si <strong>a1*b2-a2*b1</strong> es cero y <strong>b1*c2-b2*c1</strong> no es cero, el sistema no tiene solución.</li>
-          </ul>
-        </li>
-        <li>Ejemplos de sistemas:
-          <ul>
-            <li>2x+3y = 8 // 3x - 2y = -1. Solución única x = 1 y = 2</li>
-            <li>2x+3y = 8 // 4x + 6y = 9. No tiene solución</li>
-            <li>2x+3y = 8 // 4x + 6y = 16. Infinitas soluciones x , -0.66667x+4, para cualquier valor de x</li>
-          </ul>
-        </li>
+        <li><a href="#ejercicio-1">Operaciones</a></li>
+        <li><a href="#ejercicio-2">Dibujos bucles</a></li>
+        <li><a href="#ejercicio-3">Bucles y listas</a></li>
+        <li><a href="#ejercicio-4">Bucle <span class="idle-rese">while</span></a></li>
       </ul>
+    </div>
+  </nav>
 
-      <div class="resultado-idle">
-        <pre>
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>Escriba un programa que admita los coeficientes de un sistema de dos ecuaciones con dos incógnitas y que muestre las soluciones de la ecuación:</p>
+
+    <ul>
+      <li>Los sistemas de dos ecuaciones pueden tener infinitas soluciones, una solución o ninguna solución.
+        <ul>
+          <li>si <strong>a1*b2-a2*b1</strong> y <strong>b1*c2-b2*c1</strong> son cero, el sistema tiene infinitas parejas de soluciones x e -a1/b1*x+c1/a1, para cualquier valor de x.</li>
+          <li>si <strong>a1*b2-a2*b1</strong> no es cero, el sistema tiene una solución x = (c1*b2-c2*b1)/(a1*b2-a2*b1) e y = (a1*c2-a2*c1)/(a1*b2-a2*b1).</li>
+          <li>si <strong>a1*b2-a2*b1</strong> es cero y <strong>b1*c2-b2*c1</strong> no es cero, el sistema no tiene solución.</li>
+        </ul>
+      </li>
+      <li>Ejemplos de sistemas:
+        <ul>
+          <li>2x+3y = 8 // 3x - 2y = -1. Solución única x = 1 y = 2</li>
+          <li>2x+3y = 8 // 4x + 6y = 9. No tiene solución</li>
+          <li>2x+3y = 8 // 4x + 6y = 16. Infinitas soluciones x , -0.66667x+4, para cualquier valor de x</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">Sistema de dos ecuaciones con dos incógnitas
 Escriba las valores de los coeficientes del sistema de dos ecuaciones
 y dos incógnitas (ax + by = c) y resolveré el sistema.
@@ -70,16 +70,16 @@ Coeficiente "a" de la primera ecuación:</span> 2
 x = 1.0
 y = 2.0</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-2">
-      <h2>Ejercicio 2</h2>
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
 
-      <p>Escriba un programa que pida el tamaño y número de cuadrados a dibujar y los dibuje. El programa dará un mensaje de error en caso de que el tamaño no esté entre 2 y 10 y dibujará un cuadrado como el de los ejemplos siguientes utilizando bucles <span class="idle-rese">for</span>.</p>
+    <p>Escriba un programa que pida el tamaño y número de cuadrados a dibujar y los dibuje. El programa dará un mensaje de error en caso de que el tamaño no esté entre 2 y 10 y dibujará un cuadrado como el de los ejemplos siguientes utilizando bucles <span class="idle-rese">for</span>.</p>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">Dibuja cuadrado
 Lado del cuadrado (entre 2 y 10):</span> 12
 <span class="idle-resp">Valor incorrecto. Escriba de nuevo el lado del cuadrado:</span> 1
@@ -90,10 +90,10 @@ Lado del cuadrado (entre 2 y 10):</span> 12
   *   *
     *</span>
 </pre>
-      </div>
+    </div>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">Dibuja cuadrado</span>
 <span class="idle-resp">Lado del cuadrado (entre 2 y 10):</span> 5
 <span class="idle-resp">        *
@@ -106,16 +106,16 @@ Lado del cuadrado (entre 2 y 10):</span> 12
       *   *
         *</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-3">
-      <h2>Ejercicio 3</h2>
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
 
-      <p>Escriba un programa que pida palabras y las guarde en una lista. Para terminar de introducir palabras, simplemente debe pulsarse Intro. El programa debe escribir la lista de palabras y la lista de palabras sin repeticiones (dejando la última aparición de cada palabras, no la primera).</p>
+    <p>Escriba un programa que pida palabras y las guarde en una lista. Para terminar de introducir palabras, simplemente debe pulsarse Intro. El programa debe escribir la lista de palabras y la lista de palabras sin repeticiones (dejando la última aparición de cada palabras, no la primera).</p>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">Escriba una palabra:</span> a
 <span class="idle-resp">Escriba otra palabra:</span> b
 <span class="idle-resp">Escriba otra palabra:</span> a
@@ -126,26 +126,26 @@ Lado del cuadrado (entre 2 y 10):</span> 12
 <span class="idle-resp">Las palabras que ha escrito son ['a', 'b', 'a', 'c', 'd', 'c']
 Las palabras que ha escrito sin repeticiones son ['b', 'a', 'd', 'c']</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-4">
-      <h2>Ejercicio 4</h2>
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
 
-      <p>Escriba un programa que juegue a que el usuario adivine un número "pensado" por el ordenador. Al principio el programa pedirá el número máximo en el que puede pensar.</p>
+    <p>Escriba un programa que juegue a que el usuario adivine un número "pensado" por el ordenador. Al principio el programa pedirá el número máximo en el que puede pensar.</p>
 
-      <p>Para generar el número a adivinar se puede utilizar la función random.randrange() que genera un número entero aleatorio entre 1 y el argumento:</p>
+    <p>Para generar el número a adivinar se puede utilizar la función random.randrange() que genera un número entero aleatorio entre 1 y el argumento:</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-python">import random
 
 x = random.randrange(maximo)</code>
 </pre>
-      </div>
+    </div>
 
-      <div class="resultado-idle">
-        <pre>
+    <div class="resultado-idle">
+      <pre>
 <span class="idle-resp">Adivina un número</span>
 <span class="idle-resp">Escribe el máximo valor que puedo pensar:</span> 30
 <span class="idle-resp">¡Intenta adivinar ahora el número que he pensado!</span>
@@ -158,15 +158,15 @@ x = random.randrange(maximo)</code>
 <span class="idle-resp">Inténtalo de nuevo. Escribe otro número:</span> 27
 <span class="idle-resp">¡Enhorabuena! Has acertado. El número secreto era 27</span>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 10 de junio 2013 </p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 10 de junio 2013 </p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

@@ -1,48 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Módulo turtle (2). Gráficos. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo turtle (2). Gráficos. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Gráficos: el módulo turtle (2)</h1>
+<body>
+  <h1>Gráficos: el módulo turtle (2)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Módulo turtle (2)</h2>
+    <div class="toc">
+      <h2>Módulo turtle (2)</h2>
 
-        <ul>
-          <li><a href="#setworldcoordinates">setworldcoordinates()</a></li>
-          <li><a href="#write">write()</a></li>
-          <li><a href="#textinput-numinput">textinput() y numinput()</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>En esta lección se trata la creación de gráficos usando el módulo turtle. Se recomienda leer previamente la lección <a href="python-turtle-1.html">turtle (1)</a>.</p>
-
-    <section id="setworldcoordinates">
-      <h2>Cambio de coordenadas: setworldcoordinates()</h2>
-
-      <p>La función <strong>setworldcoordinates(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>)</strong> permite modificar las coordenadas de la ventana, definiendo las coordenadas de la esquina inferior izquierda (x<sub>1</sub>, y<sub>1</sub>) y de la esquina superior derecha (x<sub>2</sub>, y<sub>2</sub>).</p>
-
-      <p>El interés de esta función es poder desplazar el origen del centro de coordenadas y cambiar la escala:</p>
       <ul>
-        <li>De forma predeterminada, el origen está en el centro de la ventana y cada píxel es una unidad:
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <li><a href="#setworldcoordinates">setworldcoordinates()</a></li>
+        <li><a href="#write">write()</a></li>
+        <li><a href="#textinput-numinput">textinput() y numinput()</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se trata la creación de gráficos usando el módulo turtle. Se recomienda leer previamente la lección <a href="python-turtle-1.html">turtle (1)</a>.</p>
+
+  <section id="setworldcoordinates">
+    <h2>Cambio de coordenadas: setworldcoordinates()</h2>
+
+    <p>La función <strong>setworldcoordinates(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>)</strong> permite modificar las coordenadas de la ventana, definiendo las coordenadas de la esquina inferior izquierda (x<sub>1</sub>, y<sub>1</sub>) y de la esquina superior derecha (x<sub>2</sub>, y<sub>2</sub>).</p>
+
+    <p>El interés de esta función es poder desplazar el origen del centro de coordenadas y cambiar la escala:</p>
+    <ul>
+      <li>De forma predeterminada, el origen está en el centro de la ventana y cada píxel es una unidad:
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -51,22 +51,22 @@ hideturtle()
 
 goto(150, 150)</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-setworldcoordinates-1.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
-              </p>
-            </div>
           </div>
-        </li>
-        <li>Con setworldcoordinates() podemos cambiar las coordenadas de manera que el origen esté en cualquier sitio, por ejemplo en la esquina inferior izquierda.
 
-          <p>Teóricamente las coordenadas deben ajustarse al tamaño de la ventana, pero si se hace así, las proporciones cambian ligeramente, lo que deforma las figuras. Como se observa en la captura siguiente, la línea ya no es exactamente diagonal, sino que está ligeramente inclinada:</p>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-setworldcoordinates-1.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>Con setworldcoordinates() podemos cambiar las coordenadas de manera que el origen esté en cualquier sitio, por ejemplo en la esquina inferior izquierda.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p>Teóricamente las coordenadas deben ajustarse al tamaño de la ventana, pero si se hace así, las proporciones cambian ligeramente, lo que deforma las figuras. Como se observa en la captura siguiente, la línea ya no es exactamente diagonal, sino que está ligeramente inclinada:</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -76,20 +76,20 @@ setworldcoordinates(0, 0, 449, 199)
 
 goto(150, 150)</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-setworldcoordinates-2.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
-              </p>
-            </div>
           </div>
-        </li>
-        <li>Para que la proporción sea correcta, hay que modificar ligeramente los valores. En este caso, reduciendo el valor de y<sub>2</sub> se puede obtener una línea completamente diagonal:
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-setworldcoordinates-2.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>Para que la proporción sea correcta, hay que modificar ligeramente los valores. En este caso, reduciendo el valor de y<sub>2</sub> se puede obtener una línea completamente diagonal:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 200, 0, 0)
@@ -98,29 +98,29 @@ hideturtle()
 setworldcoordinates(0, 0, 449, 188)
 
 goto(150, 150)</code></pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-setworldcoordinates-3.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
-              </p>
-            </div>
           </div>
-          <p><strong>Nota</strong>: No he sido capaz de encontrar una regla sencilla para elegir los valores que creen proporciones correctas. parece que hay que encontrarlas probando.</p>
-        </li>
-      </ul>
-    </section>
 
-    <section id="write">
-      <h2>Escribir texto: write()</h2>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-setworldcoordinates-3.png" alt="Módulo turtle. Función setworldcoordinates()" width="466" height="238" />
+            </p>
+          </div>
+        </div>
+        <p><strong>Nota</strong>: No he sido capaz de encontrar una regla sencilla para elegir los valores que creen proporciones correctas. parece que hay que encontrarlas probando.</p>
+      </li>
+    </ul>
+  </section>
 
-      <p>La función <strong>write(texo, desplazarTortuga, alineación, fuente)</strong> permite escribir texto en el espacio de dibujo. Los cuatro argumentos de la función son:</p>
-      <ul>
-        <li><strong>texto</strong>: cadena de texto a escribir. La esquina inferior izquierda del texto se sitúa donde esté el cursor, salvo que se indique otra cosa con el tercer argumento (alineación).
+  <section id="write">
+    <h2>Escribir texto: write()</h2>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+    <p>La función <strong>write(texo, desplazarTortuga, alineación, fuente)</strong> permite escribir texto en el espacio de dibujo. Los cuatro argumentos de la función son:</p>
+    <ul>
+      <li><strong>texto</strong>: cadena de texto a escribir. La esquina inferior izquierda del texto se sitúa donde esté el cursor, salvo que se indique otra cosa con el tercer argumento (alineación).
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -130,20 +130,20 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba")</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-1.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
-        </li>
-        <li><strong>desplazarTortuga</strong>: valor booleano que indica si el cursor se desplaza automáticamente a la esquina inferior derecha del texto. El valor predeterminado es <span class="idle-rese">False</span>.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-1.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+      </li>
+      <li><strong>desplazarTortuga</strong>: valor booleano que indica si el cursor se desplaza automáticamente a la esquina inferior derecha del texto. El valor predeterminado es <span class="idle-rese">False</span>.
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -153,18 +153,18 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba", False)</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-2.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-2.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -174,19 +174,19 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba", True)</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-3.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
-        </li>
-        <li><strong>alineación</strong>: cadena (<span class="idle-cade">"left"</span>, <span class="idle-cade">"center"</span>, <span class="idle-cade">"right"</span>) que indica si el texto se escribe a la izquierda, al centro o a la derecha a partir de la posición del cursor. El valor predeterminado es <span class="idle-cade">"left"</span>.
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-3.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+      </li>
+      <li><strong>alineación</strong>: cadena (<span class="idle-cade">"left"</span>, <span class="idle-cade">"center"</span>, <span class="idle-cade">"right"</span>) que indica si el texto se escribe a la izquierda, al centro o a la derecha a partir de la posición del cursor. El valor predeterminado es <span class="idle-cade">"left"</span>.
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -196,18 +196,18 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba", False, "left")</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-4.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-4.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -217,18 +217,18 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba", False, "center")</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-5.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-5.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -238,20 +238,19 @@ title("www.mclibre.org")
 goto(50,10)
 write("Esto es una prueba", False, "right")</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-6.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
-        </li>
-        <li><strong>fuente</strong>: tupla de hasta tres elementos que indican el tipo de letra (cualquiera de los instalados en el ordenador: <span class="idle-cade">"arial"</span>, <span class="idle-cade">"courier"</span>, etc.), su tamaño y variante (<span class="idle-cade">"bold"</span>, <span class="idle-cade">"italic"</span>, <span
-    class="idle-cade">"underline"</span>, <span class="idle-cade">"overstrike"</span> -se pueden utilizar varios a la vez-).
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-6.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+      </li>
+      <li><strong>fuente</strong>: tupla de hasta tres elementos que indican el tipo de letra (cualquiera de los instalados en el ordenador: <span class="idle-cade">"arial"</span>, <span class="idle-cade">"courier"</span>, etc.), su tamaño y variante (<span class="idle-cade">"bold"</span>, <span class="idle-cade">"italic"</span>, <span class="idle-cade">"underline"</span>, <span class="idle-cade">"overstrike"</span> -se pueden utilizar varios a la vez-).
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -262,28 +261,28 @@ goto(50,10)
 write("Esto es una prueba", False,
       "right", ("arial", 20, "bold italic"))</code>
 </pre>
-            </div>
-
-            <div class="resultado-captura">
-              <p class="captura">
-                <img src="../img/turtle/turtle-write-7.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-              </p>
-            </div>
           </div>
-        </li>
-      </ul>
 
-      <hr class="corta" />
+          <div class="resultado-captura">
+            <p class="captura">
+              <img src="../img/turtle/turtle-write-7.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
 
-      <p>Se pueden omitir los últimos argumentos, pero no los anteriores. Por ejemplo, podemos omitir el tipo de letra (el cuarto argumento), pero si queremos especificar el tipo de letra, debemos indicar los tres argumentos anteriores.</p>
+    <hr class="corta" />
 
-      <hr class="corta" />
+    <p>Se pueden omitir los últimos argumentos, pero no los anteriores. Por ejemplo, podemos omitir el tipo de letra (el cuarto argumento), pero si queremos especificar el tipo de letra, debemos indicar los tres argumentos anteriores.</p>
 
-      <p>El desplazamiento del cursor se puede utilizar para que el texto de varias instrucciones aparezca seguido en la pantalla:</p>
+    <hr class="corta" />
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <p>El desplazamiento del cursor se puede utilizar para que el texto de varias instrucciones aparezca seguido en la pantalla:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -294,18 +293,18 @@ goto(50,10)
 write("Esto es ")
 write("una prueba")</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-write-8.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-          </p>
-        </div>
       </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-write-8.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+        </p>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -316,35 +315,35 @@ goto(50,10)
 write("Esto es ", True)
 write("una prueba")</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-write-9.png" alt="Módulo turtle. Función write()" width="466" height="188" />
-          </p>
-        </div>
       </div>
-    </section>
 
-    <section id="textinput-numinput">
-      <h2>Solicitar valores al usuario: textinput() y numinput()</h2>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-write-9.png" alt="Módulo turtle. Función write()" width="466" height="188" />
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <p>Para pedir datos al usuario en un programa que dibuja gráficos de tortuga se pueden utilizar la función <span class="idle-func">input</span>(). El inconveniente es que esta función solicita los datos en la ventana principal de IDLE, por lo que hay que estar cambiando el foco de una ventana a otra.</p>
+  <section id="textinput-numinput">
+    <h2>Solicitar valores al usuario: textinput() y numinput()</h2>
 
-      <p>En vez de la función <span class="idle-func">input</span>(), se pueden utilizar las funciones textinput() y numinput() de la biblioteca turtle.</p>
+    <p>Para pedir datos al usuario en un programa que dibuja gráficos de tortuga se pueden utilizar la función <span class="idle-func">input</span>(). El inconveniente es que esta función solicita los datos en la ventana principal de IDLE, por lo que hay que estar cambiando el foco de una ventana a otra.</p>
 
-      <hr class="corta" />
+    <p>En vez de la función <span class="idle-func">input</span>(), se pueden utilizar las funciones textinput() y numinput() de la biblioteca turtle.</p>
 
-      <p>La función <strong>textinput(título, mensaje)</strong> solicita una cadena al usuario en una ventana emergente. Los dos argumentos de la función son:</p>
+    <hr class="corta" />
 
-      <ul>
-        <li><strong>título</strong>: el título de la ventana emergente.</li>
-        <li><strong>mensaje</strong>: el texto que se muestra en la ventana.</li>
-      </ul>
+    <p>La función <strong>textinput(título, mensaje)</strong> solicita una cadena al usuario en una ventana emergente. Los dos argumentos de la función son:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <ul>
+      <li><strong>título</strong>: el título de la ventana emergente.</li>
+      <li><strong>mensaje</strong>: el texto que se muestra en la ventana.</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -353,30 +352,30 @@ title("www.mclibre.org")
 
 nombre = textinput("Nombre", "¿Cuál es su nombre?")</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-textinput-1.png" alt="Módulo turtle. Función textinput()" width="466" height="188" />
-          </p>
-        </div>
       </div>
 
-      <hr class="corta" />
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-textinput-1.png" alt="Módulo turtle. Función textinput()" width="466" height="188" />
+        </p>
+      </div>
+    </div>
 
-      <p>La función <strong>numinput(título, mensaje, valorPredeterminado, valorMínimo, valorMáximo)</strong> solicita un número al usuario en una ventana emergente. Los dos argumentos de la función son:</p>
+    <hr class="corta" />
 
-      <ul>
-        <li><strong>título</strong>: el título de la ventana emergente.</li>
-        <li><strong>mensaje</strong>: el texto que se muestra en la ventana.</li>
-        <li><strong>valorPredeterminado</strong>: el valor que se muestra en la ventana de forma predeterminada.</li>
-        <li><strong>valorMínimo</strong>: el valor mínimo que puede escribir el usuario.</li>
-        <li><strong>valorMáximo</strong>: el valor máximo que puede escribir el usuario.</li>
-      </ul>
+    <p>La función <strong>numinput(título, mensaje, valorPredeterminado, valorMínimo, valorMáximo)</strong> solicita un número al usuario en una ventana emergente. Los dos argumentos de la función son:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <ul>
+      <li><strong>título</strong>: el título de la ventana emergente.</li>
+      <li><strong>mensaje</strong>: el texto que se muestra en la ventana.</li>
+      <li><strong>valorPredeterminado</strong>: el valor que se muestra en la ventana de forma predeterminada.</li>
+      <li><strong>valorMínimo</strong>: el valor mínimo que puede escribir el usuario.</li>
+      <li><strong>valorMáximo</strong>: el valor máximo que puede escribir el usuario.</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -385,20 +384,20 @@ title("www.mclibre.org")
 
 edad = numinput("Edad", "¿Cuál es su edad?", 20, 0, 120)</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-numinput-1.png" alt="Módulo turtle. Función numinput()" width="466" height="186" />
-          </p>
-        </div>
       </div>
 
-      <p>Si se escribe un valor numérico menor que valorMínimo o mayor que valorMáximo, se muestra un aviso:</p>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-numinput-1.png" alt="Módulo turtle. Función numinput()" width="466" height="186" />
+        </p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <p>Si se escribe un valor numérico menor que valorMínimo o mayor que valorMáximo, se muestra un aviso:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -407,20 +406,20 @@ title("www.mclibre.org")
 
 edad = numinput("Edad", "¿Cuál es su edad?", 20, 0, 120)</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-numinput-2.png" alt="Módulo turtle. Función numinput()" width="394" height="171" />
-          </p>
-        </div>
       </div>
 
-      <p>Si se escribe un valor no numérico, se muestra un aviso:</p>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-numinput-2.png" alt="Módulo turtle. Función numinput()" width="394" height="171" />
+        </p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <p>Si se escribe un valor no numérico, se muestra un aviso:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -429,20 +428,20 @@ title("www.mclibre.org")
 
 edad = numinput("Edad", "¿Cuál es su edad?", 20, 0, 120)</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-numinput-3.png" alt="Módulo turtle. Función numinput()" width="258" height="171" />
-          </p>
-        </div>
       </div>
 
-      <p>La función numinput() recoge los números como decimales. Si queremos recoger valores enteros, debemos utilizar la función <span class="idle-func">int</span>():</p>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-numinput-3.png" alt="Módulo turtle. Función numinput()" width="258" height="171" />
+        </p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <p>La función numinput() recoge los números como decimales. Si queremos recoger valores enteros, debemos utilizar la función <span class="idle-func">int</span>():</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
@@ -453,22 +452,22 @@ hideturtle()
 edad = int(numinput("Edad", "¿Cuál es su edad?", 20, 0, 120))
 write("Su edad es " + str(edad))</code>
 </pre>
-        </div>
-
-        <div class="resultado-captura">
-          <p class="captura">
-            <img src="../img/turtle/turtle-numinput-4.png" alt="Módulo turtle. Función numinput()" width="466" height="188" />
-          </p>
-        </div>
       </div>
-    </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 2 de marzo de 2015</p>
+      <div class="resultado-captura">
+        <p class="captura">
+          <img src="../img/turtle/turtle-numinput-4.png" alt="Módulo turtle. Función numinput()" width="466" height="188" />
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 2 de marzo de 2015</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

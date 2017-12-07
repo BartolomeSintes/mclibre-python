@@ -1,139 +1,139 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Examen 06/06/17. Exámenes. Python. Bartolomé Sintes Marco</title>
-    <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../../varios/favicon.ico" />
-    <link rel="stylesheet" href="../../varios/prism-python.css" />
-    <script src="../../varios/prism.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen 06/06/17. Exámenes. Python. Bartolomé Sintes Marco</title>
+  <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../varios/favicon.ico" />
+  <link rel="stylesheet" href="../../varios/prism-python.css" />
+  <script src="../../varios/prism.js"></script>
 
-  </head>
+</head>
 
-  <body>
-    <h1>Examen 6 de junio de 2017</h1>
+<body>
+  <h1>Examen 6 de junio de 2017</h1>
 
-    <nav>
-      <p>
-        <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-        <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+    </p>
 
-      <h2>Examen 06/06/17</h2>
+    <h2>Examen 06/06/17</h2>
 
-      <div class="toc">
-        <ul>
-          <li><a href="#ejercicio-1">Juego de dados</a>
-          <li><a href="#ejercicio-2">Contraseña</a>
-          <li><a href="#ejercicio-3">Sube y baja</a>
-          <li><a href="#ejercicio-4">SVG</a>
-          <li><a href="#ejercicio-5">SVG bucles</a>
-          <li><a href="#ejercicio-6">SVG bucles anidados</a>
-        </ul>
-      </div>
-    </nav>
+    <div class="toc">
+      <ul>
+        <li><a href="#ejercicio-1">Juego de dados</a></li>
+        <li><a href="#ejercicio-2">Contraseña</a></li>
+        <li><a href="#ejercicio-3">Sube y baja</a></li>
+        <li><a href="#ejercicio-4">SVG</a></li>
+        <li><a href="#ejercicio-5">SVG bucles</a></li>
+        <li><a href="#ejercicio-6">SVG bucles anidados</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="ejercicio-1">
-      <h3>Ejercicio 1</h3>
+  <section id="ejercicio-1">
+    <h3>Ejercicio 1</h3>
 
-      <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) tiran dos dados. El que saque mayor puntuación total, gana. Si la puntuación coincide, gana quien haya sacado el valor más alto.</p>
+    <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) tiran dos dados. El que saque mayor puntuación total, gana. Si la puntuación coincide, gana quien haya sacado el valor más alto.</p>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 1 y un 1.</span></p>
-        <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 1 y un 1.</span></p>
+      <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 1 y un 5.</span></p>
-        <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 1 y un 5.</span></p>
+      <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Álvaro ha sacado un 3 y un 5.</span></p>
-        <p><span class="idle-resp">Bárbara ha sacado un 3 y un 5.</span></p>
-        <p><span class="idle-resp">Han empatado.</span></p>
-      </div>
-    </section>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Álvaro ha sacado un 3 y un 5.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 3 y un 5.</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+  </section>
 
-    <section id="ejercicio-2">
-      <h3>Ejercicio 2</h3>
+  <section id="ejercicio-2">
+    <h3>Ejercicio 2</h3>
 
-      <p>Escriba un programa que pida un número de tres cifras y a continuación pida una de las cifras y diga si se ha acertado la cifra.</p>
+    <p>Escriba un programa que pida un número de tres cifras y a continuación pida una de las cifras y diga si se ha acertado la cifra.</p>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">CONTRASEÑA</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Escriba un número de tres cifras: </span>567</p>
-        <p><span class="idle-resp">Escriba la cifra en la posición 3: </span>6</p>
-        <p><span class="idle-resp">¡Incorrecto!</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTRASEÑA</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Escriba un número de tres cifras: </span>567</p>
+      <p><span class="idle-resp">Escriba la cifra en la posición 3: </span>6</p>
+      <p><span class="idle-resp">¡Incorrecto!</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">CONTRASEÑA</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Escriba un número de tres cifras: </span>25</p>
-        <p><span class="idle-resp">Escriba la cifra en la posición 1: </span>0</p>
-        <p><span class="idle-resp">¡Correcto!</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTRASEÑA</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Escriba un número de tres cifras: </span>25</p>
+      <p><span class="idle-resp">Escriba la cifra en la posición 1: </span>0</p>
+      <p><span class="idle-resp">¡Correcto!</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">CONTRASEÑA</span></p>
-        <p>&nbsp;</p>
-        <p><span class="idle-resp">Escriba un número de tres cifras: </span>1234</p>
-        <p><span class="idle-resp">El número introducido no es válido</span></p>
-      </div>
-    </section>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTRASEÑA</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">Escriba un número de tres cifras: </span>1234</p>
+      <p><span class="idle-resp">El número introducido no es válido</span></p>
+    </div>
+  </section>
 
-    <section id="ejercicio-3">
-      <h3>Ejercicio 3</h3>
+  <section id="ejercicio-3">
+    <h3>Ejercicio 3</h3>
 
-      <p>Escriba un programa que pida primero un número entero positivo, después un entero mayor que el primero y finalmente un entero entre 1 y 10. Si algún valor no es correcto, se escribirá un mensaje de error. Si los valores son correctos, el programa escribirá los valores entre el primero y el segundo y a continuación de vuelta al primero tantas veces como indique el tercer valor.</p>
+    <p>Escriba un programa que pida primero un número entero positivo, después un entero mayor que el primero y finalmente un entero entre 1 y 10. Si algún valor no es correcto, se escribirá un mensaje de error. Si los valores son correctos, el programa escribirá los valores entre el primero y el segundo y a continuación de vuelta al primero tantas veces como indique el tercer valor.</p>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUBE Y BAJA</span></p>
-        <p><span class="idle-resp">Escriba un número positivo: </span>3</p>
-        <p><span class="idle-resp">Escriba un número mayor que 3: </span>7</p>
-        <p><span class="idle-resp">Escriba un número del 1 al 10: </span>2</p>
-        <p><span class="idle-resp">3 4 5 6 7 6 5 4 3 4 5 6 7 6 5 4 3</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUBE Y BAJA</span></p>
+      <p><span class="idle-resp">Escriba un número positivo: </span>3</p>
+      <p><span class="idle-resp">Escriba un número mayor que 3: </span>7</p>
+      <p><span class="idle-resp">Escriba un número del 1 al 10: </span>2</p>
+      <p><span class="idle-resp">3 4 5 6 7 6 5 4 3 4 5 6 7 6 5 4 3</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUBE Y BAJA</span></p>
-        <p><span class="idle-resp">Escriba un número positivo: </span>1</p>
-        <p><span class="idle-resp">Escriba un número mayor que 1: </span>3</p>
-        <p><span class="idle-resp">Escriba un número del 1 al 10: </span>5</p>
-        <p><span class="idle-resp">1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUBE Y BAJA</span></p>
+      <p><span class="idle-resp">Escriba un número positivo: </span>1</p>
+      <p><span class="idle-resp">Escriba un número mayor que 1: </span>3</p>
+      <p><span class="idle-resp">Escriba un número del 1 al 10: </span>5</p>
+      <p><span class="idle-resp">1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1</span></p>
+    </div>
 
-      <div class="resultado-idle">
-        <p><span class="idle-resp">SUBE Y BAJA</span></p>
-        <p><span class="idle-resp">Escriba un número positivo: </span>2</p>
-        <p><span class="idle-resp">Escriba un número mayor que 2: </span>-4</p>
-        <p><span class="idle-resp">¡Le he pedido un número mayor que 2!</span></p>
-      </div>
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SUBE Y BAJA</span></p>
+      <p><span class="idle-resp">Escriba un número positivo: </span>2</p>
+      <p><span class="idle-resp">Escriba un número mayor que 2: </span>-4</p>
+      <p><span class="idle-resp">¡Le he pedido un número mayor que 2!</span></p>
+    </div>
 
-    </section>
+  </section>
 
-    <section id="ejercicio-4">
-      <h2>Ejercicio 4</h2>
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
 
-      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170606-svg-4-1.png" alt="Ejercicio 4-1" title="Ejercicio 4-1" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170606-svg-4-1.png" alt="Ejercicio 4-1" title="Ejercicio 4-1" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -150,14 +150,14 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170606-svg-4-2.png" alt="Ejercicio 4-2" title="Ejercicio 4-2" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170606-svg-4-2.png" alt="Ejercicio 4-2" title="Ejercicio 4-2" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -174,20 +174,20 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-5">
-      <h2>Ejercicio 5</h2>
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
 
-      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes utilizando bucles:</p>
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes utilizando bucles:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170606-svg-5-1.png" alt="Ejercicio 5-1" title="Ejercicio 5-1" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170606-svg-5-1.png" alt="Ejercicio 5-1" title="Ejercicio 5-1" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -204,14 +204,14 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170606-svg-5-2.png" alt="Ejercicio 5-2" title="Ejercicio 5-2" width="324" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170606-svg-5-2.png" alt="Ejercicio 5-2" title="Ejercicio 5-2" width="324" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -228,20 +228,20 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="ejercicio-6">
-      <h2>Ejercicio 6</h2>
+  <section id="ejercicio-6">
+    <h2>Ejercicio 6</h2>
 
-      <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles anidados:</p>
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles anidados:</p>
 
-      <div class="filaflex">
-        <div class="resultado-captura nogrow"><img src="img/170606-svg-6.png" alt="Ejercicio 6-1" title="Ejercicio 6-1" width="624" height="324" /></div>
+    <div class="filaflex">
+      <div class="resultado-captura nogrow"><img src="img/170606-svg-6.png" alt="Ejercicio 6-1" title="Ejercicio 6-1" width="624" height="324" /></div>
 
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html>
 &lt;html lang="es">
 &lt;head>
@@ -258,16 +258,16 @@
 &lt;/body>
 &lt;/html></code>
 </pre>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 5 de junio de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 5 de junio de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

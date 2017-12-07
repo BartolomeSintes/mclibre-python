@@ -1,127 +1,127 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restos. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restos. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Restos</h1>
+<body>
+  <h1>Restos</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Restos</h2>
+    <div class="toc">
+      <h2>Restos</h2>
 
-        <ul>
-          <li><a href="#diferencias-2-3">Diferencias Python 2 / 3</a></li>
-          <li><a href="#modulos">Módulos</a></li>
-          <li><a href="#excepciones">Excepciones</a></li>
-          <li><a href="#bibliotecas-graficas">Biliotecas gráficas</a></li>
-          <li><a href="#otros">Otros</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="diferencias-2-3">
-      <h2>Diferencias entre Python 2 y Python 3</h2>
-
-      <p>Estas son algunas diferencias entre Python 2 y Python 3 relevantes para los ejercicios planteados en estos apuntes.</p>
       <ul>
-        <li>En Python 2 los nombres de las variables no podían contener caracteres no     ingleses, como acentos, eñes, c cedillas, etc. En Python 3 sí.
-          <ul>
-            <li>Python 2:
+        <li><a href="#diferencias-2-3">Diferencias Python 2 / 3</a></li>
+        <li><a href="#modulos">Módulos</a></li>
+        <li><a href="#excepciones">Excepciones</a></li>
+        <li><a href="#bibliotecas-graficas">Biliotecas gráficas</a></li>
+        <li><a href="#otros">Otros</a></li>
+      </ul>
+    </div>
+  </nav>
 
-              <div class="codigo">
-                <pre>
+  <section id="diferencias-2-3">
+    <h2>Diferencias entre Python 2 y Python 3</h2>
+
+    <p>Estas son algunas diferencias entre Python 2 y Python 3 relevantes para los ejercicios planteados en estos apuntes.</p>
+    <ul>
+      <li>En Python 2 los nombres de las variables no podían contener caracteres no ingleses, como acentos, eñes, c cedillas, etc. En Python 3 sí.
+        <ul>
+          <li>Python 2:
+
+            <div class="codigo">
+              <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> año = 1492
 <span class="idle-erro">SyntaxError: invalid syntax</span>
 </pre>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li>En Python 2 <span class="idle-rese">print</span> era una palabra reservada. En Python 3 <span class="idle-func">print</span>() es una función.</li>
-        <li>En Python 2 una coma al final de una sentencia <span class="idle-rese">print</span> omitía el salto de línea final. En Python 3, hace falta indicar el caracter final <span class="idle-func">print</span>( ..., end=<span class="idle-cade">""</span>)</li>
-        <li>En Python 2 si en un programa las cadenas de texto contenían caracteres no ingleses, el programa debe comenzar por una directiva que le indique el juego de caracteres. En Python 3 no hace falta.</li>
-        <li>En Python 2 la función de entrada de datos era la función <span class="idle-func">raw_input()</span> . En Python 3 es la función <span class="idle-func">input</span>() .</li>
-        <li>En Python 2, los enteros había dos tipos de enteros, enteros normales (con 32 bits de precisión) y enteros largos (de precisión ilimitada). En Python 3 sólo hay un tipo de enteros, de precisión ilimitada.</li>
-        <li>En Python 2 la divisón de enteros daba un resultado entero (si da un decimal, se truncaba al entero inferior). En Python 3 la solución es decimal.
-          <ul>
-            <li>Python 2:
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li>En Python 2 <span class="idle-rese">print</span> era una palabra reservada. En Python 3 <span class="idle-func">print</span>() es una función.</li>
+      <li>En Python 2 una coma al final de una sentencia <span class="idle-rese">print</span> omitía el salto de línea final. En Python 3, hace falta indicar el caracter final <span class="idle-func">print</span>( ..., end=<span class="idle-cade">""</span>)</li>
+      <li>En Python 2 si en un programa las cadenas de texto contenían caracteres no ingleses, el programa debe comenzar por una directiva que le indique el juego de caracteres. En Python 3 no hace falta.</li>
+      <li>En Python 2 la función de entrada de datos era la función <span class="idle-func">raw_input()</span> . En Python 3 es la función <span class="idle-func">input</span>() .</li>
+      <li>En Python 2, los enteros había dos tipos de enteros, enteros normales (con 32 bits de precisión) y enteros largos (de precisión ilimitada). En Python 3 sólo hay un tipo de enteros, de precisión ilimitada.</li>
+      <li>En Python 2 la divisón de enteros daba un resultado entero (si da un decimal, se truncaba al entero inferior). En Python 3 la solución es decimal.
+        <ul>
+          <li>Python 2:
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
 <span class="idle-resp">25</span>
 </pre>
-              </div>
+            </div>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
 <span class="idle-resp">100</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
 <span class="idle-resp">60</span>
 </pre>
-              </div>
-              <p>Para entender por qué se obtienen resultados distintos, hay que tener en cuenta que Python efectúa los cálculos de izquierda a derecha y en cada paso el resultado es un número entero:</p>
-              <ul>
-                <li>En el primer caso primero multiplica (100 * 60 = 6000) y luego divide (6000 / 60 = 100)</li>
-                <li>En el segundo caso primero divide (100 / 60 = 1 al tratarse de números enteros) y después multiplica (1 x 60 = 60).</li>
-              </ul>
-            </li>
-          </ul>
-          <ul>
-            <li>Python 3:
+            </div>
+            <p>Para entender por qué se obtienen resultados distintos, hay que tener en cuenta que Python efectúa los cálculos de izquierda a derecha y en cada paso el resultado es un número entero:</p>
+            <ul>
+              <li>En el primer caso primero multiplica (100 * 60 = 6000) y luego divide (6000 / 60 = 100)</li>
+              <li>En el segundo caso primero divide (100 / 60 = 1 al tratarse de números enteros) y después multiplica (1 x 60 = 60).</li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>Python 3:
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
 <span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
 <span class="idle-resp">25.0</span>
 </pre>
-              </div>
+            </div>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable = 100
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
 <span class="idle-resp">100.0</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
 <span class="idle-resp">100.0</span>
 </pre>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-    <section id="modulos">
-      <h2>Módulos</h2>
+  <section id="modulos">
+    <h2>Módulos</h2>
 
-      <p>No hay que guardar nunca un programa con el nombre de un módulo, porque si en ese programa (o en otro del mismo directorio) se importa el módulo, Python no importará el módulo sino el propio programa.</p>
-    </section>
+    <p>No hay que guardar nunca un programa con el nombre de un módulo, porque si en ese programa (o en otro del mismo directorio) se importa el módulo, Python no importará el módulo sino el propio programa.</p>
+  </section>
 
-    <section id="excepciones">
-      <h2>Excepciones</h2>
+  <section id="excepciones">
+    <h2>Excepciones</h2>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-python">while True:
     try:
         numero = int(input("Dígame un número entero: "))
@@ -130,48 +130,47 @@
         print("No ha escrito un número entero")
 print(numero)</code>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="bibliotecas-graficas">
-      <h2>Bibliotecas gráficas</h2>
-      <ul>
-        <li><a href="http://www.brython.info/">Brython</a></li>
-        <li>Kivy: <a href="https://kivy.org/#home">https://kivy.org/#home</a><br />
-          La versión 1.8 funciona en Python 3.3, pero no directamente con Python 3.4.<br />
-          <ul>
-            <li>Kivy GitHub milestones: <a href="https://github.com/kivy/kivy/milestones">https://github.com/kivy/kivy/milestones</a></li>
-            <li>Kivy GitHub releases: <a href="https://github.com/kivy/kivy/releases">https://github.com/kivy/kivy/releases</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>Unofficial Windows Binaries for Python Extension Packages, Christoph Gohlke: <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a>
-          <p>(hay una versión de Kivy)</p>
-        </li>
-      </ul>
-    </section>
+  <section id="bibliotecas-graficas">
+    <h2>Bibliotecas gráficas</h2>
+    <ul>
+      <li><a href="http://www.brython.info/">Brython</a></li>
+      <li>Kivy: <a href="https://kivy.org/#home">https://kivy.org/#home</a><br /> La versión 1.8 funciona en Python 3.3, pero no directamente con Python 3.4.<br />
+        <ul>
+          <li>Kivy GitHub milestones: <a href="https://github.com/kivy/kivy/milestones">https://github.com/kivy/kivy/milestones</a></li>
+          <li>Kivy GitHub releases: <a href="https://github.com/kivy/kivy/releases">https://github.com/kivy/kivy/releases</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>Unofficial Windows Binaries for Python Extension Packages, Christoph Gohlke: <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a>
+        <p>(hay una versión de Kivy)</p>
+      </li>
+    </ul>
+  </section>
 
-    <section id="otros">
-      <h2>Otros</h2>
-      <ul>
-        <li><a href="http://pythontutor.com/">Online Python Tutor</a>, para visualizar la ejecución de programas</li>
-        <li><a href="http://interactivepython.org">Interactive Python</a></li>
-        <li><a href="https://lwn.net/Articles/629426/">Protecting Python package downloads</a> (lwn.net, 14/01/2015)</li>
-        <li>Generadores: <a href="http://www.dabeaz.com/generators/">http://www.dabeaz.com/generators/</a></li>
-        <li>yield: <a href="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do</a></li>
-        <li><a href="https://www.linuxvoice.com/python-gallery/">Ganadores del concurso de dibujo de la revista Linux Voice (mayo 2014)</a></li>
-        <li>YAPF: formateador de código de Python <a href="https://github.com/google/yapf">https://github.com/google/yapf</a></li>
-        <li><a href="http://thonny.org/">Thonny</a>, IDE para principiantes</li>
-      </ul>
-    </section>
+  <section id="otros">
+    <h2>Otros</h2>
+    <ul>
+      <li><a href="http://pythontutor.com/">Online Python Tutor</a>, para visualizar la ejecución de programas</li>
+      <li><a href="http://interactivepython.org">Interactive Python</a></li>
+      <li><a href="https://lwn.net/Articles/629426/">Protecting Python package downloads</a> (lwn.net, 14/01/2015)</li>
+      <li>Generadores: <a href="http://www.dabeaz.com/generators/">http://www.dabeaz.com/generators/</a></li>
+      <li>yield: <a href="https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do">https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do</a></li>
+      <li><a href="https://www.linuxvoice.com/python-gallery/">Ganadores del concurso de dibujo de la revista Linux Voice (mayo 2014)</a></li>
+      <li>YAPF: formateador de código de Python <a href="https://github.com/google/yapf">https://github.com/google/yapf</a></li>
+      <li><a href="http://thonny.org/">Thonny</a>, IDE para principiantes</li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 30 de abril de 2015</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 30 de abril de 2015</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

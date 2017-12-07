@@ -1,72 +1,72 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brython. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brython. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Brython: Python en páginas web</h1>
+<body>
+  <h1>Brython: Python en páginas web</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Brython</h2>
-
-        <ul>
-          <li><a href="#brython">La biblioteca Brython</a></li>
-          <li><a href="#anadir-texto">Añadir texto en HTML</a></li>
-          <li><a href="#anadir-svg">Añadir elementos en SVG</a></li>
-          <li><a href="#brython-depurar">Depurar programas</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>En esta lección se trata la biblioteca Brython.</p>
-
-    <section id="brython">
-      <h2>La biblioteca Brython</h2>
-
-      <p>Los navegadores sólo pueden ejecutar programas escritos en JavaScript. Si en una página web se incluye un programa Python, el navegador no puede ejecutarlo directamente.</p>
-
-      <p>Pero existe una biblioteca JavaScript llamada <a href="http://brython.info/">Brython</a> que traduce código Python a JavaScript, lo que permite incluir programas de Python en una página web.</p>
-
-      <p>Brython es un proyecto de software libre disponible en <a href="http://brython.info">http://brython.info</a>.</p>
-
-      <p>Las principales limitaciones de Brython son:</p>
-      <ul>
-        <li>Brython no es capaz de traducir cualquier programa de Python, entre otros motivos porque no entiende todos los módulos de la biblioteca estándar.</li>
-        <li>como los programas se ejecutan en el navegador, no se pueden utilizar las funciones habituales de entrada y salida de datos de Python (<span class="idle-func">input</span>() y <span class="idle-func">print</span>()), sino que se debe hacer a través de los elementos HTML. Por eso los programas escritos para ejecutarse con Brython normalmente no se pueden ejecutar fuera del navegador (por ejemplo, en IDLE).</li>
-      </ul>
-
-      <p>Para utilizar Brython en una página, la página debe incluir como mínimo tres elementos, que se comentan en el siguiente ejemplo.</p>
+    <div class="toc">
+      <h2>Brython</h2>
 
       <ul>
-        <li>una etiqueta <span class="html-eti">&lt;script&gt;</span> que enlace a la biblioteca Brython</li>
-        <li>otra etiqueta <span class="html-eti">&lt;script&gt;</span> que contenga el programa de Python</li>
-        <li>una llamada a la función brython()</li>
+        <li><a href="#brython">La biblioteca Brython</a></li>
+        <li><a href="#anadir-texto">Añadir texto en HTML</a></li>
+        <li><a href="#anadir-svg">Añadir elementos en SVG</a></li>
+        <li><a href="#brython-depurar">Depurar programas</a></li>
       </ul>
+    </div>
+  </nav>
 
-      <div class="icono-enlace">
-        <a href="ejemplos/brython-1-01.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo de programa Brython 1" width="31" height="36" /></a>
-      </div>
+  <p>En esta lección se trata la biblioteca Brython.</p>
 
-      <div class="mcl-diapo" style="height: 30em">
-        <div id="Paso010">
-          <p><strong>Ejemplo de programa Brython 1</strong></p>
+  <section id="brython">
+    <h2>La biblioteca Brython</h2>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+    <p>Los navegadores sólo pueden ejecutar programas escritos en JavaScript. Si en una página web se incluye un programa Python, el navegador no puede ejecutarlo directamente.</p>
+
+    <p>Pero existe una biblioteca JavaScript llamada <a href="http://brython.info/">Brython</a> que traduce código Python a JavaScript, lo que permite incluir programas de Python en una página web.</p>
+
+    <p>Brython es un proyecto de software libre disponible en <a href="http://brython.info">http://brython.info</a>.</p>
+
+    <p>Las principales limitaciones de Brython son:</p>
+    <ul>
+      <li>Brython no es capaz de traducir cualquier programa de Python, entre otros motivos porque no entiende todos los módulos de la biblioteca estándar.</li>
+      <li>como los programas se ejecutan en el navegador, no se pueden utilizar las funciones habituales de entrada y salida de datos de Python (<span class="idle-func">input</span>() y <span class="idle-func">print</span>()), sino que se debe hacer a través de los elementos HTML. Por eso los programas escritos para ejecutarse con Brython normalmente no se pueden ejecutar fuera del navegador (por ejemplo, en IDLE).</li>
+    </ul>
+
+    <p>Para utilizar Brython en una página, la página debe incluir como mínimo tres elementos, que se comentan en el siguiente ejemplo.</p>
+
+    <ul>
+      <li>una etiqueta <span class="html-eti">&lt;script&gt;</span> que enlace a la biblioteca Brython</li>
+      <li>otra etiqueta <span class="html-eti">&lt;script&gt;</span> que contenga el programa de Python</li>
+      <li>una llamada a la función brython()</li>
+    </ul>
+
+    <div class="icono-enlace">
+      <a href="ejemplos/brython-1-01.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo de programa Brython 1" width="31" height="36" /></a>
+    </div>
+
+    <div class="mcl-diapo" style="height: 30em">
+      <div id="Paso010">
+        <p><strong>Ejemplo de programa Brython 1</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -83,27 +83,27 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">Esta página es HTML 5 válido
-            </div>
           </div>
 
-          <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-          <p>Los tres elementos son imprescindibles para poder ejecutar programas de Python mediante la biblioteca Brython en una página web.</p>
-
-          <p class="control">
-            <a href="#Paso011"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">Esta página es HTML 5 válido
+          </div>
         </div>
 
-        <div id="Paso011">
-          <p><strong>Ejemplo de programa Brython 1 - Paso 1</strong></p>
+        <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p>Los tres elementos son imprescindibles para poder ejecutar programas de Python mediante la biblioteca Brython en una página web.</p>
+
+        <p class="control">
+          <a href="#Paso011"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso011">
+        <p><strong>Ejemplo de programa Brython 1 - Paso 1</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -120,26 +120,26 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">Esta página es HTML 5 válido
-            </div>
           </div>
 
-          <p>El primer elemento <span class="html-eti">&lt;script&gt;</span> enlaza con la biblioteca Brython. En este caso se utiliza la biblioteca Brython disponible en Internet, pero podría ser una copia local.</p>
-
-          <p class="control">
-            <a href="#Paso010"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso012"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">Esta página es HTML 5 válido
+          </div>
         </div>
 
-        <div id="Paso012">
-          <p><strong>Ejemplo de programa Brython 1 - Paso 2</strong></p>
+        <p>El primer elemento <span class="html-eti">&lt;script&gt;</span> enlaza con la biblioteca Brython. En este caso se utiliza la biblioteca Brython disponible en Internet, pero podría ser una copia local.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso010"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso012"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso012">
+        <p><strong>Ejemplo de programa Brython 1 - Paso 2</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -156,26 +156,26 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">Esta página es HTML 5 válido
-            </div>
           </div>
 
-          <p>El segundo elemento <span class="html-eti">&lt;script&gt;</span> contendría el programa de Python que se ejecutaría cada vez que se cargara la página. En este caso no hay ningún programa.</p>
-
-          <p class="control">
-            <a href="#Paso011"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso013"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">Esta página es HTML 5 válido
+          </div>
         </div>
 
-        <div id="Paso013">
-          <p><strong>Ejemplo de programa Brython 1 - Paso 3</strong></p>
+        <p>El segundo elemento <span class="html-eti">&lt;script&gt;</span> contendría el programa de Python que se ejecutaría cada vez que se cargara la página. En este caso no hay ningún programa.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso011"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso013"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso013">
+        <p><strong>Ejemplo de programa Brython 1 - Paso 3</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -192,37 +192,37 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">Esta página es HTML 5 válido
-            </div>
           </div>
 
-          <p>En el elemento <span class="html-eti">&lt;body&gt;</span> se debe añadir el atributo <span class="html-atri">onload</span> con el valor <span class="html-atri-valor">brython()</span>. El atributo <span class="html-atri">onload</span> contiene una instrucción JavaScript que se ejecuta al cargar la página. En este caso la instrucción <span class="html-atri-valor">brython()</span> es una instrucción de la biblioteca Brython que hace que se ejecute el programa Python.</p>
-
-          <p class="control">
-            <a href="#Paso012"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" />          </p>
+          <div class="resultado-html">Esta página es HTML 5 válido
+          </div>
         </div>
+
+        <p>En el elemento <span class="html-eti">&lt;body&gt;</span> se debe añadir el atributo <span class="html-atri">onload</span> con el valor <span class="html-atri-valor">brython()</span>. El atributo <span class="html-atri">onload</span> contiene una instrucción JavaScript que se ejecuta al cargar la página. En este caso la instrucción <span class="html-atri-valor">brython()</span> es una instrucción de la biblioteca Brython que hace que se ejecute el programa Python.</p>
+
+        <p class="control">
+          <a href="#Paso012"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" /> </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="anadir-texto">
-      <h2>Añadir texto en un elemento HTML</h2>
+  <section id="anadir-texto">
+    <h2>Añadir texto en un elemento HTML</h2>
 
-      <p>Brython permite añadir texto en un elemento HTML de una página web, como muestra el siguiente ejemplo.</p>
+    <p>Brython permite añadir texto en un elemento HTML de una página web, como muestra el siguiente ejemplo.</p>
 
-      <div class="icono-enlace">
-        <a href="ejemplos/brython-1-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Añadir texto en elemento HTML" width="31" height="36" /></a>
-      </div>
+    <div class="icono-enlace">
+      <a href="ejemplos/brython-1-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Añadir texto en elemento HTML" width="31" height="36" /></a>
+    </div>
 
-      <div class="mcl-diapo" style="height: 36em">
-        <div id="Paso120">
-          <p><strong>Añadir texto en un elemento HTML</strong></p>
+    <div class="mcl-diapo" style="height: 36em">
+      <div id="Paso120">
+        <p><strong>Añadir texto en un elemento HTML</strong></p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -241,25 +241,25 @@ document["destino"] &lt;= "¡Hola, mundo!"</span>
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">¡Hola, mundo!
-            </div>
           </div>
 
-          <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde y la ejecución del programa Python utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-          <p class="control">
-            <a href="#Paso121"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">¡Hola, mundo!
+          </div>
         </div>
 
-        <div id="Paso121">
-          <p><strong>Añadir texto en un elemento HTML - Paso 1</strong></p>
+        <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde y la ejecución del programa Python utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso121"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso121">
+        <p><strong>Añadir texto en un elemento HTML - Paso 1</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -278,25 +278,25 @@ document["destino"] &lt;= "¡Hola, mundo!"
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html"></div>
           </div>
 
-          <p>Al cargar la página, el atributo <span class="html-atri">onload</span> ordena al navegador que ejecute la instrucción <span class="html-atri-valor">brython()</span> de la biblioteca Brython, que a su vez ejecuta el programa Python incluido en la página.</p>
-
-          <p class="control">
-            <a href="#Paso120"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso122"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html"></div>
         </div>
 
-        <div id="Paso122">
-          <p><strong>Añadir texto en un elemento HTML - Paso 2</strong></p>
+        <p>Al cargar la página, el atributo <span class="html-atri">onload</span> ordena al navegador que ejecute la instrucción <span class="html-atri-valor">brython()</span> de la biblioteca Brython, que a su vez ejecuta el programa Python incluido en la página.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso120"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso122"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso122">
+        <p><strong>Añadir texto en un elemento HTML - Paso 2</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -315,25 +315,25 @@ document["destino"] &lt;= "¡Hola, mundo!"
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html"></div>
           </div>
 
-          <p>La primera instrucción del programa Python importa el objeto <i>document</i> del módulo <i>browser</i> de Brython. Este objeto contiene una representación del documento y permite acceder a sus elementos.</p>
-
-          <p class="control">
-            <a href="#Paso121"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso123"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html"></div>
         </div>
 
-        <div id="Paso123">
-          <p><strong>Añadir texto en un elemento HTML - Paso 3</strong></p>
+        <p>La primera instrucción del programa Python importa el objeto <i>document</i> del módulo <i>browser</i> de Brython. Este objeto contiene una representación del documento y permite acceder a sus elementos.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso121"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso123"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso123">
+        <p><strong>Añadir texto en un elemento HTML - Paso 3</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -352,31 +352,31 @@ from browser import document
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-            </div>
           </div>
 
-          <p>La segunda instrucción del programa Python añade el texto "¡Hola, mundo!" a un elemento HTML.</p>
-
-          <ul>
-            <li>La expresión <i>document[destino]</i> hace referencia al elemento de la página cuyo atributo <span class="html-atri">id</span> es igual a <span class="html-atri-valor">destino</span> (en vez de <span class="html-atri-valor">destino</span> podría cualquier otro nombre válido). En este caso, el elemento es un párrafo <span class="html-eti">&lt;p&gt;</span></li>
-            <li>El operador &lt;= es propio de Brython y lo que hace es añadir un nodo en el árbol del documento (añade al elemento de la izquierda lo que se escriba a la derecha). En este caso, se añade texto, concretamente la cadena "¡Hola, mundo!"</li>
-          </ul>
-
-          <p class="control">
-            <a href="#Paso122"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso124"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+          </div>
         </div>
 
-        <div id="Paso124">
-          <p><strong>Añadir texto en un elemento HTML - Paso 4</strong></p>
+        <p>La segunda instrucción del programa Python añade el texto "¡Hola, mundo!" a un elemento HTML.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <ul>
+          <li>La expresión <i>document[destino]</i> hace referencia al elemento de la página cuyo atributo <span class="html-atri">id</span> es igual a <span class="html-atri-valor">destino</span> (en vez de <span class="html-atri-valor">destino</span> podría cualquier otro nombre válido). En este caso, el elemento es un párrafo <span class="html-eti">&lt;p&gt;</span></li>
+          <li>El operador &lt;= es propio de Brython y lo que hace es añadir un nodo en el árbol del documento (añade al elemento de la izquierda lo que se escriba a la derecha). En este caso, se añade texto, concretamente la cadena "¡Hola, mundo!"</li>
+        </ul>
+
+        <p class="control">
+          <a href="#Paso122"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso124"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso124">
+        <p><strong>Añadir texto en un elemento HTML - Paso 4</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -395,36 +395,36 @@ document["destino"] &lt;= "¡Hola, mundo!"
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html"><span class="codigo-resaltado">¡Hola, mundo!</span>                </div>
           </div>
 
-          <p>Finalmente, el texto "¡Hola, mundo!" añadido al párrafo se visualiza en el navegador.</p>
-
-          <p class="control">
-            <a href="#Paso123"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" />          </p>
+          <div class="resultado-html"><span class="codigo-resaltado">¡Hola, mundo!</span> </div>
         </div>
+
+        <p>Finalmente, el texto "¡Hola, mundo!" añadido al párrafo se visualiza en el navegador.</p>
+
+        <p class="control">
+          <a href="#Paso123"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" /> </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="anadir-svg">
-      <h2>Añadir elementos en una imagen SVG</h2>
+  <section id="anadir-svg">
+    <h2>Añadir elementos en una imagen SVG</h2>
 
-      <p>Brython permite añadir elementos en una imagen SVG, como muestra el siguiente ejemplo.</p>
+    <p>Brython permite añadir elementos en una imagen SVG, como muestra el siguiente ejemplo.</p>
 
-      <div class="icono-enlace">
-        <a href="ejemplos/brython-1-21.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Añadir elementos en imagen SVG" width="31" height="36" /></a>
-      </div>
+    <div class="icono-enlace">
+      <a href="ejemplos/brython-1-21.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Añadir elementos en imagen SVG" width="31" height="36" /></a>
+    </div>
 
-      <div class="mcl-diapo" style="height: 42em">
-        <div id="Paso220">
-          <p><strong>Añadir elementos en una imagen SVG</strong></p>
+    <div class="mcl-diapo" style="height: 42em">
+      <div id="Paso220">
+        <p><strong>Añadir elementos en una imagen SVG</strong></p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -447,30 +447,28 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="200" height="200" viewBox="0 0 200 200"
-                   style="border: black 1px solid" id="imagen0">
-                <line x1="10" y1="10" x2="190" y2="190" stroke="green" stroke-width="3" />
-              </svg>
-            </div>
           </div>
 
-          <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde y la ejecución del programa Python utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-          <p class="control">
-            <a href="#Paso221"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen0">
+              <line x1="10" y1="10" x2="190" y2="190" stroke="green" stroke-width="3" />
+            </svg>
+          </div>
         </div>
 
-        <div id="Paso221">
-          <p><strong>Añadir elementos en una imagen SVG - Paso 1</strong></p>
+        <p class="oculta-small">Puede ver la explicación de los elementos resaltados con un borde y la ejecución del programa Python utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso221"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso221">
+        <p><strong>Añadir elementos en una imagen SVG - Paso 1</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -493,30 +491,28 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="200" height="200" viewBox="0 0 200 200"
-                   style="border: black 1px solid" id="imagen1">
-              </svg>
-            </div>
           </div>
 
-          <p>Al cargar la página, el atributo <span class="html-atri">onload</span> ordena al navegador que ejecute la instrucción <span class="html-atri-valor">brython()</span> de la biblioteca Brython, que a su vez ejecuta el programa Python incluido en la página.</p>
-
-          <p class="control">
-            <a href="#Paso220"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso222"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen1">
+            </svg>
+          </div>
         </div>
 
-        <div id="Paso222">
-          <p><strong>Añadir elementos en una imagen SVG - Paso 2</strong></p>
+        <p>Al cargar la página, el atributo <span class="html-atri">onload</span> ordena al navegador que ejecute la instrucción <span class="html-atri-valor">brython()</span> de la biblioteca Brython, que a su vez ejecuta el programa Python incluido en la página.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso220"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso222"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso222">
+        <p><strong>Añadir elementos en una imagen SVG - Paso 2</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -539,30 +535,28 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="200" height="200" viewBox="0 0 200 200"
-                   style="border: black 1px solid" id="imagen2">
-              </svg>
-            </div>
           </div>
 
-          <p>La primera instrucción del programa Python importa el objeto <i>document</i> del módulo <i>browser</i> de Brython. Este objeto contiene una representación del documento y permite acceder a sus elementos.</p>
-
-          <p class="control">
-            <a href="#Paso221"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso223"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen2">
+            </svg>
+          </div>
         </div>
 
-        <div id="Paso223">
-          <p><strong>Añadir elementos en una imagen SVG - Paso 3</strong></p>
+        <p>La primera instrucción del programa Python importa el objeto <i>document</i> del módulo <i>browser</i> de Brython. Este objeto contiene una representación del documento y permite acceder a sus elementos.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso221"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso223"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso223">
+        <p><strong>Añadir elementos en una imagen SVG - Paso 3</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -585,30 +579,28 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="200" height="200" viewBox="0 0 200 200"
-                   style="border: black 1px solid" id="imagen3">
-              </svg>
-            </div>
           </div>
 
-          <p>La segunda instrucción del programa Python importa el objeto <i>svg</i> del módulo <i>browser.svg</i> de Brython. Este objeto permite crear elementos svg.</p>
-
-          <p class="control">
-            <a href="#Paso222"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso224"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen3">
+            </svg>
+          </div>
         </div>
 
-        <div id="Paso224">
-          <p><strong>Añadir elementos en una imagen SVG - Paso 4</strong></p>
+        <p>La segunda instrucción del programa Python importa el objeto <i>svg</i> del módulo <i>browser.svg</i> de Brython. Este objeto permite crear elementos svg.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <p class="control">
+          <a href="#Paso222"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso224"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso224">
+        <p><strong>Añadir elementos en una imagen SVG - Paso 4</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -631,35 +623,33 @@ import browser.svg as svg
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
-
-            <div class="resultado-html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="200" height="200" viewBox="0 0 200 200"
-                   style="border: black 1px solid" id="imagen4">
-              </svg>
-            </div>
           </div>
 
-          <p>La segunda instrucción del programa Python añade una línea verde en la imagen SVG.</p>
-
-          <ul>
-            <li>La expresión <i>document[imagen]</i> hace referencia al elemento de la página cuyo atributo <span class="html-atri">id</span> es igual a <span class="html-atri-valor">imagen</span> (en vez de <span class="html-atri-valor">imagen</span> podría cualquier otro nombre válido). En este caso, el elemento es una imagen <span class="html-eti">&lt;svg&gt;</span></li>
-            <li>El operador &lt;= es propio de Brython y lo que hace es añadir un nodo en el árbol del documento (añade al elemento de la izquierda lo que se escriba a la derecha). En este caso, se añade un elemento <span class="html-eti">&lt;line&gt;</span> al elemento <span class="html-eti">&lt;svg&gt;</span></li>
-          </ul>
-
-          <p class="control">
-            <a href="#Paso223"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <a href="#Paso225"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
-          </p>
+          <div class="resultado-html">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen4">
+            </svg>
+          </div>
         </div>
 
-        <div id="Paso225">
-          <p><strong>Añadir elementos en una imagen SVG - Paso 5</strong></p>
+        <p>La segunda instrucción del programa Python añade una línea verde en la imagen SVG.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <ul>
+          <li>La expresión <i>document[imagen]</i> hace referencia al elemento de la página cuyo atributo <span class="html-atri">id</span> es igual a <span class="html-atri-valor">imagen</span> (en vez de <span class="html-atri-valor">imagen</span> podría cualquier otro nombre válido). En este caso, el elemento es una imagen <span class="html-eti">&lt;svg&gt;</span></li>
+          <li>El operador &lt;= es propio de Brython y lo que hace es añadir un nodo en el árbol del documento (añade al elemento de la izquierda lo que se escriba a la derecha). En este caso, se añade un elemento <span class="html-eti">&lt;line&gt;</span> al elemento <span class="html-eti">&lt;svg&gt;</span></li>
+        </ul>
+
+        <p class="control">
+          <a href="#Paso223"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <a href="#Paso225"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+        </p>
+      </div>
+
+      <div id="Paso225">
+        <p><strong>Añadir elementos en una imagen SVG - Paso 5</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -682,106 +672,106 @@ document["imagen"] &lt;= svg.line(x1=10, y1=10, x2=190, y2=190, stroke="green", 
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
+          </div>
 
-            <div class="resultado-html">
-              <span>
+          <div class="resultado-html">
+            <span>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                      width="200" height="200" viewBox="0 0 200 200"
                      id="imagen5" class="codigo-resaltado">
                   <line x1="10" y1="10" x2="190" y2="190" stroke="green" stroke-width="3" />
                 </svg>
               </span>
-            </div>
           </div>
-
-          <p>Finalmente, el elemento <code class="language-markup">&lt;line x1="10" y1="10" x2="190" y2="190" stroke="green" stroke-width="3" /&gt;</code> añadido a la imagen <span class="html-eti">&lt;svg&gt;</span> se visualiza en el navegador.</p>
-
-          <p class="control">
-            <a href="#Paso224"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" />          </p>
         </div>
+
+        <p>Finalmente, el elemento <code class="language-markup">&lt;line x1="10" y1="10" x2="190" y2="190" stroke="green" stroke-width="3" /&gt;</code> añadido a la imagen <span class="html-eti">&lt;svg&gt;</span> se visualiza en el navegador.</p>
+
+        <p class="control">
+          <a href="#Paso224"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
+          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" /> </p>
       </div>
+    </div>
 
-      <p>El programa del ejemplo anterior sólo añade un elemento SVG, pero se podrían añadir tantos elementos como se quisiera, añadiendo las instrucciones correspondientes en el programa.</p>
+    <p>El programa del ejemplo anterior sólo añade un elemento SVG, pero se podrían añadir tantos elementos como se quisiera, añadiendo las instrucciones correspondientes en el programa.</p>
 
-      <p>Las instrucciones que generan los diferentes elementos SVG incluyen los argumentos correspondientes a cada elemento SVG:</p>
+    <p>Las instrucciones que generan los diferentes elementos SVG incluyen los argumentos correspondientes a cada elemento SVG:</p>
 
-      <ul>
-        <li>Argumentos comunes
-          <ul>
-            <li>stroke: color del trazo</li>
-            <li>stroke_width: grosor del trazo (valor numérico sin unidades)</li>
-            <li>fill: color de relleno (para obtener un relleno trasparente hay que utilizar el valor <i>none</i>)</li>
-            <li>los valores numéricos se escriben sin comillas, el resto se escriben entre comillas</li>
-          </ul>
-        </li>
-        <li>Línea: svg.line(x1=..., y1=..., x2=..., y2=..., stroke="...", stroke_width=...)
-          <ul>
-            <li>x1: coordenada X de un extremo de la línea</li>
-            <li>y1: coordenada Y de un extremo de la línea</li>
-            <li>x2: coordenada X del otro extremo de la línea</li>
-            <li>y2: coordenada Y del otro extremo de la línea</li>
-          </ul>
-        </li>
-        <li>Círculo: svg.circle(cx=..., cy=..., r=..., stroke="...", stroke_width=..., fill="...")
-          <ul>
-            <li>cx: coordenada X del centro del círculo</li>
-            <li>cy: coordenada Y del centro del círculo</li>
-            <li>r: radio del círculo</li>
-          </ul>
-        </li>
-        <li>Rectángulo: svg.rect(x=..., y=..., width=..., height=..., stroke="...", stroke_width=..., fill="...")
-          <ul>
-            <li>x: coordenada X de la esquina superior izquierda</li>
-            <li>y: coordenada Y de la esquina superior izquierda</li>
-            <li>width: anchura del rectángulo</li>
-            <li>height: altura del rectángulo</li>
-          </ul>
-        </li>
-        <li>Elipse: svg.ellipse(cx=..., cy=..., rx=..., ry=..., stroke="...", stroke_width=..., fill="...")
-          <ul>
-            <li>cx: coordenada X del centro de la elipse</li>
-            <li>cy: coordenada Y del centro de la elipse</li>
-            <li>rx: radio horizontal de la elipse</li>
-            <li>ry: radio vertical de la elipse</li>
-          </ul>
-        </li>
-        <li>Polígono: svg.polygon(points="...", stroke="...", stroke_width=..., fill="...")
-          <ul>
-            <li>points: coordenadas de los vértices del polígono con el formato "x1,y1 x2,y2 ...". El último punto se une con el primero automáticamente, por ejemplo "10,10 50,10 50,50" dibujaría un triángulo.</li>
-          </ul>
-        </li>
-        <li>Polilínea: svg.polyline(points="...", stroke="...", stroke_width=..., fill="...")
-          <ul>
-            <li>points: coordenadas de los vértices de la línea con el formato "x1,y1 x2,y2 ...". El último punto <strong>no</strong> se une con el primero, por ejemplo "10,10 50,10 50,50" dibujaría dos segmentos. Las polilíneas admiten ser rellenadas y se rellenan como si fuera un polígono cerrado, uniendo el último punto con el primero.</li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+    <ul>
+      <li>Argumentos comunes
+        <ul>
+          <li>stroke: color del trazo</li>
+          <li>stroke_width: grosor del trazo (valor numérico sin unidades)</li>
+          <li>fill: color de relleno (para obtener un relleno trasparente hay que utilizar el valor <i>none</i>)</li>
+          <li>los valores numéricos se escriben sin comillas, el resto se escriben entre comillas</li>
+        </ul>
+      </li>
+      <li>Línea: svg.line(x1=..., y1=..., x2=..., y2=..., stroke="...", stroke_width=...)
+        <ul>
+          <li>x1: coordenada X de un extremo de la línea</li>
+          <li>y1: coordenada Y de un extremo de la línea</li>
+          <li>x2: coordenada X del otro extremo de la línea</li>
+          <li>y2: coordenada Y del otro extremo de la línea</li>
+        </ul>
+      </li>
+      <li>Círculo: svg.circle(cx=..., cy=..., r=..., stroke="...", stroke_width=..., fill="...")
+        <ul>
+          <li>cx: coordenada X del centro del círculo</li>
+          <li>cy: coordenada Y del centro del círculo</li>
+          <li>r: radio del círculo</li>
+        </ul>
+      </li>
+      <li>Rectángulo: svg.rect(x=..., y=..., width=..., height=..., stroke="...", stroke_width=..., fill="...")
+        <ul>
+          <li>x: coordenada X de la esquina superior izquierda</li>
+          <li>y: coordenada Y de la esquina superior izquierda</li>
+          <li>width: anchura del rectángulo</li>
+          <li>height: altura del rectángulo</li>
+        </ul>
+      </li>
+      <li>Elipse: svg.ellipse(cx=..., cy=..., rx=..., ry=..., stroke="...", stroke_width=..., fill="...")
+        <ul>
+          <li>cx: coordenada X del centro de la elipse</li>
+          <li>cy: coordenada Y del centro de la elipse</li>
+          <li>rx: radio horizontal de la elipse</li>
+          <li>ry: radio vertical de la elipse</li>
+        </ul>
+      </li>
+      <li>Polígono: svg.polygon(points="...", stroke="...", stroke_width=..., fill="...")
+        <ul>
+          <li>points: coordenadas de los vértices del polígono con el formato "x1,y1 x2,y2 ...". El último punto se une con el primero automáticamente, por ejemplo "10,10 50,10 50,50" dibujaría un triángulo.</li>
+        </ul>
+      </li>
+      <li>Polilínea: svg.polyline(points="...", stroke="...", stroke_width=..., fill="...")
+        <ul>
+          <li>points: coordenadas de los vértices de la línea con el formato "x1,y1 x2,y2 ...". El último punto <strong>no</strong> se une con el primero, por ejemplo "10,10 50,10 50,50" dibujaría dos segmentos. Las polilíneas admiten ser rellenadas y se rellenan como si fuera un polígono cerrado, uniendo el último punto con el primero.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-    <section id="brython-depurar">
-      <h2>Depurar programas</h2>
+  <section id="brython-depurar">
+    <h2>Depurar programas</h2>
 
-      <p>Encontrar y corregir los errores en programas de Brython es un poco más difícil que en un programa de Python ya que a los errores habituales (errores de sintaxis en Python y algoritmos incorrectos) se añaden otros (errores de sintaxis al utilizar la biblioteca Brython y errores al manipular los elementos de la página web). La dificultad reside en que el navegador no produce ningún mensaje de error: simplemente el programa no se ejecuta y el navegador muestra lo que puede.</p>
+    <p>Encontrar y corregir los errores en programas de Brython es un poco más difícil que en un programa de Python ya que a los errores habituales (errores de sintaxis en Python y algoritmos incorrectos) se añaden otros (errores de sintaxis al utilizar la biblioteca Brython y errores al manipular los elementos de la página web). La dificultad reside en que el navegador no produce ningún mensaje de error: simplemente el programa no se ejecuta y el navegador muestra lo que puede.</p>
 
-      <p>Aunque los programas que se proponen en los ejercicios son relativamente sencillos, se recomienda si es posible probar los programas cada vez que se cambia algo, de manera que sea más fácil encontrar el origen del problema si este se produce.</p>
+    <p>Aunque los programas que se proponen en los ejercicios son relativamente sencillos, se recomienda si es posible probar los programas cada vez que se cambia algo, de manera que sea más fácil encontrar el origen del problema si este se produce.</p>
 
-      <p>Los errores más habituales son:</p>
-      <ul>
-        <li>olvidar separar los argumentos con comas</li>
-        <li>olvidar abrir y/o cerrar con comillas los valores no numéricos</li>
-        <li>escribir incorrectamente los nombres de los argumentos (por ejemplo, x en vez de x1)</li>
-        <li>olvidar importar los objetos <i>document</i> o <i>svg</i></li>
-      </ul>
+    <p>Los errores más habituales son:</p>
+    <ul>
+      <li>olvidar separar los argumentos con comas</li>
+      <li>olvidar abrir y/o cerrar con comillas los valores no numéricos</li>
+      <li>escribir incorrectamente los nombres de los argumentos (por ejemplo, x en vez de x1)</li>
+      <li>olvidar importar los objetos <i>document</i> o <i>svg</i></li>
+    </ul>
 
-      <p>Para encontrar el origen del problema conviene utilizar la consola web de Firefox o Chrome, que al menos nos indica la línea en la que se ha cometido un error de sintaxis.</p>
+    <p>Para encontrar el origen del problema conviene utilizar la consola web de Firefox o Chrome, que al menos nos indica la línea en la que se ha cometido un error de sintaxis.</p>
 
-      <p>El programa de ejemplo siguiente contiene un error de sintaxis que impide su ejecución, por lo que el navegador mostrá simplemente la imagen SVG vacía:.</p>
+    <p>El programa de ejemplo siguiente contiene un error de sintaxis que impide su ejecución, por lo que el navegador mostrá simplemente la imagen SVG vacía:.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -804,42 +794,40 @@ document["imagen"] &lt;= svg.circle(cx=100, cy=100, r=100 stroke="red", stroke_w
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="200" height="200" viewBox="0 0 200 200"
-               style="border: black 1px solid" id="imagen">
-          </svg>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/brython-1-32.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Programa con error de sintaxis" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-html">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" style="border: black 1px solid" id="imagen">
+        </svg>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/brython-1-32.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace a ejemplo Programa con error de sintaxis" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Las herramientas de desarrollo incluidas en los navegadores actuales ayudan a localizar el origen de los errores, especialmente cuando se trata de errores de sintaxis.</p>
+    <p>Las herramientas de desarrollo incluidas en los navegadores actuales ayudan a localizar el origen de los errores, especialmente cuando se trata de errores de sintaxis.</p>
 
-      <ul>
-        <li>En Firefox, el inspector se abre mediante el menú Herramientas > Desarrollador web > Depurador o mediante el atajo de teclado Ctrl+May+K. Como muestra la imagen siguiente, debe elegirse la Consola y los apartados JS y Registro haciendo clic sobre ellos:
+    <ul>
+      <li>En Firefox, el inspector se abre mediante el menú Herramientas > Desarrollador web > Depurador o mediante el atajo de teclado Ctrl+May+K. Como muestra la imagen siguiente, debe elegirse la Consola y los apartados JS y Registro haciendo clic sobre ellos:
 
-          <p class="captura"><img src="../img/brython/brython-inspector-error-firefox-1.png" alt="Consola del inspector en Firefox" width="900" height="410" /></p>
-        </li>
-        <li>En Chrome, el inspector se abre mediante el menú Personalizar > Más herramientas > Herramientas para desarrolladores o mediante el atajo de teclado Ctrl+May+C.
+        <p class="captura"><img src="../img/brython/brython-inspector-error-firefox-1.png" alt="Consola del inspector en Firefox" width="900" height="410" /></p>
+      </li>
+      <li>En Chrome, el inspector se abre mediante el menú Personalizar > Más herramientas > Herramientas para desarrolladores o mediante el atajo de teclado Ctrl+May+C.
 
-          <p class="captura"><img src="../img/brython/brython-inspector-error-chrome-1.png" alt="Consola del inspector en Chrome" width="900" height="410" /></p>
-        </li>
-      </ul>
-    </section>
+        <p class="captura"><img src="../img/brython/brython-inspector-error-chrome-1.png" alt="Consola del inspector en Chrome" width="900" height="410" /></p>
+      </li>
+    </ul>
+  </section>
 
-    <p>En ambos casos, el navegador nos indica la línea problemática, aunque somos nostros los que debemos darnos cuenta del origen del problema, en este caso que falta una coma entre los argumentos <i>r</i> y <i>stroke</i>.</p>
+  <p>En ambos casos, el navegador nos indica la línea problemática, aunque somos nostros los que debemos darnos cuenta del origen del problema, en este caso que falta una coma entre los argumentos <i>r</i> y <i>stroke</i>.</p>
 
-    <p>Aunque lo más cómo es utilizar las herramientas para desarrolladores de los navegadores, también se puede copiar el programa Brython (sólo el programa de Python, no el resto de la página) en una ventana de IDLE y ejecutarlo. Aunque el programa no se podrá ejecutar ya que la biblioteca brython no está disponible, IDLE sí que señala los errores de sintaxis con algo más de claridad que los herramientas para desarrolladores de los navegadores.</p>
+  <p>Aunque lo más cómo es utilizar las herramientas para desarrolladores de los navegadores, también se puede copiar el programa Brython (sólo el programa de Python, no el resto de la página) en una ventana de IDLE y ejecutarlo. Aunque el programa no se podrá ejecutar ya que la biblioteca brython no está disponible, IDLE sí que señala los errores de sintaxis con algo más de claridad que los herramientas para desarrolladores de los navegadores.</p>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de marzo de 2016</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2016</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

@@ -1,183 +1,183 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Soluciones (1). El módulo turtle. Python. Bartolomé Sintes Marco</title>
-    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" href="../varios/prism-python.css" />
-    <script src="../varios/prism.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones (1). El módulo turtle. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
 
-  <body>
-    <h1>Gráficos: el módulo turtle - Soluciones (1)</h1>
+<body>
+  <h1>Gráficos: el módulo turtle - Soluciones (1)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Módulo turtle (1)</h2>
+    <div class="toc">
+      <h2>Módulo turtle (1)</h2>
 
-        <h3><a href="ej-turtle-1.html">Enunciados</a></h3>
-        <ul>
-          <li><a href="ej-turtle-1.html#ejercicio-1">A - Ventana de tortuga</a>
-            <ol>
-              <li><a href="ej-turtle-1.html#ejercicio-1-1">Posición</a></li>
-              <li><a href="ej-turtle-1.html#ejercicio-1-2">Tamaño</a></li>
-            </ol>
-          </li>
-          <li><a href="ej-turtle-1.html#ejercicio-2">B - Puntos y líneas</a>
-            <ol>
-              <li><a href="ej-turtle-1.html#ejercicio-2-1">Puntos</a></li>
-              <li><a href="ej-turtle-1.html#ejercicio-2-2">Líneas</a></li>
-              <li><a href="ej-turtle-1.html#ejercicio-2-3">Puntos y líneas</a></li>
-            </ol>
-          </li>
-        </ul>
+      <h3><a href="ej-turtle-1.html">Enunciados</a></h3>
+      <ul>
+        <li><a href="ej-turtle-1.html#ejercicio-1">A - Ventana de tortuga</a>
+          <ol>
+            <li><a href="ej-turtle-1.html#ejercicio-1-1">Posición</a></li>
+            <li><a href="ej-turtle-1.html#ejercicio-1-2">Tamaño</a></li>
+          </ol>
+        </li>
+        <li><a href="ej-turtle-1.html#ejercicio-2">B - Puntos y líneas</a>
+          <ol>
+            <li><a href="ej-turtle-1.html#ejercicio-2-1">Puntos</a></li>
+            <li><a href="ej-turtle-1.html#ejercicio-2-2">Líneas</a></li>
+            <li><a href="ej-turtle-1.html#ejercicio-2-3">Puntos y líneas</a></li>
+          </ol>
+        </li>
+      </ul>
 
-        <h3>Soluciones</h3>
-        <ul>
-          <li><a href="#ejercicio-1">A - Ventana de tortuga</a>
-            <ol>
-              <li><a href="#ejercicio-1-1">Posición</a></li>
-              <li><a href="#ejercicio-1-2">Tamaño</a></li>
-            </ol>
-          </li>
-          <li><a href="#ejercicio-2">B - Puntos y líneas</a>
-            <ol>
-              <li><a href="#ejercicio-2-1">Puntos</a></li>
-              <li><a href="#ejercicio-2-2">Líneas</a></li>
-              <li><a href="#ejercicio-2-3">Puntos y líneas</a></li>
-            </ol>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <h3>Soluciones</h3>
+      <ul>
+        <li><a href="#ejercicio-1">A - Ventana de tortuga</a>
+          <ol>
+            <li><a href="#ejercicio-1-1">Posición</a></li>
+            <li><a href="#ejercicio-1-2">Tamaño</a></li>
+          </ol>
+        </li>
+        <li><a href="#ejercicio-2">B - Puntos y líneas</a>
+          <ol>
+            <li><a href="#ejercicio-2-1">Puntos</a></li>
+            <li><a href="#ejercicio-2-2">Líneas</a></li>
+            <li><a href="#ejercicio-2-3">Puntos y líneas</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-turtle-1.html">ejercicios (1) del módulo turtle</a>. Los ejercicios están separados en dos bloques:</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-turtle-1.html">ejercicios (1) del módulo turtle</a>. Los ejercicios están separados en dos bloques:</p>
 
-    <section id="ejercicio-1">
-      <h2>A. Ventana de tortuga</h2>
+  <section id="ejercicio-1">
+    <h2>A. Ventana de tortuga</h2>
 
-      <section id="ejercicio-1-1">
-        <h3>turtle (1) - A-1</h3>
+    <section id="ejercicio-1-1">
+      <h3>turtle (1) - A-1</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-1-1.png" alt="Turtle (1) A-1 1" width="320" height="230" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-1-1.png" alt="Turtle (1) A-1 1" width="320" height="230" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(640, 480, -1, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <p>Los valores a escribir dependen del tamaño de la pantalla.</p>
+      <p>Los valores a escribir dependen del tamaño de la pantalla.</p>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-1-2.png" alt="Turtle (1) A-1 2" width="320" height="230" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-1-2.png" alt="Turtle (1) A-1 2" width="320" height="230" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(640, 480, 300, 360)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-1-2">
-        <h3>turtle (1) - A-2</h3>
+    <section id="ejercicio-1-2">
+      <h3>turtle (1) - A-2</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-1.png" alt="Turtle (1) A-2 1" width="216" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-1.png" alt="Turtle (1) A-2 1" width="216" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(200, 200, 0, 0)
 screensize(100, 100)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-2.png" alt="Turtle (1) A-2 2" width="216" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-2.png" alt="Turtle (1) A-2 2" width="216" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(200, 200, 0, 0)
 screensize(400, 400)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-3.png" alt="Turtle (1) A-2 3" width="216" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-3.png" alt="Turtle (1) A-2 3" width="216" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(200, 200, 0, 0)
 screensize(400, 100)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-4.png" alt="Turtle (1) A-2 4" width="216" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-4.png" alt="Turtle (1) A-2 4" width="216" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(200, 200, 0, 0)
 screensize(100, 800)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-5.png" alt="Turtle (1) A-2 5" width="416" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-5.png" alt="Turtle (1) A-2 5" width="416" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(400, 200, 0, 0)
 screensize(800, 300)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-6.png" alt="Turtle (1) A-2 6" width="416" height="238" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-a-2-6.png" alt="Turtle (1) A-2 6" width="416" height="238" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(400, 200, 0, 0)
 screensize(600, 300)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <section id="ejercicio-2">
-      <h2>B. Puntos y líneas</h2>
+  <section id="ejercicio-2">
+    <h2>B. Puntos y líneas</h2>
 
-      <section id="ejercicio-2-1">
-        <h3>turtle (1) - B-1</h3>
+    <section id="ejercicio-2-1">
+      <h3>turtle (1) - B-1</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-1.png" alt="Turtle (1) B-1 1" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-1.png" alt="Turtle (1) B-1 1" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -194,13 +194,13 @@ dot(5, 255, 0, 0)
 goto(0, 100)
 dot(5, 0, 255, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-2.png" alt="Turtle (1) B-1 2" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-2.png" alt="Turtle (1) B-1 2" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -218,13 +218,13 @@ dot(10, 0, 255, 0)
 goto(-100, 100)
 dot(10, 0, 0, 255)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-3.png" alt="Turtle (1) B-1 3" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-3.png" alt="Turtle (1) B-1 3" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -242,13 +242,13 @@ dot(10, 0, 0, 255)
 goto(100, -100)
 dot(10, 0, 255, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-4.png" alt="Turtle (1) B-1 4" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-4.png" alt="Turtle (1) B-1 4" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -268,13 +268,13 @@ dot(10, 153, 153, 153)
 goto(100, 0)
 dot(10, 204, 204, 204)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-5.png" alt="Turtle (1) B-1 5" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-5.png" alt="Turtle (1) B-1 5" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -294,13 +294,13 @@ dot(40, 0, 255, 0)
 goto(0, -80)
 dot(40, 255, 0, 255)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-6.png" alt="Turtle (1) B-1 6" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-1-6.png" alt="Turtle (1) B-1 6" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -315,17 +315,17 @@ dot(120, 0, 0, 0)
 dot(80, 255, 255, 255)
 dot(40, 0, 0, 0)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-2">
-        <h3>turtle (1) - B-2</h3>
+    <section id="ejercicio-2-2">
+      <h3>turtle (1) - B-2</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-1.png" alt="Turtle (1) B-2 1" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-1.png" alt="Turtle (1) B-2 1" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -342,13 +342,13 @@ goto(0, 100)
 pendown()
 goto(0, -100)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-2.png" alt="Turtle (1) B-2 2" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-2.png" alt="Turtle (1) B-2 2" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -363,13 +363,13 @@ goto(50, -50)
 goto(-50, -50)
 goto(-50, 50)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-3.png" alt="Turtle (1) B-2 3" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-3.png" alt="Turtle (1) B-2 3" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -391,13 +391,13 @@ goto(0, -100)
 pendown()
 goto(100, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-4.png" alt="Turtle (1) B-2 4" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-4.png" alt="Turtle (1) B-2 4" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -424,13 +424,13 @@ goto(100, -100)
 pendown()
 goto(33, -33)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-5.png" alt="Turtle (1) B-2 5" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-5.png" alt="Turtle (1) B-2 5" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -457,13 +457,13 @@ goto(-100, -50)
 pendown()
 goto(100, -50)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-6.png" alt="Turtle (1) B-2 6" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-2-6.png" alt="Turtle (1) B-2 6" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -490,17 +490,17 @@ goto(-33, -100)
 pendown()
 goto(100, 33)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="ejercicio-2-3">
-        <h3>turtle (1) - B-3</h3>
+    <section id="ejercicio-2-3">
+      <h3>turtle (1) - B-3</h3>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-1.png" alt="Turtle (1) B-3 1" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-1.png" alt="Turtle (1) B-3 1" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -526,13 +526,13 @@ dot(50, 0, 0, 0)
 goto(50, 0)
 dot(50, 0, 0, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-2.png" alt="Turtle (1) B-3 2" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-2.png" alt="Turtle (1) B-3 2" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -558,13 +558,13 @@ penup()
 goto(0, 66)
 dot(66, 0, 0, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-3.png" alt="Turtle (1) B-3 3" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-3.png" alt="Turtle (1) B-3 3" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -589,13 +589,13 @@ penup()
 goto(-50, 0)
 dot(50, 0, 0, 0)</code>
 </pre>
-          </div>
         </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-4.png" alt="Turtle (1) B-3 4" width="266" height="288" /></div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="resultado-captura"><img src="../img/ejercicios/turtle-1/turtle-1-b-3-4.png" alt="Turtle (1) B-3 4" width="266" height="288" /></div>
+        <div class="codigo">
+          <pre>
 <code class="language-python">from turtle import *
 
 setup(250, 250, 0, 0)
@@ -618,17 +618,17 @@ dot(50, 0, 0, 0)
 goto(0, -50)
 dot(50, 0, 0, 0)</code>
 </pre>
-          </div>
         </div>
-      </section>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 23 de febrero de 2015</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 23 de febrero de 2015</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
