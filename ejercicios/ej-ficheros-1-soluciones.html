@@ -76,7 +76,7 @@
 ruta = "ficheros_1_1.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;p>Hola, mundo!&lt;/p>", file=fichero)
+    print("&lt;p&gt;Hola, mundo!&lt;/p&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -95,15 +95,15 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 ruta = "ficheros_1_2.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;html>", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;html&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -122,19 +122,19 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 ruta = "ficheros_1_3.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (1) A-3&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (1) A-3&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
           file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -156,19 +156,19 @@ ruta = "ficheros_1_b_1.html"
 with open(ruta, mode="w", encoding="utf-8") as fichero:
     color = randrange(0, 361)
 
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (1) - B-1&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (1) - B-1&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
           file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
-    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
+    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -191,19 +191,19 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     color = randrange(0, 361)
     tamanyo = randrange(200, 801, 100)
 
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (1) - B-2&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (1) - B-2&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
           file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
-    print(f"    &lt;p style=\"font-size: {tamanyo}%\">¡Hola, mundo!&lt;/p>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
+    print(f"  &lt;p style=\"font-size: {tamanyo}%\"&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -227,20 +227,20 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     tamanyo = randrange(200, 801, 100)
     fuente = choice(["serif", "sans-serif", "monospace", "cursive"])
 
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (1) - B-3&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (1) - B-3&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
           file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print(f"  &lt;body style=\"background-color: hsl({color}, 100%, 50%)\">", file=fichero)
-    print(f"    &lt;p style=\"font-family: {fuente}; font-size: {tamanyo}%\">¡Hola, mundo!&lt;/p>",
+    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
+    print(f"  &lt;p style=\"font-family: {fuente}; font-size: {tamanyo}%\"&gt;¡Hola, mundo!&lt;/p&gt;",
           file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -277,21 +277,21 @@ with open(ruta_css, mode="w", encoding="utf-8") as fichero:
 ruta_html = "ficheros_1_b_4.html"
 
 with open(ruta_html, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (1) - B-4&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (1) - B-4&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
           file=fichero)
-    print(f"    &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"{ruta_css}\" />",
+    print(f"  &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"{ruta_css}\" /&gt;",
           file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;p>¡Hola, mundo!&lt;/p>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta_html)</code>
 </pre>

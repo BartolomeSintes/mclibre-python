@@ -43,21 +43,21 @@
 
       <div class="codigo">
         <pre>
-<code class="language-markup">&lt;!DOCTYPE html>
-&lt;html lang="es">
-&lt;head>
-  &lt;meta charset="utf-8" />
-  &lt;title>Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title>
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-&lt;/head>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-&lt;body>
+&lt;body&gt;
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
     width="320" height="320" viewBox="-10 -10 320 320"
-    style="border: black 1px solid">
-  &lt;/svg>
-&lt;/body>
-&lt;/html></code>
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
 </pre>
       </div>
     </div>
@@ -86,15 +86,15 @@
           <li>En el caso de los extremos superiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
-X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
-Y:     0    0    0    0    0    0    0    0    0    0    0 --> 0
+X:     0   30   60   90  120  150  180  210  240  270  300 --&gt; 30*i
+Y:     0    0    0    0    0    0    0    0    0    0    0 --&gt; 0
 </pre>
           </li>
           <li>En el caso de los extremos inferiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
-X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
-Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
+X:     0   30   60   90  120  150  180  210  240  270  300 --&gt; 30*i
+Y:   300  300  300  300  300  300  300  300  300  300  300 --&gt; 300
 </pre>
           </li>
         </ul>
@@ -103,7 +103,7 @@ Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
         <div class="codigo">
           <pre>
 <code class="language-python">for i in range(11):
-    print(f"     &lt;line x1={30*i} y1=0 x2={30*i} y2=300 stroke=\"black\" stroke-width=1 />", file=fichero)</code>
+    print(f"     &lt;line x1={30*i} y1=0 x2={30*i} y2=300 stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -115,24 +115,24 @@ Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
 ruta = "svg-ficheros-2_ejemplo_1.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />", file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("      width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("      style=\"border: black 1px solid\">", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
     for i in range(11):
-        print(f"     &lt;line x1=\"{30*i}\" y1=\"0\" x2=\"{30*i}\" y2=\"300\" stroke=\"black\" "
-              f"stroke-width=1 />", file=fichero)
-    print("    &lt;/svg>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+        print(f"   &lt;line x1=\"{30*i}\" y1=\"0\" x2=\"{30*i}\" y2=\"300\" stroke=\"black\" "
+              f"stroke-width=1 /&gt;", file=fichero)
+    print("  &lt;/svg&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -151,21 +151,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
       <div class="codigo">
         <pre>
-<code class="language-markup">&lt;!DOCTYPE html>
-&lt;html lang="es">
-&lt;head>
-  &lt;meta charset="utf-8" />
-  &lt;title>Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title>
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-&lt;/head>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-&lt;body>
+&lt;body&gt;
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
     width="320" height="320" viewBox="-160 -160 320 320"
-    style="border: black 1px solid">
-  &lt;/svg>
-&lt;/body>
-&lt;/html></code>
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
 </pre>
       </div>
     </div>
@@ -195,15 +195,15 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
           <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0     1     2     3     4     5     Fórmula
-X:  -150  -150  -150  -150  -150  -150 --> -150
-Y:  -150   -90   -30    30    90   150 --> -150+60*i
+X:  -150  -150  -150  -150  -150  -150 --&gt; -150
+Y:  -150   -90   -30    30    90   150 --&gt; -150+60*i
 </pre>
           </li>
           <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0     1     2     3     4     5     Fórmula
-X:   150   150   150   150   150   150 -->  150
-Y:   150    90    30   -30   -90  -150 -->  150-60*i
+X:   150   150   150   150   150   150 --&gt;  150
+Y:   150    90    30   -30   -90  -150 --&gt;  150-60*i
 </pre>
           </li>
         </ul>
@@ -212,7 +212,7 @@ Y:   150    90    30   -30   -90  -150 -->  150-60*i
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(6):
-        print(f"     &lt;line x1=-150 y1={-150+60*i} x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
+        print(f"     &lt;line x1=-150 y1={-150+60*i} x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -224,24 +224,24 @@ Y:   150    90    30   -30   -90  -150 -->  150-60*i
 ruta = "svg-ficheros-2_ejemplo_2.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />", file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("      width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("      style=\"border: black 1px solid\">", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
+    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
     for i in range(6):
-        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" "
-              f"stroke-width=1 />", file=fichero)
-    print("    &lt;/svg>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+        print(f"   &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" "
+              f"stroke-width=1 /&gt;", file=fichero)
+    print("  &lt;/svg&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -260,21 +260,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
       <div class="codigo">
         <pre>
-<code class="language-markup">&lt;!DOCTYPE html>
-&lt;html lang="es">
-&lt;head>
-  &lt;meta charset="utf-8" />
-  &lt;title>Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title>
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-&lt;/head>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-&lt;body>
+&lt;body&gt;
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
     width="320" height="320" viewBox="-20 -20 640 640"
-    style="border: black 1px solid">
-  &lt;/svg>
-&lt;/body>
-&lt;/html></code>
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
 </pre>
       </div>
     </div>
@@ -302,17 +302,17 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
       <li>Como queremos dibujar los rectángulos mediante un bucle, debemos expresar las coordenadas de los vértices, el ancho y el alto como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
         <pre>
 i:        0     1     2      Fórmula
-X:       50   150   250 -->  50 + 100*i
-Y:       50    50    50 -->  50
-Ancho:  500   300   100 -->  500 - 200*i
-Alto:   150   300   450 -->  150 + 150*i
+X:       50   150   250 --&gt;  50 + 100*i
+Y:       50    50    50 --&gt;  50
+Ancho:  500   300   100 --&gt;  500 - 200*i
+Alto:   150   300   450 --&gt;  150 + 150*i
 </pre>
       </li>
       <li>Por tanto el bucle que generaría los rectángulos sería el siguiente:
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(3):
-        print(f"     &lt;rect x={50+100*i} y=50 width={500-200*i} height={150+150*i} stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)</code>
+        print(f"     &lt;rect x={50+100*i} y=50 width={500-200*i} height={150+150*i} stroke=\"black\" stroke-width=2 fill=\"none\" /&gt;", file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -324,24 +324,24 @@ Alto:   150   300   450 -->  150 + 150*i
 ruta = "svg-ficheros-2_ejemplo_3.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />", file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("      width=\"320\" height=\"320\" viewBox=\"-20 -20 640 640\"", file=fichero)
-    print("      style=\"border: black 1px solid\">", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("    width=\"320\" height=\"320\" viewBox=\"-20 -20 640 640\"", file=fichero)
+    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
     for i in range(3):
-        print(f"     &lt;rect x=\"{50+100*i}\" y=\"50\" width=\"{500-200*i}\" height=\"{150+150*i}\" "
-              f"stroke=\"black\" stroke-width=2 fill=\"none\" />", file=fichero)
-    print("    &lt;/svg>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+        print(f"   &lt;rect x=\"{50+100*i}\" y=\"50\" width=\"{500-200*i}\" height=\"{150+150*i}\" "
+              f"stroke=\"black\" stroke-width=2 fill=\"none\" /&gt;", file=fichero)
+    print("  &lt;/svg&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>
@@ -360,21 +360,21 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
 
       <div class="codigo">
         <pre>
-<code class="language-markup">&lt;!DOCTYPE html>
-&lt;html lang="es">
-&lt;head>
-  &lt;meta charset="utf-8" />
-  &lt;title>Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title>
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
-&lt;/head>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-&lt;body>
+&lt;body&gt;
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
     width="320" height="320" viewBox="-160 -160 320 320"
-    style="border: black 1px solid">
-  &lt;/svg>
-&lt;/body>
-&lt;/html></code>
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
 </pre>
       </div>
     </div>
@@ -406,15 +406,15 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
               <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4      Fórmula
-X:  -150  -150  -150  -150  -150  --> -150
-Y:  -150   -90   -30    30    90  --> -150+60*i
+X:  -150  -150  -150  -150  -150  --&gt; -150
+Y:  -150   -90   -30    30    90  --&gt; -150+60*i
 </pre>
               </li>
               <li>En el caso de los extremos de las líneas situados abajo, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4       Fórmula
-X:   150    90    30   -30   -60  -->  150-60*i
-Y:   150   150   150   150   150  -->  150
+X:   150    90    30   -30   -60  --&gt;  150-60*i
+Y:   150   150   150   150   150  --&gt;  150
 </pre>
               </li>
             </ul>
@@ -424,15 +424,15 @@ Y:   150   150   150   150   150  -->  150
               <li>En el caso de los extremos de las líneas situados arriba, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4      Fórmula
-X:  -150   -90   -30    30    90  --> -150+60*i
-Y:  -150  -150  -150  -150  -150  --> -150
+X:  -150   -90   -30    30    90  --&gt; -150+60*i
+Y:  -150  -150  -150  -150  -150  --&gt; -150
 </pre>
               </li>
               <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4       Fórmula
-X:   150   150   150   150   150  -->  150
-Y:   150    90    30   -30   -60  -->  150-60*i
+X:   150   150   150   150   150  --&gt;  150
+Y:   150    90    30   -30   -60  --&gt;  150-60*i
 </pre>
               </li>
             </ul>
@@ -444,8 +444,8 @@ Y:   150    90    30   -30   -60  -->  150-60*i
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(5):
-        print(f"     &lt;line x1=-150 y1={-150+60*i} x2={150-60*i} y2=150 stroke=\"black\" stroke-width=1 />", file=fichero)
-        print(f"     &lt;line x1={-150+60*i} y1=-150 x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 />", file=fichero)</code>
+        print(f"     &lt;line x1=-150 y1={-150+60*i} x2={150-60*i} y2=150 stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
+        print(f"     &lt;line x1={-150+60*i} y1=-150 x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -457,26 +457,26 @@ Y:   150    90    30   -30   -60  -->  150-60*i
 ruta = "svg-ficheros-2_ejemplo_4.html"
 
 with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html>", file=fichero)
-    print("&lt;html lang=\"es\">", file=fichero)
-    print("  &lt;head>", file=fichero)
-    print("    &lt;meta charset=\"utf-8\" />", file=fichero)
-    print("    &lt;title>Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title>", file=fichero)
-    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />", file=fichero)
-    print("  &lt;/head>", file=fichero)
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("&lt;head&gt;", file=fichero)
+    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("  &lt;title&gt;Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+    print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
-    print("  &lt;body>", file=fichero)
-    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("      width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("      style=\"border: black 1px solid\">", file=fichero)
+    print("&lt;body&gt;", file=fichero)
+    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
+    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
     for i in range(5):
-        print(f"     &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"{150-60*i}\" y2=\"150\" "
-              f"stroke=\"black\" stroke-width=1 />", file=fichero)
-        print(f"     &lt;line x1=\"{-150+60*i}\" y1=\"-150\" x2=\"150\" y2=\"{150-60*i}\" "
-              f"stroke=\"black\" stroke-width=1 />", file=fichero)
-    print("    &lt;/svg>", file=fichero)
-    print("  &lt;/body>", file=fichero)
-    print("&lt;/html>", file=fichero)
+        print(f"   &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"{150-60*i}\" y2=\"150\" "
+              f"stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
+        print(f"   &lt;line x1=\"{-150+60*i}\" y1=\"-150\" x2=\"150\" y2=\"{150-60*i}\" "
+              f"stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
+    print("  &lt;/svg&gt;", file=fichero)
+    print("&lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
 
     webbrowser.open(ruta)</code>
 </pre>

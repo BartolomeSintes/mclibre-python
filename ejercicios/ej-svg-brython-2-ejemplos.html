@@ -88,15 +88,15 @@
           <li>En el caso de los extremos superiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
-X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
-Y:     0    0    0    0    0    0    0    0    0    0    0 --> 0
+X:     0   30   60   90  120  150  180  210  240  270  300 --&gt; 30*i
+Y:     0    0    0    0    0    0    0    0    0    0    0 --&gt; 0
 </pre>
           </li>
           <li>En el caso de los extremos inferiores de las líneas, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0    1    2    3    4    5    6    7    8    9   10     Fórmula
-X:     0   30   60   90  120  150  180  210  240  270  300 --> 30*i
-Y:   300  300  300  300  300  300  300  300  300  300  300 --> 300
+X:     0   30   60   90  120  150  180  210  240  270  300 --&gt; 30*i
+Y:   300  300  300  300  300  300  300  300  300  300  300 --&gt; 300
 </pre>
           </li>
         </ul>
@@ -172,15 +172,15 @@ for i in range(11):
           <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0     1     2     3     4     5     Fórmula
-X:  -150  -150  -150  -150  -150  -150 --> -150
-Y:  -150   -90   -30    30    90   150 --> -150+60*i
+X:  -150  -150  -150  -150  -150  -150 --&gt; -150
+Y:  -150   -90   -30    30    90   150 --&gt; -150+60*i
 </pre>
           </li>
           <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
             <pre>
 i:     0     1     2     3     4     5     Fórmula
-X:   150   150   150   150   150   150 -->  150
-Y:   150    90    30   -30   -90  -150 -->  150-60*i
+X:   150   150   150   150   150   150 --&gt;  150
+Y:   150    90    30   -30   -90  -150 --&gt;  150-60*i
 </pre>
           </li>
         </ul>
@@ -254,10 +254,10 @@ for i in range(11):
       <li>Como queremos dibujar los rectángulos mediante un bucle, debemos expresar las coordenadas de los vértices, el ancho y el alto como fórmulas que dependan de la variable del bucle (en este caso <i>i</i>):
         <pre>
 i:        0     1     2      Fórmula
-X:       50   150   250 -->  50 + 100*i
-Y:       50    50    50 -->  50
-Ancho:  500   300   100 -->  500 - 200*i
-Alto:   150   300   450 -->  150 + 150*i
+X:       50   150   250 --&gt;  50 + 100*i
+Y:       50    50    50 --&gt;  50
+Ancho:  500   300   100 --&gt;  500 - 200*i
+Alto:   150   300   450 --&gt;  150 + 150*i
 </pre>
       </li>
       <li>Por tanto el programa sería el siguiente:
@@ -333,15 +333,15 @@ for i in range(3):
               <li>En el caso de los extremos de las líneas situados a la izquierda, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4      Fórmula
-X:  -150  -150  -150  -150  -150  --> -150
-Y:  -150   -90   -30    30    90  --> -150+60*i
+X:  -150  -150  -150  -150  -150  --&gt; -150
+Y:  -150   -90   -30    30    90  --&gt; -150+60*i
 </pre>
               </li>
               <li>En el caso de los extremos de las líneas situados abajo, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4       Fórmula
-X:   150    90    30   -30   -60  -->  150-60*i
-Y:   150   150   150   150   150  -->  150
+X:   150    90    30   -30   -60  --&gt;  150-60*i
+Y:   150   150   150   150   150  --&gt;  150
 </pre>
               </li>
             </ul>
@@ -351,15 +351,15 @@ Y:   150   150   150   150   150  -->  150
               <li>En el caso de los extremos de las líneas situados arriba, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4      Fórmula
-X:  -150   -90   -30    30    90  --> -150+60*i
-Y:  -150  -150  -150  -150  -150  --> -150
+X:  -150   -90   -30    30    90  --&gt; -150+60*i
+Y:  -150  -150  -150  -150  -150  --&gt; -150
 </pre>
               </li>
               <li>En el caso de los extremos de las líneas situados a la derecha, las coordenadas de los puntos y su fórmulas correspondientes son:
                 <pre>
 i:     0     1     2     3     4       Fórmula
-X:   150   150   150   150   150  -->  150
-Y:   150    90    30   -30   -60  -->  150-60*i
+X:   150   150   150   150   150  --&gt;  150
+Y:   150    90    30   -30   -60  --&gt;  150-60*i
 </pre>
               </li>
             </ul>

@@ -80,7 +80,7 @@ print("Programa terminado")</code>
 <code class="language-python">primero = float(input("Escriba un número: "))
 segundo = float(input("Escriba un número mayor que " + str(primero) + ": "))
 
-while segundo > primero:
+while segundo &gt; primero:
     segundo = float(input("Escriba un número mayor que " + str(primero) + ": "))
 
 print()
@@ -98,7 +98,7 @@ print("Programa terminado")</code>
 <code class="language-python">primero = int(input("Escriba un número: "))
 segundo = int(input("Escriba un número mayor que " + str(primero) + ": "))
 
-while segundo > primero:
+while segundo &gt; primero:
     primero = segundo
     segundo = int(input("Escriba un número mayor que " + str(primero) + ": "))
 
@@ -121,14 +121,14 @@ while objetivo &lt; 1:
 print()
 numero = int(input("Escriba un número: "))
 total = 1
-if numero > 0:
+if numero &gt; 0:
     cantidad = 1
 else:
     cantidad = 0
 
 while cantidad &lt; objetivo:
     numero = int(input("Escriba otro número: "))
-    if numero > 0:
+    if numero &gt; 0:
         cantidad += 1
     total += 1
 
@@ -150,7 +150,7 @@ print("Programa terminado")</code>
 <code class="language-python">numero = int(input("Escriba un número: "))
 suma = 0
 
-while numero > 0:
+while numero &gt; 0:
     suma += numero
     numero = int(input("Escriba otro número: "))
 
@@ -193,7 +193,7 @@ print("Programa terminado")</code>
       <pre>
 <code class="language-python">minimo = int(input("Escriba un número: "))
 maximo = int(input("Escriba un número mayor que " + str(minimo) + ": "))
-while minimo >= maximo:
+while minimo &gt;= maximo:
     maximo = int(input(str(maximo) + " no es mayor que " + str(minimo) + ".Inténtelo de nuevo: "))
 
 numero = float(input("Escriba un número entre " + str(minimo) + " y " + str(maximo) + ": "))
@@ -278,7 +278,7 @@ copia = numero
 
 print("Descomposición en factores primos: ", end="")
 i = 2
-while copia > i:
+while copia &gt; i:
     while copia % i == 0:
         copia = copia // i
         print(i, end=" ")
