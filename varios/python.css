@@ -113,7 +113,7 @@ p.inline-con-borde {
   text-align: center;
 }
 
-img {
+.captura img, .captura svg {
   width: auto;
   max-width: 100%;
   height: auto;
