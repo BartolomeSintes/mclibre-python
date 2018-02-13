@@ -108,6 +108,18 @@
       </div>
     </div>
 
+    <p>Cuando se trata de dos cadenas seguidas, se puede no escribir comas entre ellas, pero las cadenas se escribirán seguidas, sin espacio en blanco entre ellas:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre><code class="language-python">print("Hola" "Adios")</code></pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">HolaAdios</span></pre>
+      </div>
+    </div>
+
     <p>Al final de cada <span class="idle-func">print</span>(), Python añade automáticamente un salto de línea:</p>
 
     <div class="filaflex">
@@ -248,7 +260,7 @@ Y el otro le contesta: "¡Pues anda que tú!"</span>
 
     <hr class="corta" />
 
-    <p>La función <span class="idle-func">print</span>() permite incluir variables o expresiones como argmento, lo que nos permite combinar texto y variables:</p>
+    <p>La función <span class="idle-func">print</span>() permite incluir variables o expresiones como argumento, lo que nos permite combinar texto y variables:</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -371,7 +383,7 @@ print("¡Feliz " + str(fecha) + "!")</code>
     <section id="cadenas-f">
       <h3>Cadenas "f"</h3>
 
-      <p>En Python 3.6 se ha añadido (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
+      <p>En Python 3.6 se añadió (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -469,7 +481,7 @@ print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

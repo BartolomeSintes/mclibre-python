@@ -346,12 +346,22 @@ NameError: name 'nombre' is not defined</span>
 
     <hr class="corta" />
 
-    <p class="corta">Los nombres de variables pueden contener cualquier carácter alfabético (las del alfabeto inglés, pero también ñ, ç o vocales acentuadas) y guíones bajos. Lo que no pueden incluir es espacios en blanco</p>
+    <p>Los nombres de variables no pueden incluir espacios en blanco.</p>
 
     <div class="codigo">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha de nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
+</pre>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Los nombres de variables pueden contener cualquier carácter alfabético (los del alfabeto inglés, pero también ñ, ç o vocales acentuadas), aunque se recomienda utilizar únicamente los caracteres del alfabeto inglés.</p>
+
+    <div class="codigo">
+      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span>año = 1997</span>
 </pre>
     </div>
 
@@ -387,7 +397,7 @@ NameError: name 'nombre' is not defined</span>
 
     <hr class="corta" />
 
-    <p class="corta">Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (las que IDLE escribe en <span class="idle-rese">naranja</span>) están prohibidas como nombres de variables:</p>
+    <p>Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (las que IDLE escribe en <span class="idle-rese">naranja</span>) están prohibidas como nombres de variables:</p>
 
     <div class="codigo">
       <pre>
@@ -625,7 +635,7 @@ NameError: name 'semanas' is not defined</span>
   <section id="asignaciones-aumentadas">
     <h2>Asignaciones aumentadas</h2>
 
-    <p>Cuando una variabe se modifica a partir de su propio valor, se puede utilizar la denominada "<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">asignación aumentada</a>", una notación compacta que existe también en otros lenguajes de programación.</p>
+    <p>Cuando una variable se modifica a partir de su propio valor, se puede utilizar la denominada "<a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">asignación aumentada</a>", una notación compacta que existe también en otros lenguajes de programación.</p>
 
     <p>Por ejemplo:</p>
 
@@ -688,7 +698,7 @@ NameError: name 'semanas' is not defined</span>
       </tbody>
     </table>
 
-    <p><strong>Nota</strong>: Las dos notaciones son completamente equivalentes en el caso de los objetos inmutables (números, cadenas, tuplas), pero en el caso de los objetos mutables (listas, diccionarios, etc.) hay una pequeña diferencia que se comenta en <a href="python-variables-2.html">la lección Variables 2</a></p>
+    <p><strong>Nota</strong>: Las dos notaciones son completamente equivalentes en el caso de los objetos inmutables (números, cadenas, tuplas), pero en el caso de los objetos mutables (listas, diccionarios, etc.) hay una pequeña diferencia que se comenta en <a href="python-variables-2.html#variables-objeto-mutable">la lección Variables 2</a></p>
 
     <p>Lo que no se permite en Python son los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
 
@@ -786,7 +796,7 @@ ValueError: too many values to unpack</span>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
