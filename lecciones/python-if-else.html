@@ -757,9 +757,11 @@ print("¡Hasta la próxima!")</code>
 
     <p>Lo que no se permite es que en un mismo bloque haya instrucciones con distintos sangrados. Dependiendo del orden de los sangrados, el mensaje de error al intentar ejecutar el programa será diferente:</p>
 
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+    <ul>
+      <li>En este primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado mayor, se produce el error "unexpected indent" (sangrado inesperado).
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -769,14 +771,15 @@ else:
     print("Recuerde que debe seguir aprendiendo")
 print("¡Hasta la próxima!")</code>
 </pre>
-      </div>
+          </div>
 
-      <div class="resultado-captura"><img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" title="Aviso: Error de sangrado" width="216" height="161" /></div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+          <div class="resultado-captura"><img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" title="Aviso: Error de sangrado" width="200" height="152" /></div>
+        </div>
+      </li>
+      <li>En este segundo caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, con un sangrado menor, Python entiende que esa instrucción pertenece a otro bloque, pero como no hay ningún bloque con ese nivel de sangrado, se produce el eror "unindent does not match any outer indentation level" (el sangrado no coincide con el de ningún nivel superior).
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
         print("Es usted menor de edad")
@@ -786,14 +789,15 @@ else:
     print("Recuerde que debe seguir aprendiendo")
 print("¡Hasta la próxima!")</code>
 </pre>
-      </div>
+          </div>
 
-      <div class="resultado-captura"><img src="../img/error-sangrado.png" alt="Aviso: Error de sangrado" title="Aviso: Error de sangrado" width="388" height="161" /></div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+          <div class="resultado-captura"><img src="../img/error-sangrado.png" alt="Aviso: Error de sangrado" title="Aviso: Error de sangrado" width="367" height="152" /></div>
+        </div>
+      </li>
+      <li>En este tercer caso, como la segunda instrucción no tiene sangrado, Python entiende que la bifurcación <span class="idle-rese">if</span> ha terminado, por lo que al encontrar un <span class="idle-rese">else</span> sin su <span class="idle-rese">if</span> correspondiente se produce el error "invalid syntax" (sintaxis no válida).
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -803,14 +807,11 @@ else:
     print("Recuerde que debe seguir aprendiendo")
 print("¡Hasta la próxima!")</code>
 </pre>
-      </div>
+          </div>
 
-      <div class="resultado-captura"><img src="../img/error-sangrado-3.png" alt="Aviso: Error de sangrado" title="Aviso: Error de sangrado" width="199" height="161" /></div>
-    </div>
-    <ul>
-      <li>En el primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado mayor, se produce el error "unexpected ident" (sangrado inesperado).</li>
-      <li>En el segundo caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado menor, Python entiende que esa instrucción pertenece a otro bloque, pero como no hay ningún bloque con ese nivel de sangrado, se produce el eror "unindent does not match any outer indentation level" (el sangrado no coincide con el de ningún nivel superior).</li>
-      <li>En el tercer caso, como la segunda instrucción no tiene sangrado, Python entiende que la bifurcación <span class="idle-rese">if</span> ha terminado, por lo que al encontrar un <span class="idle-rese">else</span> sin su <span class="idle-rese">if</span> correspondiente se produce el error "invalid syntax" (sintaxis no válida).</li>
+          <div class="resultado-captura"><img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" title="Aviso: Error de sintaxis (cadena incorrecta)" width="181" height="152" /></div>
+        </div>
+      </li>
     </ul>
   </section>
 
