@@ -44,7 +44,7 @@
         <pre>
 <code class="language-python">print("¿Cómo se llama?")
 nombre = input()
-print("Me alegro de conocerle,", nombre)</code>
+print(f"Me alegro de conocerle, {nombre}")</code>
 </pre>
       </div>
 
@@ -66,7 +66,7 @@ Me alegro de conocerle, Pepe</span>
         <pre>
 <code class="language-python">print("¿Cómo se llama? ", end="")
 nombre = input()
-print("Me alegro de conocerle,", nombre)</code>
+print(f"Me alegro de conocerle, {nombre}")</code>
 </pre>
       </div>
 
@@ -84,7 +84,7 @@ Me alegro de conocerle, Pepe</span>
       <div class="codigo">
         <pre>
 <code class="language-python">nombre = input("¿Cómo se llama? ")
-print("Me alegro de conocerle,", nombre)</code>
+print(f"Me alegro de conocerle, {nombre}"")</code>
 </pre>
       </div>
 
@@ -100,22 +100,61 @@ Me alegro de conocerle, Pepe</span>
   <section id="conversion-tipos">
     <h2>Conversión de tipos</h2>
 
-    <p>De forma predeterminada, la función <span class="idle-func">input</span>() convierte la entrada en una cadena. Si se quiere que Python interprete la entrada como un número entero, se debe utilizar la función <span class="idle-func">int</span>() de la siguiente manera:</p>
+    <p>De forma predeterminada, la función <span class="idle-func">input</span>() convierte la entrada en una cadena, aunque escribamos un número. Si intentamos hacer operaciones, se producirá un error.</p>
 
-    <div class="codigo">
-      <pre>
-<code class="language-python">cantidad = int(input("Dígame una cantidad en pesetas: "))
-print(cantidad, "pesetas son", cantidad / 166.386, "euros")</code>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">cantidad = input("Dígame una cantidad en pesetas: ")
+print(f"{cantidad} pesetas son {round(cantidad / 166.386, 2)} euros")</code>
 </pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Dígame una cantidad en pesetas:</span> <span class="idle-otro">500</span>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejemplo.py", line 2, in &lt;module&gt;
+    print(f"{cantidad} pesetas son {cantidad / 166.386} euros")
+TypeError: unsupported operand type(s) for /: 'str' and 'float'</span>
+</pre>
+      </div>
+    </div>
+
+    <p>Si se quiere que Python interprete la entrada como un número entero, se debe utilizar la función <span class="idle-func">int</span>() de la siguiente manera:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">cantidad = int(input("Dígame una cantidad en pesetas: "))
+print(f"{cantidad} pesetas son {round(cantidad / 166.386, 2)} euros")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Dígame una cantidad en pesetas:</span> <span class="idle-otro">500</span>
+<span class="idle-resp">500 pesetas son 3.01 euros</span>
+</pre>
+      </div>
     </div>
 
     <p>De la misma manera, para que Python interprete la entrada como un número decimal, se debe utilizar la función <span class="idle-func">float</span>() de la siguiente manera:</p>
 
-    <div class="codigo">
-      <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">cantidad = float(input("Dígame una cantidad en euros (hasta con 2 decimales): "))
-print(cantidad, "euros son", cantidad * 166.386, "pesetas")</code>
+print(f"{cantidad} euros son {round(cantidad * 166.386)} pesetas")</code>
 </pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Dígame una cantidad en euros (hasta con 2 decimales):</span> <span class="idle-otro">9.99</span>
+<span class="idle-resp">9.99 euros son 1662 pesetas</span>
+</pre>
+      </div>
     </div>
 
     <p>Pero si el usuario no escribe un número, las funciones <span class="idle-func">int</span>() o <span class="idle-func">float</span>() producirán un error:</p>
@@ -123,14 +162,14 @@ print(cantidad, "euros son", cantidad * 166.386, "pesetas")</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">cantidad = float(input("Dígame una cantidad en euros: "))
-print(cantidad, "euros son", cantidad * 166.386, "pesetas")</code>
+<code class="language-python">cantidad = float(input("Dígame una cantidad en euros (hasta con 2 decimales): "))
+  print(f"{cantidad} euros son {round(cantidad * 166.386)} pesetas")</code>
 </pre>
       </div>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">Dígame una cantidad en euros:</span> <span class="idle-otro">Pepito</span>
+<span class="idle-resp">Dígame una cantidad en euros (hasta con 2 decimales):</span> <span class="idle-otro">Pepito</span>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 1, in &lt;module&gt;
     cantidad = float(input("Dígame una cantidad en euros: "))
@@ -145,7 +184,7 @@ ValueError: could not convert string to float: 'Pepito'</span>
       <div class="codigo">
         <pre>
 <code class="language-python">edad = int(input("Dígame su edad: "))
-print("Su edad son", edad, "años")</code>
+print(f"Su edad son {edad} años")</code>
 </pre>
       </div>
 
@@ -166,7 +205,7 @@ ValueError: invalid literal for int() with base 10: '15.5'</span>
       <div class="codigo">
         <pre>
 <code class="language-python">peso = float(input("Dígame su peso en kg: "))
-print("Su peso es", peso, "kg")</code>
+print(f"Su peso es {peso} kg")</code>
 </pre>
       </div>
 
@@ -182,177 +221,49 @@ Su peso es <span class="codigo-resaltado">84.0</span> kg</span>
   <section id="input-variables">
     <h2>Variables como argumento de la función <span class="idle-func">input</span>()</h2>
 
-    <p>La función <span class="idle-func">input</span>() sólo puede tener un argumento. Esto puede causar problemas como en el ejemplo siguiente, en el que se quiere mostrar la respuesta de la primera instrucción en la segunda pregunta:</p>
+    <p>La función <span class="idle-func">input</span>() sólo puede tener un argumento.</p>
+
+    <p>En versiones de Python anteriores a la versión 3.6 esto causaba problemas cuando se querían incorporar variables en el argumetno de la función <span class="idle-func">input</span>(), como se comenta en la lección de <a href="python-obsoletos.html#input-variables">Temas obsoletos</a>, pero las cadenas "f" permiten hacerlo fácilmente:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-python">nombre = input("Dígame su nombre: ")
-apellido = input("Dígame su apellido, ", nombre, ": ")
-print("Me alegro de conocerle,", nombre, apellido)</code>
+apellido = input(f"Dígame su apellido, {nombre}: ")
+print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
 </pre>
       </div>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">Dígame su nombre:</span> <span class="idle-otro">Pepito</span>
-<span class="idle-erro">Traceback (most recent call last):
-  File "ejemplo.py", line 2, in &lt;module&gt;
-    apellido = input("Dígame su apellido, ", nombre, ": ")
-TypeError: input expected at most 1 arguments, got 3</span>
+<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
+Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
+Me alegro de conocerle, Pepito Conejo</span>
 </pre>
       </div>
     </div>
 
-    <p>Este problema se puede resolver de varias maneras:</p>
-    <ul>
-      <li>Una solución consiste en separar la pregunta de la recogida de la respuesta, escribiendo dos instrucciones:
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">nombre = input("Dígame su nombre: ")
-print("Dígame su apellido,", nombre, ": ", end="")
-apellido = input()
-print("Me alegro de conocerle,", nombre, apellido)</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito : <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
-</pre>
-          </div>
-        </div>
-
-        <p>Si se quiere que los dos puntos (:) salgan pegados al nombre habría que utilizar la concatenación (operador +):</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">nombre = input("Dígame su nombre: ")
-print("Dígame su apellido,", nombre + ": ", end="")
-apellido = input()
-print("Me alegro de conocerle,", nombre, apellido)</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
-</pre>
-          </div>
-        </div>
-      </li>
-      <li>
-        <p>Otra solución que permite incluir la pregunta en la recogida de la respuesta es utilizar la concatenación (operador +):</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">nombre = input("Dígame su nombre: ")
-apellido = input("Dígame su apellido, " + nombre +  ": ")
-print("Me alegro de conocerle,", nombre, apellido)</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
-</pre>
-          </div>
-        </div>
-
-        <p>Si se opta por esta solución, hay que tener en cuenta que, en caso de querer concatenar cadenas y números, se debe utilizar la función <span class="idle-func">str</span>(), como se comenta en el apartado anterior:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">numero1 = int(input("Dígame un número: "))
-numero2 = int(input("Dígame un número mayor que " + <span class="codigo-resaltado">numero1</span> +  ": "))
-print("La diferencia entre ellos es", numero2 - numero1)</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame un número:</span> <span class="idle-otro">5</span>
-<span class="idle-erro">Traceback (most recent call last):
-  File "ejemplo.py", line 2, in &lt;module&gt;
-    numero2 = int(input("Dígame un número mayor que " + numero1 +  ": "))
-TypeError: Can't convert 'int' object to str implicitly</span>
-</pre>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">numero1 = int(input("Dígame un número: "))
-numero2 = int(input("Dígame un número mayor que " + <span class="codigo-resaltado">str(numero1)</span> +  ": "))
-print("La diferencia entre ellos es", numero2 - numero1)</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
-Dígame un número mayor que 5: <span class="idle-otro">8</span>
-La diferencia entre ellos es 3</span>
-</pre>
-          </div>
-        </div>
-      </li>
-      <li>
-        <p>Otra solución es utilizar las cadenas "f" introducidas en Python 3.6:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-python">nombre = input("Dígame su nombre: ")
-apellido = input(f"Dígame su apellido, {nombre}: ")
-print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
-</pre>
-          </div>
-
-          <div class="resultado-idle">
-            <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
-</pre>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">numero1 = int(input("Dígame un número: "))
 numero2 = int(input(f"Dígame un número mayor que {numero1}: "))
 print(f"La diferencia entre ellos es {numero2 - numero1}")</code>
 </pre>
-          </div>
+      </div>
 
-          <div class="resultado-idle">
-            <pre>
+      <div class="resultado-idle">
+        <pre>
 <span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
 Dígame un número mayor que 5: <span class="idle-otro">8</span>
 La diferencia entre ellos es 3</span>
 </pre>
-          </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 3 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 16 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

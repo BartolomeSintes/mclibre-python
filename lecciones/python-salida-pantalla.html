@@ -304,7 +304,7 @@ print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 
     <hr class="corta" />
 
-    <p>La función <span class="idle-func">print</span>() muestra los argumentos separados por espacios, lo que a veces no es conveniente . En el ejemplo siguiente el signo de exclamación se muestra separado de la palabra.</p>
+    <p>La función <span class="idle-func">print</span>() muestra los argumentos separados por espacios, lo que a veces no es conveniente. En el ejemplo siguiente el signo de exclamación se muestra separado de la palabra.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -319,66 +319,7 @@ print("¡Hola,", nombre, "!")</code>
       </div>
     </div>
 
-    <p>Para eliminar ese espacio, se puede reducir el número de argumentos, concatenando texto y variables con el operador suma (+):</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-python">nombre = "Pepe"
-print("¡Hola,", nombre + "!")
-print("¡Hola, " + nombre + "!")</code>
-</pre>
-      </div>
-
-      <div class="resultado-idle">
-        <pre>
-<span class="idle-resp">¡Hola, Pepe!
-¡Hola, Pepe!</span>
-</pre>
-      </div>
-    </div>
-
-    <p>Pero hay que tener cuidado, porque no se pueden concatenar cadenas y números con el operador suma (+):</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-python">fecha = 2017
-print("¡Feliz " + fecha + "!")</code>
-</pre>
-      </div>
-
-      <div class="resultado-idle">
-        <pre>
-<span class="idle-erro">Traceback (most recent call last):
-  File "ejemplo.py", line 2, in &lt;module&gt;
-    print("¡Feliz " + fecha + "!")
-TypeError: Can't convert 'int' object to str
-implicitly</span>
-</pre>
-      </div>
-    </div>
-
-    <p>En este caso, hay que convertir los números a cadenas con la función <span class="idle-func">str</span>() antes de concatenarlos:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-python">fecha = 2017
-print("¡Feliz", fecha, "!")
-print("¡Feliz", str(fecha) + "!")
-print("¡Feliz " + str(fecha) + "!")</code>
-</pre>
-      </div>
-
-      <div class="resultado-idle">
-        <pre>
-<span class="idle-resp">¡Feliz 2017 !
-¡Feliz 2017!
-¡Feliz 2017!</span>
-</pre>
-      </div>
-    </div>
+    <p>Antes de Python 3.6 estas situaciones se podían resolver de una forma algo engorrosa (que se comenta en la <a href="./python-obsoletos.html#print">lección de temas obsoletos</a>), pero a partir de Python 3.6 se pueden utilizar las cadenas "f", que se explican a continuación.</p>
 
     <section id="cadenas-f">
       <h3>Cadenas "f"</h3>
@@ -481,7 +422,7 @@ print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
