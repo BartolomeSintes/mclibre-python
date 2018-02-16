@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obsoletos. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Temas obsoletos</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Restos</h2>
+
+      <ul>
+        <li><a href="#print"><span class="idle-func">print</span>()</a></li>
+        <li><a href="#input-variables">variables en <span class="idle-func">input</span>()</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estas son las lecciones que tratan aspectos de Python que he dejado de explicar en clase porque han quedado "viejos" o se pueden abordar de una forma más "moderna".</p>
+
+  <section id="print">
+    <h2>La función <span class="idle-func">print</span>() con varios argumentos</h2>
+
+    <p>La función <span class="idle-func">print</span>() muestra los argumentos separados por espacios, lo que a veces no es conveniente. En el ejemplo siguiente el signo de exclamación se muestra separado de la palabra.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+print("¡Hola,", nombre, "!")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">¡Hola, Pepe<span class="codigo-resaltado"> </span>!</span></pre>
+      </div>
+    </div>
+
+    <p>Antes de Python 3.6, que introdujo las <a href="python-salida-pantalla.html#cadenas-f">cadenas "f"</a>, para eliminar ese espacio, se tenía que (y se puede seguir haciendo) concatenar texto y variables con el operador suma (+):</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+print("¡Hola,", nombre + "!")
+print("¡Hola, " + nombre + "!")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¡Hola, Pepe!
+¡Hola, Pepe!</span>
+</pre>
+      </div>
+    </div>
+
+    <p>Pero hay que tener cuidado, porque no se pueden concatenar cadenas y números con el operador suma (+):</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">fecha = 2017
+print("¡Feliz " + fecha + "!")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejemplo.py", line 2, in &lt;module&gt;
+    print("¡Feliz " + fecha + "!")
+TypeError: Can't convert 'int' object to str
+implicitly</span>
+</pre>
+      </div>
+    </div>
+
+    <p>En este caso, hay que convertir los números a cadenas con la función <span class="idle-func">str</span>() antes de concatenarlos:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">fecha = 2017
+print("¡Feliz", fecha, "!")
+print("¡Feliz", str(fecha) + "!")
+print("¡Feliz " + str(fecha) + "!")</code>
+</pre>
+
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¡Feliz 2017 !
+¡Feliz 2017!
+¡Feliz 2017!</span>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="input-variables">
+    <h2>Incluir variables como argumento de la función <span class="idle-func">input</span>()</h2>
+
+    <p>La función <span class="idle-func">input</span>() sólo puede tener un argumento. En versiones de Python anteriores a la versión 3.6 esto causaba problemas como en el ejemplo siguiente, en el que se quiere mostrar la respuesta de la primera instrucción en la segunda pregunta:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = input("Dígame su nombre: ")
+apellido = input("Dígame su apellido, ", nombre, ": ")
+print("Me alegro de conocerle,", nombre, apellido)</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Dígame su nombre:</span> <span class="idle-otro">Pepito</span>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejemplo.py", line 2, in &lt;module&gt;
+    apellido = input("Dígame su apellido, ", nombre, ": ")
+TypeError: input expected at most 1 arguments, got 3</span>
+</pre>
+      </div>
+    </div>
+
+    <p>Este problema se puede resolver de varias maneras:</p>
+    <ul>
+      <li>Una solución consiste en separar la pregunta de la recogida de la respuesta, escribiendo dos instrucciones:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">nombre = input("Dígame su nombre: ")
+print("Dígame su apellido,", nombre, ": ", end="")
+apellido = input()
+print("Me alegro de conocerle,", nombre, apellido)</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
+Dígame su apellido, Pepito : <span class="idle-otro">Conejo</span>
+Me alegro de conocerle, Pepito Conejo</span>
+</pre>
+          </div>
+        </div>
+
+        <p>Si se quiere que los dos puntos (:) salgan pegados al nombre habría que utilizar la concatenación (operador +):</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">nombre = input("Dígame su nombre: ")
+print("Dígame su apellido,", nombre + ": ", end="")
+apellido = input()
+print("Me alegro de conocerle,", nombre, apellido)</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
+Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
+Me alegro de conocerle, Pepito Conejo</span>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>Otra solución que permite incluir la pregunta en la recogida de la respuesta es utilizar la concatenación (operador +):</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">nombre = input("Dígame su nombre: ")
+apellido = input("Dígame su apellido, " + nombre +  ": ")
+print("Me alegro de conocerle,", nombre, apellido)</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
+Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
+Me alegro de conocerle, Pepito Conejo</span>
+</pre>
+          </div>
+        </div>
+
+        <p>Si se opta por esta solución, hay que tener en cuenta que, en caso de querer concatenar cadenas y números, se debe utilizar la función <span class="idle-func">str</span>(), como se comenta en el apartado anterior:</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero1 = int(input("Dígame un número: "))
+numero2 = int(input("Dígame un número mayor que " + <span class="codigo-resaltado">numero1</span> +  ": "))
+print("La diferencia entre ellos es", numero2 - numero1)</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame un número:</span> <span class="idle-otro">5</span>
+<span class="idle-erro">Traceback (most recent call last):
+  File "ejemplo.py", line 2, in &lt;module&gt;
+    numero2 = int(input("Dígame un número mayor que " + numero1 +  ": "))
+TypeError: Can't convert 'int' object to str implicitly</span>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero1 = int(input("Dígame un número: "))
+numero2 = int(input("Dígame un número mayor que " + <span class="codigo-resaltado">str(numero1)</span> +  ": "))
+print("La diferencia entre ellos es", numero2 - numero1)</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
+Dígame un número mayor que 5: <span class="idle-otro">8</span>
+La diferencia entre ellos es 3</span>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>La solución más sencilla, a partir de Python 3.6, es utilizar las cadenas "f":</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">nombre = input("Dígame su nombre: ")
+apellido = input(f"Dígame su apellido, {nombre}: ")
+print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
+Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
+Me alegro de conocerle, Pepito Conejo</span>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">numero1 = int(input("Dígame un número: "))
+numero2 = int(input(f"Dígame un número mayor que {numero1}: "))
+print(f"La diferencia entre ellos es {numero2 - numero1}")</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
+Dígame un número mayor que 5: <span class="idle-otro">8</span>
+La diferencia entre ellos es 3</span>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 16 de febrero de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
+</html>
