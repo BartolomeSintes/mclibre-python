@@ -33,6 +33,7 @@
         <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
         <li><a href="#prompt-idle">Cadenas en prompt IDLE</a></li>
         <li><a href="#largas">Cadenas largas</a></li>
+        <li><a href="#cadenas-f">Cadenas "f"</a></li>
         <li><a href="#operaciones-cadenas">Operaciones cadenas</a></li>
       </ul>
     </div>
@@ -299,39 +300,138 @@ Otra línea</span></pre>
     <p>También se puede escribir el carácter contrabarra (\) para partir una cadena en varias líneas.</p>
 
     <div class="codigo">
-        <pre>
+      <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres \</span>
 <span class="idle-cade">partiendo la cadena en dos"</span>)
 <span class="idle-resp">Esta línea está cortada en dos líneas de menos de 79 caracteres partiendo la cadena en dos</span>
 </pre>
-      </div>
+    </div>
 
-<hr class="corta" />
+    <hr class="corta" />
 
-<p>En los programas en los que hay bloques, la segunda notación hace más difícil la lectura del programa.</p>
+    <p>En los programas en los que hay bloques, la segunda notación hace más difícil la lectura del programa.</p>
 
-<div class="filaflex">
-    <div class="codigo">
-      <pre><code class="language-python">for i in range(3):
+    <div class="filaflex">
+      <div class="codigo">
+        <pre><code class="language-python">for i in range(3):
     print("a b c "
           "d e f ")</code></pre>
-    </div>
-    <div class="resultado"><pre><span class="idle-resp">a b c d e f
+      </div>
+      <div class="resultado">
+        <pre><span class="idle-resp">a b c d e f
 a b c d e f
-a b c d e f </span></pre></div>
-  </div>
+a b c d e f </span></pre>
+      </div>
+    </div>
 
-  <div class="filaflex">
+    <div class="filaflex">
       <div class="codigo">
         <pre><code class="language-python">for i in range(3):
     print(<span class="idle-cade">"a b c \
 d e f "</span>)</code></pre>
       </div>
-      <div class="resultado"><pre><span class="idle-resp">a b c d e f
+      <div class="resultado">
+        <pre><span class="idle-resp">a b c d e f
 a b c d e f
-a b c d e f </span></pre></div>
+a b c d e f </span></pre>
+      </div>
     </div>
-      </section>
+  </section>
+
+  <section id="cadenas-f">
+    <h3>Cadenas "f"</h3>
+
+    <p>En Python 3.6 se añadió (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print(f"Me llamo {nombre} y tengo {edad} años.")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">semanas = 4
+print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre>
+      </div>
+    </div>
+
+    <p>Esta notación no añade espacios que en la notación "clásica" aparecían al incluir varios argumentos separados por comas:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">fecha = 2017
+print("¡Feliz", fecha, "!")
+print(f"¡Feliz {fecha}!")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¡Feliz 2017 !
+¡Feliz 2017!</span>
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Si no se escribe la letra f antes de la cadena, Python no sustituye los valores de las variables ni calcula las expresiones.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print("Me llamo {nombre} y tengo {edad} años.")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre>
+      </div>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Si se quieren escribir los carácteres { o }, se deben escribir duplicados.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
+      f"en este caso {nombre}.")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre>
+      </div>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Las cadenas "f" permiten dar formato a las variables, siguiendo la sintaxis del <a href="https://docs.python.org/3/library/string.html#formatstrings">método str.format()</a></p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir ejemplos de formato.</p>
+  </section>
 
   <section id="operaciones-cadenas">
     <h2>Operaciones con cadenas</h2>

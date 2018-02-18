@@ -24,11 +24,7 @@
 
       <ul>
         <li><a href="#salida-idle">Salida por pantalla en IDLE</a></li>
-        <li><a href="#funcion-print">La función <span class="idle-func">print</span>()</a>
-          <ul>
-            <li><a href="#cadenas-f">Cadenas "f"</a></li>
-          </ul>
-        </li>
+        <li><a href="#funcion-print">La función <span class="idle-func">print</span>()</a></li>
       </ul>
     </div>
   </nav>
@@ -291,19 +287,6 @@ print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 
     <hr class="corta" />
 
-    <p>Se puede forzar que las variables se escriban como enteros o decimales, utilizando las funciones <span class="idle-func">int</span>() o <span class="idle-func">float</span>(), respectivamente.</p>
-
-    <div class="codigo">
-      <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-func">int</span>(2.9))
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-func">float</span>(2))
-<span class="idle-resp">2.0</span>
-</pre>
-    </div>
-
-    <hr class="corta" />
-
     <p>La función <span class="idle-func">print</span>() muestra los argumentos separados por espacios, lo que a veces no es conveniente. En el ejemplo siguiente el signo de exclamación se muestra separado de la palabra.</p>
 
     <div class="filaflex">
@@ -319,106 +302,20 @@ print("¡Hola,", nombre, "!")</code>
       </div>
     </div>
 
-    <p>Antes de Python 3.6 estas situaciones se podían resolver de una forma algo engorrosa (que se comenta en la <a href="./python-obsoletos.html#print">lección de temas obsoletos</a>), pero a partir de Python 3.6 se pueden utilizar las cadenas "f", que se explican a continuación.</p>
+    <p>Antes de Python 3.6 estas situaciones se podían resolver de una forma algo engorrosa (que se comenta en la <a href="./python-obsoletos.html#print">lección de temas obsoletos</a>), pero a partir de Python 3.6 se pueden utilizar <a href="./python-cadenas.html#cadenas-f">las cadenas "f"</a>.</p>
 
-    <section id="cadenas-f">
-      <h3>Cadenas "f"</h3>
-
-      <p>En Python 3.6 se añadió (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-python">nombre = "Pepe"
-edad = 25
-print(f"Me llamo {nombre} y tengo {edad} años.")</code>
+print(f"¡Hola, {nombre}!")</code>
 </pre>
-        </div>
-
-        <div class="resultado-idle">
-          <pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
-        </div>
       </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-python">semanas = 4
-print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
-</pre>
-        </div>
-
-        <div class="resultado-idle">
-          <pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre>
-        </div>
+      <div class="resultado-idle">
+        <pre><span class="idle-resp">¡Hola, Pepe!</span></pre>
       </div>
-
-      <p>Esta notación no añade espacios que en la notación "clásica" aparecían al incluir varios argumentos separados por comas:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-python">fecha = 2017
-print("¡Feliz", fecha, "!")
-print("¡Feliz", str(fecha) + "!")
-print("¡Feliz " + str(fecha) + "!")
-print(f"¡Feliz {fecha}!")</code>
-</pre>
-        </div>
-
-        <div class="resultado-idle">
-          <pre>
-<span class="idle-resp">¡Feliz 2017 !
-¡Feliz 2017!
-¡Feliz 2017!
-¡Feliz 2017!</span>
-</pre>
-        </div>
-      </div>
-
-      <hr class="corta" />
-
-      <p>Si no se escribe la letra f antes de la cadena, Python no sustituye los valores de las variables ni calcula las expresiones.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-python">nombre = "Pepe"
-edad = 25
-print("Me llamo {nombre} y tengo {edad} años.")</code>
-</pre>
-        </div>
-
-        <div class="resultado-idle">
-          <pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre>
-        </div>
-      </div>
-
-      <hr class="corta" />
-
-      <p>Si se quieren escribir los carácteres { o } se deben escribir duplicados.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-python">nombre = "Pepe"
-edad = 25
-print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
-      f"en este caso {nombre}.")</code>
-</pre>
-        </div>
-
-        <div class="resultado-idle">
-          <pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre>
-        </div>
-      </div>
-
-      <hr class="corta" />
-
-      <p>Las cadenas "f" permiten dar formato a las variables, siguiendo la sintaxis del <a href="https://docs.python.org/3/library/string.html#formatstrings">método str.format()</a></p>
-
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir ejemplos de formato.</p>
-    </section>
+    </div>
   </section>
 
   <footer>

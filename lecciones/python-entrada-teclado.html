@@ -84,7 +84,7 @@ Me alegro de conocerle, Pepe</span>
       <div class="codigo">
         <pre>
 <code class="language-python">nombre = input("¿Cómo se llama? ")
-print(f"Me alegro de conocerle, {nombre}"")</code>
+print(f"Me alegro de conocerle, {nombre}")</code>
 </pre>
       </div>
 
@@ -163,7 +163,7 @@ print(f"{cantidad} euros son {round(cantidad * 166.386)} pesetas")</code>
       <div class="codigo">
         <pre>
 <code class="language-python">cantidad = float(input("Dígame una cantidad en euros (hasta con 2 decimales): "))
-  print(f"{cantidad} euros son {round(cantidad * 166.386)} pesetas")</code>
+print(f"{cantidad} euros son {round(cantidad * 166.386)} pesetas")</code>
 </pre>
       </div>
 
@@ -223,14 +223,14 @@ Su peso es <span class="codigo-resaltado">84.0</span> kg</span>
 
     <p>La función <span class="idle-func">input</span>() sólo puede tener un argumento.</p>
 
-    <p>En versiones de Python anteriores a la versión 3.6 esto causaba problemas cuando se querían incorporar variables en el argumetno de la función <span class="idle-func">input</span>(), como se comenta en la lección de <a href="python-obsoletos.html#input-variables">Temas obsoletos</a>, pero las cadenas "f" permiten hacerlo fácilmente:</p>
+    <p>En versiones de Python anteriores a la versión 3.6 esto causaba problemas cuando se querían incorporar variables en el argumento de la función <span class="idle-func">input</span>(), como se comenta en la lección de <a href="python-obsoletos.html#input-variables">Temas obsoletos</a>, pero las cadenas "f" permiten hacerlo fácilmente:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-python">nombre = input("Dígame su nombre: ")
 apellido = input(f"Dígame su apellido, {nombre}: ")
-print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
+print(f"Me alegro de conocerle, {nombre} {apellido}.")</code>
 </pre>
       </div>
 
@@ -238,7 +238,7 @@ print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
         <pre>
 <span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
 Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
+Me alegro de conocerle, Pepito Conejo.</span>
 </pre>
       </div>
     </div>
@@ -248,7 +248,7 @@ Me alegro de conocerle, Pepito Conejo</span>
         <pre>
 <code class="language-python">numero1 = int(input("Dígame un número: "))
 numero2 = int(input(f"Dígame un número mayor que {numero1}: "))
-print(f"La diferencia entre ellos es {numero2 - numero1}")</code>
+print(f"La diferencia entre ellos es {numero2 - numero1}.")</code>
 </pre>
       </div>
 
@@ -256,7 +256,7 @@ print(f"La diferencia entre ellos es {numero2 - numero1}")</code>
         <pre>
 <span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
 Dígame un número mayor que 5: <span class="idle-otro">8</span>
-La diferencia entre ellos es 3</span>
+La diferencia entre ellos es 3.</span>
 </pre>
       </div>
     </div>
