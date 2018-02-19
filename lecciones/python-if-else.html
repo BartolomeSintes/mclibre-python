@@ -721,7 +721,7 @@ print(f"Usted dice que tiene {edad} años.")</code>
   <section id="sangrado-bloques">
     <h2>Sangrado de los bloques</h2>
 
-    <p>Un bloque de instrucciones puede contener varias instrucciones. Todas las instrucciones del bloque tener el mismo sangrado:</p>
+    <p>Un bloque de instrucciones puede contener varias instrucciones. Todas las instrucciones del bloque deben tener el mismo sangrado:</p>
 
     <div class="codigo">
       <pre>
@@ -758,7 +758,7 @@ print("¡Hasta la próxima!")</code>
     <p>Lo que no se permite es que en un mismo bloque haya instrucciones con distintos sangrados. Dependiendo del orden de los sangrados, el mensaje de error al intentar ejecutar el programa será diferente:</p>
 
     <ul>
-      <li>En este primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, cono un sangrado mayor, se produce el error "unexpected indent" (sangrado inesperado).
+      <li>En este primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, con un sangrado mayor, se produce el error "unexpected indent" (sangrado inesperado).
         <div class="filaflex">
           <div class="codigo">
             <pre>
@@ -1225,16 +1225,16 @@ Conteste S (sí) o N (no) a mis preguntas.
   <section id="if-elif-else">
     <h2>Más de dos alternativas: <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h2>
 
-    <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... permite encadenar varias condiciones. "elif" es una contracción de "else if". La orden en Pyhton se escribe así:</p>
+    <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... permite encadenar varias condiciones. <span class="idle-rese">elif</span> es una contracción de <span class="idle-rese">else if</span>. La orden en Pyhton se escribe así:</p>
 
     <div class="codigo">
       <pre>
 <span class="idle-rese">if</span> condición_1:
-  bloque 1
+    bloque 1
 <span class="idle-rese">elif</span> condición_2:
-  bloque 2
+    bloque 2
 <span class="idle-rese">else</span>:
-  bloque 3
+    bloque 3
 </pre>
     </div>
 
@@ -1244,17 +1244,17 @@ Conteste S (sí) o N (no) a mis preguntas.
       <li>Si no se cumplen ni la condición 1 ni la condición 2, se ejecuta el bloque 3.</li>
     </ul>
 
-    <p>Esta estructura es equivalente a la siguiente estructura de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+    <p>Esta estructura es equivalente a la siguiente estructura de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... anidados:</p>
 
     <div class="codigo">
       <pre>
 <span class="idle-rese">if</span> condición_1:
-  bloque 1
+    bloque 1
 <span class="idle-rese">else:</span>
-  <span class="idle-rese">if</span> condición_2:
-    bloque 2
-  <span class="idle-rese">else</span>:
-    bloque 3
+    <span class="idle-rese">if</span> condición_2:
+        bloque 2
+    <span class="idle-rese">else</span>:
+        bloque 3
 </pre>
     </div>
 
@@ -1320,7 +1320,7 @@ else:
 </pre>
             </div>
 
-            <p>Este último programa también funciona correctamente porque, en una estructura <span class="idle-rese">if ... elif .. else</span> , cuando se cumple una de las comparaciones Python ya no considera las siguientes condiciones, se cumplan o no. Por ejemplo, en la segunda comparación no hace falta comprobar que la edad sea mayor que 0 porque si hubiera sido menor que 0 hubiera cumplido la primera comparación y no estaría evaluando la segunda comparación, así que si está evaluando la segunda comparación es que no se cumple la primera, es decir, que la edad es mayor que 0.</p>
+            <p>Estos dos programas son equivalentes porque en una estructura <span class="idle-rese">if ... elif .. else</span> cuando se cumple una de las comparaciones Python ya no evalúa las siguientes condiciones. En este caso, si el programa tiene que comprobar la segunda comparación (la del <span class="idle-rese">elif</span>), es porque no se ha cumplido la primera (la del <span class="idle-rese">if</span>). Y si no se ha cumplido la primera es que <var>edad</var> es mayor que 0, por lo que no es necesario comprobarlo en la segunda condición.</p>
           </li>
           <li>Pero hay que tener cuidado, porque si los casos del programa anterior se ordenan al revés manteniendo las condiciones, el programa no funcionaría como se espera, puesto que al escribir un valor negativo mostraría el mensaje <span class="idle-resp">"Es usted menor de edad"</span>.
 
@@ -1341,7 +1341,7 @@ else:
       </li>
       <li>Cuando unos casos incluyen a otros<br />
 
-        <p>Consideremos un programa que pide un valor y nos dice si es:</p>
+        <p>Consideremos un programa que pide un valor y nos dice:</p>
         <ul>
           <li>si es múltiplo de dos,</li>
           <li>si es múltiplo de cuatro (y de dos)</li>
@@ -1364,9 +1364,9 @@ else:
     print(f"{numero} no es múltiplo de dos")</code>
 </pre>
             </div>
-            <p>El error de este programa es que el número que cumple la segunda condición, cumple también la primera. Si se escribe un múltiplo de cuatro, como también es múltiplo de dos, cumple la primera condición y el programa ejecuta el primer bloque de instrucciones, sin llegar a comprobar el resto de condiciones.</p>
+            <p>El error de este programa es que si <var>numero</var> cumple la segunda condición, cumple también la primera. Es decir, si <var>numero</var> es un múltiplo de cuatro, como también es múltiplo de dos, cumple la primera condición y el programa ejecuta el primer bloque de instrucciones, sin llegar a comprobar el resto de condiciones.</p>
           </li>
-          <li>Una manera de corregir ese error es añadir en la primera condición (la de <span class="idle-rese">if</span>) que el número no sea múltiplo de cuatro.
+          <li>Una manera de corregir ese error es añadir en la primera condición (la de <span class="idle-rese">if</span>) que <var>numero</var> no sea múltiplo de cuatro.
 
             <div class="codigo">
               <pre>
@@ -1409,7 +1409,7 @@ else:
 </pre>
             </div>
 
-            <p>Este programa funciona correctamente ya que aunque la segunda condición (la de <span class="idle-rese">elif</span>) no distingue entre múltiplos de dos y de cuatro, si se escribe un múltiplo de cuatro, el programa no llega a evaluar la segunda condición porque se cumple la primera (la de <span class="idle-rese">if</span>).</p>
+            <p>Este programa funciona correctamente ya que aunque la segunda condición (la de <span class="idle-rese">elif</span>) no distingue entre múltiplos de dos y de cuatro, si <var>numero</var> es un múltiplo de cuatro, el programa no llega a evaluar la segunda condición porque se cumple la primera (la de <span class="idle-rese">if</span>).</p>
           </li>
         </ul>
         <p>En general, el orden que permite simplificar más las expresiones suele ser considerar primero los casos particulares y después los casos generales.</p>
@@ -1430,7 +1430,7 @@ elif numero &lt; 0:
 </pre>
     </div>
 
-    <p>A menudo el último bloque <span class="idle-rese">elif ...</span> se sustituye por un bloque <span class="idle-rese">else</span>:</p>
+    <p>Pero es más habitual sustituir el último bloque <span class="idle-rese">elif ...</span> por un bloque <span class="idle-rese">else</span>:</p>
 
     <div class="codigo">
       <pre>
@@ -1508,7 +1508,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
