@@ -6,6 +6,8 @@
   <title>Todos los exámenes. Exámenes. Python. Bartolomé Sintes Marco</title>
   <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
   <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
@@ -22,6 +24,10 @@
       <h2>Exámenes</h2>
 
       <ul>
+        <li><a href="#examen-170628">2017-06-28</a></li>
+        <li><a href="#examen-170606">2017-06-06</a></li>
+        <li><a href="#examen-170505">2017-05-05</a></li>
+        <li><a href="#examen-170224">2017-02-24</a></li>
         <li><a href="#examen-160628">2016-06-28</a></li>
         <li><a href="#examen-160608">2016-06-08</a></li>
         <li><a href="#examen-160525">2016-05-25</a></li>
@@ -45,6 +51,763 @@
       </ul>
     </div>
   </nav>
+
+  <section id="examen-170628">
+    <h2>Examen 28 de junio de 2017</h2>
+
+    <section id="examen-170628-1">
+      <h3>Ejercicio 1</h3>
+
+      <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) sacan tres cartas al azar del 1 al 10. Gana el jugador que saque la mayor puntuación total, siempre que no se pase de quince, en cuyo caso el jugador pierde siempre.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+        <p><span class="idle-resp">Álvaro ha sacado un 1, un 4 y un 8.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 3.</span></p>
+        <p><span class="idle-resp">Han empatado.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+        <p><span class="idle-resp">Álvaro ha sacado un 8, un 2 y un 1.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 8, un 7 y un 2.</span></p>
+        <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+        <p><span class="idle-resp">Álvaro ha sacado un 3, un 9 y un 5.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 6.</span></p>
+        <p><span class="idle-resp">No ha ganado nadie.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+        <p><span class="idle-resp">Álvaro ha sacado un 7, un 1 y un 1.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 4, un 1 y un 8.</span></p>
+        <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170628-2">
+      <h3>Ejercicio 2</h3>
+
+      <p>Una sucesión de Fibonacci es una sucesión de números en la que cada número es la suma de los dos anteriores. Escriba un programa que pida los dos primeros valores de la sucesión y la cantidad de valores a mostrar y que muestre esa cantidad de valores.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
+        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
+        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>10</p>
+        <p><span class="idle-resp">1 1 2 3 5 8 13 21 34 55</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>1</p>
+        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>1</p>
+        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>1</p>
+        <p><span class="idle-resp">¡Se deben mostrar al menos dos valores!</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUCESIÓN DE FIBONACCI</span></p>
+        <p><span class="idle-resp">Escriba el primer valor de la sucesión:: </span>3</p>
+        <p><span class="idle-resp">Escriba el segundo valor de la sucesión: </span>6</p>
+        <p><span class="idle-resp">Escriba el número de valores a mostrar: </span>6</p>
+        <p><span class="idle-resp">3 6 9 15 24 39</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170628-3">
+      <h3>Ejercicio 3</h3>
+
+      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170628-svg-3-1.png" alt="Ejercicio 3-1" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 3-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170628-svg-3-2.png" alt="Ejercicio 3-2" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 3-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="examen-170628-4">
+      <h2>Ejercicio 4</h2>
+
+      <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170628-svg-4-1.png" alt="Ejercicio 4-1" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="examen-170606">
+    <h2>Examen 6 de junio de 2017</h2>
+
+    <section id="examen-170606-1">
+      <h3>Ejercicio 1</h3>
+
+      <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) tiran dos dados. El que saque mayor puntuación total, gana. Si la puntuación coincide, gana quien haya sacado el valor más alto.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 1 y un 1.</span></p>
+        <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 1 y un 5.</span></p>
+        <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Álvaro ha sacado un 3 y un 5.</span></p>
+        <p><span class="idle-resp">Bárbara ha sacado un 3 y un 5.</span></p>
+        <p><span class="idle-resp">Han empatado.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170606-2">
+      <h3>Ejercicio 2</h3>
+
+      <p>Escriba un programa que pida un número de tres cifras y a continuación pida una de las cifras y diga si se ha acertado la cifra.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CONTRASEÑA</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Escriba un número de tres cifras: </span>567</p>
+        <p><span class="idle-resp">Escriba la cifra en la posición 3: </span>6</p>
+        <p><span class="idle-resp">¡Incorrecto!</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CONTRASEÑA</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Escriba un número de tres cifras: </span>25</p>
+        <p><span class="idle-resp">Escriba la cifra en la posición 1: </span>0</p>
+        <p><span class="idle-resp">¡Correcto!</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CONTRASEÑA</span></p>
+        <p>&nbsp;</p>
+        <p><span class="idle-resp">Escriba un número de tres cifras: </span>1234</p>
+        <p><span class="idle-resp">El número introducido no es válido</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170606-3">
+      <h3>Ejercicio 3</h3>
+
+      <p>Escriba un programa que pida primero un número entero positivo, después un entero mayor que el primero y finalmente un entero entre 1 y 10. Si algún valor no es correcto, se escribirá un mensaje de error. Si los valores son correctos, el programa escribirá los valores entre el primero y el segundo y a continuación de vuelta al primero tantas veces como indique el tercer valor.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUBE Y BAJA</span></p>
+        <p><span class="idle-resp">Escriba un número positivo: </span>3</p>
+        <p><span class="idle-resp">Escriba un número mayor que 3: </span>7</p>
+        <p><span class="idle-resp">Escriba un número del 1 al 10: </span>2</p>
+        <p><span class="idle-resp">3 4 5 6 7 6 5 4 3 4 5 6 7 6 5 4 3</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUBE Y BAJA</span></p>
+        <p><span class="idle-resp">Escriba un número positivo: </span>1</p>
+        <p><span class="idle-resp">Escriba un número mayor que 1: </span>3</p>
+        <p><span class="idle-resp">Escriba un número del 1 al 10: </span>5</p>
+        <p><span class="idle-resp">1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1 2 3 2 1</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">SUBE Y BAJA</span></p>
+        <p><span class="idle-resp">Escriba un número positivo: </span>2</p>
+        <p><span class="idle-resp">Escriba un número mayor que 2: </span>-4</p>
+        <p><span class="idle-resp">¡Le he pedido un número mayor que 2!</span></p>
+      </div>
+
+    </section>
+
+    <section id="examen-170606-4">
+      <h2>Ejercicio 4</h2>
+
+      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170606-svg-4-1.png" alt="Ejercicio 4-1" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170606-svg-4-2.png" alt="Ejercicio 4-2" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="examen-170606-5">
+      <h2>Ejercicio 5</h2>
+
+      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes utilizando bucles:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170606-svg-5-1.png" alt="Ejercicio 5-1" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170606-svg-5-2.png" alt="Ejercicio 5-2" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 5-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="examen-170606-6">
+      <h2>Ejercicio 6</h2>
+
+      <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles anidados:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170606-svg-6.png" alt="Ejercicio 6-1" width="624" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 6. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">620</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 620 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="examen-170505">
+    <h2>Examen 5 de mayo de 2017</h2>
+
+    <section id="examen-170505-1">
+      <h3>Ejercicio 1</h3>
+
+      <p>Escriba un programa que simule una partida de dados entre dos jugadores y que diga qué jugador ha ganado.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 4. El jugador 2 ha sacado un 4. Por tanto, han empatado.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 4. El jugador 2 ha sacado un 6. Por tanto, ha ganado el jugador 2.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 3. El jugador 2 ha sacado un 1. Por tanto, ha ganado el jugador 1.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170505-2">
+      <h3>Ejercicio 2</h3>
+
+      <p>Escriba un programa que simule un torneo de partidas de dados entre dos jugadores y que diga qué jugador ha ganado al final.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+        <p><span class="idle-resp">¿Cuántas partidas se van a jugar? </span><span class="idle-resp"></span>3</p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 6. El jugador 2 ha sacado un 4.</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 3. El jugador 2 ha sacado un 4.</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 1. El jugador 2 ha sacado un 3.</span></p>
+        <p><span class="idle-resp">De las 3 partidas, el jugador 1 ha ganado 1 y el jugador 2 ha ganado 2.</span></p>
+        <p><span class="idle-resp">Por tanto, ha ganado el jugador 2.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+        <p><span class="idle-resp">¿Cuántas partidas se van a jugar? </span><span class="idle-resp"></span>-3</p>
+        <p><span class="idle-resp">El número de partidas debe ser superior a cero</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+        <p><span class="idle-resp">¿Cuántas partidas se van a jugar? </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 2. El jugador 2 ha sacado un 6.</span></p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 4. El jugador 2 ha sacado un 3. </span></p>
+        <p><span class="idle-resp">De las 2 partidas, el jugador 1 ha ganado 1 y el jugador 2 ha ganado 1.</span></p>
+        <p><span class="idle-resp">Por tanto, han empatado.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170505-3">
+      <h3>Ejercicio 3</h3>
+
+      <p>Escriba un programa que simule una partida de dados entre varios jugadores y que diga qué jugador ha ganado al final. Si hay varios jugadores que sacan el valor más alto, se considerará que no gana nadie.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (3)</span></p>
+        <p><span class="idle-resp">¿Cuántos jugadores van a jugar? </span><span class="idle-resp"></span>4</p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 3.</span></p>
+        <p><span class="idle-resp">El jugador 2 ha sacado un 3. </span></p>
+        <p><span class="idle-resp">El jugador 3 ha sacado un 1. </span></p>
+        <p><span class="idle-resp">El jugador 4 ha sacado un 2.</span></p>
+        <p><span class="idle-resp">Ningún jugador ha sacado más que los demás.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (3)</span></p>
+        <p><span class="idle-resp">¿Cuántos jugadores van a jugar? </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">El número de jugadores debe ser como mínimo dos.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">JUEGO DE DADOS (3)</span></p>
+        <p><span class="idle-resp">¿Cuántos jugadores van a jugar? </span><span class="idle-resp"></span>3</p>
+        <p><span class="idle-resp">El jugador 1 ha sacado un 2.</span></p>
+        <p><span class="idle-resp">El jugador 2 ha sacado un 2.</span></p>
+        <p><span class="idle-resp">El jugador 3 ha sacado un 4.</span></p>
+        <p><span class="idle-resp">Ha ganado el jugador 3, que ha sacado un 4.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170505-4">
+      <h2>Ejercicio 4</h2>
+
+      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170505-svg-4-1.png" alt="Ejercicio 4-1" width="330" height="330" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170505-svg-4-2.png" alt="Ejercicio 4-2" width="330" height="330" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="examen-170505-5">
+      <h2>Ejercicio 5</h2>
+
+      <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes utilizando bucles:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170505-svg-5-1.png" alt="Ejercicio 5-1" width="330" height="330" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170505-svg-5-2.png" alt="Ejercicio 5-2" width="330" height="330" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 5-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="examen-170505-6">
+      <h2>Ejercicio 6</h2>
+
+      <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente utilizando bucles anidados:</p>
+
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="img/170505-svg-6.png" alt="Ejercicio 6-1" width="630" height="330" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio 6. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">620</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 620 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="examen-170224">
+    <h2>Examen 24 de febrero de 2017</h2>
+
+    <section id="examen-170224-1">
+      <h2>Ejercicio 1</h2>
+
+      <p>Existen varios algoritmos para calcular el día de la semana en que cae una fecha cualquiera. El que se utiliza en este ejercicio lo cuenta el danés Claus Tøndering en su web <a href="http://tondering.dk/claus/cal/chrweek.php#calcdow">The Calendar FAQ</a>.</p>
+
+      <p>Escriba un programa que calcule el día de la semana en que cae una fecha cualquiera posterior a 1582 (es decir, desde que se utiliza el <a href="https://es.wikipedia.org/wiki/Calendario_gregoriano">calendario gregoriano</a>) mediante el siguiente algoritmo:</p>
+
+      <ul>
+        <li>A es el cociente de la división de 14 menos el mes entre 12,</li>
+        <li>B es el año menos A</li>
+        <li>C es el mes más doce veces A menos 2</li>
+        <li>D es el cociente de la división de B entre 4</li>
+        <li>E es el cociente de la división de B entre 100</li>
+        <li>F es el cociente de la división de B entre 400</li>
+        <li>G es el cociente de 31 veces C entre 12</li>
+        <li>H es el dia más B más D menos E más F más G</li>
+        <li>I es el resto de la división de H entre 7</li>
+        <li>Si I es 0, el día cae en Domingo; si I es 1, el día cae en Lunes; si I es 2, el día cae en Martes, etc</li>
+      </ul>
+
+      <p>El programa no tiene por qué comprobar que se escribe una fecha correcta (más allá de que el año sea posterior a 1582)</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>15</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1564</p>
+        <p><span class="idle-resp">¡Le he pedido un año posterior a 1582!</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1583</p>
+        <p><span class="idle-resp">El día 1 del mes 1 de 1583 es sábado</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>24</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>2017</p>
+        <p><span class="idle-resp">El día 24 del mes 2 de 2017 es viernes</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>31</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>7</p>
+        <p><span class="idle-resp">Escriba el número de año (a partir de 1583): </span><span class="idle-resp"></span>1990</p>
+        <p><span class="idle-resp">El día 31 del mes 7 de 1990 es martes</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170224-2">
+      <h2>Ejercicio 2</h2>
+
+      <p>Escriba un programa que pida una fecha y diga si ese día existe.</p>
+
+      <p>El programa no tiene por qué comprobar que se escribe una fecha posterior al 15 de octubre de 1582, que fue cuando se instauro el calendario gregoriano.</p>
+
+      <p>Se recuerda que enero, marzo, mayo, julio, agosto, octubre y diciembre tienen 31 días, que abril, junio, septiembre y noviembre tienen 30 días y febrero tiene 28 días salvo los años bisiestos en que tiene 29.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>24</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>2017</p>
+        <p><span class="idle-resp">El día 24 del mes 2 del año 2017 existe.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>40</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1982</p>
+        <p><span class="idle-resp">El día 40 del mes 5 del año 1982 no existe.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>0</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>13</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1999</p>
+        <p><span class="idle-resp">El día 0 del mes 13 del año 1999 no existe.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>29</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>2016</p>
+        <p><span class="idle-resp">El día 29 del mes 2 del año 2016 existe.</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
+        <p><span class="idle-resp">Escriba el número de día: </span><span class="idle-resp"></span>29</p>
+        <p><span class="idle-resp">Escriba el número de mes: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el número de año: </span><span class="idle-resp"></span>1900</p>
+        <p><span class="idle-resp">El día 29 del mes 2 del año 1900 no existe.</span></p>
+      </div>
+    </section>
+
+    <section id="examen-170224-3">
+      <h2>Ejercicio 3</h2>
+
+      <p>Escriba un programa que pida tres números enteros y escriba una lista de enteros consecutivos del primero al segundo y del segundo al tercero.</p>
+
+      <p>El programa no tiene que aceptar que se escriban dos números iguales seguidos.</p>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>1</p>
+        <p><span class="idle-resp">¡No ha escrito número válidos!</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>8</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>2</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>10</p>
+        <p><span class="idle-resp">[8, 7, 6, 5, 4, 3, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>-2</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>5</p>
+        <p><span class="idle-resp">[5, 4, 3, 2, 1, 0, -1, -2, -1, 0, 1, 2, 3, 4, 5]</span></p>
+      </div>
+
+      <div class="resultado-idle">
+        <p><span class="idle-resp">ESCALERA DE NÚMEROS</span></p>
+        <p><span class="idle-resp">Escriba el primer número: </span><span class="idle-resp"></span>-3</p>
+        <p><span class="idle-resp">Escriba el segundo número distinto del primero: </span><span class="idle-resp"></span>4</p>
+        <p><span class="idle-resp">Escriba el tercer número distinto del segundo: </span><span class="idle-resp"></span>7</p>
+        <p><span class="idle-resp">[-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7]</span></p>
+      </div>
+    </section>
+  </section>
 
   <section id="examen-160628">
     <h2>Examen 28 de junio de 2016</h2>
@@ -2986,7 +3749,7 @@ Escriba la anchura del rombo:</span> 7
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 22 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
