@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minijuegos (1). if ... elif ... else ... Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+</head>
+
+<body>
+  <h1><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - Minijuegos (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Minijuegos (1)</h2>
+
+      <h3>Enunciados</h3>
+      <ol>
+        <li><a href="#ejercicio-1">Dados (1)</a></li>
+        <li><a href="#ejercicio-2">Dados (2)</a></li>
+        <li><a href="#ejercicio-3">El Quince</a></li>
+        <li><a href="#ejercicio-4">Piedra, papel, ¡tijera!</a></li>
+      </ol>
+
+      <h3><a href="ej-if-else-minijuegos-soluciones.html">Soluciones</a></h3>
+      <ol>
+        <li><a href="ej-if-else-minijuegos-soluciones.html#ejercicio-1">Dados (1)</a></li>
+        <li><a href="ej-if-else-minijuegos-soluciones.html#ejercicio-2">Dados (2)</a></li>
+        <li><a href="ej-if-else-minijuegos-soluciones.html#ejercicio-3">El Quince</a></li>
+        <li><a href="ej-if-else-minijuegos-soluciones.html#ejercicio-4">Piedra, papel, ¡tijera!</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en las lecciones <a href="../lecciones/python-if-else.html"><span class="idle-rese">If</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</a> y <a href="../lecciones/python-biblioteca-random.html">Valores aleatorios</a>.</p>
+
+  <p>Se pueden consultar unas <a href="ej-if-else-minijuegos-soluciones.html">posibles soluciones</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2>Minijuegos (1) - 1</h2>
+
+    <p>Escriba un programa que simule una partida de dados entre dos jugadores y que diga qué jugador ha ganado.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+      <p><span class="idle-resp">El jugador 1 ha sacado un 4.</span></p>
+      <p><span class="idle-resp">El jugador 2 ha sacado un 4.</span></p>
+      <p><span class="idle-resp">Por tanto, han empatado.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+      <p><span class="idle-resp">El jugador 1 ha sacado un 4.</span></p>
+      <p><span class="idle-resp">El jugador 2 ha sacado un 6.</span></p>
+      <p><span class="idle-resp">Por tanto, ha ganado el jugador 2.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (1)</span></p>
+      <p><span class="idle-resp">El jugador 1 ha sacado un 3.</span></p>
+      <p><span class="idle-resp">El jugador 2 ha sacado un 1.</span></p>
+      <p><span class="idle-resp">Por tanto, ha ganado el jugador 1.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Minijuegos (1) - 2</h2>
+
+    <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) tiran dos dados. El que saque mayor puntuación total, gana. Si la puntuación coincide, gana quien haya sacado el valor más alto.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 1 y un 1.</span></p>
+      <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 2 y un 4.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 1 y un 5.</span></p>
+      <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DE DADOS (2)</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 3 y un 5.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 3 y un 5.</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Minijuegos (1) - 3</h2>
+
+    <p>Escriba un programa que simule un juego en el que dos jugadores (Álvaro y Bárbara) sacan tres cartas al azar del 1 al 10. Gana el jugador que saque la mayor puntuación total, siempre que no se pase de quince, en cuyo caso el jugador pierde siempre.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 1, un 4 y un 8.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 3.</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 8, un 2 y un 1.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 7 y un 2.</span></p>
+      <p><span class="idle-resp">Ha ganado Álvaro.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 3, un 9 y un 5.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 8, un 2 y un 6.</span></p>
+      <p><span class="idle-resp">No ha ganado nadie.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">JUEGO DEL QUINCE</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado un 7, un 1 y un 1.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado un 4, un 1 y un 8.</span></p>
+      <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Minijuegos (1) - 4</h2>
+
+    <p>Escriba un programa que simule el juego <a href="https://es.wikipedia.org/wiki/Piedra,_papel_o_tijera">Piedra, papel, tijera</a>.</p>
+
+    <p>Las reglas del juego son las siguientes:</p>
+    <ul>
+      <li>Simultáneamente, los dos jugadores muestran una mano en tres posibles posiciones:
+        <ul>
+          <li>Piedra: se muestra el puño cerrado.</li>
+          <li>Papel: se muestra la palma de la mano.</li>
+          <li>Tijera: se muestra la palma de la mano con los dedos separados en dos grupos.</li>
+        </ul>
+      </li>
+      <li>El jugador que ha sacado Piedra gana al jugador que ha sacado Tijera.</li>
+      <li>El jugador que ha sacado Tijera gana al jugador que ha sacado Papel.</li>
+      <li>El jugador que ha sacado Papel gana al jugador que ha sacado Piedra.</li>
+    </ul>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PIEDRA, PAPEL, ... ¡TIJERA!</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado PIEDRA.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado PAPEL.</span></p>
+      <p><span class="idle-resp">Ha ganado Bárbara.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PIEDRA, PAPEL, ... ¡TIJERA!</span></p>
+      <p><span class="idle-resp">Álvaro ha sacado TIJERA.</span></p>
+      <p><span class="idle-resp">Bárbara ha sacado TIJERA.</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+
+    <h3>Ampliación</h3>
+
+    <p>Amplie el programa anterior para que juegue a <a href="http://www.samkass.com/theories/RPSSL.html">Piedra, papel, tijera, lagarto, Spock</a>, una variante inventada por Sam Kass y que se ha popularizado al aparecer en la serie de television The Big Bang Theory. Esta variante añade dos elementos más, con la ventaja de que no se producen tantos empates, pero obliga a memorizar más combinaciones.</p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 22 de febrero de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
+</html>
