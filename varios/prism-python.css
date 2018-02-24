@@ -1,11 +1,13 @@
-/* PRISM.CSS
-   Bartolomé Sintes Marco
-   http://www.mclibre.org
+@charset "utf-8";
 
-   Hoja de estilo para prism.js
-
-   27 de mayo de 2017
-*/
+/* PRISM.CSS                                */
+/* Bartolome Sintes Marco                   */
+/* http://www.mclibre.org                   */
+/*                                          */
+/* Hoja de estilo para prism.js             */
+/*                                          */
+/* 24 de febrero de 2018                    */
+/*                                          */
 
 @font-face {
   font-family: "Inconsolata";
@@ -19,21 +21,17 @@ code { font-family: "Inconsolata", monospace; line-height: 120%; /* font-weight:
 code.language-python { }
 /* si se cambia aquí line-eight, hay que cambiar line-height también en los números de línea */
 
-code.language-python .built-in-function { color: #800080; } /* functions from standard library */
-code.language-python .built_in   { color: #FF7700; } /* built-in objects (None, False, True and Ellipsis)         */
-code.language-python .class-name {                 } /* class header class SomeName(...):                         */
-code.language-python .comment    { color: #FF0000; } /* comment                                                   */
-code.language-python .decorator  {                 } /* @-decorator for functions                                 */
-code.language-python .function   { color: #0000FF; } /* function header def some_name(...):                       */
-code.language-python .keyword    { color: #FF7700; } /* keyword                                                   */
-code.language-python .number     {                 } /* number                                                    */
-code.language-python .title      { color: #0000FF; } /* name of a function or a class inside a header             */
-code.language-python .params     {                 } /* everything inside parentheses in a function or class header */
-code.language-python .prompt     { color: #770000; } /* IDLE prompt */
-code.language-python .string     { color: #00AA00; } /* string (of any type)                                      */
+code.language-python .builtin              { color: #800080; } /* built-in functions                  */
+code.language-python .class-name           {                   } /* class header class SomeName(...):   */
+code.language-python .comment              { color: #FF0000; } /* comment                             */
+code.language-python .function             { color: #0000FF; } /* function header def some_name(...): */
+code.language-python .keyword              { color: #FF7700; } /* keyword                             */
+code.language-python .number               {                   } /* number                              */
+code.language-python .operator             {                   } /* operators                           */
+code.language-python .punctuation          {                   } /* punctuation                         */
+code.language-python .string               { color: #00AA00; } /* string (of any type)                */
+code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any type)                */
 
-/* Esta clase la añadía a mano para highlight. Lo podré quitar cuando las quite */
-code.language-python .funcion .keyword { color: #800080; } /* functions from standard library */
 
 /* Estilo para HTML imitando a Brackets */
 /* Tengo pendiente comprobar los nombres de las clases en prism */
