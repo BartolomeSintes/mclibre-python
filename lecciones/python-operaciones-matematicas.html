@@ -34,6 +34,7 @@
           <ul>
             <li><a href="#cociente-division">Cociente</a></li>
             <li><a href="#resto-division">Resto</a></li>
+            <li><a href="#divmod"><span class="idle-func">divmod</span>()</a></li>
           </ul>
         </li>
         <li><a href="#potencias">Potencias y raíces</a></li>
@@ -44,14 +45,20 @@
           </ul>
         </li>
         <li><a href="#decimales-binario">Decimales en binario</a></li>
-        <li><a href="#valor-absoluto">Valor absoluto</a></li>
+        <li><a href="#funciones-integradas">Otras funciones</a>
+          <ul>
+            <li><a href="#valor-absoluto">Valor absoluto</a></li>
+            <li><a href="#maximo">Máximo</a></li>
+            <li><a href="#minimo">Mínimo</a></li>
+            <li><a href="#suma">Suma</a></li>
+            <li><a href="#ordenacion">Ordenación</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
 
   <p>En esta lección se tratan los tipos de datos numéricos y las operaciones aritméticas elementales en Python.</p>
-
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Los ejemplos de esta lección muestran el resultado de ejecutar las operaciones en el prompt de IDLE.</p>
 
   <section id="tipos-numericos">
     <h2>Tipos de datos numéricos: enteros, decimales y númeroscomplejos</h2>
@@ -77,7 +84,8 @@
           <div class="codigo">
             <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3,5
-<span class="idle-resp">(3, 5)</span></pre>
+<span class="idle-resp">(3, 5)</span>
+</pre>
           </div>
         </li>
       </ul>
@@ -86,7 +94,8 @@
 
       <div class="codigo">
         <pre><span class="idle-prompt">&gt;&gt;&gt;</span> 3.0
-<span class="idle-resp">3.0</span></pre>
+<span class="idle-resp">3.0</span>
+</pre>
       </div>
 
       <p>Se puede escribir un número decimal sin parte entera, pero lo habitual es escribir siempre la parte entera:</p>
@@ -102,8 +111,31 @@
     <section id="complejos">
       <h3>Números complejos</h3>
 
-      <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+      <p>Python puede hacer cálculos con número complejos. La parte imaginaria se acompaña de la letra "j".</p>
 
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1j + 2 + 3j
+<span class="idle-resp">(3+4j)</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> (1+1j) * 1j
+<span class="idle-resp">(-1+1j)</span>
+</pre>
+      </div>
+
+      <p>La letra "j" debe ir acompañada siempre de un número y unida a él.</p>
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + j
+<span class="idle-erro">Traceback (most recent call last):
+  File "&lt;pyshell#25&gt;", line 1, in &lt;module&gt;
+    1 + j
+NameError: name 'j' is not defined</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1 j
+<span class="idle-erro">SyntaxError: invalid syntax</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1j
+<span class="idle-resp">(-1+1j)</span>
+</pre>
+      </div>
     </section>
   </section>
 
@@ -182,7 +214,8 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2 * 3
 <span class="idle-resp">7</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 10 - 4 * 2
-<span class="idle-resp">2</span></pre>
+<span class="idle-resp">2</span>
+</pre>
     </div>
 
     <p>En caso de querer que las operaciones se realicen en otro orden, se deben utilizar paréntesis.</p>
@@ -190,7 +223,8 @@ ZeroDivisionError: division by zero</span>
     <div class="codigo">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> (5+8) / (7-2)
-<span class="idle-resp">2.6</span></pre>
+<span class="idle-resp">2.6</span>
+</pre>
     </div>
 
     <hr class="corta" />
@@ -339,6 +373,19 @@ ZeroDivisionError: division by zero</span>
 </pre>
       </div>
     </section>
+
+    <section id="divmod">
+      <h3>La función integrada <span class="idle-func">divmod</span>()</h3>
+
+      <p>La función integrada <span class="idle-func">divmod</span>(<var>x</var>, <var>y</var>) devuelve una tupla formada por el cociente y el resto de la divión de <var>x</var> entre <var>y</var>..</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">divmod</span>(13, 4)
+<span class="idle-resp">(3, 1)</span>
+</pre>
+      </div>
+    </section>
   </section>
 
   <section id="potencias">
@@ -371,7 +418,7 @@ ZeroDivisionError: division by zero</span>
 
     <hr class="corta" />
 
-    <p>También se pueden calcular potencias o raíces mediante la función <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero x elevado a y después calcula el resto de la división por z.</p>
+    <p>También se pueden calcular potencias o raíces mediante la función integrada <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero <var>x</var> elevado a <var>y</var> después calcula el resto de la división por <var>z</var>.</p>
 
     <div class="codigo">
       <pre>
@@ -393,9 +440,9 @@ ZeroDivisionError: division by zero</span>
     <p>Lo que no se debe hacer nunca es redondear resultados intermedios que se vayan a utilizar en cálculos posteriores, porque el resultado final será diferente.</p>
 
     <section id="redondear-round">
-      <h3>La función <span class="idle-func">round</span>()</h3>
+      <h3>La función integrada <span class="idle-func">round</span>()</h3>
 
-      <p>Para redondear un número (por ejemplo, cuando se muestra al usuario el resultado final de un cálculo), se puede utilizar la función <span class="idle-func">round</span>(). La función <span class="idle-func">round</span>() admite uno o dos argumentos numéricos.</p>
+      <p>Para redondear un número (por ejemplo, cuando se muestra al usuario el resultado final de un cálculo), se puede utilizar la función integrada <span class="idle-func">round</span>(). La función integrada <span class="idle-func">round</span>() admite uno o dos argumentos numéricos.</p>
 
       <ul>
         <li>Si sólo hay un argumento, la función devuelve el argumento redondeado al entero más próximo:
@@ -412,7 +459,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
           </div>
         </li>
-        <li>Si se escriben dos argumentos, siendo el segundo un número entero, la función <span class="idle-func">round</span>() devuelve el primer argumento redondeado en la posición indicada por el segundo argumento.
+        <li>Si se escriben dos argumentos, siendo el segundo un número entero, la función integrada <span class="idle-func">round</span>() devuelve el primer argumento redondeado en la posición indicada por el segundo argumento.
           <ul>
             <li>Si el segundo argumento es positivo, el primer argumento se redondea con el número de decimales indicado:
               <div class="codigo">
@@ -443,7 +490,8 @@ ZeroDivisionError: division by zero</span>
 &gt;&gt;&gt; <span class="idle-func">round</span>(4.3527, 0)
 <span class="idle-resp">4.0</span>
 &gt;&gt;&gt; <span class="idle-func">round</span>(4.3527)
-<span class="idle-resp">4</span></pre>
+<span class="idle-resp">4</span>
+</pre>
               </div>
 
               <p>Si el primer argumento es un número entero, el resultado sigue siendo el mismo número entero:</p>
@@ -477,7 +525,7 @@ ZeroDivisionError: division by zero</span>
 
       <hr class="corta" />
 
-      <p>La función <span class="idle-func">round</span>() redondea correctamente al número más próximo del orden de magnitud deseado (entero, décimas, decenas, centésimas, centenas, etc). El problema es cuando el número a redondear está justo en medio (por ejemplo, redondear 3.5 a entero, 4.85 a décimas, etc.). En Matemáticas se suele redondear siempre hacia arriba, pero en Python se sigue otro criterio:</p>
+      <p>La función integrada <span class="idle-func">round</span>() redondea correctamente al número más próximo del orden de magnitud deseado (entero, décimas, decenas, centésimas, centenas, etc). El problema es cuando el número a redondear está justo en medio (por ejemplo, redondear 3.5 a entero, 4.85 a décimas, etc.). En Matemáticas se suele redondear siempre hacia arriba, pero en Python se sigue otro criterio:</p>
       <ul>
         <li>Cuando se redondea a enteros, decenas, centenas, etc., Python redondea de manera que la última cifra (la redondeada) sea par.
 
@@ -541,7 +589,8 @@ ZeroDivisionError: division by zero</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.355, 2)
 <span class="idle-resp">0.35</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.365, 2)
-<span class="idle-resp">0.36</span></pre>
+<span class="idle-resp">0.36</span>
+</pre>
           </div>
           <p>Este redondeo se debe a la forma en que Python representa internamente los números decimales. Es un problema que presentan la mayoría de lenguajes de programación y se explica en el apartado siguiente.</p>
         </li>
@@ -613,7 +662,8 @@ NameError: name 'ceil' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.45)
 <span class="idle-resp">Decimal('3.45000000000000017763568394002504646778106689453125')</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.55)
-<span class="idle-resp">Decimal('3.54999999999999982236431605997495353221893310546875')</span></pre>
+<span class="idle-resp">Decimal('3.54999999999999982236431605997495353221893310546875')</span>
+</pre>
         </div>
       </li>
     </ul>
@@ -626,7 +676,8 @@ NameError: name 'ceil' is not defined</span>
     <div class="codigo">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 0.1 + 0.1 + 0.1
-<span class="idle-resp">0.30000000000000004</span></pre>
+<span class="idle-resp">0.30000000000000004</span>
+</pre>
     </div>
 
     <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">decimal</a> y existen bibliotecas como <a href="https://code.google.com/archive/p/mpmath">mpmath</a> que admiten precisión arbitraria.</p>
@@ -643,26 +694,117 @@ NameError: name 'ceil' is not defined</span>
     </ul>
   </section>
 
-  <section id="valor-absoluto">
-    <h2>Valor absoluto</h2>
+  <section id="funciones-integradas">
+    <h2>Otras funciones integradas (<i>built-in functions</i>)</h2>
 
-    <p>La función integrada <span class="idle-func">abs</span>() calcula el valor abosluto de un número, es decir, el valor sin signo.</p>
+    <p>El intérprete de Python incorpora varias funciones integradas que realizan operaciones muy habituales.</p>
 
-    <div class="codigo">
-      <pre>
+    <section id="valor-absoluto">
+      <h3>Valor absoluto: <span class="idle-func">abs</span>() </h3>
+
+      <p>La función integrada <span class="idle-func">abs</span>() calcula el valor absoluto de un número, es decir, el valor sin signo.</p>
+
+      <div class="codigo">
+        <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(-6)
 <span class="idle-resp">6</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(7)
-<span class="idle-resp">7</span></pre>
-    </div>
-  </section>
+<span class="idle-resp">7</span>
+</pre>
+      </div>
+    </section>
 
-  <section>
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Cosas que faltan: complex(real[, imag]); max(s[, args...]); min(s[, args...]);</p>
+    <section id="maximo">
+      <h3>Máximo: <span class="idle-func">max</span>()</h3>
+
+      <p>La función integrada <span class="idle-func">max</span>() calcula el valor máximo de un conjunto de valores (numéricos o alfabéticos). En el caso de cadenas, el valor máximo corresponde al último valor en orden alfabético, sin importar la longitud de la cadena.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(4, 5, -2, 8, 3.5, -10)
+<span class="idle-resp">8</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>)
+<span class="idle-resp">'Tomás'</span>
+</pre>
+      </div>
+
+      <p>Las vocales acentuadas, la letra ñ o ç se consideran posteriores al resto de vocales y consonantes</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(<span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Roberto"</span>)
+<span class="idle-resp">'Ángeles'</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="minimo">
+      <h3>Mínimo: <span class="idle-func">min</span>()</h3>
+
+      <p>La función integrada <span class="idle-func">min</span>() calcula el valor mínimo de un conjunto de valores (numéricos o alfabéticos). En el caso de cadenas, el valor mínimo corresponde al primer valor en orden alfabético, sin importar la longitud de la cadena.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(4, 5, -2, 8, 3.5, -10)
+<span class="idle-resp">-10</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>)
+<span class="idle-resp">'Alicia'</span>
+</pre>
+      </div>
+
+      <p>Las vocales acentuadas, la letra ñ o ç se consideran posteriores al resto de vocales y consonantes</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(<span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Roberto"</span>)
+<span class="idle-resp">'Roberto'</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="suma">
+      <h3>Suma: <span class="idle-func">sum</span>()</h3>
+
+      <p>La función integrada <span class="idle-func">sum</span>() calcula la suma de un conjunto de valores. El conjunto de valores debe ser un tipo de datos iterable (tupla, rango, lista, conjunto o diccionario).</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>((1, 2, 3, 4, 5))
+<span class="idle-resp">15</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>([1, 2, 3, 4, 5])
+<span class="idle-resp">15</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>(<span class="idle-func">range</span>(6))
+<span class="idle-resp">15</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>({1, 2, 3, 4, 5})
+<span class="idle-resp">15</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ordenacion">
+      <h3>Ordenación: <span class="idle-func">sorted</span>()</h3>
+
+      <p>La función integrada <span class="idle-func">sorted</span>() ordena un conjunto de valores. El conjunto de valores debe ser un tipo de datos iterable (tupla, rango, lista, conjunto o diccionario). El conjunto de valores no se modifica, la función devuelve una lista con los elementos ordenados.</p>
+
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>((10, 2, 8, -3, 6))
+<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>([10, 2, 8, -3, 6])
+<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>({10, 2, 8, -3, 6})
+<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>((<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>))
+<span class="idle-resp">['Alicia', 'David', 'Emilio', 'Tomás']</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>([<span class="idle-cade">"David"</span>, <span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Óscar"</span>, <span class="idle-cade">"Emilio"</span>])
+<span class="idle-resp">['David', 'Emilio', 'Tomás', 'Ángeles', 'Óscar']</span>
+</pre>
+      </div>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de enero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
