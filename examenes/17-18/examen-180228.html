@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen 28/02/18. Exámenes. Python. Bartolomé Sintes Marco</title>
+  <link href="../../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../varios/favicon.ico" />
+  <link rel="stylesheet" href="../../varios/prism-python.css" />
+  <script src="../../varios/prism.js"></script>
+
+</head>
+
+<body>
+  <h1>Examen 28 de febrero de 2018</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 28/02/18</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Operaciones</a></li>
+        <li><a href="#ejercicio-2">Operaciones</a>, <span class="idle-rese">if</span> ... <span class="idle-rese">else</span></li>
+        <li><a href="#ejercicio-3"><span class="idle-rese">if</span> ... <span class="idle-rese">else</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>En Informática se han utilizado tradicionalmente los prefijos <i>kilo</i> (K), <i>mega</i> (M), <i>tera</i> (T) con un significado distinto al habitual en otros campos técnicos. Por ejemplo, <i>kilo</i> significa 1000 unidades pero <i>kilo</i> en Informática suele referirse a 1024 (2<sup>10</sup>). Para resolver esta confusión, la Comisión Electrotécnica Internacional definió en 1998 las unidades <i>kibi</i> (Ki), <i>mebi</i> (Mi), <i>gibi</i> (Gi), <i>tebi</i> (Ti), <i>pebi</i> (Pi) y <i>exbi</i> (Ei), que se definen como potencias de 2. Así,</p>
+
+    <ul>
+      <li>1 <i>kibibyte</i> = 1024 <i>bytes</i></li>
+      <li>1 <i>mebibyte</i> = 1024 <i>kibibytes</i></li>
+      <li>1 <i>tebibyte</i> = 1024 <i>mebibytes</i></li>
+      <li>1 <i>pebibyte</i> = 1024 <i>tebibytes</i></li>
+      <li>1 <i>exbibyte</i> = 1024 <i>pebibytes</i></li>
+    </ul>
+
+    <p>Escriba un programa que exprese un número de bytes en gibibites, mebibytes y kibibytes.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">MÚLTIPLOS BINARIOS</span></p>
+      <p><span class="idle-resp">Escriba un número de bytes:</span> 1000</p>
+      <p><span class="idle-resp">1000 bytes son 0 GiB, 0 MiB, 0 KiB y 1000 bytes.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">MÚLTIPLOS BINARIOS</span></p>
+      <p><span class="idle-resp">Escriba un número de bytes:</span> 1000000000</p>
+      <p><span class="idle-resp">1000000000 bytes son 0 GiB, 953 MiB, 690 KiB y 512 bytes.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">MÚLTIPLOS BINARIOS</span></p>
+      <p><span class="idle-resp">Escriba un número de bytes:</span> 12345654321</p>
+      <p><span class="idle-resp">12345654321 bytes son 11 GiB, 509 MiB, 751 KiB y 49 bytes.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Escriba un programa que pida un código RGB de color (valores entre 0 y 255) y devuelva el código HSL corrspondiente.</p>
+
+    <p>El procedimiento de cálculo es el siguiente:</p>
+
+    <ul>
+      <li>los valores RGB se dividen por 255 y en todos los cálculos se usan los valores decimales <strong>r</strong>, <strong>g</strong> y <strong>b</strong></li>
+      <li><strong>M</strong> es el máximo de los tres valores</li>
+      <li><strong>m</strong> es el mínimo de los tres valores</li>
+      <li><strong>C</strong> es <strong>M - m</strong></li>
+      <li>Cálculo de H:
+        <ul>
+          <li>si C es 0, <strong>h</strong> es 0 (por convención, realmente está indefinido)</li>
+          <li>si M es r, <strong>h</strong> es 60 veces el resto de (g-b) / C entre 6</li>
+          <li>si M es g, <strong>h</strong> es 60 veces (b-r) / C + 2</li>
+          <li>si M es b, <strong>h</strong> es 60 veces (r-g) / C + 4</li>
+          <li>redondee h a un número entero y <strong>H</strong> es el resto de h entre 360</li>
+        </ul>
+      </li>
+      <li>Cálculo de L:
+        <ul>
+          <li><strong>L</strong> es la media entre M y m</li>
+          <li>redondee <strong>L</strong> con tres decimales</li>
+        </ul>
+      </li>
+      <li>Cálculo de S:
+        <ul>
+          <li>si L es 1, <strong>S</strong> es 0</li>
+          <li>si no, <strong>S</strong> es C / (1 - abs(2*L - 1))</li>
+          <li>redondee <strong>S</strong> con tres decimales</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONVERTIDOR RGB A HSL</span></p>
+      <p><span class="idle-resp">Introduzca las componentes RGB (valores entre 0 y 255)</span></p>
+      <p><span class="idle-resp">R =</span> 197</p>
+      <p><span class="idle-resp">G =</span> 131</p>
+      <p><span class="idle-resp">B =</span> 168</p>
+      <p><span class="idle-resp">El color es H = 29 S = 0.527 L = 0.52</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONVERTIDOR RGB A HSL</span></p>
+      <p><span class="idle-resp">Introduzca las componentes RGB (valores entre 0 y 255)</span></p>
+      <p><span class="idle-resp">R =</span> 36</p>
+      <p><span class="idle-resp">G =</span> 234</p>
+      <p><span class="idle-resp">B =</span> 172</p>
+      <p><span class="idle-resp">El color es H = 29 S = 0.527 L = 0.52</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONVERTIDOR RGB A HSL</span></p>
+      <p><span class="idle-resp">Introduzca las componentes RGB (valores entre 0 y 255)</span></p>
+      <p><span class="idle-resp">R =</span> 96</p>
+      <p><span class="idle-resp">G =</span> 37</p>
+      <p><span class="idle-resp">B =</span> 130</p>
+      <p><span class="idle-resp">El color es H = 278 S = 0.557 L = 0.327</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONVERTIDOR RGB A HSL</span></p>
+      <p><span class="idle-resp">Introduzca las componentes RGB (valores entre 0 y 255)</span></p>
+      <p><span class="idle-resp">R =</span> 128</p>
+      <p><span class="idle-resp">G =</span> 128</p>
+      <p><span class="idle-resp">B =</span> 128</p>
+      <p><span class="idle-resp">El color es H = 0 S = 0 L = 0.502</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p>Escriba un programa que simule un juego de pares y nones entre dos jugadores (Pablo y Noelia). Simultáneamente, cada jugador enseña entre 0 y 5 dedos de una mano. Si el número total de dedos enseñados es par, gana Pablo. Si es impar, gana Noelia.</p>
+
+    <p><strong>Nota</strong>: la frase que indica el número de dedos depende de ese número.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PARES Y NONES</span></p>
+      <p><span class="idle-resp">Pablo saca 4 dedos.</span></p>
+      <p><span class="idle-resp">Noelia saca 1 dedo.</span></p>
+      <p><span class="idle-resp">Total: 5.</span></p>
+      <p><span class="idle-resp">Ha ganado Noelia.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+        <p><span class="idle-resp">PARES Y NONES</span></p>
+        <p><span class="idle-resp">Pablo saca 2 dedos.</span></p>
+        <p><span class="idle-resp">Noelia no saca ningún dedo.</span></p>
+        <p><span class="idle-resp">Total: 2.</span></p>
+        <p><span class="idle-resp">Ha ganado Pablo.</span></p>
+      </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 27 de febrero de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
+</html>
