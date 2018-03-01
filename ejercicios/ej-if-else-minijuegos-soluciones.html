@@ -1,54 +1,54 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soluciones. Minijuegos (1). if... elif... else... Python. Bartolomé Sintes Marco</title>
-  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
-  <link rel="stylesheet" href="../varios/prism-python.css" />
-  <script src="../varios/prism.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soluciones. Minijuegos (1). if... elif... else... Python. Bartolomé Sintes Marco</title>
+    <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" href="../varios/prism-python.css" />
+    <script src="../varios/prism.js"></script>
 </head>
 
 <body>
-  <h1><span class="idle-rese">if</span>... <span class="idle-rese">elif</span>... <span class="idle-rese">else</span>... - Minijuegos(1) - Soluciones</h1>
+    <h1><span class="idle-rese">if</span>... <span class="idle-rese">elif</span>... <span class="idle-rese">else</span>... - Minijuegos(1) - Soluciones</h1>
 
-  <nav>
-    <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-    </p>
+    <nav>
+        <p>
+            <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+            <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        </p>
 
-    <div class="toc">
-      <h2>Minijuegos (1)</h2>
+        <div class="toc">
+            <h2>Minijuegos (1)</h2>
 
-      <h3><a href="ej-if-else-minijuegos.html">Enunciados</a></h3>
-      <ol>
-        <li><a href="ej-if-else-minijuegos.html#ejercicio-1">Dados (1)</a></li>
-        <li><a href="ej-if-else-minijuegos.html#ejercicio-2">Dados (2)</a></li>
-        <li><a href="ej-if-else-minijuegos.html#ejercicio-3">Dados (3)</a></li>
-        <li><a href="ej-if-else-minijuegos.html#ejercicio-4">El Quince</a></li>
-        <li><a href="ej-if-else-minijuegos.html#ejercicio-5">Piedra, papel, ¡tijera!</a></li>
-      </ol>
+            <h3><a href="ej-if-else-minijuegos.html">Enunciados</a></h3>
+            <ol>
+                <li><a href="ej-if-else-minijuegos.html#ejercicio-1">Dados (1)</a></li>
+                <li><a href="ej-if-else-minijuegos.html#ejercicio-2">Dados (2)</a></li>
+                <li><a href="ej-if-else-minijuegos.html#ejercicio-3">Dados (3)</a></li>
+                <li><a href="ej-if-else-minijuegos.html#ejercicio-4">El Quince</a></li>
+                <li><a href="ej-if-else-minijuegos.html#ejercicio-5">Piedra, papel, ¡tijera!</a></li>
+            </ol>
 
-      <h3>Soluciones</h3>
-      <ol>
-        <li><a href="#ejercicio-1">Dados (1)</a></li>
-        <li><a href="#ejercicio-2">Dados (2)</a></li>
-        <li><a href="#ejercicio-3">Dados (3)</a></li>
-        <li><a href="#ejercicio-4">El Quince</a></li>
-        <li><a href="#ejercicio-5">Piedra, papel, ¡tijera!</a></li>
-      </ol>
-    </div>
-  </nav>
+            <h3>Soluciones</h3>
+            <ol>
+                <li><a href="#ejercicio-1">Dados (1)</a></li>
+                <li><a href="#ejercicio-2">Dados (2)</a></li>
+                <li><a href="#ejercicio-3">Dados (3)</a></li>
+                <li><a href="#ejercicio-4">El Quince</a></li>
+                <li><a href="#ejercicio-5">Piedra, papel, ¡tijera!</a></li>
+            </ol>
+        </div>
+    </nav>
 
-  <p>Se ofrecen a continuación unas posibles soluciones de los ejercicios de <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... <a href="ej-if-else-minijuegos.html">Minijuegos (1)</a>.</p>
+    <p>Se ofrecen a continuación unas posibles soluciones de los ejercicios de <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... <a href="ej-if-else-minijuegos.html">Minijuegos (1)</a>.</p>
 
-  <section id="ejercicio-1">
-    <h2>Minijuegos (1) - 1</h2>
+    <section id="ejercicio-1">
+        <h2>Minijuegos (1) - 1</h2>
 
-    <div class="codigo">
-      <pre>
+        <div class="codigo">
+            <pre>
 <code class="language-python">from random import randrange
 
 print("JUEGO DE DADOS (1)")
@@ -59,21 +59,21 @@ b = randrange(1, 7)
 print(f"Alberto ha sacado un {a}.")
 print(f"Bárbara ha sacado un {b}.")
 
-if (a == b):
+if a == b:
     print("Han empatado.")
-elif (a &gt; b):
+elif a &gt; b:
     print("Ha ganado Alberto.")
 else:
     print("Ha ganado Bárbara.")</code>
 </pre>
-    </div>
-  </section>
+        </div>
+    </section>
 
-  <section id="ejercicio-2">
-    <h2>Minijuegos (1) - 2</h2>
+    <section id="ejercicio-2">
+        <h2>Minijuegos (1) - 2</h2>
 
-    <div class="codigo">
-      <pre>
+        <div class="codigo">
+            <pre>
 <code class="language-python">from random import randrange
 
 print("JUEGO DE DADOS (2)")
@@ -88,26 +88,57 @@ max_b = max(b_1, b_2)
 print(f"Carmen ha sacado un {a_1} y un {a_2}.")
 print(f"David ha sacado un {b_1} y un {b_2}.")
 
-if (a_1 + a_2 &gt; b_1 + b_2):
+if a_1 + a_2 &gt; b_1 + b_2:
     print("Ha ganado Carmen.")
-elif (a_1 + a_2 &lt; b_1 + b_2):
+elif a_1 + a_2 &lt; b_1 + b_2:
     print("Ha ganado David.")
 else:
-    if (max_a &gt; max_b):
+    if max_a &gt; max_b:
         print("Ha ganado Carmen.")
-    elif (max_a &lt; max_b):
+    elif max_a &lt; max_b:
         print("Ha ganado David.")
     else:
         print("Han empatado.")</code>
 </pre>
-    </div>
-  </section>
+        </div>
 
-  <section id="ejercicio-3">
-    <h2>Minijuegos (1) - 3</h2>
+        <p>En vez de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... anidados se podía haber utilizado un único <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</p>
 
-    <div class="codigo">
-      <pre>
+        <div class="codigo">
+            <pre>
+<code class="language-python">from random import randrange
+
+print("JUEGO DE DADOS (2)")
+
+a_1 = randrange(1, 7)
+a_2 = randrange(1, 7)
+b_1 = randrange(1, 7)
+b_2 = randrange(1, 7)
+max_a = max(a_1, a_2)
+max_b = max(b_1, b_2)
+
+print(f"Carmen ha sacado un {a_1} y un {a_2}.")
+print(f"David ha sacado un {b_1} y un {b_2}.")
+
+if a_1 + a_2 &gt; b_1 + b_2:
+    print("Ha ganado Carmen.")
+elif a_1 + a_2 &lt; b_1 + b_2:
+    print("Ha ganado David.")
+elif max_a &gt; max_b:
+    print("Ha ganado Carmen.")
+elif max_a &lt; max_b:
+    print("Ha ganado David.")
+else:
+    print("Han empatado.")</code>
+</pre>
+        </div>
+    </section>
+
+    <section id="ejercicio-3">
+        <h2>Minijuegos (1) - 3</h2>
+
+        <div class="codigo">
+            <pre>
 <code class="language-python">from random import randrange
 
 print("JUEGO DE DADOS (3)")
@@ -124,34 +155,89 @@ min_b = min(b_1, b_2)
 print(f"Elena ha sacado un {a_1} y un {a_2}.")
 print(f"Fernando ha sacado un {b_1} y un {b_2}.")
 
-if (max_a &gt; max_b):
+if max_a &gt; max_b:
     print("Ha ganado Elena.")
-elif (max_a &lt; max_b):
+elif max_a &lt; max_b:
     print("Ha ganado Fernando.")
 else:
-    if (min_a &gt; min_b):
+    if min_a &gt; min_b:
         print("Ha ganado Elena.")
-    elif (min_a &lt; min_b):
+    elif min_a &lt; min_b:
         print("Ha ganado Fernando.")
     else:
         print("Han empatado.")</code>
 </pre>
-    </div>
-  </section>
+        </div>
+    </section>
 
     <section id="ejercicio-4">
-    <h2>Minijuegos (1) - 4</h2>
+        <h2>Minijuegos (1) - 4</h2>
 
-    <p class="incompleto">Por escribir.</p>
-  </section>
+        <p>En este ejercicio los casos se pueden ordenar de muchas distintas. Una posibilidad es la siguiente:</p>
 
-  <section id="ejercicio-5">
-    <h2>Minijuegos (1) - 5</h2>
+        <div class="codigo">
+            <pre>
+<code class="language-python">from random import randrange
 
-    <p class="incompleto">Por escribir.</p>
-  </section>
-  <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de febrero de 2018</p>
+print("JUEGO DEL QUINCE")
+
+g_1 = randrange(1, 11)
+g_2 = randrange(1, 11)
+g_3 = randrange(1, 11)
+h_1 = randrange(1, 11)
+h_2 = randrange(1, 11)
+h_3 = randrange(1, 11)
+g = g_1 + g_2 + g_3
+h = h_1 + h_2 + h_3
+
+print(f"Gloria ha sacado un {g_1}, un {g_2} y un {g_3}.")
+print(f"Héctor ha sacado un {h_1}, un {h_2} y un {h_3}.")
+
+if g &gt; 15 and h &gt; 15:
+    print("No ha ganado nadie.")
+elif g == h:
+    print("Han empatado")
+elif h &gt; 15:
+    print("Ha ganado Gloria.")
+elif g &lt; 15 and g &gt; h:
+    print("Ha ganado Gloria.")
+else:
+    print("Ha ganado Héctor.")</code>
+</pre>
+        </div>
+    </section>
+
+    <section id="ejercicio-5">
+        <h2>Minijuegos (1) - 5</h2>
+
+        <div class="codigo">
+            <pre>
+<code class="language-python">from random import choice
+
+print("PIEDRA, PAPEL, ... ¡TIJERA!")
+
+i = choice(["PIEDRA", "PAPEL", "TIJERA"])
+j = choice(["PIEDRA", "PAPEL", "TIJERA"])
+
+print(f"Inés ha sacado {i}.")
+print(f"Juan ha sacado {j}.")
+
+if i == j:
+    print("Han empatado.")
+elif i == "PIEDRA" and j == "TIJERA":
+    print("Ha ganado Inés.")
+elif i == "TIJERA" and j == "PAPEL":
+    print("Ha ganado Inés.")
+elif i == "PAPEL" and j == "PIEDRA":
+    print("Ha ganado Inés")
+else:
+    print("Ha ganado Juan.")</code>
+</pre>
+        </div>
+    </section>
+
+    <footer>
+    <p class="ultmod">Última modificación de esta página: 1 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
