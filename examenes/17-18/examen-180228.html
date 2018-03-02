@@ -81,25 +81,25 @@
       <li>Cálculo de H:
         <ul>
           <li>si C es 0, <strong>h</strong> es 0 (por convención, realmente está indefinido)</li>
-          <li>si M es r, <strong>h</strong> es 60 veces el resto de (g-b) / C entre 6</li>
-          <li>si M es g, <strong>h</strong> es 60 veces (b-r) / C + 2</li>
-          <li>si M es b, <strong>h</strong> es 60 veces (r-g) / C + 4</li>
+          <li>si M es r, <strong>h</strong> es el resto de (g-b) / C entre 6</li>
+          <li>si M es g, <strong>h</strong> es (b-r) / C + 2</li>
+          <li>si M es b, <strong>h</strong> es (r-g) / C + 4</li>
+          <li>multiplique h por 60</li>
           <li>redondee h a un número entero y <strong>H</strong> es el resto de h entre 360</li>
         </ul>
       </li>
       <li>Cálculo de L:
         <ul>
           <li><strong>L</strong> es la media entre M y m</li>
-          <li>redondee <strong>L</strong> con tres decimales</li>
         </ul>
       </li>
       <li>Cálculo de S:
         <ul>
           <li>si L es 1, <strong>S</strong> es 0</li>
           <li>si no, <strong>S</strong> es C / (1 - abs(2*L - 1))</li>
-          <li>redondee <strong>S</strong> con tres decimales</li>
         </ul>
       </li>
+      <li>redondee <strong>L</strong> y <strong>S</strong> con tres decimales</li>
     </ul>
 
     <div class="resultado-idle">
@@ -164,7 +164,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 27 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 1 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a>  por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
