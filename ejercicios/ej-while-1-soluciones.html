@@ -22,17 +22,17 @@
     <div class="toc">
       <h2>Bucle <span class="idle-rese">while</span> (1)</h2>
 
-      <h3><a href="ej-white-1.html">Enunciados</a></h3>
+      <h3><a href="ej-while-1.html">Enunciados</a></h3>
       <ol>
-        <li><a href="ej-white-1.html#ejercicio-1">Menores que primero</a></li>
-        <li><a href="ej-white-1.html#ejercicio-2">Mayores que primero</a></li>
-        <li><a href="ej-white-1.html#ejercicio-3">Cada vez más grandes</a></li>
-        <li><a href="ej-white-1.html#ejercicio-4">Números positivos</a></li>
-        <li><a href="ej-white-1.html#ejercicio-5">Suma números positivos</a></li>
-        <li><a href="ej-white-1.html#ejercicio-6">Suma hasta límite</a></li>
-        <li><a href="ej-white-1.html#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="ej-white-1.html#ejercicio-8">S para seguir</a></li>
-        <li><a href="ej-white-1.html#ejercicio-9">Descomposición primos</a></li>
+        <li><a href="ej-while-1.html#ejercicio-1">Menores que primero</a></li>
+        <li><a href="ej-while-1.html#ejercicio-2">Mayores que primero</a></li>
+        <li><a href="ej-while-1.html#ejercicio-3">Cada vez más grandes</a></li>
+        <li><a href="ej-while-1.html#ejercicio-4">Números positivos</a></li>
+        <li><a href="ej-while-1.html#ejercicio-5">Suma números positivos</a></li>
+        <li><a href="ej-while-1.html#ejercicio-6">Suma hasta límite</a></li>
+        <li><a href="ej-while-1.html#ejercicio-7">Suma entre límites</a></li>
+        <li><a href="ej-while-1.html#ejercicio-8">S para seguir</a></li>
+        <li><a href="ej-while-1.html#ejercicio-9">Descomposición primos</a></li>
       </ol>
 
       <h3>Soluciones</h3>
@@ -50,7 +50,7 @@
     </div>
   </nav>
 
-  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-white-1.html">ejercicios (1) de bucle <span class="idle-rese">while</span></a>.</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-while-1.html">ejercicios (1) de bucle <span class="idle-rese">while</span></a>.</p>
 
   <section id="ejercicio-1">
     <h2>Bucle <span class="idle-rese">while</span> (1) - 1</h2>
@@ -58,15 +58,13 @@
     <div class="codigo">
       <pre>
 <code class="language-python">primero = int(input("Escriba un número: "))
-segundo = int(input("Escriba un número mayor que " + str(primero) + ": "))
+segundo = int(input(f"Escriba un número mayor que {primero}: "))
 
 while segundo &lt;= primero:
-    print(segundo, "no es mayor que", str(primero) + ". Inténtelo de nuevo: ",
-          end="")
-    segundo = int(input())
+    segundo = int(input(f"{segundo} no es mayor que {primero}. Inténtelo de nuevo: "))
 
 print()
-print("Los números que ha escrito son", primero, "y", str(segundo) + ".")
+print(f"Los números que ha escrito son {primero} y {segundo}.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -78,13 +76,13 @@ print("Programa terminado")</code>
     <div class="codigo">
       <pre>
 <code class="language-python">primero = float(input("Escriba un número: "))
-segundo = float(input("Escriba un número mayor que " + str(primero) + ": "))
+segundo = float(input(f"Escriba un número mayor que {primero}: "))
 
 while segundo &gt; primero:
-    segundo = float(input("Escriba un número mayor que " + str(primero) + ": "))
+    segundo = float(input(f"Escriba un número mayor que {primero}: "))
 
 print()
-print(segundo, "no es mayor que", str(primero) + ".")
+print(f"{segundo} no es mayor que {primero}.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -96,14 +94,14 @@ print("Programa terminado")</code>
     <div class="codigo">
       <pre>
 <code class="language-python">primero = int(input("Escriba un número: "))
-segundo = int(input("Escriba un número mayor que " + str(primero) + ": "))
+segundo = int(input(f"Escriba un número mayor que {primero}: "))
 
 while segundo &gt; primero:
     primero = segundo
-    segundo = int(input("Escriba un número mayor que " + str(primero) + ": "))
+    segundo = int(input(f"Escriba un número mayor que {primero}: "))
 
 print()
-print(segundo, "no es mayor que", str(primero) + ".")
+print(f"{segundo} no es mayor que {primero}.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -114,7 +112,7 @@ print("Programa terminado")</code>
 
     <div class="codigo">
       <pre>
-<code class="language-python">objetivo = int(input("Escriba la cantidad de números positivos a solicitar: "))
+<code class="language-python">objetivo = int(input("Escriba la cantidad de números positivos a escribir: "))
 while objetivo &lt; 1:
     objetivo = int(input("La cantidad debe ser mayor que 0. Inténtelo de nuevo: "))
 
@@ -133,10 +131,12 @@ while cantidad &lt; objetivo:
     total += 1
 
 print()
-if cantidad == 1:
+if total == 1:
     print("Ha escrito 1 número positivo.")
+elif objetivo == 1:
+    print(f"Ha escrito {total} números, {objetivo} de ellos positivo.")
 else:
-    print("Ha escrito", total, "números,", objetivo, "de ellos positivos.")
+    print(f"Ha escrito {total} números, {objetivo} de ellos positivos.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -155,7 +155,7 @@ while numero &gt; 0:
     numero = int(input("Escriba otro número: "))
 
 print()
-print("La suma de los números positivos introducidos es", str(suma) + ".")
+print(f"La suma de los números positivos introducidos es {suma}.")
 print("Programa terminado")
 </code>
 </pre>
@@ -180,7 +180,7 @@ while suma &lt; limite:
     suma += numero
 
 print()
-print("Ha superado el límite. La suma de los números positivos introducidos es", str(suma) + ".")
+print(f"Ha superado el límite. La suma de los números positivos introducidos es {suma}.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -192,24 +192,24 @@ print("Programa terminado")</code>
     <div class="codigo">
       <pre>
 <code class="language-python">minimo = int(input("Escriba un número: "))
-maximo = int(input("Escriba un número mayor que " + str(minimo) + ": "))
+maximo = int(input(f"Escriba un número mayor que {minimo}: "))
 while minimo &gt;= maximo:
-    maximo = int(input(str(maximo) + " no es mayor que " + str(minimo) + ".Inténtelo de nuevo: "))
+    maximo = int(input(f"{maximo} no es mayor que {minimo}. Inténtelo de nuevo: "))
 
-numero = float(input("Escriba un número entre " + str(minimo) + " y " + str(maximo) + ": "))
+numero = float(input(f"Escriba un número entre {minimo} y {maximo}: "))
 contador = 0
 
 while minimo &lt;= numero &lt;= maximo:
     contador += 1
-    numero = float(input("Escriba un número entre " + str(minimo) + " y " + str(maximo) + ": "))
+    numero = float(input(f"Escriba otro número entre {minimo} y {maximo}: "))
 
 print()
 if contador == 0:
-    print("No ha escrito ningún número entre", minimo, "y", str(maximo) + ".")
+    print(f"No ha escrito ningún número entre {minimo} y {maximo}.")
 elif contador == 1:
-    print("Ha escrito 1 número entre", minimo, "y", str(maximo) + ".")
+    print(f"Ha escrito 1 número entre {minimo} y {maximo}.")
 else:
-    print("Ha escrito", contador, "números entre", minimo, "y", str(maximo) + ".")
+    print(f"Ha escrito {contador} números entre {minimo} y {maximo}.")
 print("Programa terminado")</code>
 </pre>
     </div>
@@ -222,16 +222,16 @@ print("Programa terminado")</code>
       <pre>
 <code class="language-python">numero = int(input("Escriba un número par: "))
 while numero % 2 != 0:
-    numero = int(input(str(numero) + " no es un número par. Inténtelo de nuevo: "))
+    numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
 contador = 1
-respuesta = input("¿Quiere escribir otro número par? (S/N) ")
+respuesta = input("¿Quiere escribir otro número par? (S/N): ")
 
-while respuesta == "S":
+while respuesta == "S" or respuesta == "s":
     numero = int(input("Escriba un número par: "))
     while numero % 2 != 0:
-        numero = int(input(str(numero) + " no es un número par. Inténtelo de nuevo: "))
+        numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
     contador += 1
-    respuesta = input("¿Quiere escribir otro número par? (S/N) ")
+    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
 
 print()
 if contador == 0:
@@ -239,10 +239,44 @@ if contador == 0:
 elif contador == 1:
     print("Ha escrito 1 número par")
 else:
-    print("Ha escrito", contador, "números pares.")
+    print(f"Ha escrito {contador} números pares.")
 print("Programa terminado")</code>
 </pre>
     </div>
+
+    <hr class="corta" />
+
+    <p>la versión que sólo acepta S, N, s o n por respuesta podría ser:</p>
+
+    <div class="codigo">
+        <pre>
+<code class="language-python">numero = int(input("Escriba un número par: "))
+while numero % 2 != 0:
+    numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
+contador = 1
+respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+while respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n":
+    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+
+while respuesta == "S" or respuesta == "s":
+    numero = int(input("Escriba un número par: "))
+    while numero % 2 != 0:
+        numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
+    contador += 1
+    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+while respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n":
+    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+
+print()
+if contador == 0:
+    print("No ha escrito ningún número par")
+elif contador == 1:
+    print("Ha escrito 1 número par")
+else:
+    print(f"Ha escrito {contador} números pares.")
+print("Programa terminado")</code>
+</pre>
+      </div>
   </section>
 
   <section id="ejercicio-9">
@@ -253,7 +287,7 @@ print("Programa terminado")</code>
       <pre>
 <code class="language-python">numero = int(input("Escriba un número entero mayor que 1: "))
 while numero &lt;= 1:
-    numero = int(input(str(numero) + " no es mayor que 1. Inténtelo de nuevo: "))
+    numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
 copia = numero
 
 print("Descomposición en factores primos: ", end="")
@@ -273,7 +307,7 @@ print("Programa terminado")</code>
       <pre>
 <code class="language-python">numero = int(input("Escriba un número entero mayor que 1: "))
 while numero &lt;= 1:
-    numero = int(input(str(numero) + " no es mayor que 1. Inténtelo de nuevo: "))
+    numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
 copia = numero
 
 print("Descomposición en factores primos: ", end="")
@@ -292,7 +326,7 @@ print("Programa terminado")</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 20 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

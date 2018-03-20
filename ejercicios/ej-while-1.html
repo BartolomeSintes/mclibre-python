@@ -33,24 +33,24 @@
         <li><a href="#ejercicio-9">Descomposición primos</a></li>
       </ol>
 
-      <h3><a href="ej-white-1-soluciones.html">Soluciones</a></h3>
+      <h3><a href="ej-while-1-soluciones.html">Soluciones</a></h3>
       <ol>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-1">Menores que primero</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-2">Mayores que primero</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-3">Cada vez más grandes</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-4">Números positivos</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-5">Suma números positivos</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-6">Suma hasta límite</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-8">S para seguir</a></li>
-        <li><a href="ej-white-1-soluciones.html#ejercicio-9">Descomposición primos</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-1">Menores que primero</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-2">Mayores que primero</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-3">Cada vez más grandes</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-4">Números positivos</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-5">Suma números positivos</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-6">Suma hasta límite</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-7">Suma entre límites</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-8">S para seguir</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-9">Descomposición primos</a></li>
       </ol>
     </div>
   </nav>
 
   <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-while.html">bucle <span class="idle-rese">while</span></a>.</p>
 
-  <p>Se pueden consultar unas <a href="ej-white-1-soluciones.html">posibles soluciones</a>.</p>
+  <p>Se pueden consultar unas <a href="ej-while-1-soluciones.html">posibles soluciones</a>.</p>
 
   <section id="ejercicio-1">
     <h2>Bucle <span class="idle-rese">while</span> (1) - 1</h2>
@@ -154,7 +154,7 @@
 
     <div class="resultado-idle">
       <pre>
-<span class="idle-resp">Escriba la cantidad de números positivos a solicitar:</span> 3
+<span class="idle-resp">Escriba la cantidad de números positivos a escribir:</span> 3
 
 <span class="idle-resp">Escriba un número:</span> 10
 <span class="idle-resp">Escriba otro número:</span> 2
@@ -168,8 +168,8 @@
 
     <div class="resultado-idle">
       <pre>
-<span class="idle-resp">Escriba la cantidad de números a positivos solicitar:</span> 0
-<span class="idle-resp">La cantidad debe ser mayor que 0. Inténtelo de nuevo: :</span> 1
+<span class="idle-resp">Escriba la cantidad de números positivos a escribir:</span> 0
+<span class="idle-resp">La cantidad debe ser mayor que 0. Inténtelo de nuevo:</span> 1
 
 <span class="idle-resp">Escriba un número:</span> 4
 
@@ -180,13 +180,13 @@
 
     <div class="resultado-idle">
       <pre>
-<span class="idle-resp">Escriba la cantidad de números a positivos solicitar:</span> -3
-<span class="idle-resp">La cantidad debe ser mayor que 0. Inténtelo de nuevo: :</span> 1
+<span class="idle-resp">Escriba la cantidad de números positivos a escribir:</span> -3
+<span class="idle-resp">La cantidad debe ser mayor que 0. Inténtelo de nuevo:</span> 1
 
 <span class="idle-resp">Escriba un número:</span> -1
 <span class="idle-resp">Escriba un número:</span> 1
 
-<span class="idle-resp">Ha escrito 2 números, 1 de ellos positivos.</span>
+<span class="idle-resp">Ha escrito 2 números, 1 de ellos positivo.</span>
 <span class="idle-resp">Programa terminado</span>
 </pre>
     </div>
@@ -300,17 +300,21 @@
   <section id="ejercicio-8">
     <h2>Bucle <span class="idle-rese">while</span> (1) - 8</h2>
 
-    <p>Escriba un programa que pida números pares mientras el usuario indique que quiere seguir introduciendo números. Para indicar que quiere seguir escribiendo números, el usuario deberá contestar S a la pregunta.</p>
+    <p>Escriba un programa que pida números pares mientras el usuario indique que quiere seguir introduciendo números. Para indicar que quiere seguir escribiendo números, el usuario deberá contestar S o s a la pregunta.</p>
 
     <div class="resultado-idle">
       <pre>
 <span class="idle-resp">Escriba un número par:</span> 4
-<span class="idle-resp">¿Quiere escribir otro número par? (S/N)</span> S
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> S
 
 <span class="idle-resp">Escriba un número par:</span> 8
-<span class="idle-resp">¿Quiere escribir otro número par? (S/N)</span> N
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> s
 
-<span class="idle-resp">Ha escrito 2 números pares.</span>
+<span class="idle-resp">Escriba un número par:</span> 7
+<span class="idle-resp">7 no es un número par. Inténtelo de nuevo:</span> 6
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> N
+
+<span class="idle-resp">Ha escrito 3 números pares.</span>
 <span class="idle-resp">Programa terminado</span>
 </pre>
     </div>
@@ -319,7 +323,23 @@
       <pre>
 <span class="idle-resp">Escriba un número par:</span> 5
 <span class="idle-resp">5 no es un número par. Inténtelo de nuevo:</span> 6
-<span class="idle-resp">¿Quiere escribir otro número par? (S/N)</span> x
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> x
+
+<span class="idle-resp">Ha escrito 1 número par.</span>
+<span class="idle-resp">Programa terminado</span>
+</pre>
+    </div>
+
+    <hr class="corta" />
+
+    <p>Mejore la usabilidad del programa anterior haciendo que la pregunta se repita si el usuario no contesta S, s, N o n.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Escriba un número par:</span> 1
+<span class="idle-resp">5 no es un número par. Inténtelo de nuevo:</span> 4
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> 6
+<span class="idle-resp">¿Quiere escribir otro número par? (S/N): </span> n
 
 <span class="idle-resp">Ha escrito 1 número par.</span>
 <span class="idle-resp">Programa terminado</span>
@@ -353,10 +373,17 @@
 <span class="idle-resp">Descomposición en factores primos: 2 2 2 2 3 3 5</span>
 </pre>
     </div>
+
+    <p><strong>Notas</strong>:</p>
+    <ul>
+      <li>Una manera de hacerlo sería ir tomando los números desde 2 hasta el propio número y probar si es divisible por esos números, teniendo en cuenta que puede ser divisible varias veces por el mismo número. Si el número inicial es divisible por algún número, se mostraría el número y el algoritmo seguiría con el resto de la división, tal y como se hace al hacer la descomposicón a mano.</li>
+      <li>El algoritmo anterior es muy lento para números grandes ya que prueba todos los números hasta el propio número. Se podría mejorar mucho tomando los números no hasta el número inicial, si no únicamente hasta que superen al número que estamos probando. Esta mejora no reduciría el tiempo de cálculo en el caso de que el usuario escribiera un número primo.</li>
+      <li>Otras formas sencillas de mejorar el programa serían probar números sólo hasta la mitad del valor inicial, o probar sólo el 2 y números impares. Estas mejoras reducirían el tiempo de cálculo para todos los números.</li>
+      </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 20 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
