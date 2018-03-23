@@ -107,7 +107,9 @@ while seguir == "":
     seguir = input("Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar. ")
 
 print()
-if suma_1 &gt; suma_2:
+if suma_1 + suma_2 == 0:
+    print("No se ha lanzado ningún dado.")
+elif suma_1 &gt; suma_2:
     print("Ha ganado el jugador 1.")
 elif suma_2 &gt; suma_1:
     print("Ha ganado el jugador 2.")
@@ -182,7 +184,9 @@ if suma_1 &gt; suma_2:
 elif suma_2 &gt; suma_1:
     print("Ha ganado el jugador 2.")
 else:
-    print("¡Empate!")</code>
+    print("¡Empate!")
+
+print("Programa terminado.")</code>
 </pre>
       </div>
     </section>
@@ -257,7 +261,9 @@ elif suma_1 &gt; suma_2:
 elif suma_2 &gt; suma_1:
     print("Ha ganado el jugador 2.")
 else:
-    print("¡Empate!")</code>
+    print("¡Empate!")
+
+print("Programa terminado.")</code>
 </pre>
       </div>
     </section>
@@ -266,7 +272,151 @@ else:
   <section id="apartado-b">
     <h2>B. Tragaperras</h2>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+    <section id="ejercicio-b-1">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - B-1</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+seguir = ""
+
+while seguir == "":
+    tirada_1 = randrange(1, 6)
+    tirada_2 = randrange(1, 6)
+    tirada_3 = randrange(1, 6)
+
+    print(f"Tirada: {tirada_1} {tirada_2} {tirada_3}")
+
+    seguir = input("Pulse Intro para volver a jugar, otra tecla e Intro para terminar: ")
+    print()
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-b-2">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - B-2</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+seguir = ""
+
+while seguir == "":
+    n_1 = randrange(1, 6)
+    n_2 = randrange(1, 6)
+    n_3 = randrange(1, 6)
+
+    print(f"Tirada: {n_1} {n_2} {n_3}")
+
+    if n_1 == n_2 == n_3:
+        print("Hay tres números iguales")
+    elif n_1 == n_2 or n_1 ==n_3 or n_2 == n_3:
+        print("Hay dos números iguales")
+    else:
+        print("No hay números iguales")
+
+    seguir = input("Pulse Intro para volver a jugar, otra tecla e Intro para terminar: ")
+    print()
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-b-3">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - B-3</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+monedas = 1
+
+print("Empieza la partida con 1 moneda.")
+print()
+
+seguir = ""
+while seguir == "":
+    n_1 = randrange(1, 7)
+    n_2 = randrange(1, 7)
+    n_3 = randrange(1, 7)
+
+    print(f"Tirada: {n_1} {n_2} {n_3}")
+
+    if n_1 == n_2 == n_3:
+        monedas += 4
+        print(f"Ha ganado 5 monedas. Ahora tiene {monedas} moneda(s).")
+    elif n_1 == n_2 or n_1 ==n_3 or n_2 == n_3:
+        monedas += 1
+        print(f"Ha ganado 2 monedas. Ahora tiene {monedas} moneda(s).")
+    else:
+        monedas -= 1
+        print(f"No ha ganado nada. Ahora tiene {monedas} moneda(s).")
+
+    seguir = input("Pulse Intro para volver a jugar, otra tecla e Intro para terminar: ")
+    print()
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-b-4">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - B-4</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+print("TRAGAPERRAS")
+print("En cada tirada, se le cobrará una moneda.")
+monedas = int(input("¿Con cuántas monedas quiere empezar? "))
+while monedas < 1:
+    print("Debe empezar con al menos 1 moneda")
+    monedas = int(input("¿Con cuántas monedas quiere empezar? "))
+inicial = monedas
+
+print()
+print(f"Empieza la partida con {monedas} moneda(s).")
+print()
+
+seguir = ""
+while seguir == "" and monedas != 0:
+    n_1 = randrange(1, 7)
+    n_2 = randrange(1, 7)
+    n_3 = randrange(1, 7)
+
+    print(f"Tirada: {n_1} {n_2} {n_3}")
+
+    if n_1 == n_2 == n_3:
+        monedas += 4
+        print(f"Ha ganado 5 monedas. Ahora tiene {monedas} moneda(s).")
+    elif n_1 == n_2 or n_1 ==n_3 or n_2 == n_3:
+        monedas += 1
+        print(f"Ha ganado 2 monedas. Ahora tiene {monedas} moneda(s).")
+    else:
+        monedas -= 1
+        print(f"No ha ganado nada. Ahora tiene {monedas} moneda(s).")
+
+    if monedas > 0:
+        seguir = input("Pulse Intro para volver a jugar, otra tecla e Intro para terminar: ")
+    print()
+
+print(f"Ha acabado la partida con {monedas} moneda(s).")
+if monedas > inicial:
+    print(f"Ha ganado {monedas - inicial} moneda(s).")
+elif monedas < inicial:
+    print(f"Ha perdido {inicial - monedas} moneda(s).")
+else:
+    print("No ha perdido ni ganado monedas.")
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
   </section>
 
   <section id="apartado-c">
@@ -282,7 +432,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

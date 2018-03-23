@@ -113,6 +113,28 @@
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar.</span> x
+
+<span class="idle-resp">No se ha lanzado ningún dado.</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar.</span>
+
+<span class="idle-resp">Jugador 1: Tirada: 2 - Suma: 2</span>
+<span class="idle-resp">Jugador 2: Tirada: 2 - Suma: 2</span>
+<span class="idle-resp">Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar.</span> x
+
+<span class="idle-resp">¡Empate!</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
     </section>
 
     <section id="ejercicio-a-4">
@@ -147,6 +169,19 @@
 
 <span class="idle-resp">Jugador 1: Suma: 14</span>
 <span class="idle-resp">Jugador 2: Suma: 8</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar.</span>
+
+<span class="idle-resp">Jugador 1: </span> z
+<span class="idle-resp">Jugador 2: </span> z
+
+<span class="idle-resp">Jugador 1: Suma: 0</span>
+<span class="idle-resp">Jugador 2: Suma: 0</span>
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
@@ -190,6 +225,7 @@
 <span class="idle-resp">Jugador 1: Suma: 21</span>
 <span class="idle-resp">Jugador 2: Suma: 17</span>
 <span class="idle-resp">Ha ganado el jugador 2.</span>
+<span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
     </section>
@@ -201,15 +237,15 @@
     <section id="ejercicio-b1">
       <h3>Bucle <span class="idle-rese">while</span> (2) - B-1</h3>
 
-      <p>Escriba un programa que muestre tres números al azar del 1 al 5.</p>
+      <p>Escriba un programa que muestre tres números al azar del 1 al 6.</p>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">Tirada: 1 3 4</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+<span class="idle-resp">Tirada: 1 6 4</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
-<span class="idle-resp">Tirada: 5 2 5</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+<span class="idle-resp">Tirada: 3 2 3</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> X
 
 <span class="idle-resp">Programa terminado.</span>
 </pre>
@@ -219,21 +255,21 @@
     <section id="ejercicio-b2">
       <h3>Bucle <span class="idle-rese">while</span> (2) - B-2</h3>
 
-      <p>Escriba un programa que muestre tres números al azar del 1 al 5 y diga si hay dos o tres números iguales.</p>
+      <p>Amplie el programa anterior, haciendo que el programa indique si hay dos o tres números iguales.</p>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">Tirada: 1 3 4</span>
+<span class="idle-resp">Tirada: 1 6 4</span>
 <span class="idle-resp">No hay números iguales</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
 <span class="idle-resp">Tirada: 5 2 5</span>
 <span class="idle-resp">Hay dos números iguales</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
 <span class="idle-resp">Tirada: 3 3 3</span>
 <span class="idle-resp">Hay tres números iguales</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> X
 
 <span class="idle-resp">Programa terminado.</span>
 </pre>
@@ -243,42 +279,47 @@
     <section id="ejercicio-b3">
       <h3>Bucle <span class="idle-rese">while</span> (2) - B-3</h3>
 
-      <p>Escriba un programa que simule una máquina tragaperras.</p>
+      <p>Amplie el programa anterior, haciendo que el programa entregue premios y lleve la cuenta del resultado.</p>
 
       <ul>
-        <li>Inicialmente, el jugador indica cuántas monedas quiere jugar.</li>
-        <li>El programa muestra tres números al azar del 1 al 5.</li>
-        <li>Si los tres números son distintos, el jugador pierde todo su dinero y la partida termina.</li>
-        <li>Si salen dos números iguales, el jugador duplica la apuesta.</li>
-        <li>Si salen tres números iguales, el jugador multiplica por 5 la apuesta.</li>
-        <li>El jugador indica si quiere seguir jugando o no.</li>
-        <li>Al terminar la partida, el programa indica si se ha ganado o perdido.</li>
+        <li>Inicialmente, el jugador empieza con una moneda.</li>
+        <li>En cada tirada, al jugador se le cobra una moneda.</li>
+        <li>En cada tirada, el programa muestra tres números al azar del 1 al 6.</li>
+        <li>Si los tres números son distintos, el jugador no gana nada (es decir, pierde la moneda que apostó).</li>
+        <li>Si salen dos números iguales, el jugador gana dos monedas (es decir, gana en total una moneda).</li>
+        <li>Si salen tres números iguales, el jugador gana cinco monedas (es decir, gana en total cuatro monedas).</li>
+        <li>El número de monedas puede hacerse negativo.</li>
+        <li>Tras cada tirada, el jugador indica si quiere seguir jugando o no.</li>
       </ul>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 5
+<span class="idle-resp">Empieza la partida con 1 moneda.</span>
 
 <span class="idle-resp">Tirada: 3 3 1</span>
-<span class="idle-resp">¡Enhorabuena! Ha ganado 5 monedas. Tiene ahora 10 monedas.</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+<span class="idle-resp">Ha ganado 2 monedas. Ahora tiene 4 monedas.</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
-<span class="idle-resp">Tirada: 5 5 5</span>
-<span class="idle-resp">¡Enhorabuena! Ha ganado 40 monedas. Tiene ahora 50 monedas.</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+<span class="idle-resp">Tirada: 6 6 6</span>
+<span class="idle-resp">Ha ganado 5 monedas. Ahora tiene 8 monedas.</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> X
 
-<span class="idle-resp">¡Enhorabuena! Ha ganado 40 monedas.</span>
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 3
+<span class="idle-resp">Empieza la partida con 1 moneda.</span>
 
-<span class="idle-resp">Tirada: 3 5 1</span>
+<span class="idle-resp">Tirada: 2 1 3</span>
+<span class="idle-resp">No ha ganado nada. Ahora tiene 0 moneda(s).</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
-<span class="idle-resp">¡Lo siento! Ha perdido 3 monedas.</span>
+<span class="idle-resp">Tirada: 6 2 5</span>
+<span class="idle-resp">No ha ganado nada. Ahora tiene -1 moneda(s).</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> z
+
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
@@ -287,51 +328,89 @@
     <section id="ejercicio-b4">
       <h3>Bucle <span class="idle-rese">while</span> (2) - B-4</h3>
 
-      <p>Escriba un programa que simule una máquina tragaperras más completa.</p>
+      <p>Amplie el programa anterior, de manera que se parezca más al funcionamiento real de una máquina tragaperras.</p>
 
       <ul>
-        <li>Inicialmente, el jugador indica cuántas monedas quiere jugar.</li>
-        <li>El programa muestra tres números al azar del 1 al 5.</li>
-        <li>Si los tres números son distintos, el jugador pierde todo su dinero y la partida termina.</li>
-        <li>Si sale un 5, se recupera la apuesta.</li>
-        <li>Si salen dos 5, el jugador multiplica por cuatro la apuesta.</li>
-        <li>Si salen tres 5, el jugador multiplica por diez la apuesta.</li>
-        <li>Si salen dos números iguales que no sean 5, el jugador duplica la apuesta.</li>
-        <li>Si salen un 5 y dos números iguales que no sean 5, el jugador multiplica por 3 la apuesta.</li>
-        <li>Si salen tres números iguales que no sean cinco, el jugador multiplica por 5 la apuesta.</li>
-        <li>El jugador indica si quiere seguir jugando o no.</li>
-        <li>Al terminar la partida, el programa indica si se ha ganado o perdido.</li>
+        <li>Inicialmente, el jugador indica con cuántas monedas empieza a jugar.</li>
+        <li>En cada tirada, al jugador se le cobra una moneda.</li>
+        <li>En cada tirada, el programa muestra tres números al azar del 1 al 6.</li>
+        <li>Si los tres números son distintos, el jugador no gana nada (es decir, pierde la moneda que apostó).</li>
+        <li>Si salen dos números iguales, el jugador gana dos monedas (es decir, gana en total una moneda).</li>
+        <li>Si salen tres números iguales, el jugador gana cinco monedas (es decir, gana en total cuatro monedas).</li>
+        <li>Si el jugador se queda sin monedas, la partida termina.</li>
+        <li>Tras cada tirada, el jugador indica si quiere seguir jugando o no.</li>
+        <li>Al terminar la partida, el programa indica cuántas monedas se han ganado o perdido.</li>
       </ul>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 5
+<span class="idle-resp">TRAGAPERRAS</span>
+<span class="idle-resp">En cada tirada, se le cobrará una moneda.</span>
+<span class="idle-resp">¿Con cuántas monedas quiere empezar? </span> 3
 
-<span class="idle-resp">Tirada: 4 5 2</span>
-<span class="idle-resp">¡Enhorabuena! Sigue teniendo 5 monedas.</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span>
+<span class="idle-resp">Empieza la partida con 3 moneda(s).</span>
 
-<span class="idle-resp">Tirada: 5 3 3</span>
-<span class="idle-resp">¡Enhorabuena! Ha ganado 10 monedas. Tiene ahora 15 monedas.</span>
-<span class="idle-resp">Pulse X para terminar, otra tecla para seguir: </span> X
+<span class="idle-resp">Tirada: 3 3 1</span>
+<span class="idle-resp">Ha ganado 2 monedas. Ahora tiene 4 monedas.</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
 
-<span class="idle-resp">¡Enhorabuena! Ha ganado 10 monedas.</span>
+<span class="idle-resp">Tirada: 6 6 6</span>
+<span class="idle-resp">Ha ganado 5 monedas. Ahora tiene 8 monedas.</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> X
+
+<span class="idle-resp">Ha acabado la partida con 8 moneda(s).</span>
+<span class="idle-resp">Ha ganado 5 moneda(s).</span>
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">¿Cuántas monedas quiere apostar? </span> 4
+<span class="idle-resp">TRAGAPERRAS</span>
+<span class="idle-resp">En cada tirada, se le cobrará una moneda.</span>
+<span class="idle-resp">¿Con cuántas monedas quiere empezar? </span> 2
 
-<span class="idle-resp">Tirada: 3 2 1</span>
+<span class="idle-resp">Empieza la partida con 2 moneda(s).</span>
 
-<span class="idle-resp">¡Lo siento! Ha perdido 4 monedas.</span>
+<span class="idle-resp">Tirada: 2 1 3</span>
+<span class="idle-resp">No ha ganado nada. Ahora tiene 1 moneda(s).</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
+
+<span class="idle-resp">Tirada: 5 5 5</span>
+<span class="idle-resp">No ha ganado nada. Ahora tiene 0 moneda(s).</span>
+
+<span class="idle-resp">Ha acabado la partida con 0 moneda(s).</span>
+<span class="idle-resp">Ha perdido 2 moneda(s).</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">TRAGAPERRAS</span>
+<span class="idle-resp">En cada tirada, se le cobrará una moneda.</span>
+<span class="idle-resp">¿Con cuántas monedas quiere empezar? </span> 2
+
+<span class="idle-resp">Empieza la partida con 2 moneda(s).</span>
+
+<span class="idle-resp">Tirada: 6 6 1</span>
+<span class="idle-resp">Ha ganado 2 monedas. Ahora tiene 3 moneda(s).</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span>
+
+<span class="idle-resp">Tirada: 6 5 1</span>
+<span class="idle-resp">No ha ganado nada. Ahora tiene 2 moneda(s).</span>
+<span class="idle-resp">Pulse Intro para volver a jugar, otra tecla e Intro para terminar:</span> q
+
+<span class="idle-resp">Ha acabado la partida con 2 moneda(s).</span>
+<span class="idle-resp">No ha perdido ni ganado monedas.</span>
 <span class="idle-resp">Programa terminado.</span>
 </pre>
       </div>
     </section>
   </section>
+
+  <hr />
+
+  <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Los ejericicios siguientes están pendientes de revisar.</p>
 
   <section id="apartado-c">
     <h2>C. Operaciones</h2>
@@ -417,7 +496,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de marzo de de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 23 de marzo de de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
