@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fecha y hora. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Fecha y hora: la biblioteca time</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Fecha y hora</h2>
+
+      <ul>
+        <li><a href="#biblioteca-time">Biblioteca time</a></li>
+        <li><a href="#time-time">time()</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se trata el uso de fechas y horas la biblioteca estándar <strong>time</strong> de Python.</p>
+
+  <section id="biblioteca-time">
+    <h2>La biblioteca <strong>time</strong></h2>
+
+    <p>La biblioteca <strong>time</strong> contiene una serie de funciones relacionadas con la medición del tiempo. El <a href="https://docs.python.org/3/library/time.html">listado completo de funciones de esta biblioteca</a> se describe en el manual de Python.</p>
+
+    <hr class="corta" />
+
+    <p>Como ocurre con todas las bibliotecas, antes de utilizar una función se debe importar la función o la biblioteca entera.</p>
+
+    <ul>
+      <li>Si se importa la biblioteca entera, se debe escribir el nombre de la biblioteca y el de la función separada por un punto, como muestra el siguiente ejemplo:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">import time
+
+print(time.localtime())</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)</span>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>Si se importa únicamente una función, se debe escribir simplemente el nombre de la función, como muestra el siguiente ejemplo:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">from time import localtime
+
+print(localtime())</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)</span>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>Si se importan varias funciones, los nombres de las funciones deben separarse como comas (,), como muestra el siguiente ejemplo:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">from time import localtime, asctime
+
+print(asctime(localtime()))</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Fri Mar 30 23:31:39 2018</span>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="time-time">
+    <h2>Segundos desde el origen: la función <strong>time()</strong></h2>
+
+    <p>La función <strong>time()</strong> devuelve el número de segundos transcurridos desde el origen de los tiempos del sistema, que suele ser el 1 de enero de 1970. El resultado es un número decimal, pero la precisión en los decimales depende del ordenador.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">from time import time
+
+print(time())</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">1522445896.6054614</span>
+</pre>
+      </div>
+    </div>
+
+    <p>Esta función nos permite cronometrar la duración de un intervalo de tiempo, restando dos llamadas a la función <strong>time()</strong>, como muestra el ejemplo siguiente.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">from time import time
+
+inicio = time()
+
+for i in range(500):
+    print(f"{i} - ", end="")
+
+final = time()
+
+print(f"He tardado {round(final - inicio, 1)} segundos.")</code>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - ... 499 - He tardado 5.3 segundos.</span>
+</pre>
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
+</html>
