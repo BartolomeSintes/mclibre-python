@@ -42,10 +42,14 @@
 
   <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-while.html">bucle <span class="idle-rese">while</span></a>.</p>
 
+  <p>Estos ejercicios están divididos en cuatro apartados (A, B, C y D). En cada apartado, el objetivo es escribir un programa que simule un juego. Para conseguirlo, se proponen varios ejercicios, que se van acercando progresivamente al objetivo. Cada ejercicio se puede hacer a partir del anterior.</p>
+
   <p>Se pueden consultar unas <a href="ej-while-2-soluciones.html">posibles soluciones</a>.</p>
 
   <section id="apartado-a">
     <h2>A. Juego de las siete y media</h2>
+
+    <p>En este apartado se pretende escribir un programa que simule un juego similar al juego de cartas "<a href="https://es.wikipedia.org/wiki/Siete_y_media">Las siete y media</a>". En vez de pedir cartas, los jugadores tirarán unos dados cuantas veces quieran y el valor límite es el 20 (gana el que obtiene la puntuación más alta sin superar el límite).</p>
 
     <section id="ejercicio-a-1">
       <h3>Bucle <span class="idle-rese">while</span> (2) - A-1</h3>
@@ -69,7 +73,7 @@
     <section id="ejercicio-a-2">
       <h3>Bucle <span class="idle-rese">while</span> (2) - A-2</h3>
 
-      <p>Escriba un programa que muestre números al azar del 1 al 6 mientras lo pida el usuario y que muestre la suma de los números anteriores.</p>
+      <p>Amplíe el programa anterior, haciendo que el programa muestre la suma de los números anteriores.</p>
 
       <div class="resultado-idle">
         <pre>
@@ -91,7 +95,7 @@
     <section id="ejercicio-a-3">
       <h3>Bucle <span class="idle-rese">while</span> (2) - A-3</h3>
 
-      <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras lo pida el usuario y que muestre la suma de los números anteriores. El programa declarará ganador al jugador que haya obtenido más puntos.</p>
+      <p>Amplíe el programa anterior creando dos jugadores que tiran sus dados simultáneamente. El programa declarará ganador al jugador que haya obtenido más puntos.</p>
 
       <div class="resultado-idle">
         <pre>
@@ -140,7 +144,7 @@
     <section id="ejercicio-a-4">
       <h3>Bucle <span class="idle-rese">while</span> (2) - A-4</h3>
 
-      <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras no pida lo contrario cada uno de ellos (de forma independiente) y que muestre la suma de los números anteriores.</p>
+      <p>Amplíe el programa anterior de manera que cada jugador indique de forma independiente si quiere tirar el dado de nuevo.</p>
 
       <div class="resultado-idle">
         <pre>
@@ -190,7 +194,7 @@
     <section id="ejercicio-a-5">
       <h3>Bucle <span class="idle-rese">while</span> (2) - A-5</h3>
 
-      <p>Escriba un programa que muestre números al azar del 1 al 6 para dos jugadores mientras no pida lo contrario cada uno de ellos (de forma independiente) y que muestre la suma de los números anteriores. El programa declarará ganador al jugador que haya obtenido más puntos sin superar 20 puntos.</p>
+      <p>Amplíe el programa anterior, de manera que el programa declare ganador al jugador que haya obtenido más puntos sin superar 20 puntos.</p>
 
       <div class="resultado-idle">
         <pre>
@@ -445,6 +449,81 @@
 </pre>
       </div>
     </section>
+
+    <section id="ejercicio-c2">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-2</h3>
+
+      <p>Amplie el programa anterior, haciendo que el programa pida cuántas operaciones se deben acertar para terminar el programa. Al terminar, el programa indicará cuántos intentos han sido necesarios.</p>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 2
+
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
+<span class="idle-resp">7 + 78:</span> 86
+<span class="idle-resp">¡Respuesta incorrecta!</span>
+
+<span class="idle-resp">91 + 63:</span> 154
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">78 + 21:</span> 99
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">Ha acertado 2 operaciones en 3 intentos.</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-c3">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-3</h3>
+
+      <p>Amplie el programa anterior, haciendo que el programa indique cuántos segundos ha tardado en contestar correctamente las operaciones.</p>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 2
+
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
+<span class="idle-resp">20 + 24</span> 44
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">89 + 89:</span> 178
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">Ha tardado 7.0 segundos en acertar 2 operaciones en 2 intentos.</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-c4">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-4</h3>
+
+      <p>Amplie el programa anterior, haciendo que el programa permita repetir las operaciones e indique al final el tiempo mínimo que se ha conseguido.</p>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 1
+
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
+<span class="idle-resp">99 + 15</span> 114
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">Ha tardado 5.7 segundos en acertar 1 operación en 1 intento.</span>
+<span class="idle-resp">¿Quiere probar otra vez? (S/N):</span> s
+
+<span class="idle-resp">60 + 7:</span> 67
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">Ha tardado 3.3 segundos en acertar 1 operación en 1 intento.</span>
+<span class="idle-resp">¿Quiere probar otra vez? (S/N):</span> n
+
+<span class="idle-resp">Su tiempo mínimo ha sido 3.3 segundos.</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+    </section>
   </section>
 
   <section id="apartado-d">
@@ -496,7 +575,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de marzo de de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

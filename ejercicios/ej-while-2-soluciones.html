@@ -375,7 +375,7 @@ print("Programa terminado.")</code>
 print("TRAGAPERRAS")
 print("En cada tirada, se le cobrará una moneda.")
 monedas = int(input("¿Con cuántas monedas quiere empezar? "))
-while monedas < 1:
+while monedas &lt; 1:
     print("Debe empezar con al menos 1 moneda")
     monedas = int(input("¿Con cuántas monedas quiere empezar? "))
 inicial = monedas
@@ -402,14 +402,14 @@ while seguir == "" and monedas != 0:
         monedas -= 1
         print(f"No ha ganado nada. Ahora tiene {monedas} moneda(s).")
 
-    if monedas > 0:
+    if monedas &gt; 0:
         seguir = input("Pulse Intro para volver a jugar, otra tecla e Intro para terminar: ")
     print()
 
 print(f"Ha acabado la partida con {monedas} moneda(s).")
-if monedas > inicial:
+if monedas &gt; inicial:
     print(f"Ha ganado {monedas - inicial} moneda(s).")
-elif monedas < inicial:
+elif monedas &lt; inicial:
     print(f"Ha perdido {inicial - monedas} moneda(s).")
 else:
     print("No ha perdido ni ganado monedas.")
@@ -422,7 +422,191 @@ print("Programa terminado.")</code>
   <section id="apartado-c">
     <h2>C. Operaciones</h2>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir</p>
+    <section id="ejercicio-c-1">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-1</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+print("Escriba el resultado de las siguientes operaciones")
+
+correctas = 0
+
+while correctas &lt; 5:
+    a = randrange(1, 101)
+    b = randrange(1, 101)
+    respuesta = int(input(f"{a} + {b}: "))
+    if respuesta == a + b:
+        correctas += 1
+        print("¡Respuesta correcta!")
+    else:
+        print("¡Respuesta incorrecta!")
+    print()
+
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-c-2">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-2</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+
+cantidad = int(input("¿Cuántas operaciones correctas debe contestar para terminar el programa? "))
+
+while cantidad &lt; 1:
+    print("El número de operaciones debe ser mayor que cero")
+    cantidad = input("¿Cuántas operaciones correctas debe contestar para terminar el programa? ")
+print()
+
+print("Escriba el resultado de las siguientes operaciones")
+
+correctas = 0
+total = 0
+
+while correctas &lt; cantidad:
+    a = randrange(1, 101)
+    b = randrange(1, 101)
+    respuesta = int(input(f"{a} + {b}: "))
+    total += 1
+    if respuesta == a + b:
+        correctas += 1
+        print("¡Respuesta correcta!")
+    else:
+        print("¡Respuesta incorrecta!")
+    print()
+
+if cantidad == 1 and total == 1:
+    print(f"Ha acertado 1 operación en 1 intento.")
+elif cantidad == 1:
+    print(f"Ha acertado 1 operación en {total} intentos.")
+else:
+    print(f"Ha acertado {correctas} operaciones en {total} intentos.")
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-c-3">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-3</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+from time import time
+
+cantidad = int(input("¿Cuántas operaciones correctas debe contestar para terminar el programa? "))
+
+while cantidad &lt; 1:
+    print("El número de operaciones debe ser mayor que cero")
+    cantidad = input("¿Cuántas operaciones correctas debe contestar para terminar el programa? ")
+print()
+
+print("Escriba el resultado de las siguientes operaciones")
+
+correctas = 0
+total = 0
+inicio = time()
+
+while correctas &lt; cantidad:
+    a = randrange(1, 101)
+    b = randrange(1, 101)
+    respuesta = int(input(f"{a} + {b}: "))
+    total += 1
+    if respuesta == a + b:
+        correctas += 1
+        print("¡Respuesta correcta!")
+    else:
+        print("¡Respuesta incorrecta!")
+    print()
+
+final = time()
+
+print(f"Ha tardado {round(final - inicio, 1)} segundos en ", end="")
+
+if cantidad == 1:
+    print("acertar 1 operación ", end="")
+else:
+    print(f"acertar {correctas} operaciones ", end="")
+
+if total == 1:
+    print("en 1 intento.")
+else:
+    print(f"en {total} intentos.")
+
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ejercicio-c-4">
+      <h3>Bucle <span class="idle-rese">while</span> (2) - C-4</h3>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">from random import randrange
+from time import time
+
+cantidad = int(input("¿Cuántas operaciones correctas debe contestar para terminar el programa? "))
+
+while cantidad &lt; 1:
+    print("El número de operaciones debe ser mayor que cero")
+    cantidad = input("¿Cuántas operaciones correctas debe contestar para terminar el programa? ")
+print()
+
+seguir = "S"
+minimo = float("inf")
+
+while seguir == "S" or seguir == "s":
+    print("Escriba el resultado de las siguientes operaciones")
+
+    correctas = 0
+    total = 0
+    inicio = time()
+
+    while correctas &lt; cantidad:
+        a = randrange(1, 101)
+        b = randrange(1, 101)
+        respuesta = int(input(f"{a} + {b}: "))
+        total += 1
+        if respuesta == a + b:
+            correctas += 1
+            print("¡Respuesta correcta!")
+        else:
+            print("¡Respuesta incorrecta!")
+        print()
+
+    final = time()
+    tiempo = round(final - inicio, 1)
+    if tiempo &lt; minimo:
+        minimo = tiempo
+
+    print(f"Ha tardado {tiempo} segundos en ", end="")
+
+    if cantidad == 1:
+        print("acertar 1 operación ", end="")
+    else:
+        print(f"acertar {correctas} operaciones ", end="")
+
+    if total == 1:
+        print("en 1 intento.")
+    else:
+        print(f"en {total} intentos.")
+
+    seguir = input("¿Quiere probar otra vez? (S/N): ")
+
+print()
+print(f"Su tiempo mínimo ha sido {minimo} segundos.")
+print("Programa terminado.")</code>
+</pre>
+      </div>
+    </section>
   </section>
 
   <section id="apartado-d">
@@ -432,7 +616,7 @@ print("Programa terminado.")</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
