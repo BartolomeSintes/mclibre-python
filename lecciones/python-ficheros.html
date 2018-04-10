@@ -25,20 +25,19 @@
       <ul>
         <li><a href="#with-as"><span class="idle-rese">with</span> ... <span class="idle-rese">as</span></a></li>
         <li><a href="#modos-escritura">Modos de escritura</a></li>
+        <li><a href="#modos-lectura">Modos de lectura</a></li>
         <li><a href="#abrir-navegador">Abrir en navegador</a></li>
         <li><a href="#saber-mas">Para saber más</a></li>
       </ul>
     </div>
   </nav>
 
-  <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Esta leccion está en elaboración</p>
-
   <p>Python puede leer y escribir ficheros de texto o binarios. </p>
 
   <section id="with-as">
     <h2>Trabajar con ficheros: <span class="idle-rese">with</span> ... <span class="idle-rese">as</span> ...</h2>
 
-    <p>Las palabras reservadas <span class="idle-rese">with</span> y <span class="idle-rese">as</span> se introdujeron en Python 2.6 (aunque estaban disponibles en Python 2.5 en el módulo __future__) para facilitar, entre otros, la forma de trabajar con ficheros .</p>
+    <p>Las palabras reservadas <span class="idle-rese">with</span> y <span class="idle-rese">as</span> se introdujeron en Python 2.6 (publicado en septiembre de 2006, aunque estaban disponibles en Python 2.5 en el módulo __future__) para facilitar, entre otros, la forma de trabajar con ficheros .</p>
 
     <p>Su sintaxis general es la siguiente:</p>
 
@@ -77,7 +76,7 @@
 
     <hr class="corta" />
 
-    <p>Si el sistema operativo utiliza de forma predeterminada el juego de caracteres UTF-8, no haría falta indicar el juego de caracteres al abrir el fichero. Para saber cuál es el juego de caracteres predeterminado se puede ejecutar en IDLE las instrucciones siguientes:</p>
+    <p>Si el sistema operativo utiliza de forma predeterminada el juego de caracteres UTF-8, no haría falta indicar el juego de caracteres al abrir el fichero. Para saber cuál es el juego de caracteres predeterminado se puede ejecutar en IDLE las instrucciones siguientes (en el ejemplo, el juego de caracteres es <a href="https://es.wikipedia.org/wiki/Windows-1252">CP-1252</a>, que utiliza Windows):</p>
 
     <div class="codigo">
       <pre>
@@ -100,17 +99,33 @@
       <li><span class="idle-cade">"a"</span>: añadir (crea el fichero si no existe, no borra el contenido existente y escribe al final del fichero)</li>
     </ul>
 
-    <p>En cualquier caso, para escribir en el fichero hay que añadir en la función <span class="idle-func">print</span>() el argumento file=fichero, donde fichero es la variable utilizada en la expresión <span class="idle-rese">with</span> ... <span class="idle-rese">as</span> ...</p>
+    <hr class="corta" />
 
-    <p>Los tres ejemplos siguientes muestran la diferencia entre cada uno de los modos de escritura:</p>
+    <p>Se puede escribir en el fichero</p>
+    <ul>
+      <li>con la función <span class="idle-func">print</span>() añadiendo el argumento file=fichero, donde fichero es la variable utilizada en la expresión <span class="idle-rese">with</span> ... <span class="idle-rese">as</span> ...</li>
+      <li>con el método write sobre el objeto fichero, donde fichero es la variable utilizada en la expresión <span class="idle-rese">with</span> ... <span class="idle-rese">as</span> ...</li>
+    </ul>
+
+    <p>La función <span class="idle-func">print</span>() añade un salto de línea al final de la cadena añadida al fichero, pero el método write no lo hace, por lo que habrá que añadirlo explícitamente.</p>
+
+    <hr class="corta" />
+
+    <p>Los ejemplos siguientes muestran la diferencia entre cada uno de los modos de escritura (usando la función <span class="idle-func">print</span>() o el método write):</p>
     <ul>
       <li>[w] Cada vez que se ejecuta este programa, se crea nuevamente el fichero, por lo que este sólo contiene la palabra Hola.
         <div class="codigo">
           <pre>
 <code class="language-python">ruta = "prueba.txt"
-
 with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-python">ruta = "prueba.txt"
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    fichero.write("Hola\n")</code>
 </pre>
         </div>
       </li>
@@ -118,35 +133,47 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
         <div class="codigo">
           <pre>
 <code class="language-python">ruta = "prueba.txt"
-
 with open(ruta, mode="x", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
 </pre>
         </div>
-      </li>
-      <li>[a] Cada vez que se ejecuta este programa se añade al fichero una línea con la palabra Hola.
         <div class="codigo">
           <pre>
 <code class="language-python">ruta = "prueba.txt"
-
+with open(ruta, mode="x", encoding="utf-8") as fichero:
+    fichero.write("Hola\n")</code>
+</pre>
+        </div>
+      </li>
+      <li>[a] Cada vez que se ejecuta este programa, se añade al fichero una línea con la palabra Hola (si el fichero no existe, se crea).
+        <div class="codigo">
+          <pre>
+<code class="language-python">ruta = "prueba.txt"
 with open(ruta, mode="a", encoding="utf-8") as fichero:
     print("Hola", file=fichero)</code>
 </pre>
         </div>
+        <div class="codigo">
+          <pre>
+<code class="language-python">ruta = "prueba.txt"
+with open(ruta, mode="a", encoding="utf-8") as fichero:
+    fichero.write("Hola\n")</code>
+</pre>
+        </div>
       </li>
     </ul>
-
   </section>
 
-  <section id="lectura">
-    <h2>Lectura</h2>
+  <section id="modos-lectura">
+    <h2>Modos de lectura</h2>
 
     <p>Los modos de lectura son:</p>
     <ul>
-      <li><span class="idle-cade">"r"</span>: únicamente leer el fichero (da error si no existe el fichero y lee desde el principio)</li>
-      <li><span class="idle-cade">"r+"</span>: leer y escribir (da error si no existe el fichero y <span class="incompleto">COMPLETAR</span>)</li>
+      <li><span class="idle-cade">"r"</span>: únicamente leer el fichero (da error si no existe el fichero, lee desde el principio y es posible desplazarse)</li>
+      <li><span class="idle-cade">"r+"</span>: leer y escribir (da error si no existe el fichero, lee desde el principio y es posible desplazarse, pero sólo escribe al final del fichero</li>
     </ul>
 
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Faltan ejemplos de lectura y desplazamiento.</p>
   </section>
 
   <section id="abrir-navegador">
@@ -179,9 +206,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     webbrowser.open(ruta)</code>
 </pre>
     </div>
-
   </section>
-
 
   <section id="saber-mas">
     <h2>Para saber más</h2>
@@ -193,7 +218,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 10 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
