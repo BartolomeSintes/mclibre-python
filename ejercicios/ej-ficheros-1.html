@@ -77,12 +77,6 @@
       <pre><code class="language-markup">&lt;p&gt;Hola, mundo!&lt;/p&gt;</code></pre>
     </div>
 
-    <p>Compruebe que si añade un carácter que no está en el código ASCII original (por ejemplo, la exclamación inicial ¡), se muestran además otros caracteres (en este caso, Â). Este problema ocurre cuando el navegador no sabe que el juego de caracteres del fichero es UTF-8 y lo muestra como si fuera ASCII.</p>
-
-    <div class="resultado-html">
-      <pre><code class="language-markup">&lt;p&gt;<span class="codigo-resaltado">Â¡</span>Hola, mundo!&lt;/p&gt;</code></pre>
-    </div>
-
     <hr class="corta" />
 
     <p>El resultado se mostrará automáticamente en el navegador:</p>
@@ -95,6 +89,14 @@
         <a href="http://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-1-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
       </div>
     </div>
+
+    <hr class="corta" />
+
+    <p><strong>Nota</strong>: En Windows, si añade un carácter que no está en el código ASCII original (por ejemplo, la exclamación inicial ¡), se muestran además otros caracteres (en este caso, Â). Este problema ocurre porque el navegador no sabe que el juego de caracteres del fichero es UTF-8 y lo muestra como si fuera ASCII.</p>
+
+    <div class="resultado-html">
+      <pre><code class="language-markup">&lt;p&gt;<span class="codigo-resaltado">Â¡</span>Hola, mundo!&lt;/p&gt;</code></pre>
+    </div>
   </section>
 
   <section id="ejercicio-1-2">
@@ -105,13 +107,13 @@
     <div class="resultado-html">
       <pre>
 <code class="language-markup">&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+&lt;/head&gt;
 
-  &lt;body&gt;
-    &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body&gt;
+  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -139,15 +141,15 @@
       <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;Ejercicio Ficheros (1) A-3&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ejercicio Ficheros (1) A-3&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-  &lt;body&gt;
-    &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body&gt;
+  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -175,15 +177,15 @@
       <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;Ficheros (1) B-1&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (1) B-1&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-  &lt;body style="background-color: hsl(<span class="codigo-resaltado">303</span>, 100%, 50%)"&gt;
-    &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body style="background-color: hsl(<span class="codigo-resaltado">303</span>, 100%, 50%)"&gt;
+  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -213,15 +215,15 @@
       <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;Ficheros (1) - B-2&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (1) - B-2&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-  &lt;body style="background-color: hsl(<span class="codigo-resaltado">166</span>, 100%, 50%)"&gt;
-    &lt;p style="font-size: <span class="codigo-resaltado">400%</span>"&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body style="background-color: hsl(<span class="codigo-resaltado">166</span>, 100%, 50%)"&gt;
+  &lt;p style="font-size: <span class="codigo-resaltado">400%</span>"&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -261,15 +263,15 @@
       <pre>
 <code class="language-markup">&lt;!DOCTYPE html
 &lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;Ficheros (1) - B-3&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (1) - B-3&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+&lt;/head&gt;
 
-  &lt;body style="background-color: hsl(<span class="codigo-resaltado">65</span>, 100%, 50%)"&gt;
-    &lt;p style="font-family: <span class="codigo-resaltado">monospace</span>; font-size: <span class="codigo-resaltado">800%</span>"&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body style="background-color: hsl(<span class="codigo-resaltado">65</span>, 100%, 50%)"&gt;
+  &lt;p style="font-family: <span class="codigo-resaltado">monospace</span>; font-size: <span class="codigo-resaltado">800%</span>"&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -297,16 +299,16 @@
       <pre>
 <code class="language-markup">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="utf-8" /&gt;
-    &lt;title&gt;Ficheros (1) - B-4&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-    <span class="codigo-resaltado">&lt;link rel="stylesheet" type="text/css" href="ficheros-1-b-4.css" /&gt;</span>
-  &lt;/head&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Ficheros (1) - B-4&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  <span class="codigo-resaltado">&lt;link rel="stylesheet" type="text/css" href="ficheros-1-b-4.css" /&gt;</span>
+&lt;/head&gt;
 
-  &lt;body&gt;
-    &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
-  &lt;/body&gt;
+&lt;body&gt;
+  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
     </div>
@@ -326,7 +328,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

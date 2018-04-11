@@ -184,7 +184,7 @@ with open(ruta, mode="a", encoding="utf-8") as fichero:
     <p>Para ello se puede utilizar la función open() del <a href="https://docs.python.org/3/library/webbrowser.html">módulo webbrowser</a> de la biblioteca estándar, que abre el fichero indicado con la aplicación asociada en el sistema operativo.</p>
 
     <div class="codigo">
-      <pre>
+      <pre class="line-numbers">
 <code class="language-python">import webbrowser
 
 ruta = "prueba.html"
@@ -203,9 +203,13 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("&lt;/body&gt;", file=fichero)
     print("&lt;/html&gt;", file=fichero)
 
-    webbrowser.open(ruta)</code>
+webbrowser.open(ruta)</code>
 </pre>
     </div>
+
+    <hr class="corta" />
+
+    <p>Es fundamental que el juego de caracteres en el que se guarda el fichero (línea 5 en el ejemplo anterior) sea el mismo que el que se declara en la etiqueta <span class="html-eti">&lt;meta /&gt;</span> (línea 9 en el ejemplo anterior). Si no es así, el navegador tendrá problemas al mostrar caracteres "no ingleses" (acentos, eñes, etc.). En el ejemplo anterior se utiliza UTF-8, el juego de caracteres recomendado para páginas web.</p>
   </section>
 
   <section id="saber-mas">
@@ -218,7 +222,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de abril de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />

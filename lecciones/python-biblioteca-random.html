@@ -251,13 +251,13 @@ print(choice((14, 15, 20, 150)))</code>
         <pre>
 <code class="language-python">from random import choice
 
-print(choice([14, 15, 20, 150]))</code>
+print(choice(["alfa", "beta", "gamma"]))</code>
 </pre>
       </div>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">20</span>
+<span class="idle-resp">gamma</span>
 </pre>
       </div>
     </div>
@@ -295,12 +295,14 @@ print((choice(range(10))))</code>
     </div>
   </section>
 
+  <hr class="corta" />
+
   <p>En el caso de conjuntos y diccionarios (que en Python 3 no son elementos iterables, sino iteradores), no se puede utilizar la función <strong>choice()</strong>.</p>
 
   <p class="incompleto">Por completar: contar cómo hacerlo (convirtiendo a listas o utilizando <strong>sample()</strong>)</p>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 11 de abril de 2017</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
