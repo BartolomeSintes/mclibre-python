@@ -6,7 +6,7 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 24 de febrero de 2018                    */
+/* 14 de abril de 2018                    */
 /*                                          */
 
 @font-face {
@@ -32,6 +32,19 @@ code.language-python .punctuation          {                   } /* punctuation 
 code.language-python .string               { color: #00AA00; } /* string (of any type)                */
 code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any type)                */
 
+/* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
+
+code.language-html { }
+pre code.language-html .attr-name      { color: #FF0000; }          /* attribute name            */
+pre code.language-html .attr-value     { color: #0000FF; }          /* attribute value           */
+pre code.language-html .cdata          { }                            /* cdata                     */
+pre code.language-html .comment        { color: #008000; }          /* comment                   */
+pre code.language-html .doctype        { color: #000000; }          /* doctype                   */
+pre code.language-html .entity         { }                            /* entity                    */
+pre code.language-html .namespace      { }                            /* namespace                 */
+pre code.language-html .prolog         { }                            /* prolog                    */
+pre code.language-html .punctuation    { color: #000000; }          /* punctuation               */
+pre code.language-html .tag            { color: #911F00; }          /* Tags, attributes, configs */
 
 /* Estilo para HTML imitando a Brackets */
 /* Tengo pendiente comprobar los nombres de las clases en prism */
