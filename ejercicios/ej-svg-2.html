@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios (2). viewbox. SVG. Python. Bartolomé Sintes Marco</title>
+  <link href="../varios/python.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body onload="genera('e11'); genera('e12'); genera('e13')">
+  <h1>Gráficos SVG - Ejercicios (2)- viewBox</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Gráficos SVG (2)</h2>
+
+      <ul>
+        <li><a href="#ejercicio-11">1 - viewBox 1</a></li>
+        <li><a href="#ejercicio-12">2 - viewBox 2</a></li>
+        <li><a href="#ejercicio-13">3 - viewBox 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>El objetivo de estos ejercicios es prácticar el sistema de coordenadas de los gráficos SVG que se tratan en la lección <a href="http://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> de los <a href="http://www.mclibre.org/consultar/htmlcss/index.html">apuntes de HTML y CSS</a>, concretamente el atributo <span class="html-atri">viewBox</span>.</p>
+
+  <ul>
+    <li>Los dibujos muestran una porción del plano SVG con un rectángulo de color rojo.</li>
+    <li>El código SVG del rectángulo rojo se muestra encima del dibjo.</li>
+    <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
+  </ul>
+
+  <section id="ejercicio-11">
+    <h2>Gráficos SVG (2) 1 - viewBox 1</h2>
+
+    <p>Escriba en las cajas de texto los valores de viewBox (x, y, width, height). Los valores a escribir deben ser <strong id="e11-salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <pre><code class="language-html" id="e11-forma"></code></pre>
+      <p id="e11-svg"></p>
+      <p>
+        <strong>viewBox</strong>: x: <input type="text" id="e11-x" size="4" /> y: <input type="text" id="e11-y" size="4" /> width: <input type="text" id="e11-width" size="4" /> height: <input type="text" id="e11-height" size="4" />
+        <button onclick="comprueba('e11')">Corregir</button>
+        <span id="e11-resultado"></span>
+      </p>
+      <p><button onclick="genera('e11', 'suma-incorrecto')">Nuevo dibujo</button></p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Correctas:</td>
+            <td style="text-align: right;"><span id="e11-t-correctas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e11-l-correctas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td>Incorrectas:</td>
+            <td style="text-align: right;"><span id="e11-t-incorrectas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e11-l-incorrectas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><button onclick="modificaContador('e11', -val['e11']['nCorrectas'], -val['e11']['nIncorrectas'])">Reiniciar contador</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="ejercicio-12">
+    <h2>Gráficos SVG (2) 2 - viewBox 2</h2>
+
+    <p>Escriba en las cajas de texto los valores de viewBox (x, y, width, height). Los valores a escribir deben ser <strong id="e12-salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <pre><code class="language-html" id="e12-forma"></code></pre>
+      <p id="e12-svg"></p>
+      <p>
+        <strong>viewBox</strong>: x: <input type="text" id="e12-x" size="4" /> y: <input type="text" id="e12-y" size="4" /> width: <input type="text" id="e12-width" size="4" /> height: <input type="text" id="e12-height" size="4" />
+        <button onclick="comprueba('e12')">Corregir</button>
+        <span id="e12-resultado"></span>
+      </p>
+      <p><button onclick="genera('e12', 'suma-incorrecto')">Nuevo dibujo</button></p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Correctas:</td>
+            <td style="text-align: right;"><span id="e12-t-correctas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e12-l-correctas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td>Incorrectas:</td>
+            <td style="text-align: right;"><span id="e12-t-incorrectas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e12-l-incorrectas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><button onclick="modificaContador('e12', -val['e12']['nCorrectas'], -val['e12']['nIncorrectas'])">Reiniciar contador</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="ejercicio-13">
+    <h2>Gráficos SVG (2) 3 - viewBox 3</h2>
+
+    <p>Escriba en las cajas de texto los valores de viewBox (x, y, width, height). Los valores a escribir deben ser <strong id="e13-salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <pre><code class="language-html" id="e13-forma"></code></pre>
+      <p id="e13-svg"></p>
+      <p>
+        <strong>viewBox</strong>: x: <input type="text" id="e13-x" size="4" /> y: <input type="text" id="e13-y" size="4" /> width: <input type="text" id="e13-width" size="4" /> height: <input type="text" id="e13-height" size="4" />
+        <button onclick="comprueba('e13')">Corregir</button>
+        <span id="e13-resultado"></span>
+      </p>
+      <p><button onclick="genera('e13', 'suma-incorrecto')">Nuevo dibujo</button></p>
+      <table>
+        <tbody>
+          <tr>
+            <td>Correctas:</td>
+            <td style="text-align: right;"><span id="e13-t-correctas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e13-l-correctas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td>Incorrectas:</td>
+            <td style="text-align: right;"><span id="e13-t-incorrectas"></span></td>
+            <td>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+                <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e13-l-incorrectas" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3"><button onclick="modificaContador('e13', -val['e13']['nCorrectas'], -val['e13']['nIncorrectas'])">Reiniciar contador</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    /////////////////
+    // SVG viewBox //
+    /////////////////
+    var anchoContador = 200;
+    var val = [];
+    val["e11"] = [];
+    val["e11"]["nCorrectas"] = val["e11"]["nIncorrectas"] = 0;
+    val["e11"]["xMin"] = 2;
+    val["e11"]["xMax"] = 4;
+    val["e11"]["yMin"] = 2;
+    val["e11"]["yMax"] = 4;
+    val["e12"] = [];
+    val["e12"]["nCorrectas"] = val["e12"]["nIncorrectas"] = 0;
+    val["e12"]["xMin"] = 4;
+    val["e12"]["xMax"] = 8;
+    val["e12"]["yMin"] = 4;
+    val["e12"]["yMax"] = 8;
+    val["e13"] = [];
+    val["e13"]["nCorrectas"] = val["e13"]["nIncorrectas"] = 0;
+    val["e13"]["xMin"] = 0;
+    val["e13"]["xMax"] = 4;
+    val["e13"]["yMin"] = 0;
+    val["e13"]["yMax"] = 4;
+
+    function dibujaContador(num) {
+      val[num]["tCorrectas"] = document.getElementById(`${num}-t-correctas`);
+      val[num]["lCorrectas"] = document.getElementById(`${num}-l-correctas`);
+      val[num]["tIncorrectas"] = document.getElementById(`${num}-t-incorrectas`);
+      val[num]["lIncorrectas"] = document.getElementById(`${num}-l-incorrectas`);
+      val[num]["tCorrectas"].textContent = val[num]["nCorrectas"];
+      val[num]["tIncorrectas"].textContent = val[num]["nIncorrectas"];
+      var total = val[num]["nCorrectas"] + val[num]["nIncorrectas"];
+
+      if (total == 0) {
+        total = 1;
+      }
+      val[num]["lCorrectas"].setAttribute("width", Math.max(anchoContador *  val[num]["nCorrectas"] / total, 1))
+      val[num]["lIncorrectas"].setAttribute("width", Math.max(anchoContador * val[num]["nIncorrectas"] / total, 1))
+    }
+
+    function modificaContador(num, correctas, incorrectas) {
+      val[num]["nCorrectas"] += correctas;
+      val[num]["nIncorrectas"] += incorrectas;
+      dibujaContador(num);
+    }
+
+    function genera(num, sumaIncorrecto) {
+      val[num]["forma"] = document.getElementById(`${num}-forma`);
+      val[num]["svg"] = document.getElementById(`${num}-svg`);
+      val[num]["x"] = document.getElementById(`${num}-x`);
+      val[num]["y"] = document.getElementById(`${num}-y`);
+      val[num]["width"] = document.getElementById(`${num}-width`);
+      val[num]["height"] = document.getElementById(`${num}-height`);
+      val[num]["salto"] = document.getElementById(`${num}-salto`);
+      val[num]["resultado"] = document.getElementById(`${num}-resultado`);
+
+      // Forma SVG
+      var recXMin = val[num]["xMin"] ;
+      var recXMax = val[num]["xMax"]  - 1;
+      var recYMin = val[num]["yMin"] ;
+      var recYMax = val[num]["yMax"]  - 1;
+      var recX = recXMin + Math.round(Math.random() * (recXMax - recXMin));
+      var recY = recYMin + Math.round(Math.random() * (recYMax - recYMin));
+      var recWidthMin = 1;
+      var recWidthMax = val[num]["xMax"]  - recX;
+      var recWidth = recWidthMin + Math.round(Math.random() * (recWidthMax - recWidthMin));
+      var recHeightMin = 1;
+      var recHeightMax = val[num]["yMax"]  - recY;
+      var recHeight = recHeightMin + Math.round(Math.random() * (recHeightMax - recHeightMin));
+
+      val[num]["forma"].innerHTML = `&lt;rect x=\"${recX}\" y=\"${recY}\" width=\"${recWidth}\" height=\"${recHeight}\" /&gt;`;
+      Prism.highlightElement(val[num]["forma"]);
+
+      // viewBox
+      var viewboxXMin = val[num]["xMin"]  - (val[num]["xMax"]  - val[num]["xMin"] );
+      var viewboxXMax = val[num]["xMax"]  + (val[num]["xMax"]  - val[num]["xMin"] );
+      var viewboxYMin = val[num]["yMin"]  - (val[num]["yMax"]  - val[num]["yMin"] );
+      var viewboxYMax = val[num]["yMax"]  + (val[num]["yMax"]  - val[num]["yMin"] );
+      val[num]["viewboxX"]  = viewboxXMin + Math.round(Math.random() * (recX - viewboxXMin));
+      val[num]["viewboxY"]  = viewboxYMin + Math.round(Math.random() * (recY - viewboxYMin));
+      var viewboxX2 = recX + recWidth + Math.round(Math.random() * (viewboxXMax - recX - recWidth));
+      var viewboxY2 = recY + recHeight + Math.round(Math.random() * (viewboxYMax - recY - recHeight));
+      val[num]["viewboxWidth"]  = viewboxX2 - val[num]["viewboxX"] ;
+      val[num]["viewboxHeight"]  = viewboxY2 - val[num]["viewboxY"] ;
+
+      val[num]["svg"].innerHTML = `<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"${val[num]["viewboxWidth"]  * 25}\" height=\"${val[num]["viewboxHeight"]  * 25}\" viewBox=\"${val[num]["viewboxX"] } ${val[num]["viewboxY"] } ${val[num]["viewboxWidth"] } ${val[num]["viewboxHeight"] }\" style=\"background-color: lightgray\"><rect x=\"${recX}\" y=\"${recY}\" width=\"${recWidth}\" height=\"${recHeight}\" fill=\"red\" /></svg>`;
+      val[num]["x"].value = val[num]["y"].value = val[num]["width"].value = val[num]["height"].value = "";
+      val[num]["x"].removeAttribute("style");
+      val[num]["y"].removeAttribute("style");
+      val[num]["width"].removeAttribute("style");
+      val[num]["height"].removeAttribute("style");
+
+      val[num]["salto"].innerHTML = "múltiplos de 1";
+
+      if (sumaIncorrecto) {
+        val[num]["nIncorrectas"] += 1;
+        val[num]["resultado"].textContent = "";
+      }
+      dibujaContador(num);
+    }
+
+    function comprueba(num) {
+      val[num]["resultado"] = document.getElementById(`${num}-resultado`);
+      val[num]["tCorrectas"] = document.getElementById(`${num}-t-correctas`);
+      val[num]["lCorrectas"] = document.getElementById(`${num}-l-correctas`);
+      val[num]["tIncorrectas"] = document.getElementById(`${num}-t-incorrectas`);
+      val[num]["lIncorrectas"] = document.getElementById(`${num}-l-incorrectas`);
+      val[num]["x"] = document.getElementById(`${num}-x`);
+      val[num]["y"] = document.getElementById(`${num}-y`);
+
+      if (val[num]["x"].value && val[num]["y"].value && val[num]["width"].value && val[num]["height"].value && val[num]["x"].value == val[num]["viewboxX"]  && val[num]["y"].value == val[num]["viewboxY"]  && val[num]["width"].value == val[num]["viewboxWidth"]  && val[num]["height"].value == val[num]["viewboxHeight"] ) {
+        val[num]["resultado"].textContent = "¡Correcto!";
+        val[num]["nCorrectas"]++;
+        genera(num);
+      } else {
+        if (val[num]["x"].value == "" || val[num]["x"].value != val[num]["viewboxX"] ) {
+          val[num]["x"].setAttribute("style", "outline: 1px solid red");
+        } else {
+          val[num]["x"].removeAttribute("style");
+        }
+        if (val[num]["y"].value == "" || val[num]["y"].value != val[num]["viewboxY"] ) {
+          val[num]["y"].setAttribute("style", "outline: 1px solid red");
+        } else {
+          val[num]["y"].removeAttribute("style");
+        }
+        if (val[num]["width"].value == "" || val[num]["width"].value != val[num]["viewboxWidth"] ) {
+          val[num]["width"].setAttribute("style", "outline: 1px solid red");
+        } else {
+          val[num]["width"].removeAttribute("style");
+        }
+        if (val[num]["height"].value == "" || val[num]["height"].value != val[num]["viewboxHeight"] ) {
+          val[num]["height"].setAttribute("style", "outline: 1px solid red");
+        } else {
+          val[num]["height"].removeAttribute("style");
+        }
+        val[num]["resultado"].textContent = "¡Has fallado!";
+        val[num]["nIncorrectas"]++;
+      }
+      dibujaContador(num);
+    }
+  </script>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 14 de abril de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
+</html>
