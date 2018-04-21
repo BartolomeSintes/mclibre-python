@@ -61,7 +61,7 @@ code.language-markup .doctype     { color: #535353; } /* <!DOCTYPE ... > declara
 code.language-markup .cdata       { color: #E88501; } /* CDATA section                          */
 
 /* Estilo para CSS imitando a Brackets */
-/* Pasado a media a Prism */
+/* Pasado a medias a Prism */
 
 code.language-css { }
 

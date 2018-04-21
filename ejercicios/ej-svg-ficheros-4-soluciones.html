@@ -35,11 +35,14 @@
           <a href="#ejercicio-1-2">2</a> -
           <a href="#ejercicio-1-3">3</a> -
           <a href="#ejercicio-1-4">4</a> -
-          <a href="#ejercicio-1-5">5</a></li>
+          <a href="#ejercicio-1-5">5</a>
+        </li>
         <li><a href="#ejercicio-2">2 - Bucles anidados</a><br />
           <a href="#ejercicio-2-1">1</a> -
           <a href="#ejercicio-2-2">2</a> -
-          <a href="#ejercicio-2-3">3</a></li>
+          <a href="#ejercicio-2-3">3</a>-
+          <a href="#ejercicio-2-4">4</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -409,10 +412,64 @@ webbrowser.open(ruta)</code>
         </div>
       </div>
     </section>
+
+    <section id="ejercicio-2-4">
+      <h3>Gráficos SVG Ficheros (4) - 2 - Figura 4</h3>
+      <div class="filaflex">
+        <div class="resultado-captura nogrow"><img src="../img/ejercicios/svg-ficheros-4/svg-ficheros-4-2-4.png" alt="SVG Ficheros (4) 2 3" width="324" height="324" /></div>
+
+        <div class="codigo">
+          <pre>
+<code class="language-python">import webbrowser
+
+ruta = "svg-ficheros-4-2-4.html"
+
+with open(ruta, mode="w", encoding="utf-8") as fichero:
+    print("&lt;!DOCTYPE html&gt;", file=fichero)
+    print("&lt;html lang=\"es\"&gt;", file=fichero)
+    print("  &lt;head&gt;", file=fichero)
+    print("    &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+    print("    &lt;title&gt;Ficheros (4) 2-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+    print("    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
+          file=fichero)
+    print("  &lt;/head&gt;", file=fichero)
+    print("", file=fichero)
+    print("  &lt;body&gt;", file=fichero)
+    print("    &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+    print("      width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+    print("      style=\"border: black 1px solid\"&gt;", file=fichero)
+    print("      &lt;defs&gt;", file=fichero)
+    print("        &lt;clipPath id=\"myClip\"&gt;", file=fichero)
+
+    for i in range(20):
+        for j in range(5):
+            print(f"          &lt;rect x=\"{60*j + 30}\" y=\"{15 * i}\" width=\"30\" height=\"7.5\" "
+                  "fill=\"black\" /&gt;", file=fichero)
+            print(f"          &lt;rect x=\"{60*j}\" y=\"{15*i + 7.5}\" width=\"30\" height=\"7.5\" "
+                  "fill=\"black\" /&gt;", file=fichero)
+    print("        &lt;/clipPath&gt;", file=fichero)
+    print("      &lt;/defs&gt;", file=fichero)
+    for i in range(20):
+        for j in range(5):
+            print(f"      &lt;rect x=\"{60*j + 30}\" y=\"{15 * i}\" width=\"30\" height=\"7.5\" "
+                  "fill=\"black\" /&gt;", file=fichero)
+            print(f"      &lt;rect x=\"{60*j}\" y=\"{15*i + 7.5}\" width=\"30\" height=\"7.5\" "
+                  "fill=\"black\" /&gt;", file=fichero)
+    print("      &lt;circle cx=\"150\" cy=\"150\" r=\"75\" fill=\"white\" /&gt;", file=fichero)
+    print("      &lt;circle cx=\"150\" cy=\"150\" r=\"75\" clip-path=\"url(#myClip)\" transform=\"rotate(90 150 150)\" /&gt;", file=fichero)
+    print("    &lt;/svg&gt;", file=fichero)
+    print("  &lt;/body&gt;", file=fichero)
+    print("&lt;/html&gt;", file=fichero)
+
+webbrowser.open(ruta)</code>
+</pre>
+        </div>
+      </div>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 21 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
