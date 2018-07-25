@@ -181,7 +181,7 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(5)  <span class="idle-come"># El tipo del objeto número entero "5" es int</span>
 <span class="idle-resp">&lt;class 'int'&gt;</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(a)  <span class="idle-come"># El tipo de la variable a el mismo que el del objeto número entero "5" </span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">type</span>(a)  <span class="idle-come"># El tipo de la variable a el mismo que el del objeto número entero "5"</span>
 <span class="idle-resp">&lt;class 'int'&gt;</span>
 </pre>
     </div>
@@ -295,7 +295,7 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = [5]           <span class="idle-come"># La variable "a" se asigna al objeto "lista [5]" y ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a             <span class="idle-come"># ... la variable "b" se asigna al mismo objeto que "a" ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)      <span class="idle-come"># ... por eso "a" y "b" tienen el mismo identificador</span>
-<span class="idle-resp">(45345888, 45345888)  </span>
+<span class="idle-resp">(45345888, 45345888)</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = b + [6]       <span class="idle-come"># Pero si añadimos un elemento a "b" ...</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(a), <span class="idle-func">id</span>(b)      <span class="idle-come"># ... la variable "b" hace ahora referencia al objeto "[5, 6]" ...</span>
 <span class="idle-resp">(45345888, 45346248)</span>
@@ -411,7 +411,7 @@
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>(3), <span class="idle-func">id</span>(4)        <span class="idle-come"># Al crear una tupla de dos identificadores de números ...</span>
 <span class="idle-resp">(505894336, 505894352)</span>  <span class="idle-come"># ... Python crea los dos objetos.</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">id</span>([3]), <span class="idle-func">id</span>([4])    <span class="idle-come"># Pero al crear una tupla de dos identificadores de listas ...</span>
-<span class="idle-resp">(46530272, 46530272)  </span>  <span class="idle-come"># ... Python parece crear un único objeto.</span>
+<span class="idle-resp">(46530272, 46530272)</span>    <span class="idle-come"># ... Python parece crear un único objeto.</span>
 </pre>
         </div>
 
