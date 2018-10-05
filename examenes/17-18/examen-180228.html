@@ -68,9 +68,9 @@
   <section id="ejercicio-2">
     <h2>Ejercicio 2</h2>
 
-    <p>Escriba un programa que pida un código RGB de color (valores entre 0 y 255) y devuelva el código HSL corrspondiente.</p>
+    <p>Escriba un programa que pida un código RGB de color (valores entre 0 y 255) y devuelva el código HSL correspondiente.</p>
 
-    <p>El procedimiento de cálculo es el siguiente:</p>
+    <p>El procedimiento de cálculo (<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Conversion_RGB_to_HSV_used_commonly_in_software_programming">fuente: Wikipedia</a>)es el siguiente:</p>
 
     <ul>
       <li>los valores RGB se dividen por 255 y en todos los cálculos se usan los valores decimales <strong>r</strong>, <strong>g</strong> y <strong>b</strong></li>
@@ -80,7 +80,12 @@
       <li>Cálculo de H:
         <ul>
           <li>si C es 0, <strong>h</strong> es 0 (por convención, realmente está indefinido)</li>
-          <li>si M es r, <strong>h</strong> es el resto de (g-b) / C entre 6</li>
+          <li>
+            <span style="text-decoration: line-through">si M es r, <strong>h</strong> es el resto de (g-b) / C entre 6</span>
+            <p><strong>Nota</strong>: La línea anterior es la que aparece en la wikipedia y es incorrecta. Comeo explican en <a href="https://stackoverflow.com/questions/39118528/rgb-to-hsl-conversion">stack overflow</a>, la fórmula correcta es:</p>
+            <p>si M es r, <strong>h</strong> es (g-b) / C</p>
+            <p>si obtiene un <strong>h</strong> negativo, súmele 6</p>
+          </li>
           <li>si M es g, <strong>h</strong> es (b-r) / C + 2</li>
           <li>si M es b, <strong>h</strong> es (r-g) / C + 4</li>
           <li>multiplique h por 60</li>
@@ -163,7 +168,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
