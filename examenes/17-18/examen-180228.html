@@ -70,8 +70,9 @@
 
     <p>Escriba un programa que pida un código RGB de color (valores entre 0 y 255) y devuelva el código HSL correspondiente.</p>
 
-    <p>El procedimiento de cálculo (<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Conversion_RGB_to_HSV_used_commonly_in_software_programming">fuente: Wikipedia</a>)es el siguiente:</p>
-
+    <p>El procedimiento de cálculo (<a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Conversion_RGB_to_HSV_used_commonly_in_software_programming">fuente: Wikipedia</a>) es el siguiente:</p>
+    <!-- 2018-10-06: la fórmula de la wikipedia estuvo mal en algún momento, pero en octubre de 2018 ya es correcta. En <a href="https://stackoverflow.com/questions/39118528/rgb-to-hsl-conversion">stack overflow</a> explican más la fórmula
+    -->
     <ul>
       <li>los valores RGB se dividen por 255 y en todos los cálculos se usan los valores decimales <strong>r</strong>, <strong>g</strong> y <strong>b</strong></li>
       <li><strong>M</strong> es el máximo de los tres valores</li>
@@ -80,14 +81,10 @@
       <li>Cálculo de H:
         <ul>
           <li>si C es 0, <strong>h</strong> es 0 (por convención, realmente está indefinido)</li>
-          <li>
-            <span style="text-decoration: line-through">si M es r, <strong>h</strong> es el resto de (g-b) / C entre 6</span>
-            <p><strong>Nota</strong>: La línea anterior es la que aparece en la wikipedia y es incorrecta. Comeo explican en <a href="https://stackoverflow.com/questions/39118528/rgb-to-hsl-conversion">stack overflow</a>, la fórmula correcta es:</p>
-            <p>si M es r, <strong>h</strong> es (g-b) / C</p>
-            <p>si obtiene un <strong>h</strong> negativo, súmele 6</p>
-          </li>
+          <li>si M es r, <strong>h</strong> es (g-b) / C</li>
           <li>si M es g, <strong>h</strong> es (b-r) / C + 2</li>
           <li>si M es b, <strong>h</strong> es (r-g) / C + 4</li>
+          <li>si h es negativo, sume 6 a h</li>
           <li>multiplique h por 60</li>
           <li>redondee h a un número entero y <strong>H</strong> es el resto de h entre 360</li>
         </ul>
