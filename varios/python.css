@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 19 de agosto de 2018                     */
+/* 26 de octubre de 2018                    */
 /*                                          */
 
 /* CSS comun */
@@ -19,6 +19,7 @@
 html {
   background-color: white;
   font-family: sans-serif;
+  line-height: 130%;
   text-align: justify;
 }
 
@@ -39,6 +40,7 @@ footer {
 
 h1 {
   font-size: 200%;
+  line-height: 120%;
   text-align: center;
 }
 
@@ -76,7 +78,7 @@ hr.corta {
 }
 
 p {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 p.aviso {
@@ -121,19 +123,13 @@ p.inline-con-borde {
   text-align: center;
 }
 
-.captura img, .captura svg {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-}
-
-img.derecha {
+.derecha {
   float: right;
   margin-left: 10px;
   margin-bottom: 5px;
 }
 
-img.izquierda {
+.izquierda {
   float: left;
   margin-right: 10px;
   margin-bottom: 5px;
@@ -164,6 +160,12 @@ a img {
 
 .captura {
   text-align: center;
+}
+
+.captura img, .captura svg {
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .captura img, .captura svg, .captura iframe {
@@ -387,6 +389,7 @@ ul ul {
 
 li {
   clear: both;
+  margin-top: 5px;
 }
 
 /* Para ejemplos de ejecucion de codigo */
@@ -530,7 +533,7 @@ h2.con-aside, h3.con-aside, h4-con-aside {
 
   nav h2 {
     margin: 0;
-    padding: 0;
+    padding: 1em 0 0;
     font-size: 110%;
     text-align: left;
   }
@@ -630,21 +633,21 @@ code.language-sql {
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 
-.html-eti        { color: #911F00; }
-.html-atri       { color: #FF0000; }
-.html-atri-valor { color: #0000FF; }
+.html-eti        { color: #911F00; fill: #911F00; }
+.html-atri       { color: #FF0000; fill: #FF0000; }
+.html-atri-valor { color: #0000FF; fill: #0000FF; }
 
 /* Estilo para CSS imitando a Visual Studio Code con tema Light+ */
 
-.css-sele    { color: #800000; }
-.css-prop    { color: #FF0000; }
-.css-feature { color: #FF0000; }
-.css-valor   { color: #0451A5; }
-.css-numero  { color: #008000; }
-.css-unidad  { color: #008000; }
-.css-pseudo  { color: #800000; }
-.css-arroba  { color: #AF00DB; }
-.css-funcion { color: #4700FF; }
+.css-sele    { color: #800000; fill: #800000; }
+.css-prop    { color: #FF0000; fill: #FF0000; }
+.css-feature { color: #FF0000; fill: #FF0000; }
+.css-valor   { color: #0451A5; fill: #0451A5; }
+.css-numero  { color: #008000; fill: #008000; }
+.css-unidad  { color: #008000; fill: #008000; }
+.css-pseudo  { color: #800000; fill: #800000; }
+.css-arroba  { color: #AF00DB; fill: #AF00DB; }
+.css-funcion { color: #4700FF; fill: #4700FF; }
 
 /* Estilo para Python imitando a IDLE */
 
@@ -669,14 +672,14 @@ code.language-sql {
 .xsl-i       { color: #0000FF; }
 .xsl-atri    { color: #FC0204; }
 
-/* Estilo para PHP imitando a Eclipse PDT */
+/* Estilo para PHP imitando a Eclipse for PHP developers */
 
 .php-con { font-weight: bold; } /* Constante                    */
 .php-del { font-weight: bold; } /* Delimitador de fragmento php */
 .php-dir { font-weight: bold; } /* Directiva de php.ini         */
 .php-fun { font-weight: bold; } /* Funcion                      */
 .php-ope { font-weight: bold; } /* Operador                     */
-.php-res { font-weight: bold; } /* Palabra reservada            */
+.php-res { font-weight: bold; color: rgb(127,  0, 85) } /* Palabra reservada            */
 .php-var { font-weight: bold; } /* Variable                     */
 
 /* CSS especifico apuntes Python */
