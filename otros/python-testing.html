@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Python testing. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../varios/python.css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+</head>
+
+<body>
+  <h1>mclibre Python testing, comprobador de ejercicios</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Python testing</h2>
+
+      <ul>
+        <li><a href="#que-es">Qué es</a></li>
+        <li><a href="#instalar">Instalar</a></li>
+        <li><a href="#usar">Usar</a></li>
+        <li><a href="#desinstalar">Desinstalar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="que-es">
+    <h2>Qué es mclibre Python testing</h2>
+
+    <p>mclibre Python testing es una herramienta basa en <a href="https://docs.pytest.org/en/latest/">PyTest</a> que estoy desarrollando para ayudar a los alumnos a comprobar que han resuelto correctamente los ejercicios propuestos en este curso.</p>
+
+    <p>Actualmente (diciembre de 2018), mclibre Python testing no está preparada para ser utilizada, pero en esta lección quiero ir escribiendo las instrucciones de uso.</p>
+  </section>
+
+  <section id="instalar">
+    <h2>Instalar mclibre Python testing</h2>
+
+    <p>mclibre Python testing requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="http://docs.python-requests.org/en/master/">Requests</a>.</p>
+
+    <p>Para interferir lo menos posible con la instalación de Python, se aconseja utilizar <a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a>.</p>
+
+    <p>Los pasos para realizar la instalación son los siguientes:</p>
+    <ol>
+      <li>abra una ventana de terminal e instale pipenv:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pip install -U pipenv</code>
+</pre>
+        </div>
+      </li>
+      <li>cree un directorio donde ejecutar mclibre Python testing</li>
+      <li>abra una ventana de terminal en ese directorio</li>
+      <li>cree un proyecto de pipenv en ese directorio:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv install</code>
+</pre>
+        </div>
+      </li>
+      <li>copie los ficheros de mclibre Python testing en ese directorio</li>
+      <li>instale PyTest:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv install pytest</code>
+</pre>
+        </div>
+      </li>
+      <li>instale Requests:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv install requests</code>
+</pre>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="usar">
+    <h2>Usar mclibre Python testing</h2>
+
+    <p>Puede usar mclibre Python testing de dos maneras (XX es en ambos casos el número de ejercicio a comprobar):</p>
+    <ul>
+      <li>directamente
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv run python mclibre-pytesting.py XX</code>
+</pre>
+        </div>
+      </li>
+      <li>o abriendo una subshell de pipenv
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv shell
+python mclibre-pytesting.py XX</code>
+</pre>
+        </div>
+      </li>
+    </ul>
+    <p>La ventaja de la subshell de pipenv es que no hay que escribir pipenv run cada vez que se quiere ejecutar el programa, pero el inconveniente es que es bastante limitada (por ejemplo, no se puede recuperar un comando anterior).</p>
+    <p>Para salir de la subshell de pìpenv, escriba</p>
+    <div class="codigo">
+      <pre>
+<code class="language-shell">exit</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="desinstalar">
+    <h2>Desinstalar mclibre Python testing</h2>
+
+    <p>Los pasos para realizar la desinstalación son los siguientes:</p>
+    <ol>
+      <li>abra una ventana de terminal en el directorio en el que instaló mclibre Python testing</li>
+      <li>elimine el entorno virtual:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">pipenv --rm</code>
+</pre>
+        </div>
+      </li>
+      <li>borre el directorio</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 31 de diciembre de 2018</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
