@@ -22,9 +22,20 @@
 
       <ul>
         <li><a href="#que-es">Qué es</a></li>
-        <li><a href="#instalar">Instalar</a></li>
-        <li><a href="#usar">Usar</a></li>
-        <li><a href="#desinstalar">Desinstalar</a></li>
+        <li><a href="#windows-venv">venv en Windows</a>
+          <ul>
+            <li><a href="#windows-venv-instalar">Instalar</a></li>
+            <li><a href="#windows-venv-usar">Usar</a></li>
+            <li><a href="#windows-venv-desinstalar">Desinstalar</a></li>
+          </ul>
+        </li>
+        <li><a href="#ubuntu-venv">venv en Ubuntu</a>
+          <ul>
+            <li><a href="#ubuntu-venv-instalar">Instalar</a></li>
+            <li><a href="#ubuntu-venv-usar">Usar</a></li>
+            <li><a href="#ubuntu-venv-desinstalar">Desinstalar</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
@@ -34,8 +45,387 @@
 
     <p>mclibre Python testing es una herramienta basa en <a href="https://docs.pytest.org/en/latest/">PyTest</a> que estoy desarrollando para ayudar a los alumnos a comprobar que han resuelto correctamente los ejercicios propuestos en este curso.</p>
 
-    <p>Actualmente (diciembre de 2018), mclibre Python testing no está preparada para ser utilizada, pero en esta lección quiero ir escribiendo las instrucciones de uso.</p>
+    <p>El código fuente de esta herramienta se encuentra en <a href="https://github.com/BartolomeSintes/mclibre-python-testing">GitHub</a> y se distribuye en <a href="https://pypi.org/project/mclibre-python-testing-client/">Python Package Index (PyPI)</a>.</p>
+
+    <p>La herramienta tiene dos partes:</p>
+    <ul>
+      <li>Un programa de servidor que genera los parámetros de pruebas para PyTest.</li>
+      <li>Un programa de cliente que solicita al servidor los parámetros de pruebapoara PyTest y que ejecuta PyTest con dichos parámetros y que muestra el resultado de las pruebas.</li>
+    </ul>
+
+    <p>El alumno sólo necesita instalar el programa cliente. El programa cliente requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="http://docs.python-requests.org/en/master/">Requests</a>, que se deben instalar previamente.</p>
+
+    <p>Para interferir lo menos posible con la instalación de Python del sistema, se aconseja utilizar un entorno virtual. En Python existen varios sistemas de creación de entornos virtuales. El más sencillo es probablemente el módulo de la biblioteca estándar de Python, <a href="https://docs.python.org/3/library/venv.html">venv</a>, y en esta lección se hace referencia a este sistema, pero se utilizar cualquier otro.</p>
+
+    <hr class="corta" />
+
+    <p>Actualmente (enero de 2019), mclibre Python Testing no está preparada para ser utilizada puesto que sólo proporciona valores de prueba para un ejercicio, pero en esta lección quiero ir escribiendo las instrucciones de uso.</p>
   </section>
+
+  <section id="windows-venv">
+    <h2>mclibre Python testing client en Windows (venv)</h2>
+
+    <p>Estos son los pasos a realizar para instalar, usar y desinstalar mclibre Python testing client en Windows utilizando el módulo de la biblioteca estándar de Python <strong>venv</strong>.</p>
+
+    <section id="windows-venv-instalar">
+      <h3>Instalar mclibre Python testing client en Windows (venv)</h3>
+
+      <p>Los pasos para realizar la instalación en Windows son los siguientes:</p>
+      <ol>
+        <li>Abra una ventana de terminal.
+        </li>
+        <li>Cree un entorno virtual de Python en un directorio (en el ejemplo, el directorio se llama <i>venv-dir</i>):
+          <div class="codigo">
+            <pre>
+<code class="language-shell">$ python -m venv venv-dir</code>
+</pre>
+          </div>
+        </li>
+        <li>Active el entorno:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">$ "venv-dir/Scripts/activate"</code>
+</pre>
+          </div>
+        </li>
+        <li>Mientras el entorno esté activo, se mostrará el nombre del entorno al principio del <i>prompt</i>:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) $ </code>
+</pre>
+          </div>
+        </li>
+        <li>Actualice pip:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) pip install upgrade pip</code>
+</pre>
+          </div>
+        </li>
+        <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) pip install pytest</code>
+</pre>
+          </div>
+        </li>
+        <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) pip install requests</code>
+</pre>
+          </div>
+        </li>
+        <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
+</pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="windows-venv-usar">
+      <h3>Usar mclibre Python testing client en Windows (venv)</h3>
+
+      <p>Los pasos para usar mclibre Python testing client son los siguientes:</p>
+      <ul>
+        <li>Cree un programa que resuelva uno de los ejercicios (en este ejemplo el programa se llama programa.py).</li>
+        <li>Si ha instalado correctamente mclibre Python testing client en el entorno virtual, dispondrá de un nuevo comando llamado <i>mptc</i>. La sintaxis del comando requiere el nombre del programa a probar y el identificador del enunciado del ejercicio:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) $ mptc programa.py 1</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="windows-venv-desinstalar">
+      <h3>Desinstalar mclibre Python testing client en Windows (venv)</h3>
+
+      <p>Los pasos para desinstalar mclibre Python testing client son los siguientes:</p>
+      <ul>
+        <li>Si simplemente quiere salir del entorno virtual de Python, escriba:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) $ deactivate</code>
+</pre>
+          </div>
+          <p>En este caso, puede volver a entrar en el entorno en cualquier momento activando de nuevo el entorno:</p>
+          <div class="codigo">
+            <pre>
+<code class="language-shell">$ . venv-dir/bin/activate</code>
+</pre>
+          </div>
+        </li>
+        <li>Si simplemente quiere desinstalar mclibre Python testing client, escriba:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) $ pip uninstall mclibre-python-testing-client</code>
+</pre>
+          </div>
+          <p>En este caso, conservará el entorno virtual. Para volver a utilizar mclibre Python testing client en este entorno, deberá volver a instalarlo.</p>
+        </li>
+        <li>Si quiere eliminar completamente el entorno virtual, simplemente borre el directorio (con el explorador de Windows o con el comando):
+          <div class="codigo">
+            <pre>
+<code class="language-shell">rmdir /S venv-dir</code>
+</pre>
+          </div>
+          <p>En este caso, para volver a utilizar mclibre Python testing client, deberá volver a crear un entorno virtual e instalarlo.</p>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="ubuntu-venv">
+    <h2>mclibre Python testing client en Ubuntu (venv)</h2>
+
+    <p>Estos son los pasos a realizar para instalar, usar y desinstalar mclibre Python testing client en Ubuntu 18.04 utilizando el módulo de la biblioteca estándar de Python <strong>venv</strong>.</p>
+
+    <section id="ubuntu-venv-instalar">
+      <h3>Instalar mclibre Python testing client en Ubuntu (venv)</h3>
+
+      <p>Los pasos para realizar la instalación en Ubuntu 18.04 son los siguientes:</p>
+      <ol>
+        <li>Abra una ventana de terminal e instale venv:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">$ sudo apt-get install python3-venv</code>
+  </pre>
+          </div>
+        </li>
+        <li>Cree un entorno virtual de Python en un directorio (en el ejemplo, el directorio se llama <i>venv-dir</i>):
+          <p><strong>Nota</strong>: No utilice sudo al crear el entorno virtual si no quiere tener problemas al instalar paquetes en el entorno virtual:</p>
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">$ python3 -m venv venv-dir</code>
+  </pre>
+          </div>
+        </li>
+        <li>Active el entorno:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">$ . venv-dir/bin/activate</code>
+  </pre>
+          </div>
+        </li>
+        <li>Mientras el entorno esté activo, se mostrará el nombre del entorno al principio del <i>prompt</i>:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) $ </code>
+  </pre>
+          </div>
+        </li>
+        <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) pip install pytest</code>
+  </pre>
+          </div>
+        </li>
+        <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) pip install requests</code>
+  </pre>
+          </div>
+        </li>
+        <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
+  </pre>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="ubuntu-venv-usar">
+      <h3>Usar mclibre Python testing client en Ubuntu (venv)</h3>
+
+      <p>Los pasos para usar mclibre Python testing client son los siguientes:</p>
+      <ul>
+        <li>Cree un programa que resuelva uno de los ejercicios (en este ejemplo el programa se llama programa.py).</li>
+        <li>Si ha instalado correctamente mclibre Python testing client en Ubuntu, dispondrá de un nuevo comando llamado <i>mptc</i>. La sintaxis del comando requiere el nombre del programa a probar y el identificador del enunciado del ejercicio:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) $ mptc programa.py 1</code>
+  </pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="ubuntu-venv-desinstalar">
+      <h3>Desinstalar mclibre Python testing client en Ubuntu (venv)</h3>
+
+      <p>Los pasos para desinstalar mclibre Python testing client son los siguientes:</p>
+      <ul>
+        <li>Si simplemente quiere salir del entorno virtual de Python, escriba:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) $ deactivate</code>
+  </pre>
+          </div>
+          <p>En este caso, puede volver a entrar en el entorno en cualquier momento activando de nuevo el entorno:</p>
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">$ . venv-dir/bin/activate</code>
+  </pre>
+          </div>
+        </li>
+        <li>Si simplemente quiere desinstalar mclibre Python testing client, escriba:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">(venv-dir) $ pip uninstall mclibre-python-testing-client</code>
+  </pre>
+          </div>
+          <p>En este caso, conservará el entorno virtual. Para volver a utilizar mclibre Python testing client en este entorno, deberá volver a instalarlo.</p>
+        </li>
+        <li>Si quiere eliminar completamente el entorno virtual, simplemente borre el directorio:
+          <div class="codigo">
+            <pre>
+  <code class="language-shell">rm -rf venv-dir</code>
+  </pre>
+          </div>
+          <p>En este caso, para volver a utilizar mclibre Python testing client, deberá volver a crear un entorno virtual e instalarlo.</p>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <!--
+    <p>He empezado a escribir instrucciones para pipenv, pero no he terminado de hacerlo y no tengo claro que valga la pena. La parte de Windows está más o menos bien, pero la parte de Ubuntu está incompleta.</p>
+
+  <section id="ubuntu-pipenv-instalar">
+    <h2>Instalar mclibre Python testing client en Ubuntu (pipenv)</h2>
+
+    <p>mclibre Python testing </p>
+
+    <p>Para interferir lo menos posible con la instalación de Python, se aconseja utilizar un entorno virtual, como <a href="https://pipenv.readthedocs.io/en/latest/">pipenv</a>.</p>
+
+    <p>Los pasos para realizar la instalación en Ubuntu 18.04 son los siguientes:</p>
+    <ol>
+      <li>Abra una ventana de terminal e instale pip:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ sudo apt-get install python3-pip</code>
+</pre>
+        </div>
+      </li>
+      <li>Abra una ventana de terminal e instale pipenv:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ pip3 install -U pipenv</code>
+</pre>
+        </div>
+      </li>
+      <li>Cree un directorio donde crear el entorno virtual:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ mkdir pipenv-dir</code>
+</pre>
+        </div>
+      </li>
+      <li>cree un proyecto de pipenv en ese directorio:
+        <div class="codigo">
+          <pre>
+  <code class="language-shell">pipenv install</code>
+  </pre>
+        </div>
+      </li>
+      <li>Cree un entorno virtual de Python en un directorio (en el ejemplo, el directorio se llama <i>venv-dir</i>):
+        <p><strong>Nota</strong>: No utilice sudo al crear el entorno virtual si no quiere tener problemas al instalar paquetes en el entorno virtual:</p>
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ python3 -m venv venv-dir</code>
+</pre>
+        </div>
+      </li>
+      <li>Active el entorno:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ . venv-dir/bin/activate</code>
+</pre>
+        </div>
+      </li>
+      <li>Mientras el entorno esté activo, se mostrará el nombre del entorno al pirncipio del <i>prompt</i>:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) $ </code>
+</pre>
+        </div>
+      </li>
+      <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) pip install pytest</code>
+</pre>
+        </div>
+      </li>
+      <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) pip install requests</code>
+</pre>
+        </div>
+      </li>
+      <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
+</pre>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ubuntu-pipenv-usar">
+    <h2>Usar mclibre Python testing client en Ubuntu (pipenv)</h2>
+
+    <p>Los pasos para usar mclibre Python testing (XX es en ambos casos el número de ejercicio a comprobar):</p>
+    <ul>
+      <li>Cree un programa que resuelva uno de los ejercicios (en este ejemplo el programa se llama programa.py).</li>
+      <li>Si ha instalado correctamente mclibre Python testing client en Ubuntu, dispondrá de un nuevo comando llamado <i>mptc</i>. La sintaxis del comando requiere el nombre del programa a probar y el identificador del enunciado del ejercicio:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) $ mptc programa.py 1</code>
+</pre>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ubuntu-pipenv-desinstalar">
+    <h2>Desinstalar mclibre Python testing client en Ubuntu (venv)</h2>
+
+    <ul>
+      <li>Si simplemente quiere salir del entorno virtual de Python, escriba:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">(venv-dir) $ deactivate</code>
+</pre>
+        </div>
+        <p>En este caso, puede volver a entrar en el entorno en cualquier momento activando el entorno:</p>
+        <div class="codigo">
+          <pre>
+<code class="language-shell">$ . venv-dir/bin/activate</code>
+</pre>
+        </div>
+      </li>
+      <li>Si quiere eliminar completamente el entorno virtual, simplemente borre el directorio:
+        <div class="codigo">
+          <pre>
+<code class="language-shell">rm -rf venv-dir</code>
+</pre>
+        </div>
+      </li>
+    </ul>
+  </section>
+
 
   <section id="instalar">
     <h2>Instalar mclibre Python testing</h2>
@@ -119,16 +509,17 @@ python mclibre-pytesting.py XX</code>
       <li>elimine el entorno virtual:
         <div class="codigo">
           <pre>
-<code class="language-shell">pipenv --rm</code>
+<code class="language-shell">pipenv &minus;&minus;rm</code>
 </pre>
         </div>
       </li>
       <li>borre el directorio</li>
     </ol>
   </section>
+-->
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 31 de diciembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 5 de enero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
