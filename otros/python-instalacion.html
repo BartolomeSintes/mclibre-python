@@ -31,25 +31,28 @@
 
   <p>En la lección <a href="historia.html">Historia de Python</a> se comentan las diferentes versión de Python existentes. En esta lección se comenta cómo conseguir e instalar la versión recomendada para seguir este curso.</p>
 
-  <p>Python permite tener instaladas distintas versiones de Python (Python 2.7 y Python 3.6, por ejemplo, o Python 3.5 y Python 3.6).</p>
+  <p>Python permite tener instaladas distintas versiones de Python (Python 2.7 y Python 3.7, por ejemplo, o Python 3.6 y Python 3.7).</p>
 
-  <p>En este curso se recomienda tener instalada únicamente una versión de Python, la más reciente. Por ello, si va a instalar una versión de Python 3.6:</p>
+  <p>En este curso se recomienda tener instalada únicamente una versión de Python, la más reciente. Por ello, si va a instalar una versión de Python 3.7:</p>
 
   <ul>
-    <li>si ya tiene instalada una versión anterior (Python 3.5 o anteriores), se recomienda desinstalar primero las versiones anteriores. </li>
-    <li>si ya tiene instalada una versión de Python 3.6, no es necesario desinstalar nada.</li>
+    <li>si ya tiene instalada una versión anterior (Python 3.6 o anteriores) y no necesita mantenerla, se recomienda desinstalar primero la versión anterior.</li>
+    <li>si ya tiene instalada una versión de Python 3.7, no es necesario desinstalar nada, pero se recomienda actualizar a la última versión disponible de Python 3.7.</li>
   </ul>
-
-  <p><strong>Nota</strong>: En junio de 2018 se publicó Python 3.7. En estos apuntes se hace referencia a Python 3.6, que era la versión más reciente durante el curso 2017/18, pero seguramente se puede seguir este curso con Python 3.7 sin ningún problema. En el curso 2018/19 actualizaré las referencias a Python 3.7.</p>
 
   <section id="conseguir">
     <h2>Conseguir Python</h2>
 
     <p>La página oficial de Python es <a href="https://www.python.org/">https://www.python.org/</a>.</p>
 
-    <p>La última versión de Python 3.6 disponible actualmente (junio de 2018) es Python 3.6.6 (del 27 de junio de 2018).</p>
+    <p>La última versión de Python 3.7 disponible actualmente (enero de 2019) es Python 3.7.2 (del 24 de diciembre de 2018).</p>
 
-    <p>Enlaces: página de <a href="https://www.python.org/downloads/release/python-366/">descarga de Python 3.6.6</a>, instaladores de Python 3.6.6 para para <a href="https://www.python.org/ftp/python/3.6.6/python-3.6.6-amd64.exe">Windows de 64 bits (30,4 MB)</a> y <a href="https://www.python.org/ftp/python/3.6.6/python-3.6.6.exe">Windows de 32 bits (29,4 MB)</a>.</p>
+    <p>Enlaces:</p>
+    <ul>
+      <li>Página de <a href="https://www.python.org/downloads/release/python-372/">descarga de Python 3.7.2</a>,</li>
+      <li>instalador de Python 3.7.2 para <a href="https://www.python.org/ftp/python/3.7.2/python-3.7.2-amd64.exe">Windows de 64 bits (24,9 MB)</a></li>
+      <li>instalador de Python 3.7.2 para <a href="https://www.python.org/ftp/python/3.7.2/python-3.7.2.exe">Windows de 32 bits (24,1 MB)</a>.</li>
+    </ul>
 
     <p>En <a href="http://www.cdlibre.org/">cdlibre.org</a> hay una sección dedicada al <a href="http://www.cdlibre.org/consultar/catalogo/Programacion_Python.html">intérprete de Python</a>, con información detallada sobre las últimas versiones publicadas para Windows.</p>
   </section>
@@ -64,25 +67,26 @@
     <ul>
       <li>La primera pantalla permite seleccionar las opciones de instalación haciendo clic en "Customize installation", aunque en principio, no es necesario modificarlas. Tan sólo se aconseja marcar la casilla "Add Python to PATH" para poder ejecutar programas desde la línea de comandos. Para continuar, haga clic en "Install Now".
         <p class="captura">
-          <img src="../img/instalacion/py36-instalacion-1.png" alt="Instalación de Python" width="666" height="410" />
+          <img src="../img/instalacion/py37-instalacion-1.png" alt="Instalación de Python" width="666" height="410" />
         </p>
       </li>
 
       <li>A continuación se iniciará el proceso de instalación. La instalación de Python puede durar varios minutos.
         <p class="captura">
-          <img src="../img/instalacion/py36-instalacion-2.png" alt="Instalación de Python" width="666" height="410" />
+          <img src="../img/instalacion/py37-instalacion-2.png" alt="Instalación de Python" width="666" height="410" />
         </p>
       </li>
 
-      <li>Una vez completada la instalación, se mostrará la pantalla final. Haga clic en el botón "Disable path length limit".
+      <li>Una vez completada la instalación, se mostrará la pantalla final.
+        <p>Si el instalador detecta que Windows tiene activado el límite de 260 caracteres de rutas de archivos (una limitación de versiones antiguas de Windows que se mantiene por compatibilidad con aplicaciones antiguas), le ofrecerá la opción de eliminar la limitación. Si utiliza alguna aplicación que necesite tener ese límite activado, no lo desactive. En caso contrario, haga clic en el botón "Disable path length limit". Si en el futuro descubiera que alguna aplicación necesita tener el límite activado, abra el editor del registro y modifique la clave HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled (el valor 0 significa que el límite está desactivado y 1 significa que está activado).</p>
         <p class="captura">
-          <img src="../img/instalacion/py36-instalacion-3.png" alt="Instalación de Python" width="666" height="410" />
+          <img src="../img/instalacion/py37-instalacion-3.png" alt="Instalación de Python" width="666" height="410" />
         </p>
       </li>
 
       <li>Finalmente, haga clic en en el botón "Close" para cerrar el programa de instalación. ¡Ya puede empezar a programar en Python!
         <p class="captura">
-          <img src="../img/instalacion/py36-instalacion-4.png" alt="Instalación de Python" width="666" height="410" />
+          <img src="../img/instalacion/py37-instalacion-4.png" alt="Instalación de Python" width="666" height="410" />
         </p>
       </li>
     </ul>
@@ -91,27 +95,27 @@
   <section id="actualizar">
     <h2>Actualizar Python</h2>
 
-    <p>Una vez descargado el instalador, haga doble clic en él para iniciar la actualización. Si el instalador detecta una subversión anterior de la misma versión de Python (por ejemplo si el instalador de Python 3.6.1 detecta que ya está instalado Python 3.6.0), ofrecerá la opción de actualizar.</p>
+    <p>Una vez descargado el instalador, haga doble clic en él para iniciar la actualización. Si el instalador detecta una subversión anterior de la misma versión de Python (por ejemplo si el instalador de Python 3.7.2 detecta que está instalado Python 3.7.0), ofrecerá la opción de actualizar.</p>
 
-    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.6.1 (64 bits), pero son similares en cualquier versión 3.6.X.</p>
+    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.7.2 (64 bits), pero son similares en cualquier versión 3.6.X.</p>
 
     <ul>
       <li>La primera pantalla permite seleccionar las opciones de instalación haciendo clic en "Customize installation", aunque en principio, no es necesario modificarlas. Para continuar, haga clic en "Upgrade Now".
 
         <p class="captura">
-          <img src="../img/instalacion/py36-actualizacion-1.png" alt="Actualización de Python" width="670" height="412" />
+          <img src="../img/instalacion/py37-actualizacion-1.png" alt="Actualización de Python" width="666" height="410" />
         </p>
       </li>
 
       <li>A continuación se iniciará el proceso de actualización. La actualización de Python puede durar varios minutos.
         <p class="captura">
-          <img src="../img/instalacion/py36-actualizacion-2.png" alt="Actualización de Python" width="670" height="412" />
+          <img src="../img/instalacion/py37-actualizacion-2.png" alt="Actualización de Python" width="666" height="410" />
         </p>
       </li>
 
       <li>Una vez completada la actualización, se mostrará la pantalla final. Haciendo clic en en el botón "Close" se cerrará el programa de instalación.
         <p class="captura">
-          <img src="../img/instalacion/py36-actualizacion-3.png" alt="Instalación de Python" width="670" height="412" />
+          <img src="../img/instalacion/py37-actualizacion-3.png" alt="Instalación de Python" width="666" height="410" />
         </p>
       </li>
     </ul>
@@ -120,17 +124,17 @@
   <section id="modificar">
     <h2>Modificar o reparar Python</h2>
 
-    <p>Si el instalador detecta que ya está instalada la misma versión de Python (por ejemplo si el instalador de Python 3.6.4 detecta que ya está instalado Python 3.6.4), ofrecerá la opción de modificar, reparar o desinstalar Python.</p>
+    <p>Si el instalador detecta que ya está instalada la misma versión de Python (por ejemplo si el instalador de Python 3.7.2 detecta que ya está instalado Python 3.7.2), ofrecerá la opción de modificar, reparar o desinstalar Python.</p>
 
-    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.6.4 (64 bits), pero son similares en cualquier versión 3.6.X.</p>
+    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.7.2 (64 bits), pero son similares en cualquier versión 3.X.</p>
 
     <p class="captura">
-      <img src="../img/instalacion/py36-modificacion-1.png" alt="Modificación / Reparación de Python" width="670" height="412" />
+      <img src="../img/instalacion/py37-modificacion-1.png" alt="Modificación / Reparación de Python" width="666" height="410" />
     </p>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de junio de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 25 de enero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />

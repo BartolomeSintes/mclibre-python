@@ -98,28 +98,28 @@
         <li>Actualice pip:
           <div class="codigo">
             <pre>
-<code class="language-shell">(venv-dir) pip install upgrade pip</code>
+<code class="language-shell">(venv-dir) $ pip install --upgrade pip</code>
 </pre>
           </div>
         </li>
         <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
           <div class="codigo">
             <pre>
-<code class="language-shell">(venv-dir) pip install pytest</code>
+<code class="language-shell">(venv-dir) $ pip install pytest</code>
 </pre>
           </div>
         </li>
         <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
           <div class="codigo">
             <pre>
-<code class="language-shell">(venv-dir) pip install requests</code>
+<code class="language-shell">(venv-dir) $ pip install requests</code>
 </pre>
           </div>
         </li>
         <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
           <div class="codigo">
             <pre>
-<code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
+<code class="language-shell">(venv-dir) $ pip install mclibre-python-testing-client</code>
 </pre>
           </div>
         </li>
@@ -156,7 +156,7 @@
           <p>En este caso, puede volver a entrar en el entorno en cualquier momento activando de nuevo el entorno:</p>
           <div class="codigo">
             <pre>
-<code class="language-shell">$ . venv-dir/bin/activate</code>
+<code class="language-shell">$ "venv-dir/Scripts/activate"</code>
 </pre>
           </div>
         </li>
@@ -171,7 +171,7 @@
         <li>Si quiere eliminar completamente el entorno virtual, simplemente borre el directorio (con el explorador de Windows o con el comando):
           <div class="codigo">
             <pre>
-<code class="language-shell">rmdir /S venv-dir</code>
+<code class="language-shell">$ rmdir /S venv-dir</code>
 </pre>
           </div>
           <p>En este caso, para volver a utilizar mclibre Python testing client, deberá volver a crear un entorno virtual e instalarlo.</p>
@@ -193,51 +193,58 @@
         <li>Abra una ventana de terminal e instale venv:
           <div class="codigo">
             <pre>
-  <code class="language-shell">$ sudo apt-get install python3-venv</code>
-  </pre>
+<code class="language-shell">$ sudo apt-get install python3-venv</code>
+</pre>
           </div>
         </li>
         <li>Cree un entorno virtual de Python en un directorio (en el ejemplo, el directorio se llama <i>venv-dir</i>):
           <p><strong>Nota</strong>: No utilice sudo al crear el entorno virtual si no quiere tener problemas al instalar paquetes en el entorno virtual:</p>
           <div class="codigo">
             <pre>
-  <code class="language-shell">$ python3 -m venv venv-dir</code>
-  </pre>
+<code class="language-shell">$ python3 -m venv venv-dir</code>
+</pre>
           </div>
         </li>
         <li>Active el entorno:
           <div class="codigo">
             <pre>
-  <code class="language-shell">$ . venv-dir/bin/activate</code>
-  </pre>
+<code class="language-shell">$ . venv-dir/bin/activate</code>
+</pre>
           </div>
         </li>
         <li>Mientras el entorno esté activo, se mostrará el nombre del entorno al principio del <i>prompt</i>:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) $ </code>
-  </pre>
+<code class="language-shell">(venv-dir) $ </code>
+</pre>
+          </div>
+        </li>
+        <li>Actualice pip:
+          <div class="codigo">
+            <pre>
+<code class="language-shell">(venv-dir) $ pip install --upgrade pip</code>
+</pre>
           </div>
         </li>
         <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) pip install pytest</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ pip install pytest</code>
+</pre>
           </div>
         </li>
         <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) pip install requests</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ pip install requests</code>
+</pre>
           </div>
         </li>
         <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ pip install mclibre-python-testing-client</code>
+</pre>
           </div>
         </li>
       </ol>
@@ -252,8 +259,8 @@
         <li>Si ha instalado correctamente mclibre Python testing client en Ubuntu, dispondrá de un nuevo comando llamado <i>mptc</i>. La sintaxis del comando requiere el nombre del programa a probar y el identificador del enunciado del ejercicio:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) $ mptc programa.py 1</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ mptc programa.py 1</code>
+</pre>
           </div>
         </li>
       </ul>
@@ -267,29 +274,29 @@
         <li>Si simplemente quiere salir del entorno virtual de Python, escriba:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) $ deactivate</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ deactivate</code>
+</pre>
           </div>
           <p>En este caso, puede volver a entrar en el entorno en cualquier momento activando de nuevo el entorno:</p>
           <div class="codigo">
             <pre>
-  <code class="language-shell">$ . venv-dir/bin/activate</code>
-  </pre>
+<code class="language-shell">$ . venv-dir/bin/activate</code>
+</pre>
           </div>
         </li>
         <li>Si simplemente quiere desinstalar mclibre Python testing client, escriba:
           <div class="codigo">
             <pre>
-  <code class="language-shell">(venv-dir) $ pip uninstall mclibre-python-testing-client</code>
-  </pre>
+<code class="language-shell">(venv-dir) $ pip uninstall mclibre-python-testing-client</code>
+</pre>
           </div>
           <p>En este caso, conservará el entorno virtual. Para volver a utilizar mclibre Python testing client en este entorno, deberá volver a instalarlo.</p>
         </li>
         <li>Si quiere eliminar completamente el entorno virtual, simplemente borre el directorio:
           <div class="codigo">
             <pre>
-  <code class="language-shell">rm -rf venv-dir</code>
-  </pre>
+<code class="language-shell">$ rm -rf venv-dir</code>
+</pre>
           </div>
           <p>En este caso, para volver a utilizar mclibre Python testing client, deberá volver a crear un entorno virtual e instalarlo.</p>
         </li>
@@ -362,21 +369,21 @@
       <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
         <div class="codigo">
           <pre>
-<code class="language-shell">(venv-dir) pip install pytest</code>
+<code class="language-shell">(venv-dir) $ pip install pytest</code>
 </pre>
         </div>
       </li>
       <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
         <div class="codigo">
           <pre>
-<code class="language-shell">(venv-dir) pip install requests</code>
+<code class="language-shell">(venv-dir) $ pip install requests</code>
 </pre>
         </div>
       </li>
       <li>Instale <a href="https://github.com/BartolomeSintes/mclibre-python-testing">mclibre Python testing client</a> :
         <div class="codigo">
           <pre>
-<code class="language-shell">(venv-dir) pip install mclibre-python-testing-client</code>
+<code class="language-shell">(venv-dir) $ pip install mclibre-python-testing-client</code>
 </pre>
         </div>
       </li>
