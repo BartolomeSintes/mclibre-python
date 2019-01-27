@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Números y operaciones aritméticas elementales. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
-  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
   <script src="../varios/prism.js"></script>
 </head>
 
@@ -15,8 +15,8 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -79,7 +79,7 @@
 
       <p><strong>Nota</strong>:</p>
       <ul>
-        <li><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Si se escribe una coma como separador entre la parte entera y la decimal, Python no lo entiende como separador, sino como una pareja de números (concretamente, lo entiende como una tupla de dos elementos, un tipo de datos que se comenta en la <a href="python-tupla.html">lección sobre tuplas</a>).
+        <li><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Si se escribe una coma como separador entre la parte entera y la decimal, Python no lo entiende como separador, sino como una pareja de números (concretamente, lo entiende como una tupla de dos elementos, un tipo de datos que se comenta en la <a href="python-tupla.html">lección sobre tuplas</a>).
 
           <div class="codigo">
             <pre>
@@ -162,7 +162,7 @@ NameError: name 'j' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2
 <span class="idle-resp">3</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 - 4
-<span class="idle-resp">-1</span><br /><span class="idle-prompt">&gt;&gt;&gt;</span> 5 * 6
+<span class="idle-resp">-1</span><br><span class="idle-prompt">&gt;&gt;&gt;</span> 5 * 6
 <span class="idle-resp">30</span>
 </pre>
     </div>
@@ -177,7 +177,7 @@ NameError: name 'j' is not defined</span>
 <span class="idle-resp">3.0</span>
 </pre>
     </div>
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Dividir por cero genera un error:</p>
 
@@ -192,9 +192,9 @@ ZeroDivisionError: division by zero</span>
 </pre>
     </div>
 
-    <hr class="corta" />
+    <hr class="corta">
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
 
     <div class="codigo">
       <pre>
@@ -205,7 +205,7 @@ ZeroDivisionError: division by zero</span>
 
     <p>Este error se debe a que Python almacena los números decimales en binario y pasar de decimal a binario provoca errores de redondeo, como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>. Es un error que sufren casi todos los lenguajes de programación. Si necesitamos precisión absoluta, debemos utilizar bibliotecas específicas.</p>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Cuando en una fórmula aparecen varias operaciones, Python las efectúa aplicando las reglas usuales de prioridad de las operaciones (primero multiplicaciones y divisiones, después sumas y restas).</p>
 
@@ -227,9 +227,9 @@ ZeroDivisionError: division by zero</span>
 </pre>
     </div>
 
-    <hr class="corta" />
+    <hr class="corta">
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Debido a los errores de redondeo, dos operaciones que debieran dar el mismo resultado pueden dar resultados diferentes:</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Debido a los errores de redondeo, dos operaciones que debieran dar el mismo resultado pueden dar resultados diferentes:</p>
 
     <div class="codigo">
       <pre>
@@ -240,7 +240,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
     </div>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Se pueden escribir sumas y restas seguidas, pero no se recomienda hacerlo porque no es una notación habitual:</p>
 
@@ -269,7 +269,9 @@ ZeroDivisionError: division by zero</span>
 
     <p>El cociente y resto de una división están relacionados con el dividendo y divisor mediante la fórmula:</p>
 
-    <p><img src="../img/matematicas/mates-cociente-resto.svg" alt="Cociente y resto de una división" width="541" height="283" /></p>
+    <p>
+      <img src="../img/matematicas/mates-cociente-resto.svg" alt="Cociente y resto de una división" width="541" height="283">
+    </p>
 
     <p>El cociente es siempre un número entero, pero el resto puede ser entero o decimal. En Python, el resto y el divisor tienen siempre el mismo signo y en valor absoluto (sin signo) el resto es siempre inferior al divisor.</p>
 
@@ -336,7 +338,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
       </div>
 
-      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Cuando el resultado es decimal, pueden aparecer los problemas de redondeo comentados anteriormente.</p>
+      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Cuando el resultado es decimal, pueden aparecer los problemas de redondeo comentados anteriormente.</p>
 
       <div class="codigo">
         <pre>
@@ -397,7 +399,9 @@ ZeroDivisionError: division by zero</span>
 
     <p>Utilizando exponentes negativos o decimales se pueden calcular potencias inversas o raíces n-ésimas.</p>
 
-    <p><img src="../img/matematicas/mates-potencias.svg" alt="Potencias negativas y fraccionarias" width="466" height="159" /></p>
+    <p>
+      <img src="../img/matematicas/mates-potencias.svg" alt="Potencias negativas y fraccionarias" width="466" height="159">
+    </p>
 
     <div class="codigo">
       <pre>
@@ -416,7 +420,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
     </div>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>También se pueden calcular potencias o raíces mediante la función integrada <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero <var>x</var> elevado a <var>y</var> después calcula el resto de la división por <var>z</var>.</p>
 
@@ -523,7 +527,7 @@ ZeroDivisionError: division by zero</span>
         </li>
       </ul>
 
-      <hr class="corta" />
+      <hr class="corta">
 
       <p>La función integrada <span class="idle-func">round</span>() redondea correctamente al número más próximo del orden de magnitud deseado (entero, décimas, decenas, centésimas, centenas, etc). El problema es cuando el número a redondear está justo en medio (por ejemplo, redondear 3.5 a entero, 4.85 a décimas, etc.). En Matemáticas se suele redondear siempre hacia arriba, pero en Python se sigue otro criterio:</p>
       <ul>
@@ -667,7 +671,7 @@ NameError: name 'ceil' is not defined</span>
         </div>
       </li>
     </ul>
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>El problema del redondeo se agudiza cuando se hacen operaciones, puesto que los errores pueden acumularse (aunque a veces se compensan y pasan desapercibidos).</p>
 
@@ -682,7 +686,7 @@ NameError: name 'ceil' is not defined</span>
 
     <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">decimal</a> y existen bibliotecas como <a href="https://code.google.com/archive/p/mpmath">mpmath</a> que admiten precisión arbitraria.</p>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Para saber más:</p>
     <ul>
@@ -807,8 +811,8 @@ NameError: name 'ceil' is not defined</span>
     <p class="ultmod">Última modificación de esta página: 25 de febrero de 2018</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>

@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Ficheros. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
-  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
   <script src="../varios/prism.js"></script>
 </head>
 
@@ -15,8 +15,8 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -74,7 +74,7 @@
 
     <p>En estos apuntes se trabaja únicamente con ficheros de texto y se utiliza siempre el juego de caracteres UTF-8.</p>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Si el sistema operativo utiliza de forma predeterminada el juego de caracteres UTF-8, no haría falta indicar el juego de caracteres al abrir el fichero. Para saber cuál es el juego de caracteres predeterminado se puede ejecutar en IDLE las instrucciones siguientes (en el ejemplo, el juego de caracteres es <a href="https://es.wikipedia.org/wiki/Windows-1252">CP-1252</a>, que utiliza Windows):</p>
 
@@ -99,7 +99,7 @@
       <li><span class="idle-cade">"a"</span>: añadir (crea el fichero si no existe, no borra el contenido existente y escribe al final del fichero)</li>
     </ul>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Se puede escribir en el fichero</p>
     <ul>
@@ -109,7 +109,7 @@
 
     <p>La función <span class="idle-func">print</span>() añade un salto de línea al final de la cadena añadida al fichero, pero el método write no lo hace, por lo que habrá que añadirlo explícitamente.</p>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Los ejemplos siguientes muestran la diferencia entre cada uno de los modos de escritura (usando la función <span class="idle-func">print</span>() o el método write):</p>
     <ul>
@@ -173,7 +173,7 @@ with open(ruta, mode="a", encoding="utf-8") as fichero:
       <li><span class="idle-cade">"r+"</span>: leer y escribir (da error si no existe el fichero, lee desde el principio y es posible desplazarse, pero sólo escribe al final del fichero</li>
     </ul>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Faltan ejemplos de lectura y desplazamiento.</p>
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Faltan ejemplos de lectura y desplazamiento.</p>
   </section>
 
   <section id="abrir-navegador">
@@ -207,7 +207,7 @@ webbrowser.open(ruta)</code>
 </pre>
     </div>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Es fundamental que el juego de caracteres en el que se guarda el fichero (línea 5 en el ejemplo anterior) sea el mismo que el que se declara en la etiqueta <span class="html-eti">&lt;meta /&gt;</span> (línea 9 en el ejemplo anterior). Si no es así, el navegador tendrá problemas al mostrar caracteres "no ingleses" (acentos, eñes, etc.). En el ejemplo anterior se utiliza UTF-8, el juego de caracteres recomendado para páginas web.</p>
   </section>
@@ -225,8 +225,8 @@ webbrowser.open(ruta)</code>
     <p class="ultmod">Última modificación de esta página: 11 de abril de 2018</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>

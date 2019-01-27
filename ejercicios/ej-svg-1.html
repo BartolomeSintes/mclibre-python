@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Ejercicios (1). Coordenadas. SVG. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
   <script src="http://brython.info/src/brython_dist.js"></script>
   <script type="text/python3">
 from browser import document
@@ -829,8 +829,8 @@ document["e44_reinicia"].bind("click", e44_reinicia)
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -864,7 +864,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
   </ul>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al cargar por primera vez la página, o al recargarla, los dibujos pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al cargar por primera vez la página, o al recargarla, los dibujos pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
 
   <section id="ejercicio-11">
     <h2>Gráficos SVG (1) 1 - Punto 1</h2>
@@ -875,18 +875,23 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e11_svg">
       </svg>
       <p id="e11_tmp"></p>
-      <p>x: <input type="text" id="e11_x1" size="4" /> y: <input type="text" id="e11_y1" size="4" /> <button id="e11_boton">Corregir</button> <span id="e11_resultado"></span></p>
+      <p>
+        x: <input type="text" id="e11_x1" size="4">
+        y: <input type="text" id="e11_y1" size="4">
+        <button id="e11_boton">Corregir</button>
+        <span id="e11_resultado"></span>
+      </p>
       <p><button id="e11_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e11_num_correctas">0</span></td>
-          <td><img id="e11_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e11_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e11_num_incorrectas">0</span></td>
-          <td><img id="e11_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e11_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e11_reinicia">Reiniciar contador</button></p>
@@ -902,18 +907,23 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e12_svg">
       </svg>
       <p id="e12_tmp"></p>
-      <p>x: <input type="text" id="e12_x1" size="4" /> y: <input type="text" id="e12_y1" size="4" /> <button id="e12_boton">Corregir</button> <span id="e12_resultado"></span></p>
+      <p>
+        x: <input type="text" id="e12_x1" size="4">
+        y: <input type="text" id="e12_y1" size="4">
+        <button id="e12_boton">Corregir</button>
+        <span id="e12_resultado"></span>
+      </p>
       <p><button id="e12_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e12_num_correctas">0</span></td>
-          <td><img id="e12_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e12_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e12_num_incorrectas">0</span></td>
-          <td><img id="e12_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e12_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e12_reinicia">Reiniciar contador</button></p>
@@ -929,18 +939,23 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e13_svg">
       </svg>
       <p id="e13_tmp"></p>
-      <p>x: <input type="text" id="e13_x1" size="4" /> y: <input type="text" id="e13_y1" size="4" /> <button id="e13_boton">Corregir</button> <span id="e13_resultado"></span></p>
+      <p>
+        x: <input type="text" id="e13_x1" size="4">
+        y: <input type="text" id="e13_y1" size="4">
+        <button id="e13_boton">Corregir</button>
+        <span id="e13_resultado"></span>
+      </p>
       <p><button id="e13_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e13_num_correctas">0</span></td>
-          <td><img id="e13_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e13_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e13_num_incorrectas">0</span></td>
-          <td><img id="e13_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e13_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e13_reinicia">Reiniciar contador</button></p>
@@ -956,18 +971,23 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e14_svg">
       </svg>
       <p id="e14_tmp"></p>
-      <p>x: <input type="text" id="e14_x1" size="4" /> y: <input type="text" id="e14_y1" size="4" /> <button id="e14_boton">Corregir</button> <span id="e14_resultado"></span></p>
+      <p>
+        x: <input type="text" id="e14_x1" size="4">
+        y: <input type="text" id="e14_y1" size="4">
+        <button id="e14_boton">Corregir</button>
+        <span id="e14_resultado"></span>
+      </p>
       <p><button id="e14_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e14_num_correctas">0</span></td>
-          <td><img id="e14_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e14_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e14_num_incorrectas">0</span></td>
-          <td><img id="e14_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e14_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e14_reinicia">Reiniciar contador</button></p>
@@ -983,18 +1003,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e21_svg">
       </svg>
       <p id="e21_tmp"></p>
-      <p>x1: <input type="text" id="e21_x1" size="4" /> y1: <input type="text" id="e21_y1" size="4" /> width: <input type="text" id="e21_width" size="6" /> height: <input type="text" id="e21_height" size="6" /> <button id="e21_boton">Corregir</button> <span id="e21_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e21_x1" size="4">
+        y1: <input type="text" id="e21_y1" size="4">
+        width: <input type="text" id="e21_width" size="6">
+        height: <input type="text" id="e21_height" size="6">
+        <button id="e21_boton">Corregir</button>
+        <span id="e21_resultado"></span>
+      </p>
       <p><button id="e21_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e21_num_correctas">0</span></td>
-          <td><img id="e21_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e21_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e21_num_incorrectas">0</span></td>
-          <td><img id="e21_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e21_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e21_reinicia">Reiniciar contador</button></p>
@@ -1010,18 +1037,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e22_svg">
       </svg>
       <p id="e22_tmp"></p>
-      <p>x1: <input type="text" id="e22_x1" size="4" /> y1: <input type="text" id="e22_y1" size="4" /> width: <input type="text" id="e22_width" size="6" /> height: <input type="text" id="e22_height" size="6" /> <button id="e22_boton">Corregir</button> <span id="e22_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e22_x1" size="4">
+        y1: <input type="text" id="e22_y1" size="4">
+        width: <input type="text" id="e22_width" size="6">
+        height: <input type="text" id="e22_height" size="6">
+        <button id="e22_boton">Corregir</button>
+        <span id="e22_resultado"></span>
+      </p>
       <p><button id="e22_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e22_num_correctas">0</span></td>
-          <td><img id="e22_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e22_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e22_num_incorrectas">0</span></td>
-          <td><img id="e22_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e22_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e22_reinicia">Reiniciar contador</button></p>
@@ -1037,18 +1071,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e23_svg">
       </svg>
       <p id="e23_tmp"></p>
-      <p>x1: <input type="text" id="e23_x1" size="4" /> y1: <input type="text" id="e23_y1" size="4" /> width: <input type="text" id="e23_width" size="6" /> height: <input type="text" id="e23_height" size="6" /> <button id="e23_boton">Corregir</button> <span id="e23_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e23_x1" size="4">
+        y1: <input type="text" id="e23_y1" size="4">
+        width: <input type="text" id="e23_width" size="6">
+        height: <input type="text" id="e23_height" size="6">
+        <button id="e23_boton">Corregir</button>
+        <span id="e23_resultado"></span>
+      </p>
       <p><button id="e23_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e23_num_correctas">0</span></td>
-          <td><img id="e23_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e23_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e23_num_incorrectas">0</span></td>
-          <td><img id="e23_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e23_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e23_reinicia">Reiniciar contador</button></p>
@@ -1064,18 +1105,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e24_svg">
       </svg>
       <p id="e24_tmp"></p>
-      <p>x1: <input type="text" id="e24_x1" size="4" /> y1: <input type="text" id="e24_y1" size="4" /> width: <input type="text" id="e24_width" size="6" /> height: <input type="text" id="e24_height" size="6" /> <button id="e24_boton">Corregir</button> <span id="e24_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e24_x1" size="4">
+        y1: <input type="text" id="e24_y1" size="4">
+        width: <input type="text" id="e24_width" size="6">
+        height: <input type="text" id="e24_height" size="6">
+        <button id="e24_boton">Corregir</button>
+        <span id="e24_resultado"></span>
+      </p>
       <p><button id="e24_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e24_num_correctas">0</span></td>
-          <td><img id="e24_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e24_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e24_num_incorrectas">0</span></td>
-          <td><img id="e24_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e24_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e24_reinicia">Reiniciar contador</button></p>
@@ -1091,18 +1139,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e31_svg">
       </svg>
       <p id="e31_tmp"></p>
-      <p>x1: <input type="text" id="e31_x1" size="4" /> y1: <input type="text" id="e31_y1" size="4" /> x2: <input type="text" id="e31_x2" size="4" /> y2: <input type="text" id="e31_y2" size="4" /> <button id="e31_boton">Corregir</button> <span id="e31_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e31_x1" size="4">
+        y1: <input type="text" id="e31_y1" size="4">
+        x2: <input type="text" id="e31_x2" size="4">
+        y2: <input type="text" id="e31_y2" size="4">
+        <button id="e31_boton">Corregir</button>
+        <span id="e31_resultado"></span>
+      </p>
       <p><button id="e31_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e31_num_correctas">0</span></td>
-          <td><img id="e31_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e31_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e31_num_incorrectas">0</span></td>
-          <td><img id="e31_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e31_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e31_reinicia">Reiniciar contador</button></p>
@@ -1118,18 +1173,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e32_svg">
       </svg>
       <p id="e32_tmp"></p>
-      <p>x1: <input type="text" id="e32_x1" size="4" /> y1: <input type="text" id="e32_y1" size="4" /> x2: <input type="text" id="e32_x2" size="4" /> y2: <input type="text" id="e32_y2" size="4" /> <button id="e32_boton">Corregir</button> <span id="e32_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e32_x1" size="4">
+        y1: <input type="text" id="e32_y1" size="4">
+        x2: <input type="text" id="e32_x2" size="4">
+        y2: <input type="text" id="e32_y2" size="4">
+        <button id="e32_boton">Corregir</button>
+        <span id="e32_resultado"></span>
+      </p>
       <p><button id="e32_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e32_num_correctas">0</span></td>
-          <td><img id="e32_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e32_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e32_num_incorrectas">0</span></td>
-          <td><img id="e32_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e32_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e32_reinicia">Reiniciar contador</button></p>
@@ -1145,18 +1207,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e33_svg">
       </svg>
       <p id="e33_tmp"></p>
-      <p>x1: <input type="text" id="e33_x1" size="4" /> y1: <input type="text" id="e33_y1" size="4" /> x2: <input type="text" id="e33_x2" size="4" /> y2: <input type="text" id="e33_y2" size="4" /> <button id="e33_boton">Corregir</button> <span id="e33_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e33_x1" size="4">
+        y1: <input type="text" id="e33_y1" size="4">
+        x2: <input type="text" id="e33_x2" size="4">
+        y2: <input type="text" id="e33_y2" size="4">
+        <button id="e33_boton">Corregir</button>
+        <span id="e33_resultado"></span>
+      </p>
       <p><button id="e33_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e33_num_correctas">0</span></td>
-          <td><img id="e33_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e33_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e33_num_incorrectas">0</span></td>
-          <td><img id="e33_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e33_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e33_reinicia">Reiniciar contador</button></p>
@@ -1172,18 +1241,25 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e34_svg">
       </svg>
       <p id="e34_tmp"></p>
-      <p>x1: <input type="text" id="e34_x1" size="4" /> y1: <input type="text" id="e34_y1" size="4" /> x2: <input type="text" id="e34_x2" size="4" /> y2: <input type="text" id="e34_y2" size="4" /> <button id="e34_boton">Corregir</button> <span id="e34_resultado"></span></p>
+      <p>
+        x1: <input type="text" id="e34_x1" size="4">
+        y1: <input type="text" id="e34_y1" size="4">
+        x2: <input type="text" id="e34_x2" size="4">
+        y2: <input type="text" id="e34_y2" size="4">
+        <button id="e34_boton">Corregir</button>
+        <span id="e34_resultado"></span>
+      </p>
       <p><button id="e34_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e34_num_correctas">0</span></td>
-          <td><img id="e34_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e34_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e34_num_incorrectas">0</span></td>
-          <td><img id="e34_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e34_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e34_reinicia">Reiniciar contador</button></p>
@@ -1199,18 +1275,24 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e41_svg">
       </svg>
       <p id="e41_tmp"></p>
-      <p>cx: <input type="text" id="e41_cx" size="4" /> cy: <input type="text" id="e41_cy" size="4" /> r: <input type="text" id="e41_r" size="4" /> <button id="e41_boton">Corregir</button> <span id="e41_resultado"></span></p>
+      <p>
+        cx: <input type="text" id="e41_cx" size="4">
+        cy: <input type="text" id="e41_cy" size="4">
+        r: <input type="text" id="e41_r" size="4">
+        <button id="e41_boton">Corregir</button>
+        <span id="e41_resultado"></span>
+      </p>
       <p><button id="e41_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e41_num_correctas">0</span></td>
-          <td><img id="e41_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e41_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e41_num_incorrectas">0</span></td>
-          <td><img id="e41_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e41_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e41_reinicia">Reiniciar contador</button></p>
@@ -1226,18 +1308,24 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e42_svg">
       </svg>
       <p id="e42_tmp"></p>
-      <p>cx: <input type="text" id="e42_cx" size="4" /> cy: <input type="text" id="e42_cy" size="4" /> r: <input type="text" id="e42_r" size="4" /> <button id="e42_boton">Corregir</button> <span id="e42_resultado"></span></p>
+      <p>
+        cx: <input type="text" id="e42_cx" size="4">
+        cy: <input type="text" id="e42_cy" size="4">
+        r: <input type="text" id="e42_r" size="4">
+        <button id="e42_boton">Corregir</button>
+        <span id="e42_resultado"></span>
+      </p>
       <p><button id="e42_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e42_num_correctas">0</span></td>
-          <td><img id="e42_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e42_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e42_num_incorrectas">0</span></td>
-          <td><img id="e42_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e42_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e42_reinicia">Reiniciar contador</button></p>
@@ -1253,18 +1341,24 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e43_svg">
       </svg>
       <p id="e43_tmp"></p>
-      <p>cx: <input type="text" id="e43_cx" size="4" /> cy: <input type="text" id="e43_cy" size="4" /> r: <input type="text" id="e43_r" size="4" /> <button id="e43_boton">Corregir</button> <span id="e43_resultado"></span></p>
+      <p>
+        cx: <input type="text" id="e43_cx" size="4">
+        cy: <input type="text" id="e43_cy" size="4">
+        r: <input type="text" id="e43_r" size="4">
+        <button id="e43_boton">Corregir</button>
+        <span id="e43_resultado"></span>
+      </p>
       <p><button id="e43_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e43_num_correctas">0</span></td>
-          <td><img id="e43_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e43_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e43_num_incorrectas">0</span></td>
-          <td><img id="e43_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e43_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e43_reinicia">Reiniciar contador</button></p>
@@ -1280,18 +1374,24 @@ document["e44_reinicia"].bind("click", e44_reinicia)
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e44_svg">
       </svg>
       <p id="e44_tmp"></p>
-      <p>cx: <input type="text" id="e44_cx" size="4" /> cy: <input type="text" id="e44_cy" size="4" /> r: <input type="text" id="e44_r" size="4" /> <button id="e44_boton">Corregir</button> <span id="e44_resultado"></span></p>
+      <p>
+        cx: <input type="text" id="e44_cx" size="4">
+        cy: <input type="text" id="e44_cy" size="4">
+        r: <input type="text" id="e44_r" size="4">
+        <button id="e44_boton">Corregir</button>
+        <span id="e44_resultado"></span>
+      </p>
       <p><button id="e44_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
           <td style="text-align: right"><span id="e44_num_correctas">0</span></td>
-          <td><img id="e44_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></td>
+          <td><img id="e44_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
         </tr>
         <tr>
           <td>Incorrectas:</td>
           <td style="text-align: right"><span id="e44_num_incorrectas">0</span></td>
-          <td><img id="e44_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></td>
+          <td><img id="e44_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
       <p><button id="e44_reinicia">Reiniciar contador</button></p>
@@ -1302,8 +1402,8 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p class="ultmod">Última modificación de esta página: 14 de abril de 2018</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>

@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Ejercicios. El tipo range(). Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
   <script src="http://brython.info/src/brython_dist.js"></script>
   <script type="text/python3">
 from browser import document
@@ -183,8 +183,8 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -225,7 +225,7 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
   <p>Se pueden consultar unas <a href="ej-range-soluciones.html">posibles soluciones</a>.</p>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Al cargar por primera vez la página, o al recargarla, algunos enunciados pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al cargar por primera vez la página, o al recargarla, algunos enunciados pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
 
   <section id="ejercicio-1">
     <h2><span class="idle-func">range</span>() - 1</h2>
@@ -234,10 +234,21 @@ document["e3_reinicia"].bind("click", e3_reinicia)
 
     <div class="enunciado-test">
       <p>Enunciado: <span id="e1_enunciado" class="idle-resp"></span> </p>
-      <p>Expresión: <input type="text" id="e1_expresion" size="50" value="range(" /> <button id="e1_boton">Evaluar</button> <span id="e1_resultado"></span></p>
+      <p>
+        Expresión:
+        <input type="text" id="e1_expresion" size="50" value="range(">
+        <button id="e1_boton">Evaluar</button>
+        <span id="e1_resultado"></span>
+      </p>
       <p><button id="e1_nuevo">Nuevo enunciado</button></p>
-      <p><span id="e1_num_correctas">0</span> <img id="e1_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e1_num_incorrectas">0</span> <img id="e1_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></p>
+      <p>
+        <span id="e1_num_correctas">0</span>
+        <img id="e1_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas">
+      </p>
+      <p>
+        <span id="e1_num_incorrectas">0</span>
+        <img id="e1_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas">
+      </p>
       <p><button id="e1_reinicia">Reiniciar contador</button></p>
       <p id="e1_tmp"></p>
     </div>
@@ -249,11 +260,25 @@ document["e3_reinicia"].bind("click", e3_reinicia)
     <p>Escriba un tipo <span class="idle-func">range</span>() que sea equivalente a la lista mostrada:</p>
 
     <div class="enunciado-test">
-      <p>Enunciado: <span id="e2_enunciado" class="idle-resp"></span> </p>
-      <p>Expresión: <input type="text" id="e2_expresion" size="50" value="range(" /> <button id="e2_boton">Evaluar</button> <span id="e2_resultado"></span></p>
+      <p>
+        Enunciado:
+        <span id="e2_enunciado" class="idle-resp"></span>
+      </p>
+      <p>
+        Expresión:
+        <input type="text" id="e2_expresion" size="50" value="range(">
+        <button id="e2_boton">Evaluar</button>
+        <span id="e2_resultado"></span>
+      </p>
       <p><button id="e2_nuevo">Nuevo enunciado</button></p>
-      <p><span id="e2_num_correctas">0</span> <img id="e2_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e2_num_incorrectas">0</span> <img id="e2_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></p>
+      <p>
+        <span id="e2_num_correctas">0</span>
+        <img id="e2_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas">
+      </p>
+      <p>
+        <span id="e2_num_incorrectas">0</span>
+        <img id="e2_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas">
+      </p>
       <p><button id="e2_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
@@ -264,11 +289,25 @@ document["e3_reinicia"].bind("click", e3_reinicia)
     <p>Escriba un tipo <span class="idle-func">range</span>() que sea equivalente a la lista mostrada:</p>
 
     <div class="enunciado-test">
-      <p>Enunciado: <span id="e3_enunciado" class="idle-resp"></span> </p>
-      <p>Expresión: <input type="text" id="e3_expresion" size="50" value="range(" /> <button id="e3_boton">Evaluar</button> <span id="e3_resultado"></span></p>
+      <p>
+        Enunciado:
+        <span id="e3_enunciado" class="idle-resp"></span>
+      </p>
+      <p>
+        Expresión:
+        <input type="text" id="e3_expresion" size="50" value="range(">
+        <button id="e3_boton">Evaluar</button>
+        <span id="e3_resultado"></span>
+      </p>
       <p><button id="e3_nuevo">Nuevo enunciado</button></p>
-      <p><span id="e3_num_correctas">0</span> <img id="e3_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas" /></p>
-      <p><span id="e3_num_incorrectas">0</span> <img id="e3_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas" /></p>
+      <p>
+        <span id="e3_num_correctas">0</span>
+        <img id="e3_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas">
+      </p>
+      <p>
+        <span id="e3_num_incorrectas">0</span>
+        <img id="e3_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas">
+      </p>
       <p><button id="e3_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
@@ -628,8 +667,8 @@ document["e3_reinicia"].bind("click", e3_reinicia)
     <p class="ultmod">Última modificación de esta página: 13 de marzo de 2017</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>

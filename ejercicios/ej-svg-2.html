@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Ejercicios (2). viewbox. SVG. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
-  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
   <script src="../varios/prism.js"></script>
 </head>
 
@@ -15,8 +15,8 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -47,7 +47,11 @@
       <pre><code class="language-html" id="e11-forma"></code></pre>
       <p id="e11-svg"></p>
       <p>
-        <strong>viewBox</strong>: x: <input type="text" id="e11-x" size="4" /> y: <input type="text" id="e11-y" size="4" /> width: <input type="text" id="e11-width" size="4" /> height: <input type="text" id="e11-height" size="4" />
+        <strong>viewBox</strong>:
+        x: <input type="text" id="e11-x" size="4">
+        y: <input type="text" id="e11-y" size="4">
+        width: <input type="text" id="e11-width" size="4">
+        height: <input type="text" id="e11-height" size="4">
         <button onclick="comprueba('e11')">Corregir</button>
         <span id="e11-resultado"></span>
       </p>
@@ -89,7 +93,11 @@
       <pre><code class="language-html" id="e12-forma"></code></pre>
       <p id="e12-svg"></p>
       <p>
-        <strong>viewBox</strong>: x: <input type="text" id="e12-x" size="4" /> y: <input type="text" id="e12-y" size="4" /> width: <input type="text" id="e12-width" size="4" /> height: <input type="text" id="e12-height" size="4" />
+        <strong>viewBox</strong>:
+        x: <input type="text" id="e12-x" size="4">
+        y: <input type="text" id="e12-y" size="4">
+        width: <input type="text" id="e12-width" size="4">
+        height: <input type="text" id="e12-height" size="4">
         <button onclick="comprueba('e12')">Corregir</button>
         <span id="e12-resultado"></span>
       </p>
@@ -131,7 +139,11 @@
       <pre><code class="language-html" id="e13-forma"></code></pre>
       <p id="e13-svg"></p>
       <p>
-        <strong>viewBox</strong>: x: <input type="text" id="e13-x" size="4" /> y: <input type="text" id="e13-y" size="4" /> width: <input type="text" id="e13-width" size="4" /> height: <input type="text" id="e13-height" size="4" />
+        <strong>viewBox</strong>:
+        x: <input type="text" id="e13-x" size="4">
+        y: <input type="text" id="e13-y" size="4">
+        width: <input type="text" id="e13-width" size="4">
+        height: <input type="text" id="e13-height" size="4">
         <button onclick="comprueba('e13')">Corregir</button>
         <span id="e13-resultado"></span>
       </p>
@@ -201,7 +213,7 @@
       if (total == 0) {
         total = 1;
       }
-      val[num]["lCorrectas"].setAttribute("width", Math.max(anchoContador *  val[num]["nCorrectas"] / total, 1))
+      val[num]["lCorrectas"].setAttribute("width", Math.max(anchoContador * val[num]["nCorrectas"] / total, 1))
       val[num]["lIncorrectas"].setAttribute("width", Math.max(anchoContador * val[num]["nIncorrectas"] / total, 1))
     }
 
@@ -222,35 +234,35 @@
       val[num]["resultado"] = document.getElementById(`${num}-resultado`);
 
       // Forma SVG
-      var recXMin = val[num]["xMin"] ;
-      var recXMax = val[num]["xMax"]  - 1;
-      var recYMin = val[num]["yMin"] ;
-      var recYMax = val[num]["yMax"]  - 1;
+      var recXMin = val[num]["xMin"];
+      var recXMax = val[num]["xMax"] - 1;
+      var recYMin = val[num]["yMin"];
+      var recYMax = val[num]["yMax"] - 1;
       var recX = recXMin + Math.round(Math.random() * (recXMax - recXMin));
       var recY = recYMin + Math.round(Math.random() * (recYMax - recYMin));
       var recWidthMin = 1;
-      var recWidthMax = val[num]["xMax"]  - recX;
+      var recWidthMax = val[num]["xMax"] - recX;
       var recWidth = recWidthMin + Math.round(Math.random() * (recWidthMax - recWidthMin));
       var recHeightMin = 1;
-      var recHeightMax = val[num]["yMax"]  - recY;
+      var recHeightMax = val[num]["yMax"] - recY;
       var recHeight = recHeightMin + Math.round(Math.random() * (recHeightMax - recHeightMin));
 
       val[num]["forma"].innerHTML = `&lt;rect x=\"${recX}\" y=\"${recY}\" width=\"${recWidth}\" height=\"${recHeight}\" /&gt;`;
       Prism.highlightElement(val[num]["forma"]);
 
       // viewBox
-      var viewboxXMin = val[num]["xMin"]  - (val[num]["xMax"]  - val[num]["xMin"] );
-      var viewboxXMax = val[num]["xMax"]  + (val[num]["xMax"]  - val[num]["xMin"] );
-      var viewboxYMin = val[num]["yMin"]  - (val[num]["yMax"]  - val[num]["yMin"] );
-      var viewboxYMax = val[num]["yMax"]  + (val[num]["yMax"]  - val[num]["yMin"] );
-      val[num]["viewboxX"]  = viewboxXMin + Math.round(Math.random() * (recX - viewboxXMin));
-      val[num]["viewboxY"]  = viewboxYMin + Math.round(Math.random() * (recY - viewboxYMin));
+      var viewboxXMin = val[num]["xMin"] - (val[num]["xMax"] - val[num]["xMin"]);
+      var viewboxXMax = val[num]["xMax"] + (val[num]["xMax"] - val[num]["xMin"]);
+      var viewboxYMin = val[num]["yMin"] - (val[num]["yMax"] - val[num]["yMin"]);
+      var viewboxYMax = val[num]["yMax"] + (val[num]["yMax"] - val[num]["yMin"]);
+      val[num]["viewboxX"] = viewboxXMin + Math.round(Math.random() * (recX - viewboxXMin));
+      val[num]["viewboxY"] = viewboxYMin + Math.round(Math.random() * (recY - viewboxYMin));
       var viewboxX2 = recX + recWidth + Math.round(Math.random() * (viewboxXMax - recX - recWidth));
       var viewboxY2 = recY + recHeight + Math.round(Math.random() * (viewboxYMax - recY - recHeight));
-      val[num]["viewboxWidth"]  = viewboxX2 - val[num]["viewboxX"] ;
-      val[num]["viewboxHeight"]  = viewboxY2 - val[num]["viewboxY"] ;
+      val[num]["viewboxWidth"] = viewboxX2 - val[num]["viewboxX"];
+      val[num]["viewboxHeight"] = viewboxY2 - val[num]["viewboxY"];
 
-      val[num]["svg"].innerHTML = `<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"${val[num]["viewboxWidth"]  * 25}\" height=\"${val[num]["viewboxHeight"]  * 25}\" viewBox=\"${val[num]["viewboxX"] } ${val[num]["viewboxY"] } ${val[num]["viewboxWidth"] } ${val[num]["viewboxHeight"] }\" style=\"background-color: lightgray\"><rect x=\"${recX}\" y=\"${recY}\" width=\"${recWidth}\" height=\"${recHeight}\" fill=\"red\" /></svg>`;
+      val[num]["svg"].innerHTML = `<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"${val[num]["viewboxWidth"] * 25}\" height=\"${val[num]["viewboxHeight"] * 25}\" viewBox=\"${val[num]["viewboxX"]} ${val[num]["viewboxY"]} ${val[num]["viewboxWidth"]} ${val[num]["viewboxHeight"]}\" style=\"background-color: lightgray\"><rect x=\"${recX}\" y=\"${recY}\" width=\"${recWidth}\" height=\"${recHeight}\" fill=\"red\" /></svg>`;
       val[num]["x"].value = val[num]["y"].value = val[num]["width"].value = val[num]["height"].value = "";
       val[num]["x"].removeAttribute("style");
       val[num]["y"].removeAttribute("style");
@@ -275,27 +287,27 @@
       val[num]["x"] = document.getElementById(`${num}-x`);
       val[num]["y"] = document.getElementById(`${num}-y`);
 
-      if (val[num]["x"].value && val[num]["y"].value && val[num]["width"].value && val[num]["height"].value && val[num]["x"].value == val[num]["viewboxX"]  && val[num]["y"].value == val[num]["viewboxY"]  && val[num]["width"].value == val[num]["viewboxWidth"]  && val[num]["height"].value == val[num]["viewboxHeight"] ) {
+      if (val[num]["x"].value && val[num]["y"].value && val[num]["width"].value && val[num]["height"].value && val[num]["x"].value == val[num]["viewboxX"] && val[num]["y"].value == val[num]["viewboxY"] && val[num]["width"].value == val[num]["viewboxWidth"] && val[num]["height"].value == val[num]["viewboxHeight"]) {
         val[num]["resultado"].textContent = "¡Correcto!";
         val[num]["nCorrectas"]++;
         genera(num);
       } else {
-        if (val[num]["x"].value == "" || val[num]["x"].value != val[num]["viewboxX"] ) {
+        if (val[num]["x"].value == "" || val[num]["x"].value != val[num]["viewboxX"]) {
           val[num]["x"].setAttribute("style", "outline: 1px solid red");
         } else {
           val[num]["x"].removeAttribute("style");
         }
-        if (val[num]["y"].value == "" || val[num]["y"].value != val[num]["viewboxY"] ) {
+        if (val[num]["y"].value == "" || val[num]["y"].value != val[num]["viewboxY"]) {
           val[num]["y"].setAttribute("style", "outline: 1px solid red");
         } else {
           val[num]["y"].removeAttribute("style");
         }
-        if (val[num]["width"].value == "" || val[num]["width"].value != val[num]["viewboxWidth"] ) {
+        if (val[num]["width"].value == "" || val[num]["width"].value != val[num]["viewboxWidth"]) {
           val[num]["width"].setAttribute("style", "outline: 1px solid red");
         } else {
           val[num]["width"].removeAttribute("style");
         }
-        if (val[num]["height"].value == "" || val[num]["height"].value != val[num]["viewboxHeight"] ) {
+        if (val[num]["height"].value == "" || val[num]["height"].value != val[num]["viewboxHeight"]) {
           val[num]["height"].setAttribute("style", "outline: 1px solid red");
         } else {
           val[num]["height"].removeAttribute("style");
@@ -311,8 +323,8 @@
     <p class="ultmod">Última modificación de esta página: 14 de abril de 2018</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>

@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Lenguajes de programación. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../varios/python.css" title="mclibre" />
-  <link rel="icon" href="../varios/favicon.ico" />
-  <link rel="stylesheet" href="../varios/prism-python.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
   <script src="../varios/prism.js"></script>
 </head>
 
@@ -15,8 +15,8 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48" /></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -57,7 +57,7 @@
     </ul>
 
     <p>En el ejemplo citado de las ráices cuadradas, el compilador o intérprete tendría que ser capaz de convertir la instrucción de raíz cuadrada que hubiera escrito el programador en una serie de sumas, restas, multiplicaciones o divisiones que acaben dando el resultado deseado.</p>
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>En Informática, normalmente se utiliza el término <strong>programa</strong> para referirse a las dos cosas:</p>
     <ul>
@@ -66,7 +66,7 @@
     </ul>
 
     <p>Eso puede causar alguna confusión, pero se espera que el lector/oyente entienda por el contexto de cuál de los dos conceptos se está hablando.</p>
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Las ventajas de usar lenguajes de programación son numerosas:</p>
     <ul>
@@ -74,7 +74,7 @@
       <li>un mismo código fuente se puede acabar ejecutando en ordenadores con diferentes juegos de instrucciones, usando compiladores o intérpretes que sean capaces de realizar la traducción.</li>
       <li>mejorando los compiladores o intérpretes, un mismo código fuente se puede acabar convirtiendo en programas ejecutables más rápidos.</li>
     </ul>
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>Los ordenadores siguen al pie de la letra las instrucciones de los programas ejecutables. Por tanto, los programas deben tener en cuenta todos los posibles resultados de todas las instrucciones e incluir las instrucciones a seguir en cada caso, de manera que el ordenador no se quede atascado en algún punto del programa. En el ejemplo citado de las raíces cuadradas, el programa tiene que tener en cuenta que no se pueden calcular las raíces cuadradas de números negativos (sin recurrir a los números complejos) y no tiene que pedirle al ordenador que lo haga porque seguramente se producirá un error y el programa se interrumpirá.</p>
 
@@ -87,89 +87,105 @@
 
     <div class="mcl-diapo" style="height: 640px">
       <div id="d1">
-        <p><img src="../img/lenguajes/trabajo-tiempo-1.png" alt="Gráfica Trabajo-Tiempo 1" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-1.png" alt="Gráfica Trabajo-Tiempo 1" width="764" height="500">
+        </p>
 
         <p>Cuando un trabajo se hace manualmente, el tiempo empleado para realizar un trabajo suele ser directamente proporcional a la cantidad de trabajo.</p>
 
         <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d2"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d2">
-        <p><img src="../img/lenguajes/trabajo-tiempo-2.png" alt="Gráfica Trabajo-Tiempo 2" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-2.png" alt="Gráfica Trabajo-Tiempo 2" width="764" height="500">
+        </p>
 
         <p>Cuando un informático hace un trabajo manualmente, su rendimiento es como el del no informático.</p>
 
         <p class="control">
-          <a href="#d1"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d3"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d1"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d3"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d3">
-        <p><img src="../img/lenguajes/trabajo-tiempo-3.png" alt="Gráfica Trabajo-Tiempo 3" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-3.png" alt="Gráfica Trabajo-Tiempo 3" width="764" height="500">
+        </p>
 
         <p>Pero llega un punto en el que el informático se aburre de las tareas repetitivas ...</p>
 
         <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d4"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d2"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d4"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d4">
-        <p><img src="../img/lenguajes/trabajo-tiempo-4.png" alt="Gráfica Trabajo-Tiempo 4" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-4.png" alt="Gráfica Trabajo-Tiempo 4" width="764" height="500">
+        </p>
 
         <p>... y escribe un programa para automatizar la tarea. Por supuesto, escribir, probar y corregir un programa exige mucho tiempo. Tiempo que el no informático puede dedicar a seguir trabajando.</p>
 
         <p class="control">
-          <a href="#d3"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d5"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d3"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d5"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d5">
-        <p><img src="../img/lenguajes/trabajo-tiempo-5.png" alt="Gráfica Trabajo-Tiempo 5" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-5.png" alt="Gráfica Trabajo-Tiempo 5" width="764" height="500">
+        </p>
 
         <p>Cuando el informático puede empezar a usar el programa, el no informático llevará mucho trabajo adelantado.</p>
 
         <p class="control">
-          <a href="#d4"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d6"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d4"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d6"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d6">
-        <p><img src="../img/lenguajes/trabajo-tiempo-6.png" alt="Gráfica Trabajo-Tiempo 6" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-6.png" alt="Gráfica Trabajo-Tiempo 6" width="764" height="500">
+        </p>
 
         <p>Pero si el programa funciona, sin apenas esfuerzo adicional, el informático puede aumentar la carga de trabajo realizada...</p>
 
         <p class="control">
-          <a href="#d5"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d7"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d5"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d7"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d7">
-        <p><img src="../img/lenguajes/trabajo-tiempo-7.png" alt="Gráfica Trabajo-Tiempo 7" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-7.png" alt="Gráfica Trabajo-Tiempo 7" width="764" height="500">
+        </p>
 
         <p>... y superar en productividad al no informático.</p>
 
         <p class="control">
-          <a href="#d6"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <a href="#d8"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48" /></a>
+          <a href="#d6"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d8"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
         </p>
       </div>
 
       <div id="d8">
-        <p><img src="../img/lenguajes/trabajo-tiempo-8.png" alt="Gráfica Trabajo-Tiempo 8" width="764" height="500" /></p>
+        <p>
+          <img src="../img/lenguajes/trabajo-tiempo-8.png" alt="Gráfica Trabajo-Tiempo 8" width="764" height="500">
+        </p>
 
         <p>Al final, el informático puede hacer más y más trabajo sin necesidad de invertir más tiempo, mientras que el no informático descubre que no puede competir y necesita seguir invirtiendo horas y horas.</p>
 
         <p class="control">
-          <a href="#d7"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48" /></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48" /> </p>
+          <a href="#d7"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
       </div>
     </div>
   </section>
@@ -185,12 +201,12 @@
 
     <p>Desde entonces, se han inventado muchísmos lenguajes de programación, que han permitido a los programadores resolver problemas cada vez más complejos.</p>
 
-    <hr class="corta" />
+    <hr class="corta">
 
     <p>La imagen siguiente, basada en un <a href="https://commons.wikimedia.org/wiki/File:Genealogical_tree_of_programming_languages.svg">dibujo de la Wikipedia</a>, muestra algunos de los lenguajes de programación más importantes de la historia, la mayoría de los cuales se siguen utilizando en la actualidad:</p>
 
     <p class="captura">
-      <img src="../img/lenguajes/lenguajes-programacion-historia.png" alt="Relaciones entre lenguajes de programación" width="705" height="400" />
+      <img src="../img/lenguajes/lenguajes-programacion-historia.png" alt="Relaciones entre lenguajes de programación" width="705" height="400">
     </p>
 
     <ul>
@@ -268,8 +284,8 @@
     <p class="ultmod">Última modificación de esta página: 11 de marzo de 2016</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br />
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>
