@@ -456,6 +456,7 @@
         </ul>
       </li>
       <li>Sobre los <a href="http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html">cambios en Python 3 (Nick Coghlan)</a></li>
+      <li><a href="https://eev.ee/blog/2016/07/31/python-faq-why-should-i-use-python-3/">Why should I use Python 3?</a>, de Evelyn Woods (31/07/18) </li>
       <li><a href="https://realpython.com/python37-new-features/">Cool New Features in Python 3.7</a>, de Geir Arne Hjelle (27/06/18)</li>
     </ul>
   </section>
@@ -469,7 +470,7 @@
 
     <hr class="corta">
 
-    <p>Un primer obstáculo en el proceso de transición de Python 2 a Python 3 ha sido la propia disponibilidad de Python 3 en las distribuciones GNU/Linux. Muchas herramientas internas de las distribuciones están escritas en Python y su conversión de Python 2 a Python 3 no era fácil, por lo que las distribuciones no podían pasar simplemente de incluir una versión a otra.</p>
+    <p>Un primer obstáculo en el proceso de transición de Python 2 a Python 3 fue la propia disponibilidad de Python 3 en las distribuciones GNU/Linux. Muchas herramientas internas de las distribuciones están escritas en Python y su conversión de Python 2 a Python 3 no era fácil, por lo que las distribuciones no podían pasar simplemente de incluir una versión a otra.</p>
 
     <p>Hasta 2015, Python 2 siguió siendo la versión predeterminada de Python en la mayoría de distribuciones GNU/Linux (aunque se podía instalar Python 3 sin problemas en ellas). Felizmente, esta situación está en vías de solución:</p>
 
@@ -480,10 +481,10 @@
 
       <li>En abril de 2015 Debian empezó a discutir los planes de transición a Python 3. Debian 9 (publicado en junio de 2017) incluye Python 2.7.13 y Python 3.5.3 y Debian 10 (que se espera publicar en 2019) debería pasar completamente a Python 3 [<a href="https://lwn.net/Articles/642334/">artículo de Linux Week News del 29/04/15</a>].</li>
 
-      <li><a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, incluyó soporte para Python 3 (concretamente, Python 3.5) en la versión Pike, publicada en <a href="https://www.openstack.org/news/view/340/openstack-pike-delivers-composable-infrastructure-services-and-improved-lifecycle-management">agosto de 2017</a></li>
+      <li><a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, adoptó Python 3 (concretamente, Python 3.5) en la versión Pike, publicada en <a href="https://www.openstack.org/news/view/340/openstack-pike-delivers-composable-infrastructure-services-and-improved-lifecycle-management">agosto de 2017</a></li>
     </ul>
 
-    <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que se vayan a seguir publicando actualizaciones de seguridad de Python 2.7 hasta 2020, como mínimo.</p>
+    <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que la fundación Python prolongó el período de publicación de actualizaciones de seguridad de Python 2.7 hasta finales de 2019. A partir de 2020 serán las distribuciones las que sigan actualizando Python 2.7 durante el tiempo que se mantengan las propias distribuciones (por ejemplo, RedHat 7 se mantendrá hasta el año 2024, como mínimo).</p>
 
     <hr class="corta">
 
@@ -497,7 +498,7 @@
 
     <p>Varias páginas web hacen un seguimiento de la compatibilidad con Python 3 de las bibliotecas más populares</p>
     <ul>
-      <li><a href="https://python3wos.appspot.com/">Python 3 Wall of Superpowers</a> (parece que desde abril de 2018 esta web ya no actualiza los datos) y <a href="http://py3readiness.org/">Python 3 Readiness</a> muestran cómo la inmensa mayoría de las bibliotecas más populares ya están disponibles en Python 3</li>
+      <li><a href="http://py3readiness.org/">Python 3 Readiness</a> y <a href="https://python3wos.appspot.com/">Python 3 Wall of Superpowers</a> (parece que desde abril de 2018 esta web ya no actualiza los datos) muestran cómo la inmensa mayoría de las bibliotecas más populares ya están disponibles en Python 3</li>
       <li>la distribución GNU/Linux Fedora lleva el seguimiento de los paquetes de Python que forman parte de la distribución: <a href="http://fedora.portingdb.xyz/">paquetes</a> y <a href="http://fedora.portingdb.xyz/history/">evolución</a>.</li>
       <li><a href="https://hugovk.github.io/drop-python/">Drop Python</a> muestra la proporción de las bibliotecas más populares que han dejado de dar soporte a las versiones obsoletas de Python (Python 2.6, Python 3.2 y Python 3.3).</li>
     </ul>
@@ -606,7 +607,7 @@
           <th>2014</th>
           <td>Mar: Py 3.4</td>
           <td>Dic: Fedora 21: </td>
-          <td>Jun: RHEL 7: </td>
+          <td>Jun: RHEL 7: Py 2.7</td>
           <td></td>
           <td>Abr: Ubuntu 14.04 LTS (trusty): </td>
           <td>Oct: SLE 12: </td>
@@ -656,7 +657,7 @@
             Nov: Fedora 14: <br>
             May: Fedora 13:
           </td>
-          <td>Nov: RHEL 6: </td>
+          <td>Nov: RHEL 6: Py 2.6</td>
           <td></td>
           <td>Abr: Ubuntu 10.04 LTS (lucid): </td>
           <td></td>
@@ -698,7 +699,7 @@
             Nov: Fedora 8: <br>
             May: Fedora 7:
           </td>
-          <td>Mar: RHEL 5: </td>
+          <td>Mar: RHEL 5: Py 2.4</td>
           <td>Abr: Debian 4 (etch): </td>
           <td></td>
           <td></td>
@@ -742,7 +743,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de enero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 28 de enero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
