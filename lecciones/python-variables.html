@@ -217,7 +217,7 @@ c = a + b
 
     <p>Las variables en Python se crean cuando se definen por primera vez, es decir, cuando se les asigna un valor por primera vez. Para asignar un valor a una variable se utiliza el operador de igualdad (=). A la izquierda de la igualdad se escribe el nombre de la variable y a la derecha el valor que se quiere dar a la variable.</p>
 
-    <p>En el ejemplo siguiente se almacena el número decimal 2,5 en una variable de nombre
+    <p>En el ejemplo siguiente se almacena el número decimal 2.5 en una variable de nombre
       <var>x</var> (como se comenta en el apartado anterior, realmente habría que decir que se crea la etiqueta
       <var>x</var> para hacer referencia al objeto número decimal 2.5). Fíjese en que los números decimales se escriben con punto (.) y no con coma (,).</p>
 
@@ -267,7 +267,7 @@ NameError: name 'y' is not defined</span></pre>
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre
-'<span class="idle-resp">Pepito Conejo'</span>
+<span class="idle-resp">'Pepito Conejo'</span>
 </pre>
     </div>
 
@@ -299,6 +299,8 @@ NameError: name 'Pepe' is not defined</span>
     <div class="codigo">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> nombre
+<span class="idle-resp">'Pepito Conejo'</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> nombre
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre
 <span class="idle-erro">Traceback (most recent call last):
@@ -411,8 +413,8 @@ NameError: name 'nombre' is not defined</span>
     <p>Los nombres de las funciones integradas sí que se pueden utilizar como nombres de variables, pero más vale no hacerlo porque a continuación ya no se puede utilizar la función como tal:</p>
     <div class="codigo">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span> = 3
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> = 3
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     print("Hola")
@@ -423,14 +425,14 @@ TypeError: 'int' object is not callable</span>
     <p>Borrando con <span class="idle-rese">del</span> la variable con nombre de función, se recupera la función.</p>
     <div class="codigo">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span> = 3
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> = 3
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-erro">Traceback (most recent call last):
   File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
     print("Hola")
 TypeError: 'int' object is not callable</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> print
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">print</span>(<span class="idle-cade">"Hola"</span>)
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> <span class="idle-func">print</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
 <span class="idle-resp">Hola</span>
 </pre>
     </div>
@@ -700,7 +702,7 @@ NameError: name 'semanas' is not defined</span>
 
     <p><strong>Nota</strong>: Las dos notaciones son completamente equivalentes en el caso de los objetos inmutables (números, cadenas, tuplas), pero en el caso de los objetos mutables (listas, diccionarios, etc.) hay una pequeña diferencia que se comenta en <a href="python-variables-2.html#variables-objeto-mutable">la lección Variables 2</a></p>
 
-    <p>Lo que no se permite en Python son los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
+    <p>En Python no existen los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
 
     <div class="codigo">
       <pre>
@@ -796,7 +798,7 @@ ValueError: too many values to unpack</span>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 29 de enero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

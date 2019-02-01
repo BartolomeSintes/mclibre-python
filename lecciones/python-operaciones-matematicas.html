@@ -136,6 +136,14 @@ NameError: name 'j' is not defined</span>
 <span class="idle-resp">(-1+1j)</span>
 </pre>
       </div>
+
+      <p>El resultado de una operación en la que intervienen números complejos es un número complejo, aunque el resultado no tenga parte imaginaria.</p>
+      <div class="codigo">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1j * 1j
+<span class="idle-resp">(-1+0j)</span>
+</pre>
+      </div>
     </section>
   </section>
 
@@ -194,19 +202,6 @@ ZeroDivisionError: division by zero</span>
 
     <hr class="corta">
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
-
-    <div class="codigo">
-      <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 100 / 3
-<span class="idle-resp">33.333333333333336</span>
-</pre>
-    </div>
-
-    <p>Este error se debe a que Python almacena los números decimales en binario y pasar de decimal a binario provoca errores de redondeo, como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>. Es un error que sufren casi todos los lenguajes de programación. Si necesitamos precisión absoluta, debemos utilizar bibliotecas específicas.</p>
-
-    <hr class="corta">
-
     <p>Cuando en una fórmula aparecen varias operaciones, Python las efectúa aplicando las reglas usuales de prioridad de las operaciones (primero multiplicaciones y divisiones, después sumas y restas).</p>
 
     <div class="codigo">
@@ -222,10 +217,23 @@ ZeroDivisionError: division by zero</span>
 
     <div class="codigo">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (5+8) / (7-2)
+<span class="idle-prompt">&gt;&gt;&gt;</span> (5 + 8) / (7 - 2)
 <span class="idle-resp">2.6</span>
 </pre>
     </div>
+
+    <hr class="corta">
+
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
+
+    <div class="codigo">
+      <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 100 / 3
+<span class="idle-resp">33.333333333333336</span>
+</pre>
+    </div>
+
+    <p>Este error se debe a que Python almacena los números decimales en binario y pasar de decimal a binario provoca errores de redondeo, como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>. Es un error que sufren casi todos los lenguajes de programación. Si necesitamos precisión absoluta, debemos utilizar bibliotecas específicas.</p>
 
     <hr class="corta">
 
@@ -248,7 +256,7 @@ ZeroDivisionError: division by zero</span>
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 + - + 4
 <span class="idle-resp">-1</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 + - + - 4
+<span class="idle-prompt">&gt;&gt;&gt;</span> 3 - + - + 4
 <span class="idle-resp">7</span>
 </pre>
     </div>
@@ -301,9 +309,9 @@ ZeroDivisionError: division by zero</span>
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 // 5 / 2
 <span class="idle-resp">2.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26//5) / 2
+<span class="idle-prompt">&gt;&gt;&gt;</span> (26 // 5) / 2
 <span class="idle-resp">2.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 // (5/2)
+<span class="idle-prompt">&gt;&gt;&gt;</span> 26 // (5 / 2)
 <span class="idle-resp">10.0</span>
 </pre>
       </div>
@@ -312,9 +320,9 @@ ZeroDivisionError: division by zero</span>
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 // 2
 <span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26/5) // 2
+<span class="idle-prompt">&gt;&gt;&gt;</span> (26 / 5) // 2
 <span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5//2)
+<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5 // 2)
 <span class="idle-resp">13.0</span>
 </pre>
       </div>
@@ -357,9 +365,9 @@ ZeroDivisionError: division by zero</span>
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 % 5 / 2
 <span class="idle-resp">0.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26%5) / 2
+<span class="idle-prompt">&gt;&gt;&gt;</span> (26 % 5) / 2
 <span class="idle-resp">0.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 % (5/2)
+<span class="idle-prompt">&gt;&gt;&gt;</span> 26 % (5 / 2)
 <span class="idle-resp">1.0</span>
 </pre>
       </div>
@@ -368,9 +376,9 @@ ZeroDivisionError: division by zero</span>
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 % 2
 <span class="idle-resp">1.2000000000000002</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26/5) % 2
+<span class="idle-prompt">&gt;&gt;&gt;</span> (26 / 5) % 2
 <span class="idle-resp">1.2000000000000002</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5%2)
+<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5 % 2)
 <span class="idle-resp">26.0</span>
 </pre>
       </div>
@@ -487,7 +495,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
               </div>
             </li>
-            <li>Si el segundo argumento es 0, se redondea al entero más próximo, como cuando no se escribe segundo argumento, pero la diferencia es que el resultado es decimal y no entero.
+            <li>Si el segundo argumento es 0 y el primero es un número decimal, se redondea al entero más próximo, como cuando no se escribe segundo argumento, pero la diferencia es que el resultado es decimal y no entero.
 
               <div class="codigo">
                 <pre>
@@ -498,7 +506,7 @@ ZeroDivisionError: division by zero</span>
 </pre>
               </div>
 
-              <p>Si el primer argumento es un número entero, el resultado sigue siendo el mismo número entero:</p>
+              <p>Si el segundo argumento es 0 y el primero es un número entero, el resultado es entero:</p>
               <div class="codigo">
                 <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(435, 0)
@@ -604,7 +612,7 @@ ZeroDivisionError: division by zero</span>
     <section id="redondear-floor-ceil">
       <h3>Redondear al entero anterior o posterior: las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>()</h3>
 
-      <p>Para redondear un número al entero anterior o posterior, se pueden utilizar las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>(), que están incluidas en la biblioteca <strong>math</strong>. Estas funciones sólo admiten un argumento numérico y devuelven valores enteros.</p>
+      <p>Para redondear un número al entero anterior o posterior, se pueden utilizar las funciones <span class="idle-func">floor</span>() y <span class="idle-func">ceil</span>(), que están incluidas en la biblioteca <strong>math</strong>. Estas funciones sólo admiten un argumento (el número o el cálculo a redondear) y devuelven valores enteros.</p>
 
       <p>Antes de utilizar estas funciones, hay que importarlas, o se generará un error.</p>
 
@@ -628,8 +636,12 @@ NameError: name 'ceil' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> math <span class="idle-rese">import</span> floor
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(5 / 2)
 <span class="idle-resp">2</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(2.9999)
+<span class="idle-resp">2</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> math <span class="idle-rese">import</span> ceil
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(5 / 2)
+<span class="idle-resp">3</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(2.0001)
 <span class="idle-resp">3</span>
 </pre>
       </div>
@@ -684,7 +696,7 @@ NameError: name 'ceil' is not defined</span>
 </pre>
     </div>
 
-    <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/reference/simple_stmts.html#assignment-statements">decimal</a> y existen bibliotecas como <a href="https://code.google.com/archive/p/mpmath">mpmath</a> que admiten precisión arbitraria.</p>
+    <p>En la mayoría de situaciones, estos errores no tienen consecuencias importantes en los resultados finales, pero si en una aplicación concreta se necesita total exactitud, se deben utilizar bibliotecas específicas. Python incluye la biblioteca <a href="https://docs.python.org/3/library/decimal.html">decimal</a> y existen bibliotecas como <a href="http://mpmath.org/">mpmath</a> que admiten precisión arbitraria.</p>
 
     <hr class="corta">
 
@@ -701,7 +713,7 @@ NameError: name 'ceil' is not defined</span>
   <section id="funciones-integradas">
     <h2>Otras funciones integradas (<i>built-in functions</i>)</h2>
 
-    <p>El intérprete de Python incorpora varias funciones integradas que realizan operaciones muy habituales.</p>
+    <p>El intérprete de Python incorpora varias funciones integradas que realizan operaciones matemáticas muy habituales.</p>
 
     <section id="valor-absoluto">
       <h3>Valor absoluto: <span class="idle-func">abs</span>() </h3>
