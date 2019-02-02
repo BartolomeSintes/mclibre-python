@@ -601,6 +601,14 @@ h2.con-aside, h3.con-aside, h4-con-aside {
     display: none;
   }
 
+  pre {
+    color: black !important;
+  }
+
+  pre span {
+    color: black !important;
+  }
+
   code {
     font-size: 100% !important;
   }

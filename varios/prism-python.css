@@ -17,7 +17,7 @@ code.language-python { }
 /* si se cambia aquí line-height, hay que cambiar line-height también en los números de línea */
 
 /* Estilo para Python imitando a IDLE */
-div.codigo                                 { background-color: white; color: black;
+div.codigo.idle                                 { background-color: white; color: black;
                                              padding-top: 5px; padding-bottom: 5px; }
 code.language-python .boolean              { color: black;   } /* boolean                             */
 code.language-python .builtin              { color: #800080; } /* built-in functions                  */
@@ -44,7 +44,7 @@ code.language-python .comment              { color: #6a9955; } /* comment       
 code.language-python .decorator            { color: white;   } /* decorator                           */
 code.language-python .function             { color: #4ccab2; } /* function header def some_name(...): */
 code.language-python .keyword              { color: #c586c0; } /* keyword                             */
-code.language-python .number               { color: #55a7a0; } /* number                              */
+code.language-python .number               { color: #b5cea8; } /* number                              */
 code.language-python .operator             { color: #d4d4d4; } /* operators                           */
 code.language-python .punctuation          { color: white;   } /* punctuation                         */
 code.language-python .string               { color: #ce9178; } /* string (of any type)                */
@@ -117,12 +117,12 @@ pre.line-numbers > code {
 .line-numbers .line-numbers-rows {
   position: absolute;
   pointer-events: none;
-  top: 0;
+  top: -2px;            /* para ajustar la posición de los números */
   font-size: 100%;
   left: -2.8em;
   width: 2em; /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
-  line-height: 120%;
+  line-height: 144.8%;
   border-right: 1px solid #999;
 
   -webkit-user-select: none;
@@ -139,7 +139,7 @@ pre.line-numbers > code {
 
 .line-numbers-rows > span:before {
   content: counter(linenumber);
-  color: #999;
+  color: white;
   display: block;
   padding-right: 0.8em;
   text-align: right;

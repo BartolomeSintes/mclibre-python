@@ -44,7 +44,7 @@
 
     <p>Las listas pueden contener elementos del mismo tipo:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> primos = [2, 3, 5, 7, 11, 13]
 <span class="idle-prompt">&gt;&gt;&gt;</span> diasLaborables = [<span class="idle-cade">"Lunes"</span>, <span class="idle-cade">"Martes"</span>, <span class="idle-cade">"Miércoles"</span>, <span class="idle-cade">"Jueves"</span>, <span class="idle-cade">"Viernes"</span>]
@@ -53,19 +53,19 @@
 
     <p>O pueden contener elementos de tipos distintos:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre><span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [<span class="idle-cade">"Lunes"</span>, 27, <span class="idle-cade">"Octubre"</span>, 1997]</pre>
     </div>
 
     <p>O pueden contener listas:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre><span class="idle-prompt">&gt;&gt;&gt;</span> peliculas = [ [<span class="idle-cade">"Senderos de Gloria"</span>, 1957], [<span class="idle-cade">"Hannah y sus hermanas"</span>, 1986]]</pre>
     </div>
 
     <p>Las listas pueden tener muchos niveles de anidamiento:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre><span class="idle-prompt">&gt;&gt;&gt;</span> directores = [ [<span class="idle-cade">"Stanley Kubrick"</span>, [<span class="idle-cade">"Senderos de Gloria"</span>, 1957]], [<span class="idle-cade">"Woody Allen"</span>, [<span class="idle-cade">"Hannah y sus hermanas"</span>, 1986]] ]</pre>
     </div>
 
@@ -73,7 +73,7 @@
 
     <p>Las variables de tipo lista hacen referencia a la lista completa.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista = [1, <span class="idle-cade">"a"</span>, 45]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista
@@ -85,7 +85,7 @@
 
     <p>Una lista que no contiene ningún elemento se denomina <strong>lista vacía</strong>:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista = [ ]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista
@@ -97,7 +97,7 @@
 
     <p>Al definir una lista se puede hacer referencia a otras variables.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepe"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> edad = 25
@@ -114,7 +114,7 @@
     <ul>
       <li>Si se trata objetos inmutables, el resto de variables no resultan afectadas, como muestra el siguiente ejemplo:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepe"</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span> edad = 25
@@ -129,7 +129,7 @@
       </li>
       <li>Pero si se trata de objetos mutables y al modificar la variable se modifica el objeto, el resto de variables sí resultan afectadas, como muestra el siguiente ejemplo:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> nombres = [<span class="idle-cade">"Ana"</span>, <span class="idle-cade">"Bernardo"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> edades = [22, 21]
@@ -148,7 +148,7 @@
 
     <p>Una lista puede contener listas (que a su vez pueden contener listas, que a su vez etc.):</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> persona1 = [<span class="idle-cade">"Ana"</span>, 25]
 <span class="idle-prompt">&gt;&gt;&gt;</span> persona2 = [<span class="idle-cade">"Benito"</span>, 23]
@@ -162,7 +162,7 @@
 
     <p>Se puede acceder a cualquier elemento de una lista escribiendo el nombre de la lista y entre corchetes el número de orden en la lista. El primer elemento de la lista es el número 0.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista = [10, 20, 30, 40]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista[2]
@@ -176,7 +176,7 @@
 
     <p>Se pueden concatenar dos listas utilizando la operación suma.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista1 = [10, 20, 30, 40]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista2 = [30, 20]
@@ -192,7 +192,7 @@
 
     <p>Las listas se pueden concatenar con el símbolo de la suma (+):</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales = [<span class="idle-cade">"E"</span>, <span class="idle-cade">"I"</span>, <span class="idle-cade">"O"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales
@@ -208,7 +208,7 @@
 
     <p>El operador suma (+) necesita que los dos operandos sean listas:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales = [<span class="idle-cade">"E"</span>, <span class="idle-cade">"I"</span>, <span class="idle-cade">"O"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales = vocales + <span class="idle-cade">"Y"</span>
@@ -223,7 +223,7 @@
 
     <p>También se puede utilizar el operador += para añadir elementos a una lista:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales = [<span class="idle-cade">"A"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> vocales += [<span class="idle-cade">"E"</span>]
@@ -240,7 +240,7 @@
 
     <p>Cada elemento se identifica por su posición en la lista, teniendo en cuenta que se empieza a contar por 0.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"Octubre"</span>, 1997]
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha[0]
@@ -254,7 +254,7 @@
 
     <p>No se puede hacer referencia a elementos fuera de la lista:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"Octubre"</span>, 1997]
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha[3]
@@ -267,7 +267,7 @@
 
     <p>Se pueden utilizar números negativos (el último elemento tiene el índice -1 y los elementos anteriores tienen valores descendentes):</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"Octubre"</span>, 1997]
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha[-1]
@@ -281,7 +281,7 @@
 
     <p>Se puede modificar cualquier elemento de una lista haciendo referencia a su posición:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"Octubre"</span>, 1997]
 <span class="idle-prompt">&gt;&gt;&gt;</span> fecha[2] = 1998
@@ -300,7 +300,7 @@
 
     <p>De una lista se pueden extraer sublistas, utilizando la notación nombreDeLista[inicio:límite], donde inicio y límite hacen el mismo papel que en el tipo <span class="idle-func">range</span>(inicio, límite).</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> dias = [<span class="idle-cade">"Lunes"</span>, <span class="idle-cade">"Martes"</span>, <span class="idle-cade">"Miércoles"</span>, <span class="idle-cade">"Jueves"</span>, <span class="idle-cade">"Viernes"</span>, <span class="idle-cade">"Sábado"</span>, <span class="idle-cade">"Domingo"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> dias[1:4] <span class="idle-come"># Se extrae una lista con los valores 1, 2 y 3</span>
@@ -320,7 +320,7 @@
 
     <p>Se puede modificar una lista modificando sublistas. De esta manera se puede modificar un elemento o varios a la vez e insertar o eliminar elementos.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>, <span class="idle-cade">"D"</span>, <span class="idle-cade">"E"</span>, <span class="idle-cade">"F"</span>, <span class="idle-cade">"G"</span>, <span class="idle-cade">"H"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras[1:4] = [<span class="idle-cade">"X"</span>]      <span class="idle-come"># Se sustituye la sublista ['B','C','D'] por ['X']</span>
@@ -342,7 +342,7 @@
 
     <p>Al definir sublistas, Python acepta valores fuera del rango, que se interpretan como extremos (al final o al principio de la lista).</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras = [<span class="idle-cade">"D"</span>, <span class="idle-cade">"E"</span>, <span class="idle-cade">"F"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras[3:3] = [<span class="idle-cade">"G"</span>, <span class="idle-cade">"H"</span>]           <span class="idle-come"># Añade ["G", "H"] al final de la lista</span>
@@ -363,7 +363,7 @@
 
     <p>La palabra reservada <span class="idle-rese">del</span> permite eliminar un elemento o varios elementos a la vez de una lista, e incluso la misma lista.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>, <span class="idle-cade">"D"</span>, <span class="idle-cade">"E"</span>, <span class="idle-cade">"F"</span>, <span class="idle-cade">"G"</span>, <span class="idle-cade">"H"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> letras[4]   <span class="idle-come"># Elimina la sublista ['E']</span>
@@ -383,7 +383,7 @@
 
     <p>Si se intenta borrar un elemento que no existe, se produce un error:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>, <span class="idle-cade">"D"</span>, <span class="idle-cade">"E"</span>, <span class="idle-cade">"F"</span>, <span class="idle-cade">"G"</span>, <span class="idle-cade">"H"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> letras[10]
@@ -396,7 +396,7 @@ IndexError: list assignment index out of range</span>
 
     <p>Aunque si se hace referencia a sublistas, Python sí que acepta valores fuera de rango, pero lógicamente no se modifican las listas.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> letras = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>, <span class="idle-cade">"D"</span>, <span class="idle-cade">"E"</span>, <span class="idle-cade">"F"</span>, <span class="idle-cade">"G"</span>, <span class="idle-cade">"H"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> letras[100:200] <span class="idle-come"># No elimina nada</span>
@@ -412,7 +412,7 @@ IndexError: list assignment index out of range</span>
 
     <p>Con variables de tipo entero, decimal o de cadena, es fácil tener una copia de una variable para conservar un valor que en la variable original se ha perdido:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
 <span class="idle-prompt">&gt;&gt;&gt;</span> b = a <span class="idle-come"># Hacemos una copia del valor de a</span>
@@ -426,7 +426,7 @@ IndexError: list assignment index out of range</span>
 
     <p>Pero si hacemos esto mismo con listas, nos podemos llevar un sorpresa:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista1 = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista2 = lista1 <span class="idle-come"># Intentamos hacer una copia de la lista lista1</span>
@@ -442,7 +442,7 @@ IndexError: list assignment index out of range</span>
 
     <p>Si queremos copiar una lista, de manera que conservemos su valor aunque modifiquemos la lista original debemos utilizar la notación de sublistas.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista1 = [<span class="idle-cade">"A"</span>, <span class="idle-cade">"B"</span>, <span class="idle-cade">"C"</span>]
 <span class="idle-prompt">&gt;&gt;&gt;</span> lista2 = lista1[:] <span class="idle-come"># Hacemos una copia de la lista lista1</span>

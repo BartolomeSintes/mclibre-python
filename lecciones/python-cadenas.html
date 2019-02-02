@@ -51,7 +51,7 @@
 
       <p>Las cadenas de texto se pueden delimitar con comillas simples (') o con comillas dobles ("):</p>
 
-      <div class="codigo">
+      <div class="codigo idle">
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Esto es una cadena'</span>)
 <span class="idle-resp">Esto es una cadena</span>
@@ -72,7 +72,7 @@
 
       <p>Las cadenas se deben cerrar con las mismas comillas con las que se abrieron, de lo contrario estaremos cometiendo un error de sintaxis:</p>
 
-      <div class="codigo">
+      <div class="codigo idle">
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span><span class="idle-errbg">                      </span>
 <span class="idle-erro">SyntaxError: EOL while scanning string literal</span>
@@ -99,7 +99,7 @@
 
       <p>Las comillas triples permiten que las cadenas ocupen más de una línea:</p>
 
-      <div class="codigo">
+      <div class="codigo idle">
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"""Esto es una cadena
 que ocupa
@@ -131,7 +131,7 @@ que ocupa
 
     <p>Se pueden escribir comillas simples en cadenas delimitadas con comillas dobles y viceversa:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
@@ -142,7 +142,7 @@ que ocupa
 
     <p>Pero no se pueden escribir en el interior de una cadena comillas del mismo tipo que las comillas delimitadoras:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles "</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">")</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
@@ -150,7 +150,7 @@ que ocupa
 </pre>
     </div>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples '</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">')</span>
 <span class="idle-erro">SyntaxError: invalid syntax</span>
@@ -183,7 +183,7 @@ que ocupa
 
     <p>Otra forma de escribir comillas en una cadena es utilizar los caracteres especiales <span class="idle-cade">\"</span> y <span class="idle-cade">\'</span> que representan los caracteres comillas dobles y simples respectivamente y que Python no interpreta en ningún caso como delimitadores de cadena:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
@@ -194,7 +194,7 @@ que ocupa
 
     <p>Se pueden utilizar ambos caracteres especiales independientemente del delimitador utilizado</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' y las comillas dobles \" delimitan cadenas.')</span>
 <span class="idle-resp">Las comillas simples ' y las comillas dobles " delimitan cadenas.</span>
@@ -211,25 +211,25 @@ que ocupa
     <p>Los caracteres especiales empiezan por una contrabarra (<span class="idle-cade">\</span>).</p>
     <ul>
       <li>Comilla doble: <span class="idle-cade">\"</span>
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles \" delimitan cadenas."</span>)
 <span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
-    </pre>
+</pre>
         </div>
       </li>
 
       <li>Comilla simple: <span class="idle-cade">\'</span>
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
 <span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
-    </pre>
+</pre>
         </div>
       </li>
 
       <li>Salto de línea: <span class="idle-cade">\n</span>
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Una línea\nOtra línea"</span>)
 <span class="idle-resp">Una línea
@@ -237,7 +237,7 @@ Otra línea</span></pre>
         </div>
       </li>
       <li>Tabulador: <span class="idle-cade">\t</span>
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"1\t2\t3"</span>)
 <span class="idle-resp">1       2       3</span>
@@ -256,7 +256,7 @@ Otra línea</span></pre>
 
     <p>En la mayoría de los casos IDLE escribe el resultado entre comillas simples, para indicar que se trata de una cadena.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Esto es una cadena"</span>
 <span class="idle-resp">'Esto es una cadena'</span>
@@ -267,7 +267,7 @@ Otra línea</span></pre>
 
     <p>Si el resultado contiene únicamente comillas simples, IDLE lo escribe entre comillas dobles.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>
 <span class="idle-resp">"Las comillas simples ' delimitan cadenas."</span>
@@ -278,7 +278,7 @@ Otra línea</span></pre>
 
     <p>Pero si aparecen ambas comillas, IDLE lo escribe entre comillas simples y las comillas simples se muestran como caracteres especiales.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Las comillas simples \' y dobles \" delimitan cadenas.'</span>
 <span class="idle-resp">'Las comillas simples \' y dobles " delimitan cadenas.'</span>
@@ -295,7 +295,7 @@ Otra línea</span></pre>
 
     <p>Si un programa contiene cadenas muy largas, las cadenas se pueden simplemente partir en varias cadenas.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres "</span>
           <span class="idle-cade">"partiendo la cadena en dos"</span>)
@@ -305,7 +305,7 @@ Otra línea</span></pre>
 
     <p>También se puede escribir el carácter contrabarra (\) para partir una cadena en varias líneas.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres \</span>
 <span class="idle-cade">partiendo la cadena en dos"</span>)

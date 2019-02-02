@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Programa básico. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Programa básico de Python</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Plantilla programa</h2>
+
+      <ul>
+        <li><a href="#plantilla ">Plantilla básica</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por completar</p>
+
+  <section id="plantilla">
+    <h2>Programa básico de Python</h2>
+
+    <p>El ejemplo siguiente muestra la plantilla de programa básico de Python 3 que utilizaremos durante el curso.</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("¡Hola, mundo!")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="elementos">
+    <h2>Justificación de la plantilla</h2>
+
+    <p>Los programas de Python no necesitan realmente definir una función main(). Es decir, los dos programas siguientes producirían el mismo resultado:</p>
+
+    <ul>
+      <li>Programa con función main():
+        <div class="codigo">
+          <pre>
+<code class="language-python">def main():
+  print("¡Hola, mundo!")
+
+if __name__ == "__main__":
+  main()</code>
+</pre>
+        </div>
+      </li>
+      <li>Programa sin función main()
+        <div class="codigo">
+          <pre>
+<code class="language-python">print("¡Hola, mundo!")</code>
+</pre>
+        </div>
+      </li>
+      </ul>
+
+      <p>La diferencia entre ambos programas sólo se apercibiría en caso de importar estos programas (aunque por el tipo de programa, en realidad no tendría mucho sentido importar estos programas).</p>
+
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 1 de febrero de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

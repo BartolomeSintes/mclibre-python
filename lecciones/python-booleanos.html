@@ -44,7 +44,7 @@
 
     <p>Para comprobar si un elemento se considera <span class="idle-rese">True</span> o <span class="idle-rese">False</span>, se puede convertir a su valor booleano mediante la función <span class="idle-func">bool</span>().</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(0)
 <span class="idle-resp">False</span>
@@ -63,7 +63,7 @@
 </pre>
     </div>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(25)
 <span class="idle-resp">True</span>
@@ -88,7 +88,7 @@
     <ul>
       <li><span class="idle-rese">and</span>: "y" lógico. Este operador da como resultado <span class="idle-rese">True</span> si y sólo si sus dos operandos son <span class="idle-rese">True</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span>
 <span class="idle-resp">True</span>
@@ -103,7 +103,7 @@
       </li>
       <li><span class="idle-rese">or</span>: "o" lógico. Este operador da como resultado <span class="idle-rese">True</span> si algún operando es <span class="idle-rese">True</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
 <span class="idle-resp">True</span>
@@ -120,7 +120,7 @@
       </li>
       <li><span class="idle-rese">not</span>: negación. Este operador da como resultado <span class="idle-rese">True</span> si y sólo si su argumento es <span class="idle-rese">False</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">not</span> <span class="idle-rese">True</span>
 <span class="idle-resp">False</span>
@@ -140,7 +140,7 @@
     <ul>
       <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span class="idle-rese">and</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span>  <span class="idle-rese">not</span> <span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>
 <span class="idle-resp">False</span>
@@ -152,7 +152,7 @@
       </li>
       <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span class="idle-rese">or</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span>  <span class="idle-rese">not</span> <span class="idle-rese">False</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
 <span class="idle-resp">True</span>
@@ -165,7 +165,7 @@
       </li>
       <li>El operador <span class="idle-rese">and</span> se evalúa antes que el operador <span class="idle-rese">or</span>:
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
 <span class="idle-resp">True</span>
@@ -176,7 +176,7 @@
 </pre>
         </div>
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span> <span class="idle-rese">and False</span>
 <span class="idle-resp">True</span>
@@ -193,7 +193,7 @@
 
     <p>Si en las expresiones lógicas se utilizan valores distintos de <span class="idle-rese">True</span> o <span class="idle-rese">False</span>, Python utiliza esos valores en vez de <span class="idle-rese">True</span> o <span class="idle-rese">False</span>.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">or</span> 4
 <span class="idle-resp">3</span>
@@ -202,7 +202,7 @@
 
     <p>Si se quieren mostrar valores booleanos, se puede convertir el resultado a un valor booleano:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">or</span> 4
 <span class="idle-resp">3</span>
@@ -221,7 +221,7 @@
     <ul>
       <li><strong>&gt;</strong> Mayor que; <strong>&lt;</strong> Menor que;
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 3 &gt; 2
 <span class="idle-resp">True</span>
@@ -231,7 +231,7 @@
       </li>
       <li><strong>&gt;=</strong> Mayor o igual que; <strong>&lt;=</strong> Menor o igual que;
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 2 &gt;= 1 + 1
 <span class="idle-resp">True</span>
@@ -241,7 +241,7 @@
       </li>
       <li><strong>==</strong> Igual que; <strong>!=</strong> Distinto de;
 
-        <div class="codigo">
+        <div class="codigo idle">
           <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 2 == 1 + 1
 <span class="idle-resp">True</span>
@@ -263,7 +263,7 @@
 
     <p>Pyhon permite encadenar varias comparaciones y el resultado será verdadero si y sólo si todas las comparaciones lo son.</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1 &gt; 2
 <span class="idle-resp">True</span>
@@ -273,7 +273,7 @@
 
     <p>Encadenar comparaciones no está permitido en otros lenguajes como PHP, en los que las comparaciones deben combinarse mediante operadores lógicos <span class="idle-rese">and</span>, lo que también puede hacerse en Python:</p>
 
-    <div class="codigo">
+    <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1  <span class="idle-rese">and</span> 3 + 1 &gt; 2
 <span class="idle-resp">True</span>
