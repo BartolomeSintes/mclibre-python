@@ -6,31 +6,51 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 14 de abril de 2018                    */
+/* 2 de febrero de 2019                     */
 /*                                          */
-
-@font-face {
-  font-family: "Inconsolata";
-  src: url("fonts/inconsolata.woff");
-}
 
 /* Estilo para Python imitando a IDLE */
 
-code { font-family: "Inconsolata", monospace; line-height: 120%; /* font-weight: bold; */ }
+code { line-height: 120%; /* font-weight: bold; */ }
 
 code.language-python { }
-/* si se cambia aquí line-eight, hay que cambiar line-height también en los números de línea */
+/* si se cambia aquí line-height, hay que cambiar line-height también en los números de línea */
 
+/* Estilo para Python imitando a IDLE */
+div.codigo                                 { background-color: white; color: black;
+                                             padding-top: 5px; padding-bottom: 5px; }
+code.language-python .boolean              { color: black;   } /* boolean                             */
 code.language-python .builtin              { color: #800080; } /* built-in functions                  */
-code.language-python .class-name           {                   } /* class header class SomeName(...):   */
+code.language-python .class-name           { color: black;   } /* class header class SomeName(...):   */
 code.language-python .comment              { color: #FF0000; } /* comment                             */
+code.language-python .decorator            { color: black;   } /* decorator                           */
 code.language-python .function             { color: #0000FF; } /* function header def some_name(...): */
 code.language-python .keyword              { color: #FF7700; } /* keyword                             */
-code.language-python .number               {                   } /* number                              */
-code.language-python .operator             {                   } /* operators                           */
-code.language-python .punctuation          {                   } /* punctuation                         */
+code.language-python .number               { color: black;   } /* number                              */
+code.language-python .operator             { color: black;   } /* operators                           */
+code.language-python .punctuation          { color: black;   } /* punctuation                         */
 code.language-python .string               { color: #00AA00; } /* string (of any type)                */
+code.language-python .string-interpolation { color: black;   } /* string-interpolation                */
 code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any type)                */
+
+/* Estilo para Python imitando a Visual Studio Code con tema Dark+ */
+
+div.codigo                                 { background-color: #1e1e1e; color: white;
+                                             padding-top: 5px; padding-bottom: 5px; }
+code.language-python .boolean              { color: white;   } /* boolean                             */
+code.language-python .builtin              { color: #dcdcac; } /* built-in functions                  */
+code.language-python .class-name           { color: white    } /* class header class SomeName(...):   */
+code.language-python .comment              { color: #6a9955; } /* comment                             */
+code.language-python .decorator            { color: white;   } /* decorator                           */
+code.language-python .function             { color: #4ccab2; } /* function header def some_name(...): */
+code.language-python .keyword              { color: #c586c0; } /* keyword                             */
+code.language-python .number               { color: #55a7a0; } /* number                              */
+code.language-python .operator             { color: #d4d4d4; } /* operators                           */
+code.language-python .punctuation          { color: white;   } /* punctuation                         */
+code.language-python .string               { color: #ce9178; } /* string (of any type)                */
+code.language-python .string-interpolation { color: white;   } /* string-interpolation                */
+code.language-python .triple-quoted-string { color: #ce9178; } /* string (of any type)                */
+
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 

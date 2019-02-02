@@ -6,14 +6,14 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 26 de octubre de 2018                    */
+/* 2 de febrero de 2019                     */
 /*                                          */
 
 /* CSS comun */
 
 @font-face {
-  font-family: "Inconsolata";
-  src: url("fonts/inconsolata.woff");
+  font-family: "Consolas";
+  src: url("fonts/consolas.woff");
 }
 
 html {
@@ -64,8 +64,8 @@ h2, h3, h4 {
 pre, pre code {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Inconsolata", monospace;  /* Chrome user agent style sheet */
-  line-height: 120%;
+  font-family: "Consolas", monospace;  /* Chrome user agent style sheet */
+  line-height: 145%;
 }
 
 hr {
@@ -307,7 +307,7 @@ div.codigo, div[class^="resultado"], div[class^="enunciado"] {
 }
 
 div.codigo {
-  font-family: "Inconsolata", monospace;
+  font-family: "Consolas", monospace;
 }
 
 div.resultado-object {
@@ -650,6 +650,20 @@ code.language-sql {
 .css-funcion { color: #4700FF; fill: #4700FF; }
 
 /* Estilo para Python imitando a IDLE */
+
+.idle-prompt { color: #770000; }
+.idle-resp   { color: #0000FF; }
+.idle-rese   { color: #FF7700; }
+.idle-cade   { color: #00AA00; }
+.idle-erro   { color: #FF0000; }
+.idle-errbg  { background-color: #FC7674; }
+.idle-func   { color: #800080; }
+.idle-fundef { color: #0000FF; }
+.idle-come   { color: #FF0000; }
+.idle-menu   { background-color: #D4D0C8; font-family: serif;}
+.idle-otro   { color: black; }
+
+/* Estilo para Python imitando a VSC */
 
 .idle-prompt { color: #770000; }
 .idle-resp   { color: #0000FF; }
