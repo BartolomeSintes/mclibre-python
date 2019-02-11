@@ -51,7 +51,12 @@
   <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-variables.html">ejercicios de Variables, Entrada y salida y Operaciones aritméticas elementales.</a></p>
 
   <section id="ejercicio-1">
-    <h2>Operaciones aritméticas - 1 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 1 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1</p>
+    </aside>
 
     <div class="codigo">
       <pre>
@@ -75,47 +80,61 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="language-python">def main():
-  print("CÁLCULO DE LA MEDIA DE DOS NÚMEROS")
-  numero_1 = float(input("Escriba un número: "))
-  numero_2 = float(input("Escriba otro número: "))
+    print("CÁLCULO DE LA MEDIA DE DOS NÚMEROS")
+    numero_1 = float(input("Escriba un número: "))
+    numero_2 = float(input("Escriba otro número: "))
 
-  print(
-      f"La media aritmética de {numero_1} y {numero_2}"
-      f"es {(numero_1+numero_2) / 2}"
-  )
+    print(
+        f"La media aritmética de {numero_1} y {numero_2} "
+        f"es {(numero_1 + numero_2) / 2}"
+    )
 
 
 if __name__ == "__main__":
-  main()</code></pre>
+    main()</code>
+</pre>
     </div>
   </section>
 
   <section id="ejercicio-2">
-    <h2>Operaciones aritméticas - 2 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 2 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>2</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)")
-peso = float(input("¿Cuánto pesa? "))
-altura = float(input("¿Cuánto mide en metros? "))
+<code class="language-python">def main():
+    print("CÁLCULO DEL ÍNDICE DE MASA CORPORAL (IMC)")
+    peso = float(input("¿Cuánto pesa? "))
+    altura = float(input("¿Cuánto mide en metros? "))
 
-imc = peso / altura**2
+    imc = peso / altura ** 2
 
-print(f"Su imc es {round(imc, 1)}")
-print("Un imc muy alto indica obesidad. Los valores \"normales\" de imc están")
-print("entre 20 y 25, pero esos límites dependen de la edad, del sexo, de la")
-print("constitución física, etc.")</code>
+    print(f"Su imc es {round(imc, 1)}")
+    print(
+        "Un ímc muy alto indica obesidad. Los valores normales de imc están entre 20 y 25,"
+    )
+    print(
+        "pero esos límites dependen de la edad, del sexo, de la constitución física, etc."
+    )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
     <p>El cálculo del índice de masa corporal podría expresarse de varias maneras:</p>
 
     <div class="codigo">
-      <pre><code class="language-python">imc = peso / altura**2</code></pre>
+      <pre><code class="language-python">imc = peso / altura ** 2</code></pre>
     </div>
 
     <div class="codigo">
-      <pre><code class="language-python">imc = peso / (altura*altura)</code></pre>
+      <pre><code class="language-python">imc = peso / (altura * altura)</code></pre>
     </div>
 
     <div class="codigo">
@@ -125,92 +144,144 @@ print("constitución física, etc.")</code>
 
   <section id="ejercicio-3">
     <h2>Operaciones aritméticas - 3 - Solución</h2>
-    <ol>
-      <li>Pies y pulgadas
 
-        <div class="codigo">
-          <pre>
-<code class="language-python">print("CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS")
-pies = float(input("Escriba una cantidad de pies: "))
-pulgadas = float(input("Escriba una cantidad de pulgadas: "))
+    <h3 class="con-aside">3-1. Pies y pulgadas</h3>
 
-centimetros = (pies*12 + pulgadas) * 2.54
-
-print(f"{pies} pies y {pulgadas} pulgadas son {centimetros} cm")</code>
-</pre>
-        </div>
-
-        <p>El cálculo de los centímetro podría expresarse de varias maneras</p>
-
-        <div class="codigo">
-          <pre><code class="language-python">centimetros = (pies*12 + pulgadas) * 2.54</code></pre>
-        </div>
-
-        <div class="codigo">
-          <pre><code class="language-python">centimetros = pies*12*2.54 + pulgadas*2.54</code></pre>
-        </div>
-      </li>
-      <li>Pulgadas
-
-        <div class="codigo">
-          <pre>
-<code class="language-python">print("CONVERTIDOR DE PULGADAS A CENTÍMETROS")
-pulgadas = float(input("Escriba una cantidad de pulgadas: "))
-
-centimetros = pulgadas * 2.54
-
-print(f"{pulgadas} pulgadas son {centimetros} cm")</code>
-</pre>
-        </div>
-      </li>
-      <li>Pies
-
-        <div class="codigo">
-          <pre>
-<code class="language-python">print("CONVERTIDOR DE PIES A CENTÍMETROS")
-pies = float(input("Escriba una cantidad de pies: "))
-
-centimetros = pies * 12 * 2.54
-
-print(f"{pies} pies son {centimetros} cm")</code>
-</pre>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <section id="ejercicio-4">
-    <h2>Operaciones aritméticas - 4 - Solución</h2>
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>3</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT")
-celsius = float(input("Escriba una temperatura en grados Celsius: "))
+<code class="language-python">def main():
+    print("CONVERTIDOR DE PIES Y PULGADAS A CENTÍMETROS")
+    pies = float(input("Escriba una cantidad de pies: "))
+    pulgadas = float(input("Escriba una cantidad de pulgadas: "))
 
-fahrenheit = 1.8*celsius + 32
+    centimetros = (pies * 12 + pulgadas) * 2.54
 
-print(f"{celsius} ºC son {fahrenheit} ºF")</code>
+    print(f"{pies} pies y {pulgadas} pulgadas son {centimetros} cm")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+
+    <p>El cálculo de los centímetro podría expresarse de varias maneras</p>
+
+    <div class="codigo">
+      <pre><code class="language-python">centimetros = (pies * 12 + pulgadas) * 2.54</code></pre>
+    </div>
+
+    <div class="codigo">
+      <pre><code class="language-python">centimetros = pies * 12 * 2.54 + pulgadas * 2.54</code></pre>
+    </div>
+
+    <h3 class="con-aside">3-1. Pulgadas</h3>
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>4</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("CONVERTIDOR DE PULGADAS A CENTÍMETROS")
+    pulgadas = float(input("Escriba una cantidad de pulgadas: "))
+
+    centimetros = pulgadas * 2.54
+
+    print(f"{pulgadas} pulgadas son {centimetros} cm")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+
+    <h3 class="con-aside">3-1. Pies</h3>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>5</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("CONVERTIDOR DE PIES A CENTÍMETROS")
+    pies = float(input("Escriba una cantidad de pies: "))
+
+    centimetros = pies * 12 * 2.54
+
+    print(f"{pies} pies son {centimetros} cm")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2 class="con-aside">Operaciones aritméticas - 4 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>6</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("CONVERTIDOR DE GRADOS CELSIUS A GRADOS FAHRENHEIT")
+    celsius = float(input("Escriba una temperatura en grados Celsius: "))
+
+    fahrenheit = 1.8 * celsius + 32
+
+    print(f"{celsius} ºC son {fahrenheit} ºF")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-5">
-    <h2>Operaciones aritméticas - 5 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 5 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>7</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS")
-fahrenheit = float(input("Escriba una temperatura en grados Fahrenheit: "))
+<code class="language-python">def main():
+    print("CONVERTIDOR DE GRADOS FAHRENHEIT A GRADOS CELSIUS")
+    fahrenheit = float(input("Escriba una temperatura en grados Fahrenheit: "))
 
-celsius = (fahrenheit-32) / 1.8
+    celsius = (fahrenheit - 32) / 1.8
 
-print(f"{fahrenheit} ºF son {round(celsius, 1)} ºC")</code>
+    print(f"{fahrenheit} ºF son {round(celsius, 1)} ºC")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-6">
-    <h2>Operaciones aritméticas - 6 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 6 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>8</p>
+    </aside>
 
     <p>Para convertir de segundos a minutos basta una división:</p>
 
@@ -220,19 +291,29 @@ print(f"{fahrenheit} ºF son {round(celsius, 1)} ºC")</code>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR DE SEGUNDOS A MINUTOS")
-segundos = int(input("Escriba una cantidad de segundos: "))
+<code class="language-python">def main():
+    print("CONVERTIDOR DE SEGUNDOS A MINUTOS")
+    segundos = int(input("Escriba una cantidad de segundos: "))
 
-minutos = segundos // 60
-resto = segundos % 60
+    minutos = segundos // 60
+    resto = segundos % 60
 
-print(f"{segundos} segundos son {minutos} minutos y {resto} segundos")</code>
+    print(f"{segundos} segundos son {minutos} minutos y {resto} segundos")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-7">
-    <h2>Operaciones aritméticas - 7 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 7 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>9</p>
+    </aside>
 
     <p>Como una hora son 3600 segundos (60 * 60), el resultado se obtiene mediante dos divisiones sucesivas:</p>
 
@@ -242,16 +323,22 @@ print(f"{segundos} segundos son {minutos} minutos y {resto} segundos")</code>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
-segundos = int(input("Escriba una cantidad de segundos: "))
+<code class="language-python">def main():
+    print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
+    segundos = int(input("Escriba una cantidad de segundos: "))
 
-horas = segundos // 3600
-resto_1 = segundos % 3600
-minutos = resto_1 // 60
-resto = resto_1 % 60
+    horas = segundos // 3600
+    resto_1 = segundos % 3600
+    minutos = resto_1 // 60
+    resto = resto_1 % 60
 
-print(f"{segundos} segundos son {horas} horas, "
-      f"{minutos} minutos y {resto} segundos")</code>
+    print(
+        f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos"
+    )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -259,21 +346,32 @@ print(f"{segundos} segundos son {horas} horas, "
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
-segundos = int(input("Escriba una cantidad de segundos: "))
+<code class="language-python">def main():
+    print("CONVERTIDOR DE SEGUNDOS A HORAS Y MINUTOS")
+    segundos = int(input("Escriba una cantidad de segundos: "))
 
-horas = segundos // 3600
-minutos = segundos % 3600 // 60
-resto = segundos % 60
+    horas = segundos // 3600
+    minutos = segundos % 3600 // 60
+    resto = segundos % 60
 
-print(f"{segundos} segundos son {horas} horas, "
-      f"{minutos} minutos y {resto} segundos")</code>
+    print(
+        f"{segundos} segundos son {horas} horas, {minutos} minutos y {resto} segundos"
+    )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-8">
-    <h2>Operaciones aritméticas - 8 - Solución</h2>
+    <h2 class="con-aside">Operaciones aritméticas - 8 - Solución</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>10</p>
+    </aside>
 
     <p>Como una gruesa son 144 unidades (12 * 12), el resultado se obtiene mediante dos divisiones sucesivas:</p>
 
@@ -283,21 +381,27 @@ print(f"{segundos} segundos son {horas} horas, "
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CONVERTIDOR A GRUESAS Y DOCENAS")
-unidades = int(input("Escriba una cantidad (entera): "))
+<code class="language-python">def main():
+    print("CONVERTIDOR A GRUESAS Y DOCENAS")
+    unidades = int(input("Escriba una cantidad (entera): "))
 
-gruesas = unidades // 144
-docenas = unidades % 144 // 12
-resto = unidades % 12
+    gruesas = unidades // 144
+    docenas = unidades % 144 // 12
+    resto = unidades % 12
 
-print(f"{unidades} unidades son {gruesas} gruesas, "
-      f"{docenas} docenas y {resto} unidades")</code>
+    print(
+        f"{unidades} unidades son {gruesas} gruesas, {docenas} docenas y {resto} unidades"
+    )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
