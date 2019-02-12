@@ -6,12 +6,31 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 3 de febrero de 2019                     */
+/* 12 de febrero de 2019                    */
 /*                                          */
 
-/* Estilo para Python imitando a IDLE */
+/* Colores para cuadros de código fuente y de terminal */
+
+div.terminal { background-color: #1e1e1e; color: white; padding-top: 5px; padding-bottom: 5px; }
+
+div.codigo { background-color: white; color: black; padding-top: 5px; padding-bottom: 5px; }
+
+div.codigo.idle { background-color: white; color: black; }
 
 code { line-height: 120%; /* font-weight: bold; */ }
+
+.line-numbers-rows > span:before {
+  color: black;
+}
+
+.command-line-prompt {
+	border-right: 1px solid #999;
+}
+
+.command-line-prompt > span:before {
+	color: white;
+}
+/* Estilo para Python imitando a IDLE */
 
 code.language-python { }
 /* si se cambia aquí line-height, hay que cambiar line-height también en los números de línea */

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
@@ -148,14 +150,29 @@
 
     <p>Para actualizar pip, ejecute en una ventana de terminal:</p>
     <div class="codigo">
-      <pre>
-<code class="language-shell">$ python -m pip install --upgrade pip</code>
+      <pre class="command-line" data-prompt="C:\Users\Barto>">
+<code class="language-shell">python -m pip install --upgrade pip</code>
+</pre>
+    </div>
+
+    <p>El instalador mostrará un resultado similar a este:</p>
+    <div class="codigo">
+      <pre class="command-line" data-prompt="C:\Users\Barto>" data-output="1-8">
+<code class="language-shell">Collecting pip
+  Downloading https://files.pythonhosted.org/packages/46/dc/7fd...023/pip-19.0.1-py2.py3-none-any.whl (1.4MB)
+    100% |████████████████████████████████| 1.4MB 6.6MB/s
+Installing collected packages: pip
+  Found existing installation: pip 18.1
+    Uninstalling pip-18.1:
+      Successfully uninstalled pip-18.1
+Successfully installed pip-19.0.1
+</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de enero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 3 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

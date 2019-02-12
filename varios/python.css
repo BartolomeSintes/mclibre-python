@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 2 de febrero de 2019                     */
+/* 12 de febrero de 2019                    */
 /*                                          */
 
 /* CSS comun */
@@ -297,7 +297,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.codigo, div[class^="resultado"], div[class^="enunciado"] {
+div.terminal, div.codigo, div[class^="resultado"], div[class^="enunciado"] {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
@@ -306,7 +306,7 @@ div.codigo, div[class^="resultado"], div[class^="enunciado"] {
   color: black;
 }
 
-div.codigo {
+div.terminal, div.codigo {
   font-family: "Consolas", monospace;
 }
 
@@ -417,28 +417,28 @@ div.mcl-diapo p.control {
   right: 0;
 }
 
-/* Enlaces a normas */
+/* Enlaces a normas / mptc */
 
 h2.con-aside, h3.con-aside, h4-con-aside {
   float: left;
 }
 
-.enlace-norma {
+.aside-minienlace {
   float: right;
+  border-radius: 5px;
   margin-left: 10px;
-}
-
-.enlace-norma > p {
-  float: left;
+  margin-top: 5px;
+  background-color: hsl(207, 50%, 44%);
+  color: white;
   text-align: center;
-  margin-left: 10px;
 }
 
-.enlace-norma a {
-  text-decoration: none;
+.aside-minienlace > p {
+  margin: 0;
+  padding: 1px 5px;
 }
 
-.enlace-norma + p {
+.aside-minienlace + p {
   clear: left;
 }
 
