@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
@@ -48,8 +50,75 @@
     <p>Actualmente (enero de 2019), mclibre Python Testing no está preparada para ser utilizada puesto que sólo proporciona valores de prueba para un ejercicio, pero en esta lección quiero ir escribiendo las instrucciones de uso.</p>
   </section>
 
+  <section>
+    <h2>Cómo utilizar MPTC en Visual Studio Code</h2>
+
+    <p>Los pasos para utilizar Mclibre Python Testing Client en Visual Studio Code sson los siguientes:</p>
+    <ul>
+      <li>Elija un ejercicio que incluya el identificador MPTC del ejercicio:
+        <p>Los ejercicios para los que hay disponibles tests automáticos de MPTC se pueden identificar por el cuadro situado en la parte superior derecha del enunciado, como en el ejemplo siguiente:</p>
+
+        <div style="border: 2px solid black; margin: 0 20px; padding: 5px; background-color: #eee">
+          <h3 class="con-aside">Ejemplo de ejercicio - 1</h3>
+
+          <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>1000</p>
+          </aside>
+
+          <p>Escriba un programa que salude al mundo.</p>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">¡Hola, mundo!</span>
+</pre>
+          </div>
+        </div>
+
+        <p>El número del cuadro indica el identificador del ejercicio en MPTC. En el ejemplo anterior, el número sería 1000.</p>
+      </li>
+      <li>Escribir el programa
+
+        <p>Escriba el programa que resuelve el ejercicio, siguiendo la plantilla de la lección <a href="../lecciones/python-plantilla.html">Programa básico</a>.</p>
+
+        <p>El programa correspondiente al ejemplo anterior podría ser el siguiente:</p>
+
+        <div class="codigo">
+          <pre>
+<code class="language-python">def main():
+    print("¡Hola, mundo!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+        </div>
+      </li>
+      <li>Comprobar el funcionamiento del programa personalmente
+        <p>Compruebe que el programa funciona correctamente ejecutando el programa y comparando el resultado con el enunciado.</p>
+        <p class="captura">
+          <img src="../img/vsc/vsc-mptc-1.png" alt="VSC. Ejecución de programa" width="1024" height="576">
+        </p>
+      </li>
+      <li>Comprobar el funcionamiento del programa con MPTC
+        <p>Para ello, abra una ventana de terminal en el directorio que contiene el ejercicio. para ello, haga clic derecho sobre el directorio y elija la opción "Abrir en termninal":</p>
+        <p class="captura">
+          <img src="../img/vsc/vsc-mptc-2.png" alt="VSC. Abrir terminal" width="1024" height="576">
+        </p>
+        <p>En el terminal, escriba la orden <strong>mptc nombre_del_programa.py identificador_mptc</strong>, donde nombre_de-_programa.py es el nombre de su programa e identificador_mptc es el identificador MPTC del ejercicio:</p>
+        <p class="captura">
+          <img src="../img/vsc/vsc-mptc-3.png" alt="VSC. Ejecutar MPTC" width="1024" height="576">
+        </p>
+        <p>Si todo funciona correctamente, se mostrará el resultado de las pruebas automática:</p>
+        <p class="captura">
+          <img src="../img/vsc/vsc-mptc-4.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+        </p>
+      </li>
+    </ul>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
