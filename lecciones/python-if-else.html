@@ -33,294 +33,432 @@
     </div>
   </nav>
 
-  <p>En esta lección se trata la estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...:</p>
+  <p>En esta lección se trata la estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...: Estas construcciones permiten condicionar la ejecución de uno o varios bloques de sentencias al cumplimiento de una o varias condiciones.</p>
 
   <section id="sentencias-condicionales">
     <h2>Sentencias condicionales: <span class="idle-rese">if</span> ...</h2>
 
-    <p>La estructura de control <span class="idle-rese">if</span> ... permite que un programa ejecute unas instrucciones cuando se cumplan una condición. En inglés "if" significa "si" (condición). La orden en Python se escribe así:</p>
+    <p>La estructura de control <span class="idle-rese">if</span> ... permite que un programa ejecute unas instrucciones cuando se cumplan una condición. En inglés "if" significa "si" (condición).</p>
 
-    <div class="codigo">
-      <pre>
+    <section id="if-sintaxis">
+      <h3>Sintaxis de la sentencia condicional <span class="idle-rese">if</span> ...</h3>
+
+      <p>La sintaxis de la construcción <span class="idle-rese">if</span> es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
 <span class="idle-rese">if</span> condición:
     aquí van las órdenes que se ejecutan si la condición es cierta
     y que pueden ocupar varias líneas
 </pre>
-    </div>
+      </div>
 
-    <p>La primera línea contiene la condición a evaluar y es una expresión lógica. Esta línea debe terminar siempre por dos puntos (:).</p>
+      <p>La ejecución de esta construcción es la siguiente:</p>
 
-    <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, IDLE sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
+      <ul>
+        <li>La condición se evalúa siempre.
+          <ul>
+            <li>Si el resultado es <span class="idle-rese">True</span> se ejecuta el bloque de sentencias</li>
+            <li>Si el resultado es <span class="idle-rese">False</span> no se ejecuta el bloque de sentencias.</li>
+          </ul>
+        </li>
+      </ul>
 
-    <hr class="corta">
+      <hr class="corta">
 
-    <p>Veamos un ejemplo. El programa siguiente pide un número positivos al usuario y almacena la respuesta en la variable "numero". Después comprueba si el número es negativo. Si lo es, el programa avisa que no era eso lo que se había pedido. Finalmente, el programa imprime siempre el valor introducido por el usuario. A continuación se pueden ver dos ejecuciones paso a paso de ese programa. En la primera el usuario escribe un valor negativo y en la segunda el usuario escribe un valor positivo:</p>
+      <p>La primera línea contiene la condición a evaluar y es una expresión lógica. Esta línea debe terminar siempre por dos puntos (:).</p>
 
-    <div class="mcl-diapo" style="height: 14em">
-      <div id="Paso00">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1</strong></p>
+      <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, el editor sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
+    </section>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+    <section id="if-diagrama-flujo">
+      <h3>Diagrama de flujo de la sentencia condicional condicional if ...</h3>
+
+      <p>El diagrama de flujo siguiente muestra la ejecución de una sentencia <span class="php-res">if</span> ...:</p>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="480" viewBox="-250 -100 500 480" style="background-color: white;" font-family="sans-serif">
+          <rect x="-248" y="-98" width="496" height="83" rx="3" ry="3" fill="none" stroke="black" stroke-width="3" />
+          <line x1="-248" y1="-70" x2="248" y2="-70" stroke-width="2" stroke="black" />
+          <text x="0" y="-77" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">DIAGRAMA DE FLUJO: SENTENCIA IF</text>
+          <text x="-40" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">Haga clic en los botones de avance y retroceso</text>
+          <text x="-40" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">para ver la ejecución paso a paso</text>
+          <g onclick="svg_retrocede(0)">
+            <circle cx="180" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="185,-33 170,-43 185,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+          <g onclick="svg_avanza(0)">
+            <circle cx="223" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="218,-33 233,-43 218,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg01-p01">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">El programa llega al if.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="black" />
+            <polyline points="5,80 0,90 -5,80" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg01-p02">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Evalúa la condición.</text>
+            <polygon points="0,90 60,125 0,160 -60,125" fill="white" stroke-width="3" stroke="black" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN</text>
+          </g>
+
+          <g id="svg01-p03">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es True, ejecuta el bloque ...</text>
+            <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="105,160 110,170 115,160" fill="black" stroke-width="2" stroke="black" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="60" y="170" width="100" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE</text>
+          </g>
+
+          <g id="svg01-p04">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if.</text>
+            <polyline points="110,220 110,260 0,260 0,300" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,290 0,300 5,290" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg01-p05">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es False,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">termina el if directamente.</text>
+            <polyline points="-60,125 -110,125 -110,260 0,260" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="0,260 0,300" fill="none" stroke-width="3" stroke="none" />
+            <polyline points="-5,290 0,300 5,290" fill="none" stroke-width="2" stroke="none" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="transparent" stroke="none" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="none">FIN</text>
+          </g>
+
+          <g id="svg01-p01-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">El programa llega al if.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="red" />
+            <polyline points="5,80 0,90 -5,80" fill="red" stroke-width="2" stroke="red" />
+          </g>
+
+          <g id="svg01-p02-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Evalúa la condición ...</text>
+            <polygon points="0,90 60,125 0,160 -60,125" fill="white" stroke-width="3" stroke="red" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+          </g>
+
+          <g id="svg01-p03-b" visibility="hidden">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es True,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque ...</text>
+            <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="105,160 110,170 115,160" fill="red" stroke-width="2" stroke="red" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="60" y="170" width="100" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE</text>
+          </g>
+
+          <g id="svg01-p04-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if.</text>
+            <polyline points="110,220 110,260 0,260 0,300" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,290 0,300 5,290" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+
+          <g id="svg01-p05-b" visibility="hidden">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es False,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">termina el if directamente.</text>
+            <polyline points="-60,125 -110,125 -110,260 0,260" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="0,260 0,300" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,290 0,300 5,290" fill="red" stroke-width="2" stroke="red" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="transparent" stroke="red" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+        </svg>
+      </p>
+    </section>
+
+    <section id="if-ejemplos">
+      <h3>Programas de ejemplo con sentencias condicionales if ...</h3>
+
+      <p>Veamos un ejemplo. El programa siguiente pide un número positivos al usuario y almacena la respuesta en la variable "numero". Después comprueba si el número es negativo. Si lo es, el programa avisa que no era eso lo que se había pedido. Finalmente, el programa imprime siempre el valor introducido por el usuario. A continuación se pueden ver dos ejecuciones paso a paso de ese programa. En la primera el usuario escribe un valor negativo y en la segunda el usuario escribe un valor positivo:</p>
+
+      <div class="mcl-diapo" style="height: 15em">
+        <div id="Paso00">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Escriba un número positivo:</span> -5
 <span class="idle-resp">¡Le he dicho que escriba un número positivo!
 Ha escrito el número -5</span>
 </pre>
+            </div>
           </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso01"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+        <div id="Paso01">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso
+              1</strong></p>
 
-        <p class="control">
-          <a href="#Paso01"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso01">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso
-            1</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python"><span class="codigo-resaltado">numero = int(input("Escriba un número positivo: "))</span>
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="codigo-resaltado"><span class="idle-resp">Escriba un número positivo:</span> -5</span></pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="codigo-resaltado"><span class="idle-resp">Escriba un número positivo:</span> -5</span></pre>
-          </div>
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
+
+          <p class="control">
+            <a href="#Paso00"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso02"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Se ejecuta la primera instrucción del programa.</p>
+        <div id="Paso02">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 2</strong></p>
 
-        <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
-
-        <p class="control">
-          <a href="#Paso00"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso02"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso02">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 2</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 <span class="codigo-resaltado">if numero &lt; 0</span>:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="idle-resp">Escriba un número positivo:</span> -5</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="idle-resp">Escriba un número positivo:</span> -5</pre>
-          </div>
+          <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+
+          <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que -5 es inferior a 0.</p>
+
+          <p class="control">
+            <a href="#Paso01"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso03"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+        <div id="Paso03">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 3</strong></p>
 
-        <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que -5 es inferior a 0.</p>
-
-        <p class="control">
-          <a href="#Paso01"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso03"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso03">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 3</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 if numero &lt; 0:
     <span class="codigo-resaltado">print("¡Le he dicho que escriba un número positivo!")</span>
 print(f"Ha escrito el número {numero}")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Escriba un número positivo:</span> -5
 <span class="idle-resp codigo-resaltado">¡Le he dicho que escriba un número positivo!</span>
 </pre>
+            </div>
           </div>
+
+          <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "¡Le he dicho que escriba un número positivo!".</p>
+
+          <p class="control">
+            <a href="#Paso02"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso04"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+        <div id="Paso04">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 4</strong></p>
 
-        <p>En este caso el bloque consta de una sola instrucción que imprime el texto "¡Le he dicho que escriba un número positivo!".</p>
-
-        <p class="control">
-          <a href="#Paso02"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso04"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso04">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 1 - Paso 4</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 <span class="codigo-resaltado">print(f"Ha escrito el número {numero}")</span></code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Escriba un número positivo:</span> -5
 <span class="idle-resp">¡Le he dicho que escriba un número positivo!
 <span class="codigo-resaltado">Ha escrito el número -5</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
+
+          <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso03"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
         </div>
-
-        <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
-
-        <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
-
-        <p class="control">
-          <a href="#Paso03"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
       </div>
-    </div>
 
-    <div class="mcl-diapo" style="height: 12em">
-      <div id="Paso40">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2</strong></p>
+      <div class="mcl-diapo" style="height: 15em">
+        <div id="Paso40">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2</strong></p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Escriba un número positivo:</span> 5
 <span class="idle-resp">Ha escrito el número 5</span>
 </pre>
+            </div>
           </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+        <div id="Paso41">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 1</strong></p>
 
-        <p class="control">
-          <a href="#Paso41"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso41">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 1</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python"><span class="codigo-resaltado">numero = int(input("Escriba un número positivo: "))</span>
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="codigo-resaltado"><span class="idle-resp">Escriba un número positivo:</span> 5</span></pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="codigo-resaltado"><span class="idle-resp">Escriba un número positivo:</span> 5</span></pre>
-          </div>
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
+
+          <p class="control">
+            <a href="#Paso40"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso42"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Se ejecuta la primera instrucción del programa.</p>
+        <div id="Paso42">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 2</strong></p>
 
-        <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "numero".</p>
-
-        <p class="control">
-          <a href="#Paso40"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso42"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso42">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 2</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 <span class="codigo-resaltado">if numero &lt; 0</span>:
     print("¡Le he dicho que escriba un número positivo!")
 print(f"Ha escrito el número {numero}")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="idle-resp">Escriba un número positivo:</span> 5</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="idle-resp">Escriba un número positivo:</span> 5</pre>
-          </div>
+          <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+
+          <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 5 no es inferior a 0.</p>
+
+          <p class="control">
+            <a href="#Paso41"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso43"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>A continuación se evalúa la condición (numero &lt; 0).</p>
+        <div id="Paso43">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 3</strong></p>
 
-        <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 5 no es inferior a 0.</p>
-
-        <p class="control">
-          <a href="#Paso41"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso43"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso43">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... 2 - Paso 3</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">numero = int(input("Escriba un número positivo: "))
 if numero &lt; 0:
     print("¡Le he dicho que escriba un número positivo!")
 <span class="codigo-resaltado">print(f"Ha escrito el número {numero}")</span></code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">Escriba un número positivo:</span> 5
 <span class="idle-resp"><span class="codigo-resaltado">Ha escrito el número 5</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Como la condición es falsa, no se ejecutan las instrucciones del bloque y el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
+
+          <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso42"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
         </div>
-
-        <p>Como la condición es falsa, no se ejecutan las instrucciones del bloque y el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ..</p>
-
-        <p>La última instrucción del programa imprime el valor introducido y el programa termina.</p>
-
-        <p class="control">
-          <a href="#Paso42"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
       </div>
-    </div>
+    </section>
   </section>
 
   <section id="if-else">
@@ -328,8 +466,13 @@ if numero &lt; 0:
 
     <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... permite que un programa ejecute unas instrucciones cuando se cumple una condición y otras instrucciones cuando no se cumple esa condición. En inglés "if" significa "si" (condición) y "else" significa "si no". La orden en Python se escribe así:</p>
 
-    <div class="codigo">
-      <pre>
+    <section id="if-else-sintaxis">
+      <h3>Sintaxis de la sentencia condicional <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</h3>
+
+      <p>La sintaxis de la construcción <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
 <span class="idle-rese">if</span> condición:
     aquí van las órdenes que se ejecutan si la condición es cierta
     y que pueden ocupar varias líneas
@@ -337,28 +480,177 @@ if numero &lt; 0:
     y aquí van las órdenes que se ejecutan si la condición es
     falsa y que también pueden ocupar varias líneas
 </pre>
-    </div>
+      </div>
 
-    <p>La primera línea contiene la condición a evaluar. Esta línea debe terminar siempre por dos puntos (:).</p>
+      <p>La ejecución de esta construcción es la siguiente:</p>
 
-    <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, IDLE sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
+      <ul>
+        <li>La condición se evalúa siempre.
+          <ul>
+            <li>Si el resultado es <span class="idle-rese">True</span> se ejecuta solamente el bloque de sentencias 1</li>
+            <li>Si el resultado es <span class="idle-rese">False</span> se ejecuta solamente el bloque de sentencias 2.</li>
+          </ul>
+        </li>
+      </ul>
 
-    <p>Después viene la línea con la orden <span class="idle-rese">else</span>, que indica a Python que el bloque que viene a continuación se tiene que ejecutar cuando la condición no se cumpla (es decir, cuando sea falsa). Esta línea también debe terminar siempre por dos puntos (:). La línea con la orden <span class="idle-rese">else</span> no debe incluir nada más que el <span class="idle-rese">else</span> y los dos puntos.</p>
+      <hr class="corta">
 
-    <p>En último lugar está el bloque de instrucciones sangrado que corresponde al <span class="idle-rese">else</span>.</p>
+      <p>La primera línea contiene la condición a evaluar. Esta línea debe terminar siempre por dos puntos (:).</p>
 
-    <hr class="corta">
+      <p>A continuación viene el bloque de órdenes que se ejecutan cuando la condición se cumple (es decir, cuando la condición es verdadera). Es importante señalar que este bloque debe ir sangrado, puesto que Python utiliza el sangrado para reconocer las líneas que forman un bloque de instrucciones. El sangrado que se suele utilizar en Python es de cuatro espacios, pero se pueden utilizar más o menos espacios. Al escribir dos puntos (:) al final de una línea, IDLE sangrará automáticamente las líneas siguientes. Para terminar un bloque, basta con volver al principio de la línea.</p>
 
-    <p>Veamos un ejemplo. El programa siguiente pregunta la edad al usuario y almacena la respuesta en la variable "edad". Después comprueba si la edad es inferior a 18 años. Si esta comparación es cierta, el programa escribe que es menor de edad y si es falsa escribe que es mayor de edad. Finalmente el programa siempre se despide, ya que la última instrucción está fuera de cualquier bloque y por tanto se ejecuta siempre. A continuación se pueden ver dos ejecuciones paso a paso de ese programa:</p>
+      <p>Después viene la línea con la orden <span class="idle-rese">else</span>, que indica a Python que el bloque que viene a continuación se tiene que ejecutar cuando la condición no se cumpla (es decir, cuando sea falsa). Esta línea también debe terminar siempre por dos puntos (:). La línea con la orden <span class="idle-rese">else</span> no debe incluir nada más que el <span class="idle-rese">else</span> y los dos puntos.</p>
 
-    <div class="mcl-diapo" style="height: 17em">
+      <p>En último lugar está el bloque de instrucciones sangrado que corresponde al <span class="idle-rese">else</span>.</p>
+    </section>
 
-      <div id="Paso10">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1</strong></p>
+    <section id="if-else-diagrama-flujo">
+      <h3>Diagrama de flujo de la sentencia condicional if ... else ...</h3>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <p>El diagrama de flujo siguiente muestra la ejecución de una sentencia <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...:</p>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="480" viewBox="-250 -100 500 480" style="background-color: white;" font-family="sans-serif">
+          <rect x="-248" y="-98" width="496" height="83" rx="3" ry="3" fill="none" stroke="black" stroke-width="3" />
+          <line x1="-248" y1="-70" x2="248" y2="-70" stroke-width="2" stroke="black" />
+          <text x="0" y="-77" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">DIAGRAMA DE FLUJO: SENTENCIA IF ... ELSE ...</text>
+          <text x="-40" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">Haga clic en los botones de avance y retroceso</text>
+          <text x="-40" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">para ver la ejecución paso a paso</text>
+          <g onclick="svg_retrocede(1)">
+            <circle cx="180" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="185,-33 170,-43 185,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+          <g onclick="svg_avanza(1)">
+            <circle cx="223" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="218,-33 233,-43 218,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg02-p01">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">El programa llega al if else.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="black" />
+            <polyline points="5,80 0,90 -5,80" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg02-p02">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Evalúa la condición.</text>
+            <polygon points="0,90 60,125 0,160 -60,125" fill="white" stroke-width="3" stroke="black" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN</text>
+          </g>
+
+          <g id="svg02-p03">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es True,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque correspondiente ...</text>
+            <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="105,160 110,170 115,160" fill="black" stroke-width="2" stroke="black" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="55" y="170" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE 1</text>
+          </g>
+
+          <g id="svg02-p04">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if else.</text>
+            <polyline points="110,220 110,260 0,260 0,300" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,290 0,300 5,290" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg02-p05">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es False,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-60,125 -110,125 -110,170" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-105,160 -110,170 -115,160" fill="black" stroke-width="2" stroke="black" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-165" y="170" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="-110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE 2</text>
+          </g>
+
+          <g id="svg02-p06">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if else.</text>
+            <polyline points="-110,220 -110,260 0,260 0,300" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,290 0,300 5,290" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg02-p01-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">El programa llega al if else.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="red" />
+            <polyline points="5,80 0,90 -5,80" fill="red" stroke-width="2" stroke="red" />
+          </g>
+
+          <g id="svg02-p02-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Evalúa la condición.</text>
+            <polygon points="0,90 60,125 0,160 -60,125" fill="white" stroke-width="3" stroke="red" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+          </g>
+
+          <g id="svg02-p03-b" visibility="hidden">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es True,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque correspondiente ...</text>
+            <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="105,160 110,170 115,160" fill="red" stroke-width="2" stroke="red" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="55" y="170" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE 1</text>
+          </g>
+
+          <g id="svg02-p04-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if else.</text>
+            <polyline points="110,220 110,260 0,260 0,300" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,290 0,300 5,290" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+
+          <g id="svg02-p05-b" visibility="hidden">
+            <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es False,</text>
+            <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-60,125 -110,125 -110,170" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-105,160 -110,170 -115,160" fill="red" stroke-width="2" stroke="red" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-165" y="170" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="-110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE 2</text>
+          </g>
+
+          <g id="svg02-p06-b" visibility="hidden">
+            <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if else.</text>
+            <polyline points="-110,220 -110,260 0,260 0,300" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,290 0,300 5,290" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="300" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="332" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+        </svg>
+      </p>
+    </section>
+
+    <section id="if-else-ejemplos">
+      <h3>Programas de ejemplo con sentencias condicionales if ... else ...</h3>
+
+      <p>Veamos un ejemplo. El programa siguiente pregunta la edad al usuario y almacena la respuesta en la variable "edad". Después comprueba si la edad es inferior a 18 años. Si esta comparación es cierta, el programa escribe que es menor de edad y si es falsa escribe que es mayor de edad. Finalmente el programa siempre se despide, ya que la última instrucción está fuera de cualquier bloque y por tanto se ejecuta siempre. A continuación se pueden ver dos ejecuciones paso a paso de ese programa:</p>
+
+      <div class="mcl-diapo" style="height: 17em">
+
+        <div id="Paso10">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -366,30 +658,30 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 17
 <span class="idle-resp">Es usted menor de edad
 ¡Hasta la próxima!</span>
 </pre>
+            </div>
           </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+        <div id="Paso11">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 1</strong></p>
 
-        <p class="control">
-          <a href="#Paso11"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso11">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 1</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python"><span class="codigo-resaltado">edad = int(input("¿Cuántos años tiene? "))</span>
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -397,29 +689,29 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="codigo-resaltado"><span class="idle-resp">¿Cuántos años tiene?</span></span> 17</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="codigo-resaltado"><span class="idle-resp">¿Cuántos años tiene?</span></span> 17</pre>
-          </div>
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
+
+          <p class="control">
+            <a href="#Paso10"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso12"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Se ejecuta la primera instrucción del programa.</p>
+        <div id="Paso12">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 2</strong></p>
 
-        <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
-
-        <p class="control">
-          <a href="#Paso10"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso12"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso12">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 2</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 <span class="codigo-resaltado">if edad &lt; 18</span>:
     print("Es usted menor de edad")
@@ -427,29 +719,29 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="idle-resp">¿Cuántos años tiene?</span> 17</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="idle-resp">¿Cuántos años tiene?</span> 17</pre>
-          </div>
+          <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+
+          <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que 17 es inferior a 18.</p>
+
+          <p class="control">
+            <a href="#Paso11"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso13"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+        <div id="Paso13">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 3</strong></p>
 
-        <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que 17 es inferior a 18.</p>
-
-        <p class="control">
-          <a href="#Paso11"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso13"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso13">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 3</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     <span class="codigo-resaltado">print("Es usted menor de edad")</span>
@@ -457,32 +749,32 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 17
 <span class="idle-resp"><span class="codigo-resaltado">Es usted menor de edad</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted menor de edad".</p>
+
+          <p class="control">
+            <a href="#Paso12"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso14"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+        <div id="Paso14">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 4</strong></p>
 
-        <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted menor de edad".</p>
-
-        <p class="control">
-          <a href="#Paso12"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso14"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso14">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 1 - Paso 4</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -490,34 +782,34 @@ else:
     print("Es usted mayor de edad")
 <span class="codigo-resaltado">print("¡Hasta la próxima!")</span></code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 17
 <span class="idle-resp">Es usted menor de edad
 <span class="codigo-resaltado">¡Hasta la próxima!</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> .. <span class="idle-rese">else</span> ...</p>
+
+          <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso13"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
         </div>
-
-        <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> .. <span class="idle-rese">else</span> ...</p>
-
-        <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
-
-        <p class="control">
-          <a href="#Paso13"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
       </div>
-    </div>
 
-    <div class="mcl-diapo" style="height: 19em">
-      <div id="Paso20">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2</strong></p>
+      <div class="mcl-diapo" style="height: 19em">
+        <div id="Paso20">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2</strong></p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -525,30 +817,30 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 25
 <span class="idle-resp">Es usted mayor de edad
 ¡Hasta la próxima!</span>
 </pre>
+            </div>
           </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+        <div id="Paso21">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 1</strong></p>
 
-        <p class="control">
-          <a href="#Paso21"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso21">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 1</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python"><span class="codigo-resaltado">edad = int(input("¿Cuántos años tiene? "))</span>
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -556,29 +848,29 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="codigo-resaltado"><span class="idle-resp">¿Cuántos años tiene?</span></span> 25</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="codigo-resaltado"><span class="idle-resp">¿Cuántos años tiene?</span></span> 25</pre>
-          </div>
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
+
+          <p class="control">
+            <a href="#Paso20"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso22"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Se ejecuta la primera instrucción del programa.</p>
+        <div id="Paso22">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 2</strong></p>
 
-        <p>En este caso, imprime la pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "edad".</p>
-
-        <p class="control">
-          <a href="#Paso20"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso22"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso22">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 2</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 <span class="codigo-resaltado">if edad &lt; 18</span>:
     print("Es usted menor de edad")
@@ -586,29 +878,29 @@ else:
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
+            </div>
+
+            <div class="resultado-idle">
+              <pre><span class="idle-resp">¿Cuántos años tiene?</span> 25</pre>
+            </div>
           </div>
 
-          <div class="resultado-idle">
-            <pre><span class="idle-resp">¿Cuántos años tiene?</span> 25</pre>
-          </div>
+          <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+
+          <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 25 es superior a 18.</p>
+
+          <p class="control">
+            <a href="#Paso21"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso23"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>A continuación se evalúa la condición (edad &lt; 18).</p>
+        <div id="Paso23">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 3</strong></p>
 
-        <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que 25 es superior a 18.</p>
-
-        <p class="control">
-          <a href="#Paso21"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso23"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso23">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 3</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -616,32 +908,32 @@ else:
     <span class="codigo-resaltado">print("Es usted mayor de edad")</span>
 print("¡Hasta la próxima!")</code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 25
 <span class="idle-resp"><span class="codigo-resaltado">Es usted mayor de edad</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
+
+          <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted mayor de edad".</p>
+
+          <p class="control">
+            <a href="#Paso22"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso24"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
         </div>
 
-        <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
+        <div id="Paso24">
+          <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 4</strong></p>
 
-        <p>En este caso el bloque consta de una sola instrucción que imprime el texto "Es usted mayor de edad".</p>
-
-        <p class="control">
-          <a href="#Paso22"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#Paso24"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="Paso24">
-        <p><strong>Ejemplo de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... 2 - Paso 4</strong></p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
     print("Es usted menor de edad")
@@ -649,28 +941,28 @@ else:
     print("Es usted mayor de edad")
 <span class="codigo-resaltado">print("¡Hasta la próxima!")</span></code>
 </pre>
-          </div>
+            </div>
 
-          <div class="resultado-idle">
-            <pre>
+            <div class="resultado-idle">
+              <pre>
 <span class="idle-resp">¿Cuántos años tiene?</span> 25
 <span class="idle-resp">Es usted mayor de edad
 <span class="codigo-resaltado">¡Hasta la próxima!</span></span>
 </pre>
+            </div>
           </div>
+
+          <p>Una vez completado el bloque <span class="idle-rese">else</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+
+          <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
+
+          <p class="control">
+            <a href="#Paso23"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
         </div>
-
-        <p>Una vez completado el bloque <span class="idle-rese">else</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
-
-        <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
-
-        <p class="control">
-          <a href="#Paso23"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
       </div>
-    </div>
 
-    <hr class="corta">
+    </section>
 
     <p>Aunque no es aconsejable, en vez de un bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... se podría escribir un programa con dos bloques <span class="idle-rese">if</span> ...</p>
 
@@ -1231,10 +1523,17 @@ Conteste S (sí) o N (no) a mis preguntas.
   <section id="if-elif-else">
     <h2>Más de dos alternativas: <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</h2>
 
+    <p>La construcción if ... else ... se puede extender añadiendo la instrucción elif:</p>
+
     <p>La estructura de control <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... permite encadenar varias condiciones. <span class="idle-rese">elif</span> es una contracción de <span class="idle-rese">else if</span>. La orden en Python se escribe así:</p>
 
-    <div class="codigo">
-      <pre>
+    <section id="if-elif-else-sintaxis">
+      <h3>Sintaxis de la sentencia condicional if ... elif ... else ...</h3>
+
+      <p>La sintaxis de la construcción <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
 <span class="idle-rese">if</span> condición_1:
     bloque 1
 <span class="idle-rese">elif</span> condición_2:
@@ -1242,18 +1541,18 @@ Conteste S (sí) o N (no) a mis preguntas.
 <span class="idle-rese">else</span>:
     bloque 3
 </pre>
-    </div>
+      </div>
 
-    <ul>
-      <li>Si se cumple la condición 1, se ejecuta el bloque 1</li>
-      <li>Si no se cumple la condición 1 pero sí que se cumple la condición 2, se ejecuta el bloque 2 </li>
-      <li>Si no se cumplen ni la condición 1 ni la condición 2, se ejecuta el bloque 3.</li>
-    </ul>
+      <ul>
+        <li>Si se cumple la condición 1, se ejecuta el bloque 1</li>
+        <li>Si no se cumple la condición 1 pero sí que se cumple la condición 2, se ejecuta el bloque 2 </li>
+        <li>Si no se cumplen ni la condición 1 ni la condición 2, se ejecuta el bloque 3.</li>
+      </ul>
 
-    <p>Esta estructura es equivalente a la siguiente estructura de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... anidados:</p>
+      <p>Esta estructura es equivalente a la siguiente estructura de <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... anidados:</p>
 
-    <div class="codigo">
-      <pre>
+      <div class="codigo">
+        <pre>
 <span class="idle-rese">if</span> condición_1:
     bloque 1
 <span class="idle-rese">else:</span>
@@ -1262,13 +1561,208 @@ Conteste S (sí) o N (no) a mis preguntas.
     <span class="idle-rese">else</span>:
         bloque 3
 </pre>
-    </div>
+      </div>
 
-    <hr class="corta">
+      <hr class="corta">
 
-    <p>Se pueden escribir tantos bloques <span class="idle-rese">elif</span> como sean necesarios. El bloque <span class="idle-rese">else</span> (que es opcional) se ejecuta si no se cumple ninguna de las condiciones anteriores.</p>
+      <p>Se pueden escribir tantos bloques <span class="idle-rese">elif</span> como sean necesarios. El bloque <span class="idle-rese">else</span> (que es opcional) se ejecuta si no se cumple ninguna de las condiciones anteriores.</p>
+    </section>
 
-    <hr class="corta">
+    <section id="if-elif-else-diagrama-flujo">
+      <h3>Diagrama de flujo de la sentencia condicional if ... elif ... else ...</h3>
+
+      <p>El diagrama de flujo siguiente muestra la ejecución de una sentencia <span class="idle-res">if</span> ... <span class="idle-res">elif</span> ... <span class="idle-res">else</span> ...:</p>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="550" viewBox="-300 -100 500 550" style="background-color: white;" font-family="sans-serif">
+          <rect x="-298" y="-98" width="496" height="83" rx="3" ry="3" fill="none" stroke="black" stroke-width="3" />
+          <line x1="-298" y1="-70" x2="198" y2="-70" stroke-width="2" stroke="black" />
+          <text x="-50" y="-77" text-anchor="middle" font-family="sans-serif" font-size="19" fill="black">DIAGRAMA DE FLUJO: SENTENCIA IF ELIF ELSE</text>
+          <text x="-90" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">Haga clic en los botones de avance y retroceso</text>
+          <text x="-90" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="no-paso-a-paso">para ver la ejecución paso a paso</text>
+          <g onclick="svg_retrocede(2)">
+            <circle cx="130" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="135,-33 120,-43 135,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+          <g onclick="svg_avanza(2)">
+            <circle cx="173" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+            <polygon points="168,-33 183,-43 168,-53" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg03-p01">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">El programa llega al if elif else.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="black" />
+            <polyline points="5,80 0,90 -5,80" fill="black" stroke-width="2" stroke="black" />
+          </g>
+
+          <g id="svg03-p02">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Evalúa la condición del if.</text>
+            <polygon points="0,90 70,125 0,160 -70,125" fill="white" stroke-width="3" stroke="black" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN 1</text>
+          </g>
+
+          <g id="svg03-p03">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición del if es True,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque correspondiente ...</text>
+            <polyline points="70,125 110,125 110,180" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="105,170 110,180 115,170" fill="black" stroke-width="2" stroke="black" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="55" y="180" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="110" y="212" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE 1</text>
+          </g>
+
+          <g id="svg03-p04">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if elif else.</text>
+            <polyline points="110,230 110,350 0,350 0,390" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,380 -0,390 5,380" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg03-p05">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición del if es False,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">evalúa la condición del elif.</text>
+            <polyline points="-70,125 -110,125 -110,170" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-105,160 -110,170 -115,160" fill="black" stroke-width="2" stroke="black" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <polygon points="-110,170 -40,205 -110,240 -180,205" fill="white" stroke-width="3" stroke="black" />
+            <text x="-110" y="210" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN 2</text>
+          </g>
+
+          <g id="svg03-p06">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición del elif es True,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-40,205 0,205 0,260" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="5,250 0,260 -5,250" fill="black" stroke-width="2" stroke="black" />
+            <text x="-25" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="-55" y="260" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE 2</text>
+          </g>
+
+          <g id="svg03-p07">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if elif else.</text>
+            <polyline points="0,310 0,390" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,380 -0,390 5,380" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg03-p08">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición del elif es False,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-180,205 -220,205 -220,260" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-225,250 -220,260 -215,250" fill="black" stroke-width="2" stroke="black" />
+            <text x="-195" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-275" y="260" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+            <text x="-220" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE 3</text>
+          </g>
+
+          <g id="svg03-p09">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none"> ... y termina el if elif else.</text>
+            <polyline points="-220,310 -220,350 0,350 0, 380" fill="none" stroke-width="3" stroke="black" />
+            <polyline points="-5,380 -0,390 5,380" fill="black" stroke-width="2" stroke="black" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+          </g>
+
+          <g id="svg03-p01-b" visibility="hidden">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">El programa llega al if elif else.</text>
+            <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">INICIO</text>
+
+            <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="red" />
+            <polyline points="5,80 0,90 -5,80" fill="red" stroke-width="2" stroke="red" />
+          </g>
+
+          <g id="svg03-p02-b" visibility="hidden">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Evalúa la condición del if.</text>
+            <polygon points="0,90 70,125 0,160 -70,125" fill="white" stroke-width="3" stroke="red" />
+            <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN 1</text>
+          </g>
+
+          <g id="svg03-p03-b" visibility="hidden">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición del if es True,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque correspondiente ...</text>
+            <polyline points="70,125 110,125 110,180" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="105,170 110,180 115,170" fill="red" stroke-width="2" stroke="red" />
+            <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="55" y="180" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="110" y="212" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE 1</text>
+          </g>
+
+          <g id="svg03-p04-b" visibility="hidden">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if elif else.</text>
+            <polyline points="110,230 110,350 0,350 0,390" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,380 -0,390 5,380" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+
+          <g id="svg03-p05-b" visibility="hidden">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición del if es False,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">evalúa la condición del elif.</text>
+            <polyline points="-70,125 -110,125 -110,170" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-105,160 -110,170 -115,160" fill="red" stroke-width="2" stroke="red" />
+            <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <polygon points="-110,170 -40,205 -110,240 -180,205" fill="white" stroke-width="3" stroke="red" />
+            <text x="-110" y="210" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN 2</text>
+          </g>
+
+          <g id="svg03-p06-b" visibility="hidden">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición del elif es True,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-40,205 0,205 0,260" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="5,250 0,260 -5,250" fill="red" stroke-width="2" stroke="red" />
+            <text x="-25" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">True</text>
+
+            <rect x="-55" y="260" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE 2</text>
+          </g>
+
+          <g id="svg03-p07-b" visibility="hidden">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if elif else.</text>
+            <polyline points="0,310 0,390" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,380 -0,390 5,380" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+
+          <g id="svg03-p08-b" visibility="hidden">
+            <text x="-80" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición del elif es False,</text>
+            <text x="-80" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque correspondiente ...</text>
+            <polyline points="-180,205 -220,205 -220,260" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-225,250 -220,260 -215,250" fill="red" stroke-width="2" stroke="red" />
+            <text x="-195" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">False</text>
+
+            <rect x="-275" y="260" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+            <text x="-220" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE 3</text>
+          </g>
+
+          <g id="svg03-p09-b" visibility="hidden">
+            <text x="-80" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black"> ... y termina el if elif else.</text>
+            <polyline points="-220,310 -220,350 0,350 0,380" fill="none" stroke-width="3" stroke="red" />
+            <polyline points="-5,380 -0,390 5,380" fill="red" stroke-width="2" stroke="red" />
+
+            <rect x="-50" y="390" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+            <text x="0" y="422" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+          </g>
+        </svg>
+      </p>
+    </section>
 
     <p>En las estructuras <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... el orden en que se escriben los casos es importante y, a menudo, se pueden simplificar las condiciones ordenando adecuadamente los casos.</p>
 
@@ -1513,8 +2007,72 @@ else:
     <p>Cuando se está aprendiendo a programar, esta notación puede resultar un poco crítpica, por lo que se recomienda empezar escribiendo las comparaciones completas. Más adelante, cuando nos hayamos familiarizado con las expresiones lógicas, nos resultará más natural utilizarla.</p>
   </section>
 
+  <script>
+    var paso = [-1, -1, -1];
+    var pasos = [
+      ["svg01-p01", "svg01-p02", "svg01-p03", "svg01-p04", "svg01-p05"],
+      ["svg02-p01", "svg02-p02", "svg02-p03", "svg02-p04", "svg02-p05", "svg02-p06"],
+      ["svg03-p01", "svg03-p02", "svg03-p03", "svg03-p04", "svg03-p05", "svg03-p06", "svg03-p07", "svg03-p08", "svg03-p09"]
+    ];
+
+    function svg_cambia(svg, n) {
+      p = document.getElementById(pasos[svg].concat("-b")[n]);
+      if (p.getAttribute("visibility") == "hidden") {
+        p.setAttribute("visibility", "visible");
+      } else {
+        p.setAttribute("visibility", "hidden");
+      }
+      p = document.getElementById((pasos[svg][n]).concat("-b"));
+      if (p.getAttribute("visibility") == "hidden") {
+        p.setAttribute("visibility", "visible");
+      } else {
+        p.setAttribute("visibility", "hidden");
+      }
+      p = document.getElementsByClassName("no-paso-a-paso");
+      for (i = 0; i < p.length; i++) {
+        if (paso[svg] == -1) {
+          p[i].setAttribute("visibility", "visible");
+        } else {
+          p[i].setAttribute("visibility", "hidden");
+        }
+      }
+    }
+
+    function svg_avanza(svg) {
+      if (paso[svg] == -1) {
+        paso[svg] = paso[svg] + 1;
+        svg_cambia(svg, paso[svg]);
+      } else {
+        if (paso[svg] == (pasos[svg].length - 1)) {
+          paso[svg] = -1;
+          svg_cambia(svg, pasos[svg].length - 1);
+        } else {
+          paso[svg] = paso[svg] + 1;
+          svg_cambia(svg, paso[svg] - 1);
+          svg_cambia(svg, paso[svg]);
+        }
+      }
+    }
+
+    function svg_retrocede(svg) {
+      if (paso[svg] == -1) {
+        paso[svg] = pasos[svg].length - 1;
+        svg_cambia(svg, paso[svg]);
+      } else {
+        if (paso[svg] == 0) {
+          paso[svg] = paso[svg] - 1;
+          svg_cambia(svg, [svg]);
+        } else {
+          paso[svg] = paso[svg] - 1;
+          svg_cambia(svg, paso[svg] + 1);
+          svg_cambia(svg, paso[svg]);
+        }
+      }
+    }
+  </script>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
