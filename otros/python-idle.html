@@ -21,25 +21,33 @@
       <h2>IDLE</h2>
 
       <ul>
-        <li><a href="#idle">IDLE</a></li>
-        <li><a href="#colores">Colores en los programas</a></li>
-        <li><a href="#guardar">Archivos de programas</a></li>
-        <li><a href="#ejecutar-idle">Ejecutar en IDLE</a></li>
+        <li><a href="#entorno">Entorno interactivo</a></li>
+        <li><a href="#editor">IDLE como editor</a>
+          <ul>
+            <li><a href="#colores">Colores en los programas</a></li>
+          </ul>
+        </li>
+        <li><a href="#ejecucion">Ejecutar programas</a></li>
+        <li><a href="#errores">Errores en los programas</a></li>
       </ul>
     </div>
   </nav>
 
-  <section id="idle">
-    <h2>El entorno de desarrollo IDLE</h2>
+  <p>IDLE (Integrated DeveLopment Environment for Python) es un entorno gráfico de desarrollo elemental que permite editar y ejecutar programas en Python.</p>
 
-    <p>IDLE (Integrated DeveLopment Environment for Python) es un entorno gráfico de desarrollo que permite editar y ejecutar programas en Python. Se pueden crear y ejecutar programas en Python sin utilizar IDLE, pero IDLE facilita esas tareas (de hecho, IDLE en inglés significa holgazán).</p>
+  <p>IDLE es también un entorno interactivo en el que se pueden ejecutar instrucciones sueltas de Python.</p>
 
-    <p>IDLE es tanto un entorno interactivo en el que se pueden ejecutar instrucciones sueltas de Python como un editor para escribir programas en ficheros.</p>
+  <p>En Windows, IDLE se distribuye junto con el intérprete de Python, es decir, al instalar Python en Windows también se instala IDLE.</p>
+
+  <p>En Linux, IDLE se distribuye como una aplicación separada que se puede instalr desde los repositorios de cada distribución.</p>
+
+  <section id="entorno">
+    <h2>IDLE como entorno interactivo</h2>
 
     <p>Al abrir IDLE con el acceso directo <span class="soft-menu">Inicio &gt; Python 3.7 &gt; IDLE (Python 3.7)</span>, se abrirá la ventana principal de IDLE, como muestra la imagen siguiente.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-1.png" alt="IDLE: Ventana principal" width="671" height="394">
+      <img src="../img/idle/idle-1.png" alt="IDLE: Ventana principal" width="671" height="150">
     </p>
 
     <p>Esta ventana indica la versión de Python instalada.</p>
@@ -62,7 +70,7 @@
 
     <hr class="corta">
 
-    <p>Se pueden recuperar órdenes anteriores mediante los atajos de teclado:</p>
+    <p>En el entorno interactivo de IDLE se pueden recuperar órdenes anteriores mediante los atajos de teclado:</p>
 
     <ul>
       <li><kbd>Alt+p</kbd> para ver la instrucción anterior (supongo que p es por <em>previous</em>, en español, anterior)</li>
@@ -71,223 +79,99 @@
 
   </section>
 
-  <section id="colores">
-    <h2>Colores en los programas</h2>
+  <section id="editor">
+    <h2>IDLE como editor de programas</h2>
 
-    <p>Al escribir órdenes en IDLE, algunas palabras cambian de color. Los colores ayudan a identificar los distintos tipos de elementos y a localizar errores:</p>
+    <p>IDLE es también un editor de programas elemental, que permite redactar programas, guardarlos en archivos y ejecutarlos.</p>
 
-    <ul>
-      <li>Las palabras reservadas de Python (las que forman parte del lenguaje) se muestran en color <span class="idle-rese">naranja</span>.</li>
-      <li>Las cadenas de texto se muestran en <span class="idle-cade">verde</span>.</li>
-      <li>Los resultados de las órdenes se escriben en <span class="idle-resp">azul</span>.</li>
-      <li>Los mensajes de error se muestran en <span class="idle-erro">rojo</span>.</li>
-      <li>Las funciones se muestran en <span class="idle-func">púrpura</span>.</li>
-    </ul>
+    <p>La ventana principal de IDLE es siempre el entorno interactivo, pero también es la ventana donde se ejecutarán los programas.</p>
 
-    <p>Las cadenas de texto deben delimitarse con comillas dobles (") o con comillas simples ('):</p>
+    <p class="captura">
+      <img src="../img/idle/idle-2.png" alt="IDLE. Menú File &gt; New File" width="800" height="180">
+    </p>
 
-    <div class="codigo idle">
-      <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'hola'</span>)
-<span class="idle-resp">hola</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"hola"</span>)
-<span class="idle-resp">hola</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
-</pre>
-    </div>
+    <p>Para crear un archivo de programa con IDLE, abra una nueva ventana mediante el menú <span class="idle-menu">File &gt; New File</span> (o el atajo de teclado <kbd>Ctrl+N</kbd>).</p>
 
-    <hr class="corta">
+    <p class="captura">
+      <img src="../img/idle/idle-3.png" alt="IDLE. Ventana principal y ventana secundaria" width="800" height="180">
+    </p>
 
-    <p>Si la orden contiene algún error, Python escribe un mensaje de error en inglés que indica dónde se ha producido el error y por qué.</p>
+    <p>Al elegir esta opción se abrirá una nueva ventana como la de la imagen.</p>
+
+    <p>En esta ventana ya no aparece el simbolo de petición porque es simplemente un editor de texto (que colorea el código de Python). Por eso los menús de esta ventana no son los mismos que los de la ventana principal de IDLE.</p>
+
+    <p class="captura">
+      <img src="../img/idle/idle-4.png" alt="IDLE. Ventana principal y ventana secundaria" width="800" height="250">
+    </p>
+
+    <p>Escriba por ejemplo el programa:</p>
 
     <div class="codigo idle">
-      <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(hola)
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#3&gt;", line 1, in ?
-    print hola
-NameError: name 'hola' is not defined</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
-</pre>
+      <p><span class="idle-func">print</span>(<span class="idle-cade">"Hola, mundo"</span>)<br>
+        <span class="idle-func">print</span>(<span class="idle-cade">"Adios, mundo"</span>)</p>
     </div>
 
-    <p>En este ejemplo, el error se debe a que <span class="idle-cade">hola</span> no está entre comillas y Python entiende que se hace referencia a una variable que se llama hola; al no estar definida previamente ninguna variable que se llame así, se produce un error.</p>
+    <p>Observará que en esta ventana, cuando pulsa Intro, no se ejecuta la orden como ocurre en el entorno interactivo, sino que simplemente se pasa a la línea siguiente.</p>
 
-    <hr class="corta">
+    <p class="captura">
+      <img src="../img/idle/idle-5.png" alt="IDLE. Menú File &gt; Save as ..." width="800" height="250">
+    </p>
 
-    <p>Los argumentos de las funciones deben ir rodeados de paréntesis (en los ejemplos anteriores, la función es la función <span class="idle-func">print</span>() y el argumento de la función, es decir, lo que se le da a la función para que haga su trabajo, es la cadena de texto). Si no se escriben los paréntesis, Python indica que se ha cometido un error de sintaxis:</p>
+    <p>Para guardar el programa, elija la opción del menú <span class="idle-menu">File &gt; Save</span> o <span class="idle-menu">File &gt; Save As ...</span> (también puede utilizar el atajo de teclado <kbd>Ctrl+S</kbd>).</p>
 
-    <div class="codigo idle">
-      <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> <span class="idle-cade">"hola"</span>
-<span class="idle-resp"><span class="idle-erro">SyntaxError: invalid syntax</span></span>
-<span class="idle-prompt">&gt;&gt;&gt;</span></pre>
-    </div>
+    <p class="captura">
+      <img src="../img/idle/idle-6.png" alt="IDLE. Archivo guardado" width="800" height="350">
+    </p>
+
+    <p>La primera vez que guarde un programa se abrirá la ventana de diálogo estándar de Windows. Elija la carpeta y el nombre del archivo. La extensión habitual de los programas de Python es <strong>.py</strong>. Si no escribe la extensión, IDLE la añadirá automáticamente.</p>
+
+    <p class="captura">
+      <img src="../img/idle/idle-7.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="540">
+    </p>
+
+    <p>Una vez guardado el programa, el nombre del archivo aparece en la barra de título de la ventana.</p>
+
+    <p class="captura">
+      <img src="../img/idle/idle-8.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="250">
+    </p>
+
+    <section id="colores">
+      <h3>Colores en los programas</h3>
+
+      <p>Tanto en el entorno interactivo como al editar un programa, IDLE colorea el texto de acuerdo con su sintaxis. Los colores ayudan a identificar los distintos tipos de elementos y a localizar errores:</p>
+
+      <ul>
+        <li>Las palabras reservadas de Python (las que forman parte del lenguaje) se muestran en color <span class="idle-rese">naranja</span>.</li>
+        <li>Las cadenas de texto se muestran en <span class="idle-cade">verde</span>.</li>
+        <li>Las funciones se muestran en <span class="idle-func">púrpura</span>.</li>
+        <li>Los resultados de las órdenes se escriben en <span class="idle-resp">azul</span>.</li>
+        <li>Los mensajes de error se muestran en <span class="idle-erro">rojo</span>.</li>
+      </ul>
+    </section>
   </section>
 
-  <section id="guardar">
-    <h2>Conservar los programas en archivos</h2>
+  <section id="ejecucion">
+    <h2>Ejecutar programas de Python en IDLE</h2>
 
-    <p>El inconveniente de la ventana principal de IDLE es que para repetir una orden hay que volver a escribirla. Si simplemente queremos practicar órdenes sencillas la ventana principal de IDLE es suficiente, pero si se trata de un programa más complejo es conveniente guardar el programa en un archivo para poderlo recuperar posteriormente. Como además normalmente los programas no salen bien a la primera, eso permite corregir los errores sin tener que volver a escribir todo.</p>
+    <p>Para poder ejecutar un programa editado en IDLE, primero es necesario guardarlo. Una vez haya guardado el programa, puede ejecutarlo mediante la opción del menú <span class="idle-menu">Run &gt; Run module</span> (también puede utilizar la tecla <kbd>F5</kbd>).</p>
 
-    <p>Como se comenta en la lección <a href="libro-de-estilo.html#nombres-carpetas-archivos">Libro de estilo</a>,</p>
+    <p class="captura">
+      <img src="../img/idle/idle-9.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="260">
+    </p>
 
-    <div class="mcl-diapo" style="height: 47em;">
-      <div id="d1">
-        <p><strong>Guardar los programas en archivos - Paso 1</strong></p>
+    <p>La salida del programa se mostrará en la ventana principal de IDLE.</p>
 
-        <p class="captura">
-          <img src="../img/idle/idle-2.png" alt="IDLE. Menú File &gt; New File" width="800" height="540">
-        </p>
-
-        <p>Abra primero la ventana principal de IDLE.</p>
-
-        <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d2">
-        <p><strong>Guardar los programas en archivos - Paso 2</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-3.png" alt="IDLE. Ventana principal y ventana secundaria" width="800" height="540">
-        </p>
-
-        <p>Para crear un archivo de programa con IDLE, abra una nueva ventana mediante el menú <span class="idle-menu">File &gt; New File</span> (o el atajo de teclado <kbd>Ctrl+N</kbd>).</p>
-
-        <p class="control">
-          <a href="#d1"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d3"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d3">
-        <p><strong>Guardar los programas en archivos - Paso 3</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-4.png" alt="IDLE. Ventana principal y ventana secundaria" width="800" height="540">
-        </p>
-
-        <p>Al elegir esta opción se abrirá una nueva ventana como la de la imagen.</p>
-
-        <p>En esta ventana ya no aparece el simbolo de petición porque es simplemente un editor de texto (que colorea el código de Python). Por eso los menús de esta ventana no son los mismos que los de la ventana principal de IDLE.</p>
-
-        <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d4"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d4">
-        <p><strong>Guardar los programas en archivos - Paso 4</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-5.png" alt="IDLE. Menú File &gt; Save as ..." width="800" height="540">
-        </p>
-
-        <p>Escriba por ejemplo el programa:</p>
-
-        <div class="codigo idle">
-          <p><span class="idle-func">print</span>(<span class="idle-cade">"Hola, mundo"</span>)<br>
-            <span class="idle-func">print</span>(<span class="idle-cade">"Adios, mundo"</span>)</p>
-        </div>
-
-        <p>Habrá observado que en esta ventana, cuando se pulsa Intro, no se ejecuta la orden, sino que simplemente se pasa a la línea siguiente.</p>
-
-        <p class="control">
-          <a href="#d3"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d5"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d5">
-        <p><strong>Guardar los programas en archivos - Paso 5</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-6.png" alt="IDLE. Archivo guardado" width="800" height="540">
-        </p>
-
-        <p>Para poder ejecutar el programa, primero es necesario guardarlo. Elija la opción del menú <span class="idle-menu">File &gt; Save</span> o <span class="idle-menu">File &gt; Save As ...</span> para guardar el archivo (también puede utilizar el atajo de teclado <kbd>Ctrl+S</kbd>).</p>
-
-        <p class="control">
-          <a href="#d4"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d6"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d6">
-        <p><strong>Guardar los programas en archivos - Paso 6</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-7.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="540">
-        </p>
-
-        <p>La primera vez que guarde un programa se abrirá la ventana de diálogo estándar de Windows. Elija la carpeta y el nombre del archivo. La extensión habitual de los programas de Python es <strong>.py</strong>. Si no escribe la extensión, IDLE la añadirá automáticamente.</p>
-        <p class="control">
-          <a href="#d5"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d7"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d7">
-        <p><strong>Guardar los programas en archivos - Paso 7</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-8.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="540">
-        </p>
-
-        <p>Una vez guardado el programa, el nombre del archivo aparece en la barra de título de la ventana.</p>
-
-        <p class="control">
-          <a href="#d6"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d8"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d8">
-        <p><strong>Guardar los programas en archivos - Paso 8</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-9.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="540">
-        </p>
-
-        <p>Una vez haya guardado el programa, puede ejecutarlo mediante la opción del menú <span class="idle-menu">Run &gt; Run module</span> (también puede utilizar la tecla <kbd>F5</kbd>).</p>
-
-        <p class="control">
-          <a href="#d7"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d9"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-        </p>
-      </div>
-
-      <div id="d9">
-        <p><strong>Guardar los programas en archivos - Paso 9</strong></p>
-
-        <p class="captura">
-          <img src="../img/idle/idle-10.png" alt="IDLE. Ejecución de un programa" width="800" height="540">
-        </p>
-
-        <p>La salida del programa se mostrará en la ventana principal de IDLE.</p>
-
-        <p class="control">
-          <a href="#d8"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"> </p>
-      </div>
-    </div>
+    <p class="captura">
+      <img src="../img/idle/idle-10.png" alt="IDLE. Ejecución de un programa" width="800" height="220">
+    </p>
 
     <hr class="corta">
 
-    <p>El procedimiento de trabajo es siempre el mismo: escriba o modifique el programa en la ventana secundaria, guárdelo, ejecútelo y, en su caso, la salida del programa se mostrará en la ventana principal. Si quiere, puede tener varias ventanas secundarias abiertas simultáneamente.</p>
+    <p>El procedimiento de trabajo es siempre el mismo: escriba o modifique el programa en la ventana secundaria, guárdelo, ejecútelo y, en su caso, la salida del programa se mostrará en la ventana principal. Si quiere, puede tener varias ventanas secundarias abiertas simultáneamente, pero la ejecución de los programas siempre se realiza en la ventana principal.</p>
 
     <hr class="corta">
 
-    <p>Al escribir un programa tenga cuidado en no escribir espacios en blanco innecesarios al principio de una línea, porque Python mostrará un mensaje de error. Más adelante, en la lección de <a href="../lecciones/python-if-else.html">if.. elif... else..</a>, aprenderá cuándo se deben poner espacios en blanco y qué significan en Python, pero en las primeras lecciones (<a href="../lecciones/python-operaciones-matematicas.html">Operaciones aritméticas elementales</a>, <a href="../lecciones/python-variables.html">Variables</a>, <a href="../lecciones/python-salida-pantalla.html">Salida por pantalla</a> y <a href="../lecciones/python-entrada-teclado.html">Entrada por teclado</a>) no debe poner espacios en blanco al principio de la línea.</p>
-  </section>
-
-  <section id="ejecutar-idle">
-    <h2>Ejecutar programas en IDLE</h2>
-
-    <p>Puede ejecutar en IDLE programas creados anteriormente, de dos maneras equivalentes:</p>
+    <p>También puede ejecutar en IDLE programas creados anteriormente, abriéndolo previamente. Puede abrir un programa de dos formas:</p>
 
     <ul>
       <li>Abra IDLE y abra desde IDLE el fichero del programa (menú <span class="soft-menu">File &gt; Open</span>):
@@ -295,7 +179,7 @@ NameError: name 'hola' is not defined</span>
           <img src="../img/idle/idle-file-open.png" alt="IDLE. Abrir con IDLE desde Explorador de Windows" width="669" height="120">
         </p>
       </li>
-      <li>Abra en el Explorador de Windows la carpeta que contiene el programa, haga clic derecho sobre el programa y elija la opción "Edit with IDLE &gt; Edit with IDLE 3.6 (64-bit)";
+      <li>Abra en el Explorador de Windows la carpeta que contiene el programa, haga clic derecho sobre el programa y elija la opción "Edit with IDLE &gt; Edit with IDLE 3.7 (64-bit)";
         <p class="captura">
           <img src="../img/idle/idle-edit-with-1.png" alt="IDLE. Abrir con IDLE desde Explorador de Windows" width="1024" height="200">
         </p>
@@ -303,11 +187,55 @@ NameError: name 'hola' is not defined</span>
     </ul>
 
     <p>Una vez abierto el programa en IDLE, ejecútelo pulsando <span class="soft-atajo-teclado">F5</span> o mediante el menú <span class="soft-menu">Run &gt; Rum module</span>.</p>
+  </section>
 
+  <section id="errores">
+    <h2>Errores en los programas</h2>
+
+    <p>Si al ejecutar una orden o un programa se produce algún error o contienen errores de sintaxis, Python genera un mensaje de error en inglés que indica dónde se ha producido el error y una descripción del tipo de error. El mensaje de error se muestra en una ventana modal o en la ventana principal de IDLE. Si se trata de un error de sintaxis, el origen del error puede encontrarse exactamente en el punto donde indica Python, pero también puede encontrarse en un punto anterior del programa que Python no puede identificar. Por ejemplo, si una cadena no se cierra, Python indicará que al final del programa ha encontrado una cadena sin cerrar, pero Python no puede identificar dónde deberíamos haber cerrado la cadena.</p>
+
+    <ul>
+      <li>El siguiente ejemplo es un ejemplo de error de sintaxis, concretamente que faltan los paréntesis que deben rodear los argumentos de cualquier función en este caso, la función <span class="idle-func">print</span>(). Si la orden se ha escrito en el entorno interactivo, el mensaje de error se muestra en el propio entorno.
+
+        <div class="codigo idle">
+          <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> <span class="idle-cade">"hola"</span>
+<span class="idle-resp"><span class="idle-erro">SyntaxError: Missing parentheses in call to 'print'. Did you mean print("hola")?</span></span>
+<span class="idle-prompt">&gt;&gt;&gt;</span></pre>
+        </div>
+      </li>
+
+      <li>El siguiente ejemplo es el mismo ejemplo que el anterior, pero en un programa. Como antes de ejecutar un programa se comprueba su sintaxis, este error se detecta antes de ejecutar el programa e IDLE muestra el mensaje de error en una ventana emergente:
+
+        <div class="codigo idle">
+          <pre>
+<span class="idle-func">print</span> <span class="idle-cade">"hola"</span>
+</pre>
+        </div>
+
+        <div class="captura">
+          <img src="../img/idle/idle-error-sintaxis.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="361" height="152">
+        </div>
+      </li>
+
+      <li>El siguiente ejemplo es un ejemplo de error de sintaxis que se detecta al ejecutar el programa. Concretamente el error se debe a que <span class="idle-cade">hola</span> no está entre comillas y Python entiende que se hace referencia a una variable que se llama hola; al no estar definida previamente ninguna variable que se llame así, se produce un error. Como el error se detecta cuando ya se está ejecutando el programa, IDLE muestra el mensaje en el entorno interactivo:
+
+        <div class="codigo idle">
+          <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(hola)
+<span class="idle-erro">Traceback (most recent call last):
+  File "&lt;pyshell#3&gt;", line 1, in ?
+    print hola
+NameError: name 'hola' is not defined</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span>
+</pre>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
