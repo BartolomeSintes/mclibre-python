@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 12 de febrero de 2019                    */
+/* 16 de febrero de 2019                    */
 /*                                          */
 
 /* CSS comun */
@@ -297,7 +297,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.terminal, div.codigo, div[class^="resultado"], div[class^="enunciado"] {
+div.terminal, div.codigo, div.powershell, div[class^="resultado"], div[class^="enunciado"] {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
@@ -306,9 +306,15 @@ div.terminal, div.codigo, div[class^="resultado"], div[class^="enunciado"] {
   color: black;
 }
 
-div.terminal, div.codigo {
+div.powershell {
+  background-color: hsl(215,98%,17%);
+  color: white;
+}
+
+div.terminal, div.codigo, div.powershell {
   font-family: "Consolas", monospace;
 }
+
 
 div.resultado-object {
   padding: 0;
@@ -638,6 +644,10 @@ code.language-sql {
 }
 
 /* Clases para fragmentos de codigo en texto */
+
+/* Estilo imitando a PowerShell de Windows 10 */
+
+.ps-program        { color: yellow; fill: yellow; }
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 

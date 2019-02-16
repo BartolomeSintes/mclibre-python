@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Entorno interactivo. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>El entorno interactivo de Python</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Entorno interactivo</h2>
+
+      <ul>
+        <li><a href="#terminal">en terminal</a></li>
+        <li><a href="#idle">en IDLE</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Los programas de Python se ejecutan normalmente en un terminal (o una ventana de terminal de Windows), como se comenta en la lección <a href="python-uso.html">Ejecutar programas</a>. Los programas son ejecutados por el intérprete de Python. Pero al instalar Python también se instala un <strong>entorno interactivo</strong> de Python que permite ejecutar instrucciones sueltas.</p>
+
+  <p>En las lecciones sobre el lenguaje Python de estos apuntes, los ejemplos se muestran a veces en forma de programas y a veces en forma de entorno interactivo.</p>
+  <ul>
+    <li>Los ejemplos en forma de entorno interactivo se muestran en los apuntes con fondo blanco y texto en colores, imitando el interfaz de IDLE. Esos ejemplos se pueden ejecutar en el entorno interactivo de terminal, pero entonces se verán en blanco y negro.</li>
+    <li>Los ejemplos en forma de programa se muestran en los apuntes con fondo negro y texto en colores, imitando el interfaz de Visual Studio Code.</li>
+  </ul>
+
+  <p>En las páginas de ejercicios de estos apuntes:</p>
+  <ul>
+    <li>Los ejemplos que acompañan a los enunciados de los ejercicios se muestran en los apuntes imitando el interfaz de IDLE. Así, es fácil distinguir los datos introducidos por el usuario, que se muestran en negro, del texto escrito por el programa, que se muestra en azul.</li>
+    <li>Las soluciones de los ejercicios se muestran en los apuntes imitando el interfaz de Visual Studio Code.</li>
+  </ul>
+
+  <p>Se puede acceder al entorno interactivo de Python en una ventana de terminal o en una ventana de IDLE.</p>
+
+  <section id="terminal">
+    <h2>Entorno interactivo de Python en terminal</h2>
+
+    <p>Para entrar en el entorno interactivo de Python, abra una ventana de terminal y escriba python:</p>
+    <div class="terminal">
+      <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">python</code>
+</pre>
+    </div>
+    <p>Se mostrará el entorno interactivo:</p>
+    <div class="terminal">
+      <pre>
+<code class="language-shell">Python 3.7.2 (tags/v3.7.2:93affc0492, Dec 23 2018, 23:09:28) [NSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</code>
+</pre>
+    </div>
+
+    <p>La primera línea nos indica la versión de Python que tenemos instalada.</p>
+
+    <p>El símbolo de petición &gt;&gt;&gt; (en inglés, <i>prompt</i>) nos indica que podemos escribir una instrucción de Python. Si escribimos una instrucción y pulsamos <kbd>Intro</kbd>, Python ejecutará la instrucción, escribirá el resultado de la ejecución y volverá a mostrar el <i>prompt</i>, como muestra el siguiente ejemplo:</p>
+    <div class="terminal">
+      <pre>
+<code class="language-shell">Python 3.7.2 (tags/v3.7.2:93affc0492, Dec 23 2018, 23:09:28) [NSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 3 * 4
+12
+&gt;&gt;&gt; </code>
+</pre>
+    </div>
+
+    <p>Si escribimos una instrucción incorrecta, Python nos mostrará el mensaje correspondiente:</p>
+    <div class="terminal">
+      <pre>
+<code class="language-shell">Python 3.7.2 (tags/v3.7.2:93affc0492, Dec 23 2018, 23:09:28) [NSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 3 4
+  File "&lt;stdin&gt;", line 1
+    3 4
+      ^
+SyntaxError: invalid syntax
+&gt;&gt;&gt; </code>
+</pre>
+    </div>
+
+    <p>Podemos recorrer la lista de instrucciones ya ejecutadas pulsando las teclas <kbd>Flecha arriba</kbd> y <kbd>Flecha abajo</kbd>. Una vez recuperada una instrucción, podemos modificarla si fuera necesario y pulsar <kbd>Intro</kbd> para ejecutarla.</p>
+
+    <p>Para salir del entorno interactivo, cierre la ventana de terminal o escriba exit():</p>
+    <div class="terminal">
+      <pre class="command-line" data-prompt="C:\>" data-output="2-4">
+<code class="language-shell">python
+Python 3.7.2 (tags/v3.7.2:93affc0492, Dec 23 2018, 23:09:28) [NSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; exit()
+</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="idle">
+    <h2>Entorno interactivo de Python en IDLE</h2>
+
+    <p>IDLE es un entorno gráfico de programación elemental que en Windows se instala cuando se instala python pero que en Linux se debe instalar como una aplicación más.</p>
+
+    <p>Al abrir IDLE, la propia ventana es el entorno interactivo, como se explica en la lección <a href="python-idle.html">IDLE, entorno de desarrollo</a>.</p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 16 de febrero de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
