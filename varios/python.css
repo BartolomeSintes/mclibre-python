@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 16 de febrero de 2019                    */
+/* 18 de febrero de 2019                    */
 /*                                          */
 
 /* CSS comun */
@@ -648,6 +648,7 @@ code.language-sql {
 /* Estilo imitando a PowerShell de Windows 10 */
 
 .ps-program        { color: yellow; fill: yellow; }
+.mptc-error        { color: red; fill: red; }
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 

@@ -24,14 +24,18 @@
 
       <ul>
         <li><a href="#que-es">Qué es</a></li>
+        <li><a href="#usar-vsc">Usar MPTC en VSCode</a></li>
+        <li><a href="#bugs">Fallos de MPTC</a></li>
       </ul>
     </div>
   </nav>
 
-  <section id="que-es">
-    <h2>Qué es mclibre Python testing</h2>
+  <p>He empezado a crear Mclibre Python Testing en enero de 2019 y a lo largo del tercer trimestre del curso 2018/19 espero ir mejorando la herramienta, pero todavía tiene un carácter experimental.</p>
 
-    <p>mclibre Python testing es una herramienta basa en <a href="https://docs.pytest.org/en/latest/">PyTest</a> que estoy desarrollando para ayudar a los alumnos a comprobar que han resuelto correctamente los ejercicios propuestos en este curso.</p>
+  <section id="que-es">
+    <h2>Qué es Mclibre Python Testing</h2>
+
+    <p>Mclibre Python Testing es una herramienta basada en <a href="https://docs.pytest.org/en/latest/">PyTest</a> que pretende ayudar a los alumnos a comprobar que han resuelto correctamente los ejercicios propuestos en este curso.</p>
 
     <p>El código fuente de esta herramienta se encuentra en <a href="https://github.com/BartolomeSintes/mclibre-python-testing">GitHub</a> y se distribuye en <a href="https://pypi.org/project/mclibre-python-testing-client/">Python Package Index (PyPI)</a>.</p>
 
@@ -41,16 +45,10 @@
       <li>Un programa de cliente que solicita al servidor los parámetros de prueba para PyTest y que ejecuta PyTest con dichos parámetros y que muestra el resultado de las pruebas.</li>
     </ul>
 
-    <p>El alumno sólo necesita instalar el programa cliente. El programa cliente requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="http://docs.python-requests.org/en/master/">Requests</a>, que se deben instalar previamente.</p>
-
-    <p>Para interferir lo menos posible con la instalación de Python del sistema, se aconseja utilizar un entorno virtual. En Python existen varios sistemas de creación de entornos virtuales. El más sencillo es probablemente el módulo de la biblioteca estándar de Python, <a href="https://docs.python.org/3/library/venv.html">venv</a>, y en esta lección se hace referencia a este sistema, pero se utilizar cualquier otro.</p>
-
-    <hr class="corta">
-
-    <p>Actualmente (enero de 2019), mclibre Python Testing no está preparada para ser utilizada puesto que sólo proporciona valores de prueba para un ejercicio, pero en esta lección quiero ir escribiendo las instrucciones de uso.</p>
+    <p>El alumno sólo necesita instalar el programa cliente. El programa cliente requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="http://docs.python-requests.org/en/master/">Requests</a>, que se deben instalar previamente, como se comenta en la lección <a href="python-testing-instalacion.html">Instalación de MPTC</a>.</p>
   </section>
 
-  <section>
+  <section id="usar-vsc">
     <h2>Cómo utilizar MPTC en Visual Studio Code</h2>
 
     <p>Los pasos para utilizar Mclibre Python Testing Client en Visual Studio Code sson los siguientes:</p>
@@ -105,11 +103,11 @@ if __name__ == "__main__":
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-2.png" alt="VSC. Abrir terminal" width="1024" height="576">
         </p>
-        <p>En el terminal, escriba la orden <strong>mptc nombre_del_programa.py identificador_mptc</strong>, donde nombre_de-_programa.py es el nombre de su programa e identificador_mptc es el identificador MPTC del ejercicio:</p>
+        <p>En el terminal, escriba la orden <strong>mptc nombre_del_programa.py identificador_mptc</strong>, donde nombre_del_programa.py es el nombre de su programa e identificador_mptc es el identificador MPTC del ejercicio:</p>
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-3.png" alt="VSC. Ejecutar MPTC" width="1024" height="576">
         </p>
-        <p>Si todo funciona correctamente, se mostrará el resultado de las pruebas automática:</p>
+        <p>Si todo funciona correctamente, se mostrará el resultado de las pruebas automáticas:</p>
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-4.png" alt="VSC. Resultado MPTC" width="1024" height="576">
         </p>
@@ -117,8 +115,46 @@ if __name__ == "__main__":
     </ul>
   </section>
 
+  <section id="bugs">
+    <h2>Problemas conocidos</h2>
+
+    <p>Estos son algunos de los problemas que presenta MPTC.</p>
+
+    <h3>Si el programa falla, MPTC no ejecuta los tests</h3>
+
+    <p>Si el programa que se está probando tiene errores de sintaxis o falla en su ejecución, MPTC no puede probar el programa. El mensaje final dice que se han pasado todas las pruebas con éxito, pero no es cierto.</p>
+
+    <div class="powershell">
+      <pre>
+<code class="language-shell">PS C:\Users\Barto\Documents\LMSGI Barto\Python\pruebas&gt;<span class="ps-program">mptc</span> .\ejemplo_mptc_1000.py 1000
+...
+<span class="mptc-error">E   IndentationError: unexpected indent</span></code>
+...
+All tests have passed
+</pre>
+    </div>
+
+    <h3>Si el primer argumento no es únicamente el nombre del fichero, MPTC no ejecuta los tests</h3>
+
+    <p>Al llamar a MPTC el primer argumento debe ser el nombre del fichero que conteine el programa. No pueden usarse ni caminos relativos ni absolutos, ni siquiera el .\ que incluye PowerShell cuando se completan los nombres de ficheros con el tabulador. El mensaje final dice que se han pasado todas las pruebas con éxito, pero no es cierto.</p>
+
+    <div class="powershell">
+      <pre>
+<code class="language-shell">PS C:\Users\Barto\Documents\LMSGI Barto\Python\pruebas&gt;<span class="ps-program">mptc</span> .\ejemplo_mptc_1000.py 1000
+...
+<span class="mptc-error">E   TypeError: the 'package' argument is required to perform a relative import for .\\ejemplo_mptc_1000'</span></code>
+...
+All tests have passed
+</pre>
+    </div>
+
+    <h3>MPTC no funciona en el instituto</h3>
+
+    <p>Actualmente (febrero de 2019), MPTC no funciona en los centros educativos de la Generalitat Valenciana. Yo diría que es culpa del <i>proxy</i> de la Conselleria y estoy intentando averiguar el origen del problema.</p>
+
+  </section>
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 18 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
