@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
@@ -103,7 +103,12 @@
   </section>
 
   <section id="ejercicio-2">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 2</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 2</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>13</p>
+    </aside>
 
     <p>Escriba un programa que pida dos números y que conteste cuál es el menor y cuál el mayor o que escriba que son iguales.</p>
 
@@ -121,21 +126,26 @@
 <span class="idle-resp">COMPARADOR DE NÚMEROS</span>
 <span class="idle-resp">Escriba un número:</span> 5.0
 <span class="idle-resp">Escriba otro número:</span> 5
-<span class="idle-resp">Los dos números son iguales</span>
+<span class="idle-resp">Los dos números son iguales.</span>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-3">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 3</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 3</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>14</p>
+    </aside>
 
     <p>Escriba un programa que pida el año actual y un año cualquiera y que escriba cuántos años han pasado desde ese año o cuántos años faltan para llegar a ese año.</p>
 
     <div class="resultado-idle">
       <pre>
 <span class="idle-resp">COMPARADOR DE AÑOS</span>
-<span class="idle-resp">¿En qué año estamos?:</span> 2015
-<span class="idle-resp">Escriba un año cualquiera:</span> 2020
+<span class="idle-resp">¿En qué año estamos?:</span> 2019
+<span class="idle-resp">Escriba un año cualquiera:</span> 2024
 <span class="idle-resp">Para llegar al año 2020 faltan 5 años.</span>
 </pre>
     </div>
@@ -143,35 +153,47 @@
     <div class="resultado-idle">
       <pre>
 <span class="idle-resp">COMPARADOR DE AÑOS</span>
-<span class="idle-resp">¿En qué año estamos?:</span> 2015
+<span class="idle-resp">¿En qué año estamos?:</span> 2019
 <span class="idle-resp">Escriba un año cualquiera:</span> 1997
-<span class="idle-resp">Desde el año 1997 han pasado 18 años.</span>
+<span class="idle-resp">Desde el año 1997 han pasado 22 años.</span>
 </pre>
     </div>
 
     <div class="resultado-idle">
       <pre>
 <span class="idle-resp">COMPARADOR DE AÑOS</span>
-<span class="idle-resp">¿En qué año estamos?:</span> 2015
-<span class="idle-resp">Escriba un año cualquiera:</span> 2015
+<span class="idle-resp">¿En qué año estamos?:</span> 2019
+<span class="idle-resp">Escriba un año cualquiera:</span> 2019
 <span class="idle-resp">¡Son el mismo año!</span>
 </pre>
     </div>
 
-    <p><strong>Nota</strong>: Se puede mejorar el programa haciendo que cuando la diferencia sea exactamente un año, escriba la frase en singular:</p>
+    <h3 class="con-aside">3-2 - Diferencia de un año</h3>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>15</p>
+    </aside>
+
+    <p>Mejore el programa anterior haciendo que cuando la diferencia sea exactamente un año, escriba la frase en singular:</p>
 
     <div class="resultado-idle">
       <pre>
 <span class="idle-resp">COMPARADOR DE AÑOS</span>
-<span class="idle-resp">¿En qué año estamos?:</span> 2015
-<span class="idle-resp">Escriba un año cualquiera:</span> 2016
+<span class="idle-resp">¿En qué año estamos?:</span> 2019
+<span class="idle-resp">Escriba un año cualquiera:</span> 2020
 <span class="idle-resp">Para llegar al año 2016 falta 1 año.</span>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-4">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 4</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 4</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>16</p>
+    </aside>
 
     <p>Escriba un programa que pida dos números enteros y que escriba si el mayor es múltiplo del menor.</p>
 
@@ -210,10 +232,43 @@
 <span class="idle-resp">6 es múltiplo de 6.</span>
 </pre>
     </div>
+
+    <h3 class="con-aside">4-2 - Valores negativos o nulos</h3>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>17</p>
+    </aside>
+
+    <p>Mejore el programa anterior haciendo que el programa avise cuando se escriben valores negativos o nulos.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 5
+<span class="idle-resp">Escriba otro número:</span> -10
+<span class="idle-resp">Lo siento, este programa no admite valores negativos.</span>
+</pre>
+    </div>
+
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">COMPARADOR DE MÚLTIPLOS</span>
+<span class="idle-resp">Escriba un número:</span> 0
+<span class="idle-resp">Escriba otro número:</span> 5
+<span class="idle-resp">Lo siento, este programa no admite valores nulos.</span>
+</pre>
+    </div>
   </section>
 
   <section id="ejercicio-5">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 5</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 5</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>18</p>
+    </aside>
 
     <p>Escriba un programa que pida tres números y que escriba si son los tres iguales, si hay dos iguales o si son los tres distintos.</p>
 
@@ -481,7 +536,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
