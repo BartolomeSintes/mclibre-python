@@ -571,7 +571,12 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-6">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 6</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 6</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>19</p>
+    </aside>
 
     <p>En este ejercicio la complejidad de las condiciones depende del orden en que se consideren los casos.</p>
 
@@ -579,18 +584,23 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("COMPROBADOR DE AÑOS BISIESTOS")
-fecha = int(input("Escriba un año y le diré si es bisiesto: "))
+<code class="language-python">def main():
+    print("COMPROBADOR DE AÑOS BISIESTOS")
+    fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 
-if fecha %4 != 0:
-    print(f"El año {fecha} no es un año bisiesto.")
-elif fecha % 100 == 0 and fecha % 400 != 0:
-    print(f"El año {fecha} no es un año bisiesto porque es múltiplo de 100 "
-          f"sin ser múltiplo de 400.")
-elif fecha % 4 == 0 and fecha % 100 != 0:
-    print(f"El año {fecha} es un año bisiesto porque es múltiplo de 4 sin ser múltiplo de 100.")
-else:
-    print(f"El año {fecha} es un año bisiesto porque es múltiplo de 400.")</code>
+    if fecha %4 != 0:
+        print(f"El año {fecha} no es un año bisiesto.")
+    elif fecha % 100 == 0 and fecha % 400 != 0:
+        print(f"El año {fecha} no es un año bisiesto porque es múltiplo de 100 "
+            f"sin ser múltiplo de 400.")
+    elif fecha % 4 == 0 and fecha % 100 != 0:
+        print(f"El año {fecha} es un año bisiesto porque es múltiplo de 4 sin ser múltiplo de 100.")
+    else:
+        print(f"El año {fecha} es un año bisiesto porque es múltiplo de 400.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -602,18 +612,23 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("COMPROBADOR DE AÑOS BISIESTOS")
-fecha = int(input("Escriba un año y le diré si es bisiesto: "))
+<code class="language-python">def main():
+    print("COMPROBADOR DE AÑOS BISIESTOS")
+    fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 
-if fecha % 400 == 0:
-    print(f"El año {fecha} es un año bisiesto porque es múltiplo de 400.")
-elif fecha % 100 == 0:
-    print(f"El año {fecha} no es un año bisiesto porque es múltiplo de 100 "
-          f"sin ser múltiplo de 400.")
-elif fecha % 4 == 0:
-    print(f"El año {fecha} es un año bisiesto porque es múltiplo de 4.")
-else:
-    print(f"El año {fecha} no es un año bisiesto.")</code>
+    if fecha % 400 == 0:
+        print(f"El año {fecha} es un año bisiesto porque es múltiplo de 400.")
+    elif fecha % 100 == 0:
+        print(f"El año {fecha} no es un año bisiesto porque es múltiplo de 100 "
+            f"sin ser múltiplo de 400.")
+    elif fecha % 4 == 0:
+        print(f"El año {fecha} es un año bisiesto porque es múltiplo de 4 sin ser múltiplo de 100.")
+    else:
+        print(f"El año {fecha} no es un año bisiesto.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -625,19 +640,29 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("COMPROBADOR DE AÑOS BISIESTOS")
-fecha = int(input("Escriba un año y le diré si es bisiesto: "))
+<code class="language-python">def main():
+    print("COMPROBADOR DE AÑOS BISIESTOS")
+    fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 
-if fecha % 400 == 0 or fecha % 100 != 0 and fecha % 4 == 0:
-    print(f"El año {fecha} es un año bisiesto.")
-else:
-    print(f"El año {fecha} no es un año bisiesto.")</code>
+    if fecha % 400 == 0 or fecha % 100 != 0 and fecha % 4 == 0:
+        print(f"El año {fecha} es un año bisiesto.")
+    else:
+        print(f"El año {fecha} no es un año bisiesto.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-7">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 7</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 7</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>20</p>
+    </aside>
 
     <p>Para simplificar las condiciones es necesario considerar antes los casos más especiales. El primer caso es el caso más especial (ambos coeficientes nulos), el segundo caso es el siguiente más especial (el coeficiente "a" nulo) y el último el más general (ambos coeficientes no nulos).</p>
 
@@ -645,22 +670,32 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("ECUACIÓN A X + B = 0")
-a = float(input("Escriba el valor del coeficiente a: "))
-b = float(input("Escriba el valor del coeficiente b: "))
+<code class="language-python">def main():
+    print("ECUACIÓN A X + B = 0")
+    a = float(input("Escriba el valor del coeficiente a: "))
+    b = float(input("Escriba el valor del coeficiente b: "))
 
-if a == b == 0:
-    print("Todos los números son solución.")
-elif a == 0:
-    print("La ecuación no tiene solución.")
-else:
-    print(f"La ecuación tiene una solución: {- b / a}")</code>
+    if a == b == 0:
+        print("Todos los números son solución.")
+    elif a == 0:
+        print("La ecuación no tiene solución.")
+    else:
+        print(f"La ecuación tiene una solución: {- b / a}")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-8">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 8</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 8</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>21</p>
+    </aside>
 
     <p>Para simplificar las condiciones es necesario considerar antes los casos más especiales. Las tres primeras son similares a las del ejercicio de la ecuación de primer grado (el término "a" es 0) y el orden es importante. Las tres últimas corresponden a ecuaciones de segundo grado propiamente dichas (el término "a" es distinto de 0).</p>
 
@@ -668,25 +703,31 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("ECUACIÓN A X² + B X + C = 0")
-a = float(input("Escriba el valor del coeficiente a: "))
-b = float(input("Escriba el valor del coeficiente b: "))
-c = float(input("Escriba el valor del coeficiente b: "))
+<code class="language-python">def main():
+    print("ECUACIÓN A X² + B X + C = 0")
+    a = float(input("Escriba el valor del coeficiente a: "))
+    b = float(input("Escriba el valor del coeficiente b: "))
+    c = float(input("Escriba el valor del coeficiente c: "))
 
-d = b*b - 4*a*c
-if a == b == c == 0:
-    print("Todos los números son solución")
-elif a == b == 0:
-    print("Sin solución")
-elif a == 0:
-     print(f"Una solución: {- c / b}")
-elif d &lt; 0:
-    print("Sin solución real")
-elif d == 0:
-    print(f"Una solución: {- b / (2*a)}")
-else:
-    print(f"Dos soluciones: {(-b - d**0.5) / (2*a)} y "
-          f"{(-b + d**0.5) / (2*a)}")</code>
+    d = b * b - 4 * a * c
+    if a == b == c == 0:
+        print("Todos los números son solución.")
+    elif a == b == 0:
+        print("La ecuación no tiene solución.")
+    elif a == 0:
+        print(f"La ecuación tiene una solución: {- c / b}")
+    elif d &lt; 0:
+        print("La ecuación no tiene solución real.")
+    elif d == 0:
+        print(f"La ecuación tiene una solución: {- b / (2 * a)}")
+    else:
+        print(
+            f"La ecuación tiene dos soluciones: {(-b - d ** 0.5) / (2 * a)} y {(-b + d ** 0.5) / (2 * a)}"
+        )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -694,56 +735,77 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("ECUACIÓN A X² + B X + C = 0")
-a = float(input("Escriba el valor del coeficiente a: "))
-b = float(input("Escriba el valor del coeficiente b: "))
-c = float(input("Escriba el valor del coeficiente b: "))
+<code class="language-python">def main():
+    print("ECUACIÓN A X² + B X + C = 0")
+    a = float(input("Escriba el valor del coeficiente a: "))
+    b = float(input("Escriba el valor del coeficiente b: "))
+    c = float(input("Escriba el valor del coeficiente c: "))
 
-if a == b == c == 0:
-    print("Todos los números son solución")
-elif a == b == 0:
-    print("Sin solución")
-elif a == 0:
-    print(f"Una solución: {- c / b}")
-else:
-    d = b*b - 4*a*c
-    if d &lt; 0:
-        print("Sin solución real")
-    elif d == 0:
-        print(f"Una solución: {- b / (2*a)}")
+    if a == b == c == 0:
+        print("Todos los números son solución.")
+    elif a == b == 0:
+        print("La ecuación no tiene solución.")
+    elif a == 0:
+        print(f"La ecuación tiene una solución: {- c / b}")
     else:
-        print(f"Dos soluciones: {(-b - d**0.5) / (2*a)} y "
-              f"{(-b + d**0.5) / (2*a)}")</code>
+        d = b * b - 4 * a * c
+        if d &lt; 0:
+            print("La ecuación no tiene solución real.")
+        elif d == 0:
+            print(f"La ecuación tiene una solución: {- b / (2 * a)}")
+        else:
+            print(
+                f"La ecuación tiene dos soluciones: {(-b - d ** 0.5) / (2 * a)} y {(-b + d ** 0.5) / (2 * a)}"
+            )
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-9">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... 9</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... 9</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>22</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">print("CÁLCULO DE ÁREAS")
-print("Elija una figura geométrica:")
-print("a) Triángulo")
-print("b) Círculo")
-respuesta = input("¿Qué figura quiere calcular (Escriba T o C)? ")
+<code class="language-python">def main():
+    print("CÁLCULO DE ÁREAS")
+    print("Elija una figura geométrica:")
+    print("a) Triángulo")
+    print("b) Círculo")
+    respuesta = input("¿Qué figura quiere calcular (Escriba T o C)? ")
 
-if respuesta == "T" or respuesta == "t":
-    base = float(input("Escriba la base: "))
-    altura = float(input("Escriba la altura: "))
-    print(f"Un triángulo de base {base} y altura {altura} "
-          f"tiene un área de {base * altura / 2}")
-elif respuesta == "C" or respuesta == "c":
-    radio = float(input("Escriba el radio: "))
-    print(f"Un círculo de radio {radio} tiene un área de "
-          f"{3.141592 * radio**2}")</code>
+    if respuesta == "T" or respuesta == "t":
+        base = float(input("Escriba la base: "))
+        altura = float(input("Escriba la altura: "))
+        print(
+            f"Un triángulo de base {base} y altura {altura} tiene un área de {base * altura / 2}"
+        )
+    elif respuesta == "C" or respuesta == "c":
+        r = float(input("Escriba el radio: "))
+        print(f"Un círculo de radio {r} tiene un área de {3.141592 * r * r}")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-10">
-    <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 10</h2>
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - 10</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>23</p>
+    </aside>
 
     <p>El siguiente programa escribe el resultado sin separadores y sea cual sea su valor:</p>
 
@@ -844,7 +906,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 21 de febrero de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
