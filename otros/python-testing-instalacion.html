@@ -25,11 +25,19 @@
       <ul>
         <li><a href="#windows">Windows</a>
           <ul>
-            <li><a href="#windows-sistema">Sistema</a></li>
+            <li><a href="#windows-sistema">Sistema</a>
+              <ul>
+                <li><a href="#windows-sistema-instalar">Instalar</a></li>
+                <li><a href="#windows-sistema-usar">Usar</a></li>
+                <li><a href="#windows-sistema-actualizar">Actualizar</a></li>
+                <li><a href="#windows-sistema-desinstalar">Desinstalar</a></li>
+              </ul>
+            </li>
             <li><a href="#windows-venv">venv</a>
               <ul>
                 <li><a href="#windows-venv-instalar">Instalar</a></li>
                 <li><a href="#windows-venv-usar">Usar</a></li>
+                <li><a href="#windows-venv-actualizar">Actualizar</a></li>
                 <li><a href="#windows-venv-desinstalar">Desinstalar</a></li>
               </ul>
             </li>
@@ -55,52 +63,106 @@
 
   <p>Se puede instalar como módulo de sistema o se puede instalar en un entorno virtual(venv o pyenv). Si simplemente quiere evaluar el funcionamiento de MPTC, o si sabe utilizar entornos virtuales de Python, se recomienda instalarlo en un entorno virtual. Si va a seguir este curso de programación o no tiene apenas conocimientos de Python, se recomienda instalarlo en el sistema operativo.</p>
 
-  <p>En esta lección se explica cómo instalar MPTC en Windows y Ubuntu 18.04.</p>
+  <p>En esta lección se explica cómo instalar, actualizar, usar o deinstalar MPTC en Windows y Ubuntu 18.04.</p>
 
   <section id="windows">
-    <h2>Instalar MPTC en Windows</h2>
+    <h2>MPTC en Windows</h2>
 
     <p>Estos son los pasos a realizar para instalar Mclibre Python Testing Client en Windows, como módulo de sistema o en un entorno virtual venv.</p>
 
     <section id="windows-sistema">
-      <h3>Instalar MPTC como módulo de sistema en Windows</h3>
+      <h3>MPTC como módulo de sistema en Windows</h3>
 
-      <p>Los pasos para instalar Mclibre Python Testing Client como módulo de sistema en Windows son los siguientes:</p>
-      <ul>
-        <li>Abra una ventana de terminal y escriba los siguientes comandos.</li>
-        <li>Actualice <a href="https://pip.pypa.io/en/stable/">pip</a>:
-          <div class="terminal">
-            <pre class="command-line" data-prompt="C:\>">
+      <p>Estos son los pasos a realizar para instalar, actualizar, usar y desinstalar Mclibre Python Testing Client en Windows como módulo de sistema.</p>
+
+      <section id="windows-sistema-instalar">
+        <h4>Instalar MPTC como módulo de sistema en Windows</h4>
+
+        <p>Los pasos para instalar Mclibre Python Testing Client como módulo de sistema en Windows son los siguientes:</p>
+        <ul>
+          <li>Abra una ventana de terminal y escriba los siguientes comandos.</li>
+          <li>Actualice <a href="https://pip.pypa.io/en/stable/">pip</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
 <code class="language-shell">pip install --upgrade --user pip</code>
 </pre>
-          </div>
-        </li>
-        <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
-          <div class="terminal">
-            <pre class="command-line" data-prompt="C:\>">
+            </div>
+          </li>
+          <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
 <code class="language-shell">pip install pytest</code>
 </pre>
-          </div>
-        </li>
-        <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
-          <div class="terminal">
-            <pre class="command-line" data-prompt="C:\>">
+            </div>
+          </li>
+          <li>Instale <a href="http://docs.python-requests.org/en/master/">Requests</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
 <code class="language-shell">pip install requests</code>
 </pre>
-          </div>
-        </li>
-        <li>Instale <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
-          <div class="terminal">
-            <pre class="command-line" data-prompt="C:\>">
+            </div>
+          </li>
+          <li>Instale <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
 <code class="language-shell">pip install mclibre-python-testing-client</code>
 </pre>
-          </div>
-        </li>
-      </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="windows-sistema-usar">
+        <h4>Usar MPTC como módulo de sistema en Windows</h4>
+
+        <p>Los pasos para usar Mclibre Python Testing Client en Windows son los siguientes:</p>
+        <ul>
+          <li>Cree un programa que resuelva uno de los ejercicios (en este ejemplo el programa se llama programa.py).</li>
+          <li>Si ha instalado correctamente Mclibre Python Testing Client, dispondrá de un nuevo comando llamado <i>mptc</i>. La sintaxis del comando requiere el nombre del programa a probar y el identificador del enunciado del ejercicio:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">mptc programa.py 1</code>
+</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="windows-sistema-actualizar">
+        <h4>Actualizar MPTC como módulo de sistema en Windows</h4>
+
+        <p>Los pasos para actualizar Mclibre Python Testing Client como módulo de sistema en Windows son los siguientes:</p>
+        <ul>
+          <li>Abra una ventana de terminal y escriba los siguientes comandos.</li>
+          <li>Actualice <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+</pre>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="windows-sistema-desinstalar">
+        <h4>Desinstalar MPTC como módulo de sistema en Windows</h4>
+
+        <p>Para desinstalar Mclibre Python Testing Client en Windows:</p>
+        <ul>
+          <li>Desinstale <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
+            <div class="terminal">
+              <pre class="command-line" data-prompt="C:\>(venv-dir)">
+<code class="language-shell">pip uninstall mclibre-python-testing-client</code>
+</pre>
+            </div>
+            <p>Para volver a utilizar Mclibre Python Testing Client en este entorno, deberá volver a instalarlo.</p>
+          </li>
+        </ul>
+      </section>
     </section>
 
     <section id="windows-venv">
-      <h3>Instalar, usar y desinstalar MPTC en entorno virtual <strong>venv</strong> en Windows</h3>
+      <h3>MPTC en entorno virtual <strong>venv</strong> en Windows</h3>
 
       <p>Estos son los pasos a realizar para instalar, usar y desinstalar Mclibre Python Testing Client en Windows utilizando el módulo de la biblioteca estándar de Python <strong>venv</strong>.</p>
 
@@ -179,6 +241,22 @@
         </ul>
       </section>
 
+      <section id="windows-venv-actualizar">
+          <h4>Actualizar MPTC en entorno virtual <strong>venv</strong> en Windows</h4>
+
+          <p>Los pasos para actualizar Mclibre Python Testing Client en Windows utilizando el módulo de la biblioteca estándar de Python <strong>venv</strong> son los siguientes:</p>
+          <ul>
+            <li>Abra una ventana de terminal y escriba los siguientes comandos.</li>
+            <li>Actualice <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
+              <div class="terminal">
+                <pre class="command-line" data-prompt="C:\>(venv-dir)">
+<code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </section>
+
       <section id="windows-venv-desinstalar">
         <h4>Desinstalar MPTC en entorno virtual <strong>venv</strong> en Windows</h4>
 
@@ -219,18 +297,18 @@
   </section>
 
   <section id="ubuntu">
-    <h2>Instalar MPTC en Ubuntu</h2>
+    <h2>MPTC en Ubuntu</h2>
 
     <p>Estos son los pasos a realizar para instalar Mclibre Python Testing Client en Ubuntu, como módulo de sistema o en un entorno virtual venv.</p>
 
     <section id="ubuntu-sistema">
-      <h3>Instalar MPTC como módulo de sistema en Ubuntu</h3>
+      <h3>MPTC como módulo de sistema en Ubuntu</h3>
 
       <p class="incompleto">Por escribir</p>
     </section>
 
     <section id="ubuntu-venv">
-      <h3>Instalar, usar y desinstalar MPTC en entorno virtual <strong>venv</strong> en Ubuntu</h3>
+      <h3>MPTC en entorno virtual <strong>venv</strong> en Ubuntu</h3>
 
       <p>Estos son los pasos a realizar para instalar, usar y desinstalar Mclibre Python Testing Client en Ubuntu utilizando el módulo de la biblioteca estándar de Python <strong>venv</strong>.</p>
 
@@ -578,7 +656,7 @@ python mclibre-pytesting.py XX</code>
 -->
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
