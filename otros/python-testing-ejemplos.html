@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplos. Python testing. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>MPTC: ejemplos de utilización</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Ejemplos MPTC</h2>
+
+      <ul>
+        <li><a href="#ejemplo-1">Ejemplo 1</a></li>
+        <li><a href="#ejemplo-2">Ejemplo 2</a></li>
+        <li><a href="#ejemplo-3">Ejemplo 3</a></li>
+        <li><a href="#ejemplo-4">Ejemplo 4</a></li>
+        <li><a href="#ejemplo-5">Ejemplo 5</a></li>
+        <li><a href="#ejemplo-6">Ejemplo 6</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estos son varios ejemplos de programas muy sencillos para probar el funcionamiento de MPTC (Mclibre Python Testing Client).</p>
+
+  <section id="ejemplo-1">
+    <h2 class="con-aside">Ejemplo 1</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1001</p>
+    </aside>
+
+    <p>Escriba un programa que escriba ¡Hola, mundo!.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">¡Hola, mundo!</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("¡Hola, mundo!")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <section id="ejemplo-2">
+    <h2 class="con-aside">Ejemplo 2</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1002</p>
+    </aside>
+
+    <p>Escriba un programa que salude y se despida.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">SALUDANDO</span>
+<span class="idle-resp">¡Hola, mundo!</span>
+<span class="idle-resp">¡Adios, amigo!</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("SALUDANDO")
+    print("¡Hola, mundo!")
+    print("¡Adios, amigo!")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <section id="ejemplo-3">
+    <h2 class="con-aside">Ejemplo 3</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1003</p>
+    </aside>
+
+    <p>Escriba un programa que pida un número entero y lo muestre.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">ESCRIBA NÚMERO</span>
+<span class="idle-resp">Escriba un número entero:</span> 1234
+<span class="idle-resp">Ha escrito el número 1234.</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("ESCRIBA NÚMERO")
+    numero = int(input("Escriba un número entero: "))
+    print(f"Ha escrito el número {numero}.")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <section id="ejemplo-4">
+    <h2 class="con-aside">Ejemplo 4</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1004</p>
+    </aside>
+
+    <p>Escriba un programa que pida dos números decimales y los sume.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">SUMA NÚMEROS</span>
+<span class="idle-resp">Escriba un número:</span> 5
+<span class="idle-resp">Escriba otro número:</span> 5.5
+<span class="idle-resp">5.0 + 5.5 = 10.5</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("SUMA NÚMEROS")
+    numero_1 = float(input("Escriba un número: "))
+    numero_2 = float(input("Escriba otro número: "))
+    print(f"{numero_1} + {numero_2} = {numero_1 + numero_2}")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <section id="ejemplo-5">
+    <h2 class="con-aside">Ejemplo 5</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1005</p>
+    </aside>
+
+    <p>Escriba un programa que pida dos números, el segundo más grande que el primero.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">NÚMEROS CRECIENTES</span>
+<span class="idle-resp">Escriba un número:</span> 5
+<span class="idle-resp">Escriba otro número más grande:</span> 1.5
+<span class="idle-resp">¡Le he pedido un número más grande!</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">NÚMEROS CRECIENTES</span>
+<span class="idle-resp">Escriba un número:</span> 3.5
+<span class="idle-resp">Escriba otro número más grande:</span> 8
+<span class="idle-resp">Gracias por su colaboración.</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("NÚMEROS CRECIENTES")
+    numero_1 = float(input("Escriba un número: "))
+    numero_2 = float(input("Escriba otro número más grande: "))
+    if numero_1 &gt;= numero_2:
+        print(f"¡Le he pedido un número más grande!")
+    else:
+        print(f"Gracias por su colaboración.")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <section id="ejemplo-6">
+    <h2 class="con-aside">Ejemplo 6</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>1006</p>
+    </aside>
+
+    <p>Escriba un programa que simule la tirada de un dado.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">TIRADA DE DADO</span>
+<span class="idle-resp">Ha salido un 3.</span>
+</pre>
+    </div>
+
+    <details>
+      <summary>Una posible solución es la siguiente:</summary>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">import random
+
+def main():
+    print("TIRADA DE DADO")
+    dado = random.randrange(1, 7)
+    print(f"Ha salido un {dado}.")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
