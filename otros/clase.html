@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
+  <style>
+    div.terminal {
+      border: 2px black solid;
+      margin: 5px 10px;
+      padding: 0 5px;
+      background-color: #1e1e1e;
+      color: white;
+      font-size: 110%;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,8 +34,8 @@
         <li><a href="#introduccion">Introducción</a></li>
         <li><a href="#q08b">Q08B: del 07/01 al 13/01/19</a></li>
         <li><a href="#q09">Q09: del 21/01/19 al 03/02/19</a></li>
-        <!--
         <li><a href="#q10">Q10: del 04/02/19 al 17/02/19</a></li>
+        <!--
         <li><a href="#q11">Q11: del 18/02/19 al 03/03/19</a></li>
         <li><a href="#q12">Q12: del 04/03/19 al 24/03/19</a></li>
         <li><a href="#q13">Q13: del 25/03/19 al 07/04/19</a></li>
@@ -122,52 +132,113 @@
   </section>
 
   <section id="q09">
-  <h2>Quincena Q09: del 21/01/19 al 03/02/19</h2>
+    <h2>Quincena Q09: del 21/01/19 al 03/02/19</h2>
 
-  <p>El objetivo de esta primera quincena es que empecéis a escribir programas que pidan valores al usuario, hagan cálculos sencillos y muestren resultados al usuario. Para ello se necesitan combinar varias instrucciones y utilizar variables.</p>
+    <p>El objetivo de esta primera quincena es que empecéis a escribir programas que pidan valores al usuario, hagan cálculos sencillos y muestren resultados al usuario. Para ello se necesitan combinar varias instrucciones y utilizar variables.</p>
 
-  <h3>Entrada y salida</h3>
+    <h3>Entrada y salida</h3>
 
-  <ul>
-    <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-salida-pantalla.html">Salida por pantalla</a>.
-      <p>Para hacer programas interactivos hace falta mostrar mensajes al usuario. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección ya no deben probarse en IDLE, sino en programas que hay que guardar y ejecutar (aunque la salida por pantalla se muestra en la ventana de IDLE).</p>
-    </li>
-    <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-entrada-teclado.html">Entrada por teclado</a>.
-      <p>Para hacer programas interactivos hace falta que el programa solicite datos al usuario y trabaje con ellos. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección ya no deben probarse en IDLE, sino en programas que hay que guardar y ejecutar (aunque la entrada de datos se hace en la ventana de IDLE).</p>
-    </li>
-    <li>En la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-plantilla.html">Programa básico de Python.</a> tenéis un ejemplo de programa básico que debéis utilizar. Las instrucciones de vuestros programas debéis escribirlas dentro de la función main(), sangradas cuatro espacios.</li>
-    <li>Haced los ejercicios <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html">Variables, E/S y Operaciones aritméticas</a>.
-    </li>
-    <li>En la página de <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-variables-soluciones.html">soluciones Variables, E/S y Operaciones aritméticas</a> podéis consultar soluciones de los ejercicios.</li>
-  </ul>
+    <ul>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-salida-pantalla.html">Salida por pantalla</a>.
+        <p>Para hacer programas interactivos hace falta mostrar mensajes al usuario. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección ya no deben probarse en IDLE, sino en programas que hay que guardar y ejecutar (aunque la salida por pantalla se muestra en la ventana de IDLE).</p>
+      </li>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-entrada-teclado.html">Entrada por teclado</a>.
+        <p>Para hacer programas interactivos hace falta que el programa solicite datos al usuario y trabaje con ellos. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección ya no deben probarse en IDLE, sino en programas que hay que guardar y ejecutar (aunque la entrada de datos se hace en la ventana de IDLE).</p>
+      </li>
+      <li>En la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-plantilla.html">Programa básico de Python.</a> tenéis un ejemplo de programa básico que debéis utilizar. Las instrucciones de vuestros programas debéis escribirlas dentro de la función main(), sangradas cuatro espacios.</li>
+      <li>Haced los ejercicios <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-variables.html">Variables, E/S y Operaciones aritméticas</a>.
+      </li>
+      <li>En la página de <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-variables-soluciones.html">soluciones Variables, E/S y Operaciones aritméticas</a> podéis consultar soluciones de los ejercicios.</li>
+    </ul>
 
-  <h3>Prueba de programas</h3>
+    <h3>Prueba de programas</h3>
 
-  <ul>
-    <li>Instalad mclibre Python Testing Client de acuerdo con la lección <a href="http://www.mclibre.org/consultar/python/otros/python-testing-instalacion.html">Instalación de mclibre Python Testing Client</a>
-      <p>Si habéis instalado Python para seguir este curso, es decir, si no utilizáis Python para nada, quiero que hagáis la instalación en Windows que se comenta en el primer apartado. Los apartados dedicados a la instalación en entornos virtuales son para situaciones especiales en la que hay que compatibilizar Python para distintos usos. Enviadme un correo o mensaje si pensáis que estáis en esa situación.</p>
-    </li>
-    <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/otros/python-testing.html">Uso de mclibre Python Testing Client</a></li>
-  </ul>
+    <ul>
+      <li>Instalad mclibre Python Testing Client de acuerdo con la lección <a href="http://www.mclibre.org/consultar/python/otros/python-testing-instalacion.html">Instalación de mclibre Python Testing Client</a>
+        <p>Si habéis instalado Python para seguir este curso, es decir, si no utilizáis Python para nada, quiero que hagáis la instalación en Windows que se comenta en el primer apartado. Los apartados dedicados a la instalación en entornos virtuales son para situaciones especiales en la que hay que compatibilizar Python para distintos usos. Enviadme un correo o mensaje si pensáis que estáis en esa situación.</p>
+      </li>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/otros/python-testing.html">Uso de mclibre Python Testing Client</a></li>
+    </ul>
 
-  <h3>Variables y expresiones booleanas (lógicas)</h3>
+    <h3>Variables y expresiones booleanas (lógicas)</h3>
 
-  <ol>
-    <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-booleanos.html">Tipos de datos booleanos</a>
-      <p>Las variables y expresiones booleanas son aquellas que pueden tomar dos valores: Verdadero (True) o Falso (False). Estas expresiones son necesarias para expresar condiciones y se utilizan en las estructuras de selección o repetición.</p>
-    </li>
-    <li>Haced los ejercicios: <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-booleanos.html">Expresiones lógicas (1)</a>
-      <p>Estos ejercicios son ejercicios tipo test para practicar expresiones booleanas. Repetidlos las veces que sea necesario, hasta que veáis que no cometeis errores. Las expresiones se generan al azar, así que pueden repetirse.</p>
-      <p><strong>Nota</strong>: Estos ejercicios y los siguientes utilizan una biblioteca que se llama Brython que traduce código de Python a código JavaScript, lo que permite incluir programas de Python (con ciertas limitaciones) en una página web y ejecutarlos en el navegador. Si os sale un ejercicio incorrecto o que evalúe incorrectamente vuestra respuesta, haced una captura de la pantalla y enviadla al foro.</p>
-    </li>
-    <li>Haced los ejercicios: <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-booleanos-2.html">Expresiones lógicas (2)</a>
-      <p>Estos ejercicios son ejercicios tipo test para practicar comparaciones. Repetidlos las veces que sea necesario, hasta que veáis que no cometeis errores.</p>
-    </li>
-  </ol>
-</section>
+    <ol>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-booleanos.html">Tipos de datos booleanos</a>
+        <p>Las variables y expresiones booleanas son aquellas que pueden tomar dos valores: Verdadero (True) o Falso (False). Estas expresiones son necesarias para expresar condiciones y se utilizan en las estructuras de selección o repetición.</p>
+      </li>
+      <li>Haced los ejercicios: <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-booleanos.html">Expresiones lógicas (1)</a>
+        <p>Estos ejercicios son ejercicios tipo test para practicar expresiones booleanas. Repetidlos las veces que sea necesario, hasta que veáis que no cometeis errores. Las expresiones se generan al azar, así que pueden repetirse.</p>
+        <p><strong>Nota</strong>: Estos ejercicios y los siguientes utilizan una biblioteca que se llama Brython que traduce código de Python a código JavaScript, lo que permite incluir programas de Python (con ciertas limitaciones) en una página web y ejecutarlos en el navegador. Si os sale un ejercicio incorrecto o que evalúe incorrectamente vuestra respuesta, haced una captura de la pantalla y enviadla al foro.</p>
+      </li>
+      <li>Haced los ejercicios: <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-booleanos-2.html">Expresiones lógicas (2)</a>
+        <p>Estos ejercicios son ejercicios tipo test para practicar comparaciones. Repetidlos las veces que sea necesario, hasta que veáis que no cometeis errores.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="q10">
+    <h2>LMSGI Quincena Q10: del 04/02/19 al 17/02/19</h2>
+
+    <h3>MPTC: Prueba de programa</h3>
+
+    <p>A partir de esta quincena espero que podáis usar la utilidad MPTC (Mclibre Python Testing Client) para comprobar vuestros programas.</p>
+
+    <ul>
+      <li>Tened en cuenta que la utilidad MPTC está en fase "experimental" y tiene, como dicen los ingleses, muchos <i>rough edges</i>. Por favor, comentad en el foro los problemas que encontréis. Espero que la mayoría de errores sean culpa vuestra <span style="font-size: 200%">&#128512;</span>, pero muchas veces serán limitaciones o <i>bugs</i> de MPTC y vuestros comentarios me servirán para ir mejorando la herramienta.</li>
+      <li>Tened en cuenta también que estoy actualizando MPTC a menudo. Por eso es aconsejable que antes de utilizarla, comprobéis siempre si hay una nueva versión disponible ejecutando las órdenes:
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">pip install --upgrade --user pip</code>
+<code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+</pre>
+        </div>
+        <p>La primera orden actualiza <i>pip</i> y la segunda actualiza <i>mptc</i>.</p>
+      </li>
+      <li>Haced los ejercicios de ejemplo de la página <a href="http://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html">Ejemplos de MPTC</a> (las soluciones se pueden consultar en la propia página).
+        <p>Los últimos ejemplos incluyen estructuras que practicaréis esta quincena.</p>
+      </li>
+    </ul>
+    <h3>Temas generales</h3>
+    <ul>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/otros/python-entorno-interactivo.html">El entorno interactivo de Python</a>.
+        <p>Cuando queráis utilizar el entorno interactivo, os aconsejo que utilicéis IDLE, pero en esta lección se comenta también cómo utilizar el entorno interactivo en un terminal.</p>
+      </li>
+    </ul>
+
+    <h3>Sentencias condicionales</h3>
+
+    <p>Las sentencias condicionales if ... elif ... else ... es la primera estructura de control del flujo del programa que vamos a ver. Permiten que un programa haga una cosa u otra en función de que se cumplan o no las condiciones que queramos.</p>
+
+    <ol>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-if-else.html">Sentencias condicionales if ... elif ... else ...</a></li>
+      <li>Haced los ejercicios <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-if-else.html">if ... elif ... else ...</a></li>
+      <li>Consultad las soluciones de los ejercicios <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-soluciones.html">if ... elif ... else ...</a>
+        <p>Si al principio no sabéis cómo realizar los ejercicios, consultad las soluciones. En algunos casos, tenéis pistas para realizar los programas. Estos ejercicios se pueden resolver siempre de varias maneras. Una vez escrito el programa completamente, tenéis que probar el programa manualmente, probando con todos los casos posibles (es decir, al menos un ejemplo de cada caso) y comprobar que la respuesta de vuestro programa es correcta. También podéis probar los programas con la herramienta mptc. Aunque hayáis escrito un programa correcto, mirad las soluciones para ver otras formas de resolver el problema e intentad entender por qué otras soluciones también funcionan.</p>
+      </li>
+    </ol>
+
+    <h3>Ejercicios adicionales</h3>
+
+    <ul>
+      <li>Podéis hacer también los ejercicios de <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html#variables">Variables, E/S y Operaciones aritméticas</a> e <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html#if-elif-else">if ... elif ... else ...</a>. Son ejercicios de exámenes de años anteriores, por lo que no hay disponibles soluciones.</li>
+    </ul>
+
+    <h3>Valores aleatorios</h3>
+
+    <ol>
+      <li>Leed la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-biblioteca-random.html">Valores aleatorios</a>.
+        <p>De todas las funciones que se comentan en la lección, usaremos básicamente la función randrange().</p>
+      </li>
+      <li>Leed el apartado "Otras funciones integradas" de la lección <a href="http://www.mclibre.org/consultar/python/lecciones/python-operaciones-matematicas.html#funciones-integradas">Números y operaciones aritméticas elementales</a>.
+        <p>Las funciones max() y min() os vendrán bien para los ejercicios que os propongo a continuación.</p>
+      </li>
+      <li>Haced los ejercicios <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html">Minijuegos (1)</a></li>
+      <li>Consultad las soluciones de los ejercicios: <a href="http://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos-soluciones.html">Minijuegos 1)</a></li>
+    </ol>
+  </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
