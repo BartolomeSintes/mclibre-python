@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 25/02/19. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.ico">
+  <link rel="stylesheet" href="../../varios/prism-python.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 25 de febrero de 2019</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 25/02/19</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>Escriba un programa que solicite una cantidad de dinero (múltiplo de 100) y que responda cuántos billetes de 500, 200 y 100 euros son necesarios para pagar esa cantidad. El número de billetes total debe ser el menor posible, es decir, la cantidad en billetes de 100 y 200 € será inferior a 500 €.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
+      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> -1000</p>
+      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
+      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 1234</p>
+      <p><span class="idle-resp">No ha indicado una cantidad múltiplo de cien.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
+      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 2800</p>
+      <p><span class="idle-resp">Puede pagar 2800 con:</span></p>
+      <p><span class="idle-resp">* 5 billete(s) de 500 €</span></p>
+      <p><span class="idle-resp">* 1 billete(s) de 200 €</span></p>
+      <p><span class="idle-resp">* 1 billete(s) de 100 €</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
+      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 900</p>
+      <p><span class="idle-resp">Puede pagar 900 con:</span></p>
+      <p><span class="idle-resp">* 1 billete(s) de 500 €</span></p>
+      <p><span class="idle-resp">* 2 billete(s) de 200 €</span></p>
+      <p><span class="idle-resp">* 0 billete(s) de 100 €</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Escriba un programa que pida una cantidad de dinero a pagar y el número de billetes de 200 y 100 € entregados y que responda cuánto dinero sobra o falta.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SU CAMBIO</span></p>
+      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> -1000</p>
+      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SU CAMBIO</span></p>
+      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 1000</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> -1</p>
+      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SU CAMBIO</span></p>
+      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 1000</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 3</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 4</p>
+      <p><span class="idle-resp">Ha entregado la cantidad exacta.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SU CAMBIO</span></p>
+      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 555</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 2</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 0</p>
+      <p><span class="idle-resp">Le faltan entregar 155 €.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">SU CAMBIO</span></p>
+      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 500</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 3</p>
+      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 3</p>
+      <p><span class="idle-resp">Su cambio es de 400 €.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p>Escriba un programa que pida la longitud de los tres lados de un triángulo (empezando por el lado más largo) y escriba si el triángulo es imposible (si el lado más largo es mayor que los otros dos juntos), posible, o degenerado (si el lado más largo mide lo mismo que los otros dos juntos).</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="800" height="120" viewBox="0 0 800 120">
+        <line x1="10" y1="100" x2="200" y2="100" stroke-width="7" stroke="RoyalBlue" />
+        <line x1="10" y1="100" x2="50" y2="50" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+        <line x1="200" y1="100" x2="130" y2="40" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+
+        <line x1="310" y1="100" x2="500" y2="100" stroke-width="7" stroke="RoyalBlue" />
+        <line x1="310" y1="100" x2="370" y2="20" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+        <line x1="500" y1="100" x2="370" y2="20" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+
+        <line x1="610" y1="100" x2="800" y2="100" stroke-width="7" stroke="RoyalBlue" />
+        <line x1="610" y1="100" x2="670" y2="100" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+        <line x1="800" y1="100" x2="670" y2="100" stroke-width="3" stroke="Red" stroke-dasharray="5 2" />
+      </svg>
+    </p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Analizador de triángulos</span>
+<span class="idle-resp">Escriba la longitud del lado más largo:</span> 10
+<span class="idle-resp">Escriba la longitud del segundo lado:</span> 14
+<span class="idle-resp">¡Le he pedido que escribiera primero el lado más largo!</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Analizador de triángulos</span>
+<span class="idle-resp">Escriba la longitud del lado más largo:</span> 10
+<span class="idle-resp">Escriba la longitud del segundo lado:</span> 8
+<span class="idle-resp">Escriba la longitud del tercer lado:</span> 12
+<span class="idle-resp">¡Le he pedido que escribiera primero el lado más largo!</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Analizador de triángulos</span>
+<span class="idle-resp">Escriba la longitud del lado más largo:</span> 8
+<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
+<span class="idle-resp">Escriba la longitud del tercer lado:</span> 6
+<span class="idle-resp">Un triángulo puede tener como lados 8, 3 y 6</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Analizador de triángulos</span>
+<span class="idle-resp">Escriba la longitud del lado más largo:</span> 9
+<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
+<span class="idle-resp">Escriba la longitud del tercer lado:</span> 4
+<span class="idle-resp">Un triángulo no puede tener como lados 9, 3 y 4</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">Analizador de triángulos</span>
+<span class="idle-resp">Escriba la longitud del lado más largo:</span> 7
+<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
+<span class="idle-resp">Escriba la longitud del tercer lado:</span> 4
+<span class="idle-resp">Los datos corresponden a un triángulo degenerado</span>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba un programa que pida tres números y escriba cuál está en medio de los otros dos.</p>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">El número de en medio</span>
+<span class="idle-resp">Escriba un número entero:</span> 4
+<span class="idle-resp">Escriba otro número entero distinto:</span> -6
+<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 4
+<span class="idle-resp">¡Ha repetido algún número!</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">El número de en medio</span>
+<span class="idle-resp">Escriba un número entero:</span> 4
+<span class="idle-resp">Escriba otro número entero distinto:</span> -6
+<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 9
+<span class="idle-resp">4 está entre -6 y 9</span>
+</pre>
+    </div>
+
+    <div class="resultado-idle">
+      <pre>
+<span class="idle-resp">El número de en medio</span>
+<span class="idle-resp">Escriba un número entero:</span> 9
+<span class="idle-resp">Escriba otro número entero distinto:</span> -6
+<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 4
+<span class="idle-resp">4 está entre 9 y -6</span>
+</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
