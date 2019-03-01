@@ -45,60 +45,82 @@
     <p>Se ofrecen a continuación unas posibles soluciones de los ejercicios de <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... <a href="ej-if-else-minijuegos.html">Minijuegos (1)</a>.</p>
 
     <section id="ejercicio-1">
-        <h2>Minijuegos (1) - 1</h2>
+        <h2 class="con-aside">Minijuegos (1) - 1</h2>
+
+        <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>51</p>
+        </aside>
 
         <div class="codigo">
             <pre>
 <code class="language-python">import random
 
-print("JUEGO DE DADOS (1)")
 
-a = randrange(1, 7)
-b = randrange(1, 7)
+def main():
+    print("JUEGO DE DADOS (1)")
 
-print(f"Alberto ha sacado un {a}.")
-print(f"Bárbara ha sacado un {b}.")
+    a = random.randrange(1, 7)
+    b = random.randrange(1, 7)
 
-if a == b:
-    print("Han empatado.")
-elif a &gt; b:
-    print("Ha ganado Alberto.")
-else:
-    print("Ha ganado Bárbara.")</code>
+    print(f"Alberto ha sacado un {a}.")
+    print(f"Bárbara ha sacado un {b}.")
+
+    if a == b:
+        print("Han empatado.")
+    elif a &gt; b:
+        print("Ha ganado Alberto.")
+    else:
+        print("Ha ganado Bárbara.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
     </section>
 
     <section id="ejercicio-2">
-        <h2>Minijuegos (1) - 2</h2>
+        <h2 class="con-aside">Minijuegos (1) - 2</h2>
+
+        <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>52</p>
+        </aside>
 
         <div class="codigo">
             <pre>
 <code class="language-python">import random
 
-print("JUEGO DE DADOS (2)")
 
-a_1 = randrange(1, 7)
-a_2 = randrange(1, 7)
-b_1 = randrange(1, 7)
-b_2 = randrange(1, 7)
-max_a = max(a_1, a_2)
-max_b = max(b_1, b_2)
+def main():
+    print("JUEGO DE DADOS (2)")
 
-print(f"Carmen ha sacado un {a_1} y un {a_2}.")
-print(f"David ha sacado un {b_1} y un {b_2}.")
+    a_1 = random.randrange(1, 7)
+    a_2 = random.randrange(1, 7)
+    b_1 = random.randrange(1, 7)
+    b_2 = random.randrange(1, 7)
+    max_a = max(a_1, a_2)
+    max_b = max(b_1, b_2)
 
-if a_1 + a_2 &gt; b_1 + b_2:
-    print("Ha ganado Carmen.")
-elif a_1 + a_2 &lt; b_1 + b_2:
-    print("Ha ganado David.")
-else:
-    if max_a &gt; max_b:
+    print(f"Carmen ha sacado un {a_1} y un {a_2}.")
+    print(f"David ha sacado un {b_1} y un {b_2}.")
+
+    if a_1 + a_2 &gt; b_1 + b_2:
         print("Ha ganado Carmen.")
-    elif max_a &lt; max_b:
+    elif a_1 + a_2 &lt; b_1 + b_2:
         print("Ha ganado David.")
     else:
-        print("Han empatado.")</code>
+        if max_a &gt; max_b:
+            print("Ha ganado Carmen.")
+        elif max_a &lt; max_b:
+            print("Ha ganado David.")
+        else:
+            print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
 
@@ -108,70 +130,93 @@ else:
             <pre>
 <code class="language-python">import random
 
-print("JUEGO DE DADOS (2)")
 
-a_1 = randrange(1, 7)
-a_2 = randrange(1, 7)
-b_1 = randrange(1, 7)
-b_2 = randrange(1, 7)
-max_a = max(a_1, a_2)
-max_b = max(b_1, b_2)
+def main():
+    print("JUEGO DE DADOS (2)")
 
-print(f"Carmen ha sacado un {a_1} y un {a_2}.")
-print(f"David ha sacado un {b_1} y un {b_2}.")
+    a_1 = random.randrange(1, 7)
+    a_2 = random.randrange(1, 7)
+    b_1 = random.randrange(1, 7)
+    b_2 = random.randrange(1, 7)
+    max_a = max(a_1, a_2)
+    max_b = max(b_1, b_2)
 
-if a_1 + a_2 &gt; b_1 + b_2:
-    print("Ha ganado Carmen.")
-elif a_1 + a_2 &lt; b_1 + b_2:
-    print("Ha ganado David.")
-elif max_a &gt; max_b:
-    print("Ha ganado Carmen.")
-elif max_a &lt; max_b:
-    print("Ha ganado David.")
-else:
-    print("Han empatado.")</code>
+    print(f"Carmen ha sacado un {a_1} y un {a_2}.")
+    print(f"David ha sacado un {b_1} y un {b_2}.")
+
+    if a_1 + a_2 &gt; b_1 + b_2:
+        print("Ha ganado Carmen.")
+    elif a_1 + a_2 &lt; b_1 + b_2:
+        print("Ha ganado David.")
+    elif max_a &gt; max_b:
+        print("Ha ganado Carmen.")
+    elif max_a &lt; max_b:
+        print("Ha ganado David.")
+    else:
+        print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
     </section>
 
     <section id="ejercicio-3">
-        <h2>Minijuegos (1) - 3</h2>
+        <h2 class="con-aside">Minijuegos (1) - 3</h2>
+
+        <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>53</p>
+        </aside>
 
         <div class="codigo">
             <pre>
 <code class="language-python">import random
 
-print("JUEGO DE DADOS (3)")
 
-a_1 = randrange(1, 7)
-a_2 = randrange(1, 7)
-b_1 = randrange(1, 7)
-b_2 = randrange(1, 7)
-max_a = max(a_1, a_2)
-max_b = max(b_1, b_2)
-min_a = min(a_1, a_2)
-min_b = min(b_1, b_2)
+def main():
+    print("JUEGO DE DADOS (3)")
 
-print(f"Elena ha sacado un {a_1} y un {a_2}.")
-print(f"Fernando ha sacado un {b_1} y un {b_2}.")
+    a_1 = random.randrange(1, 7)
+    a_2 = random.randrange(1, 7)
+    b_1 = random.randrange(1, 7)
+    b_2 = random.randrange(1, 7)
+    max_a = max(a_1, a_2)
+    max_b = max(b_1, b_2)
+    min_a = min(a_1, a_2)
+    min_b = min(b_1, b_2)
 
-if max_a &gt; max_b:
-    print("Ha ganado Elena.")
-elif max_a &lt; max_b:
-    print("Ha ganado Fernando.")
-else:
-    if min_a &gt; min_b:
+    print(f"Elena ha sacado un {a_1} y un {a_2}.")
+    print(f"Fernando ha sacado un {b_1} y un {b_2}.")
+
+    if max_a &gt; max_b:
         print("Ha ganado Elena.")
-    elif min_a &lt; min_b:
+    elif max_a &lt; max_b:
         print("Ha ganado Fernando.")
     else:
-        print("Han empatado.")</code>
+        if min_a &gt; min_b:
+            print("Ha ganado Elena.")
+        elif min_a &lt; min_b:
+            print("Ha ganado Fernando.")
+        else:
+            print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()
+</code>
 </pre>
         </div>
     </section>
 
     <section id="ejercicio-4">
-        <h2>Minijuegos (1) - 4</h2>
+        <h2 class="con-aside">Minijuegos (1) - 4</h2>
+
+        <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>54</p>
+        </aside>
 
         <p>En este ejercicio los casos se pueden ordenar de muchas distintas. Una posibilidad es la siguiente:</p>
 
@@ -179,71 +224,133 @@ else:
             <pre>
 <code class="language-python">import random
 
-print("JUEGO DEL QUINCE")
 
-g_1 = randrange(1, 11)
-g_2 = randrange(1, 11)
-g_3 = randrange(1, 11)
-h_1 = randrange(1, 11)
-h_2 = randrange(1, 11)
-h_3 = randrange(1, 11)
-g = g_1 + g_2 + g_3
-h = h_1 + h_2 + h_3
+def main():
+    print("JUEGO DEL QUINCE")
 
-print(f"Gloria ha sacado un {g_1}, un {g_2} y un {g_3}.")
-print(f"Héctor ha sacado un {h_1}, un {h_2} y un {h_3}.")
+    g_1 = random.randrange(1, 11)
+    g_2 = random.randrange(1, 11)
+    g_3 = random.randrange(1, 11)
+    h_1 = random.randrange(1, 11)
+    h_2 = random.randrange(1, 11)
+    h_3 = random.randrange(1, 11)
+    g = g_1 + g_2 + g_3
+    h = h_1 + h_2 + h_3
 
-if g &gt; 15 and h &gt; 15:
-    print("No ha ganado nadie.")
-elif g == h:
-    print("Han empatado")
-elif h &gt; 15:
-    print("Ha ganado Gloria.")
-elif g &lt; 15 and g &gt; h:
-    print("Ha ganado Gloria.")
-else:
-    print("Ha ganado Héctor.")</code>
+    print(f"Gloria ha sacado un {g_1}, un {g_2} y un {g_3}.")
+    print(f"Héctor ha sacado un {h_1}, un {h_2} y un {h_3}.")
+
+    if g &gt; 15 and h &gt; 15:
+        print("No ha ganado nadie.")
+    elif g == h:
+        print("Han empatado.")
+    elif h &gt; 15:
+        print("Ha ganado Gloria.")
+    elif g &lt;= 15 and g &gt; h:
+        print("Ha ganado Gloria.")
+    else:
+        print("Ha ganado Héctor.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
     </section>
 
     <section id="ejercicio-5">
-        <h2>Minijuegos (1) - 5</h2>
+        <h2 class="con-aside">Minijuegos (1) - 5</h2>
+
+        <aside class="aside-minienlace">
+            <p>MPTC</p>
+            <p>55</p>
+        </aside>
 
         <div class="codigo">
             <pre>
-<code class="language-python">from random import choice
+<code class="language-python">import random
 
-print("PIEDRA, PAPEL, ... ¡TIJERA!")
 
-i = choice(["PIEDRA", "PAPEL", "TIJERA"])
-j = choice(["PIEDRA", "PAPEL", "TIJERA"])
+def main():
+  print("PIEDRA, PAPEL, ... ¡TIJERA!")
 
-print(f"Inés ha sacado {i}.")
-print(f"Juan ha sacado {j}.")
+  i = random.randrange(1, 4)
+  j = random.randrange(1, 4)
 
-if i == j:
-    print("Han empatado.")
-elif i == "PIEDRA" and j == "TIJERA":
-    print("Ha ganado Inés.")
-elif i == "TIJERA" and j == "PAPEL":
-    print("Ha ganado Inés.")
-elif i == "PAPEL" and j == "PIEDRA":
-    print("Ha ganado Inés")
-else:
-    print("Ha ganado Juan.")</code>
+  print("Inés ha sacado ", end="")
+  if i == 1:
+      print ("piedra.")
+  elif i == 2:
+      print ("papel.")
+  else:
+      print("tijera.")
+  print("Juan ha sacado ", end="")
+  if j == 1:
+      print ("piedra.")
+  elif j == 2:
+      print ("papel.")
+  else:
+      print("tijera.")
+
+
+  if i == j:
+      print("Han empatado.")
+  elif i == 1 and j == 3:
+      print("Ha ganado Inés.")
+  elif i == 2 and j == 1:
+      print("Ha ganado Inés.")
+  elif i == 3 and j == 2:
+      print("Ha ganado Inés.")
+  else:
+      print("Ha ganado Juan.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+        </div>
+
+        <p>La siguiente solución utiliza palabras en vez de número. Aunque es correcta, actualmente no se puede comprobar con MPTC.</p>
+        <div class="codigo">
+            <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("PIEDRA, PAPEL, ... ¡TIJERA!")
+
+    i = random.choice(["PIEDRA", "PAPEL", "TIJERA"])
+    j = random.choice(["PIEDRA", "PAPEL", "TIJERA"])
+
+    print(f"Inés ha sacado {i}.")
+    print(f"Juan ha sacado {j}.")
+
+    if i == j:
+        print("Han empatado.")
+    elif i == "PIEDRA" and j == "TIJERA":
+        print("Ha ganado Inés.")
+    elif i == "TIJERA" and j == "PAPEL":
+        print("Ha ganado Inés.")
+    elif i == "PAPEL" and j == "PIEDRA":
+        print("Ha ganado Inés.")
+    else:
+        print("Ha ganado Juan.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
     </section>
 
     <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de marzo de 2018</p>
+        <p class="ultmod">Última modificación de esta página: 1 de marzo de 2019</p>
 
-    <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
-      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
-      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
-    </p>
-  </footer>
+        <p class="licencia">
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+            Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+            que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+        </p>
+    </footer>
 </body>
 </html>
