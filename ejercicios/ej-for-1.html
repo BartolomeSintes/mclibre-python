@@ -87,16 +87,27 @@
     <h2>A. Bucles</h2>
 
     <section id="ejercicio-1-1">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>71</p>
+      </aside>
 
       <p>Escriba un programa que pida dos números enteros y escriba qué números son pares y cuáles impares desde el primero hasta el segundo.</p>
+
+      <details>
+        <summary><strong>Ayuda</strong>:</summary>
+        <p>Un número es par cuando el resto de su división entre dos es cero (
+          <var>numero</var> % 2 == 0) e impar cuando no lo es.</p>
+      </details>
 
       <div class="resultado-idle">
         <pre>
 <span class="idle-resp">PARES E IMPARES</span>
 <span class="idle-resp">Escriba un número entero:</span> 6
 <span class="idle-resp">Escriba un número entero mayor o igual que 6:</span> 2
-<span class="idle-resp">¡Le he pedido un número entero mayor que 6!</span>
+<span class="idle-resp">¡Le he pedido un número entero mayor o igual que 6!</span>
 </pre>
       </div>
 
@@ -122,17 +133,27 @@
 </pre>
       </div>
 
-      <p><strong>Notas</strong>:</p>
-      <ul>
-        <li>Un número es par cuando el resto de su división entre dos es cero (
-          <var>numero</var> % 2 == 0) e impar cuando no lo es.</li>
-      </ul>
     </section>
 
     <section id="ejercicio-1-2">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>72</p>
+      </aside>
 
       <p>Escriba un programa que pida un número entero mayor que cero y que escriba sus divisores.</p>
+
+      <details>
+        <summary><strong>Ayuda</strong>:</summary>
+        <ul>
+          <li>Un número es divisible por otro cuando el resto de su división es cero (
+            <var>numero</var> %
+            <var>divisor</var> == 0).</li>
+          <li>Se puede hacer un programa más rápido, teniendo en cuenta que los divisores son siempre menores o iguales que la mitad del número (salvo el propio número, que es divisor de sí mismo). Es decir, no hace falta probar todos los números entre 1 y el propio número, sino únicamente hasta la mitad. Si se hace así, no hay que olvidarse de añadir el propio número a la lista de divisores.</li>
+        </ul>
+      </details>
 
       <div class="resultado-idle">
         <pre>
@@ -149,18 +170,15 @@
 <span class="idle-resp">Los divisores de 200 son 1 2 4 5 8 10 20 25 40 50 100 200</span>
 </pre>
       </div>
-
-      <p><strong>Notas</strong>:</p>
-      <ul>
-        <li>Un número es divisible por otro cuando el resto de su división es cero (
-          <var>numero</var> %
-          <var>divisor</var> == 0).</li>
-        <li>Se puede hacer un programa más rápido, teniendo en cuenta que los divisores son siempre menores (o iguales) que la mitad del número. Es decir, no hace falta probar todos los números entre 1 y el propio número, sino únicamente hasta la mitad. Si se hace así, no hay que olvidarse de añadir el propio número a la lista de divisores.</li>
-      </ul>
     </section>
 
     <section id="ejercicio-1-3">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>73</p>
+      </aside>
 
       <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea mayor que el primero.</p>
 
@@ -181,15 +199,20 @@
 <span class="idle-resp">Escriba un número más grande que 6:</span> 3
 <span class="idle-resp">¡3 no es mayor que 6!</span>
 <span class="idle-resp">Escriba un número más grande que 6:</span> 9
-<span class="idle-resp">Gracias por su colaboración</span>
+<span class="idle-resp">Gracias por su colaboración.</span>
 </pre>
       </div>
     </section>
 
     <section id="ejercicio-1-4">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-4 (ejercicio 2 examen 1 de junio de 2012 turno mañana)</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-4 (ejercicio 2 examen 1 de junio de 2012 turno mañana)</h3>
 
-      <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea mayor que el anterior.</p>
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>74</p>
+      </aside>
+
+      <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea mayor que el <strong>anterior</strong>.</p>
 
       <div class="resultado-idle">
         <pre>
