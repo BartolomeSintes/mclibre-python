@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Minijuegos (2). Bucle for. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+</head>
+
+<body>
+  <h1>Bucle <span class="idle-rese">for</span> - Minijuegos (2)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Minijuegos (2)</h2>
+
+      <h3>Enunciados</h3>
+      <ol>
+        <li><a href="#ejercicio-1">Tirada de dados</a></li>
+        <li><a href="#ejercicio-2">Tiradas de dado</a></li>
+        <li><a href="#ejercicio-3">Obtener valor (1)</a></li>
+        <li><a href="#ejercicio-4">Obtener valor (2)</a></li>
+        <li><a href="#ejercicio-5">El dado más alto (1)</a></li>
+        <li><a href="#ejercicio-6">El dado más alto (2)</a></li>
+        <li><a href="#ejercicio-7">Pares y nones</a></li>
+        <li><a href="#ejercicio-8">El último más alto</a></li>
+        <li><a href="#ejercicio-9">Unus et duo</a></li>
+        <li><a href="#ejercicio-10">El dado más alto y más bajo</a></li>
+        <li><a href="#ejercicio-11">Dados iguales seguidos</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-for.html">bucle <span class="idle-rese">for</span> (1)</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2 class="con-aside">Minijuegos (2) - 1 - Tirada de dados</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>81</p>
+    </aside>
+
+    <p>Escriba un programa que pida un número de dados y muestre los valores de ese número de dados, al azar.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">TIRADA DE DADOS</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 0</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">TIRADA DE DADOS</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 5</p>
+      <p><span class="idle-resp">Dados: 3 5 1 1 3 </span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2 class="con-aside">Minijuegos (2) - 2 - Tiradas de dado</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>82</p>
+    </aside>
+
+    <p>Escriba un programa que pida un número de jugadores y tire un dado para cada jugador.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">TIRADAS DE DADO</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 1</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">TIRADAS DE DADO</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 4</p>
+      <p><span class="idle-resp">Jugador 1: 3</span></p>
+      <p><span class="idle-resp">Jugador 2: 3</span></p>
+      <p><span class="idle-resp">Jugador 3: 5</span></p>
+      <p><span class="idle-resp">Jugador 4: 1</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">TIRADAS DE DADO</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 3</p>
+      <p><span class="idle-resp">Jugador 1: 4</span></p>
+      <p><span class="idle-resp">Jugador 2: 4</span></p>
+      <p><span class="idle-resp">Jugador 3: 1</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2 class="con-aside">Minijuegos (2) - 3 - Obtener valor (1)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>83</p>
+    </aside>
+
+    <p>Escriba un programa que pida un número de jugadores, que pida un valor a conseguir, que tire un dado para cada jugador y diga si han conseguido obtener el valor.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (1)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> -4</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (1)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 5</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 9</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (1)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 3</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 1</p>
+      <p><span class="idle-resp">Jugador 1: 4</span></p>
+      <p><span class="idle-resp">Jugador 2: 4</span></p>
+      <p><span class="idle-resp">Jugador 3: 1 CONSEGUIDO</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (1)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 4</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 2</p>
+      <p><span class="idle-resp">Jugador 1: 2 CONSEGUIDO</span></p>
+      <p><span class="idle-resp">Jugador 2: 5</span></p>
+      <p><span class="idle-resp">Jugador 3: 1</span></p>
+      <p><span class="idle-resp">Jugador 3: 2 CONSEGUIDO</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (1)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 1</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 6</p>
+      <p><span class="idle-resp">Jugador 1: 5</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2 class="con-aside">Minijuegos (2) - 4 - Obtener valor (2)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>84</p>
+    </aside>
+
+    <p>Escriba un programa que pida un número de dados, que pida un valor a conseguir y que tire después el número de dados indicado. El jugador gana si saca el valor ganador.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> -4</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 5</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 3</p>
+      <p><span class="idle-resp">Dados: 3 5 1 6 1</span></p>
+      <p><span class="idle-resp">El jugador ha ganado.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">OBTENER VALOR (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 4</p>
+      <p><span class="idle-resp">Valor a conseguir: </span> 1</p>
+      <p><span class="idle-resp">Dados: 6 2 4 4 </span></p>
+      <p><span class="idle-resp">El jugador ha perdido.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Minijuegos (2) - 5 - El dado más alto (1)</h2>
+
+    <p>Escriba un programa que pida un número de dados, que tire el número de dados indicado y diga cuál es el valor más alto obtenido.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">EL DADO MÁS ALTO (1)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> -4</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">EL DADO MÁS ALTO (1)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 5</p>
+      <p><span class="idle-resp">Dados: 2 4 1 2 3</span></p>
+      <p><span class="idle-resp">El dado más alto es 4.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-6">
+    <h2>Minijuegos (2) - 6 - El dado más alto (2)</h2>
+
+    <p>Escriba un programa que pida un número de dados y tire esa cantidad para dos jugadores. El jugador que saque el valor más alto, gana.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">EL DADO MÁS ALTO (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 0</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">EL DADO MÁS ALTO (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 5</p>
+      <p><span class="idle-resp">Jugador 1: 3 1 1 4 6</span></p>
+      <p><span class="idle-resp">Jugador 2: 4 6 5 4 2</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">EL DADO MÁS ALTO (2)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 3</p>
+      <p><span class="idle-resp">Jugador 1: 5 2 3 </span></p>
+      <p><span class="idle-resp">Jugador 2: 1 1 4</span></p>
+      <p><span class="idle-resp">Ha ganado el jugador 1.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-7">
+    <h2>Minijuegos (2) - 7 - PARES Y NONES</h2>
+
+    <p>Escriba un programa que pida un número de dados y tire esa cantidad de dados. El primer jugador obtiene un punto por cada dado par. El segundo jugador obtiene un punto por cada dado impar. El jugador que saque más puntos, gana.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PARES Y NONES</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 0</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PARES Y NONES</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 7</p>
+      <p><span class="idle-resp">Dados: 4 5 2 3 2 1 6</span></p>
+      <p><span class="idle-resp">Ha ganado el jugador de los pares.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">PARES Y NONES</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 8</p>
+      <p><span class="idle-resp">Dados: 1 4 1 3 5 6 6 2</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-8">
+    <h2>Minijuegos (2) - 8</h2>
+
+    <p>Escriba un programa que pida un número de jugadores y tire un dado para cada jugador. El <strong>último</strong> jugador que saque el valor más alto, gana.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (5)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 1</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (5)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 4</p>
+      <p><span class="idle-resp">Jugador 1: 3</span></p>
+      <p><span class="idle-resp">Jugador 2: 3</span></p>
+      <p><span class="idle-resp">Jugador 3: 5</span></p>
+      <p><span class="idle-resp">Jugador 4: 1</span></p>
+      <p><span class="idle-resp">Ha ganado el jugador 3.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (5)</span></p>
+      <p><span class="idle-resp">Número de jugadores: </span> 3</p>
+      <p><span class="idle-resp">Jugador 1: 4</span></p>
+      <p><span class="idle-resp">Jugador 2: 4</span></p>
+      <p><span class="idle-resp">Jugador 3: 1</span></p>
+      <p><span class="idle-resp">Ha ganado el jugador 2.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-9">
+    <h2>Minijuegos (2) - 9 (examen 23 de mayo de 2018)</h2>
+
+    <p><strong>Unus et Duo</strong> es un juego medieval para al menos tres jugadores, pero es posible que ya fuera jugado por los romanos en tiempos de Ásterix. El primer jugador lanza un dado y la cantidad obtenida es el objetivo del juego. Por orden, el resto de jugadores lanzan dos dados y si la suma coincide con el objetivo, ese jugador gana la partida. El ganador que ha ganado una partida es el que lanza el primer dado en la siguiente partida. Si nadie ha ganado la partida, la partida se repite.</p>
+
+    <p>Escriba un programa que simule una partida de <strong>Unus et Duo</strong>, en la que gane la partida el <strong>primer</strong> jugador que saque el resultado buscado.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">UNUS ET DUO</span></p>
+      <p><span class="idle-resp">Escriba el número de jugadores:</span> 2</p>
+      <p><span class="idle-resp">Escriba un número mayor que dos.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">UNUS ET DUO</span></p>
+      <p><span class="idle-resp">Escriba el número de jugadores:</span> 4</p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">El primer jugador ha sacado un 5.</span></p>
+      <p><span class="idle-resp">El jugador 2 ha sacado 3 y 4.</span></p>
+      <p><span class="idle-resp">El jugador 3 ha sacado 6 y 3.</span></p>
+      <p><span class="idle-resp">El jugador 4 ha sacado 5 y 6.</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">No ha ganado nadie.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">UNUS ET DUO</span></p>
+      <p><span class="idle-resp">Escriba el número de jugadores:</span> 3</p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">El primer jugador ha sacado un 6.</span></p>
+      <p><span class="idle-resp">El jugador 2 ha sacado 4 y 6.</span></p>
+      <p><span class="idle-resp">El jugador 3 ha sacado 2 y 4.</span></p>
+      <p>&nbsp;</p>
+      <p><span class="idle-resp">El jugador 3 ha ganado.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-10">
+    <h2>Minijuegos (2) - 10</h2>
+
+    <p>Escriba un programa que pida un número de dados y tire esa cantidad de dados para dos jugadores. El jugador que saque más puntos sumando su valor más alto y su valor más bajo, gana.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (8)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 1</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (8)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 6</p>
+      <p><span class="idle-resp">Jugador 1: 3 1 1 4 6 2</span></p>
+      <p><span class="idle-resp">Jugador 2: 4 3 5 4 2 4</span></p>
+      <p><span class="idle-resp">Han empatado.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (8)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 3</p>
+      <p><span class="idle-resp">Jugador 1: 4 2 5 </span></p>
+      <p><span class="idle-resp">Jugador 2: 2 4 1 </span></p>
+      <p><span class="idle-resp">Han ganado el jugador 1.</span></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-11">
+    <h2>Minijuegos (2) - 9</h2>
+
+    <p>Escriba un programa que pida un número de dados y tire esa cantidad de dados. Si no salen dos dados iguales seguidos, el jugador gana. Si salen, pierde.</p>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (9)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 1</p>
+      <p><span class="idle-resp">¡Imposible!</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (9)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 6</p>
+      <p><span class="idle-resp">Dados: 3 1 1 4 6 2</span></p>
+      <p><span class="idle-resp">El jugador ha perdido.</span></p>
+    </div>
+
+    <div class="resultado-idle">
+      <p><span class="idle-resp">DADOS (9)</span></p>
+      <p><span class="idle-resp">Número de dados: </span> 4</p>
+      <p><span class="idle-resp">Dados: 4 2 5 3</span></p>
+      <p><span class="idle-resp">El jugador ha ganado.</span></p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 7 de marzo de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
