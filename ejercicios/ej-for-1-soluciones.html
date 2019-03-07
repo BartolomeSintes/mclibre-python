@@ -85,22 +85,32 @@
     <h2>A. Bucles</h2>
 
     <section id="ejercicio-1-1">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>71</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("PARES E IMPARES")
-numero_1 = int(input("Escriba un número entero: "))
-numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: "))
+<code class="language-python">def main():
+    print("PARES E IMPARES")
+    numero_1 = int(input("Escriba un número entero: "))
+    numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: "))
 
-if numero_2 &lt; numero_1:
-    print(f"¡Le he pedido un número entero mayor o igual que {numero_1}!")
-else:
-    for i in range(numero_1, numero_2 + 1):
-        if i % 2 == 0:
-            print(f"El número {i} es par")
-        else:
-            print(f"El número {i} es impar")</code>
+    if numero_2 &lt; numero_1:
+        print(f"¡Le he pedido un número entero mayor o igual que {numero_1}!")
+    else:
+        for i in range(numero_1, numero_2 + 1):
+            if i % 2 == 0:
+                print(f"El número {i} es par.")
+            else:
+                print(f"El número {i} es impar.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
@@ -109,21 +119,21 @@ else:
       <ul>
         <li>La estructura general de este programa es similar a la del resto de programas de la página: se pide un número (o dos) y se hace una comprobación inicial de ese valor (o valores), para mostrar un mensaje de error o ejecutar el núcleo del programa. En este caso, la comprobación es que el segundo número sea mayor que el primero.
           <div class="codigo">
-            <pre class="line-numbers">
-<code class="language-python">print("PARES E IMPARES")
-numero_1 = int(input("Escriba un número entero: "))
-numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: "))
+            <pre class="line-numbers" data-start="2">
+<code class="language-python">    print("PARES E IMPARES")
+    numero_1 = int(input("Escriba un número entero: "))
+    numero_2 = int(input(f"Escriba un número entero mayor o igual que {numero_1}: "))
 
-if numero_2 &lt; numero_1:
-    print(f"¡Le he pedido un número entero mayor o igual que {numero_1}!")
-else:
-    ...</code>
+    if numero_2 &lt; numero_1:
+        print(f"¡Le he pedido un número entero mayor o igual que {numero_1}!")
+    else:
+        ...</code>
 </pre>
           </div>
         </li>
         <li>Una vez comprobado que los valores son correctos, el núcleo del programa realiza un bucle desde el primer número introducido al segundo.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
+            <pre class="line-numbers" data-start="9">
 <code class="language-python">    for i in range(numero_1, numero_2 + 1):
         ...</code>
 </pre>
@@ -132,11 +142,11 @@ else:
         <li>En el cuerpo del bucle, se comprueba en cada iteración si la variable de control
           <var>i</var> es par o no (comprobando si el resto de la división entre 2 es 0 o no) y se imprime el mensaje correspondiente.
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
+            <pre class="line-numbers" data-start="10">
 <code class="language-python">        if i % 2 == 0:
-            print(f"El número {i} es par")
+            print(f"El número {i} es par.")
         else:
-            print(f"El número {i} es impar")</code>
+            print(f"El número {i} es impar.")</code>
 </pre>
           </div>
         </li>
@@ -148,43 +158,48 @@ else:
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("DIVISORES")
-numero = int(input("Escriba un número entero mayor que cero: "))
+<code class="language-python">def main():
+    print("DIVISORES")
+    numero = int(input("Escriba un número entero mayor que cero: "))
 
-if numero &lt;= 0:
-    print("¡Le he pedido un número entero mayor que cero!")
-else:
-    print(f"Los divisores de {numero} son ", end="")
-    for i in range(1, numero + 1):
-        if numero % i == 0:
-            print(i, end=" ")</code>
+    if numero &lt;= 0:
+        print("¡Le he pedido un número entero mayor que cero!")
+    else:
+        print(f"Los divisores de {numero} son ", end="")
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                print(i, end=" ")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
       <h3>Comentarios</h3>
 
       <ul>
+        <li>Como los números se van escribiendo en la ejecución del bucle, el comienzo de la respuesta se escribe antes del bucle:
+          <div class="codigo">
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        print(f"Los divisores de {numero} son ", end="")</code>
+</pre>
+          </div>
+        </li>
         <li>Para encontrar los divisores del número indicado por el usuario, el programa comprueba para cada número entre 1 y el número si el resto de la división es cero.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(1, numero + 1):
-        if numero % i == 0:
-            ...</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">        for i in range(1, numero + 1):
+            if numero % i == 0:
+                ...</code>
 </pre>
           </div>
         </li>
         <li>Si lo es, lo escribe:
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
-<code class="language-python">        if numero % i == 0:
-            print(i, end=" ")</code>
-</pre>
-          </div>
-        </li>
-        <li>Como los números se van escribiendo en la ejecución del bucle, el comienzo de la respuesta se escribe antes del bucle:
-          <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    print(f"Los divisores de {numero} son ", end="")</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">            if numero % i == 0:
+                print(i, end=" ")</code>
 </pre>
           </div>
         </li>
@@ -196,36 +211,41 @@ else:
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("DIVISORES")
-numero = int(input("Escriba un número entero mayor que cero: "))
+<code class="language-python">def main():
+    print("DIVISORES")
+    numero = int(input("Escriba un número entero mayor que cero: "))
 
-if numero &lt;= 0:
-    print("¡Le he pedido un número entero mayor que cero!")
-else:
-    print(f"Los divisores de {numero} son ", end="")
-    for i in range(1, round(numero/2)+1):
-        if numero % i == 0:
-            print(i, end=" ")
-    print(numero)</code>
+    if numero &lt;= 0:
+        print("¡Le he pedido un número entero mayor que cero!")
+    else:
+        print(f"Los divisores de {numero} son ", end="")
+        for i in range(1, numero // 2 + 1):
+            if numero % i == 0:
+                print(i, end=" ")
+        print(f"{numero} ")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
       <h3>Comentarios</h3>
 
       <ul>
-        <li>Como el tipo <span class="idle-func">range</span>() requiere números enteros, para indicar el límite superior del <span class="idle-func">range</span>() (la mitad del número indicado por el usuario) se debe utilizar la función <span class="idle-func">round</span>(), que redondea al entero más próximo (no exactamente, como se comenta en la lección de <a href="../lecciones/python-operaciones-matematicas.html#redondear-round">operaciones aritméticas</a>, ya que los números XXX,5 se redondean al entero par más próximo, pero en este caso eso no provoca problemas).
+        <li>Como el tipo <span class="idle-func">range</span>() requiere números enteros, para indicar el límite superior del <span class="idle-func">range</span>() (la mitad del número indicado por el usuario) podemos utilizar el operador cociente (//), que redondea al entero inferior. Para que el bucle incluye la mitad del número debemos sumar uno al cociente.
 
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(1, round(numero/2)+1):</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">        for i in range(1, numero // 2 + 1):</code>
 </pre>
           </div>
         </li>
         <li>Como el número es divisor de sí mismo, una vez completado el bucle, el programa escribe el número.
 
           <div class="codigo">
-            <pre class="line-numbers" data-start="10">
-<code class="language-python">    print(numero)</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">        print(f"{numero} ")</code>
 </pre>
           </div>
         </li>
@@ -233,38 +253,48 @@ else:
     </section>
 
     <section id="ejercicio-1-3">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-3</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>73</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("MAYORES QUE EL PRIMERO")
-valores = int(input("¿Cuántos valores va a introducir? "))
-if valores &lt; 1:
-    print("¡Imposible!")
-else:
-    primero = int(input("Escriba un número: "))
-    for i in range(valores - 1):
-        numero = int(input(f"Escriba un número más grande que {primero}: "))
-        if numero &lt;= primero:
-            print(f"¡{numero} no es mayor que {primero}!")
-    print("Gracias por su colaboración")</code>
+<code class="language-python">def main():
+    print("MAYORES QUE EL PRIMERO")
+    valores = int(input("¿Cuántos valores va a introducir? "))
+    if valores &lt; 1:
+        print("¡Imposible!")
+    else:
+        primero = int(input("Escriba un número: "))
+        for i in range(valores - 1):
+            numero = int(input(f"Escriba un número más grande que {primero}: "))
+            if numero &lt;= primero:
+                print(f"¡{numero} no es mayor que {primero}!")
+        print("Gracias por su colaboración.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
       <h3>Comentarios</h3>
 
       <ul>
-        <li>La petición del primer número se debe hacer antes del bucle puesto que sólo se pide una vez.
+        <li>El bucle debe repetirse una vez menos que el número de valores a introducir (ya que uno de los valores, el primero, se ha introducido antes del bucle).
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">        numero = int(input(f"Escriba un número más grande que {primero}: "))</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        for i in range(valores - 1):</code>
 </pre>
           </div>
         </li>
-        <li>El bucle debe repetirse una vez menos que el número de valores a introducir (ya que uno de los valores, el primero, se ha introducido antes del bucle).
+        <li>La petición del primer número se debe hacer antes del bucle puesto que sólo se pide una vez.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(valores - 1):</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">            numero = int(input(f"Escriba un número más grande que {primero}: "))</code>
 </pre>
           </div>
         </li>
@@ -272,32 +302,42 @@ else:
     </section>
 
     <section id="ejercicio-1-4">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-4</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>74</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("MAYORES QUE EL ANTERIOR")
-valores = int(input("¿Cuántos valores va a introducir? "))
-if valores &lt; 1:
-    print("¡Imposible!")
-else:
-    primero = int(input("Escriba un número: "))
-    for i in range(valores - 1):
-        numero = int(input(f"Escriba un número más grande que {primero}: "))
-        if numero &lt;= primero:
-            print(f"¡{numero} no es mayor que {primero}!")
-        primero = numero
-    print("Gracias por su colaboración")</code>
+<code class="language-python">def main():
+    print("MAYORES QUE EL ANTERIOR")
+    valores = int(input("¿Cuántos valores va a introducir? "))
+    if valores &lt; 1:
+        print("¡Imposible!")
+    else:
+        anterior = int(input("Escriba un número: "))
+        for i in range(valores - 1):
+            numero = int(input(f"Escriba un número más grande que {anterior}: "))
+            if numero &lt;= anterior:
+                print(f"¡{numero} no es mayor que {anterior}!")
+            anterior = numero
+        print("Gracias por su colaboración.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
       <h3>Comentarios</h3>
 
       <ul>
-        <li>La única diferencia (aparte del título) de este programa con el anterior es que en este no se compara con el primer número, sino con el último que se ha escrito. Para conseguirlo, después de hacer la comparación, el programa guarda en la variable <span class="idle-otro">primero</span> el valor que acaba de escribir el usuario. Así, en la siguiente iteración, al hacer la comparación se utilizará el último valor escrito.
+        <li>La única diferencia (aparte del título) de este programa con el anterior es que en este no se compara con el primer número, sino con el último que se ha escrito. Para conseguirlo, después de hacer la comparación, el programa guarda en la variable <span class="idle-otro">anterior</span> el valor que acaba de escribir el usuario. Así, en la siguiente iteración, al hacer la comparación se utilizará el último valor escrito.
           <div class="codigo">
-            <pre class="line-numbers" data-start="11">
-<code class="language-python">        primero = numero</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">            anterior = numero</code>
 </pre>
           </div>
         </li>
