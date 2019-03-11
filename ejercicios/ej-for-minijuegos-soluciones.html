@@ -1,54 +1,476 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Soluciones. Minijuegos (2). Bucle for. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../varios/python.css" title="mclibre">
-    <link rel="icon" href="../varios/favicon.ico">
-    <link rel="stylesheet" href="../varios/prism-python.css">
-    <script src="../varios/prism.js"></script>
+  <meta charset="utf-8">
+  <title>Soluciones. Minijuegos (2). Bucle for. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
-    <h1>Bucle <span class="idle-rese">for</span> - Minijuegos(2) - Soluciones</h1>
+  <h1>Bucle <span class="idle-rese">for</span> - Minijuegos(2) - Soluciones</h1>
 
-    <nav>
-        <p>
-            <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
-            <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
-        </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
 
-        <div class="toc">
-            <h2>Minijuegos (2)</h2>
+    <div class="toc">
+      <h2>Minijuegos (2)</h2>
 
-            <h3><a href="ej-for-minijuegos.html">Enunciados</a></h3>
-            <ol>
-                <li><a href="ej-for-minijuegos.html#ejercicio-4">Unus et duo</a></li>
-            </ol>
+      <h3><a href="ej-for-minijuegos.html">Enunciados</a></h3>
+      <ol>
+        <li><a href="ej-for-minijuegos.html#ejercicio-1">Tirada de dados</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-2">Tiradas de dado</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-3">Obtener valor (1)</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-4">Obtener valor (2)</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-5">El dado más alto (1)</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-6">El dado más alto (2)</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-7">Pares y nones</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-8">El último dado más bajo</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-9">Dado más alto y más bajo</a></li>
+        <li><a href="ej-for-minijuegos.html#ejercicio-10">Dados iguales seguidos</a></li>
+      </ol>
 
-            <h3>Soluciones</h3>
-            <ol>
-                <li><a href="#ejercicio-4">Unus et duo</a></li>
-            </ol>
-        </div>
-    </nav>
+      <h3>Soluciones</h3>
+      <ol>
+        <li><a href="#ejercicio-1">Tirada de dados</a></li>
+        <li><a href="#ejercicio-2">Tiradas de dado</a></li>
+        <li><a href="#ejercicio-3">Obtener valor (1)</a></li>
+        <li><a href="#ejercicio-4">Obtener valor (2)</a></li>
+        <li><a href="#ejercicio-5">El dado más alto (1)</a></li>
+        <li><a href="#ejercicio-6">El dado más alto (2)</a></li>
+        <li><a href="#ejercicio-7">Pares y nones</a></li>
+        <li><a href="#ejercicio-8">El último dado más bajo</a></li>
+        <li><a href="#ejercicio-9">Dado más alto y más bajo</a></li>
+        <li><a href="#ejercicio-10">Dados iguales seguidos</a></li>
+      </ol>
 
-    <p>Se ofrecen a continuación unas posibles soluciones de los ejercicios de Bucle <span class="idle-rese">for</span> <a href="ej-for-minijuegos.html">Minijuegos (2)</a>.</p>
+    </div>
+  </nav>
 
-    <section id="ejercicio-1">
-        <h2 class="con-aside">Minijuegos (1) - 11</h2>
+  <p>Se ofrecen a continuación unas posibles soluciones de los ejercicios de Bucle <span class="idle-rese">for</span> <a href="ej-for-minijuegos.html">Minijuegos (2)</a>.</p>
 
-    </section>
+  <section id="ejercicio-1">
+    <h2 class="con-aside">Minijuegos (2) - 1 - Tirada de dados</h2>
 
-    <footer>
-        <p class="ultmod">Última modificación de esta página: 6 de marzo de 2019</p>
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>71</p>
+    </aside>
 
-        <p class="licencia">
-            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
-            Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
-            que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
-        </p>
-    </footer>
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("TIRADA DE DADOS")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        print("Dados: ", end="")
+        for _ in range(numero):
+            print(f"{random.randrange(1, 7)} ", end="")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2 class="con-aside">Minijuegos (2) - 2 - Tiradas de dado</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>72</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("TIRADAS DE DADO")
+    numero = int(input("Número de jugadores: "))
+    if numero &lt; 2:
+        print("¡Imposible!")
+    else:
+        for i in range(numero):
+            print(f"Jugador {i + 1}: {random.randrange(1, 7)} ")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2 class="con-aside">Minijuegos (2) - 3 - Obtener valor (1)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>73</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("OBTENER VALOR (1)")
+    numero = int(input("Número de jugadores: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        objetivo = int(input("Valor a conseguir: "))
+        if objetivo &lt; 1 or objetivo &gt; 6:
+            print(f"¡Imposible conseguir un {objetivo}!")
+        else:
+            for i in range(numero):
+                dado = random.randrange(1, 7)
+                if dado == objetivo:
+                    print(f"Jugador {i + 1}: {dado} CONSEGUIDO")
+                else:
+                    print(f"Jugador {i + 1}: {dado}")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2 class="con-aside">Minijuegos (2) - 4 - Obtener valor (2)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>74</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("OBTENER VALOR (2)")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        objetivo = int(input("Valor a conseguir: "))
+        if objetivo &lt; 1 or objetivo &gt; 6:
+            print(f"¡Imposible conseguir un {objetivo}!")
+        else:
+            gana = False
+            print(f"Dados: ", end="")
+            for _ in range(numero):
+                dado = random.randrange(1, 7)
+                print(f"{dado} ", end="")
+                if dado == objetivo:
+                    gana = True
+            print()
+            if gana:
+                print("El jugador ha ganado.")
+            else:
+                print("El jugador ha perdido.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2 class="con-aside">Minijuegos (2) - 5 - El dado más alto (1)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>75</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("EL DADO MÁS ALTO (1)")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        mayor = 1
+        print(f"Dados: ", end="")
+        for _ in range(numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &gt; mayor:
+                mayor = dado
+        print()
+        print(f"El dado más alto es {mayor}.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-6">
+    <h2 class="con-aside">Minijuegos (2) - 6 - El dado más alto (2)</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>76</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("EL DADO MÁS ALTO (2)")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        mayor_1 = 1
+        print(f"Jugador 1: ", end="")
+        for _ in range(numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &gt; mayor_1:
+                mayor_1 = dado
+        print()
+        mayor_2 = 1
+        print(f"Jugador 2: ", end="")
+        for _ in range(numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &gt; mayor_2:
+                mayor_2 = dado
+        print()
+        if mayor_1 &gt; mayor_2:
+            print("Ha ganado el jugador 1.")
+        elif mayor_2 &gt; mayor_1:
+            print("Ha ganado el jugador 2.")
+        else:
+            print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-7">
+    <h2 class="con-aside">Minijuegos (2) - 7 - Pares y nones</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>77</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("EL DADO MÁS ALTO (2)")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        mayor_1 = 1
+        print(f"Jugador 1: ", end="")
+        for _ in range(numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &gt; mayor_1:
+                mayor_1 = dado
+        print()
+        mayor_2 = 1
+        print(f"Jugador 2: ", end="")
+        for _ in range(numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &gt; mayor_2:
+                mayor_2 = dado
+        print()
+        if mayor_1 &gt; mayor_2:
+            print("Ha ganado el jugador 1.")
+        elif mayor_2 &gt; mayor_1:
+            print("Ha ganado el jugador 2.")
+        else:
+            print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-8">
+    <h2 class="con-aside">Minijuegos (2) - 8 - El último dado más bajo</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>78</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("EL DADO MÁS BAJO")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 1:
+        print("¡Imposible!")
+    else:
+        menor = 7
+        ganador = 0
+        for i in range(1, numero + 1):
+            dado = random.randrange(1, 7)
+            print(f"Jugador {i}: {dado}")
+            if dado &lt;= menor:
+                ganador = i
+                menor = dado
+        print(f"Ha ganado el jugador {ganador}.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-9">
+    <h2 class="con-aside">Minijuegos (2) - 9 - El dado más alto y más bajo</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>79</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("DADO MÁS ALTO Y MÁS BAJO")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 2:
+        print("¡Imposible!")
+    else:
+        menor = 7
+        mayor = 0
+        print("Jugador 1: ", end="")
+        for _ in range(1, numero + 1):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &lt; menor:
+                menor = dado
+            if dado &gt; mayor:
+                mayor = dado
+        jugador_1 = menor + mayor
+        print()
+        menor = 7
+        mayor = 0
+        print("Jugador 2: ", end="")
+        for _ in range(1, numero + 1):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado &lt; menor:
+                menor = dado
+            if dado &gt; mayor:
+                mayor = dado
+        jugador_2 = menor + mayor
+        print()
+        if jugador_1 &gt; jugador_2:
+            print(f"Ha ganado el jugador 1.")
+        elif jugador_2 &gt; jugador_1:
+            print(f"Ha ganado el jugador 2.")
+        else:
+            print("Han empatado.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-10">
+    <h2 class="con-aside">Minijuegos (2) - 10 - Dados iguales consecutivos</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>80</p>
+    </aside>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("DADOS IGUALES")
+    numero = int(input("Número de dados: "))
+    if numero &lt; 2:
+        print("¡Imposible!")
+    else:
+        print("Dados: ", end="")
+        repetido = False
+        anterior = random.randrange(1, 7)
+        print(f"{anterior} ", end="")
+        for _ in range(1, numero):
+            dado = random.randrange(1, 7)
+            print(f"{dado} ", end="")
+            if dado == anterior:
+                repetido = True
+            anterior = dado
+        print()
+        if repetido:
+            print(f"El jugador ha perdido.")
+        else:
+            print(f"El jugador ha ganado.")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 11 de marzo de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="http://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
 </body>
 </html>
