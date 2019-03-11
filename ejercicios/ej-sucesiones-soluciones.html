@@ -45,50 +45,61 @@
 
     <div class="codigo">
       <pre>
-<code class="language-python">for i in range(10):
-    print(2*i + 2, end=" ")
-print()
+<code class="language-python">def main():
+    for i in range(10):
+        print(f"{2 * i + 2} ", end="")
+    print()
 
-for i in range(8):
-    print(2*i + 20, end=" ")
-print()
+    for i in range(8):
+        print(f"{2 * i + 20} ", end="")
+    print()
 
-for i in range(6):
-    print(4*i + 10, end=" ")
-print()
+    for i in range(6):
+        print(f"{4 * i + 10} ", end="")
+    print()
 
-for i in range(9):
-    print(-5*i + 40, end=" ")
-print()
+    for i in range(9):
+        print(f"{-5 * i + 40} ", end="")
+    print()
 
-for i in range(10):
-    print(i + 1, end=" ")
-</code>
+    for i in range(10):
+        print(f"{i + 1} ", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
-    <p>O mediante el tipo <span class="idle-func">range</span>() con dos argumentos, (en estas soluciones el bucle empieza siempre con el valor ):</p>
+    <p>O mediante el tipo <span class="idle-func">range</span>() con dos argumentos, (en estas soluciones el bucle empieza siempre con el valor 1:</p>
 
     <div class="codigo">
       <pre>
-<code class="language-python">for i in range(1, 11):
-    print(2 * i, end=" ")
-print()
+<code class="language-python">def main():
+    for i in range(1, 11):
+        print(f"{2 * i} ", end="")
+    print()
 
-for i in range(1, 9):
-    print(2*i + 18, end=" ")
-print()
+    for i in range(1, 9):
+        print(f"{2 * i + 18} ", end="")
+    print()
 
-for i in range(1, 7):
-    print(4*i + 6, end=" ")
-print()
+    for i in range(1, 7):
+        print(f"{4 * i + 6} ", end="")
+    print()
 
-for i in range(1, 10):
-    print(-5*i + 45, end=" ")</code>
-print()
+    for i in range(1, 10):
+        print(f"{-5 * i + 45} ", end="")
+    print()
 
-for i in range(1, 11):
-    print(i, end=" ")
+    for i in range(1, 11):
+        print(f"{i} ", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -96,24 +107,30 @@ for i in range(1, 11):
 
     <div class="codigo">
       <pre>
-<code class="language-python">for i in range(2, 22, 2):
-    print(i, end=" ")
-print()
+<code class="language-python">def main():
+    for i in range(2, 22, 2):
+        print(f"{i} ", end="")
+    print()
 
-for i in range(20, 36, 2):
-    print(i, end=" ")
-print()
+    for i in range(20, 36, 2):
+        print(f"{i} ", end="")
+    print()
 
-for i in range(10, 34, 4):
-    print(i, end=" ")
-print()
+    for i in range(10, 34, 4):
+        print(f"{i} ", end="")
+    print()
 
-for i in range(40, -5, -5):
-    print(i, end=" ")
-print()
+    for i in range(40, -5, -5):
+        print(f"{i} ", end="")
+    print()
 
-for i in range(1, 11, 1):
-    print(i, end=" ")</code>
+    for i in range(1, 11, 1):
+        print(f"{i} ", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -121,38 +138,46 @@ for i in range(1, 11, 1):
   <section id="ejercicio-2">
     <h2>Sucesiones - 2 - Sucesiones <strong>NO</strong> aritméticas</h2>
 
+    <p>Una posible solución, en la que se han elegido los tipos <span class="idle-func">range</span>() de manera que la fórmula sea lo más simple posible, sería la siguiente:</p>
+
     <div class="codigo">
       <pre>
-<code class="language-python">for i in range(1, 11):
-    print(i ** 2, end=" ")
-print()
+<code class="language-python">def main():
+    for i in range(1, 11):
+        print(f"{i * i} ", end="")
+    print()
 
-for i in range(1, 11):
-    print(i**2 + 1, end=" ")
-print()
+    for i in range(1, 11):
+        print(f"{i * i + 1} ", end="")
+    print()
 
-for i in range(2, 8):
-    print(i ** 3, end=" ")
-print()
+    for i in range(2, 8):
+        print(f"{i ** 3} ", end="")
+    print()
 
-for i in range(1, 7):
-    print(1.0 / i, end=" ")
-print()
+    for i in range(1, 7):
+        print(f"{1 / i} ", end="")
+    print()
 
-for i in range(1, 8):
-    print(i * (i+1), end=" ")
-print()
+    for i in range(1, 8):
+        print(f"{i * (i + 1)} ", end="")
+    print()
 
-for i in range(6):
-    print(10 ** i, end=" ")
-print()
+    for i in range(6):
+        print(f"{10 ** i} ", end="")
+    print()
 
-for i in range(5):
-    print(1.0 / 10**i, end=" ")
-print()
+    for i in range(5):
+        print(f"{1 / 10 ** i} ", end="")
+    print()
 
-for i in range(8):
-    print((-1) ** i, end=" ")</code>
+    for i in range(8):
+        print(f"{(-1) ** i} ", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -160,30 +185,36 @@ for i in range(8):
 
     <div class="codigo">
       <pre>
-<code class="language-python">for i in range(10):
-    print((i+1) ** 2, end=" ")
-print()
+<code class="language-python">def main():
+    for i in range(10):
+        print(f"{(i + 1) * (i + 1)} ", end="")
+    print()
 
-for i in range(10):
-    print((i+1)**2 + 1, end=" ")
-print()
+    for i in range(10):
+        print(f"{(i + 1) * (i + 1) + 1} ", end="")
+    print()
 
-for i in range(6):
-    print((i+2) ** 3, end=" ")
-print()
+    for i in range(7):
+        print(f"{(i + 2) ** 3} ", end="")
+    print()
 
-for i in range(6):
-    print(1.0 / (i+1), end=" ")
-print()
+    for i in range(6):
+        print(f"{1 / (i + 1)} ", end="")
+    print()
 
-for i in range(7):
-    print((i+1) * (i+2), end=" ")</code>
+    for i in range(7):
+        print(f"{(i + 1) * (i + 2)} ", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 11 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
