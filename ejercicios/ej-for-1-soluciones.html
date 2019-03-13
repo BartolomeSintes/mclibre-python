@@ -89,7 +89,7 @@
 
       <aside class="aside-minienlace">
         <p>MPTC</p>
-        <p>71</p>
+        <p>81</p>
       </aside>
 
       <div class="codigo">
@@ -114,7 +114,7 @@ if __name__ == "__main__":
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>La estructura general de este programa es similar a la del resto de programas de la página: se pide un número (o dos) y se hace una comprobación inicial de ese valor (o valores), para mostrar un mensaje de error o ejecutar el núcleo del programa. En este caso, la comprobación es que el segundo número sea mayor que el primero.
@@ -154,7 +154,12 @@ if __name__ == "__main__":
     </section>
 
     <section id="ejercicio-1-2">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - A-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>82</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -176,7 +181,7 @@ if __name__ == "__main__":
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>Como los números se van escribiendo en la ejecución del bucle, el comienzo de la respuesta se escribe antes del bucle:
@@ -230,7 +235,7 @@ if __name__ == "__main__":
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>Como el tipo <span class="idle-func">range</span>() requiere números enteros, para indicar el límite superior del <span class="idle-func">range</span>() (la mitad del número indicado por el usuario) podemos utilizar el operador cociente (//), que redondea al entero inferior. Para que el bucle incluye la mitad del número debemos sumar uno al cociente.
@@ -257,7 +262,7 @@ if __name__ == "__main__":
 
       <aside class="aside-minienlace">
         <p>MPTC</p>
-        <p>73</p>
+        <p>83</p>
       </aside>
 
       <div class="codigo">
@@ -281,7 +286,7 @@ if __name__ == "__main__":
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El bucle debe repetirse una vez menos que el número de valores a introducir (ya que uno de los valores, el primero, se ha introducido antes del bucle).
@@ -306,7 +311,7 @@ if __name__ == "__main__":
 
       <aside class="aside-minienlace">
         <p>MPTC</p>
-        <p>74</p>
+        <p>84</p>
       </aside>
 
       <div class="codigo">
@@ -331,7 +336,7 @@ if __name__ == "__main__":
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>La única diferencia (aparte del título) de este programa con el anterior es que en este no se compara con el primer número, sino con el último que se ha escrito. Para conseguirlo, después de hacer la comparación, el programa guarda en la variable <span class="idle-otro">anterior</span> el valor que acaba de escribir el usuario. Así, en la siguiente iteración, al hacer la comparación se utilizará el último valor escrito.
@@ -349,46 +354,56 @@ if __name__ == "__main__":
     <h2>B. Contadores</h2>
 
     <section id="ejercicio-2-1">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - B-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>85</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("NÚMEROS NEGATIVOS")
-numero = int(input("¿Cuántos valores va a introducir? "))
+<code class="language-python">def main():
+    print("NÚMEROS NEGATIVOS")
+    numero = int(input("¿Cuántos valores va a introducir? "))
 
-if numero &lt;= 0:
-    print("¡Imposible!")
-else:
-    contador = 0
-    for i in range(1, numero + 1):
-        valor = float(input(f"Escriba el número {i}: "))
-        if valor &lt; 0:
-            contador = contador + 1
-    if contador == 0:
-        print("No ha escrito ningún número negativo")
-    elif contador == 1:
-        print("Ha escrito 1 número negativo")
+    if numero &lt; 0:
+        print("¡Imposible!")
     else:
-        print(f"Ha escrito {contador} números negativos")</code>
+        contador = 0
+        for i in range(1, numero + 1):
+            valor = float(input(f"Escriba el número {i}: "))
+            if valor &lt; 0:
+                contador = contador + 1
+        if contador == 0:
+            print("No ha escrito ningún número negativo.")
+        elif contador == 1:
+            print("Ha escrito 1 número negativo.")
+        else:
+            print(f"Ha escrito {contador} números negativos.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El núcleo del programa utiliza un bucle para pedir al usuario el número de valores indicado por el usuario
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(1, numero + 1):
-        ...</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">        for i in range(1, numero + 1):
+            ...</code>
 </pre>
           </div>
         </li>
         <li>Al pedir el número que se va a sumar, se utiliza la variable de control
           <var>i</var>:
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
-<code class="language-python">        valor = float(input(f"Escriba el número {i}: "))</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
@@ -397,35 +412,35 @@ else:
         <li>Antes de pedir los valores el contador
           <var>contador</var> se pone a 0.
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    contador = 0</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        contador = 0</code>
 </pre>
           </div>
         </li>
         <li>En cada iteración, se comprueba si el valor introducido es negativo.
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">        if valor &lt; 0:
+            <pre class="line-numbers" data-start="11">
+<code class="language-python">            if valor &lt; 0:
             ...</code>
 </pre>
           </div>
         </li>
         <li>Si lo es, se aumenta el contador en 1.
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">            contador = contador + 1</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">                contador = contador + 1</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, se escribe el resultado. Como la frase que se escribe depende de si se han escrito 0, 1 o 2 números negativos, el programa utiliza una estructura <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...
           <div class="codigo">
-            <pre class="line-numbers" data-start="11">
-<code class="language-python">    if contador == 0:
-        print("No ha escrito ningún número negativo")
-    elif contador == 1:
-        print("Ha escrito 1 número negativo")
-    else:
-        print(f"Ha escrito {contador} números negativos")</code>
+            <pre class="line-numbers" data-start="13">
+<code class="language-python">        if contador == 0:
+            print("No ha escrito ningún número negativo.")
+        elif contador == 1:
+            print("Ha escrito 1 número negativo.")
+        else:
+            print(f"Ha escrito {contador} números negativos.")</code>
 </pre>
           </div>
         </li>
@@ -433,47 +448,57 @@ else:
     </section>
 
     <section id="ejercicio-2-2">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - B-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>86</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("CONTADOR DE PARES E IMPARES")
-valores = int(input("¿Cuántos valores va a introducir? "))
-if valores &lt; 1:
-    print("¡Imposible!")
-else:
-    pares = 0
-    for i in range(1, valores + 1):
-        numero = int(input(f"Escriba el valor {i}: "))
-        if numero % 2 == 0:
-            pares += 1
-    print(f"Ha escrito {pares} números pares y {valores - pares} números impares")
-    print("Gracias por su colaboración")</code>
+<code class="language-python">def main():
+  print("CONTADOR DE PARES E IMPARES")
+  valores = int(input("¿Cuántos valores va a introducir? "))
+  if valores &lt; 0:
+      print("¡Imposible!")
+  else:
+      pares = 0
+      for i in range(1, valores + 1):
+          numero = int(input(f"Escriba el valor {i}: "))
+          if numero % 2 == 0:
+              pares += 1
+      print(f"Ha escrito {pares} números pares y {valores - pares} números impares.")
+      print("Gracias por su colaboración.")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El contador de números pares se debe inicializar antes del bucle.
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    pares = 0</code>
+            <pre class="line-numbers" data-start="7">
+<code class="language-python">        pares = 0</code>
 </pre>
           </div>
         </li>
         <li>El contador de números pares debe aumentar cuando el número escrito es par.
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">        if numero % 2 == 0:
-            pares += 1</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">            if numero % 2 == 0:
+                pares += 1</code>
 </pre>
           </div>
         </li>
         <li>No es necesario crear un contador de números impares, ya que los números que no son pares serán impares.
           <div class="codigo">
-            <pre class="line-numbers" data-start="11">
-<code class="language-python">    print(f"Ha escrito {pares} números pares y {valores - pares} números impares")</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">        print(f"Ha escrito {pares} números pares y {valores - pares} números impares.")</code>
 </pre>
           </div>
         </li>
@@ -481,28 +506,38 @@ else:
     </section>
 
     <section id="ejercicio-2-3">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - B-3</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>87</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("NÚMERO PRIMO")
-numero = int(input("Escriba un número entero mayor que 1: "))
+<code class="language-python">def main():
+    print("NÚMERO PRIMO")
+    numero = int(input("Escriba un número entero mayor que 1: "))
 
-if numero &lt;= 1:
-    print("¡Le he pedido un número entero mayor que 1!")
-else:
-    contador = 0
-    for i in range(1, numero + 1):
-        if numero % i == 0:
-            contador = contador + 1
-    if contador == 2:
-        print(f"{numero} es primo")
+    if numero &lt;= 1:
+        print("¡Le he pedido un número entero mayor que 1!")
     else:
-        print(f"{numero} no es primo")</code>
+        contador = 0
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                contador = contador + 1
+        if contador == 2:
+            print(f"{numero} es primo.")
+        else:
+            print(f"{numero} no es primo.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El algoritmo del programa se basa en que un número primo sólo tiene dos divisores: el 1 y el propio número. El programa cuenta los divisores del número y si sólo hay dos, es que el número es primo</li>
@@ -511,22 +546,22 @@ else:
           <var>i</var> da 0.
 
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    contador = 0
-    for i in range(1, numero + 1):
-        if numero % i == 0:
-            contador = contador + 1</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        contador = 0
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                contador = contador + 1</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, una estructura <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... escribe si el número es primo o no.
 
           <div class="codigo">
-            <pre class="line-numbers" data-start="10">
-<code class="language-python">    if contador == 2:
-        print(f"{numero} es primo")
-    else:
-        print(f"{numero} no es primo")</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">        if contador == 2:
+            print(f"{numero} es primo")
+        else:
+            print(f"{numero} no es primo")</code>
 </pre>
           </div>
         </li>
@@ -538,21 +573,26 @@ else:
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("NÚMERO PRIMO")
-numero = int(input("Escriba un número entero mayor que 1: "))
+<code class="language-python">def main():
+    print("NÚMERO PRIMO")
+    numero = int(input("Escriba un número entero mayor que 1: "))
 
-if numero &lt;= 1:
-    print("¡Le he pedido un número entero mayor que 1!")
-else:
-    contador = 0
-    limite = round(numero ** 0.5)
-    for i in range(1, limite + 1):
-        if numero % i == 0:
-            contador = contador + 1
-    if contador == 1:
-        print(f"{numero} es primo")
+    if numero &lt;= 1:
+        print("¡Le he pedido un número entero mayor que 1!")
     else:
-        print(f"{numero} no es primo")</code>
+        contador = 0
+        limite = round(numero ** 0.5)
+        for i in range(1, limite + 1):
+            if numero % i == 0:
+                contador = contador + 1
+        if contador == 1:
+            print(f"{numero} es primo.")
+        else:
+            print(f"{numero} no es primo.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
@@ -569,40 +609,50 @@ else:
     <h2>C. Acumuladores</h2>
 
     <section id="ejercicio-3-1">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - C-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - C-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>88</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("SUMA DE VALORES")
-numero = int(input("¿Cuántos valores va a introducir? "))
+<code class="language-python">def main():
+    print("SUMA DE VALORES")
+    numero = int(input("¿Cuántos valores va a introducir? "))
 
-if numero &lt;= 0:
-    print("¡Imposible!")
-else:
-    suma = 0
-    for i in range(1, numero + 1):
-        valor = float(input(f"Escriba el número {i}: "))
-        suma = suma + valor
-    print(f"La suma de los números que ha escrito es {suma}")</code>
+    if numero &lt;= 0:
+        print("¡Imposible!")
+    else:
+        suma = 0
+        for i in range(1, numero + 1):
+            valor = float(input(f"Escriba el número {i}: "))
+            suma = suma + valor
+        print(f"La suma de los números que ha escrito es {suma}")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El núcleo del programa utiliza un bucle para pedir al usuario el número de valores indicado por el usuario
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(1, numero + 1):
-        ...</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">        for i in range(1, numero + 1):
+            ...</code>
 </pre>
           </div>
         </li>
         <li>Al pedir el número que se va a sumar, se utiliza la variable de control
           <var>i</var>:
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
-<code class="language-python">        valor = float(input(f"Escriba el número {i}: "))</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
@@ -611,22 +661,22 @@ else:
         <li>Antes de pedir los valores el acumulador
           <var>suma</var> se pone a 0.
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    suma = 0</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">            suma = 0</code>
 </pre>
           </div>
         </li>
         <li>En cada iteración, el valor introducido por el usuario se añade al acumulador
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">        suma = suma + valor</code>
+            <pre class="line-numbers" data-start="11">
+<code class="language-python">            suma = suma + valor</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, se escribe el resultado.
           <div class="codigo">
-            <pre class="line-numbers" data-start="10">
-<code class="language-python">    print(f"La suma de los números que ha escrito es {suma}")</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">        print(f"La suma de los números que ha escrito es {suma}")</code>
 </pre>
           </div>
         </li>
@@ -634,54 +684,100 @@ else:
     </section>
 
     <section id="ejercicio-3-2">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - C-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - C-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>89</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("SUMA ENTRE VALORES")
-numero_1 = int(input("Escriba un número entero: "))
-numero_2 = int(input(f"Escriba un número entero mayor que {numero_1}: "))
+<code class="language-python">def main():
+    print("SUMA ENTRE VALORES")
+    numero_1 = int(input("Escriba un número entero positivo: "))
+    if numero_1 &lt;= 0:
+        print("¡Le he pedido un número entero positivo!")
+    else:
+        numero_2 = int(input(f"Escriba un número entero mayor que {numero_1}: "))
+        if numero_2 &lt;= numero_1:
+            print(f"¡Le he pedido un número entero mayor que {numero_1}!")
+        else:
+            suma = 0
+            for i in range(numero_1, numero_2 + 1):
+                suma = suma + i
+            print(f"La suma desde {numero_1} hasta {numero_2} es {suma}")
 
-if numero_2 &lt;= numero_1:
-    print(f"¡Le he pedido un número entero mayor o igual que {numero_1}!")
-else:
-    suma = 0
-    for i in range(numero_1, numero_2 + 1):
-        suma = suma + i
-    print(f"La suma desde {numero_1} hasta {numero_2} es {suma}")
 
-    for i in range(numero_1, numero_2):
-        print(f"{i} + ", end="")
-    print(f"{numero_2} = {suma}")</code>
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El núcleo del programa utiliza un acumulador (
           <var>suma</var>) para sumar los enteros entre los dos números introducidos por el usuario y escribe el resultado. Este código es muy similar al ejemplo comentado en la lección <a href="../lecciones/python-for.html#acumulador">bucle for (1)</a>.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    suma = 0
-    for i in range(numero_1, numero_2 + 1):
-        suma = suma + i
-    print(f"La suma desde {numero_1} hasta {numero_2} es {suma}")</code>
+            <pre class="line-numbers" data-start="11">
+<code class="language-python">        suma = 0
+        for i in range(numero_1, numero_2 + 1):
+            suma = suma + i
+        print(f"La suma desde {numero_1} hasta {numero_2} es {suma}")</code>
 </pre>
           </div>
         </li>
-        <li>A continuación el programa tiene que escribir la expresión algebraica de la suma realizada (por ejejmplo, 10 + 11 + 12 + 13 + 14 = 60). Para ello, se realiza un bucle en el que en cada iteración se escribe la variable de control y el caracter +. Un detalle importante es que el bucle no debe llegar al último número (para que no escriba un + después del último número).
+      </ul>
+
+      <h3 class="con-aside">C-2-2 - Mostrar suma</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>90</p>
+      </aside>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python">def main():
+    print("SUMA ENTRE VALORES")
+    numero_1 = int(input("Escriba un número entero positivo: "))
+    if numero_1 &lt;= 0:
+        print("¡Le he pedido un número entero positivo!")
+    else:
+        numero_2 = int(input(f"Escriba un número entero mayor que {numero_1}: "))
+        if numero_2 &lt;= numero_1:
+            print(f"¡Le he pedido un número entero mayor que {numero_1}!")
+        else:
+            suma = 0
+            for i in range(numero_1, numero_2 + 1):
+                suma = suma + i
+            print(f"La suma desde {numero_1} hasta {numero_2} es {suma}")
+
+            for i in range(numero_1, numero_2):
+                print(f"{i} + ", end="")
+            print(f"{numero_2} = {suma}")
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <h4>Comentarios</h4>
+
+      <ul>
+        <li>Tras calcular la suma, el programa tiene que escribir la expresión algebraica de la suma realizada (por ejejmplo, 10 + 11 + 12 + 13 + 14 = 60). Para ello, se realiza un bucle en el que en cada iteración se escribe la variable de control y el caracter +. Un detalle importante es que el bucle no debe llegar al último número (para que no escriba un + después del último número).
           <div class="codigo">
-            <pre class="line-numbers" data-start="12">
-<code class="language-python">    for i in range(numero_1, numero_2):
-        print(f"{i} + ", end="")</code>
+            <pre class="line-numbers" data-start="16">
+<code class="language-python">            for i in range(numero_1, numero_2):
+                print(f"{i} + ", end="")</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, se escribe el último número, el carácter = y el resultado ya calculado antes.
           <div class="codigo">
-            <pre class="line-numbers" data-start="14">
-<code class="language-python">    print(f"{numero_2} = {suma}")</code>
+            <pre class="line-numbers" data-start="18">
+<code class="language-python">            print(f"{numero_2} = {suma}")</code>
 </pre>
           </div>
         </li>
@@ -689,32 +785,41 @@ else:
     </section>
 
     <section id="ejercicio-3-3">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - C-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - C-3</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>91</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("MAYOR, MENOR Y MEDIA ARITMÉTICA")
-numero = int(input("¿Cuántos valores va a introducir? "))
+<code class="language-python">def main():
+    print("MAYOR, MENOR Y MEDIA ARITMÉTICA")
+    numero = int(input("¿Cuántos valores va a introducir? "))
 
-if numero &lt;= 0:
-    print("¡Imposible!")
-else:
-    valor = float(input("Escriba el número 1: "))
-    minimo = maximo = suma = valor
-    for i in range(2, numero + 1):
-        valor = float(input(f"Escriba el número {i}: "))
-        suma = suma + valor
-        if valor &lt; minimo:
-            minimo = valor
-        if valor &gt; maximo:
-            maximo = valor
-    print(f"El número más pequeño de los introducidos es {minimo}")
-    print(f"El número más grande de los introducidos es {maximo}")
-    print(f"La media de los números introducidos es {suma / numero}")</code>
+    if numero &lt;= 0:
+        print("¡Imposible!")
+    else:
+        valor = float(input("Escriba el número 1: "))
+        minimo = maximo = suma = valor
+        for i in range(2, numero + 1):
+            valor = float(input(f"Escriba el número {i}: "))
+            suma = suma + valor
+            if valor &lt; minimo:
+                minimo = valor
+            if valor &gt; maximo:
+                maximo = valor
+        print(f"El número más pequeño de los introducidos es {minimo}")
+        print(f"El número más grande de los introducidos es {maximo}")
+        print(f"La media de los números introducidos es {suma / numero}")
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>La dificultad de este ejercicio consiste en que el programa debe detectar el número más pequeño y el más grande de los introducidos por el usuario. Para ello se utilizan dos variables auxiliares
@@ -722,11 +827,11 @@ else:
           <var>maximo</var>.
           <p>En cada iteración del bucle que va pidiendo valores al usuario, el programa comprueba si el valor introducido es menor que el mínimo o mayor que el máximo y, si es así, se guarda el nuevo valor.</p>
           <div class="codigo">
-            <pre class="line-numbers" data-start="11">
-<code class="language-python">        if valor &lt; minimo:
-            minimo = valor
-        if valor &gt; maximo:
-            maximo = valor</code>
+            <pre class="line-numbers" data-start="13">
+<code class="language-python">            if valor &lt; minimo:
+                minimo = valor
+            if valor &gt; maximo:
+                maximo = valor</code>
 </pre>
           </div>
           <p>El problema es que las variables
@@ -739,51 +844,51 @@ else:
             <var>minimo</var> y
             <var>maximo</var> el primer valor que introduzca el usuario.</p>
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    valor = float(input("Escriba el número 1: "))
-    minimo = maximo = suma = valor</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        valor = float(input("Escriba el número 1: "))
+        minimo = maximo = suma = valor</code>
 </pre>
           </div>
         </li>
 
         <li>A continuación el programa pedirá el resto de valores al usuario. Como se ha pedido ya un valor, el bucle debe empezar en 2.
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
-<code class="language-python">    for i in range(2, numero + 1):
-        ...</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">        for i in range(2, numero + 1):
+            ...</code>
 </pre>
           </div>
         </li>
         <li>Al pedir el número que se va a sumar, se utiliza la variable de control
           <var>i</var>:
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">        valor = float(input(f"Escriba el número {i}: "))</code>
+            <pre class="line-numbers" data-start="11">
+<code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
         <li>Para el cálculo de la media se necesita la suma de todos los valores introducidos, por lo que el programa incluye un acumulador
           <var>suma</var> que se modifica en cada iteración del bucle.
           <div class="codigo">
-            <pre class="line-numbers" data-start="10">
-<code class="language-python">        suma = suma + valor</code>
+            <pre class="line-numbers" data-start="12">
+<code class="language-python">            suma = suma + valor</code>
 </pre>
           </div>
         </li>
         <li>El valor inicial del acumulador
           <var>suma</var> es también el primer valor escrito por el usuario.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    minimo = maximo = suma = valor</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">        minimo = maximo = suma = valor</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, se escriben los resultados. La media es la suma de todos los valores dividida por el número de valores.
           <div class="codigo">
-            <pre class="line-numbers" data-start="15">
-<code class="language-python">    print(f"El número más pequeño de los introducidos es {minimo}")
-    print(f"El número más grande de los introducidos es {maximo}")
-    print(f"La media de los números introducidos es {suma / numero}")</code>
+            <pre class="line-numbers" data-start="17">
+<code class="language-python">        print(f"El número más pequeño de los introducidos es {minimo}")
+        print(f"El número más grande de los introducidos es {maximo}")
+        print(f"La media de los números introducidos es {suma / numero}")</code>
 </pre>
           </div>
         </li>
@@ -791,42 +896,51 @@ else:
     </section>
 
     <section id="ejercicio-3-4">
-      <h3>Bucle <span class="idle-rese">for</span> (1) - C-4</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (1) - C-4</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>92</p>
+      </aside>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python">print("FACTORIAL")
-numero = int(input("Escriba un número entero mayor que cero: "))
+<code class="language-python">def main():
+    print("FACTORIAL")
+    numero = int(input("Escriba un número entero mayor que cero: "))
 
-if numero &lt;= 0:
-    print("¡Le he pedido un número entero mayor que cero!")
-else:
-    factorial = 1
-    for i in range(1, numero + 1):
-        factorial = factorial * i
-    print(f"El factorial de {numero} es {factorial}")</code>
+    if numero &lt;= 0:
+        print("¡Le he pedido un número entero mayor que cero!")
+    else:
+        factorial = 1
+        for i in range(1, numero + 1):
+            factorial = factorial * i
+        print(f"El factorial de {numero} es {factorial}.")
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
 
-      <h3>Comentarios</h3>
+      <h4>Comentarios</h4>
 
       <ul>
         <li>El núcleo del programa utiliza un acumulador (
           <var>factorial</var>) para calcular el factorial del número indicado por el usuario.
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    factorial = 1
-    for i in range(1, numero + 1):
-        factorial = factorial * i
-    print(f"El factorial de {numero} es {factorial}")</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        factorial = 1
+        for i in range(1, numero + 1):
+            factorial = factorial * i
+        print(f"El factorial de {numero} es {factorial}")</code>
 </pre>
           </div>
         </li>
         <li>Como el factorial es el producto desde 1 hasta el número indicado por el usuario, <span class="idle-func">range</span> debe empezar en 1 y llegar hasta el número indicado por el usuario.
           <div class="codigo">
-            <pre class="line-numbers" data-start="7">
-<code class="language-python">    for i in range(1, numero + 1):
-        ...</code>
+            <pre class="line-numbers" data-start="9">
+<code class="language-python">        for i in range(1, numero + 1):
+            ...</code>
 </pre>
           </div>
         </li>
@@ -834,23 +948,23 @@ else:
           <var>factorial</var> debe modificarse multiplicándose por la variable de control del bucle
           <var>i</var>.
           <div class="codigo">
-            <pre class="line-numbers" data-start="8">
-<code class="language-python">        factorial = factorial * i</code>
+            <pre class="line-numbers" data-start="10">
+<code class="language-python">            factorial = factorial * i</code>
 </pre>
           </div>
         </li>
         <li>El valor inicial del acumulador
           <var>factorial</var> debe ser 1, porque si valiera 0 al hacer multiplicaciones el resultado daría siempre cero..
           <div class="codigo">
-            <pre class="line-numbers" data-start="6">
-<code class="language-python">    factorial = 1</code>
+            <pre class="line-numbers" data-start="8">
+<code class="language-python">        factorial = 1</code>
 </pre>
           </div>
         </li>
         <li>Una vez completado el bucle, se escribe el resultado.
           <div class="codigo">
-            <pre class="line-numbers" data-start="9">
-<code class="language-python">    print(f"El factorial de {numero} es {factorial}")</code>
+            <pre class="line-numbers" data-start="11">
+<code class="language-python">        print(f"El factorial de {numero} es {factorial}.")</code>
 </pre>
           </div>
         </li>
@@ -859,7 +973,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 13 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
