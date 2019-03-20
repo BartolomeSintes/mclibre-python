@@ -66,93 +66,124 @@
     <h2>A. Repasar las tablas de multiplicar</h2>
 
     <section id="ejercicio-1-1">
-      <h3>Bucle <span class="idle-rese">for</span> (2) - A-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (2) - A-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>93</p>
+      </aside>
 
       <p>Una posible solución es:</p>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-a = randrange(2, 11)
-b = randrange(2, 11)
 
-respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+def main():
+    print("TABLAS DE MULTIPLICAR (1)")
 
-if respuesta == a * b:
-    print("¡Respuesta correcta!")
-else:
-    print("¡Respuesta incorrecta!")</code>
+    a = random.randrange(2, 11)
+    b = random.randrange(2, 11)
+    respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+
+    if respuesta == a * b:
+        print("¡Respuesta correcta!")
+    else:
+        print("¡Respuesta incorrecta!")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
 
     <section id="ejercicio-1-2">
-      <h3>Bucle <span class="idle-rese">for</span> (2) - A-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (2) - A-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>94</p>
+      </aside>
 
       <p>Una posible solución es:</p>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-cantidad = int(input("Número de preguntas: "))
 
-if cantidad &lt; 1:
-    print("El número de preguntas debe ser al menos 1")
-else:
-    for i in range(cantidad):
-        a = randrange(2, 11)
-        b = randrange(2, 11)
+def main():
+    print("TABLAS DE MULTIPLICAR (2)")
+    preguntas = int(input("Número de preguntas: "))
+    if preguntas &lt; 1:
+        print("El número de preguntas debe ser al menos 1.")
+    else:
+        for _ in range(preguntas):
+            print()
+            a = random.randrange(2, 11)
+            b = random.randrange(2, 11)
+            respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
 
-        respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+            if respuesta == a * b:
+                print("¡Respuesta correcta!")
+            else:
+                print("¡Respuesta incorrecta!")
 
-        if respuesta == a * b:
-            print("¡Respuesta correcta!")
-        else:
-            print("¡Respuesta incorrecta!")
-        print()</code>
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
 
     <section id="ejercicio-1-3">
-      <h3>Bucle <span class="idle-rese">for</span> (2) - A-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (2) - A-3</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>95</p>
+      </aside>
 
       <p>Una posible solución es:</p>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-cantidad = int(input("Número de preguntas: "))
-print()
 
-if cantidad &lt; 1:
-    print("El número de preguntas debe ser al menos 1")
-else:
-    correctas = 0
-    for i in range(cantidad):
-        a = randrange(2, 11)
-        b = randrange(2, 11)
-
-        respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
-
-        if respuesta == a * b:
-            print("¡Respuesta correcta!")
-            correctas += 1
-        else:
-            print("¡Respuesta incorrecta!")
-        print()
-    print(f"Ha contestado correctamente {correctas} ", end="")
-    if (correctas == 1):
-        print("pregunta")
+def main():
+    print("TABLAS DE MULTIPLICAR (3)")
+    preguntas = int(input("Número de preguntas: "))
+    if preguntas &lt; 1:
+        print("El número de preguntas debe ser al menos 1.")
     else:
-        print("preguntas")
-    nota = round(correctas / cantidad * 10, 1)
-    print(f"Le corresponde una nota de {nota}")
-    if nota &gt;= 9:
-        print("¡Enhorabuena!")</code>
+        correctas = 0
+        for _ in range(preguntas):
+            print()
+            a = random.randrange(2, 11)
+            b = random.randrange(2, 11)
+            respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+            if respuesta == a * b:
+                print("¡Respuesta correcta!")
+                correctas += 1
+            else:
+                print("¡Respuesta incorrecta!")
+
+        print()
+        if correctas == 1:
+            print(f"Ha contestado correctamente 1 pregunta.")
+        else:
+            print(f"Ha contestado correctamente {correctas} preguntas.")
+        nota = round(correctas / preguntas * 10, 1)
+        print(f"Le corresponde una nota de {nota}.")
+        if nota &gt;= 9:
+            print("¡Enhorabuena!")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
@@ -162,62 +193,80 @@ else:
     <h2>B. Cálculo estimado</h2>
 
     <section id="ejercicio-2-1">
-      <h3>Bucle <span class="idle-rese">for</span> (2) - B-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (2) - B-1</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>96</p>
+      </aside>
 
       <p>Una posible solución es:</p>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-a = randrange(11, 100)
-b = randrange(11, 100)
 
-respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+def main():
+    print("CÁLCULO ESTIMADO (1)")
+    a = random.randrange(11, 100)
+    b = random.randrange(11, 100)
 
-if respuesta == a * b:
-    print("¡Respuesta correcta!")
-elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
-    print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}")
-elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
-    print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}")
-else:
-    print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}")
-print()</code>
+    respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+
+    if respuesta == a * b:
+        print("¡Respuesta correcta!")
+    elif abs(respuesta - a * b) / (a * b) &lt; 0.1:
+        print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}.")
+    elif abs(respuesta - a * b) / (a * b) &lt; 0.3:
+        print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}.")
+    else:
+        print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}.")
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
 
     <section id="ejercicio-2-2">
-      <h3>Bucle <span class="idle-rese">for</span> (2) - B-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">for</span> (2) - B-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>97</p>
+      </aside>
 
       <p>Una posible solución es:</p>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-cantidad = int(input("Número de preguntas: "))
-print()
 
-if cantidad &lt; 1:
-    print("El número de preguntas debe ser al menos 1")
-else:
-    for i in range(cantidad):
-        a = randrange(11, 100)
-        b = randrange(11, 100)
+def main():
+    print("CÁLCULO ESTIMADO (2)")
+    cantidad = int(input("Número de preguntas: "))
 
-        respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+    if cantidad &lt; 1:
+        print("El número de preguntas debe ser al menos 1.")
+    else:
+        for _ in range(cantidad):
+            a = random.randrange(11, 100)
+            b = random.randrange(11, 100)
+            print()
+            respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+            if respuesta == a * b:
+                print("¡Respuesta correcta!")
+            elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
+                print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}.")
+            elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
+                print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}.")
+            else:
+                print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}.")
 
-        if respuesta == a * b:
-            print("¡Respuesta correcta!")
-        elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
-            print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}")
-        elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
-            print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}")
-        else:
-            print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}")
-        print()</code>
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
@@ -229,45 +278,49 @@ else:
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-cantidad = int(input("Número de preguntas: "))
-print()
 
-if cantidad &lt; 1:
-    print("El número de preguntas debe ser al menos 1")
-else:
-    correctas = 0.0
-    for i in range(cantidad):
-        a = randrange(11, 100)
-        b = randrange(11, 100)
+  def main():
+      print("CÁLCULO ESTIMADO (3)")
+      cantidad = int(input("Número de preguntas: "))
 
-        respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+      if cantidad &lt; 1:
+          print("El número de preguntas debe ser al menos 1.")
+      else:
+          correctas = 0.0
+          for _ in range(cantidad):
+              a = random.randrange(11, 100)
+              b = random.randrange(11, 100)
+              print()
+              respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+              if respuesta == a * b:
+                  print("¡Respuesta correcta!")
+                  correctas += 10
+              elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
+                  print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}.")
+                  correctas += 6.66
+              elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
+                  print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}.")
+                  correctas += 3.33
+              else:
+                  print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}.")
 
-        if respuesta == a * b:
-            print("¡Respuesta correcta!")
-            correctas += 1
-        elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
-            print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}")
-            correctas += 0.66
-        elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
-            print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}")
-            correctas += 0.33
-        else:
-            print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}")
-        print()
+          nota = round(correctas / cantidad, 1)
+          print()
+          print(f"Le corresponde una nota de {nota}.")
+          if nota >= 9:
+              print("¡Enhorabuena!")
 
-    nota = round(correctas / cantidad * 10, 1)
-    print(f"Le corresponde una nota de {nota}")
-    if nota &gt;= 9:
-        print("¡Enhorabuena!")</code>
+  if __name__ == "__main__":
+      main()</code>
 </pre>
       </div>
     </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 20 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
