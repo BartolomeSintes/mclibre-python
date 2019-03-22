@@ -24,6 +24,8 @@
 
       <ul>
         <li><a href="#bucle-while">El bucle <span class="idle-rese">while</span></a></li>
+        <li><a href="#diagrama-flujo">Diagrama de flujo</a></li>
+        <li><a href="#ejemplos">Ejemplos de bucles</a></li>
         <li><a href="#bucles-infinitos">Bucles infinitos</a></li>
       </ul>
     </div>
@@ -45,11 +47,283 @@
 </pre>
     </div>
 
-    <p>Cuando llega a un bucle <span class="idle-rese">while</span>, Python evalúa la condición y, si es cierta, ejecuta el cuerpo del bucle. Una vez ejecutado el cuerpo del bucle, se repite el proceso (se evalúa de nuevo la condición y, si es cierta, se ejecuta de nuevo el cuerpo del bucle) una y otra vez mientras la condición sea cierta. Únicamente cuando la condición sea falsa, el cuerpo del bucle no se ejecutará y continuará la ejecución del resto del programa.</p>
+    <p>La ejecución de esta estructura de control <span class="idle-rese">while</span> es la siguiente:</p>
+    <ul>
+      <li>Python evalúa la condición:
+        <ul>
+          <li>si el resultado es <span class="idle-rese">True</span> se ejecuta el cuerpo del bucle. Una vez ejecutado el cuerpo del bucle, se repite el proceso (se evalúa de nuevo la condición y, si es cierta, se ejecuta de nuevo el cuerpo del bucle) una y otra vez mientras la condición sea cierta.</li>
+          <li>si el resultado es <span class="idle-rese">False</span>, el cuerpo del bucle no se ejecutará y continuará la ejecución del resto del programa.</li>
+        </ul>
+      </li>
+    </ul>
 
     <p>La variable o las variables que aparezcan en la condición se suelen llamar variables de control. Las variables de control deben definirse antes del bucle <span class="idle-rese">while</span> y modificarse en el bucle <span class="idle-rese">while</span>.</p>
+  </section>
+
+  <section id="diagrama-flujo">
+    <h2>Diagrama de flujo</h2>
+
+    <p>El diagrama de flujo siguiente muestra la ejecución de un bucle <span class="idle-rese">while</span> ...:</p>
+
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="510" viewBox="-250 -100 500 510" style="background-color: white;" font-family="sans-serif" class="izquierda">
+        <rect x="-248" y="-98" width="496" height="83" rx="3" ry="3" fill="none" stroke="black" stroke-width="3" />
+        <line x1="-248" y1="-70" x2="248" y2="-70" stroke-width="2" stroke="black" />
+        <text x="0" y="-77" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">DIAGRAMA DE FLUJO: BUCLE WHILE</text>
+        <text x="-40" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="svg01-no-paso-a-paso">Haga clic en los botones de avance y retroceso</text>
+        <text x="-40" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="svg01-no-paso-a-paso">para ver la ejecución paso a paso</text>
+        <g onclick="svg_retrocede(0)">
+          <circle cx="180" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+          <polygon points="185,-33 170,-43 185,-53" fill="black" stroke-width="2" stroke="black" />
+        </g>
+        <g onclick="svg_avanza(0)">
+          <circle cx="223" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+          <polygon points="218,-33 233,-43 218,-53" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg01-p01">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">El programa llega al bucle while.</text>
+          <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+          <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">INICIO</text>
+
+          <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="black" />
+          <polyline points="5,80 0,90 -5,80" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg01-p02">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Evalúa la condición ...</text>
+          <polygon points="0,90 60,125 0,160 -60,125" fill="white" stroke-width="3" stroke="black" />
+          <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN</text>
+        </g>
+
+        <g id="svg01-p03">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es true,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque ...</text>
+          <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="105,160 110,170 115,160" fill="black" stroke-width="2" stroke="black" />
+          <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">true</text>
+
+          <rect x="55" y="170" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+          <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE</text>
+        </g>
+
+        <g id="svg01-p04">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">y vuelve a evaluar la condición.</text>
+          <polyline points="110,220 110,260 0,260 0,170" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="-5,170 0,160 5,170" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg01-p05">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es false,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">termina el bucle while ..</text>
+          <polyline points="-60,125 -110,125 -110,300 0,300 0,340" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="-5,340 0,350 5,340" fill="black" stroke-width="2" stroke="black" />
+          <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">false</text>
+
+          <rect x="-50" y="350" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+          <text x="0" y="382" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+        </g>
+
+        <g id="svg01-p01-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">El programa llega al bucle while.</text>
+          <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+          <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">INICIO</text>
+
+          <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="red" />
+          <polyline points="5,80 0,90 -5,80" fill="red" stroke-width="2" stroke="red" />
+        </g>
+
+        <g id="svg01-p02-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Evalúa la condición ...</text>
+          <polygon points="0,90 60,125 0,160 -60,125" fill="none" stroke-width="3" stroke="red" />
+          <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+        </g>
+
+        <g id="svg01-p03-b" visibility="hidden">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es true,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque ...</text>
+          <polyline points="60,125 110,125 110,170" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="105,160 110,170 115,160" fill="red" stroke-width="2" stroke="red" />
+          <text x="85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">true</text>
+
+          <rect x="55" y="170" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+          <text x="110" y="202" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE</text>
+        </g>
+
+        <g id="svg01-p04-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">y vuelve a evaluar la condición.</text>
+          <polyline points="110,220 110,260 0,260 0,170" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="-5,170 0,160 5,170" fill="red" stroke-width="2" stroke="red" />
+          <polygon points="0,90 60,125 0,160 -60,125" fill="none" stroke-width="3" stroke="red" />
+          <text x="0" y="130" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+        </g>
+
+        <g id="svg01-p05-b" visibility="hidden">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es false,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">termina el bucle while..</text>
+          <polyline points="-60,125 -110,125 -110,300 0,300 0,340" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="-5,340 0,350 5,340" fill="red" stroke-width="2" stroke="red" />
+          <text x="-85" y="115" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">false</text>
+
+          <rect x="-50" y="350" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+          <text x="0" y="382" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+        </g>
+      </svg>
+    </p>
 
     <hr class="corta">
+
+    <p>Si incluimos en este esquema la definición y modificación de las variables de control que intervienen en la condición, el diagrama de flujo sería el siguiente:</p>
+
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="500" height="680" viewBox="-250 -100 500 680" style="background-color: white;" font-family="sans-serif" class="izquierda">
+        <rect x="-248" y="-98" width="496" height="83" rx="3" ry="3" fill="none" stroke="black" stroke-width="3" />
+        <line x1="-248" y1="-70" x2="248" y2="-70" stroke-width="2" stroke="black" />
+        <text x="0" y="-77" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">DIAGRAMA DE FLUJO: BUCLE WHILE</text>
+        <text x="-40" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="svg02-no-paso-a-paso">Haga clic en los botones de avance y retroceso</text>
+        <text x="-40" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="green" class="svg02-no-paso-a-paso">para ver la ejecución paso a paso</text>
+        <g onclick="svg_retrocede(1)">
+          <circle cx="180" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+          <polygon points="185,-33 170,-43 185,-53" fill="black" stroke-width="2" stroke="black" />
+        </g>
+        <g onclick="svg_avanza(1)">
+          <circle cx="223" cy="-43" r="17" fill="white" stroke-width="3" stroke="black" />
+          <polygon points="218,-33 233,-43 218,-53" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg02-p01">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">El programa llega al bucle while.</text>
+          <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+          <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">INICIO</text>
+
+          <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="black" />
+          <polyline points="5,80 0,90 -5,80" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg02-p02">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Efectúa la asignación.</text>
+          <rect x="-70" y="90" width="140" height="50" fill="white" stroke="black" stroke-width="3" />
+          <text x="0" y="122" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">ASIGNACIÓN</text>
+
+          <line x1="0" y1="140" x2="0" y2="180" stroke-width="3" stroke="black" />
+          <polyline points="5,170 0,180 -5,170" fill="black" stroke-width="2" stroke="black" />
+        </g>
+
+        <g id="svg02-p03">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Evalúa la condición ...</text>
+          <polygon points="0,180 60,215 0,250 -60,215" fill="white" stroke-width="3" stroke="black" />
+          <text x="0" y="220" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN</text>
+        </g>
+
+        <g id="svg02-p04">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es true,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">ejecuta el bloque ...</text>
+          <polyline points="60,215 110,215 110,260" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="105,250 110,260 115,250" fill="black" stroke-width="2" stroke="black" />
+          <text x="85" y="205" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">true</text>
+
+          <rect x="55" y="260" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+          <text x="110" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">BLOQUE</text>
+        </g>
+
+        <g id="svg02-p05">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">... efectúa el cambio ...</text>
+          <line x1="110" y1="310" x2="110" y2="350" stroke-width="3" stroke="black" />
+          <polyline points="105,340 110,350 115,340" fill="black" stroke-width="2" stroke="black" />
+
+          <rect x="55" y="350" width="110" height="50" fill="white" stroke="black" stroke-width="3" />
+          <text x="110" y="382" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">CAMBIO</text>
+        </g>
+
+        <g id="svg02-p06">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">y vuelve a evaluar la condición.</text>
+          <polyline points="110,400 110,440 0,440 0,250" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="-5,260 0,250 5,260" fill="black" stroke-width="2" stroke="black" />
+
+          <polygon points="0,180 60,215 0,250 -60,215" fill="white" stroke-width="3" stroke="black" />
+          <text x="0" y="220" text-anchor="middle" font-family="sans-serif" font-size="16" fill="black">CONDICIÓN</text>
+        </g>
+
+        <g id="svg02-p07">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">Si la condición es false,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="none">termina el bucle while..</text>
+          <polyline points="-60,215 -110,215 -110,480 0,480 0,520" fill="none" stroke-width="3" stroke="black" />
+          <polyline points="-5,510 0,520 5,510" fill="black" stroke-width="2" stroke="black" />
+          <text x="-85" y="205" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">false</text>
+
+          <rect x="-50" y="520" width="100" height="50" rx="25" ry="25" fill="white" stroke="black" stroke-width="3" />
+          <text x="0" y="552" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">FIN</text>
+        </g>
+
+        <g id="svg02-p01-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">El programa llega al bucle while.</text>
+          <rect x="-50" y="0" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+          <text x="0" y="32" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">INICIO</text>
+
+          <line x1="0" y1="50" x2="0" y2="90" stroke-width="3" stroke="red" />
+          <polyline points="5,80 0,90 -5,80" fill="red" stroke-width="2" stroke="red" />
+        </g>
+
+        <g id="svg02-p02-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Efectúa la asignación.</text>
+          <rect x="-70" y="90" width="140" height="50" fill="white" stroke="red" stroke-width="3" />
+          <text x="0" y="122" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">ASIGNACIÓN</text>
+
+          <line x1="0" y1="140" x2="0" y2="180" stroke-width="3" stroke="red" />
+          <polyline points="5,170 0,180 -5,170" fill="red" stroke-width="2" stroke="red" />
+        </g>
+
+        <g id="svg02-p03-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Evalúa la condición ...</text>
+          <polygon points="0,180 60,215 0,250 -60,215" fill="none" stroke-width="3" stroke="red" />
+          <text x="0" y="220" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+        </g>
+
+        <g id="svg02-p04-b" visibility="hidden">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es true,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">ejecuta el bloque ...</text>
+          <polyline points="60,215 110,215 110,260" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="105,250 110,260 115,250" fill="red" stroke-width="2" stroke="red" />
+          <text x="85" y="205" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">true</text>
+
+          <rect x="55" y="260" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+          <text x="110" y="292" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">BLOQUE</text>
+        </g>
+
+        <g id="svg02-p05-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">... efectúa el cambio ...</text>
+          <line x1="110" y1="310" x2="110" y2="350" stroke-width="3" stroke="red" />
+          <polyline points="105,340 110,350 115,340" fill="red" stroke-width="2" stroke="red" />
+
+          <rect x="55" y="350" width="110" height="50" fill="white" stroke="red" stroke-width="3" />
+          <text x="110" y="382" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">CAMBIO</text>
+        </g>
+
+        <g id="svg02-p06-b" visibility="hidden">
+          <text x="0" y="-40" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">y vuelve a evaluar la condición.</text>
+          <polyline points="110,400 110,440 0,440 0,250" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="-5,260 0,250 5,260" fill="red" stroke-width="2" stroke="red" />
+
+          <polygon points="0,180 60,215 0,250 -60,215" fill="none" stroke-width="3" stroke="red" />
+          <text x="0" y="220" text-anchor="middle" font-family="sans-serif" font-size="16" fill="red">CONDICIÓN</text>
+        </g>
+
+        <g id="svg02-p07-b" visibility="hidden">
+          <text x="0" y="-48" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">Si la condición es false,</text>
+          <text x="0" y="-27" text-anchor="middle" font-family="sans-serif" font-size="18" fill="black">termina el bucle while..</text>
+          <polyline points="-60,215 -110,215 -110,480 0,480 0,520" fill="none" stroke-width="3" stroke="red" />
+          <polyline points="-5,510 0,520 5,510" fill="red" stroke-width="2" stroke="red" />
+          <text x="-85" y="205" text-anchor="middle" font-family="sans-serif" font-size="18" fill="blue">false</text>
+
+          <rect x="-50" y="520" width="100" height="50" rx="25" ry="25" fill="white" stroke="red" stroke-width="3" />
+          <text x="0" y="552" text-anchor="middle" font-family="sans-serif" font-size="20" fill="red">FIN</text>
+        </g>
+      </svg>
+    </p>
+  </section>
+
+  <section id="ejemplos">
+    <h2>Ejemplos de bucles <span class="idle-rese">while</span></h2>
 
     <p>Por ejemplo, el siguiente programa escribe los números del 1 al 3:</p>
 
@@ -464,7 +738,7 @@ while i &lt;= 3:
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -495,7 +769,7 @@ Programa terminado</span>
             <pre><span class="codigo-resaltado">i = 1</span>
 <code class="language-python">while i &lt;= 50:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -522,7 +796,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while <span class="codigo-resaltado">i &lt;= 50</span>:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -549,7 +823,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     <span class="codigo-resaltado">print(i)</span>
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -578,7 +852,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    <span class="codigo-resaltado">i = 3*i + 1</span>
+    <span class="codigo-resaltado">i = 3 * i + 1</span>
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -607,7 +881,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while <span class="codigo-resaltado">i &lt;= 50</span>:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -636,7 +910,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     <span class="codigo-resaltado">print(i)</span>
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -668,7 +942,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    <span class="codigo-resaltado">i = 3*i + 1</span>
+    <span class="codigo-resaltado">i = 3 * i + 1</span>
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -700,7 +974,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while <span class="codigo-resaltado">i &lt;= 50</span>:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -732,7 +1006,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     <span class="codigo-resaltado">print(i)</span>
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -765,7 +1039,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    <span class="codigo-resaltado">i = 3*i + 1</span>
+    <span class="codigo-resaltado">i = 3 * i + 1</span>
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -798,7 +1072,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while <span class="codigo-resaltado">i &lt;= 50</span>:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -831,7 +1105,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     <span class="codigo-resaltado">print(i)</span>
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -865,7 +1139,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    <span class="codigo-resaltado">i = 3*i + 1</span>
+    <span class="codigo-resaltado">i = 3 * i + 1</span>
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -899,7 +1173,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while <span class="codigo-resaltado">i &lt;= 50</span>:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 print("Programa terminado")</code>
 </pre>
           </div>
@@ -933,7 +1207,7 @@ print("Programa terminado")</code>
 <code class="language-python">i = 1
 while i &lt;= 50:
     print(i)
-    i = 3*i + 1
+    i = 3 * i + 1
 <span class="codigo-resaltado">print("Programa terminado")</span></code>
 </pre>
           </div>
@@ -1367,8 +1641,72 @@ while i != 100:
     </ul>
   </section>
 
+  <script>
+    var paso = [-1, -1];
+    var pasos = [
+      ["svg01-p01", "svg01-p02", "svg01-p03", "svg01-p04", "svg01-p05"],
+      ["svg02-p01", "svg02-p02", "svg02-p03", "svg02-p04", "svg02-p05", "svg02-p06", "svg02-p07"]
+    ];
+    var nopasos = ["svg01-no-paso-a-paso", "svg02-no-paso-a-paso"];
+
+    function svg_cambia(svg, n) {
+      p = document.getElementById(pasos[svg].concat("-b")[n]);
+      if (p.getAttribute("visibility") == "hidden") {
+        p.setAttribute("visibility", "visible");
+      } else {
+        p.setAttribute("visibility", "hidden");
+      }
+      p = document.getElementById((pasos[svg][n]).concat("-b"));
+      if (p.getAttribute("visibility") == "hidden") {
+        p.setAttribute("visibility", "visible");
+      } else {
+        p.setAttribute("visibility", "hidden");
+      }
+      p = document.getElementsByClassName(nopasos[svg]);
+      for (i = 0; i < p.length; i++) {
+        if (paso[svg] == -1) {
+          p[i].setAttribute("visibility", "visible");
+        } else {
+          p[i].setAttribute("visibility", "hidden");
+        }
+      }
+    }
+
+    function svg_avanza(svg) {
+      if (paso[svg] == -1) {
+        paso[svg] = paso[svg] + 1;
+        svg_cambia(svg, paso[svg]);
+      } else {
+        if (paso[svg] == (pasos[svg].length - 1)) {
+          paso[svg] = -1;
+          svg_cambia(svg, pasos[svg].length - 1);
+        } else {
+          paso[svg] = paso[svg] + 1;
+          svg_cambia(svg, paso[svg] - 1);
+          svg_cambia(svg, paso[svg]);
+        }
+      }
+    }
+
+    function svg_retrocede(svg) {
+      if (paso[svg] == -1) {
+        paso[svg] = pasos[svg].length - 1;
+        svg_cambia(svg, paso[svg]);
+      } else {
+        if (paso[svg] == 0) {
+          paso[svg] = paso[svg] - 1;
+          svg_cambia(svg, [svg]);
+        } else {
+          paso[svg] = paso[svg] - 1;
+          svg_cambia(svg, paso[svg] + 1);
+          svg_cambia(svg, paso[svg]);
+        }
+      }
+    }
+  </script>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 22 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
