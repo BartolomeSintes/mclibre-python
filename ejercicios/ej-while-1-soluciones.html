@@ -227,136 +227,201 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-6">
-    <h2>Bucle <span class="idle-rese">while</span> (1) - 6</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 6</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>106</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">limite = float(input("Escriba el valor límite: "))
-while limite &lt;= 0:
-    limite = float(input("El límite debe ser mayor que 0. Inténtelo de nuevo: "))
+<code class="language-python">import random
 
-numero = float(input("Escriba un número: "))
-suma = 0
-suma += numero
 
-while suma &lt; limite:
-    numero = float(input("Escriba otro número: "))
-    suma += numero
+def main():
+    print("HASTA EL LÍMITE")
+    limite = float(input("Escriba el valor límite: "))
+    while limite &lt;= 0:
+        limite = float(input("El límite debe ser mayor que 0. Inténtelo de nuevo: "))
 
-print()
-print(f"Ha superado el límite. La suma de los números positivos introducidos es {suma}.")</code>
+    print()
+    numero = float(input("Escriba un número: "))
+    suma = numero
+
+    while suma &lt; limite:
+        numero = float(input("Escriba otro número: "))
+        suma += numero
+
+    print()
+    print(f"Ha superado el límite. La suma de los números introducidos es {suma}.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-7">
-    <h2>Bucle <span class="idle-rese">while</span> (1) - 7</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 7</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>107</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">minimo = int(input("Escriba un número: "))
-maximo = int(input(f"Escriba un número mayor que {minimo}: "))
-while minimo &gt;= maximo:
-    maximo = int(input(f"{maximo} no es mayor que {minimo}. Inténtelo de nuevo: "))
+<code class="language-python">import random
 
-numero = float(input(f"Escriba un número entre {minimo} y {maximo}: "))
-contador = 0
 
-while minimo &lt;= numero &lt;= maximo:
-    contador += 1
-    numero = float(input(f"Escriba otro número entre {minimo} y {maximo}: "))
+def main():
+    print("ENTRE DOS VALORES")
+    minimo = int(input("Escriba un número: "))
+    maximo = int(input(f"Escriba un número mayor que {minimo}: "))
+    while minimo &gt;= maximo:
+        maximo = int(input(f"{maximo} no es mayor que {minimo}. Inténtelo de nuevo: "))
 
-print()
-if contador == 0:
-    print(f"No ha escrito ningún número entre {minimo} y {maximo}.")
-elif contador == 1:
-    print(f"Ha escrito 1 número entre {minimo} y {maximo}.")
-else:
-    print(f"Ha escrito {contador} números entre {minimo} y {maximo}.")</code>
+    numero = float(input(f"Escriba un número entre {minimo} y {maximo}: "))
+    contador = 0
+
+    while minimo &lt;= numero and numero &lt;= maximo:
+        contador += 1
+        numero = float(input(f"Escriba otro número entre {minimo} y {maximo}: "))
+
+    print()
+    if contador == 0:
+        print(f"No ha escrito ningún número entre {minimo} y {maximo}.")
+    elif contador == 1:
+        print(f"Ha escrito 1 número entre {minimo} y {maximo}.")
+    else:
+        print(f"Ha escrito {contador} números entre {minimo} y {maximo}.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <section id="ejercicio-8">
-    <h2>Bucle <span class="idle-rese">while</span> (1) - 8</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 8</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>108</p>
+    </aside>
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Escriba un número par: "))
-while numero % 2 != 0:
-    numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-contador = 1
-respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+<code class="language-python">import random
 
-while respuesta == "S" or respuesta == "s":
+
+def main():
+    print("CUENTA PARES (1)")
     numero = int(input("Escriba un número par: "))
     while numero % 2 != 0:
         numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-    contador += 1
+    contador = 1
     respuesta = input("¿Quiere escribir otro número par? (S/N): ")
 
-print()
-if contador == 0:
-    print("No ha escrito ningún número par")
-elif contador == 1:
-    print("Ha escrito 1 número par")
-else:
-    print(f"Ha escrito {contador} números pares.")</code>
+    while respuesta == "S" or respuesta == "s":
+        numero = int(input("Escriba un número par: "))
+        while numero % 2 != 0:
+            numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
+        contador += 1
+        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+
+    print()
+    if contador == 1:
+        print("Ha escrito 1 número par.")
+    else:
+        print(f"Ha escrito {contador} números pares.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
-    <hr class="corta">
+    <h2 class="con-aside">8-2 - Aceptar únicamente S, s, N o n</h2>
 
-    <p>la versión que sólo acepta S, N, s o n por respuesta podría ser:</p>
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>109</p>
+    </aside>
+
+    <p>La versión que sólo acepta S, N, s o n por respuesta podría ser:</p>
 
     <div class="codigo">
         <pre>
-<code class="language-python">numero = int(input("Escriba un número par: "))
-while numero % 2 != 0:
-    numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-contador = 1
-respuesta = input("¿Quiere escribir otro número par? (S/N): ")
-while respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n":
-    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+<code class="language-python">import random
 
-while respuesta == "S" or respuesta == "s":
+
+def main():
+    print("CUENTA PARES (2)")
     numero = int(input("Escriba un número par: "))
     while numero % 2 != 0:
         numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-    contador += 1
+    contador = 1
     respuesta = input("¿Quiere escribir otro número par? (S/N): ")
-while respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n":
-    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+    while (
+        respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n"
+    ):
+        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
 
-print()
-if contador == 0:
-    print("No ha escrito ningún número par")
-elif contador == 1:
-    print("Ha escrito 1 número par")
-else:
-    print(f"Ha escrito {contador} números pares.")</code>
+    while respuesta == "S" or respuesta == "s":
+        numero = int(input("Escriba un número par: "))
+        while numero % 2 != 0:
+            numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
+        contador += 1
+        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+
+    print()
+    if contador == 1:
+        print("Ha escrito 1 número par.")
+    else:
+        print(f"Ha escrito {contador} números pares.")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
   </section>
 
   <section id="ejercicio-9">
-    <h2>Bucle <span class="idle-rese">while</span> (1) - 9</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 9</h2>
+
+    <aside class="aside-minienlace">
+      <p>MPTC</p>
+      <p>110</p>
+    </aside>
 
     <p>Un algoritmo sencillo, pero poco eficiente, sería el siguiente:</p>
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Escriba un número entero mayor que 1: "))
-while numero &lt;= 1:
-    numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
-copia = numero
+<code class="language-python">import random
 
-print("Descomposición en factores primos: ", end="")
-for i in range(2, numero + 1):
-    while copia % i == 0:
-        copia = copia // i
-        print(i, end=" ")
 
-print()</code>
+def main():
+    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
+    numero = int(input("Escriba un número entero mayor que 1: "))
+    while numero &lt;= 1:
+        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
+    copia = numero
+
+    print("Descomposición en factores primos:", end="")
+    for i in range(2, numero + 1):
+        while copia % i == 0:
+            copia = copia // i
+            print(f" {i}", end="")
+    print()
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
 
@@ -364,26 +429,65 @@ print()</code>
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Escriba un número entero mayor que 1: "))
-while numero &lt;= 1:
-    numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
-copia = numero
+<code class="language-python">import random
 
-print("Descomposición en factores primos: ", end="")
-i = 2
-while copia &gt; i:
-    while copia % i == 0:
-        copia = copia // i
-        print(i, end=" ")
-    i += 1
-print(copia)
-</code>
+
+def main():
+    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
+    numero = int(input("Escriba un número entero mayor que 1: "))
+    while numero &lt;= 1:
+        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
+    copia = numero
+
+    print("Descomposición en factores primos:", end="")
+    i = 2
+    while copia &gt; i:
+        while copia % i == 0:
+            copia = copia // i
+            print(f" {i}", end="")
+        i += 1
+    if copia != 1:
+        print(f" {copia}")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+
+    <p>Solución que, ligeramente modificada, sería más rápida para números grandes:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
+    numero = int(input("Escriba un número entero mayor que 1: "))
+    while numero &lt;= 1:
+        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
+    copia = numero
+
+    print("Descomposición en factores primos:", end="")
+    i = 2
+    while copia &gt; i * i:
+        while copia % i == 0:
+            copia = copia // i
+            print(f" {i}", end="")
+        i += 1
+    if copia != 1:
+        print(f" {copia}")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de marzo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 25 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
