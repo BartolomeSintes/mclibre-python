@@ -32,7 +32,7 @@
 
       <h3>Soluciones</h3>
       <ul>
-        <li><a href="#apartado-a">A - Siete y media</a></li>
+        <li><a href="#apartado-a">A - Los veinte</a></li>
         <li><a href="#apartado-b">B - Tragaperras</a></li>
         <li><a href="#apartado-c">C - Operaciones</a></li>
         <li><a href="#apartado-d">D - Adivinar</a></li>
@@ -119,104 +119,115 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-print("LOS 20 (3)")
-seguir = input("Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ")
-suma_1 = 0
-suma_2 = 0
-while seguir == "":
-    tirada_1 = randrange(1, 6)
-    suma_1 += tirada_1
-    tirada_2 = randrange(1, 6)
-    suma_2 += tirada_2
-    print()
-    print(f"Jugador 1 - Tirada: {tirada_1} - Suma: {suma_1}")
-    print(f"Jugador 2 - Tirada: {tirada_2} - Suma: {suma_2}")
-    seguir = input("Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ")
 
-print()
-if suma_1 + suma_2 == 0:
-    print("No se ha lanzado ningún dado.")
-elif suma_1 &gt; suma_2:
-    print("Ha ganado el jugador 1.")
-elif suma_2 &gt; suma_1:
-    print("Ha ganado el jugador 2.")
-else:
-    print("¡Empate!")
+def main():
+    print("LOS 20 (3)")
+    seguir = input(
+        "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: "
+    )
+    suma_1 = 0
+    suma_2 = 0
+    while seguir == "":
+        tirada_1 = random.randrange(1, 6)
+        suma_1 += tirada_1
+        tirada_2 = random.randrange(1, 6)
+        suma_2 += tirada_2
+        print(f"Jugador 1: Tirada: {tirada_1} - Suma: {suma_1}")
+        print(f"Jugador 2: Tirada: {tirada_2} - Suma: {suma_2}")
+        print()
+        seguir = input(
+            "Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: "
+        )
 
-print("Programa terminado.")</code>
+    if suma_1 + suma_2 == 0:
+        print("No se ha lanzado ningún dado.")
+    elif suma_1 &gt; suma_2:
+        print("Ha ganado el jugador 1.")
+    elif suma_2 &gt; suma_1:
+        print("Ha ganado el jugador 2.")
+    else:
+        print("¡Empate!")
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
 
     <section id="ejercicio-a-4">
-      <h3>Bucle <span class="idle-rese">while</span> (2) - A-4</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - A-4</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>114</p>
+      </aside>
 
       <div class="codigo">
         <pre>
-<code class="language-python">from random import randrange
+<code class="language-python">import random
 
-print("LOS 20 (4)")
-print("Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ")
-print()
 
-suma_1 = 0
-suma_2 = 0
+def main():
+    print("LOS 20 (4)")
+    print("Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar: ")
+    print()
 
-tirar_1 = input("Jugador 1: ")
-if tirar_1 == "":
-    sigue_1 = True
-else:
-    sigue_1 = False
+    suma_1 = 0
+    suma_2 = 0
 
-tirar_2 = input("Jugador 2: ")
-if tirar_2 == "":
-    sigue_2 = True
-else:
-    sigue_2 = False
-
-while sigue_1 or sigue_2:
-    if sigue_1:
-        tirada_1 = randrange(1, 6)
-        suma_1 += tirada_1
-        print(f"Jugador 1 - Tirada: {tirada_1} - Suma: {suma_1}")
+    tirar_1 = input("Jugador 1: ")
+    if tirar_1 == "":
+        sigue_1 = True
     else:
-        print(f"Jugador 1 - Suma: {suma_1}")
+        sigue_1 = False
 
-    if sigue_2:
-        tirada_2 = randrange(1, 6)
-        suma_2 += tirada_2
-        print(f"Jugador 2 - Tirada: {tirada_2} - Suma: {suma_2}")
+    tirar_2 = input("Jugador 2: ")
+    if tirar_2 == "":
+        sigue_2 = True
     else:
-        print(f"Jugador 2 - Suma: {suma_2}")
+        sigue_2 = False
+
+    while sigue_1 or sigue_2:
+        if sigue_1:
+            tirada_1 = random.randrange(1, 6)
+            suma_1 += tirada_1
+            print(f"Jugador 1 - Tirada: {tirada_1} - Suma: {suma_1}")
+        else:
+            print(f"Jugador 1 - Suma: {suma_1}")
+
+        if sigue_2:
+            tirada_2 = random.randrange(1, 6)
+            suma_2 += tirada_2
+            print(f"Jugador 2 - Tirada: {tirada_2} - Suma: {suma_2}")
+        else:
+            print(f"Jugador 2 - Suma: {suma_2}")
+
+        print()
+        if sigue_1:
+            tirar_1 = input("Jugador 1: ")
+            if tirar_1 == "":
+                sigue_1 = True
+            else:
+                sigue_1 = False
+
+        if sigue_2:
+            tirar_2 = input("Jugador 2: ")
+            if tirar_2 == "":
+                sigue_2 = True
+            else:
+                sigue_2 = False
 
     print()
-    if sigue_1:
-        tirar_1 = input("Jugador 1: ")
-        if tirar_1 == "":
-            sigue_1 = True
-        else:
-            sigue_1 = False
+    print(f"Jugador 1 - Suma: {suma_1}")
+    print(f"Jugador 2 - Suma: {suma_2}")
+    print("Programa terminado.")
 
-    if sigue_2:
-        tirar_2 = input("Jugador 2: ")
-        if tirar_2 == "":
-            sigue_2 = True
-        else:
-            sigue_2 = False
 
-print()
-print(f"Jugador 1 - Suma: {suma_1}")
-print(f"Jugador 2 - Suma: {suma_2}")
-if suma_1 &gt; suma_2:
-    print("Ha ganado el jugador 1.")
-elif suma_2 &gt; suma_1:
-    print("Ha ganado el jugador 2.")
-else:
-    print("¡Empate!")
-
-print("Programa terminado.")</code>
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>
@@ -645,7 +656,7 @@ print("Programa terminado.")</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 26 de marzo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
