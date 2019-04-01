@@ -62,7 +62,7 @@
     </div>
   </nav>
 
-  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-ficheros-1.html">ejercicios de Ficheros</a>.</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-ficheros-1.html">ejercicios Ficheros (1)</a>.</p>
 
   <section id="ejercicio-1-1">
     <h2>Ficheros (1) - A-1</h2>
@@ -73,12 +73,18 @@
       <pre>
 <code class="language-python">import webbrowser
 
-ruta = "ficheros_1_1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;p&gt;Hola, mundo!&lt;/p&gt;", file=fichero)
+def main():
+    ruta = "ficheros_1_1.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;p&gt;Hola, mundo!&lt;/p&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -92,20 +98,26 @@ webbrowser.open(ruta)</code>
       <pre>
 <code class="language-python">import webbrowser
 
-ruta = "ficheros_1_2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;html&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "ficheros_1_2.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;html&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -119,24 +131,32 @@ webbrowser.open(ruta)</code>
       <pre>
 <code class="language-python">import webbrowser
 
-ruta = "ficheros_1_3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) A-3&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
-          file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "ficheros_1_3.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) A-3&lt;/title&gt;", file=fichero)
+        print(
+            '  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;',
+            file=fichero,
+        )
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -149,28 +169,36 @@ webbrowser.open(ruta)</code>
     <div class="codigo">
       <pre>
 <code class="language-python">import webbrowser
-from random import randrange
+import random
 
-ruta = "ficheros_1_b_1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    color = randrange(0, 361)
+def main():
+    ruta = "ficheros_1_b_1.html"
 
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) - B-1&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
-          file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
-    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        color = random.randrange(0, 361)
 
-webbrowser.open(ruta)</code>
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) - B-1&lt;/title&gt;", file=fichero)
+        print(
+            '  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;',
+            file=fichero,
+        )
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print(f'&lt;body style="background-color: hsl({color}, 100%, 50%)"&gt;', file=fichero)
+        print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -183,29 +211,37 @@ webbrowser.open(ruta)</code>
     <div class="codigo">
       <pre>
 <code class="language-python">import webbrowser
-from random import randrange
+import random
 
-ruta = "ficheros_1_b_2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    color = randrange(0, 361)
-    tamanyo = randrange(200, 801, 100)
+def main():
+    ruta = "ficheros_1_b_2.html"
 
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) - B-2&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
-          file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
-    print(f"  &lt;p style=\"font-size: {tamanyo}%\"&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        color = random.randrange(0, 361)
+        tamanyo = random.randrange(200, 801, 100)
 
-webbrowser.open(ruta)</code>
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) - B-2&lt;/title&gt;", file=fichero)
+        print(
+            '  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;',
+            file=fichero,
+        )
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print(f'&lt;body style="background-color: hsl({color}, 100%, 50%)"&gt;', file=fichero)
+        print(f'  &lt;p style="font-size: {tamanyo}%"&gt;¡Hola, mundo!&lt;/p&gt;', file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -218,31 +254,42 @@ webbrowser.open(ruta)</code>
     <div class="codigo">
       <pre>
 <code class="language-python">import webbrowser
-from random import randrange, choice
+import random
 
-ruta = "ficheros_1_b_3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    color = randrange(0, 361)
-    tamanyo = randrange(200, 801, 100)
-    fuente = choice(["serif", "sans-serif", "monospace", "cursive"])
+def main():
 
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) - B-3&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
-          file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print(f"&lt;body style=\"background-color: hsl({color}, 100%, 50%)\"&gt;", file=fichero)
-    print(f"  &lt;p style=\"font-family: {fuente}; font-size: {tamanyo}%\"&gt;¡Hola, mundo!&lt;/p&gt;",
-          file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+    ruta = "ficheros_1_b_3.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        color = random.randrange(0, 361)
+        tamanyo = random.randrange(200, 801, 100)
+        fuente = random.choice(["serif", "sans-serif", "monospace", "cursive"])
+
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) - B-3&lt;/title&gt;", file=fichero)
+        print(
+            '  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;',
+            file=fichero,
+        )
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print(f'&lt;body style="background-color: hsl({color}, 100%, 50%)"&gt;', file=fichero)
+        print(
+            f'  &lt;p style="font-family: {fuente}; font-size: {tamanyo}%"&gt;¡Hola, mundo!&lt;/p&gt;',
+            file=fichero,
+        )
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
@@ -255,50 +302,57 @@ webbrowser.open(ruta)</code>
     <div class="codigo">
       <pre>
 <code class="language-python">import webbrowser
-from random import randrange, choice
+import random
 
-ruta_css = "ficheros_1_b_4.css"
 
-with open(ruta_css, mode="w", encoding="utf-8") as fichero:
-    color = randrange(0, 361)
-    tamanyo = randrange(200, 801, 100)
-    fuente = choice(["serif", "sans-serif", "monospace", "cursive"])
+def main():
+    ruta_css = "ficheros_1_b_4.css"
 
-    print("body {", file=fichero)
-    print(f"  background-color: hsl({color}, 100%, 50%);", file=fichero)
-    print("}", file=fichero)
-    print("", file=fichero)
-    print("p {", file=fichero)
-    print(f"  font-family: {fuente};", file=fichero)
-    print(f"  font-size: {tamanyo}%;", file=fichero)
-    print("}", file=fichero)
+    with open(ruta_css, mode="w", encoding="utf-8") as fichero:
+        color = random.randrange(0, 361)
+        tamanyo = random.randrange(200, 801, 100)
+        fuente = random.choice(["serif", "sans-serif", "monospace", "cursive"])
 
-ruta_html = "ficheros_1_b_4.html"
+        print("body {", file=fichero)
+        print(f"  background-color: hsl({color}, 100%, 50%);", file=fichero)
+        print("}", file=fichero)
+        print("", file=fichero)
+        print("p {", file=fichero)
+        print(f"  font-family: {fuente};", file=fichero)
+        print(f"  font-size: {tamanyo}%;", file=fichero)
+        print("}", file=fichero)
 
-with open(ruta_html, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) - B-4&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
-          file=fichero)
-    print(f"  &lt;link rel=\"stylesheet\" href=\"{ruta_css}\" /&gt;",
-          file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+    ruta_html = "ficheros_1_b_4.html"
 
-webbrowser.open(ruta_html)</code>
+    with open(ruta_html, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) - B-4&lt;/title&gt;", file=fichero)
+        print(
+            '  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;',
+            file=fichero,
+        )
+        print(f'  &lt;link rel="stylesheet" href="{ruta_css}" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;p&gt;¡Hola, mundo!&lt;/p&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta_html)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de abril de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 1 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
