@@ -39,7 +39,7 @@
     <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
     <div class="filaflex">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-1-1.png" alt="SVG Brython (2) 0 1 Enunciado" width="324" height="324">
       </div>
 
@@ -111,7 +111,7 @@ Y:   300  300  300  300  300  300  300  300  300  300  300 --&gt; 300
         <div class="codigo">
           <pre>
 <code class="language-python">for i in range(11):
-    print(f"     &lt;line x1={30*i} y1=0 x2={30*i} y2=300 stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
+    print(f'     &lt;line x1="{30*i}" y1=0 x2="{30*i}" y2="300" stroke="black" stroke-width="1" /&gt;', file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -120,29 +120,35 @@ Y:   300  300  300  300  300  300  300  300  300  300  300 --&gt; 300
           <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-2_ejemplo_1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    for i in range(11):
-        print(f"   &lt;line x1=\"{30*i}\" y1=\"0\" x2=\"{30*i}\" y2=\"300\" stroke=\"black\" "
-              f"stroke-width=1 /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-2-ejemplo-1.html"
 
-    webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (2) Ejemplo 1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        for i in range(11):
+            print(f'   &lt;line x1="{30*i}" y1="0" x2="{30*i}" y2="300" stroke="black" '
+                  f'stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+        webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
       </li>
@@ -155,7 +161,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
     <div class="filaflex">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-2-1.png" alt="SVG Brython (2) 0 2 Enunciado" width="324" height="324">
       </div>
 
@@ -228,7 +234,7 @@ Y:   150    90    30   -30   -90  -150 --&gt;  150-60*i
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(6):
-        print(f"     &lt;line x1=-150 y1={-150+60*i} x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
+        print(f'     &lt;line x1="-150" y1="{-150+60*i}" x2="150" y2="{150-60*i}" stroke="black" stroke-width="1" /&gt;', file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -237,29 +243,35 @@ Y:   150    90    30   -30   -90  -150 --&gt;  150-60*i
           <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-2_ejemplo_2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    for i in range(6):
-        print(f"   &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"150\" y2=\"{150-60*i}\" stroke=\"black\" "
-              f"stroke-width=1 /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-2-ejemplo-2.html"
 
-    webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (2) Ejemplo 2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        for i in range(6):
+            print(f'   &lt;line x1="-150" y1="{-150+60*i}" x2="150" y2="{150-60*i}" stroke="black" '
+                  f'stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+        webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
       </li>
@@ -272,7 +284,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
     <div class="filaflex">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-3-1.png" alt="SVG Brython (2) 0 3 Enunciado" width="324" height="324">
       </div>
 
@@ -336,7 +348,7 @@ Alto:   150   300   450 --&gt;  150 + 150*i
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(3):
-        print(f"     &lt;rect x={50+100*i} y=50 width={500-200*i} height={150+150*i} stroke=\"black\" stroke-width=2 fill=\"none\" /&gt;", file=fichero)</code>
+        print(f'     &lt;rect x="{50+100*i}" y="50" width="{500-200*i}" height="{150+150*i}" stroke="black" stroke-width="2" fill="none" /&gt;', file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -345,29 +357,35 @@ Alto:   150   300   450 --&gt;  150 + 150*i
           <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-2_ejemplo_3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-20 -20 640 640\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    for i in range(3):
-        print(f"   &lt;rect x=\"{50+100*i}\" y=\"50\" width=\"{500-200*i}\" height=\"{150+150*i}\" "
-              f"stroke=\"black\" stroke-width=2 fill=\"none\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-2-ejemplo-3.html"
 
-    webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (2) Ejemplo 3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-20 -20 640 640"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        for i in range(3):
+            print(f'   &lt;rect x="{50+100*i}" y="50" width="{500-200*i}" height="{150+150*i}" '
+                  f'stroke="black" stroke-width="2" fill="none" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+        webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
       </li>
@@ -380,7 +398,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     <p>Queremos obtener el dibujo que se muestra a la izquierda generando y completando la página web que se muestra a la derecha:</p>
 
     <div class="filaflex">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-2/svg-ficheros-0-4-1.png" alt="SVG Brython (2) 0 4 Enunciado" width="324" height="324">
       </div>
 
@@ -476,8 +494,8 @@ Y:   150    90    30   -30   -60  --&gt;  150-60*i
         <div class="codigo">
           <pre>
 <code class="language-python">    for i in range(5):
-        print(f"     &lt;line x1=-150 y1={-150+60*i} x2={150-60*i} y2=150 stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
-        print(f"     &lt;line x1={-150+60*i} y1=-150 x2=150 y2={150-60*i} stroke=\"black\" stroke-width=1 /&gt;", file=fichero)</code>
+        print(f'     &lt;line x1="-150" y1="{-150+60*i}" x2="{150-60*i}" y2="150" stroke="black" stroke-width="1" /&gt;', file=fichero)
+        print(f'     &lt;line x1="{-150+60*i}" y1="-150" x2="150" y2="{150-60*i}" stroke="black" stroke-width="1" /&gt;', file=fichero)</code>
 </pre>
         </div>
       </li>
@@ -486,31 +504,37 @@ Y:   150    90    30   -30   -60  --&gt;  150-60*i
           <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-2_ejemplo_4.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    for i in range(5):
-        print(f"   &lt;line x1=\"-150\" y1=\"{-150+60*i}\" x2=\"{150-60*i}\" y2=\"150\" "
-              f"stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
-        print(f"   &lt;line x1=\"{-150+60*i}\" y1=\"-150\" x2=\"150\" y2=\"{150-60*i}\" "
-              f"stroke=\"black\" stroke-width=1 /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-2-ejemplo-4.html"
 
-    webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (2) Ejemplo 4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        for i in range(5):
+            print(f'   &lt;line x1="-150" y1="{-150+60*i}" x2="{150-60*i}" y2="150" '
+                  f'stroke="black" stroke-width="1" /&gt;', file=fichero)
+            print(f'   &lt;line x1="{-150+60*i}" y1="-150" x2="150" y2="{150-60*i}" '
+                  f'stroke="black" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+        webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
         </div>
       </li>
@@ -518,7 +542,7 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 2 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
