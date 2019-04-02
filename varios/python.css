@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 18 de febrero de 2019                    */
+/* 2 de abril de 2019                       */
 /*                                          */
 
 /* CSS comun */
@@ -304,6 +304,10 @@ div.terminal, div.codigo, div.powershell, div[class^="resultado"], div[class^="e
   padding: 0 5px;
   background-color: white;
   color: black;
+}
+
+div.resultado-captura-sin-borde {
+  border: none;
 }
 
 div.powershell {
