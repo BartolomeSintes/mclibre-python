@@ -65,7 +65,7 @@
     <h2>Gráficos SVG Ficheros (1) - 1 - Puntos</h2>
 
     <div class="filaflex" id="ejercicio-1-1">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-1.png" alt="SVG Ficheros (1) 1 1" width="324" height="324">
       </div>
 
@@ -73,35 +73,42 @@
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"0\"   r=\"5\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"0\"   cy=\"0\"   r=\"5\" fill=\"blue\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"0\"   cy=\"300\" r=\"5\" fill=\"green\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"300\" r=\"5\" fill=\"red\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-1.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="0"   r="5" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="0"   cy="0"   r="5" fill="blue" /&gt;', file=fichero)
+        print('    &lt;circle cx="0"   cy="300" r="5" fill="green" /&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="300" r="5" fill="red" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-1-2">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-2.png" alt="SVG Ficheros (1) 1 2" width="324" height="324">
       </div>
 
@@ -109,35 +116,42 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"0\"   r=\"5\" fill=\"red\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"0\"   r=\"5\" fill=\"green\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"150\" r=\"5\" fill=\"blue\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-2.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="0"   r="5" fill="red" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="0"   r="5" fill="green" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="5" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="150" r="5" fill="blue" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-1-3">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-3.png" alt="SVG Ficheros (1) 1 3" width="324" height="324">
       </div>
 
@@ -145,35 +159,42 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;bodyglt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"0\"   cy=\"0\"   r=\"5\" fill=\"red\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"100\" cy=\"100\" r=\"5\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"200\" cy=\"200\" r=\"5\" fill=\"blue\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"300\" r=\"5\" fill=\"green\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-3.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="0"   cy="0"   r="5" fill="red" /&gt;', file=fichero)
+        print('    &lt;circle cx="100" cy="100" r="5" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="200" cy="200" r="5" fill="blue" /&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="300" r="5" fill="green" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-1-4">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-4.png" alt="SVG Ficheros (1) 1 4" width="324" height="324">
       </div>
 
@@ -181,36 +202,43 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-4.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"0\"   cy=\"150\" r=\"5\" fill=\"#000\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"75\"  cy=\"150\" r=\"5\" fill=\"#333\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"5\" fill=\"#666\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"225\" cy=\"150\" r=\"5\" fill=\"#999\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"300\" cy=\"150\" r=\"5\" fill=\"#AAA\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-4.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="0"   cy="150" r="5" fill="#000" /&gt;', file=fichero)
+        print('    &lt;circle cx="75"  cy="150" r="5" fill="#333" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="5" fill="#666" /&gt;', file=fichero)
+        print('    &lt;circle cx="225" cy="150" r="5" fill="#999" /&gt;', file=fichero)
+        print('    &lt;circle cx="300" cy="150" r="5" fill="#AAA" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-1-5">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-5.png" alt="SVG Ficheros (1) 1 5" width="324" height="324">
       </div>
 
@@ -218,36 +246,43 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-5.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"50\"  r=\"25\" fill=\"blue\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"100\" r=\"25\" fill=\"red\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"25\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"200\" r=\"25\" fill=\"green\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"250\" r=\"25\" fill=\"purple\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-5.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="50"  r="25" fill="blue" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="100" r="25" fill="red" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="25" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="200" r="25" fill="green" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="250" r="25" fill="purple" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-1-6">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-1-6.png" alt="SVG Ficheros (1) 1 6" width="324" height="324">
       </div>
 
@@ -255,32 +290,39 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-1-6.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 1-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"125\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"100\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"75\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"50\" fill=\"black\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"25\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-1-6.html"
 
-webbrowser.open(ruta)</code></pre>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 1-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="150" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="125" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="100" fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="75"  fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="50"  fill="black" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="25"  fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
       </div>
     </div>
   </section>
@@ -289,7 +331,7 @@ webbrowser.open(ruta)</code></pre>
     <h2>Gráficos SVG Brython (1) - 2 - Líneas</h2>
 
     <div class="filaflex" id="ejercicio-2-1">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-1.png" alt="SVG Ficheros (1) 2 1" width="324" height="324">
       </div>
 
@@ -297,34 +339,40 @@ webbrowser.open(ruta)</code></pre>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"0\"    y1=\"-150\" x2=\"0\"   y2=\"150\" stroke=\"green\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"0\"    x2=\"150\" y2=\"0\"   stroke=\"green\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-1.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="0"    y1="-150" x2="0"   y2="150" stroke="green" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="0"    x2="150" y2="0"   stroke="green" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-2-2">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-2.png" alt="SVG Ficheros (1) 2 2" width="324" height="324">
       </div>
 
@@ -332,36 +380,42 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"0\"    y1=\"-75\"  x2=\"150\" y2=\"-75\" stroke=\"blue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"75\"   x2=\"0\"   y2=\"75\"  stroke=\"blue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"75\"   y1=\"0\"    x2=\"75\"  y2=\"150\" stroke=\"blue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-75\"  y1=\"-150\" x2=\"-75\" y2=\"0\"   stroke=\"blue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-2.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="0"    y1="-75"  x2="150" y2="-75" stroke="blue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="75"   x2="0"   y2="75"  stroke="blue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="75"   y1="0"    x2="75"  y2="150" stroke="blue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-75"  y1="-150" x2="-75" y2="0"   stroke="blue" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-2-3">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-3.png" alt="SVG Ficheros (1) 2 3" width="324" height="324">
       </div>
 
@@ -369,35 +423,41 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"0\"   x2=\"0\"   y2=\"-150\" stroke=\"purple\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"150\" x2=\"150\" y2=\"-150\" stroke=\"purple\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"0\"    y1=\"150\" x2=\"150\" y2=\"0\"    stroke=\"purple\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-3.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="0"   x2="0"   y2="-150" stroke="purple" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="150" x2="150" y2="-150" stroke="purple" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="0"    y1="150" x2="150" y2="0"    stroke="purple" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-2-4">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-4.png" alt="SVG Ficheros (1) 2 4" width="324" height="324">
       </div>
 
@@ -405,36 +465,42 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-4.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"-150\" x2=\"-50\" y2=\"-50\" stroke=\"chocolate\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"150\"  y1=\"-150\" x2=\"50\"  y2=\"-50\" stroke=\"chocolate\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"150\"  x2=\"-50\" y2=\"50\"  stroke=\"chocolate\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"150\"  y1=\"150\"  x2=\"50\"  y2=\"50\"  stroke=\"chocolate\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-4.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="-150" x2="-50" y2="-50" stroke="chocolate" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="150"  y1="-150" x2="50"  y2="-50" stroke="chocolate" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="150"  x2="-50" y2="50"  stroke="chocolate" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="150"  y1="150"  x2="50"  y2="50"  stroke="chocolate" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-2-5">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-5.png" alt="SVG Ficheros (1) 2 5" width="324" height="324">
       </div>
 
@@ -442,36 +508,42 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-5.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"50\"  x2=\"150\" y2=\"50\"   stroke=\"steelblue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-150\" y1=\"-50\" x2=\"150\" y2=\"-50\"  stroke=\"steelblue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-50\"  y1=\"150\" x2=\"-50\" y2=\"-150\" stroke=\"steelblue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"50\"   y1=\"150\" x2=\"50\"  y2=\"-150\" stroke=\"steelblue\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-5.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="50"  x2="150" y2="50"   stroke="steelblue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-150" y1="-50" x2="150" y2="-50"  stroke="steelblue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-50"  y1="150" x2="-50" y2="-150" stroke="steelblue" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="50"   y1="150" x2="50"  y2="-150" stroke="steelblue" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-2-6">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-2-6.png" alt="SVG Ficheros (1) 2 6" width="324" height="324">
       </div>
 
@@ -479,30 +551,36 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-2-6.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 2-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;line x1=\"-50\" y1=\"-150\" x2=\"150\"  y2=\"50\"  stroke=\"teal\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"50\"  y1=\"-150\" x2=\"-150\" y2=\"50\"  stroke=\"teal\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"-50\" y1=\"150\"  x2=\"150\"  y2=\"-50\" stroke=\"teal\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("    &lt;line x1=\"50\"  y1=\"150\"  x2=\"-150\" y2=\"-50\" stroke=\"teal\" stroke-width=\"1\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-2-6.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 2-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-160 -160 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;line x1="-50" y1="-150" x2="150"  y2="50"  stroke="teal" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="50"  y1="-150" x2="-150" y2="50"  stroke="teal" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="-50" y1="150"  x2="150"  y2="-50" stroke="teal" stroke-width="1" /&gt;', file=fichero)
+        print('    &lt;line x1="50"  y1="150"  x2="-150" y2="-50" stroke="teal" stroke-width="1" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
@@ -512,7 +590,7 @@ webbrowser.open(ruta)</code>
     <h2>Gráficos SVG Brython (1) - 3 - Rectángulos, polígonos</h2>
 
     <div class="filaflex" id="ejercicio-3-1">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-1.png" alt="SVG Ficheros (1) 3 1" width="324" height="324">
       </div>
 
@@ -520,36 +598,42 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-1.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;rect x=\"0\"   y=\"75\" width=\"150\" height=\"150\" stroke=\"black\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;rect x=\"150\" y=\"75\" width=\"150\" height=\"150\" stroke=\"black\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"75\"  cy=\"150\" r=\"50\" stroke=\"black\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"225\" cy=\"150\" r=\"50\" stroke=\"black\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-1.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;rect x="0"   y="75" width="150" height="150" stroke="black" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;rect x="150" y="75" width="150" height="150" stroke="black" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="75"  cy="150" r="50" stroke="black" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="225" cy="150" r="50" stroke="black" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-3-2">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-2.png" alt="SVG Ficheros (1) 3 2" width="324" height="324">
       </div>
 
@@ -557,35 +641,41 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-2.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;rect x=\"0\"  y=\"0\"   width=\"300\" height=\"300\" stroke=\"blue\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;rect x=\"50\" y=\"100\" width=\"200\" height=\"200\" stroke=\"blue\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"50\" r=\"50\" stroke=\"blue\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-2.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;rect x="0"  y="0"   width="300" height="300" stroke="blue" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;rect x="50" y="100" width="200" height="200" stroke="blue" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="50" r="50" stroke="blue" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-3-3">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-3.png" alt="SVG Ficheros (1) 3 3" width="324" height="324">
       </div>
 
@@ -593,37 +683,43 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-3.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;circle cx=\"75\"  cy=\"75\"  r=\"75\" stroke=\"orangered\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"225\" cy=\"75\"  r=\"75\" stroke=\"orangered\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"75\"  cy=\"225\" r=\"75\" stroke=\"orangered\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"225\" cy=\"225\" r=\"75\" stroke=\"orangered\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;rect x=\"75\" y=\"75\" width=\"150\" height=\"150\" stroke=\"orangered\" stroke-width=\"1\" fill=\"none\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-3.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;circle cx="75"  cy="75"  r="75" stroke="orangered" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="225" cy="75"  r="75" stroke="orangered" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="75"  cy="225" r="75" stroke="orangered" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="225" cy="225" r="75" stroke="orangered" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;rect x="75" y="75" width="150" height="150" stroke="orangered" stroke-width="1" fill="none" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-3-4">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-4.png" alt="SVG Ficheros (1) 3 4" width="324" height="324">
       </div>
 
@@ -631,35 +727,41 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-4.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;polygon points=\"0,150 75,225 225,75 300,150 225,225 75,75\" stroke=\"indigo\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"75\"   r=\"50\" stroke=\"indigo\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"225\"  r=\"50\" stroke=\"indigo\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-4.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-4. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;polygon points="0,150 75,225 225,75 300,150 225,225 75,75" stroke="indigo" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="75"  r="50" stroke="indigo" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="225" r="50" stroke="indigo" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-3-5">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-5.png" alt="SVG Ficheros (1) 3 5" width="324" height="324">
       </div>
 
@@ -667,35 +769,41 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-5.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;polygon points=\"  0,100 100,0 300,200 200,300\" stroke=\"seagreen\" stroke-width=\"1\" fill=\"none\" /&gt;", file=fichero)
-    print("    &lt;polygon points=\"300,100 200,0   0,200 100,300\" stroke=\"seagreen\" stroke-width=\"1\" fill=\"none\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"150\" r=\"50\" stroke=\"seagreen\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-5.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-5. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;polygon points="  0,100 100,0 300,200 200,300" stroke="seagreen" stroke-width="1" fill="none" /&gt;', file=fichero)
+        print('    &lt;polygon points="300,100 200,0   0,200 100,300" stroke="seagreen" stroke-width="1" fill="none" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="150" r="50" stroke="seagreen" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
 
     <div class="filaflex" id="ejercicio-3-6">
-      <div class="resultado-captura nogrow">
+      <div class="resultado-captura-sin-borde nogrow">
         <img src="../img/ejercicios/svg-ficheros-1/svg-ficheros-1-3-6.png" alt="SVG Ficheros (1) 3 6" width="324" height="324">
       </div>
 
@@ -703,42 +811,48 @@ webbrowser.open(ruta)</code>
         <pre>
 <code class="language-python">import webbrowser
 
-ruta = "svg-ficheros-1-3-6.html"
 
-with open(ruta, mode="w", encoding="utf-8") as fichero:
-    print("&lt;!DOCTYPE html&gt;", file=fichero)
-    print("&lt;html lang=\"es\"&gt;", file=fichero)
-    print("&lt;head&gt;", file=fichero)
-    print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
-    print("  &lt;title&gt;Ficheros (1) 3-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
-    print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
-    print("&lt;/head&gt;", file=fichero)
-    print("", file=fichero)
-    print("&lt;body&gt;", file=fichero)
-    print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
-    print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
-    print("    style=\"border: black 1px solid\"&gt;", file=fichero)
-    print("    &lt;polygon points=\"0,150 150,0 300,150 150,300\" stroke=\"sienna\" stroke-width=\"1\" fill=\"none\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"30\"  cy=\"30\"  r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"270\" cy=\"30\"  r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"90\"  r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"90\"  cy=\"150\" r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"210\" cy=\"150\" r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"150\" cy=\"210\" r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"30\"  cy=\"270\" r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("    &lt;circle cx=\"270\" cy=\"270\" r=\"30\" stroke=\"sienna\" stroke-width=\"1\" fill=\"white\" /&gt;", file=fichero)
-    print("  &lt;/svg&gt;", file=fichero)
-    print("&lt;/body&gt;", file=fichero)
-    print("&lt;/html&gt;", file=fichero)
+def main():
+    ruta = "svg-ficheros-1-3-6.html"
 
-webbrowser.open(ruta)</code>
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print('&lt;html lang="es"&gt;', file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+        print("  &lt;title&gt;Ficheros (1) 3-6. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print('  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"', file=fichero)
+        print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
+        print('    style="border: black 1px solid"&gt;', file=fichero)
+        print('    &lt;polygon points="0,150 150,0 300,150 150,300" stroke="sienna" stroke-width="1" fill="none" /&gt;', file=fichero)
+        print('    &lt;circle cx="30"  cy="30"  r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="270" cy="30"  r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="90"  r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="90"  cy="150" r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="210" cy="150" r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="150" cy="210" r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="30"  cy="270" r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print('    &lt;circle cx="270" cy="270" r="30" stroke="sienna" stroke-width="1" fill="white" /&gt;', file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 2 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
