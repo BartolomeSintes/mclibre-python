@@ -22,7 +22,7 @@
     <div class="toc">
       <h2>Bucle <span class="idle-rese">while</span> (2)</h2>
 
-      <h3>Enunciados</h3>
+      <h3><a href="#">Enunciados</a></h3>
       <ul>
         <li><a href="#apartado-a">A - Los veinte</a></li>
         <li><a href="#apartado-b">B - Tragaperras</a></li>
@@ -213,12 +213,18 @@
     </div>
 
     <section id="ejercicio-a-5">
-      <h3>Bucle <span class="idle-rese">while</span> (2) - A-5</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - A-5</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>115</p>
+      </aside>
 
       <p>Amplíe el programa anterior, de manera que el programa declare ganador al jugador que haya obtenido más puntos sin superar 20 puntos.</p>
 
       <div class="resultado-idle">
         <pre>
+<span class="idle-resp">LOS 20 (5)</span>
 <span class="idle-resp">Pulse Intro para lanzar el dado. Pulse otra tecla e Intro para terminar:</span>
 
 <span class="idle-resp">Jugador 1:</span>
@@ -436,29 +442,35 @@
     <h2>C. Operaciones</h2>
 
     <section id="ejercicio-c1">
-      <h3>Bucle <span class="idle-rese">while</span> (2) - C-1</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - C-1</h3>
 
-      <p>Escriba un programa que proponga sumas de números positivos (dos números entre 0 y 100) al usuario y compruebe la respuesta. El programa continuará hasta que se acierten cinco sumas.</p>
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>120</p>
+      </aside>
+
+      <p>Escriba un programa que proponga sumas de números positivos (dos números entre 1 y 100) al usuario y compruebe la respuesta. El programa continuará hasta que se acierten cinco sumas.</p>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
-<span class="idle-resp">32 + 47:</span> 79
+<span class="idle-resp">OPERACIONES (1)</span>
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones:</span>
+<span class="idle-resp">32 + 47 =</span> 79
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">65 + 42:</span> 107
+<span class="idle-resp">65 + 42 =</span> 107
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">6 + 71:</span> 77
+<span class="idle-resp">6 + 71 =</span> 77
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">80 + 15:</span> 95
+<span class="idle-resp">80 + 15 =</span> 95
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">31 + 95:</span> 127
+<span class="idle-resp">31 + 95 =</span> 127
 <span class="idle-resp">¡Respuesta incorrecta!</span>
 
-<span class="idle-resp">41 + 27:</span> 68
+<span class="idle-resp">41 + 27 =</span> 68
 <span class="idle-resp">¡Respuesta correcta!</span>
 
 <span class="idle-resp">Programa terminado.</span>
@@ -467,22 +479,47 @@
     </section>
 
     <section id="ejercicio-c2">
-      <h3>Bucle <span class="idle-rese">while</span> (2) - C-2</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - C-2</h3>
+
+      <aside class="aside-minienlace">
+        <p>MPTC</p>
+        <p>121</p>
+      </aside>
 
       <p>Amplie el programa anterior, haciendo que el programa pida cuántas operaciones se deben acertar para terminar el programa. Al terminar, el programa indicará cuántos intentos han sido necesarios.</p>
 
       <div class="resultado-idle">
         <pre>
-<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 2
+<span class="idle-resp">OPERACIONES (2)</span>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 0
+<span class="idle-resp">El número de operaciones debe ser mayor que cero.</span>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 1
 
-<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
-<span class="idle-resp">7 + 78:</span> 86
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones:</span>
+<span class="idle-resp">7 + 78 = </span> 86
 <span class="idle-resp">¡Respuesta incorrecta!</span>
 
-<span class="idle-resp">91 + 63:</span> 154
+<span class="idle-resp">91 + 63 =</span> 154
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">78 + 21:</span> 99
+<span class="idle-resp">Ha acertado 1 operación en 2 intentos.</span>
+<span class="idle-resp">Programa terminado.</span>
+</pre>
+      </div>
+
+      <div class="resultado-idle">
+        <pre>
+<span class="idle-resp">OPERACIONES (2)</span>
+<span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 2
+
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones:</span>
+<span class="idle-resp">7 + 78 = </span> 86
+<span class="idle-resp">¡Respuesta incorrecta!</span>
+
+<span class="idle-resp">91 + 63 =</span> 154
+<span class="idle-resp">¡Respuesta correcta!</span>
+
+<span class="idle-resp">78 + 21 =</span> 99
 <span class="idle-resp">¡Respuesta correcta!</span>
 
 <span class="idle-resp">Ha acertado 2 operaciones en 3 intentos.</span>
@@ -498,13 +535,14 @@
 
       <div class="resultado-idle">
         <pre>
+<span class="idle-resp">OPERACIONES (3)</span>
 <span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 2
 
-<span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
-<span class="idle-resp">20 + 24</span> 44
+<span class="idle-resp">Escriba el resultado de las siguientes operaciones:</span>
+<span class="idle-resp">20 + 24 =</span> 44
 <span class="idle-resp">¡Respuesta correcta!</span>
 
-<span class="idle-resp">89 + 89:</span> 178
+<span class="idle-resp">89 + 89 =</span> 178
 <span class="idle-resp">¡Respuesta correcta!</span>
 
 <span class="idle-resp">Ha tardado 7.0 segundos en acertar 2 operaciones en 2 intentos.</span>
@@ -520,16 +558,17 @@
 
       <div class="resultado-idle">
         <pre>
+<span class="idle-resp">OPERACIONES (4)</span>
 <span class="idle-resp">¿Cuántas operaciones correctas debe contestar para terminar el programa?</span> 1
 
 <span class="idle-resp">Escriba el resultado de las siguientes operaciones</span>
-<span class="idle-resp">99 + 15</span> 114
+<span class="idle-resp">99 + 15 =</span> 114
 <span class="idle-resp">¡Respuesta correcta!</span>
 
 <span class="idle-resp">Ha tardado 5.7 segundos en acertar 1 operación en 1 intento.</span>
 <span class="idle-resp">¿Quiere probar otra vez? (S/N):</span> s
 
-<span class="idle-resp">60 + 7:</span> 67
+<span class="idle-resp">60 + 7 =</span> 67
 <span class="idle-resp">¡Respuesta correcta!</span>
 
 <span class="idle-resp">Ha tardado 3.3 segundos en acertar 1 operación en 1 intento.</span>
@@ -595,7 +634,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 1 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

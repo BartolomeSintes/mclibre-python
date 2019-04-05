@@ -258,8 +258,8 @@ def main():
         print('    width="320" height="320" viewBox="-10 -10 320 320"', file=fichero)
         print('    style="border: black 1px solid"&gt;', file=fichero)
         for i in range(10):
-            print(f'    &lt;rect x="0" y="0" width="{30*i + 30}" height="{30*i + 30}" "
-                  "stroke="peru" stroke-width="1" fill="none" /&gt;', file=fichero)
+            print(f'    &lt;rect x="0" y="0" width="{30*i + 30}" height="{30*i + 30}" '
+                  'stroke="peru" stroke-width="1" fill="none" /&gt;', file=fichero)
         print("  &lt;/svg&gt;", file=fichero)
         print("&lt;/body&gt;", file=fichero)
         print("&lt;/html&gt;", file=fichero)

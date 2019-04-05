@@ -106,9 +106,9 @@ print(asctime(localtime()))</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">from time import time
+<code class="language-python">import time
 
-print(time())</code>
+print(time.time())</code>
 </pre>
       </div>
 
@@ -124,14 +124,14 @@ print(time())</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">from time import time
+<code class="language-python">import time
 
-inicio = time()
+inicio = time.time()
 
 for i in range(500):
     print(f"{i} - ", end="")
 
-final = time()
+final = time.time()
 
 print(f"He tardado {round(final - inicio, 1)} segundos.")</code>
 </pre>
@@ -146,7 +146,7 @@ print(f"He tardado {round(final - inicio, 1)} segundos.")</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
