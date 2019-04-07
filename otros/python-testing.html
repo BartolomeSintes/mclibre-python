@@ -25,7 +25,7 @@
       <ul>
         <li><a href="#que-es">Qué es</a></li>
         <li><a href="#usar-vsc">Usar MPTC en VSCode</a></li>
-        <li><a href="#bugs">Fallos de MPTC</a></li>
+        <li><a href="#detalles">Detalles a tener en cuenta</a></li>
       </ul>
     </div>
   </nav>
@@ -51,9 +51,9 @@
   <section id="usar-vsc">
     <h2>Cómo utilizar MPTC en Visual Studio Code</h2>
 
-    <p>Los pasos para utilizar Mclibre Python Testing Client en Visual Studio Code sson los siguientes:</p>
+    <p>Los pasos para utilizar Mclibre Python Testing Client en Visual Studio Code son los siguientes:</p>
     <ul>
-      <li>Elija un ejercicio que incluya el identificador MPTC del ejercicio:
+      <li>Elegir un ejercicio que incluya el identificador MPTC del ejercicio:
         <p>Los ejercicios para los que hay disponibles tests automáticos de MPTC se pueden identificar por el cuadro situado en la parte superior derecha del enunciado, como en el ejemplo siguiente:</p>
 
         <div style="border: 2px solid black; margin: 0 20px; padding: 5px; background-color: #eee">
@@ -61,7 +61,7 @@
 
           <aside class="aside-minienlace">
             <p>MPTC</p>
-            <p>1000</p>
+            <p>1001</p>
           </aside>
 
           <p>Escriba un programa que salude al mundo.</p>
@@ -75,7 +75,7 @@
 
         <p>El número del cuadro indica el identificador del ejercicio en MPTC. En el ejemplo anterior, el número sería 1000.</p>
       </li>
-      <li>Escribir el programa
+      <li>Escribir el programa:
 
         <p>Escriba el programa que resuelve el ejercicio, siguiendo la plantilla de la lección <a href="../lecciones/python-plantilla.html">Programa básico</a>.</p>
 
@@ -92,52 +92,62 @@ if __name__ == "__main__":
 </pre>
         </div>
       </li>
-      <li>Comprobar el funcionamiento del programa personalmente
-        <p>Compruebe que el programa funciona correctamente ejecutando el programa y comparando el resultado con el enunciado.</p>
+      <li>Abrir una ventana de terminal en el directorio que contiene el programa:
+        <p>Para ello, haga clic derecho sobre el directorio y elija la opción "Abrir en termninal":</p>
         <p class="captura">
-          <img src="../img/vscode/vsc-mptc-1.png" alt="VSC. Ejecución de programa" width="1024" height="576">
+          <img src="../img/vscode/vsc-mptc-1.png" alt="VSC. Abrir terminal" width="1024" height="576">
         </p>
-      </li>
-      <li>Comprobar el funcionamiento del programa con MPTC
-        <p>Para ello, abra una ventana de terminal en el directorio que contiene el ejercicio. para ello, haga clic derecho sobre el directorio y elija la opción "Abrir en termninal":</p>
+        <p>Se abrirá una ventana de terminal en el directorio:</p>
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-2.png" alt="VSC. Abrir terminal" width="1024" height="576">
         </p>
-        <p>En el terminal, escriba la orden <strong>mptc nombre_del_programa.py identificador_mptc</strong>, donde nombre_del_programa.py es el nombre de su programa e identificador_mptc es el identificador MPTC del ejercicio:</p>
+      </li>
+      <li>Comprobar el funcionamiento del programa manualmente:
+        <p>Compruebe que el programa funciona correctamente ejecutando el programa (escriba la orden <strong>python nombre_del_programa.py</strong>, donde nombre_del_programa.py es el nombre del programa) y comparando el resultado con el enunciado.</p>
         <p class="captura">
-          <img src="../img/vscode/vsc-mptc-3.png" alt="VSC. Ejecutar MPTC" width="1024" height="576">
+          <img src="../img/vscode/vsc-mptc-3.png" alt="VSC. Ejecución de programa" width="1024" height="576">
         </p>
-        <p>Si todo funciona correctamente, se mostrará el resultado de las pruebas automáticas:</p>
+      </li>
+      <li>Comprobar el funcionamiento del programa con MPTC
+        <p>En el terminal, escriba la orden <strong>mptc nombre_del_programa.py identificador_mptc</strong>, donde nombre_del_programa.py es el nombre del programa e identificador_mptc es el identificador MPTC del ejercicio:</p>
         <p class="captura">
-          <img src="../img/vscode/vsc-mptc-4.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+          <img src="../img/vscode/vsc-mptc-4.png" alt="VSC. Ejecutar MPTC" width="1024" height="576">
+        </p>
+        <p>En el terminal, MPTC muestra tres grupos de mensajes. En el primer grupo informa del número de tests que se van a realizar.</p>
+        <p class="captura">
+          <img src="../img/vscode/vsc-mptc-5.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+        </p>
+        <p>En el segundo grupo, MPTC muestra la salida generada por pytest. Los mensajes de éxito se muestran en verde y los mensajes de fallo se muestran en rojo.</p>
+        <p class="captura">
+          <img src="../img/vscode/vsc-mptc-6.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+        </p>
+        <p>En el tercer grupo, MPTC muestra el resultado de la prueba.</p>
+        <p class="captura">
+          <img src="../img/vscode/vsc-mptc-7.png" alt="VSC. Resultado MPTC" width="1024" height="576">
         </p>
       </li>
     </ul>
   </section>
 
-  <section id="bugs">
-    <h2>Problemas conocidos</h2>
-
-    <p>Estos son algunos de los problemas que presenta MPTC.</p>
+  <section id="detalles">
+    <h2>Detalles a tener en cuenta</h2>
 
     <h3>Si el primer argumento no es únicamente el nombre del fichero, MPTC no ejecuta los tests</h3>
 
-    <p>Al llamar a MPTC el primer argumento debe ser el nombre del fichero que conteine el programa. No pueden usarse ni caminos relativos ni absolutos, ni siquiera el .\ que incluye PowerShell cuando se completan los nombres de ficheros con el tabulador. El mensaje final dice que se han pasado todas las pruebas con éxito, pero no es cierto.</p>
+    <p>Al llamar a MPTC, el primer argumento debe ser el nombre del fichero que contiene el programa. No pueden usarse ni caminos relativos ni absolutos. Si se utilizan caminos absolutos o relativos, se mostrará un mensaje de error, como en el ejemplo siguiente:</p>
 
     <div class="powershell">
       <pre>
-<code class="language-shell">PS C:\Users\Barto\Documents\LMSGI Barto\Python\pruebas&gt;<span class="ps-program">mptc</span> .\ejemplo_mptc_1000.py 1000
-...
-<span class="mptc-error">E   TypeError: the 'package' argument is required to perform a relative import for .\\ejemplo_mptc_1000'</span></code>
-...
-All tests have passed
+<code class="language-shell">PS C:\Users\Barto\Documents\LMSGI Barto\Python\&gt;<span class="ps-program">mptc</span> pruebas\ejemplo_mptc_1000.py 1000
+Error: Relative or absolute paths [pruebas\ejemplo_mptc_1000.py] are not allowed.
+Please, execute MPTC from the directory where your program is located.</code>
 </pre>
     </div>
 
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 7 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
