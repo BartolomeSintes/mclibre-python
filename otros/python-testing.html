@@ -26,6 +26,7 @@
         <li><a href="#que-es">Qué es</a></li>
         <li><a href="#como-utilizar">Usar MPTC en terminal</a></li>
         <li><a href="#como-funciona">Cómo funciona MPTC</a></li>
+        <li><a href="#limitaciones">Limitaciones de MPTC</a></li>
         <li><a href="#usar-vsc">Usar MPTC en VSCode</a></li>
         <li><a href="#detalles">Detalles a tener en cuenta</a></li>
       </ul>
@@ -163,8 +164,8 @@ All tests have been passed. Congratulations!
       <li>Corregir en su caso los errores detectados
         <p>En caso de que falle alguno de los tests, MPTC muestra información sobre el error producido, que puede utilizarse para corregir el error.</p>
         <p>Por ejemplo, si el programa probado hubiera sido el siguiente:</p>
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-python">def main():
     print("Hola, mundo")
 
@@ -172,11 +173,11 @@ All tests have been passed. Congratulations!
 if __name__ == "__main__":
     main()</code>
 </pre>
-          </div>
+        </div>
 
-          <p>... en el terminal, MPTC hubiera mostrado el siguiente resultado, que nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado (en este caso, faltan los signos de exclamación):</p>
-            <div class="terminal">
-              <pre class="command-line" data-prompt="C:\Users\...\programas>" data-output="2-29">
+        <p>... en el terminal, MPTC hubiera mostrado el siguiente resultado, que nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado (en este caso, faltan los signos de exclamación):</p>
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\Users\...\programas>" data-output="2-29">
 <code class="language-shell">mptc p_1001.py 1001
 -+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-
 -+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-
@@ -208,7 +209,7 @@ Failed test:
 
 </code>
 </pre>
-            </div>
+        </div>
       </li>
     </ol>
   </section>
@@ -226,11 +227,83 @@ Failed test:
           <li>los valores de salida que debería mostrar el programa para los valores de entrada o aleatorios anteriores.</li>
         </ul>
       </li>
+      <li>Los valores de prueba que se reciben del servidor no son siempre los mismos. Las pruebas intentan cubrir todas las sutuaciones que el programa debe resolver. Algunos de los valores sí que se repiten (por ejemplo, los casos límite o los que deben provocar avisos del programa), pero otros se generan de forma aleatoria (por ejemplo, si un programa debe reaccionar de forma distinta en caso de que el usuario escriba un número par o un número impar, habrá siempre una prueba que envíe un número par y otra prueba que envíe un número impar, pero los números concretos enviados variarán en cada ejecución de MPTC).</li>
       <li>MPTC ejecuta el programa del alumno tantas veces como pruebas se han recibido del servidor.</li>
       <li>En cada ejecución, MPTC suplanta al usuario y proporciona al programa los valores de entrada enviados por el servidor. MPTC también suplanta partes del programa, como por ejemplo cuando se generan valores aleatorios. MPTC recoge la salida del programa..</li>
-      <li>MPTC compara la salida del programa con los valores esperados enviados por el servidor. Si coinciden exactamente la prueba se considera superada. Si hay cualquier diferencia la prueba se considera fallada. La diferencia puede ser importante (mensajes completamente distintos a los esperados, resultados numéricos incorrectos, etc.) o poco importante (erratas en algún mensaje como acentos, puntuación, espacios en blanco, mayúsculas, minúsculas, etc.),</li>
-      <li>Finalmente, MPTC muestra un resumen del resultado de las pruebas: cuántas pruebas se han realizado, cuántas se han superado y cuántas han fallado. En el caso de las pruebas falladas, MPTC muestra los valores de entrada y aleatorios utilizados en la prueba y los valores de salida que no coinciden con los esperados. Si la diferencia que ha provocado el fracaso de la prueba es poco importante, el alumno puede corregir fácilmente el programa comparando el valor esperado con el obtenido. Si la diferencia es más importante, el alumno puede corregir el programa ayudándose de los valores de entrada que han provocado el fallo.</li>
+      <li>MPTC compara la salida del programa con los valores esperados enviados por el servidor. Si coinciden exactamente, la prueba se considera superada. Si hay cualquier diferencia, la prueba se considera fallada. La diferencia puede ser importante (mensajes completamente distintos a los esperados, resultados numéricos incorrectos, etc.) o poco importante (erratas en algún mensaje como acentos, puntuación, espacios en blanco, mayúsculas, minúsculas, etc.),</li>
+      <li>Finalmente, MPTC muestra un resumen del resultado de las pruebas: cuántas pruebas se han realizado, cuántas se han superado y cuántas han fallado. En el caso de las pruebas falladas, MPTC muestra los valores de entrada y aleatorios utilizados en la prueba y los valores de salida que no coinciden con los esperados. Si la diferencia que ha provocado el fracaso de la prueba es poco importante 8acentos, mayúsculas, etc.), el alumno puede corregir fácilmente el programa comparando el valor esperado con el obtenido. Si la diferencia es más importante (mensajes o cálculos incorrectos, etc.), el alumno puede corregir el programa ayudándose de los valores de entrada que han provocado el fallo.</li>
     </ul>
+  </section>
+
+  <section id="limitaciones">
+    <h2>Limitaciones de MPTC</h2>
+
+    <p>MPTC no realiza un análisis del programa, simplemente comprueba que la salida del programa coincide con la esperada para unos valores determinados de entrada.</p>
+
+    <p>Si un programa supera todas las pruebas de MPTC, el alumno puede considerar que su programa es muy probablemente correcto, pero no es una garantía absoluta de que el programa no contenga errores. Puede que el programa no funcione correctamente para ciertos valores de entrada que no se han probado o que genere valores aleatorios incorrectos.</p>
+
+    <p>Por otro lado, que un programa no supere las pruebas no significa necesariamente que el programa sea incorrecto. En la mayoría de los casos, cuando un programa trabaja a partir de valores introducidos por el usuario, sí que el fallo en una prueba corresponde a un fallo del programa, pero cuando el programa genera valores aleatorios, puede que el fallo de las pruebas no corresponda a un fallo del programa.</p>
+
+    <hr class="corta">
+
+    <p>Por ejemplo, imaginemos un ejercicio que pide simplemente mostrar un valor de un dado. La solución podría ser el siguiente programa:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    dado = random.randrange(1, 7)
+    print(f"Ha sacado un {dado}.")
+
+
+if __name__ == "__main__":
+  main()</code>
+</pre>
+    </div>
+
+    <p>La prueba MPTC podría consistir en este caso en inyectar un valor aleatorio del uno al seis y comprobar que ese valor se muestra al usuario. Se podrían realizar incluso seis pruebas distintas, inyectando en cada prueba uno de los valores del 1 al 6.</p>
+
+    <p>Sin embargo, consideremos el siguiente programa:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    dado = random.randrange(1, 6)
+    print(f"Ha sacado un {dado}.")
+
+
+if __name__ == "__main__":
+  main()</code>
+</pre>
+    </div>
+
+    <p>Este programa superaría las pruebas MPTC igual que el programa anterior y sin embargo no es correcto, ya que este programa no mostraría nunca el valor 6. Como MPTC sustituye los valores aleatorios generados por el programa por los valores de la prueba, MPTC no puede darse cuenta de que el programa nunca genera el valor 6, porque al inyectar MPTC el valor 6, el programa escribiría el valor 6 correctamente. El problema es que el programa nunca genera el valor 6.</p>
+
+    <p>Consideremos ahora el siguiente programa:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">import random
+
+
+def main():
+    dado = random.randrange(0, 6)
+    print(f"Ha sacado un {dado + 1}.")
+
+
+if __name__ == "__main__":
+  main()</code>
+</pre>
+    </div>
+
+    <p>Este programa es correcto porque mostraría siempre un valor entre 1 y 6 y sin embargo al pasarle las pruebas MPTC todas las pruebas fallarían. ¿Por qué? Porque al inyectar un valor, por ejemplo 5, MPTC espera que se escriba que se ha sacado un 5, pero este programa escribiría que se ha sacado un 6. El programa es correcto porque genera valores de 0 a 5 y escribe uno más del valor generado, pero como los valores inyectados van del 1 al 6, los resultados no coinciden con los valores inyectados.</p>
+
+    <p>El alumno debe ser consciente de estas limitaciones y utilizar MPTC como lo que es, una herramienta de ayuda para la prueba de programas, pero no como un oráculo infalible.</p>
   </section>
 
   <section id="usar-vsc">
@@ -298,18 +371,45 @@ if __name__ == "__main__":
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-4.png" alt="VSC. Ejecutar MPTC" width="1024" height="576">
         </p>
-        <p>En el terminal, MPTC muestra tres grupos de mensajes. En el primer grupo informa del número de tests que se van a realizar.</p>
-        <p class="captura">
-          <img src="../img/vscode/vsc-mptc-5.png" alt="VSC. Resultado MPTC" width="1024" height="576">
-        </p>
-        <p>En el segundo grupo, MPTC muestra la salida generada por pytest. Los mensajes de éxito se muestran en verde y los mensajes de fallo se muestran en rojo.</p>
-        <p class="captura">
-          <img src="../img/vscode/vsc-mptc-6.png" alt="VSC. Resultado MPTC" width="1024" height="576">
-        </p>
-        <p>En el tercer grupo, MPTC muestra el resultado de la prueba.</p>
-        <p class="captura">
-          <img src="../img/vscode/vsc-mptc-7.png" alt="VSC. Resultado MPTC" width="1024" height="576">
-        </p>
+        <p>En el terminal, MPTC muestra tres grupos de mensajes:</p>
+        <ul>
+          <li>En el primer grupo (WELCOME), MPTC informa del número de tests que se van a realizar.
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-5.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+          <li>En el segundo grupo (TESTS EXECUTION), MPTC informa del resultado de cada test a medida que se van ejecutando.
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-6.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+          <li>En el tercer grupo, MPTC (RESULTS), MPTC muestra un resumen del resultado final.
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-7.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>Corregir en su caso los errores detectados
+        <p>En caso de que falle alguno de los tests, MPTC muestra en el terminal información sobre el error producido, que puede utilizarse para corregir el error.</p>
+        <p>En el terminal, MPTC muestra tres grupos de mensajes:</p>
+        <ul>
+          <li>En el primer grupo (WELCOME), MPTC informa del número de tests que se van a realizar.
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-8.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+          <li>En el segundo grupo (TESTS EXECUTION), MPTC informa del resultado de cada test a medida que se van ejecutando.
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-9.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+          <li>En el tercer grupo, MPTC (RESULTS), MPTC muestra un resumen del resultado final y una explicación más detallada del error producido (en este caso, nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado ya que faltan los signos de exclamación:
+            <p class="captura">
+              <img src="../img/vscode/vsc-mptc-10.png" alt="VSC. Resultado MPTC" width="1024" height="576">
+            </p>
+          </li>
+        </ul>
       </li>
     </ul>
   </section>
