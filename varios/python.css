@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 2 de abril de 2019                       */
+/* 14 de abril de 2019                      */
 /*                                          */
 
 /* CSS comun */
@@ -450,6 +450,11 @@ h2.con-aside, h3.con-aside, h4-con-aside {
 
 .aside-minienlace + p {
   clear: left;
+}
+
+.aside-minienlace a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Pantallas estrechas */
