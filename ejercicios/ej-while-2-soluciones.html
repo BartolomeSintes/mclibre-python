@@ -574,53 +574,74 @@ if __name__ == "__main__":
     </section>
 
     <section id="ejercicio-c-3">
-      <h3>Bucle <span class="idle-rese">while</span> (2) - C-3</h3>
+      <h3 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - C-3</h3>
+
+      <aside class="aside-minienlace">
+        <p><a href="../otros/python-testing.html">MPTC</a></p>
+        <p>122</p>
+      </aside>
 
       <div class="codigo">
         <pre>
 <code class="language-python">import random
-from time import time
+import time
 
-cantidad = int(input("¿Cuántas operaciones correctas debe contestar para terminar el programa? "))
 
-while cantidad &lt; 1:
-    print("El número de operaciones debe ser mayor que cero")
-    cantidad = input("¿Cuántas operaciones correctas debe contestar para terminar el programa? ")
-print()
+def main():
+    print("OPERACIONES (3)")
+    cantidad = int(
+        input(
+            "¿Cuántas operaciones correctas debe contestar para terminar el programa? "
+        )
+    )
 
-print("Escriba el resultado de las siguientes operaciones")
-
-correctas = 0
-total = 0
-inicio = time()
-
-while correctas &lt; cantidad:
-    a = random.randrange(1, 101)
-    b = random.randrange(1, 101)
-    respuesta = int(input(f"{a} + {b}: "))
-    total += 1
-    if respuesta == a + b:
-        correctas += 1
-        print("¡Respuesta correcta!")
-    else:
-        print("¡Respuesta incorrecta!")
+    while cantidad &lt; 1:
+        print("El número de operaciones debe ser mayor que cero.")
+        cantidad = int(
+            input(
+                "¿Cuántas operaciones correctas debe contestar para terminar el programa? "
+            )
+        )
     print()
 
-final = time()
+    print("Escriba el resultado de las siguientes operaciones:")
 
-print(f"Ha tardado {round(final - inicio, 1)} segundos en ", end="")
+    correctas = 0
+    total = 0
+    inicio = time.time()
 
-if cantidad == 1:
-    print("acertar 1 operación ", end="")
-else:
-    print(f"acertar {correctas} operaciones ", end="")
+    while correctas &lt; cantidad:
+        a = random.randrange(1, 101)
+        b = random.randrange(1, 101)
+        respuesta = int(input(f"{a} + {b} = "))
+        total += 1
+        if respuesta == a + b:
+            correctas += 1
+            print("¡Respuesta correcta!")
+        else:
+            print("¡Respuesta incorrecta!")
+        print()
 
-if total == 1:
-    print("en 1 intento.")
-else:
-    print(f"en {total} intentos.")
+    final = time.time()
 
-print("Programa terminado.")</code>
+    print(f"Ha tardado {round(final - inicio, 1)} segundos en ", end="")
+
+    if cantidad == 1:
+        print("acertar 1 operación ", end="")
+    else:
+        print(f"acertar {correctas} operaciones ", end="")
+
+    if total == 1:
+        print("en 1 intento.")
+    else:
+        print(f"en {total} intentos.")
+
+    print("Programa terminado.")
+
+
+if __name__ == "__main__":
+    main()
+</code>
 </pre>
       </div>
     </section>
@@ -696,7 +717,7 @@ print("Programa terminado.")</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de abril de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 20 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
