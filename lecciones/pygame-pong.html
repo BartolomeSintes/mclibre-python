@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Pong. Pygame. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Pong. pygame. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
@@ -24,11 +26,22 @@
         <li><a href="#historia">Historia de Pong</a></li>
         <li><a href="#pygame">La biblioteca Pygame</a></li>
         <li><a href="#instalacion">Instalación de Pygame</a></li>
+        <li><a href="#programacion">Programación del juego</a>
+          <ul>
+            <li><a href="#programacion-1">1: Ventana de juego</a></li>
+            <li><a href="#programacion-2">2: Clase PelotaPong</a></li>
+            <li><a href="#programacion-3">3: Rebote de la pelota</a></li>
+            <li><a href="#programacion-4">4: Reiniciar pelota al salir</a></li>
+            <li><a href="#programacion-5">5: Clase RaquetaPong</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <p>En Python 3, <span class="idle-func">range</span> es un tipo de datos. El tipo <span class="idle-func">range</span> es una <strong>lista inmutable de números enteros en sucesión aritmética</strong>.</p>
+  <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Esta lección está en elaboración</p>
+
+  <p>Esta lección es un tutorial de la biblioteca pygame, en el que se programa el juego clásico Pong.</p>
 
   <section id="historia">
     <h2>Historia de Pong</h2>
@@ -37,7 +50,7 @@
 
     <p>Bastante años después, en septiembre de 1972, se comercializó la primera videoconsola de la historia dirigida a los hogares, <a href="https://en.wikipedia.org/wiki/Magnavox_Odyssey">Magnavox Odyssey</a>. Esta videoconsola se conectaba a una pantalla de televisor y uno de los juegos incluidos era Table Tennis. En este juego cada jugador controlaba una paleta que golpeaba una pelota. El mismo año, pero en noviembre, la compañía Atari comercializó <a href="https://es.wikipedia.org/wiki/Pong">Pong</a>, una de las primeras máquinas de <a href="https://es.wikipedia.org/wiki/Arcade">arcade</a>, destinadas a lugares públicos.</p>
 
-    <p><img src="../img/pygame/pong.png" alt="Pong, el videojuego" width="240" height="180" class="derecha">Con Pong, un juego trivial para los estándares actuales, empezaba la era moderna de los videojuegos. Pong es un juego de deportes en dos dimensiones que simula un tenis de mesa. El jugador controla en el juego una paleta moviéndola verticalmente en la parte izquierda de la pantalla, y puede competir tanto contra un oponente controlado por computadora, como con otro jugador humano que controla una segunda paleta en la parte opuesta. Los jugadores pueden usar las paletas para pegarle a la pelota hacia un lado u otro. El objetivo consiste en que uno de los jugadores consiga más puntos que el oponente al finalizar el juego. Estos puntos se obtienen cuando el jugador adversario falla al devolver la pelota.</p>
+    <p><img src="../img/pygame/pong.png" alt="Pong, el videojuego" width="240" height="180" class="derecha">Con Pong, un juego trivial para los estándares actuales, empezaba la era moderna de los videojuegos. Pong es un juego de deportes en dos dimensiones que simula un tenis de mesa. El jugador controla en el juego una paleta moviéndola verticalmente en la parte izquierda de la pantalla, y puede competir tanto contra un oponente controlado por computadora, como con otro jugador humano que controla una segunda paleta en la parte opuesta. Los jugadores pueden usar las raquetas para pegarle a la pelota hacia un lado u otro. El objetivo consiste en que uno de los jugadores consiga más puntos que el oponente al finalizar el juego. Estos puntos se obtienen cuando el jugador adversario falla al devolver la pelota.</p>
 
     <p>La palabra Pong es una marca registrada por Atari Interactive (aunque la patente del juego la tuvo la empresa de Magnavox Odyssey), pero la palabra genérica "pong" se usa para describir el género de videojuegos.</p>
 
@@ -49,9 +62,9 @@
 
     <p><a href="https://www.pygame.org/news">Pygame</a> es un conjunto de módulos de Python que facilitan la creación de videojuegos. Pygame utiliza internamente la biblioteca <a href="http://www.libsdl.org/">SDL</a> (Simple DirectMedia Layer), escrita principalmente en C.</p>
 
-    <p>Pygame se distribuye bajo la licencia libre LGPL, lo que permite utilziarla tanto en proyecto libres como comerciales.</p>
+    <p>Pygame se distribuye bajo la licencia libre LGPL, lo que permite utilizarla tanto en proyecto libres como comerciales.</p>
 
-    <p>Además de la <a href="http://www.pygame.org/docs/">Documentación oficial de Pygame</a>, en Internet se pueden encontrar sitios y libros dedicados a la introducción a la programación en general, o a la introducción a la programación de videojuegos en particular, mediante Pygame, como los siguientes:</p>
+    <p>Además de la <a href="http://www.pygame.org/docs/">Documentación oficial de pygame</a>, en Internet se pueden encontrar sitios y libros dedicados a la introducción a la programación en general, o a la introducción a la programación de videojuegos en particular, mediante pygame, como los siguientes:</p>
 
     <ul>
       <li><a href="http://programarcadegames.com/">Programar Juegos Arcade con Python y Pygame</a></li>
@@ -60,13 +73,855 @@
   </section>
 
   <section id="instalacion">
-    <h2>Instalación de Pygame</h2>
+    <h2>Instalación de pygame</h2>
 
+    <p>Los pasos para instalar pygame como módulo de sistema en Windows son los siguientes:</p>
+    <ul>
+      <li>Abra una ventana de terminal y escriba los siguientes comandos.</li>
+      <li>Actualice <a href="https://pip.pypa.io/en/stable/">pip</a>:
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">pip install --upgrade --user pip</code>
+</pre>
+        </div>
+      </li>
+      <li>Instale <a href="https://www.pygame.org/news">pygame</a>:
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">pip install pygame</code>
+</pre>
+        </div>
+      </li>
+    </ul>
   </section>
 
+  <section id="programacion">
+    <h2>Realización del programa</h2>
+
+    <p>Para la realización del juego Pong, iremos por fases, implementando en cada paso uno de los elementos del programa.</p>
+
+    <section id="programacion-1">
+      <h3>Paso 1: Ventana de juego</h3>
+
+      <p>El juego se ejecutará en una ventana independiente. Para crear la ventana, necesitamos bastante código específico de pygame, que no es necesario conocer de memoria, ya que lo podemos reutilizar de un proyecto a otro.</p>
+
+      <p>El siguiente programa genera una ventana en blanco con el título del juego.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_1.py: Ventana de juego
+
+import pygame
+from pygame.locals import *
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 1")
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        ventana.fill(BLANCO)
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Cada una de las instrucciones tiene una función específica, que se comenta a continuación:</p>
+      <ul>
+        <li>Importación de módulos
+          <div class="codigo">
+            <pre class="line-numbers" data-start="3">
+<code class="language-python">import pygame
+from pygame.locals import *</code>
+</pre>
+          </div>
+
+          <p>Importamos los módulos pygame. Para que al hacer referencia en el programa a las constantes de pygame no tegamos que incluir el nombre del módulo, las importamos todas del módulo pygame.locals.</p>
+
+        </li>
+        <li>Definición de constantes
+          <div class="codigo">
+            <pre class="line-numbers" data-start="6">
+<code class="language-python"># Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
+</pre>
+          </div>
+          <p>Python no tiene un tipo de dato "constante" (es decir, un valor que no se pueda modificar). La costumbre, heredada de otros lenguajes, es simplemente escribir el nombre de una variable en mayúsculas para indicar a quien lea nuestro código fuente que esa variable no se va a modificar en ningún momento del programa. Definimos así varias constantes:</p>
+          <ul>
+            <li>El tamaño de la ventana de juego (en este caso, 800 x 600 px, la llamada <a href="https://es.wikipedia.org/wiki/Super_Video_Graphics_Array">resolución SVGA</a> original).</li>
+            <li>Normalmente FPS hace referencia al número de veces por segundo que se actualiza la imagen en la ventana. En principio, cuanto más alto es ese valor, mejor se verán los objetos en movimiento, aunque cada pantalla admite un valor máximo y dependiendo de la complejidad de la creación de la imagen puede que no se puedan alcanzar valores muy altos. En pygame, la ventana se está actualizando constantemente y en cada actualización los objetos se desplazan, por lo que si la ventana se actualiza demasiadas veces, los objetos se desplazarán demasiado rápido. Para evitarlo, en pygame FPS significa el número máximo de veces que queremos que se actualice la ventana, aunque si debido a la complejidad de la imagen el número de veces que se actualiza la imagen es inferior, pygame no podrá aumentarlo.</li>
+            <li>En pygame los colores se indican mediante códigos RGB, así que definimos una constante con el nombre del color para facilitar su referencia.</li>
+          </ul>
+        </li>
+        <li>Incialización
+          <div class="codigo">
+            <pre class="line-numbers" data-start="14">
+<code class="language-python">    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 1")</code>
+</pre>
+          </div>
+          <p>Con estas instrucciones:</p>
+          <ul>
+            <li>Inicializamos pygame.</li>
+            <li>Creamos el objeto <i>ventana</i> que nos permite acceder al contenido de la ventana (al crearlo, le indicamos su tamaño).</li>
+            <li>Le damos un título a la ventana.</li>
+          </ul>
+        </li>
+        <li>Bucle principal
+          <div class="codigo">
+            <pre class="line-numbers" data-start="21">
+<code class="language-python">    # Bucle principal
+    jugando = True
+    while jugando:
+        ventana.fill(BLANCO)
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()</code>
+</pre>
+          </div>
+          <p>El bucle principal se ejecuta continuamente:</p>
+          <ul>
+            <li>línea 22: La variable lógica <i>jugando</i> controlará la repetición dle bucle. Inicialmente, la variable tiene el valor <span class="idle-rese">True</span>.</li>
+            <li>línea 23: Mientras se mantenga ese valor, el bucle se repetirá.</li>
+            <li>línea 24: En cada iteración pintamos la pantalla de blanco para borrar los elementos de la imagen anterior (en este programa todavía no ha elementos, pero podemos añadir ya esta instrucción).</li>
+            <li>líneas 26 a 28: Las pulsaciones de tecla o del ratón se reciben en forma de <i>eventos</i>.
+              <ul>
+                <li>línea 26: El bucle <span class="idle-rese">for</span> recorre en cada iteración los eventos recibidos</li>
+                <li>línea 27: Si el evento es de tipo QUIT (es decir, que se ha cerrado la ventana del juego) ...</li>
+                <li>línea 28: La variable <i>jugando</i> pasa a <span class="idle-rese">False</span>, por lo que el bucle <span class="idle-rese">while</span> no se volverá a ejecutar.</li>
+              </ul>
+            </li>
+            <li>línea 30: Todos lo elementos de la pantalla se vuelven a dibujar (en este programa todavía no ha elementos, pero podemos añadir ya esta instrucción).</li>
+            <li>línea 31: Con esta instrucción pygame comprueba que la ejecución se mantiene en el número de FPS y no va demasiado rápida.</li>
+            <li>línea 33: Si hemos salido del bucle es que se ha cerrado la ventana, así que con esta instrucción le pedimos a pygame que cierre todos sus procesos.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-2">
+      <h3>Paso 2: Clase PelotaPong</h3>
+
+      <p>El primer elemento del juego que programaremos será la pelota. Para definir la pelota crearemos una clase a la que llamaremos PelotaPong. Las clases son propias de la programación orientada a objetos y permiten ampliar los tipos de datos del lenguaje. Una vez definida la clase, podemos crear tantas variables de esa clase como queramo (por ejemplo, una o varias pelotas, en el caso de que quisieramos jugar con varias pelotas a la vez).</p>
+
+      <p>El siguiente programa dibuja una pelota cuadrada de color rojo en el centro de la ventana y la desplaza en línea recta en una de las cuatro direcciones diagonales. Cuando llega al borde de la ventana, la pelota deja de verse aunque sigue moviéndose indefinidamente en la misma dirección.</p>
+
+      <p>Para situar los objetos en la ventana pygame utiliza un sistema de coordenadas cartesiana en el que el origen se encuentran en la esquina superior izquierda de la ventana y en el que el eje vertical está dirigido hacia abajo. De esta manera, los valores de las coordenadas serán siempre positivos: cuanto mayor sea la coordenada <i>x</i> más a la derecha estará el objeto y cuanto mayor sea la coordenada <i>y</i> más hacia abajo estará el objeto. Si se asignan valores negativos o mayores que el tamaño de la ventana, no se produce ningún error, pero el objeto simplemente no se verá (dependiendo del tamaño que tenga y de los valores utilizados, el objeto puede verse parcialmente).</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_2.py: Clase PelotaPong
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 2")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 1 son las siguientes:</p>
+      <ul>
+        <li>Importación de módulos
+          <div class="codigo">
+            <pre class="line-numbers" data-start="3">
+<code class="language-python">import random</code>
+</pre>
+          </div>
+
+          <p>Importamos el módulo random, que utilizaremos en el programa.</p>
+
+        </li>
+        <li>Clase PelotaPong
+          <div class="codigo">
+            <pre class="line-numbers" data-start="14">
+<code class="language-python">class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y</code>
+</pre>
+          </div>
+          <p>En la definición de una clase se definen los atributos y los métodos de la clase. Los atributos son variables que van asociadas automáticamente a los objetos. Los métodos son funciones que se pueden aplicar a los objetos. En la definición de la clase para hacer referencia a que los atributos son los del propio objeto se indica con <i>self</i>.</p>
+          <ul>
+            <li>La función <i>__init__()</i> es la función que se ejecuta automáticamente cuando se cree un objeto de la clase. Por eso, aprovechamos esta función para definir los atributos de la clase. En el caso de la pelota de este juego, sus atributos serán: la imagen que se muestra en la pantalla, su tamaño, la posición en la pantalla y la dirección del movimiento:
+              <ul>
+                <li>Todos los métodos incluyen el argumento <i>self</i> que hace referencia al propio objeto. En este caso, también añadimos el argumento <i>imagen</i> que indicará el camino hasta el fichero de imagen de la pelota:
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="15">
+<code class="language-python">    def __init__(self, imagen):</code>
+</pre>
+                  </div>
+                </li>
+                <li>Un atributo de la clase será <i>imagen</i>, que cargará el fichero con la imagen:
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="19">
+<code class="language-python">        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()</code>
+</pre>
+                  </div>
+                </li>
+                <li>Otros dos atributos serán el ancho y alto de la imagen, <i>ancho</i> y <i>alto</i> que se obtienen a partir del atributo <i>imagen</i> con el método <i>get_size()</i>:
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="22">
+<code class="language-python">        self.ancho, self.alto = self.imagen.get_size()</code>
+</pre>
+                  </div>
+                </li>
+                <li>Dos atributos más serán la posición horizontal y vertical de la imagen, <i>x</i> e <i>y</i>. Inicialmente, queremos que la pelota se dibuje en el centro de la pantalla. Para ello, tenemos que tener en cuenta que cuando indicamos la posición de un objeto, estamos indicando la posición de la esquina superior izquierda de su imagen. Si el objeto es muy pequeño, no se notará la diferencia, pero lo mejor es tener en cuenta el ancho y alto del objeto, restando la mitad del tamaño del objeto a la posición del centro de la ventana.
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="25">
+<code class="language-python">        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.ancho / 2</code>
+</pre>
+                  </div>
+                </li>
+                <li>Dos atributos más serán la dirección horizontal y vertical de movimiento de la imagen, <i>dir_x</i> y <i>dir_y</i>. Numéricamente, serán los píxeles que se desplazará la pelota cada vez que se redibuje la pantalla.Inicialmente, la pelota se desplazará 5px aleatoriamente hacia arriba (-5) o hacia abajo (5), hacia la izquierda (-5) o hacia la derecha (5):
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="29">
+<code class="language-python">        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])</code>
+</pre>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>La función mover() es la función que define cómo se mueve la pelota. En este caso, simplemente añadimos a las posiciones los valores de las direcciones. Esta función sólo se ejecutará cuando la llamemos en el cuerpo del programa.
+              <div class="codigo">
+                <pre class="line-numbers" data-start="32">
+<code class="language-python">    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Creación de la pelota
+          <p>Una vez definida una clase, en el cuerpo del programa podemos crear objetos (es decir, variables) de esa clase. En este caso, creamos la variable <i>pelota</i> de la clase <i>PelotaPong</i>. Esta variable automáticamente tendrá los atributos definidos en la clase (imagen, tamaño, posición, dirección) y se le podrán aplicar los métodos definidos en la clase (<i>mover()</i>). Al crear la variable le debemos indicar el fichero de imagen a utilizar, en este caso una imagen png.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="45">
+<code class="language-python">    pelota = PelotaPong("bola_roja.png")</code>
+</pre>
+          </div>
+        </li>
+        <li>Mover la pelota
+          <p>Para que la pelota se mueva y se dibuje en la pantalla, en el bucle principal del programa debemos:</p>
+          <ul>
+            <li>Llamar al método <i>mover()</i>, para que se modifique la posición de la pelota (es decir sus atributos <i>x</i> e <i>y</i>):
+              <div class="codigo">
+                <pre class="line-numbers" data-start="50">
+<code class="language-python">        pelota.mover()</code>
+</pre>
+              </div>
+            </li>
+            <li>Dibujar la pelota en su posición en la ventana. Para ello recurrimos al método <i>bit()</i> del objeto ventana, indicando la imagen que queremos dibujar y su posición en la ventana:
+              <div class="codigo">
+                <pre class="line-numbers" data-start="53">
+<code class="language-python">        ventana.blit(pelota.imagen, (pelota.x, pelota.y))</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-3">
+      <h3>Paso 3: Rebote de la pelota</h3>
+
+      <p>En este paso mejoraremos el comportamiento de la pelota haciendo que la pelota rebote al chocar con los cuatro lados de la ventana. Para ello, añadiremos un nuevo método a la clase (<i>rebotar_paredes()</i>) que utilizaremos en el bucle principal del programa.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_3.py: Rebote de la pelota
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.dir_x = -self.dir_x
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.dir_x = -self.dir_x
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 3")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 2 son las siguientes:</p>
+      <ul>
+        <li>Método <i>rebotar_paredes()</i>:
+          <p>Para conseguir que la pelota rebote contra las paredes, basta con detectar cuando la pelota llega al borde de la ventana y en ese momento cambiar la dirección del movimiento.</p>
+          <ul>
+            <li>Al comprobar si se ha llegado al borde, es mejor hacer las comparaciones utilizando desigualdades (&gt; o &lt;) en vez de igualdades (==), ya que la pelota se desplaza varios píxeles a cada paso y podría saltarse el valor límite. Al escribir desigualdades, nos aseguramos de que detectamos si se supera el valor límite.</li>
+            <li>Como se ha comentado al colocar la pelota en el centro de la pantalla, la posición de un objeto corresponde a la posición de la esquina superior izquierda de la imagen. Por ello no es lo mismo detectar que se ha llegado al lado izquierdo de la ventana que al derecho. En el lado izquierdo podemos comparar la posición con el valor límite (0), pero en el lado derecho tenemos que tener en cuenta el ancho de la imagen. Ocurre lo mismo con los lados de arriba y de abajo.</li>
+            <li>Cuando se choca con los lados derecho e izquierdo, sólo hay que cambiar la dirección horizontal de movimiento, mientras que cuando se choca con los lados de arriba y de abajo, sólo hay que cambiar la dirección vertical.</li>
+          </ul>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="36">
+<code class="language-python">    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.dir_x = -self.dir_x
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.dir_x = -self.dir_x
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y</code>
+</pre>
+          </div>
+        </li>
+        <li>Comprobación del rebote:
+          <p>Para que el programa compruebe si se debe producir un rebote basta con llamar al método en el bucle principal del programa:</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="61">
+<code class="language-python">    pelota.rebotar_paredes()</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-4">
+      <h3>Paso 4: Reiniciar pelota al salir por los lados izquierdo y derecho</h3>
+
+      <p>Realmente, en el juego de Pong la pelota no debe rebotar en todos los lados, como hacía en el programa anterior. Únicamente debe rebotar arriba y abajo. Si la pelota llega a alguno de los lados, significará que uno de los jugadores no ha devuelto la pelota. En ese caso, el jugador habrá perdido un punto y la pelota debe volver a lanzarse desde el centro (en dirección al jugador que ha ganado el punto, por ejemplo).</p>
+
+      <p>En este paso, modificaremos el método <i>rebotar_paredes()</i> y añadiremos un método <i>reiniciar()</i> para conseguir el comportamiento comentado en el párrafo anterior.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_4.py: Reiniciar pelota al salir por los lados
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 4")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 3 son las siguientes:</p>
+      <ul>
+        <li>Método <i>reiniciar()</i>:
+          <p>Cuando la pelota se salga por los lados izquierdo y derecho, debe volver al centro, moviéndose en dirección contraria a la que tenía antes. para ello creamos un método <i>reiniciar()</i> que modifica los atributos de posición y dirección de movimiento.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="46">
+<code class="language-python">    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])</code>
+</pre>
+          </div>
+        </li>
+        <li>Método <i>rebotar_paredes()</i>:
+          <p>Modificamos el método <i>rebotar_paredes()</i>, de manera que cuando detecte que la pelota ha salido por los lados derecho e izquierdo, llame al método <i>reiniciar()</i>.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="36">
+<code class="language-python">    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-5">
+      <h3>Paso 5: Clase RaquetaPong</h3>
+
+      <p>Añadiremos ahora las raquetas. Para ello definiremos una clase <i>RaquetaPong</i>, similar a <i>PelotaPong</i> y crearemos dos variables de esa clase.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_5.py: Clase RaquetaPong
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 5")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 4 son las siguientes:</p>
+      <ul>
+        <li>Clase RaquetaPong
+          <div class="codigo">
+            <pre class="line-numbers" data-start="53">
+<code class="language-python">class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y</code>
+</pre>
+          </div>
+          <p>La clase <i>RaquetaPong</i> es muy similar a la clase <i>PelotaPong</i>.</p>
+          <ul>
+            <li>La función <i>__init__()</i> de la clase <i>RaquetaPong</i> es un poco más simple que la de la clase <i>PelotaPong</i>.
+              <ul>
+                <li>Las paletas utilizarán siempre la misma imagen, por lo que no incluiremos el camino al fichero como argumento de la clase.
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="54">
+<code class="language-python">    def __init__(self):</code>
+</pre>
+                  </div>
+                </li>
+                <li>El atributo <i>imagen</i> cargará el fichero con la imagen:
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="55">
+<code class="language-python">        self.imagen = pygame.image.load("raqueta.png").convert_alpha()</code>
+</pre>
+                  </div>
+                </li>
+                <li>El ancho y alto de la imagen, <i>ancho</i> y <i>alto</i> se obtienen a partir del atributo <i>imagen</i> con el método <i>get_size()</i>:
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="60">
+<code class="language-python">        self.ancho, self.alto = self.imagen.get_size()</code>
+</pre>
+                  </div>
+                </li>
+                <li>Las posiciones iniciales horizontal y vertical de la imagen, <i>x</i> e <i>y</i> que asignemos en la definición de la clase no es realmente importante, ya que cuando creemos las raquetas deberemos situarlas en posiciones distintas cambiando estos valores. Para ahorrarnos instrucciones en el cuerpo del programa, estableceremos la posición vertical centrada en la ventana (que es común a ambas raquetas).
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="63">
+<code class="language-python">        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2</code>
+</pre>
+                  </div>
+                </li>
+                <li>Como la raqueta sólo se desplaza en vertical, únicamente necesitamos el atributo <i>dir_y</i>, que guardará la dirección vertical de movimiento de la imagen. Numéricamente, serán los píxeles que se desplazará la raqueta. Inicialmente, la raqueta estará inmóvil (0):
+                  <div class="codigo">
+                    <pre class="line-numbers" data-start="67">
+<code class="language-python">        self.dir_y = 0</code>
+</pre>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>La función mover() es la función que define cómo se mueve la raqueta. Aunque la modificaremos en el paso siguiente, por el momento simplemente añadimos a la posición vertical el valor de la dirección vertical. Esta función sólo se ejecutará cuando la llamemos en el cuerpo del programa.
+              <div class="codigo">
+                <pre class="line-numbers" data-start="69">
+<code class="language-python">    def mover(self):
+        self.y += self.dir_y</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Crear las raquetas
+          <p>Una vez definida la clase, en el cuerpo del programa podemos crear objetos (es decir, variables) de esa clase. En este caso, creamos dos variables <i>raqueta_1</i> y <i>raqueta_2</i> de la clase <i>RaquetaPong</i> y modificamos sus atributos <i>x</i> para situarlas en posiciones distintas. Concretamente, las situamos a 60px de los lados izquierdo y derecho.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="83">
+<code class="language-python">    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho</code>
+</pre>
+          </div>
+        </li>
+        <li>Dibujar las raquetas
+          <p>Para que la pelota se mueva y se dibuje en la pantalla, en el bucle principal del programa debemos:</p>
+          <ul>
+            <li>Llamar al método <i>mover()</i>, para que se modifique la posición de la pelota (es decir sus atributos <i>x</i> e <i>y</i>):
+              <div class="codigo">
+                <pre class="line-numbers" data-start="50">
+<code class="language-python">        pelota.mover()</code>
+</pre>
+              </div>
+            </li>
+            <li>Dibujar las raquetas en sus posiciones en la ventana. Para ello recurrimos al método <i>bit()</i> del objeto ventana, indicando la imagen que queremos dibujar y su posición en la ventana:
+              <div class="codigo">
+                <pre class="line-numbers" data-start="97">
+<code class="language-python">        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de mayo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 13 de mayo de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
