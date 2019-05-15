@@ -33,8 +33,13 @@
             <li><a href="#programacion-3">3: Rebote de la pelota</a></li>
             <li><a href="#programacion-4">4: Reiniciar pelota al salir</a></li>
             <li><a href="#programacion-5">5: Clase RaquetaPong</a></li>
+            <li><a href="#programacion-6">6: Mover raqueta con teclas</a></li>
+            <li><a href="#programacion-7">7: Golpear pelota (humano)</a></li>
+            <li><a href="#programacion-8">8: Jugador IA</a></li>
+            <li><a href="#programacion-9">9: Mostrar puntuación</a></li>
           </ul>
         </li>
+        <li><a href="#pendiente">Detalles pendientes</a></li>
       </ul>
     </div>
   </nav>
@@ -97,6 +102,8 @@
 
   <section id="programacion">
     <h2>Realización del programa</h2>
+
+    <p>Vamos a programar un juego de Pong en el que una de las raquetas esté controlada por el jugador humano mediante el teclado y la otra raqueta esté contralada por el propio programa.</p>
 
     <p>Para la realización del juego Pong, iremos por fases, implementando en cada paso uno de los elementos del programa.</p>
 
@@ -355,7 +362,7 @@ if __name__ == "__main__":
           </div>
           <p>En la definición de una clase se definen los atributos y los métodos de la clase. Los atributos son variables que van asociadas automáticamente a los objetos. Los métodos son funciones que se pueden aplicar a los objetos. En la definición de la clase para hacer referencia a que los atributos son los del propio objeto se indica con <i>self</i>.</p>
           <ul>
-            <li>La función <i>__init__()</i> es la función que se ejecuta automáticamente cuando se cree un objeto de la clase. Por eso, aprovechamos esta función para definir los atributos de la clase. En el caso de la pelota de este juego, sus atributos serán: la imagen que se muestra en la pantalla, su tamaño, la posición en la pantalla y la dirección del movimiento:
+            <li>El método <i>__init__()</i> es la función que se ejecuta automáticamente cuando se cree un objeto de la clase. Por eso, aprovechamos este método para definir los atributos de la clase. En el caso de la pelota de este juego, sus atributos serán: la imagen que se muestra en la pantalla, su tamaño, la posición en la pantalla y la dirección del movimiento:
               <ul>
                 <li>Todos los métodos incluyen el argumento <i>self</i> que hace referencia al propio objeto. En este caso, también añadimos el argumento <i>imagen</i> que indicará el camino hasta el fichero de imagen de la pelota:
                   <div class="codigo">
@@ -396,7 +403,7 @@ if __name__ == "__main__":
                 </li>
               </ul>
             </li>
-            <li>La función mover() es la función que define cómo se mueve la pelota. En este caso, simplemente añadimos a las posiciones los valores de las direcciones. Esta función sólo se ejecutará cuando la llamemos en el cuerpo del programa.
+            <li>El método <i>mover()</i> es la función que define cómo se mueve la pelota. En este caso, simplemente añadimos a las posiciones los valores de las direcciones. Este método sólo se ejecutará cuando la llamemos en el cuerpo del programa.
               <div class="codigo">
                 <pre class="line-numbers" data-start="32">
 <code class="language-python">    def mover(self):
@@ -689,7 +696,7 @@ if __name__ == "__main__":
     <section id="programacion-5">
       <h3>Paso 5: Clase RaquetaPong</h3>
 
-      <p>Añadiremos ahora las raquetas. Para ello definiremos una clase <i>RaquetaPong</i>, similar a <i>PelotaPong</i> y crearemos dos variables de esa clase.</p>
+      <p>En este paso añadiremos las raquetas. Para ello definiremos una clase <i>RaquetaPong</i>, similar a <i>PelotaPong</i> y crearemos dos variables de esa clase.</p>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -779,7 +786,7 @@ def main():
     raqueta_1.x = 60
 
     raqueta_2 = RaquetaPong()
-    raqueta_2.x = VENTANA_HORI - 60
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho
 
     # Bucle principal
     jugando = True
@@ -834,7 +841,7 @@ if __name__ == "__main__":
           </div>
           <p>La clase <i>RaquetaPong</i> es muy similar a la clase <i>PelotaPong</i>.</p>
           <ul>
-            <li>La función <i>__init__()</i> de la clase <i>RaquetaPong</i> es un poco más simple que la de la clase <i>PelotaPong</i>.
+            <li>El método <i>__init__()</i> de la clase <i>RaquetaPong</i> es un poco más simple que el de la clase <i>PelotaPong</i>.
               <ul>
                 <li>Las paletas utilizarán siempre la misma imagen, por lo que no incluiremos el camino al fichero como argumento de la clase.
                   <div class="codigo">
@@ -874,7 +881,7 @@ if __name__ == "__main__":
                 </li>
               </ul>
             </li>
-            <li>La función mover() es la función que define cómo se mueve la raqueta. Aunque la modificaremos en el paso siguiente, por el momento simplemente añadimos a la posición vertical el valor de la dirección vertical. Esta función sólo se ejecutará cuando la llamemos en el cuerpo del programa.
+            <li>El método <i>mover()</i> es la función que define cómo se mueve la raqueta. Aunque lo modificaremos en el paso siguiente, por el momento simplemente añadimos a la posición vertical el valor de la dirección vertical.
               <div class="codigo">
                 <pre class="line-numbers" data-start="69">
 <code class="language-python">    def mover(self):
@@ -897,20 +904,880 @@ if __name__ == "__main__":
           </div>
         </li>
         <li>Dibujar las raquetas
-          <p>Para que la pelota se mueva y se dibuje en la pantalla, en el bucle principal del programa debemos:</p>
+          <p>Para ello recurrimos al método <i>bit()</i> del objeto ventana, indicando la imagen que queremos dibujar y su posición en la ventana:</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="97">
+<code class="language-python">        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-6">
+      <h3>Paso 6: Mover raqueta con teclado</h3>
+
+      <p>En este paso, añadiremos el movimiento de la raqueta del jugador humano.</p>
+
+      <p>El jugador humano va a controlar su raqueta (por ejemplo, la raqueta <i>raqueta_1</i>) mediante el teclado, concretamente la raqueta subirá al pulsar la tecla "w" y la raqueta "bajará" al pulsar la tecla "s". Para ello, no es necesario modificar la clase, pero en el bucle principal del programa tenemos que detectar la pulsación (y liberación) de las teclas y modificiar el atributo de dirección del movimiento.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_6.py: Mover raqueta con teclado
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y
+        if self.y &lt;= 0:
+            self.y = 0
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.y = VENTANA_VERT - self.alto
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 6")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+        raqueta_1.mover()
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+            # Detecta que se ha pulsado una tecla
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = -5
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 5
+
+            # Detecta que se ha soltado la tecla
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 0
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 5 son las siguientes:</p>
+      <ul>
+        <li>Mover la raqueta
           <ul>
-            <li>Llamar al método <i>mover()</i>, para que se modifique la posición de la pelota (es decir sus atributos <i>x</i> e <i>y</i>):
+            <li>Añadimos en el bucle principal del programa la llamada al método <i>mover()</i> de la raqueta.
               <div class="codigo">
-                <pre class="line-numbers" data-start="50">
-<code class="language-python">        pelota.mover()</code>
+                <pre class="line-numbers" data-start="98">
+<code class="language-python">        raqueta_1.mover()</code>
 </pre>
               </div>
             </li>
-            <li>Dibujar las raquetas en sus posiciones en la ventana. Para ello recurrimos al método <i>bit()</i> del objeto ventana, indicando la imagen que queremos dibujar y su posición en la ventana:
+            <li>Ahora que la raqueta se mueve, debemos impedir que se salga de la ventana. Para añadiremos en el método <i>mover()</i> dos condiciones que detecten si la raqueta se está saliendo (por arriba o por abajo).
               <div class="codigo">
-                <pre class="line-numbers" data-start="97">
-<code class="language-python">        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
-        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))</code>
+                <pre class="line-numbers" data-start="69">
+<code class="language-python">    def mover(self):
+        self.y += self.dir_y
+        if self.y &lt;= 0:
+            self.y = 0
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.y = VENTANA_VERT - self.alto</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Detectar las pulsaciones de teclado
+          <p>Para pygame, las pulsaciones de teclado son eventos. Cuando se pulsa una tecla, pygame crea un evento <i>pygame.KEYDOWN</i> y guarda la tecla pulsada en <i>event.key</i>. Cuando se libera una tecla, pygame crea un evento <i>pygame.KEYUP</i> y guarda la tecla pulsada en <i>event.key</i>. Por ello, en el bucle <span class="idle-rese">for</span> que recorre los eventos detectados añadiremos la comprobación de los eventos y la modificación del atributo <i>dir_y</i> de dirección del movimiento.</p>
+          <ul>
+            <li>línea 99-100: Si se ha pulsado la tecla "w", daremos un valor negativo (por ejemplo, -5) al atributo <i>dir_y</i>, para que la raqueta se desplace hacia arriba.</li>
+            <li>línea 101-102: Si se ha pulsado la tecla "s", daremos un valor positivo (por ejemplo, 5) al atributo <i>dir_y</i>, para que la raqueta se desplace hacia abajo.</li>
+            <li>líneas 106-109: Si se libewran las teclas "s" y "w", daremos un valor nulo (0) al atributo <i>dir_y</i>, para detener la raqueta.</li>
+          </ul>
+
+          <div class="codigo">
+            <pre class="line-numbers" data-start="109">
+<code class="language-python">            # Detecta que se ha pulsado una tecla
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = -5
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 5
+
+            # Detecta que se ha soltado la tecla
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 0</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-7">
+      <h3>Paso 7: Golpear la pelota con la raqueta</h3>
+
+      <p>En este paso, añadiremos el golpe de la raqueta del jugador humano a la pelota.</p>
+
+      <p>Para ello, crearemos el método <i>golpear_raqueta()</i> en la clase <i>RaquetaPong</i> y en el bucle principal llamaremos al método.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_7.py: Golpe raqueta jugador humano
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y
+        if self.y &lt;= 0:
+            self.y = 0
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.y = VENTANA_VERT - self.alto
+
+    def golpear(self, pelota):
+        if (
+            pelota.x &lt; self.x + self.ancho
+            and pelota.x &gt; self.x
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x + self.ancho
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 7")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+        raqueta_1.mover()
+        raqueta_1.golpear(pelota)
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+            # Detecta que se ha pulsado una tecla
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = -5
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 5
+
+            # Detecta que se ha soltado la tecla
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 0
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 6 son las siguientes:</p>
+      <ul>
+        <li>Método <i>golpear()</i>
+          <p>Este golpe es quizás el punto más complicado del programa.</p>
+          <ul>
+            <li>líneas 78 a 18: En principio, el golpe se produce cuando la raqueta y la pelota están en contacto y el resultado del golpe es que la pelota debe cambiar de dirección de movimiento horizontal.</li>
+            <li>líneas 83 y 84: Para evitar que el programa detecte colisión en dos o más iteraciones consecutivas (lo que provocaría cambios continuos de dirección, es decir, el zigzazeo de la pelota), además de cambiar la dirección de movimiento de la pelota, desplazaremos explícitamente la pelota fuera de la raqueta.</li>
+            <li>Un detalle que no tiene en cuenta el programa es cuando la raqueta golpea verticalmente la pelota, es decir, cuando la golpea desde abajo o desde arriba cuando está pasando. Tal y como está redactado el programa, este golpe produce la devolución de la pelota, cuando realmente no debería hacerlo.</li>
+          </ul>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="76">
+<code class="language-python">    def golpear(self, pelota):
+        if (
+            pelota.x &lt; self.x + self.ancho
+            and pelota.x &gt; self.x
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x + self.ancho</code>
+</pre>
+          </div>
+        </li>
+        <li>Detectar el golpe de la pelota
+          <p>Añadimos en el bucle principal del programa la llamada al método <i>golpear()</i> de la raqueta del jugador humano.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="109">
+<code class="language-python">        raqueta_1.golpear(pelota)</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-8">
+      <h3>Paso 8: Raqueta controlada por el ordenador</h3>
+
+      <p>En este paso, añadiremos el control de la raqueta del jugador controlado por el propio programa.</p>
+
+      <p>Para ello, crearemos los método <i>mover_raqueta_ia()</i> y <i>golpear_raqueta_ia()</i> en la clase <i>RaquetaPong</i> y en el bucle principal llamaremos a estos métodos.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_8.py: Jugador controlado por el programa (IA)
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y
+        if self.y &lt;= 0:
+            self.y = 0
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.y = VENTANA_VERT - self.alto
+
+    def mover_ia(self, pelota):
+        if self.y &gt; pelota.y:
+            self.dir_y = -3
+        elif self.y &lt; pelota.y:
+            self.dir_y = 3
+        else:
+            self.dir_y = 0
+
+        self.y += self.dir_y
+
+    def golpear(self, pelota):
+        if (
+            pelota.x &lt; self.x + self.ancho
+            and pelota.x &gt; self.x
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x + self.ancho
+
+    def golpear_ia(self, pelota):
+        if (
+            pelota.x + pelota.ancho &gt; self.x
+            and pelota.x &lt; self.x + self.ancho
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x - pelota.ancho
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 8")
+
+    pelota = PelotaPong("bola_roja.png")
+
+    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+        raqueta_1.mover()
+        raqueta_2.mover_ia(pelota)
+        raqueta_1.golpear(pelota)
+        raqueta_2.golpear_ia(pelota)
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+            # Detecta que se ha pulsado una tecla
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = -5
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 5
+
+            # Detecta que se ha soltado la tecla
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_w:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_s:
+                    raqueta_1.dir_y = 0
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 7 son las siguientes:</p>
+      <ul>
+        <li>Método <i>mover_ia()</i>
+          <p>El ordenador seguirá la siguiente estrategia para mover la raqueta.</p>
+          <ul>
+            <li>líneas 77 a 78: Si la raqueta se encuentra por debajo de la pelota, la raqueta se desplazará hacia arriba (dando un valor negativo a <i>dir_y</i>).</li>
+            <li>líneas 79 a 80: Si la raqueta se encuentra por encima de la pelota, la raqueta se desplazará hacia abajo (dando un valor positivo a <i>dir_y</i>).</li>
+            <li>líneas 81 a 82: Si la raqueta está a la altura de la pelota, la raqueta se detendrá (dando un valor nulo a <i>dir_y</i>).</li>
+            <li>línea 76: como el método necesita conocer la posición de la pelota, incluimos la pelota como argumento del método.</li>
+          </ul>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="76">
+<code class="language-python">    def mover_ia(self, pelota):
+        if self.y &gt; pelota.y:
+            self.dir_y = -3
+        elif self.y &lt; pelota.y:
+            self.dir_y = 3
+        else:
+            self.dir_y = 0
+
+        self.y += self.dir_y</code>
+</pre>
+          </div>
+        </li>
+        <li>Método <i>golpear_ia()</i>
+          <p>Este método es como el método <i>golpear()</i> del jugador humano, pero teniendo en cuenta que la pelota se acerca por el lado izquierdo de la raqueta en vez de por el derecho.</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="96">
+<code class="language-python">    def golpear_ia(self, pelota):
+        if (
+            pelota.x + pelota.ancho &gt; self.x
+            and pelota.x &lt; self.x + self.ancho
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x - pelota.ancho</code>
+</pre>
+          </div>
+        </li>
+        <li>Mover la raqueta y detectar el golpe de la pelota
+          <p>Añadimos en el bucle principal del programa las llamadas a los métodos <i>mover_ia()</i> y <i>golpear_ia()</i> de la raqueta del jugador controlado por el propio programa (líneas 129 y 131).</p>
+          <div class="codigo">
+            <pre class="line-numbers" data-start="128">
+<code class="language-python">        raqueta_1.mover()
+        raqueta_2.mover_ia(pelota)
+        raqueta_1.golpear(pelota)
+        raqueta_2.golpear_ia(pelota)</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="programacion-9">
+      <h3>Paso 9: Mostrar puntuación</h3>
+
+      <p>En este útlimo paso, añadiremos la puntuación de la partida.</p>
+
+      <p>Para ello, crearemos unos contadores que se actualizarán al ganar uno de los dos jugadores y que se mostarán en la ventana.</p>
+
+      <div class="codigo">
+        <pre class="line-numbers">
+<code class="language-python"># pong_9.py: Mostrar puntuación de la partida
+
+import pygame
+from pygame.locals import *
+import random
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 800  # Ancho de la ventana
+VENTANA_VERT = 600  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)
+NEGRO = (0, 0, 0)  # Color del texto (RGB)
+
+
+class PelotaPong:
+    def __init__(self, fichero_imagen):
+        # --- Atributos de la Clase ---
+
+        # Imagen de la Pelota
+        self.imagen = pygame.image.load(fichero_imagen).convert_alpha()
+
+        # Dimensiones de la Pelota
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Pelota
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Pelota
+        self.dir_x = random.choice([-5, 5])
+        self.dir_y = random.choice([-5, 5])
+
+        # Puntuación de la pelota
+        self.puntuacion = 0
+        self.puntuacion_ia = 0
+
+    def mover(self):
+        self.x += self.dir_x
+        self.y += self.dir_y
+
+    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+            self.puntuacion_ia += 1
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+            self.puntuacion += 1
+        if self.y &lt;= 0:
+            self.dir_y = -self.dir_y
+        if self.y + self.alto &gt;= VENTANA_VERT:
+            self.dir_y = -self.dir_y
+
+    def reiniciar(self):
+        self.x = VENTANA_HORI / 2 - self.ancho / 2
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+        self.dir_x = -self.dir_x
+        self.dir_y = random.choice([-5, 5])
+
+
+class RaquetaPong:
+    def __init__(self):
+        self.imagen = pygame.image.load("raqueta.png").convert_alpha()
+
+        # --- Atributos de la Clase ---
+
+        # Dimensiones de la Raqueta
+        self.ancho, self.alto = self.imagen.get_size()
+
+        # Posición de la Raqueta
+        self.x = 0
+        self.y = VENTANA_VERT / 2 - self.alto / 2
+
+        # Dirección de movimiento de la Raqueta
+        self.dir_y = 0
+
+    def mover(self):
+        self.y += self.dir_y
+        if self.y &lt; 0:
+            self.y = 0
+        if self.y + self.alto &gt; VENTANA_VERT:
+            self.y = VENTANA_VERT - self.alto
+
+    def mover_ia(self, pelota):
+        if self.y &gt; pelota.y:
+            self.dir_y = -3
+        elif self.y &lt; pelota.y:
+            self.dir_y = 3
+        else:
+            self.dir_y = 0
+
+        self.y += self.dir_y
+
+    def golpear(self, pelota):
+        if (
+            pelota.x &lt; self.x + self.ancho
+            and pelota.x &gt; self.x
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x + self.ancho
+
+    def golpear_ia(self, pelota):
+        if (
+            pelota.x + pelota.ancho &gt; self.x
+            and pelota.x &lt; self.x + self.ancho
+            and pelota.y + pelota.alto &gt; self.y
+            and pelota.y &lt; self.y + self.alto
+        ):
+            pelota.dir_x = -pelota.dir_x
+            pelota.x = self.x - pelota.ancho
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Pong 9")
+
+    # Inicialización de la fuente
+    fuente = pygame.font.Font(None, 60)
+
+    pelota = PelotaPong("bola_roja.png")
+
+    raqueta_1 = RaquetaPong()
+    raqueta_1.x = 60
+
+    raqueta_2 = RaquetaPong()
+    raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        pelota.mover()
+        pelota.rebotar_paredes()
+        raqueta_1.mover()
+        raqueta_2.mover_ia(pelota)
+        raqueta_1.golpear(pelota)
+        raqueta_2.golpear_ia(pelota)
+
+        ventana.fill(BLANCO)
+        ventana.blit(pelota.imagen, (pelota.x, pelota.y))
+        ventana.blit(raqueta_1.imagen, (raqueta_1.x, raqueta_1.y))
+        ventana.blit(raqueta_2.imagen, (raqueta_2.x, raqueta_2.y))
+
+        texto = f"{pelota.puntuacion} : {pelota.puntuacion_ia}"
+        letrero = fuente.render(texto, False, NEGRO)
+        ventana.blit(letrero, (VENTANA_HORI / 2 - fuente.size(texto)[0] / 2, 50))
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+            # Detecta que se ha pulsado una tecla
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    raqueta_1.dir_y = -5
+                if event.key == pygame.K_DOWN:
+                    raqueta_1.dir_y = 5
+
+            # Detecta que se ha soltado la tecla
+            if event.type == pygame.KEYUP:
+                if event.key == pygame.K_UP:
+                    raqueta_1.dir_y = 0
+                if event.key == pygame.K_DOWN:
+                    raqueta_1.dir_y = 0
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
+      <p>Las instrucciones añadidas con respecto al paso 8 son las siguientes:</p>
+      <ul>
+        <li>Puntuación de los jugadores
+          <p>Para guardar y actualizar la puntuación de los jugadores, añadimos las siguientes instrucciones:</p>
+          <ul>
+            <li>Atributos <i>puntuacion</i>
+              <p>Añadimos dos atributos más en la clase <i>PelotaPong</i>, <i>puntuacion</i> y <i>puntuacion_ia</i> para guardar las puntuaciones de cada jugador.</p>
+              <div class="codigo">
+                <pre class="line-numbers" data-start="33">
+<code class="language-python">        # Puntuación de la pelota
+        self.puntuacion = 0
+        self.puntuacion_ia = 0</code>
+</pre>
+              </div>
+            </li>
+            <li>Modificar la puntuación
+              <p>La puntuación debe modificarse cuando un jugador gana, es decir, cuando la pelota supera uno de los laterales. El programa detecta esa situación en el método <i>rebotar_paredes</i> de <i>PelotaPong</i>, así que añadimos en ese método las líneas 44 y 47.</p>
+              <div class="codigo">
+                <pre class="line-numbers" data-start="41">
+<code class="language-python">    def rebotar_paredes(self):
+        if self.x &lt;= 0:
+            self.reiniciar()
+            self.puntuacion_ia += 1
+        if self.x + self.ancho &gt;= VENTANA_HORI:
+            self.reiniciar()
+            self.puntuacion += 1</code>
+</pre>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>Para mostrar en la ventana la puntuación de ambos jugadores, añadimos las siguientes instrucciones:
+          <ul>
+            <li>Color del texto
+              <p>Definimos el color NEGRO como constante:</p>
+              <div class="codigo">
+                <pre class="line-numbers" data-start="12">
+<code class="language-python">NEGRO = (0, 0, 0)  # Color del texto (RGB)</code>
+</pre>
+              </div>
+            </li>
+            <li>Definición del tamaño de fuente
+              <p>Creamos un objeto de clase <i>Font</i> en el que definimos el tamaño del tipo de letra (con el primer argumento podríamos elegir un tipo de letra determinado, en este caso no indicamos ninguno y por tanto pygame usará el predeterminado)</p>
+              <div class="codigo">
+                <pre class="line-numbers" data-start="122">
+<code class="language-python">    # Inicialización de la fuente
+    fuente = pygame.font.Font(None, 60)</code>
+</pre>
+              </div>
+            </li>
+            <li>Escritura en la pantalla
+              <p>Para escribir la puntuación:</p>
+              <ul>
+                <li>línea 148: Creamos una variable con el texto a mostrar</li>
+                <li>línea 149: Creamos la superficie de dibujo con el texto e indicamos el color del texto.</li>
+                <li>línea 150: Dibujamos la superficie, indicando la posición (<i>x</i>, <i>y</i>). Como la posición es siempre la esquina superior izquierda, tenemos que desplazar la posición horizontal hacia la izquierda teniendo en cuenta el tamaño.</li>
+              </ul>
+              <div class="codigo">
+                <pre class="line-numbers" data-start="148">
+<code class="language-python">        texto = f"{pelota.puntuacion} : {pelota.puntuacion_ia}"
+        letrero = fuente.render(texto, False, NEGRO)
+        ventana.blit(letrero, (VENTANA_HORI / 2 - fuente.size(texto)[0] / 2, 50))</code>
 </pre>
               </div>
             </li>
@@ -920,8 +1787,20 @@ if __name__ == "__main__":
     </section>
   </section>
 
+  <section id="pendiente">
+    <h2>Detalles pendientes</h2>
+
+    <p>Estos son los aspectos pendientes de completar en el programa:</p>
+
+    <ul>
+      <li>En el programa actual, la raqueta puede golpear a la pelota verticalmente (desde arriba o desde abajo) y la pelota se devuelve, cuando lo que debería de hacer es cambiar de dirección vertical, pero no horizontal (y si la raqueta se mueve más rápido que la pelota en la misma dirección, no debería cambiar de dirección porque estaría empujándola).</li>
+    </ul>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de mayo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 15 de mayo de 2019</p>
+
+    <p><strong>Nota:</strong> Esta lección se basa en las actividades preparadas e impartidas por Daniel Benzal García, alumno del Máster de Secundaria, para sus prácticas del Máster realizadas en el curso 208/19 y al que agradezco su excelente disposición, trabajo y colaboración.</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
