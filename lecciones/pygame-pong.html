@@ -1613,9 +1613,9 @@ class RaquetaPong:
 
     def mover(self):
         self.y += self.dir_y
-        if self.y &lt; 0:
+        if self.y &lt;= 0:
             self.y = 0
-        if self.y + self.alto &gt; VENTANA_VERT:
+        if self.y + self.alto &gt;= VENTANA_VERT:
             self.y = VENTANA_VERT - self.alto
 
     def mover_ia(self, pelota):
@@ -1693,16 +1693,16 @@ def main():
 
             # Detecta que se ha pulsado una tecla
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_w:
                     raqueta_1.dir_y = -5
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_s:
                     raqueta_1.dir_y = 5
 
             # Detecta que se ha soltado la tecla
             if event.type == pygame.KEYUP:
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_w:
                     raqueta_1.dir_y = 0
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_s:
                     raqueta_1.dir_y = 0
 
         pygame.display.flip()
@@ -1798,7 +1798,7 @@ if __name__ == "__main__":
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de mayo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de mayo de 2019</p>
 
     <p><strong>Nota:</strong> Esta lección se basa en las actividades preparadas e impartidas por Daniel Benzal García, alumno del Máster de Secundaria, para sus prácticas del Máster realizadas en el curso 208/19 y al que agradezco su excelente disposición, trabajo y colaboración.</p>
 
