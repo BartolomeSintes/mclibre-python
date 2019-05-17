@@ -447,7 +447,7 @@ if __name__ == "__main__":
     <section id="programacion-3">
       <h3>Paso 3: Rebote de la pelota</h3>
 
-      <p>En este paso mejoraremos el comportamiento de la pelota haciendo que la pelota rebote al chocar con los cuatro lados de la ventana. Para ello, añadiremos un nuevo método a la clase (<i>rebotar_paredes()</i>) que utilizaremos en el bucle principal del programa.</p>
+      <p>En este paso mejoraremos el comportamiento de la pelota haciendo que la pelota rebote al chocar con los cuatro lados de la ventana. Para ello, añadiremos un nuevo método a la clase (<i>rebotar()</i>) que utilizaremos en el bucle principal del programa.</p>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -486,7 +486,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.dir_x = -self.dir_x
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -511,7 +511,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
 
         ventana.fill(BLANCO)
         ventana.blit(pelota.imagen, (pelota.x, pelota.y))
@@ -533,7 +533,7 @@ if __name__ == "__main__":
 
       <p>Las instrucciones añadidas con respecto al paso 2 son las siguientes:</p>
       <ul>
-        <li>Método <i>rebotar_paredes()</i>:
+        <li>Método <i>rebotar()</i>:
           <p>Para conseguir que la pelota rebote contra las paredes, basta con detectar cuando la pelota llega al borde de la ventana y en ese momento cambiar la dirección del movimiento.</p>
           <ul>
             <li>Al comprobar si se ha llegado al borde, es mejor hacer las comparaciones utilizando desigualdades (&gt; o &lt;) en vez de igualdades (==), ya que la pelota se desplaza varios píxeles a cada paso y podría saltarse el valor límite. Al escribir desigualdades, nos aseguramos de que detectamos si se supera el valor límite.</li>
@@ -542,7 +542,7 @@ if __name__ == "__main__":
           </ul>
           <div class="codigo">
             <pre class="line-numbers" data-start="36">
-<code class="language-python">    def rebotar_paredes(self):
+<code class="language-python">    def rebotar(self):
         if self.x &lt;= 0:
             self.dir_x = -self.dir_x
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -558,7 +558,7 @@ if __name__ == "__main__":
           <p>Para que el programa compruebe si se debe producir un rebote basta con llamar al método en el bucle principal del programa:</p>
           <div class="codigo">
             <pre class="line-numbers" data-start="61">
-<code class="language-python">    pelota.rebotar_paredes()</code>
+<code class="language-python">    pelota.rebotar()</code>
 </pre>
           </div>
         </li>
@@ -570,7 +570,7 @@ if __name__ == "__main__":
 
       <p>Realmente, en el juego de Pong la pelota no debe rebotar en todos los lados, como hacía en el programa anterior. Únicamente debe rebotar arriba y abajo. Si la pelota llega a alguno de los lados, significará que uno de los jugadores no ha devuelto la pelota. En ese caso, el jugador habrá perdido un punto y la pelota debe volver a lanzarse desde el centro (en dirección al jugador que ha ganado el punto, por ejemplo).</p>
 
-      <p>En este paso, modificaremos el método <i>rebotar_paredes()</i> y añadiremos un método <i>reiniciar()</i> para conseguir el comportamiento comentado en el párrafo anterior.</p>
+      <p>En este paso, modificaremos el método <i>rebotar()</i> y añadiremos un método <i>reiniciar()</i> para conseguir el comportamiento comentado en el párrafo anterior.</p>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -609,7 +609,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -640,7 +640,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
 
         ventana.fill(BLANCO)
         ventana.blit(pelota.imagen, (pelota.x, pelota.y))
@@ -674,11 +674,11 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>Método <i>rebotar_paredes()</i>:
-          <p>Modificamos el método <i>rebotar_paredes()</i>, de manera que cuando detecte que la pelota ha salido por los lados derecho e izquierdo, llame al método <i>reiniciar()</i>.</p>
+        <li>Método <i>rebotar()</i>:
+          <p>Modificamos el método <i>rebotar()</i>, de manera que cuando detecte que la pelota ha salido por los lados derecho e izquierdo, llame al método <i>reiniciar()</i>.</p>
           <div class="codigo">
             <pre class="line-numbers" data-start="36">
-<code class="language-python">    def rebotar_paredes(self):
+<code class="language-python">    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -735,7 +735,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -792,7 +792,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
 
         ventana.fill(BLANCO)
         ventana.blit(pelota.imagen, (pelota.x, pelota.y))
@@ -959,7 +959,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -1020,7 +1020,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
         raqueta_1.mover()
 
         ventana.fill(BLANCO)
@@ -1155,7 +1155,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -1226,7 +1226,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
         raqueta_1.mover()
         raqueta_1.golpear(pelota)
 
@@ -1342,7 +1342,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
         if self.x + self.ancho &gt;= VENTANA_HORI:
@@ -1433,7 +1433,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
         raqueta_1.mover()
         raqueta_2.mover_ia(pelota)
         raqueta_1.golpear(pelota)
@@ -1576,7 +1576,7 @@ class PelotaPong:
         self.x += self.dir_x
         self.y += self.dir_y
 
-    def rebotar_paredes(self):
+    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
             self.puntuacion_ia += 1
@@ -1672,7 +1672,7 @@ def main():
     jugando = True
     while jugando:
         pelota.mover()
-        pelota.rebotar_paredes()
+        pelota.rebotar()
         raqueta_1.mover()
         raqueta_2.mover_ia(pelota)
         raqueta_1.golpear(pelota)
@@ -1732,10 +1732,10 @@ if __name__ == "__main__":
               </div>
             </li>
             <li>Modificar la puntuación
-              <p>La puntuación debe modificarse cuando un jugador gana, es decir, cuando la pelota supera uno de los laterales. El programa detecta esa situación en el método <i>rebotar_paredes</i> de <i>PelotaPong</i>, así que añadimos en ese método las líneas 44 y 47.</p>
+              <p>La puntuación debe modificarse cuando un jugador gana, es decir, cuando la pelota supera uno de los laterales. El programa detecta esa situación en el método <i>rebotar</i> de <i>PelotaPong</i>, así que añadimos en ese método las líneas 44 y 47.</p>
               <div class="codigo">
                 <pre class="line-numbers" data-start="41">
-<code class="language-python">    def rebotar_paredes(self):
+<code class="language-python">    def rebotar(self):
         if self.x &lt;= 0:
             self.reiniciar()
             self.puntuacion_ia += 1
