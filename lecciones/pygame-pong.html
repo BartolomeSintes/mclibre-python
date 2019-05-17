@@ -112,7 +112,11 @@
 
       <p>El juego se ejecutará en una ventana independiente. Para crear la ventana, necesitamos bastante código específico de pygame, que no es necesario conocer de memoria, ya que lo podemos reutilizar de un proyecto a otro.</p>
 
-      <p>El siguiente programa genera una ventana en blanco con el título del juego.</p>
+      <p>El siguiente programa genera una ventana en blanco con el título del juego, similar a la captura siguiente (la ventana está recortada en la captura).</p>
+
+      <p class="captura">
+        <img src="../img/pygame/pong-1-1.png" alt="Pygame - Pong 1" width="802" height="200">
+      </p>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -245,11 +249,27 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
     <section id="programacion-2">
       <h3>Paso 2: Clase PelotaPong</h3>
 
-      <p>El primer elemento del juego que programaremos será la pelota. Para definir la pelota crearemos una clase a la que llamaremos PelotaPong. Las clases son propias de la programación orientada a objetos y permiten ampliar los tipos de datos del lenguaje. Una vez definida la clase, podemos crear tantas variables de esa clase como queramo (por ejemplo, una o varias pelotas, en el caso de que quisieramos jugar con varias pelotas a la vez).</p>
+      <p>El primer elemento del juego que programaremos será la pelota. Para definir la pelota crearemos una clase a la que llamaremos PelotaPong. Las clases son propias de la programación orientada a objetos y permiten ampliar los tipos de datos del lenguaje. Una vez definida la clase, podemos crear tantas variables de esa clase como queramos (por ejemplo, una o varias pelotas, en el caso de que quisieramos jugar con varias pelotas a la vez).</p>
 
       <p>El siguiente programa dibuja una pelota cuadrada de color rojo en el centro de la ventana y la desplaza en línea recta en una de las cuatro direcciones diagonales. Cuando llega al borde de la ventana, la pelota deja de verse aunque sigue moviéndose indefinidamente en la misma dirección.</p>
 
-      <p>Para situar los objetos en la ventana pygame utiliza un sistema de coordenadas cartesiana en el que el origen se encuentran en la esquina superior izquierda de la ventana y en el que el eje vertical está dirigido hacia abajo. De esta manera, los valores de las coordenadas serán siempre positivos: cuanto mayor sea la coordenada <i>x</i> más a la derecha estará el objeto y cuanto mayor sea la coordenada <i>y</i> más hacia abajo estará el objeto. Si se asignan valores negativos o mayores que el tamaño de la ventana, no se produce ningún error, pero el objeto simplemente no se verá (dependiendo del tamaño que tenga y de los valores utilizados, el objeto puede verse parcialmente).</p>
+      <p class="captura">
+        <img src="../img/pygame/pong-1-2-1.png" alt="Pygame - Pong 2" width="802" height="200">
+      </p>
+
+      <p>Para situar los objetos en la ventana pygame utiliza un sistema de coordenadas cartesianas en el que el origen se encuentran en la esquina superior izquierda de la ventana y en el que el eje vertical está dirigido hacia abajo. De esta manera, los valores de las coordenadas serán siempre positivos: cuanto mayor sea la coordenada <i>x</i> más a la derecha estará el objeto y cuanto mayor sea la coordenada <i>y</i> más hacia abajo estará el objeto. Si se asignan valores negativos o mayores que el tamaño de la ventana, no se produce ningún error, pero el objeto simplemente no se verá (dependiendo del tamaño que tenga y de los valores utilizados, el objeto puede verse parcialmente).</p>
+
+      <p class="mcl-svg-figura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="815" height="200" viewBox="-10 -35 815 200" style="background-color: #eeeeee">
+          <image x="-1" y="-31" width="802" height="200" xlink:href="../img/pygame/pong-1-2-1.png" />
+          <line x1="-20" y1="0" x2="600" y2="0" stroke="red" stroke-width="1" />
+          <polyline points="590,5 600,0 590,-5" fill="none" stroke-width="1" stroke="red" />
+          <text x="580" y="25" font-family="sans-serif" font-size="20" fill="red">X</text>
+          <line x1="0" y1="-40" x2="0" y2="150" stroke="red" stroke-width="1" />
+          <polyline points="-5,140 0,150 5,140" fill="none" stroke-width="1" stroke="red" />
+          <text x="10" y="140" font-family="sans-serif" font-size="20" fill="red">Y</text>
+        </svg>
+      </p>
 
       <div class="codigo">
         <pre class="line-numbers">
@@ -537,9 +557,44 @@ if __name__ == "__main__":
           <p>Para conseguir que la pelota rebote contra las paredes, basta con detectar cuando la pelota llega al borde de la ventana y en ese momento cambiar la dirección del movimiento.</p>
           <ul>
             <li>Al comprobar si se ha llegado al borde, es mejor hacer las comparaciones utilizando desigualdades (&gt; o &lt;) en vez de igualdades (==), ya que la pelota se desplaza varios píxeles a cada paso y podría saltarse el valor límite. Al escribir desigualdades, nos aseguramos de que detectamos si se supera el valor límite.</li>
-            <li>Como se ha comentado al colocar la pelota en el centro de la pantalla, la posición de un objeto corresponde a la posición de la esquina superior izquierda de la imagen. Por ello no es lo mismo detectar que se ha llegado al lado izquierdo de la ventana que al derecho. En el lado izquierdo podemos comparar la posición con el valor límite (0), pero en el lado derecho tenemos que tener en cuenta el ancho de la imagen. Ocurre lo mismo con los lados de arriba y de abajo.</li>
+            <li>Como se ha comentado al colocar la pelota en el centro de la pantalla, la posición de un objeto corresponde a la posición de la esquina superior izquierda de la imagen. Por ello no es lo mismo detectar que se ha llegado al lado izquierdo de la ventana que al derecho. En el lado izquierdo podemos comparar la posición con el valor límite (0), pero en el lado derecho tenemos que tener en cuenta el ancho de la pelota. Ocurre lo mismo en vertical, puesto que abajo hay que tener en cuenta el alto de la pelota.</li>
             <li>Cuando se choca con los lados derecho e izquierdo, sólo hay que cambiar la dirección horizontal de movimiento, mientras que cuando se choca con los lados de arriba y de abajo, sólo hay que cambiar la dirección vertical.</li>
           </ul>
+
+          <p class="mcl-svg-figura">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="-10 -10 820 220" style="background-color: #eeeeee">
+              <rect x="0" y="0" width="800" height="200" fill="white" stroke-width="1" stroke="black" />
+
+              <rect x="0" y="100" width="25" height="25" fill="red" />
+              <circle cx="0" cy="100" r="3" fill="black" />
+              <text x="35" y="100" font-family="sans-serif" font-size="20" fill="black">self.x &lt; 0</text>
+              <polyline points="70,170 0,100 70,30" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="60,150 50,150 50,160" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="40,50 50,50 50,60" fill="none" stroke-width="1" stroke="black" />
+
+              <rect x="250" y="0" width="25" height="25" fill="red" />
+              <circle cx="250" cy="0" r="3" fill="black" />
+              <text x="210" y="70" font-family="sans-serif" font-size="20" fill="black">self.y &lt; 0</text>
+              <polyline points="180,70 250,0 320,70" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="200,40 210,40 210,50" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="280,40 290,40 290,30" fill="none" stroke-width="1" stroke="black" />
+
+              <rect x="450" y="175" width="25" height="25" fill="red" />
+              <circle cx="450" cy="175" r="3" fill="black" />
+              <text x="110" y="180" font-family="sans-serif" font-size="20" fill="black">self.y + self.alto &gt; VENTANA_VERT</text>
+              <polyline points="390,115 450,175 510,115" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="400,135 410,135 410,125" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="480,135 490,135 490,145" fill="none" stroke-width="1" stroke="black" />
+
+              <rect x="775" y="100" width="25" height="25" fill="red" />
+              <circle cx="775" cy="100" r="3" fill="black" />
+              <text x="420" y="100" font-family="sans-serif" font-size="20" fill="black">self.x + self.ancho &gt; VENTANA_HORI</text>
+              <polyline points="705,30 775,100 705,170" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="735,50 735,60 725,60" fill="none" stroke-width="1" stroke="black" />
+              <polyline points="735,130 735,140 745,140" fill="none" stroke-width="1" stroke="black" />
+            </svg>
+          </p>
+
           <div class="codigo">
             <pre class="line-numbers" data-start="36">
 <code class="language-python">    def rebotar(self):
@@ -1113,6 +1168,31 @@ if __name__ == "__main__":
 
     <section id="programacion-7">
       <h3>Paso 7: Golpear la pelota con la raqueta</h3>
+
+      <p class="mcl-svg-figura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="-10 -10 820 220" style="background-color: #eeeeee">
+          <rect x="0" y="0" width="800" height="200" fill="white" stroke-width="1" stroke="black" />
+
+          <rect x="60" y="60" width="20" height="75" fill="black" />
+          <circle cx="60" cy="60" r="3" fill="black" stroke-width="1" stroke="white" />
+
+          <rect x="80" y="35" width="25" height="25" fill="red" />
+          <circle cx="80" cy="35" r="3" fill="black" stroke-width="1" stroke="white" />
+          <polyline points="140,95 80,35 110,5" fill="none" stroke-width="1" stroke="black" />
+          <polyline points="115,80 115,70 125,70" fill="none" stroke-width="1" stroke="black" />
+          <polyline points="100,25 100,15 90,15" fill="none" stroke-width="1" stroke="black" />
+          <text x="120" y="30" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
+          <text x="120" y="55" font-family="sans-serif" font-size="20" fill="black">pelota.y + pelota.alto &gt; self.y</text>
+
+          <rect x="80" y="135" width="25" height="25" fill="red" />
+          <circle cx="80" cy="135" r="3" fill="black" stroke-width="1" stroke="white" />
+          <polyline points="140,195 80,135 140,75" fill="none" stroke-width="1" stroke="black" />
+          <polyline points="120,185 120,175 130,175" fill="none" stroke-width="1" stroke="black" />
+          <polyline points="110,115 110,105 100,105" fill="none" stroke-width="1" stroke="black" />
+          <text x="120" y="130" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
+          <text x="120" y="155" font-family="sans-serif" font-size="20" fill="black">pelota.y &lt; self.y + self.alto</text>
+        </svg>
+      </p>
 
       <p>En este paso, añadiremos el golpe de la raqueta del jugador humano a la pelota.</p>
 
@@ -1798,7 +1878,7 @@ if __name__ == "__main__":
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de mayo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 17 de mayo de 2019</p>
 
     <p><strong>Nota:</strong> Esta lección se basa en las actividades preparadas e impartidas por Daniel Benzal García, alumno del Máster de Secundaria, para sus prácticas del Máster realizadas en el curso 208/19 y al que agradezco su excelente disposición, trabajo y colaboración.</p>
 
