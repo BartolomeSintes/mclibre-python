@@ -1169,31 +1169,6 @@ if __name__ == "__main__":
     <section id="programacion-7">
       <h3>Paso 7: Golpear la pelota con la raqueta</h3>
 
-      <p class="mcl-svg-figura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="-10 -10 820 220" style="background-color: #eeeeee">
-          <rect x="0" y="0" width="800" height="200" fill="white" stroke-width="1" stroke="black" />
-
-          <rect x="60" y="60" width="20" height="75" fill="black" />
-          <circle cx="60" cy="60" r="3" fill="black" stroke-width="1" stroke="white" />
-
-          <rect x="80" y="35" width="25" height="25" fill="red" />
-          <circle cx="80" cy="35" r="3" fill="black" stroke-width="1" stroke="white" />
-          <polyline points="140,95 80,35 110,5" fill="none" stroke-width="1" stroke="black" />
-          <polyline points="115,80 115,70 125,70" fill="none" stroke-width="1" stroke="black" />
-          <polyline points="100,25 100,15 90,15" fill="none" stroke-width="1" stroke="black" />
-          <text x="120" y="30" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
-          <text x="120" y="55" font-family="sans-serif" font-size="20" fill="black">pelota.y + pelota.alto &gt; self.y</text>
-
-          <rect x="80" y="135" width="25" height="25" fill="red" />
-          <circle cx="80" cy="135" r="3" fill="black" stroke-width="1" stroke="white" />
-          <polyline points="140,195 80,135 140,75" fill="none" stroke-width="1" stroke="black" />
-          <polyline points="120,185 120,175 130,175" fill="none" stroke-width="1" stroke="black" />
-          <polyline points="110,115 110,105 100,105" fill="none" stroke-width="1" stroke="black" />
-          <text x="120" y="130" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
-          <text x="120" y="155" font-family="sans-serif" font-size="20" fill="black">pelota.y &lt; self.y + self.alto</text>
-        </svg>
-      </p>
-
       <p>En este paso, añadiremos el golpe de la raqueta del jugador humano a la pelota.</p>
 
       <p>Para ello, crearemos el método <i>golpear_raqueta()</i> en la clase <i>RaquetaPong</i> y en el bucle principal llamaremos al método.</p>
@@ -1349,7 +1324,32 @@ if __name__ == "__main__":
         <li>Método <i>golpear()</i>
           <p>Este golpe es quizás el punto más complicado del programa.</p>
           <ul>
-            <li>líneas 78 a 18: En principio, el golpe se produce cuando la raqueta y la pelota están en contacto y el resultado del golpe es que la pelota debe cambiar de dirección de movimiento horizontal.</li>
+            <li>líneas 78 a 18: En principio, el golpe se produce cuando la raqueta y la pelota están en contacto y el resultado del golpe es que la pelota debe cambiar de dirección de movimiento horizontal.
+              <p class="mcl-svg-figura">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="-10 -10 820 220" style="background-color: #eeeeee">
+                  <rect x="0" y="0" width="800" height="200" fill="white" stroke-width="1" stroke="black" />
+
+                  <rect x="60" y="60" width="20" height="75" fill="black" />
+                  <circle cx="60" cy="60" r="3" fill="black" stroke-width="1" stroke="white" />
+
+                  <rect x="80" y="35" width="25" height="25" fill="red" />
+                  <circle cx="80" cy="35" r="3" fill="black" stroke-width="1" stroke="white" />
+                  <polyline points="140,95 80,35 110,5" fill="none" stroke-width="1" stroke="black" />
+                  <polyline points="115,80 115,70 125,70" fill="none" stroke-width="1" stroke="black" />
+                  <polyline points="100,25 100,15 90,15" fill="none" stroke-width="1" stroke="black" />
+                  <text x="120" y="30" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
+                  <text x="120" y="55" font-family="sans-serif" font-size="20" fill="black">pelota.y + pelota.alto &gt; self.y</text>
+
+                  <rect x="80" y="135" width="25" height="25" fill="red" />
+                  <circle cx="80" cy="135" r="3" fill="black" stroke-width="1" stroke="white" />
+                  <polyline points="140,195 80,135 140,75" fill="none" stroke-width="1" stroke="black" />
+                  <polyline points="120,185 120,175 130,175" fill="none" stroke-width="1" stroke="black" />
+                  <polyline points="110,115 110,105 100,105" fill="none" stroke-width="1" stroke="black" />
+                  <text x="120" y="130" font-family="sans-serif" font-size="20" fill="black">pelota.x &lt; self.x + self.ancho</text>
+                  <text x="120" y="155" font-family="sans-serif" font-size="20" fill="black">pelota.y &lt; self.y + self.alto</text>
+                </svg>
+              </p>
+            </li>
             <li>líneas 83 y 84: Para evitar que el programa detecte colisión en dos o más iteraciones consecutivas (lo que provocaría cambios continuos de dirección, es decir, el zigzazeo de la pelota), además de cambiar la dirección de movimiento de la pelota, desplazaremos explícitamente la pelota fuera de la raqueta.</li>
             <li>Un detalle que no tiene en cuenta el programa es cuando la raqueta golpea verticalmente la pelota, es decir, cuando la golpea desde abajo o desde arriba cuando está pasando. Tal y como está redactado el programa, este golpe produce la devolución de la pelota, cuando realmente no debería hacerlo.</li>
           </ul>
