@@ -102,7 +102,7 @@ def e2_nuevo(ev):
     tmp2 = negacion[randrange(0,2)] + str(bool(randrange(0, 2)))
     e2_cadena_sp += tmp2
     e2_cadena += tmp2
-    if tmp == " and ": # Añado parentesis porque Brython 3.2.4 no evaluaba bien las expresiones
+    if tmp == " and ": # Añado paréntesis porque Brython 3.2.4 no evaluaba bien las expresiones
         e2_cadena = "(" + e2_cadena + ")"
     tmp = yo[randrange(0, 2)]
     e2_cadena_sp += tmp

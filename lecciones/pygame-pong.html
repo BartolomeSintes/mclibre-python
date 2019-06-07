@@ -170,7 +170,7 @@ from pygame.locals import *</code>
 </pre>
           </div>
 
-          <p>Importamos los módulos pygame. Para que al hacer referencia en el programa a las constantes de pygame no tegamos que incluir el nombre del módulo, las importamos todas del módulo pygame.locals.</p>
+          <p>Importamos los módulos pygame. Para que al hacer referencia en el programa a las constantes de pygame no tengamos que incluir el nombre del módulo, las importamos todas del módulo pygame.locals.</p>
 
         </li>
         <li>Definición de constantes
@@ -190,7 +190,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
             <li>En pygame los colores se indican mediante códigos RGB, así que definimos una constante con el nombre del color para facilitar su referencia.</li>
           </ul>
         </li>
-        <li>Incialización
+        <li>Inicialización
           <div class="codigo">
             <pre class="line-numbers" data-start="14">
 <code class="language-python">    # Inicialización de Pygame
@@ -228,7 +228,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
           </div>
           <p>El bucle principal se ejecuta continuamente:</p>
           <ul>
-            <li>línea 22: La variable lógica <i>jugando</i> controlará la repetición dle bucle. Inicialmente, la variable tiene el valor <span class="idle-rese">True</span>.</li>
+            <li>línea 22: La variable lógica <i>jugando</i> controlará la repetición del bucle. Inicialmente, la variable tiene el valor <span class="idle-rese">True</span>.</li>
             <li>línea 23: Mientras se mantenga ese valor, el bucle se repetirá.</li>
             <li>línea 24: En cada iteración pintamos la pantalla de blanco para borrar los elementos de la imagen anterior (en este programa todavía no ha elementos, pero podemos añadir ya esta instrucción).</li>
             <li>líneas 26 a 28: Las pulsaciones de tecla o del ratón se reciben en forma de <i>eventos</i>.
@@ -249,7 +249,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
     <section id="programacion-2">
       <h3>Paso 2: Clase PelotaPong</h3>
 
-      <p>El primer elemento del juego que programaremos será la pelota. Para definir la pelota crearemos una clase a la que llamaremos PelotaPong. Las clases son propias de la programación orientada a objetos y permiten ampliar los tipos de datos del lenguaje. Una vez definida la clase, podemos crear tantas variables de esa clase como queramos (por ejemplo, una o varias pelotas, en el caso de que quisieramos jugar con varias pelotas a la vez).</p>
+      <p>El primer elemento del juego que programaremos será la pelota. Para definir la pelota crearemos una clase a la que llamaremos PelotaPong. Las clases son propias de la programación orientada a objetos y permiten ampliar los tipos de datos del lenguaje. Una vez definida la clase, podemos crear tantas variables de esa clase como queramos (por ejemplo, una o varias pelotas, en el caso de que quisiéramos jugar con varias pelotas a la vez).</p>
 
       <p>El siguiente programa dibuja una pelota cuadrada de color rojo en el centro de la ventana y la desplaza en línea recta en una de las cuatro direcciones diagonales. Cuando llega al borde de la ventana, la pelota deja de verse aunque sigue moviéndose indefinidamente en la misma dirección.</p>
 
