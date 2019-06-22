@@ -193,9 +193,9 @@ with open(ruta, mode="w", encoding="utf-8") as fichero:
     print("&lt;!DOCTYPE html&gt;", file=fichero)
     print('&lt;html lang="es"&gt;', file=fichero)
     print("&lt;head&gt;", file=fichero)
-    print('  &lt;meta charset="utf-8" /&gt;', file=fichero)
+    print('  &lt;meta charset="utf-8"&gt;', file=fichero)
     print("  &lt;title&gt;HTML 5&lt;/title&gt;", file=fichero)
-    print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;', file=fichero)
+    print('  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;', file=fichero)
     print("&lt;/head&gt;", file=fichero)
     print("", file=fichero)
     print("&lt;body&gt;", file=fichero)
@@ -209,7 +209,7 @@ webbrowser.open(ruta)</code>
 
     <hr class="corta">
 
-    <p>Es fundamental que el juego de caracteres en el que se guarda el fichero (línea 5 en el ejemplo anterior) sea el mismo que el que se declara en la etiqueta <span class="html-eti">&lt;meta /&gt;</span> (línea 9 en el ejemplo anterior). Si no es así, el navegador tendrá problemas al mostrar caracteres "no ingleses" (acentos, eñes, etc.). En el ejemplo anterior se utiliza UTF-8, el juego de caracteres recomendado para páginas web.</p>
+    <p>Es fundamental que el juego de caracteres en el que se guarda el fichero (línea 5 en el ejemplo anterior) sea el mismo que el que se declara en la etiqueta <span class="html-eti">&lt;meta&gt;</span> (línea 9 en el ejemplo anterior). Si no es así, el navegador tendrá problemas al mostrar caracteres "no ingleses" (acentos, eñes, etc.). En el ejemplo anterior se utiliza UTF-8, el juego de caracteres recomendado para páginas web.</p>
   </section>
 
   <section id="saber-mas">
