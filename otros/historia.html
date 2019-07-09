@@ -398,8 +398,12 @@
         <text x="852" y="120" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.6.7</text>
         <circle cx="869" cy="130" r="5" fill="hsl(207, 52%, 30%)" />
         <text x="869" y="150" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.6.8</text>
+        <circle cx="915" cy="130" r="5" fill="hsl(207, 52%, 30%)" />
+        <text x="915" y="120" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.6.9</text>
+        <!--
         <circle cx="914" cy="130" r="5" fill="white" stroke="hsl(207, 52%, 30%)" stroke-width="2" />
         <text x="914" y="120" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.6.9</text>
+        -->
 
         <!-- 3.7 -->
         <circle cx="824" cy="40" r="5" fill="hsl(207, 52%, 30%)" />
@@ -411,8 +415,8 @@
         <text x="869" y="100" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.7.2</text>
         <circle cx="891" cy="80" r="5" fill="hsl(207, 52%, 30%)" />
         <text x="891" y="70" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.7.3</text>
-        <circle cx="914" cy="80" r="5" fill="white" stroke="hsl(207, 52%, 30%)" stroke-width="2" />
-        <text x="914" y="100" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.7.4</text>
+        <circle cx="917" cy="80" r="5" fill="hsl(207, 52%, 30%)" />
+        <text x="917" y="100" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.7.4</text>
         <circle cx="938" cy="80" r="5" fill="white" stroke="hsl(207, 52%, 30%)" stroke-width="2" />
         <text x="938" y="70" text-anchor="middle" fill="hsl(207, 52%, 30%)" style="font-weight: bold">3.7.5</text>
         <circle cx="957" cy="80" r="5" fill="white" stroke="hsl(207, 52%, 30%)" stroke-width="2" />
@@ -496,12 +500,12 @@
 
       <li>Ubuntu hizo la transición a Python 3.5 en Ubuntu 16.04 (abril de 2016) [<a href="https://wiki.ubuntu.com/Python/Python35Transition">wiki de Ubuntu</a>] e incluye Python 3.6 en Ubuntu 18.04 (abril de 2018) [<a href="https://wiki.ubuntu.com/Python/Python36Transition">wiki de Ubuntu</a>].</li>
 
-      <li>En abril de 2015 Debian empezó a discutir los planes de transición a Python 3. Debian 9 (junio de 2017) incluye Python 2.7.13 y Python 3.5.3 y Debian 10 (que se espera publicar en 2019) debería pasar completamente a Python 3 [<a href="https://lwn.net/Articles/642334/">artículo de Linux Week News del 29/04/15</a>].</li>
+      <li>Debian hizo la transición a Python 3 en Debian 10 (julio de 2019) incluyendo Python 3.7. Lo planes de transición se empezaron a discutir en abril de 2015 [<a href="https://lwn.net/Articles/642334/">artículo de Linux Week News del 29/04/15</a>] y Debian 9 (junio de 2017) ya incluyó Python 3.5.3 (aunque la versión predeterminada seguía siendo Python 2.7.13.</li>
 
       <li><a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, adoptó Python 3 (concretamente, Python 3.5) en la versión Pike, publicada en <a href="https://www.openstack.org/news/view/340/openstack-pike-delivers-composable-infrastructure-services-and-improved-lifecycle-management">agosto de 2017</a></li>
     </ul>
 
-    <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que la fundación Python prolongó el período de publicación de actualizaciones de seguridad de Python 2.7 hasta finales de 2019. A partir de 2020 serán las distribuciones las que mantengan  Python 2.7 durante el tiempo que se mantengan las propias distribuciones (por ejemplo, RedHat 7 se mantendrá hasta el año 2024, como mínimo, y RedHat 8 todavía permite instalar Python 2.7).</p>
+    <p>Aunque las nuevas versiones de las distribuciones ya incluyan Python 3, las distribuciones que incluyen Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que la fundación Python prolongó el período de publicación de actualizaciones de seguridad de Python 2.7 hasta finales de 2019. A partir de 2020 serán las distribuciones las que mantengan  Python 2.7 durante el tiempo que se mantengan las propias distribuciones (por ejemplo, RedHat 7 se mantendrá hasta el año 2024, como mínimo, y RedHat 8 o Debian 10 todavía permite instalar Python 2.7).</p>
 
     <hr class="corta">
 
@@ -531,7 +535,7 @@
       <li><a href="https://www.python.org/dev/peps/pep-0572/">PEP 572 -- Assignment Expressions</a></li>
     </ul>
 
-    <p>En diciembre de 2018 se aprobó el <a href="https://www.python.org/dev/peps/pep-8016/">PEP 8016 -- The Steering Council Model</a> que establece un consejo directivo formado por cinco miembros elegidos entre los desarrolladores de Python y que será renovado tras cada publicación de una versión principal de Python. El primer consejo directivo se elegirá probablemente en enero de 2019 y tendrá un mandato relativamente breve, puesto que la fecha de publicación prevista de Python 3.8 es octubre de 2019.</p>
+    <p>En diciembre de 2018 se aprobó el <a href="https://www.python.org/dev/peps/pep-8016/">PEP 8016 -- The Steering Council Model</a> que establece un consejo directivo formado por cinco miembros elegidos entre los desarrolladores de Python y que será renovado tras cada publicación de una versión principal de Python. El primer consejo directivo se eligió en enero de 2019 [<a href="https://lwn.net/Articles/777997/">artículo en lwn.net 04/02/2019</a>] y tendrá un mandato relativamente breve, puesto que la fecha de publicación prevista de Python 3.8 es octubre de 2019.</p>
 
     <p>Referencias:</p>
     <ul>
@@ -559,6 +563,16 @@
       </thead>
       <tbody>
         <tr>
+          <th>2020</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>¿Abr?: Ubuntu 20.04 LTS</td>
+          <td></td>
+          <th>2020</th>
+        </tr>
+        <tr>
           <th>2019</th>
           <td>¿Oct?: Py 3.8</td>
           <td>
@@ -566,7 +580,7 @@
             Abr: Fedora 30: Py 3.7.2
           </td>
           <td>May: RHEL 8: Py 3.6</td>
-          <td>¿Jul?: Debian 10 (buster)</td>
+          <td>Jul: Debian 10 (buster): Py 3.7.3</td>
           <td></td>
           <td></td>
           <th>2019</th>
@@ -764,7 +778,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de junio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 9 de julio de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
