@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -58,19 +60,19 @@
       <li>Cree la carpeta Documentos &gt; LMSGI &gt; Python:
 
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="180">
+          <img src="../img/vscode/vsc-python-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
       <li>Cree las carpeta Documentos &gt; LMSGI &gt; Python &gt; ejercicios y Documentos &gt; LMSGI &gt; Python &gt; pruebas:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="190">
+          <img src="../img/vscode/vsc-python-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
       <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="180">
+          <img src="../img/vscode/vsc-python-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="210">
         </p>
       </li>
 
@@ -82,7 +84,7 @@
 
       <li>Se abrirá en Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="200">
+          <img src="../img/vscode/vsc-python-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="210">
         </p>
       </li>
     </ol>
@@ -156,17 +158,24 @@
       <section id="extension-pylint">
         <h4>Instalación de pylint</h4>
 
-        <p>En versiones anteriores de la extensión Python, al recargar Visual Studio Code tras instalar la extensión, se mostraba un aviso indicando que se debía instalar el paquete <a href="https://www.pylint.org/">pylint</a>. En versiones actuales, este aviso se muestra cuando por primera vez se guarda un programa. Independientemente de cuando se muestre el aviso, haga clic en "Install" para instalarlo.</p>
+        <p>Al guardar por primera vez un programa de Python, Visual Studio Code mostrará un aviso indicando que <i>pylint</i> no está instalado y que le ofrecerá la opción de instalarlo automáticamente.</p>
 
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-pylint-1.png" alt="VSC. Instalación de pylint" width="1024" height="576">
-        </p>
+        <ol>
+          <li>Abra o escriba un programa cualquiera y guárdelo.</li>
+          <li>
+            Se mostrará el aviso indicando que <i>pylint</i> no está instalado. Haga clic en "Install" para instalarlo.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-pylint-1.png" alt="VSC. Instalación de pylint" width="1024" height="576">
+            </p>
+          </li>
+          <li>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de pylint y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1026" height="162">
+            </p>
 
-        <p>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de pylint y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.</p>
-
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="240">
-        </p>
+            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
+          </li>
+        </ol>
 
         <hr class="corta">
 
@@ -200,34 +209,41 @@
       <section id="extension-autoformato">
         <h4>Instalación de módulo de autoformato</h4>
 
-        <p>Al formatear código por primera vez después de instalar la extensión Python, Visual Studio Code pregunta por el módulo de autoformato que queremos utilizar. Actualmente (febrero de 2019), las opciones disponibles son:</p>
+        <p>Al formatear código por primera vez después de instalar la extensión Python, Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2020), los módulos de autoformato que ofrece son:</p>
         <ul>
           <li><a href="https://pypi.org/project/autopep8/">autopep8</a></li>
           <li><a href="https://pypi.org/project/black/">black</a></li>
           <li><a href="https://pypi.org/project/yapf/">yapf</a></li>
         </ul>
-
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1024" height="150">
-        </p>
-
-        <p>En estos apuntes se utiliza el módulo <strong>black</strong>, pero se podría utilizar otro módulo. El formato aplicado no afecta al resultado ni a la velocidad de ejecución de los programas. Haga clic en "Use black" para instalarlo.</p>
-
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="150">
-        </p>
-
-        <p>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.</p>
-
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-formatter-3.png" alt="VSC. Instalación de black" width="1024" height="240">
-        </p>
-
-        <p>Se creará una carpeta <strong>.vscode</strong> con el archivo de configuración del área de trabajo <strong>settings.json</strong>. Este archivo contiene la preferencia de configuración que indica a Visual Studio Code que queremos utilizar el formateador black.</p>
-
-        <p class="captura">
-          <img src="../img/vscode/vsc-python-formatter-4.png" alt="VSC. Instalación de black" width="1024" height="280">
-        </p>
+        <ol>
+          <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift + Alt + f</span> para formatear el código.</li>
+          <li>
+            Se mostrará el aviso indicando que no hay ningún formateador instalado.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1026" height="150">
+            </p>
+          </li>
+          <li>
+            Haga clic en "Use black" para instalarlo.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1026" height="150">
+            </p>
+            <p><strong>Nota</strong>: En estos apuntes se recomienda el módulo <strong>black</strong>, pero se podría utilizar otro módulo. El formato aplicado no afecta al resultado ni a la velocidad de ejecución de los programas.</p>
+          </li>
+          <li>
+            Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-formatter-3.png" alt="VSC. Instalación de black" width="1026" height="180">
+            </p>
+            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
+          </li>
+          <li>
+            Se creará una carpeta <strong>.vscode</strong> con el archivo de configuración del área de trabajo <strong>settings.json</strong>. Este archivo contiene la preferencia de configuración que indica a Visual Studio Code que queremos utilizar el formateador black.
+            <p class="captura">
+              <img src="../img/vscode/vsc-python-formatter-4.png" alt="VSC. Instalación de black" width="1024" height="280">
+            </p>
+          </li>
+        </ol>
       </section>
     </section>
   </section>
@@ -243,60 +259,83 @@
 
     <p>Estos son los atajos de teclado que se aconseja añadir para seguir este curso.</p>
 
-    <section id="atajos-todos">
-      <h3>Todos los atajos</h3>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
+    <ul>
+      <li>
+        Si ya tiene definidos otros atajos de teclado en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#atajos">archivo de configuración de atajos de teclado</a>, añada los siguientes atajos al archivo de atajos de teclado:
+        <div class="codigo">
+          <pre>
+<code class="copy-language-json">    //
+    // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
+    {
+        "key": "ctrl+alt+NumPad_Add",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+alt+NumPad_Subtract",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+f5",
+        "command": "python.execInTerminal"
+    },</code>
+</pre>
+        </div>
+      </li>
+      <li>
+        Si no tiene definido ningún atajo en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#atajos">archivo de configuración de atajaos de teclado</a>, sustituya el contenido del archivo de atajos de teclado por este:
+        <div class="codigo">
+          <pre>
+<code class="copy-language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
 [
-  {
-    "key": "ctrl+alt+right",
-    "command": "workbench.action.terminal.focus"
-  },
-  {
-    "key": "ctrl+alt+left",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+alt+f5",
-    "command": "python.execInTerminal"
-  },
+    {
+        "key": "ctrl+alt+NumPad_Add",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "ctrl+alt+NumPad_Subtract",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+f5",
+        "command": "python.execInTerminal"
+    },
 ]</code>
 </pre>
-      </div>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <section id="atajo-ctrl+alt+flecha">
-      <h3>Mover foco del editor al terminal y viceversa</h3>
+  <section id="atajo-ctrl+alt+flecha">
+    <h3>Mover foco del editor al terminal y viceversa</h3>
 
-      <p>Estos dos atajos permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.</p>
+    <p>Estos dos atajos permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.</p>
 
-      <p><strong>Nota</strong>: Estos atajos están pensados para una distribución de las ventanas en vertical (con el editor a la izquierda y el terminal a la derecha). En caso de preferir otra distribución. Por ejemplo, con el editor arriba y el terminal abajo, convendría modificar los atajos para que utilizaran las flechas arriba y abajo (<i>up</i> y <i>down</i>).</p>
-    </section>
+  </section>
 
-    <section id="atajo-f5">
-      <h3>Ejecutar programa</h3>
+  <section id="atajo-f5">
+    <h3>Ejecutar programa</h3>
 
-      <p>Este atajo permite ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
+    <p>Este atajo permite ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
 
-      <p class="captura">
-        <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
-      </p>
+    <p class="captura">
+      <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1026" height="576">
+    </p>
 
-      <hr class="corta">
+    <hr class="corta">
 
-      <p>Si no se define el atajo de teclado, el programa se puede ejecutar igualmente haciendo clic derecho en el cuerpo del programa y eligiendo la opción "Ejecutar archivo Python en la terminal".</p>
+    <p>Si no se define el atajo de teclado, el programa se puede ejecutar igualmente haciendo clic derecho en el cuerpo del programa y eligiendo la opción "Ejecutar archivo Python en la terminal".</p>
 
-      <p class="captura">
-        <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
-      </p>
-    </section>
+    <p class="captura">
+      <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
+    </p>
+  </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de enero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 27 de enero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
