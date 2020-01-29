@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios. Puesta en marcha. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Puesta en marcha - Ejercicios</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Puesta en marcha</h2>
+
+      <h3>Enunciados</h3>
+      <ol>
+        <li><a href="#ejercicio-1">Programa no interactivo</a></li>
+        <li><a href="#ejercicio-2">Programa interactivo</a></li>
+        <li><a href="#ejercicio-3">Formatear programa</a></li>
+        <li><a href="#ejercicio-4">Corregir errores</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios le servirán para comprobar que ha instalado correctamente Python y configurado correctamente Visual Studio Code.</p>
+
+
+  <section id="ejercicio-0">
+    <h2>Puesta en marcha - 0 - Preparación de las plantillas</h2>
+
+    <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="plantillas/puesta-en-marcha-plantillas.zip">plantillas de los ejercicios Visual Studio Code. Puesta en marcha</a>.</p>
+
+    <p>Descargue las plantillas y descomprímalas en la carpeta <strong>Python/ejercicios</strong>.</p>
+
+    <p>Abra Visual Studio Code eligiendo como área de trabajo la carpeta <strong>Python</strong>, de acuerdo con la lección <a href="../otros/vsc-python-configuracion.html#area-trabajo">Configuración recomendada</a>.</p>
+  </section>
+
+  <section id="ejercicio-1">
+    <h2>Puesta en marcha - 1 - Ejecutar programa no interactivo</h2>
+
+    <p>Ejecute el programa puesta_en_marcha_1.py de tres formas distintas.</p>
+
+    <ul>
+      <li><strong>Ejecutar en Visual Studio Code con el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span></strong>
+        <ol>
+          <li>Abra en Visual Studio Code el archivo puesta_en_marcha_1.py.</li>
+          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+F5</span>.</li>
+          <li>Compruebe que se abre una ventana de terminal y se muestra el resultado de la ejecución del programa. Si no se abre la ventana de terminal, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</li>
+          <li>Si no se muestra el resultado de la ejecución del programa, compruebe que ha instalado Python, como se explica en la lección <a href="../otros/python-instalacion.html">Instalación de Python</a>.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+      <li><strong>Ejecutar en una ventana de terminal de Visual Studio Code</strong>
+        <ol>
+          <li>Abra en Visual Studio Code el archivo puesta_en_marcha_1.py.</li>
+          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span>.</li>
+          <li>Compruebe que se abre una ventana de terminal y que el foco cambia a la ventana de terminal. Si no es así, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</li>
+          <li>Compruebe que la ruta actual en la ventana de terminal es el directorio /pyhton.</li>
+          <li>Cambie al directorio /python/ejercicios/puesta-en-marcha.</li>
+          <li>Ejecute el programa puesta_en_marcha_1.py con la orden <i>py puesta_en_marcha_1.py</i> o <i>python puesta_en_marcha_1.py</i></li>
+          <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
+          <li>Si no se muestra el resultado de la ejecución del programa, compruebe que ha instalado Python, como se explica en la lección <a href="../otros/python-instalacion.html">Instalación de Python</a>.</li>
+          <li>Compruebe que puede desplazarse de la ventana de terminal a la ventana del editor con el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+      <li><strong>Ejecutar en una ventana de terminal de Windows</strong>
+        <ol>
+          <li>Abra el explorador de Windows en la carpeta /python/ejercicios/puesta-en-marcha.</li>
+          <li>Escriba <i>cmd</i> en la barra de dirección y pulse <span class="soft-atajo-teclado">Intro</span>. Se abrirá una ventana de terminal.</li>
+          <li>Ejecute el programa puesta_en_marcha_1.py con la orden <i>py puesta_en_marcha_1.py</i> o <i>python puesta_en_marcha_1.py</i></li>
+          <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
+          <li>Si no se muestra el resultado de la ejecución del programa, compruebe que ha instalado Python, como se explica en la lección <a href="../otros/python-instalacion.html">Instalación de Python</a>.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Puesta en marcha - 2 - Ejecutar programa interactivo</h2>
+
+    <p>Ejecute el programa puesta_en_marcha_2.py de tres formas distintas.</p>
+
+    <ul>
+      <li><strong>Ejecutar en Visual Studio Code con el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span></strong>
+        <ol>
+          <li>Abra en Visual Studio Code el archivo puesta_en_marcha_2.py.</li>
+          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span>.</li>
+          <li>Compruebe que se abre una ventana de terminal y se muestra el resultado de la ejecución del programa. Si no se abre la ventana de terminal, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</li>
+          <li>Compruebe que el foco cambia a la ventana de terminal. Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+      <li><strong>Ejecutar en una ventana de terminal de Visual Studio Code</strong>
+        <ol>
+          <li>Abra en Visual Studio Code el archivo puesta_en_marcha_2.py.</li>
+          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span>.</li>
+          <li>Compruebe que se abre una ventana de terminal y que el foco cambia a la ventana de terminal. Si no es así, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</li>
+          <li>En caso necesario, cambie al directorio /python/ejercicios/puesta-en-marcha.</li>
+          <li>Ejecute el programa puesta_en_marcha_2.py con la orden <i>py puesta_en_marcha_2.py</i> o <i>python puesta_en_marcha_2.py</i></li>
+          <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
+          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+      <li><strong>Ejecutar en una ventana de terminal de Windows</strong>
+        <ol>
+          <li>Abra el explorador de Windows en la carpeta /python/ejercicios/puesta-en-marcha.</li>
+          <li>Escriba <i>cmd</i> en la barra de dirección y pulse <span class="soft-atajo-teclado">Intro</span>. Se abrirá una ventana de terminal.</li>
+          <li>Ejecute el programa puesta_en_marcha_2.py con la orden <i>py puesta_en_marcha_2.py</i> o <i>python puesta_en_marcha_2.py</i></li>
+          <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
+          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
+          <li>Cierre la ventana de terminal.</li>
+        </ol>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Puesta en marcha - 3 - Formatear programas</h2>
+
+    <ol>
+      <li>Abra el programa puesta_en_marcha_3.py.</li>
+      <li>Observe que el programa no sigue un estilo de código uniforme (líneas y espacios en blanco, comillas).</li>
+      <li>Compruebe que el programa se puede ejecutar aunque el formato no sea el recomendado.</li>
+      <li>Formatee el código del programa con el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>.</li>
+      <li>Compruebe que desaparecen varios saltos de línea y espacios en blanco, que se añaden varios saltos de línea y espacios en blanco en algunos lugares y que cambian las comillas de algunas cadenas.</li>
+      <li>Deshaga el formateo realizado por Black con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+z</span>.</li>
+      <li>Formatee y deshaga el formateo varias veces y observe los cambios realizados: dónde se eliminan líneas, dónde se eliminan espacios, dónde se añaden espacios en blanco, dónde se eliminan espacios en blanco, qué comillas se sustituyen.</li>
+      <li>Si no es así, compruebe que ha instalado el módulo Black, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#extension-autoformato">Configuración recomendada</a>. El formato aplicado por Black corresponde al <a href="../otros/libro-de-estilo.html">Libro de estilo de Python</a>.</li>
+      <li>Compruebe que el programa se puede ejecutar y su funcionamiento es el mismo que antes.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Puesta en marcha - 4 - Corregir errores sintácticos</h2>
+
+    <ol>
+      <li>Abra el programa puesta_en_marcha_4.py.</li>
+      <li>Observe que en la barra lateral situada abajo a la izquierda se muestra errores y que en la barra de actividades el nombre del programa se muestra en rojo (al igual que la carpeta que lo contiene).</li>
+      <li>Haga clic en los iconos de error para abrir el panel de problemas.</li>
+      <i>Ejecute el programa y compruebe que el programa no puede ejecutarse y que en la ventana de terminal obtiene el mismo mensaje de error (o similar).</i>
+      <li>Corrija el error ayudándose del mensaje indicado en el panel de problemas.</li>
+      <li>Una vez corregido el error, guarde el programa. Como el programa contiene varios errores sintácticos, se mostrará un nuevo mensaje de error.</li>
+      <li>Corrija todos los errores hasta que el contador en los iconos de error sea cero y el nombre del fichero deje de mostrarse en rojo. Recuerde que el análisis del programa se produce al guardar el programa, por lo que es necesario guardar el programa para confirmar que se ha corregido el error.</li>
+      <li>Finalmente, ejecute el programa y compruebe que funciona correctamente.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 29 de enero de 2020</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
