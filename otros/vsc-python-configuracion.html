@@ -93,13 +93,84 @@
   <section id="preferencias">
     <h2>Preferencias de configuración recomendadas para el curso de Python</h2>
 
-    <p>No es necesario añadir ninguna preferencia de configuración específica.</p>
+    <p>Estas son las preferencias de configuración que se aconseja establecer para seguir este curso.</p>
+
+    <p>Las preferencias propuestas relacionadas con extensiones requieren la instalación de las extensiones correspondientes.</p>
+
+    <section id="todas-preferencias">
+      <h3>Preferencias globales (Usuario)</h3>
+      <ul>
+        <li>
+          Si ya tiene definidas otras preferencias en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, añada las siguientes preferencias de configuración:
+          <div class="codigo">
+            <pre>
+<code class="copy-language-json">  //
+  // Configuraciones recomendadas para el curso Introducción a la programación con Python
+  //
+  // Extensión multi-command
+  //
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.pythonFocusAndExecuteInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        "python.execInTerminal"
+      ]
+    },
+  ],
+  //</code>
+</pre>
+          </div>
+        </li>
+        <li>
+          Si no tiene definida ninguna preferencia en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, sustituya el contenido del archivo de preferencias de configuración por este:
+          <div class="codigo">
+            <pre>
+<code class="copy-language-json">{
+  //
+  // Configuraciones recomendadas para el curso Introducción a la programación con Python
+  //
+  // Extensión multi-command
+  //
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.pythonFocusAndExecuteInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        "python.execInTerminal"
+      ]
+    },
+  ],
+  //
+}</code>
+</pre>
+          </div>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <section id="extensiones">
     <h2>Extensiones recomendadas para el curso de Python</h2>
 
-    <p>Estas son las extensiones que se aconseja instalar para seguir este curso.</p>
+    <p>Estas son las dos extensiones que se aconseja instalar para seguir este curso.</p>
+    <ul>
+      <li>multi-command</li>
+      <li>Python extension for Visual Studio Code</li>
+    </ul>
+
+    <section id="multi-command">
+      <h3>multi-command</h3>
+      <p>Autor: ryuta46</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command">multi-command</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/ryuta46/vscode-multi-command">multi-command</a></p>
+
+      <hr class="corta">
+
+      <p>Esta extensión permite crear comandos que ejecuten a su vez varios comandos de Visual Studio Code.</p>
+    </section>
 
     <section id="python-for-vsc">
       <h3>Python extension for Visual Studio Code</h3>
@@ -216,7 +287,7 @@
           <li><a href="https://pypi.org/project/yapf/">yapf</a></li>
         </ul>
         <ol>
-          <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift + Alt + f</span> para formatear el código.</li>
+          <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift+Alt+f</span> para formatear el código.</li>
           <li>
             Se mostrará el aviso indicando que no hay ningún formateador instalado.
             <p class="captura">
@@ -267,18 +338,27 @@
 <code class="copy-language-json">    //
     // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
     {
+        // Pasar el foco al terminal
         "key": "ctrl+alt+NumPad_Add",
         "command": "workbench.action.terminal.focus"
     },
     {
+        // Pasar el foco al editor de programa
         "key": "ctrl+alt+NumPad_Subtract",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
     {
+        // Ejecutar programa de Python en el terminal
         "key": "ctrl+alt+f5",
         "command": "python.execInTerminal"
-    },</code>
+    },
+    {
+        // Ejecutar programa de Python en el terminal (pasando el foco al termninal)
+        "key": "ctrl+alt+shift+f5",
+        "command": "multiCommand.pythonFocusAndExecuteInTerminal"
+    },
+    //</code>
 </pre>
         </div>
       </li>
@@ -289,17 +369,25 @@
 <code class="copy-language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
 [
     {
+        // Pasar el foco al terminal
         "key": "ctrl+alt+NumPad_Add",
         "command": "workbench.action.terminal.focus"
     },
     {
+        // Pasar el foco al editor de programa
         "key": "ctrl+alt+NumPad_Subtract",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
     {
+        // Ejecutar programa de Python en el terminal
         "key": "ctrl+alt+f5",
         "command": "python.execInTerminal"
+    },
+    {
+        // Ejecutar programa de Python en el terminal (pasando el foco al termninal)
+        "key": "ctrl+alt+shift+f5",
+        "command": "multiCommand.pythonFocusAndExecuteInTerminal"
     },
 ]</code>
 </pre>
@@ -311,14 +399,20 @@
   <section id="atajo-ctrl+alt+flecha">
     <h3>Mover foco del editor al terminal y viceversa</h3>
 
-    <p>Estos dos atajos permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.</p>
+    <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt++</span> y <span class="soft-atajo-teclado">Ctrl+Alt+-</span>) permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.</p>
 
   </section>
 
   <section id="atajo-f5">
     <h3>Ejecutar programa</h3>
 
-    <p>Este atajo permite ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
+    <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span>) permiten ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
+
+    <p>La diferencia entre ambos atajos es que:</p>
+    <ul>
+      <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> mantiene el foco en el editor. Este atajo es útil cuando el programa a ejecutar no pide datos al usuario.</li>
+      <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> cambia el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al edtiro se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.</li>
+    </ul>
 
     <p class="captura">
       <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1026" height="576">
@@ -331,7 +425,6 @@
     <p class="captura">
       <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
     </p>
-  </section>
   </section>
 
   <footer>
