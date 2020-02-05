@@ -28,6 +28,8 @@
         <li><a href="#ejercicio-2">Programa interactivo</a></li>
         <li><a href="#ejercicio-3">Formatear programa</a></li>
         <li><a href="#ejercicio-4">Corregir errores</a></li>
+        <li><a href="#ejercicio-5">MPTC (1)</a></li>
+        <li><a href="#ejercicio-6">MPTC (2)</a></li>
       </ol>
     </div>
   </nav>
@@ -197,9 +199,9 @@
       <li>Compruebe que el programa se puede ejecutar aunque el formato no sea el recomendado.</li>
       <li>Formatee el código del programa con el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>.</li>
       <li>Compruebe que desaparecen varios saltos de línea y espacios en blanco, que se añaden varios saltos de línea y espacios en blanco en algunos lugares y que cambian las comillas de algunas cadenas.</li>
+      <li>Si no es así, compruebe que ha instalado el módulo Black, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#extension-autoformato">Configuración recomendada</a>. El formato aplicado por Black corresponde al <a href="../otros/libro-de-estilo.html">Libro de estilo de Python</a>.</li>
       <li>Deshaga el formateo realizado por Black con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+z</span>.</li>
       <li>Formatee y deshaga el formateo varias veces y observe los cambios realizados: dónde se eliminan líneas, dónde se eliminan espacios, dónde se añaden espacios en blanco, dónde se eliminan espacios en blanco, qué comillas se sustituyen.</li>
-      <li>Si no es así, compruebe que ha instalado el módulo Black, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#extension-autoformato">Configuración recomendada</a>. El formato aplicado por Black corresponde al <a href="../otros/libro-de-estilo.html">Libro de estilo de Python</a>.</li>
       <li>Compruebe que el programa se puede ejecutar y su funcionamiento es el mismo que antes.</li>
     </ol>
   </section>
@@ -211,7 +213,7 @@
       <li>Abra el programa puesta_en_marcha_4.py.</li>
       <li>Observe que en la barra lateral situada abajo a la izquierda se muestra errores y que en la barra de actividades el nombre del programa se muestra en rojo (al igual que la carpeta que lo contiene).</li>
       <li>Haga clic en los iconos de error para abrir el panel de problemas.</li>
-      <i>Ejecute el programa y compruebe que el programa no puede ejecutarse y que en la ventana de terminal obtiene el mismo mensaje de error (o similar).</i>
+      <li>Ejecute el programa y compruebe que el programa no puede ejecutarse y que en la ventana de terminal obtiene el mismo mensaje de error (o similar).</li>
       <li>Corrija el error ayudándose del mensaje indicado en el panel de problemas.</li>
       <li>Una vez corregido el error, guarde el programa. Como el programa contiene varios errores sintácticos, se mostrará un nuevo mensaje de error.</li>
       <li>Corrija todos los errores hasta que el contador en los iconos de error sea cero y el nombre del fichero deje de mostrarse en rojo. Recuerde que el análisis del programa se produce al guardar el programa, por lo que es necesario guardar el programa para confirmar que se ha corregido el error.</li>
@@ -219,8 +221,57 @@
     </ol>
   </section>
 
+  <section id="ejercicio-5">
+    <h2>Puesta en marcha - 5 - Mclibre Python Testing Client (1)</h2>
+
+    <ol>
+      <li>Abra el programa puesta_en_marcha_5.py.</li>
+      <li>Este programa debería escribir en la pantalla "¡Hola, mundo!"".
+        <div class="resultado-terminal">
+          <pre>
+<span class="idle-resp">¡Hola, mundo!</span>
+</pre>
+        </div>
+      </li>
+      <li>Ejecute el programa en el panel del terminal y compruebe que no escribe exactamente el mensaje esperado.</li>
+      <li>En el terminal, muévase hasta la carpeta del programa.</li>
+      <li>Este programa se puede validar con la herramienta <i>mptc</i> con el número 1001. Ejecute la orden: <i>mptc puesta_en_marcha_5.py 1001</i></li>
+      <li>Compruebe que <i>mptc</i> prueba una vez el programa y detecta dos errores.</li>
+      <li>Corrija el primer error y ejecute de nuevo <i>mptc</i>.</li>
+      <li>Compruebe que <i>mptc</i> detecta un error.</li>
+      <li>Corrija el error y ejecute de nuevo <i>mptc</i>.</li>
+      <li>Compruebe que <i>mptc</i> ya no detecta errores.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-6">
+    <h2>Puesta en marcha - 6 - Mclibre Python Testing Client (2)</h2>
+
+    <ol>
+      <li>Abra el programa puesta_en_marcha_6.py.</li>
+      <li>Este programa debería pedir un número entero y mostrarlo:
+
+        <div class="resultado-terminal">
+          <pre>
+<span class="idle-resp">ESCRIBA NÚMERO</span>
+<span class="idle-resp">Escriba un número entero:</span> 1234
+<span class="idle-resp">Ha escrito el número 1234.</span>
+</pre>
+        </div>
+      </li>
+      <li>Ejecute el programa en el panel del terminal y compruebe que no escribe el mensaje esperado.</li>
+      <li>En el terminal, muévase hasta la carpeta del programa.</li>
+      <li>Este programa se puede validar con la herramienta <i>mptc</i> con el número 1003. Ejecute la orden: <i>mptc puesta_en_marcha_6.py 1003</i></li>
+      <li>Compruebe que <i>mptc</i> prueba dos veces el programa y detecta un error en cada ocasión.</li>
+      <li>Corrija la línea 4 de manera que el programa escriba el valor escrito por el usuario y ejecute de nuevo <i>mptc</i>.</li>
+      <li>Compruebe que <i>mptc</i> prueba dos veces el programa y detecta un error en cada ocasión.</li>
+      <li>Corrija la línea 3 de manera que el número se recoja como número entero y ejecute de nuevo <i>mptc</i>.</li>
+      <li>Compruebe que <i>mptc</i> ya no detecta errores.</li>
+    </ol>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 31 de enero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 5 de febrero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
