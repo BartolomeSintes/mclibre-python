@@ -1124,7 +1124,7 @@ print("¡Hasta la próxima!")</code>
 
     <p>Por ejemplo, el programa siguiente "adivina" el número pensado por el usuario:</p>
 
-    <div class="mcl-diapo" style="height: 32em">
+    <div class="mcl-diapo" style="height: 36em">
 
       <div id="Paso30">
         <p><strong>Ejemplo de sentencias condicionales anidadas</strong></p>
@@ -1132,32 +1132,35 @@ print("¡Hasta la próxima!")</code>
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
-<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
-<span class="idle-resp">El número pensado es 3
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  v. Verde    r. Rojo
+  Elija otro color (v o r):</span> v
+<span class="idle-resp">La mezcla de Azul y Verde produce Cian.
 ¡Hasta la próxima!</span>
 </pre>
           </div>
@@ -1176,27 +1179,29 @@ Conteste S (sí) o N (no) a mis preguntas.
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python"><span class="codigo-resaltado">print("Piense un número de 1 a 4.")</span>
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python"><span class="codigo-resaltado">print("Este programa mezcla dos colores.")</span>
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
-            <pre><span class="idle-resp"><span class="codigo-resaltado">Piense un número de 1 a 4.</span></span></pre>
+            <pre><span class="idle-resp"><span class="codigo-resaltado">Este programa mezcla dos colores.</span></span></pre>
           </div>
         </div>
 
@@ -1216,29 +1221,31 @@ print("¡Hasta la próxima!")</code>
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-<span class="codigo-resaltado">print("Conteste S (sí) o N (no) a mis preguntas.")</span>
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+<span class="codigo-resaltado">print("  r. Rojo      a. Azul")</span>
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-<span class="codigo-resaltado">Conteste S (sí) o N (no) a mis preguntas.</span></span>
+<span class="idle-resp">Este programa mezcla dos colores.
+<span class="codigo-resaltado">  r. Rojo      a. Azul</span></span>
 </pre>
           </div>
         </div>
@@ -1252,35 +1259,37 @@ print("¡Hasta la próxima!")</code>
       </div>
 
       <div id="Paso33">
-        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 3</strong></p>
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 2</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-<span class="codigo-resaltado">primera = input("¿El número pensado es mayor que 2? ")</span>
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+<span class="codigo-resaltado">primera = input("  Elija un color (r o a): ")</span>
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.</span>
-<span class="codigo-resaltado"><span class="idle-resp">¿El número pensado es mayor que 2?</span> S</span>
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul</span>
+  <span class="codigo-resaltado"><span class="idle-resp">Elija un color (r o a):</span> a</span>
 </pre>
           </div>
         </div>
@@ -1294,42 +1303,44 @@ Conteste S (sí) o N (no) a mis preguntas.</span>
       </div>
 
       <div id="Paso34">
-        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 4</strong></p>
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 3</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-<span class="codigo-resaltado">if primera == "S":</span>
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+<span class="codigo-resaltado">if primera == "r":</span>
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
-else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+        print("La mezcla Rojo y Verde produce Amarillo.")
+<span class="codigo-resaltado">else:</span>
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
 </pre>
           </div>
         </div>
 
-        <p>A continuación se evalúa la condición (primera == <span class="idle-cade">"S"</span>).</p>
+        <p>A continuación se evalúa la condición (primera == <span class="idle-cade">"r"</span>).</p>
 
-        <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que el usuario ha contestado S.</p>
+        <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que el usuario ha contestado <i>a</i>.</p>
 
         <p class="control">
           <a href="#Paso33"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -1338,43 +1349,45 @@ Conteste S (sí) o N (no) a mis preguntas.
       </div>
 
       <div id="Paso35">
-        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 5</strong></p>
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 4</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    <span class="codigo-resaltado">segunda = input("¿El número pensado es mayor que 3? ")</span>
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    <span class="codigo-resaltado">print("  v. Verde    r. Rojo")</span>
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
-<span class="codigo-resaltado"><span class="idle-resp">¿El número pensado es mayor que 3?</span> N</span>
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  <span class="codigo-resaltado">v. Verde    r. Rojo</span></span>
 </pre>
           </div>
         </div>
 
-        <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+        <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
 
-        <p>Imprime la segunda pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "segunda".</p>
+        <p>Escribe una frase.</p>
 
         <p class="control">
           <a href="#Paso34"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -1383,43 +1396,44 @@ Conteste S (sí) o N (no) a mis preguntas.
       </div>
 
       <div id="Paso36">
-        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 6</strong></p>
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 5</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input()
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    <span class="codigo-resaltado">if segunda == "S":</span>
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    <span class="codigo-resaltado">segunda = input("  Elija otro color (v o r): ")</span>
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
-<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  v. Verde    r. Rojo</span>
+  <span class="codigo-resaltado"><span class="idle-resp">Elija otro color (v o r):</span> v</span>
 </pre>
           </div>
         </div>
 
-        <p>A continuación se evalúa la condición (segunda == <span class="idle-cade">"S"</span>).</p>
-
-        <p>En este caso, la condición es falsa (<span class="idle-rese">False</span>), puesto que el usuario ha contestado N.</p>
+        <p>Imprime la segunda pregunta y espera a que el usuario escriba la respuesta y pulse Intro, guardando la respuesta en la variable "segunda".</p>
 
         <p class="control">
           <a href="#Paso35"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -1428,44 +1442,46 @@ Conteste S (sí) o N (no) a mis preguntas.
       </div>
 
       <div id="Paso37">
-        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 7</strong></p>
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 6</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        <span class="codigo-resaltado">print("El número pensado es 3")</span>
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
-    else:
-        print("El número pensado es 1.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    <span class="codigo-resaltado">if segunda == "v":</span>
+        print("La mezcla de Azul y Verde produce Cian.")
+    <span class="codigo-resaltado">else:</span>
+        print("La mezcla Azul y Rojo produce Magenta.")
 print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
-<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
-<span class="idle-resp">El número pensado es 3</span>
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  v. Verde    r. Rojo
+  Elija otro color (v o r):</span> v
 </pre>
           </div>
         </div>
 
-        <p>Como la condición es falsa (<span class="idle-rese">False</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">else</span>.</p>
+        <p>A continuación se evalúa la condición (segunda == <span class="idle-cade">"v"</span>).</p>
 
-        <p>En este caso el bloque consta de una sola instrucción que imprime el texto "El número pensado es 3".</p>
+        <p>En este caso, la condición es cierta (<span class="idle-rese">True</span>), puesto que el usuario ha contestado <i>v</i>.</p>
 
         <p class="control">
           <a href="#Paso36"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -1474,48 +1490,100 @@ Conteste S (sí) o N (no) a mis preguntas.
       </div>
 
       <div id="Paso38">
+        <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 7</strong></p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
+    else:
+        print("La mezcla Rojo y Verde produce Amarillo.")
+else:
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        <span class="codigo-resaltado">print("La mezcla de Azul y Verde produce Cian.")</span>
+    else:
+        print("La mezcla Azul y Rojo produce Magenta.")
+print("¡Hasta la próxima!")</code>
+</pre>
+          </div>
+
+          <div class="resultado-idle">
+            <pre>
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  v. Verde    r. Rojo
+  Elija otro color (v o r):</span> v
+<span class="idle-resp"><span class="codigo-resaltado">La mezcla de Azul y Verde produce Cian.</span></span>
+</pre>
+          </div>
+        </div>
+
+        <p>Como la condición es cierta (<span class="idle-rese">True</span>), a continuación se ejecutan las instrucciones del bloque <span class="idle-rese">if</span>.</p>
+
+        <p>En este caso el bloque consta de una sola instrucción que imprime el texto "La mezcla de Azul y Verde produce Cian.".</p>
+
+        <p class="control">
+          <a href="#Paso37"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#Paso39"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+        </p>
+      </div>
+
+      <div id="Paso39">
         <p><strong>Ejemplo de sentencias condicionales anidadas - Paso 8</strong></p>
 
         <div class="filaflex">
           <div class="codigo">
             <pre>
-<code class="language-python">print("Piense un número de 1 a 4.")
-print("Conteste S (sí) o N (no) a mis preguntas.")
-primera = input("¿El número pensado es mayor que 2? ")
-if primera == "S":
-    segunda = input("¿El número pensado es mayor que 3? ")
-    if segunda == "S":
-        print("El número pensado es 4.")
+<code class="language-python">print("Este programa mezcla dos colores.")
+print("  r. Rojo      a. Azul")
+primera = input("  Elija un color (r o a): ")
+if primera == "r":
+    print("  a. Azul      v. Verde")
+    segunda = input("  Elija otro color (a o v): ")
+    if segunda == "a":
+        print("La mezcla de Rojo y Azul produce Magenta.")
     else:
-        print("El número pensado es 3")
+        print("La mezcla Rojo y Verde produce Amarillo.")
 else:
-    segunda = input("¿El número pensado es mayor que 1? ")
-    if segunda == "S":
-        print("El número pensado es 2.")
+    print("  v. Verde    r. Rojo")
+    segunda = input("  Elija otro color (v o r): ")
+    if segunda == "v":
+        print("La mezcla de Azul y Verde produce Cian.")
     else:
-        print("El número pensado es 1.")
+        print("La mezcla Azul y Rojo produce Magenta.")
 <span class="codigo-resaltado">print("¡Hasta la próxima!")</span></code>
 </pre>
           </div>
 
           <div class="resultado-idle">
             <pre>
-<span class="idle-resp">Piense un número de 1 a 4.
-Conteste S (sí) o N (no) a mis preguntas.
-¿El número pensado es mayor que 2?</span> S
-<span class="idle-resp">¿El número pensado es mayor que 3?</span> N
-<span class="idle-resp">El número pensado es 3
+<span class="idle-resp">Este programa mezcla dos colores.
+  r. Rojo      a. Azul
+  Elija un color (r o a):</span> a
+<span class="idle-resp">  v. Verde    r. Rojo
+  Elija otro color (v o r):</span> v
+<span class="idle-resp">La mezcla de Azul y Verde produce Cian.
 <span class="codigo-resaltado">¡Hasta la próxima!</span></span>
 </pre>
           </div>
         </div>
 
-        <p>Una vez completado el bloque <span class="idle-rese">else</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
+        <p>Una vez completado el bloque <span class="idle-rese">if</span>, el programa salta a la instrucción siguiente al bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</p>
 
         <p>La última instrucción del programa imprime la despedida y el programa termina.</p>
 
         <p class="control">
-          <a href="#Paso37"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#Paso38"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
           <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48">
         </p>
       </div>
