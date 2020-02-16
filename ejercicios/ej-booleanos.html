@@ -179,9 +179,9 @@ def e3_nuevo(ev):
     e3_cadena_sp = negacion[randrange(0,2)]
     e3_cadena =  e3_cadena_sp + "("
     if randrange(0, 2):
-        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+        tmp = str(var) + " " + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
     else:
-        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+        tmp = str(randrange(0, maximo)) + " " + comparacion[randrange(0, len(comparacion))] + str(var)
     e3_cadena_sp += tmp
     e3_cadena += tmp + ")"
     document["e3_enunciado"] <= e3_cadena_sp
@@ -254,18 +254,18 @@ def e4_nuevo(ev):
     e4_cadena_sp = negacion[randrange(0,2)]
     e4_cadena =  e4_cadena_sp + "("
     if randrange(0, 2):
-        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+        tmp = str(var) + " " + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
     else:
-        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+        tmp = str(randrange(0, maximo)) + " " + comparacion[randrange(0, len(comparacion))] + str(var)
     e4_cadena_sp += tmp
     e4_cadena += tmp + ")"
     tmp = yo[randrange(0, 2)] + negacion[randrange(0,2)]
     e4_cadena_sp += tmp
     e4_cadena += tmp + "("
     if randrange(0, 2):
-        tmp = str(var) + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
+        tmp = str(var) + " " + comparacion[randrange(0, len(comparacion))] + str(randrange(0, maximo))
     else:
-        tmp = str(randrange(0, maximo)) + comparacion[randrange(0, len(comparacion))] + str(var)
+        tmp = str(randrange(0, maximo)) + " " + comparacion[randrange(0, len(comparacion))] + str(var)
     e4_cadena_sp += tmp
     e4_cadena += tmp + ")"
     document["e4_enunciado"] <= e4_cadena_sp
