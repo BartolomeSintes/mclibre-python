@@ -38,6 +38,8 @@
   <section id="variables">
     <h2>A. Variables</h2>
 
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"><strong>Nota</strong>: Como son ejercicios de examen, estos ejercicios incluyen también estructuras <span class="idle-rese">if ... elif ... else</span>.</p>
+
     <ul>
       <li><a href="#170224-1">examen 24 de febrero de 2017 - Ejercicio 1</a></li>
       <li><a href="#160525-1">examen 25 de mayo de 2016 - Ejercicio 1</a></li>
@@ -47,7 +49,12 @@
     </ul>
 
     <section id="170224-1">
-      <h2>Examen 24 de febrero de 2017 - Ejercicio 1</h2>
+      <h2 class="con-aside">Examen 24 de febrero de 2017 - Ejercicio 1</h2>
+
+      <aside class="aside-minienlace">
+        <p><a href="../otros/python-testing.html">MPTC</a></p>
+        <p>161711</p>
+      </aside>
 
       <p>Existen varios algoritmos para calcular el día de la semana en que cae una fecha cualquiera. El que se utiliza en este ejercicio lo cuenta el danés Claus Tøndering en su web <a href="https://tondering.dk/claus/cal/chrweek.php#calcdow">The Calendar FAQ</a>.</p>
 
@@ -68,36 +75,44 @@
 
       <p>El programa no tiene por qué comprobar que se escribe una fecha correcta (más allá de que el año sea posterior a 1582)</p>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 15</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 2</p>
-        <p><span class="idle-resp">Escriba el número de año (a partir de 1583):</span> 1564</p>
-        <p><span class="idle-resp">¡Le he pedido un año posterior a 1582!</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+CÁLCULO DEL DÍA DE LA SEMANA
+Escriba el número de día: <span class="entrada-usuario">15</span>
+Escriba el número de mes: <span class="entrada-usuario">2</span>
+Escriba el número de año (a partir de 1583): <span class="entrada-usuario">1564</span>
+¡Le he pedido un año posterior a 1582!
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 1</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 1</p>
-        <p><span class="idle-resp">Escriba el número de año (a partir de 1583):</span> 1583</p>
-        <p><span class="idle-resp">El día 1 del mes 1 de 1583 es sábado</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+CÁLCULO DEL DÍA DE LA SEMANA
+Escriba el número de día: <span class="entrada-usuario">1</span>
+Escriba el número de mes: <span class="entrada-usuario">1</span>
+Escriba el número de año (a partir de 1583): <span class="entrada-usuario">1583</span>
+El día 1 del mes 1 de 1583 es sábado
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 24</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 2</p>
-        <p><span class="idle-resp">Escriba el número de año (a partir de 1583):</span> 2017</p>
-        <p><span class="idle-resp">El día 24 del mes 2 de 2017 es viernes</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+CÁLCULO DEL DÍA DE LA SEMANA
+Escriba el número de día: <span class="entrada-usuario">24</span>
+Escriba el número de mes: <span class="entrada-usuario">2</span>
+Escriba el número de año (a partir de 1583): <span class="entrada-usuario">2017</span>
+El día 24 del mes 2 de 2017 es viernes
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">CÁLCULO DEL DÍA DE LA SEMANA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 31</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 7</p>
-        <p><span class="idle-resp">Escriba el número de año (a partir de 1583):</span> 1990</p>
-        <p><span class="idle-resp">El día 31 del mes 7 de 1990 es martes</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+CÁLCULO DEL DÍA DE LA SEMANA
+Escriba el número de día: <span class="entrada-usuario">31</span>
+Escriba el número de mes: <span class="entrada-usuario">7</span>
+Escriba el número de año (a partir de 1583): <span class="entrada-usuario">1990</span>
+El día 31 del mes 7 de 1990 es martes
+</pre>
       </div>
     </section>
 
@@ -116,43 +131,43 @@
 
       <p>Dígitos de control de ejemplo: 0375 1281 =&gt; 3; 0038 3676 =&gt; 1; 9517 5646 =&gt; 0; 8194 7118 =&gt; 7</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DÍGITO DE CONTROL CUENTA CORRIENTE</span>
+DÍGITO DE CONTROL CUENTA CORRIENTE
 
-<span class="idle-resp">Escriba el primer dígito de la entidad:</span> 2
-<span class="idle-resp">Escriba el segundo dígito de la entidad:</span> 0
-<span class="idle-resp">Escriba el tercer dígito de la entidad:</span> 3
-<span class="idle-resp">Escriba el cuarto dígito de la entidad:</span> 8
+Escriba el primer dígito de la entidad: <span class="entrada-usuario">2</span>
+Escriba el segundo dígito de la entidad: <span class="entrada-usuario">0</span>
+Escriba el tercer dígito de la entidad: <span class="entrada-usuario">3</span>
+Escriba el cuarto dígito de la entidad: <span class="entrada-usuario">8</span>
 
-<span class="idle-resp">Escriba el primer dígito de la oficina:</span> 6
-<span class="idle-resp">Escriba el segundo dígito de la oficina:</span> 4
-<span class="idle-resp">Escriba el tercer dígito de la oficina:</span> 3
-<span class="idle-resp">Escriba el cuarto dígito de la oficina:</span> 3
+Escriba el primer dígito de la oficina: <span class="entrada-usuario">6</span>
+Escriba el segundo dígito de la oficina: <span class="entrada-usuario">4</span>
+Escriba el tercer dígito de la oficina: <span class="entrada-usuario">3</span>
+Escriba el cuarto dígito de la oficina: <span class="entrada-usuario">3</span>
 
-<span class="idle-resp">El dígito de control es 8.</span>
+El dígito de control es 8.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DÍGITO DE CONTROL CUENTA CORRIENTE</span>
+DÍGITO DE CONTROL CUENTA CORRIENTE
 
-<span class="idle-resp">Escriba el primer dígito de la entidad:</span> -2
-<span class="idle-resp">Escriba el segundo dígito de la entidad:</span> 0
-<span class="idle-resp">Escriba el tercer dígito de la entidad:</span> 3
-<span class="idle-resp">Escriba el cuarto dígito de la entidad:</span> 88
+Escriba el primer dígito de la entidad: <span class="entrada-usuario">-2</span>
+Escriba el segundo dígito de la entidad: <span class="entrada-usuario">0</span>
+Escriba el tercer dígito de la entidad: <span class="entrada-usuario">3</span>
+Escriba el cuarto dígito de la entidad: <span class="entrada-usuario">88</span>
 
-<span class="idle-resp">Escriba el primer dígito de la oficina:</span> 6
-<span class="idle-resp">Escriba el segundo dígito de la oficina:</span> 4
-<span class="idle-resp">Escriba el tercer dígito de la oficina:</span> 3
-<span class="idle-resp">Escriba el cuarto dígito de la oficina:</span> 3
+Escriba el primer dígito de la oficina: <span class="entrada-usuario">6</span>
+Escriba el segundo dígito de la oficina: <span class="entrada-usuario">4</span>
+Escriba el tercer dígito de la oficina: <span class="entrada-usuario">3</span>
+Escriba el cuarto dígito de la oficina: <span class="entrada-usuario">3</span>
 
-<span class="idle-resp">Lo siento. No ha escrito correctamente los dígitos.</span>
+Lo siento. No ha escrito correctamente los dígitos.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
     </section>
@@ -166,35 +181,35 @@
 
       <p>Si se pone un número no positivo, el programa debe dar un aviso de error. Escriba el resultado de shakus con dos decimales.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS</span>
-<span class="idle-resp">Escriba la cantidad de centímetros:</span>  -5
-<span class="idle-resp">Por favor, escriba un número positivo</span>
+CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">-5</span>
+Por favor, escriba un número positivo
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS</span>
-<span class="idle-resp">Escriba la cantidad de centímetros:</span>  100
-<span class="idle-resp">100 cm son 3.3 shakus, es decir 0 ken(s) y 3.3 shaku(s)</span>
+CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">100</span>
+100 cm son 3.3 shakus, es decir 0 ken(s) y 3.3 shaku(s)
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS</span>
-<span class="idle-resp">Escriba la cantidad de centímetros:</span>  2000
-<span class="idle-resp">2000 cm son 66.01 shakus, es decir 11 ken(s) y 0.01 shaku(s)</span>
+CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS
+Escriba la cantidad de centímetros:  <span class="entrada-usuario">2000</span>
+2000 cm son 66.01 shakus, es decir 11 ken(s) y 0.01 shaku(s)
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS</span>
-<span class="idle-resp">Escriba la cantidad de centímetros:</span>  9876
-<span class="idle-resp">9876 cm son 325.94 shakus, es decir 54 ken(s) y 1.94 shaku(s)</span>
+CONVERTIDOR DE CENTÍMETROS A KENS Y SHAKUS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">9876</span>
+9876 cm son 325.94 shakus, es decir 54 ken(s) y 1.94 shaku(s)
 </pre>
       </div>
     </section>
@@ -206,35 +221,35 @@
 
       <p>Se recuerda a los que no han leído a Guillermo el travieso que antes de la conversión al sistema decimal una libra eran 20 chelines, un chelín eran 12 peniques y una corona eran 5 peniques.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Convertidor a libras, chelines, coronas y peniques</span>
-<span class="idle-resp">Escriba la cantidad de peniques:</span> 258
-<span class="idle-resp">258 peniques son 1 libras, 1 chelines 1 coronas y 1 peniques</span>
+Convertidor a libras, chelines, coronas y peniques
+Escriba la cantidad de peniques: <span class="entrada-usuario">258</span>
+258 peniques son 1 libras, 1 chelines 1 coronas y 1 peniques
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Convertidor a libras, chelines, coronas y peniques</span>
-<span class="idle-resp">Escriba la cantidad de peniques:</span> 240
-<span class="idle-resp">240 peniques son 1 libras, 0 chelines 0 coronas y 0 peniques</span>
+Convertidor a libras, chelines, coronas y peniques
+Escriba la cantidad de peniques: <span class="entrada-usuario">240</span>
+240 peniques son 1 libras, 0 chelines 0 coronas y 0 peniques
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Convertidor a libras, chelines, coronas y peniques</span>
-<span class="idle-resp">Escriba la cantidad de peniques:</span> 11
-<span class="idle-resp">11 peniques son 0 libras, 0 chelines 2 coronas y 1 peniques</span>
+Convertidor a libras, chelines, coronas y peniques
+Escriba la cantidad de peniques: <span class="entrada-usuario">11</span>
+11 peniques son 0 libras, 0 chelines 2 coronas y 1 peniques
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Convertidor a libras, chelines, coronas y peniques</span>
-<span class="idle-resp">Escriba la cantidad de peniques:</span> 31
-<span class="idle-resp">31 peniques son 0 libras, 2 chelines 1 coronas y 2 peniques</span>
+Convertidor a libras, chelines, coronas y peniques
+Escriba la cantidad de peniques: <span class="entrada-usuario">31</span>
+31 peniques son 0 libras, 2 chelines 1 coronas y 2 peniques
 </pre>
       </div>
     </section>
@@ -244,14 +259,14 @@
 
       <p>Escriba un programa que pida la anchura y altura de un rectángulo y que escriba su área, su perímetro y la longitud de su diagonal.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Cálculo de datos de un rectángulo</span>
-<span class="idle-resp">Escriba la anchura del rectángulo:</span> 4
-<span class="idle-resp">Escriba la altura del rectángulo:</span> 3
-<span class="idle-resp">La superficie del rectángulo es 12.0</span>
-<span class="idle-resp">El perímetro del rectángulo es 14.0</span>
-<span class="idle-resp">La diagonal del rectángulo mide 5.0</span>
+Cálculo de datos de un rectángulo
+Escriba la anchura del rectángulo: <span class="entrada-usuario">4</span>
+Escriba la altura del rectángulo: <span class="entrada-usuario">3</span>
+La superficie del rectángulo es 12.0
+El perímetro del rectángulo es 14.0
+La diagonal del rectángulo mide 5.0
 </pre>
       </div>
 
@@ -285,44 +300,54 @@
 
       <p>Se recuerda que enero, marzo, mayo, julio, agosto, octubre y diciembre tienen 31 días, que abril, junio, septiembre y noviembre tienen 30 días y febrero tiene 28 días salvo los años bisiestos en que tiene 29.</p>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 24</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 2</p>
-        <p><span class="idle-resp">Escriba el número de año:</span> 2017</p>
-        <p><span class="idle-resp">El día 24 del mes 2 del año 2017 existe.</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+COMPROBACIÓN DE FECHA
+Escriba el número de día: <span class="entrada-usuario">24</span>
+Escriba el número de mes: <span class="entrada-usuario">2</span>
+Escriba el número de año: <span class="entrada-usuario">2017</span>
+El día 24 del mes 2 del año 2017 existe.
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 40</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 5</p>
-        <p><span class="idle-resp">Escriba el número de año:</span> 1982</p>
-        <p><span class="idle-resp">El día 40 del mes 5 del año 1982 no existe.</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+COMPROBACIÓN DE FECHA
+Escriba el número de día: <span class="entrada-usuario">40</span>
+Escriba el número de mes: <span class="entrada-usuario">5</span>
+Escriba el número de año: <span class="entrada-usuario">1982</span>
+El día 40 del mes 5 del año 1982 no existe.
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 0</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 13</p>
-        <p><span class="idle-resp">Escriba el número de año:</span> 1999</p>
-        <p><span class="idle-resp">El día 0 del mes 13 del año 1999 no existe.</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+COMPROBACIÓN DE FECHA
+Escriba el número de día: <span class="entrada-usuario">0</span>
+Escriba el número de mes: <span class="entrada-usuario">13</span>
+Escriba el número de año: <span class="entrada-usuario">1999</span>
+El día 0 del mes 13 del año 1999 no existe.
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 29</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 2</p>
-        <p><span class="idle-resp">Escriba el número de año:</span> 2016</p>
-        <p><span class="idle-resp">El día 29 del mes 2 del año 2016 existe.</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+COMPROBACIÓN DE FECHA
+Escriba el número de día: <span class="entrada-usuario">29</span>
+Escriba el número de mes: <span class="entrada-usuario">2</span>
+Escriba el número de año: <span class="entrada-usuario">2016</span>
+El día 29 del mes 2 del año 2016 existe.
+</pre>
       </div>
 
-      <div class="resultado-terminal">
-        <p><span class="idle-resp">COMPROBACIÓN DE FECHA</span></p>
-        <p><span class="idle-resp">Escriba el número de día:</span> 29</p>
-        <p><span class="idle-resp">Escriba el número de mes:</span> 2</p>
-        <p><span class="idle-resp">Escriba el número de año:</span> 1900</p>
-        <p><span class="idle-resp">El día 29 del mes 2 del año 1900 no existe.</span></p>
+      <div class="ejecucion-terminal">
+        <pre>
+COMPROBACIÓN DE FECHA
+Escriba el número de día: <span class="entrada-usuario">29</span>
+Escriba el número de mes: <span class="entrada-usuario">2</span>
+Escriba el número de año: <span class="entrada-usuario">1900</span>
+El día 29 del mes 2 del año 1900 no existe.
+</pre>
       </div>
     </section>
 
@@ -335,65 +360,65 @@
 
       <p>Al dar las respuestas, el programa debe escribir el número de litros con dos decimales, el número de galones sin decimales y el número de pintas con un decimal.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">GALONES Y PINTAS</span>
+GALONES Y PINTAS
 
-<span class="idle-resp">Este programa permite:</span>
-<span class="idle-resp">a. Convertir litros en galones y pintas.</span>
-<span class="idle-resp">b. Convertir galones y pintas en litros.</span>
+Este programa permite:
+a. Convertir litros en galones y pintas.
+b. Convertir galones y pintas en litros.
 
-<span class="idle-resp">Elija una opción:</span> 2
+Elija una opción: <span class="entrada-usuario">2</span>
 
-<span class="idle-resp">Debe escribir a o b.</span>
+Debe escribir a o b.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">GALONES Y PINTAS</span>
+GALONES Y PINTAS
 
-<span class="idle-resp">Este programa permite:</span>
-<span class="idle-resp">a. Convertir litros en galones y pintas.</span>
-<span class="idle-resp">b. Convertir galones y pintas en litros.</span>
+Este programa permite:
+a. Convertir litros en galones y pintas.
+b. Convertir galones y pintas en litros.
 
-<span class="idle-resp">Elija una opción:</span> a
+Elija una opción: <span class="entrada-usuario">a</span>
 
-<span class="idle-resp">Convertir litros en galones y pintas</span>
-<span class="idle-resp">Número de litros:</span> 5
-<span class="idle-resp">5.0 litros son 1 galones y 0.8 pintas.</span>
+Convertir litros en galones y pintas
+Número de litros: <span class="entrada-usuario">5</span>
+5.0 litros son 1 galones y 0.8 pintas.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">GALONES Y PINTAS</span>
+GALONES Y PINTAS
 
-<span class="idle-resp">Este programa permite:</span>
-<span class="idle-resp">a. Convertir litros en galones y pintas.</span>
-<span class="idle-resp">b. Convertir galones y pintas en litros.</span>
+Este programa permite:
+a. Convertir litros en galones y pintas.
+b. Convertir galones y pintas en litros.
 
-<span class="idle-resp">Elija una opción:</span> 2
+Elija una opción: <span class="entrada-usuario">2</span>
 
-<span class="idle-resp">Convertir galones y pintas en litros.</span>
-<span class="idle-resp">Número de galones:</span> 3
-<span class="idle-resp">Número de pintas:</span> 7
-<span class="idle-resp">3 galones y 7.0 pintas son 17.62 litros.</span>
+Convertir galones y pintas en litros.
+Número de galones: <span class="entrada-usuario">3</span>
+Número de pintas: <span class="entrada-usuario">7</span>
+3 galones y 7.0 pintas son 17.62 litros.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">3.0 litros son 0 galones y 5.3 pintas.</span>
-<span class="idle-resp">5.5 litros son 1 galones y 1.7 pintas.</span>
-<span class="idle-resp">10 galones y 3.0 pintas son 47.17 litros.</span>
-<span class="idle-resp">0 galones y 0.5 pintas son 0.28 litros.</span>
+3.0 litros son 0 galones y 5.3 pintas.
+5.5 litros son 1 galones y 1.7 pintas.
+10 galones y 3.0 pintas son 47.17 litros.
+0 galones y 0.5 pintas son 0.28 litros.
 </pre>
       </div>
     </section>
@@ -416,54 +441,54 @@
         </li>
       </ul>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">PUNTO Y CIRCUNFERENCIA</span>
+PUNTO Y CIRCUNFERENCIA
 
-<span class="idle-resp">Escriba la coordenada X del centro de la circunferencia:</span> 30
-<span class="idle-resp">Escriba la coordenada Y del centro de la circunferencia:</span> 40
-<span class="idle-resp">Escriba el radio de la circunferencia:</span> 50
+Escriba la coordenada X del centro de la circunferencia: <span class="entrada-usuario">30</span>
+Escriba la coordenada Y del centro de la circunferencia: <span class="entrada-usuario">40</span>
+Escriba el radio de la circunferencia: <span class="entrada-usuario">50</span>
 
-<span class="idle-resp">Escriba la coordenada X del punto:</span> 0
-<span class="idle-resp">Escriba la coordenada Y del punto:</span> 0
+Escriba la coordenada X del punto: <span class="entrada-usuario">0</span>
+Escriba la coordenada Y del punto: <span class="entrada-usuario">0</span>
 
-<span class="idle-resp">El punto está sobre la circunferencia.</span>
+El punto está sobre la circunferencia.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">PUNTO Y CIRCUNFERENCIA</span>
+PUNTO Y CIRCUNFERENCIA
 
-<span class="idle-resp">Escriba la coordenada X del centro de la circunferencia:</span> 10
-<span class="idle-resp">Escriba la coordenada Y del centro de la circunferencia:</span> 20
-<span class="idle-resp">Escriba el radio de la circunferencia:</span> 5.5
+Escriba la coordenada X del centro de la circunferencia: <span class="entrada-usuario">10</span>
+Escriba la coordenada Y del centro de la circunferencia: <span class="entrada-usuario">20</span>
+Escriba el radio de la circunferencia: <span class="entrada-usuario">5.5</span>
 
-<span class="idle-resp">Escriba la coordenada X del punto:</span> -14.5
-<span class="idle-resp">Escriba la coordenada Y del punto:</span> 13
+Escriba la coordenada X del punto: <span class="entrada-usuario">-14.5</span>
+Escriba la coordenada Y del punto: <span class="entrada-usuario">13</span>
 
-<span class="idle-resp">El punto está fuera de la la circunferencia.</span>
+El punto está fuera de la la circunferencia.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">PUNTO Y CIRCUNFERENCIA</span>
+PUNTO Y CIRCUNFERENCIA
 
-<span class="idle-resp">Escriba la coordenada X del centro de la circunferencia:</span> -10
-<span class="idle-resp">Escriba la coordenada Y del centro de la circunferencia:</span> 6.5
-<span class="idle-resp">Escriba el radio de la circunferencia:</span> 20
+Escriba la coordenada X del centro de la circunferencia: <span class="entrada-usuario">-10</span>
+Escriba la coordenada Y del centro de la circunferencia: <span class="entrada-usuario">6.5</span>
+Escriba el radio de la circunferencia: <span class="entrada-usuario">20</span>
 
-<span class="idle-resp">Escriba la coordenada X del punto:</span> 5
-<span class="idle-resp">Escriba la coordenada Y del punto:</span> 15
+Escriba la coordenada X del punto: <span class="entrada-usuario">5</span>
+Escriba la coordenada Y del punto: <span class="entrada-usuario">15</span>
 
-<span class="idle-resp">El punto está dentro de la la circunferencia.</span>
+El punto está dentro de la la circunferencia.
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
     </section>
@@ -475,39 +500,39 @@
 
       <p><strong>Nota</strong>: Haga este ejercicio sin utilizar la función valor absoluto <span class="idle-func">abs</span>().</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DISTANCIA</span>
-<span class="idle-resp">Escriba un número:</span> 8
-<span class="idle-resp">Escriba otro número:</span> 4
-<span class="idle-resp">La distancia entre 8.0 y 4.0 es 4.0</span>
+DISTANCIA
+Escriba un número: <span class="entrada-usuario">8</span>
+Escriba otro número: <span class="entrada-usuario">4</span>
+La distancia entre 8.0 y 4.0 es 4.0
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DISTANCIA</span>
-<span class="idle-resp">Escriba un número:</span> 7
-<span class="idle-resp">Escriba otro número:</span> 10
-<span class="idle-resp">La distancia entre 7.0 y 10.0 es 3.0</span>
+DISTANCIA
+Escriba un número: <span class="entrada-usuario">7</span>
+Escriba otro número: <span class="entrada-usuario">10</span>
+La distancia entre 7.0 y 10.0 es 3.0
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DISTANCIA</span>
-<span class="idle-resp">Escriba un número:</span> 5.5
-<span class="idle-resp">Escriba otro número:</span> 5.5
-<span class="idle-resp">La distancia entre 5.5 y 5.5 es 0.0</span>
+DISTANCIA
+Escriba un número: <span class="entrada-usuario">5.5</span>
+Escriba otro número: <span class="entrada-usuario">5.5</span>
+La distancia entre 5.5 y 5.5 es 0.0
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">DISTANCIA</span>
-<span class="idle-resp">Escriba un número:</span> -6
-<span class="idle-resp">Escriba otro número:</span> 6
-<span class="idle-resp">La distancia entre -6.0 y 6.0 es 12.0</span>
+DISTANCIA
+Escriba un número: <span class="entrada-usuario">-6</span>
+Escriba otro número: <span class="entrada-usuario">6</span>
+La distancia entre -6.0 y 6.0 es 12.0
 </pre>
       </div>
     </section>
@@ -519,33 +544,33 @@
 
       <p><strong>Nota</strong>: Haga este ejercicio sin utilizar la función valor absoluto <span class="idle-func">abs</span>(), pero utilizando el ejercicio 1.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">MÁS CERCA, MÁS LEJOS</span>
-<span class="idle-resp">Escriba un número:</span> 6
-<span class="idle-resp">Escriba otro número:</span> 8
-<span class="idle-resp">Escriba otro número más:</span> 3
-<span class="idle-resp">3.0 está más cerca de 6.0 que de 8.0</span>
+MÁS CERCA, MÁS LEJOS
+Escriba un número: <span class="entrada-usuario">6</span>
+Escriba otro número: <span class="entrada-usuario">8</span>
+Escriba otro número más: <span class="entrada-usuario">3</span>
+3.0 está más cerca de 6.0 que de 8.0
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">MÁS CERCA, MÁS LEJOS</span>
-<span class="idle-resp">Escriba un número:</span> -10
-<span class="idle-resp">Escriba otro número:</span> 5
-<span class="idle-resp">Escriba otro número más:</span> 0
-<span class="idle-resp">0.0 está más cerca de 5 que de -10.0</span>
+MÁS CERCA, MÁS LEJOS
+Escriba un número: <span class="entrada-usuario">-10</span>
+Escriba otro número: <span class="entrada-usuario">5</span>
+Escriba otro número más: <span class="entrada-usuario">0</span>
+0.0 está más cerca de 5 que de <span class="entrada-usuario">-10.0</span>
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">MÁS CERCA, MÁS LEJOS</span>
-<span class="idle-resp">Escriba un número:</span> 7
-<span class="idle-resp">Escriba otro número:</span> 7
-<span class="idle-resp">Escriba otro número más:</span> 10
-<span class="idle-resp">10.0 está a la misma distancia de 7.0 que de 7.0</span>
+MÁS CERCA, MÁS LEJOS
+Escriba un número: <span class="entrada-usuario">7</span>
+Escriba otro número: <span class="entrada-usuario">7</span>
+Escriba otro número más: <span class="entrada-usuario">10</span>
+10.0 está a la misma distancia de 7.0 que de 7.0
 </pre>
       </div>
     </section>
@@ -584,33 +609,33 @@
         </li>
       </ul>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Sucesiones</span>
-<span class="idle-resp">Escriba un número:</span> 5
-<span class="idle-resp">Escriba otro número:</span> 5
-<span class="idle-resp">Escriba otro número más:</span> 5
-<span class="idle-resp">5.0 5.0 5.0 forman una sucesión aritmética de diferencia 0 y una sucesión geométrica de razón 1.</span>
+Sucesiones
+Escriba un número: <span class="entrada-usuario">5</span>
+Escriba otro número: <span class="entrada-usuario">5</span>
+Escriba otro número más: <span class="entrada-usuario">5</span>
+5.0 5.0 5.0 forman una sucesión aritmética de diferencia 0 y una sucesión geométrica de razón 1.
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Sucesiones</span>
-<span class="idle-resp">Escriba un número:</span> 3
-<span class="idle-resp">Escriba otro número:</span> 9
-<span class="idle-resp">Escriba otro número más:</span> 27
-<span class="idle-resp">3.0 9.0 27.0 forman una sucesión geométrica de razón 3.0</span>
+Sucesiones
+Escriba un número: <span class="entrada-usuario">3</span>
+Escriba otro número: <span class="entrada-usuario">9</span>
+Escriba otro número más: <span class="entrada-usuario">27</span>
+3.0 9.0 27.0 forman una sucesión geométrica de razón 3.0
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Sucesiones</span>
-<span class="idle-resp">Escriba un número:</span> 2.1
-<span class="idle-resp">Escriba otro número:</span> -1
-<span class="idle-resp">Escriba otro número más:</span> 4.3
-<span class="idle-resp">2.1 -1.0 4.3 no forman ni una sucesión aritmética ni geométrica</span>
+Sucesiones
+Escriba un número: <span class="entrada-usuario">2.1</span>
+Escriba otro número: <span class="entrada-usuario">-1</span>
+Escriba otro número más: <span class="entrada-usuario">4.3</span>
+2.1 -1.0 4.3 no forman ni una sucesión aritmética ni geométrica
 </pre>
       </div>
     </section>
@@ -632,22 +657,22 @@
 
       <p>Escriba un programa que pregunte cuántos números se van a introducir, pida esos números, y muestre un mensaje cada vez que un número no sea distinto al anterior.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
-<span class="idle-resp">¡Imposible!</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">-1</span>
+¡Imposible!
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> 4
-<span class="idle-resp">Escriba un número:</span> 6
-<span class="idle-resp">Escriba un número distinto de 6 :</span> 10
-<span class="idle-resp">Escriba un número distinto de 10 :</span> 10
-<span class="idle-resp">¡ 10 no es distinto de 10 !</span>
-<span class="idle-resp">Escriba un número distinto de 10 :</span> 9
-<span class="idle-resp">Gracias por su colaboración</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">4</span>
+Escriba un número: <span class="entrada-usuario">6</span>
+Escriba un número distinto de 6: <span class="entrada-usuario">10</span>
+Escriba un número distinto de 10: <span class="entrada-usuario">10</span>
+¡10 no es distinto de 10!
+Escriba un número distinto de 10 : <span class="entrada-usuario">9</span>
+Gracias por su colaboración
 </pre>
       </div>
     </section>
@@ -663,31 +688,31 @@
         <li>Por eso el primer valor se debe pedir antes del bucle (en el ejemplo se puede ver cómo la petición del primer número es distinta del resto)</li>
       </ul>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
-<span class="idle-resp">¡Imposible!</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">-1</span>
+¡Imposible!
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> 4
-<span class="idle-resp">Escriba el primer número:</span> 3
-<span class="idle-resp">Escriba el número 2:</span> 5
-<span class="idle-resp">Escriba el número 3:</span> 3
-<span class="idle-resp">Escriba el número 4:</span> 7
-<span class="idle-resp">Ha escrito 2 valores mayores que el anterior</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">4</span>
+Escriba el primer número: <span class="entrada-usuario">3</span>
+Escriba el número 2: <span class="entrada-usuario">5</span>
+Escriba el número 3: <span class="entrada-usuario">3</span>
+Escriba el número 4: <span class="entrada-usuario">7</span>
+Ha escrito 2 valores mayores que el anterior
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> 3
-<span class="idle-resp">Escriba el primer número:</span> 4
-<span class="idle-resp">Escriba el número 2:</span> 4
-<span class="idle-resp">Escriba el número 3:</span> 2
-<span class="idle-resp">Ha escrito 0 valores mayores que el anterior</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">3</span>
+Escriba el primer número: <span class="entrada-usuario">4</span>
+Escriba el número 2: <span class="entrada-usuario">4</span>
+Escriba el número 3: <span class="entrada-usuario">2</span>
+Ha escrito 0 valores mayores que el anterior
 </pre>
       </div>
     </section>
@@ -699,21 +724,21 @@
 
       <p>Se recuerda que la media geométrica de n valores es la raíz n-ésima del producto de esos valores.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> -1
-<span class="idle-resp">¡Imposible!</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">-1</span>
+¡Imposible!
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¿Cuántos valores va a introducir?</span> 3
-<span class="idle-resp">Escriba el número 1 :</span> 4
-<span class="idle-resp">Escriba el número 2 :</span> 6
-<span class="idle-resp">Escriba el número 3 :</span> 8
-<span class="idle-resp">El producto de los números que ha escrito es 192.0</span>
-<span class="idle-resp">La media geométrica de los números que ha escrito es 5.8</span>
+¿Cuántos valores va a introducir? <span class="entrada-usuario">3</span>
+Escriba el número 1 : <span class="entrada-usuario">4</span>
+Escriba el número 2 : <span class="entrada-usuario">6</span>
+Escriba el número 3 : <span class="entrada-usuario">8</span>
+El producto de los números que ha escrito es 192.0
+La media geométrica de los números que ha escrito es 5.8
 </pre>
       </div>
     </section>
@@ -723,31 +748,31 @@
 
       <p>Escriba un programa que pida primero cuántos números se van a escribir, que pida a continuación esa cantidad de números y al final diga tanto la suma de los números pares introducidos como la suma de los números impares introducidos.</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">SUMADOR DE PARES E IMPARES</span>
+SUMADOR DE PARES E IMPARES
 
-<span class="idle-resp">¿Cuántos números va a escribir?</span> 4
+¿Cuántos números va a escribir? <span class="entrada-usuario">4</span>
 
-<span class="idle-resp">Escriba un número entero:</span> 6
-<span class="idle-resp">Escriba un número entero:</span> 9
-<span class="idle-resp">Escriba un número entero:</span> 7
-<span class="idle-resp">Escriba un número entero:</span> 2
+Escriba un número entero: <span class="entrada-usuario">6</span>
+Escriba un número entero: <span class="entrada-usuario">9</span>
+Escriba un número entero: <span class="entrada-usuario">7</span>
+Escriba un número entero: <span class="entrada-usuario">2</span>
 
-<span class="idle-resp">La suma de los números pares que ha escrito es 8</span>
-<span class="idle-resp">La suma de los números impares que ha escrito es 16</span>
+La suma de los números pares que ha escrito es 8
+La suma de los números impares que ha escrito es 16
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">SUMADOR DE PARES E IMPARES</span>
+SUMADOR DE PARES E IMPARES
 
-<span class="idle-resp">¿Cuántos números va a escribir?</span> -3
+¿Cuántos números va a escribir? <span class="entrada-usuario">-3</span>
 
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
     </section>
@@ -759,51 +784,51 @@
 
       <h3>Ejemplos</h3>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">REPETICIONES</span>
+REPETICIONES
 
-<span class="idle-resp">Escriba un número entero:</span> 3
-<span class="idle-resp">¿Cuántos números va a escribir?</span> 4
+Escriba un número entero: <span class="entrada-usuario">3</span>
+¿Cuántos números va a escribir? <span class="entrada-usuario">4</span>
 
-<span class="idle-resp">Escriba un número entero:</span> 4
-<span class="idle-resp">Escriba un número entero:</span> 3
-<span class="idle-resp">Escriba un número entero:</span> 3
-<span class="idle-resp">Escriba un número entero:</span> 5
+Escriba un número entero: <span class="entrada-usuario">4</span>
+Escriba un número entero: <span class="entrada-usuario">3</span>
+Escriba un número entero: <span class="entrada-usuario">3</span>
+Escriba un número entero: <span class="entrada-usuario">5</span>
 
-<span class="idle-resp">Ha escrito tantas veces el número 3 como el resto de números.</span>
+Ha escrito tantas veces el número 3 como el resto de números.
+
+Programa terminado
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>
+REPETICIONES
+
+Escriba un número entero: <span class="entrada-usuario">5</span>
+¿Cuántos números va a escribir? <span class="entrada-usuario">3</span>
+
+Escriba un número entero: <span class="entrada-usuario">1</span>
+Escriba un número entero: <span class="entrada-usuario">2</span>
+Escriba un número entero: <span class="entrada-usuario">5</span>
+
+Ha escrito menos veces el número 5 que el resto de números.
 
 <span class="idle-resp">Programa terminado</span>
 </pre>
       </div>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">REPETICIONES</span>
+REPETICIONES
 
-<span class="idle-resp">Escriba un número entero:</span> 5
-<span class="idle-resp">¿Cuántos números va a escribir?</span> 3
+Escriba un número entero: <span class="entrada-usuario">0</span>
+¿Cuántos números va a escribir? <span class="entrada-usuario">-3</span>
 
-<span class="idle-resp">Escriba un número entero:</span> 1
-<span class="idle-resp">Escriba un número entero:</span> 2
-<span class="idle-resp">Escriba un número entero:</span> 5
+¡Valor incorrecto! No puede escribir -3 números.
 
-<span class="idle-resp">Ha escrito menos veces el número 5 que el resto de números.</span>
-
-<span class="idle-resp">Programa terminado</span>
-</pre>
-      </div>
-
-      <div class="resultado-terminal">
-        <pre>
-<span class="idle-resp">REPETICIONES</span>
-
-<span class="idle-resp">Escriba un número entero:</span> 0
-<span class="idle-resp">¿Cuántos números va a escribir?</span> -3
-
-<span class="idle-resp">¡Valor incorrecto! No puede escribir -3 números.</span>
-
-<span class="idle-resp">Programa terminado</span>
+Programa terminado
 </pre>
       </div>
     </section>

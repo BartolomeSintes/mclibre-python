@@ -82,13 +82,13 @@
         <li>El enunciado del ejercicio era:
           <p>Escriba un programa que pida la anchura y altura de un rectángulo y lo dibuje con caracteres producto (*):</p>
 
-          <div class="resultado-terminal">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Anchura del rectángulo:</span> 5
-<span class="idle-resp">Altura del rectángulo:</span> 3
-<span class="idle-resp">* * * * *
+Anchura del rectángulo: <span class="entrada-usuario">5</span>
+Altura del rectángulo: <span class="entrada-usuario">3</span>
 * * * * *
-* * * * *</span>
+* * * * *
+* * * * *
 </pre>
           </div>
         </li>
@@ -114,14 +114,14 @@ for i in range(altura):
 
       <p>Escriba un programa que pida la anchura y altura de un rectángulo y el caracter a utilizar en el dibujo:</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Anchura del rectángulo:</span> 5
-<span class="idle-resp">Altura del rectángulo:</span> 3
-<span class="idle-resp">Carácter a utilizar:</span> o
-<span class="idle-resp">o o o o o
+Anchura del rectángulo: <span class="entrada-usuario">5</span>
+Altura del rectángulo: <span class="entrada-usuario">3</span>
+Carácter a utilizar: <span class="entrada-usuario">o</span>
 o o o o o
-o o o o o</span>
+o o o o o
+o o o o o
 </pre>
       </div>
       <p><strong>Nota</strong>: El carácter a utilizar en el dibujo se puede enviar a la función como tercer parámetro.</p>
@@ -140,15 +140,16 @@ o o o o o</span>
         <li>El enunciado del ejercicio era:
           <p>Escriba un programa que pida la anchura de un triángulo y lo dibuje con caracteres producto (*):</p>
 
-          <div class="resultado-terminal">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Anchura del triángulo:</span> 4
-<span class="idle-resp">*
-* *  <br>* * *
+Anchura del triángulo: <span class="entrada-usuario">4</span>
+*
+* *
+* * *
 * * * *
 * * *
 * *
-*</span>
+*
 </pre>
           </div>
         </li>
@@ -178,10 +179,10 @@ for i in range(1, anchura):
 
       <p>Escriba un programa que pida la anchura de un triángulo y dibuje una sucesión de triángulos con caracteres producto (*):</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Anchura del triángulo:</span> 3
-<span class="idle-resp">*
+Anchura del triángulo: <span class="entrada-usuario">3</span>
+*
 * *
 * * *
 * *
@@ -189,7 +190,7 @@ for i in range(1, anchura):
 *
 * *
 *
-*</span>
+*
 </pre>
       </div>
     </section>
@@ -209,11 +210,11 @@ for i in range(1, anchura):
           <p>Se recuerda que los años bisiestos son múltiplos de 4, pero los múltiplos de 100 no lo son, aunque los múltiplos de 400 sí.</p>
           <p>Estos son algunos ejemplos de posibles respuestas: 2012 es bisiesto, 2010 no es bisiesto, 2000 es bisiesto, 1900 no es bisiesto.</p>
 
-          <div class="resultado-terminal">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Comprobador de años bisiestos</span>
-<span class="idle-resp">Escriba un año y le diré si es bisiesto:</span> 2000
-<span class="idle-resp">El año 2000 es un año bisiesto.</span>
+COMPROBADOR DE AÑOS BISIESTOS
+Escriba un año y le diré si es bisiesto: <span class="entrada-usuario">2000</span>
+El año 2000 es un año bisiesto.
 </pre>
           </div>
 
@@ -223,7 +224,7 @@ for i in range(1, anchura):
 
           <div class="codigo">
             <pre>
-<code class="language-python">print("Comprobador de años bisiestos")
+<code class="language-python">print("COMPROBADOR DE AÑOS BISIESTOS")
 fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 
 if fecha % 400 == 0 or (fecha % 100 != 0 and fecha % 4 == 0):
@@ -241,13 +242,13 @@ else:
 
       <p>Escriba un programa que pida dos años y escriba cuántos años bisiestos hay entre esas dos fechas (incluidos los dos años):</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Contador de años bisiestos</span>
-<span class="idle-resp">Escriba un año:</span> 2000
-<span class="idle-resp">Escriba otro año posterior a 2000:</span> 1999
-<span class="idle-resp">1999 no es mayor que 2000. Inténtelo de nuevo:</span> 2013
-<span class="idle-resp">De 2000 a 2013 hay 14 años, 4 de ellos bisiestos.</span>
+CONTADOR DE AÑOS BISIESTOS
+Escriba un año: <span class="entrada-usuario">2000</span>
+Escriba otro año posterior a 2000: <span class="entrada-usuario">1999</span>
+1999 no es mayor que 2000. Inténtelo de nuevo: <span class="entrada-usuario">2013</span>
+De 2000 a 2013 hay 14 años, 4 de ellos bisiestos.
 </pre>
       </div>
     </section>
@@ -265,13 +266,13 @@ else:
         <li>El enunciado del ejercicio era:
           <p>Escriba un programa que permita crear una lista de palabras (que puede ser vacía). Para ello, el programa tiene que pedir un número y luego solicitar ese número de palabras para crear la lista. Por último, el programa tiene que escribir la lista.</p>
 
-          <div class="resultado-terminal">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Alberto
-<span class="idle-resp">Dígame la palabra 2:</span> Benito
-<span class="idle-resp">Dígame la palabra 3:</span> Carmen
-<span class="idle-resp">La lista creada es: ['Alberto', 'Benito', 'Carmen']</span>
+Dígame cuántas palabras tiene la lista: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 2: <span class="entrada-usuario">Benito</span>
+Dígame la palabra 3: <span class="entrada-usuario">Carmen</span>
+La lista creada es: ['Alberto', 'Benito', 'Carmen']
 </pre>
           </div>
         </li>
@@ -302,19 +303,21 @@ else:
 
       <p>Escriba un programa que pida cuántas listas se quieren crear y las solicite a continuación:</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Generador de listas</span>
-<span class="idle-resp">¿Cuántas listas quiere escribir?</span> 2
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 1:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Ana
-<span class="idle-resp">Dígame la palabra 2:</span>  Bárbara
-<span class="idle-resp">Dígame la palabra 3:</span>  Carmen<span class="idle-resp"><br>
-La lista 1 es: ['Ana', 'Bárbara', 'Carmen']</span>
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 2:</span>  2
-<span class="idle-resp">Dígame la palabra 1:</span> Alberto
-<span class="idle-resp">Dígame la palabra 2:</span> Bernardo
-<span class="idle-resp">La lista 2 es: ['Alberto', 'Bernardo']</span>
+Generador de listas
+¿Cuántas listas quiere escribir? <span class="entrada-usuario">2</span>
+
+Dígame cuántas palabras tiene la lista 1: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Ana</span>
+Dígame la palabra 2:  <span class="entrada-usuario">Bárbara</span>
+Dígame la palabra 3:  <span class="entrada-usuario">Carmen</span>
+La lista 1 es: ['Ana', 'Bárbara', 'Carmen']
+
+Dígame cuántas palabras tiene la lista 2:  <span class="entrada-usuario">2</span>
+Dígame la palabra 1: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 2: <span class="entrada-usuario">Bernardo</span>
+La lista 2 es: ['Alberto', 'Bernardo']
 </pre>
       </div>
 
@@ -326,19 +329,22 @@ La lista 1 es: ['Ana', 'Bárbara', 'Carmen']</span>
 
       <p>Modifique el programa anterior de manera que las listas se escriban al final del programa:</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Generador de listas</span>
-<span class="idle-resp">¿Cuántas listas quiere escribir?</span> 2
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 1:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Ana
-<span class="idle-resp">Dígame la palabra 2:</span>  Bárbara
-<span class="idle-resp">Dígame la palabra 3:</span>  Carmen
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 2:</span>  2
-<span class="idle-resp">Dígame la palabra 1:</span> Alberto
-<span class="idle-resp">Dígame la palabra 2:</span> Bernardo<span class="idle-resp"><br>
-La lista 1 es: ['Ana', 'Bárbara', 'Carmen']</span>
-<span class="idle-resp">La lista 2 es: ['Alberto', 'Bernardo']</span>
+Generador de listas
+¿Cuántas listas quiere escribir? <span class="entrada-usuario">2</span>
+
+Dígame cuántas palabras tiene la lista 1: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Ana</span>
+Dígame la palabra 2:  <span class="entrada-usuario">Bárbara</span>
+Dígame la palabra 3:  <span class="entrada-usuario">Carmen</span>
+
+Dígame cuántas palabras tiene la lista 2:  <span class="entrada-usuario">2</span>
+Dígame la palabra 1: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 2: <span class="entrada-usuario">Bernardo</span>
+
+La lista 1 es: ['Ana', 'Bárbara', 'Carmen']
+La lista 2 es: ['Alberto', 'Bernardo']
 </pre>
       </div>
       <p><strong>Nota</strong>: Se puede crear una lista de listas en la que se vayan introduciendo las listas a medida que se generan</p>
@@ -356,21 +362,23 @@ La lista 1 es: ['Ana', 'Bárbara', 'Carmen']</span>
         <li>El enunciado del ejercicio era:
           <p>Escriba un programa que permita crear dos listas de palabras y que, a continuación, elimine de la primera lista los nombres de la segunda lista.</p>
 
-          <div class="resultado-terminal">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame cuántas palabras tiene la lista:</span> 5
-<span class="idle-resp">Dígame la palabra 1:</span> Carmen
-<span class="idle-resp">Dígame la palabra 2:</span> Carmen
-<span class="idle-resp">Dígame la palabra 3:</span> Alberto
-<span class="idle-resp">Dígame la palabra 4:</span> Benito
-<span class="idle-resp">Dígame la palabra 5:</span> David
-<span class="idle-resp">La lista creada es: ['Carmen', 'Carmen', 'Alberto', 'Benito', 'David']</span>
-<span class="idle-resp">Dígame cuántas palabras tiene la lista de palabras a eliminar:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Benito
-<span class="idle-resp">Dígame la palabra 2:</span> Juan
-<span class="idle-resp">Dígame la palabra 3:</span> Carmen
-<span class="idle-resp">La lista de palabras a eliminar es: ['Benito', 'Juan', 'Carmen']</span>
-<span class="idle-resp">La lista es ahora: ['Alberto', 'David']</span>
+Dígame cuántas palabras tiene la lista: <span class="entrada-usuario">5</span>
+Dígame la palabra 1: <span class="entrada-usuario">Carmen</span>
+Dígame la palabra 2: <span class="entrada-usuario">Carmen</span>
+Dígame la palabra 3: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 4: <span class="entrada-usuario">Benito</span>
+Dígame la palabra 5: <span class="entrada-usuario">David</span>
+La lista creada es: ['Carmen', 'Carmen', 'Alberto', 'Benito', 'David']
+
+Dígame cuántas palabras tiene la lista de palabras a eliminar: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Benito</span>
+Dígame la palabra 2: <span class="entrada-usuario">Juan</span>
+Dígame la palabra 3: <span class="entrada-usuario">Carmen</span>
+
+La lista de palabras a eliminar es: ['Benito', 'Juan', 'Carmen']
+La lista es ahora: ['Alberto', 'David']
 </pre>
           </div>
         </li>
@@ -419,25 +427,27 @@ else:
 
       <p>Modifique el programa anterior de manera que el programa solicite dos listas <strong>sin repeticiones</strong> y escriba el resultado al final:</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 1:</span> 5
-<span class="idle-resp">Dígame la palabra 1:</span> Carmen
-<span class="idle-resp">Dígame la palabra 2:</span> Carmen
-<span class="idle-resp">Carmen ya está en la lista. Dígame la palabra 2:</span> Pepe
-<span class="idle-resp">Dígame la palabra 3:</span> Alberto
-<span class="idle-resp">Dígame la palabra 4:</span> Benito
-<span class="idle-resp">Dígame la palabra 5:</span> David
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 2:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Benito
-<span class="idle-resp">Dígame la palabra 2:</span> Juan
-<span class="idle-resp">Dígame la palabra 3:</span> Carmen
-<span class="idle-resp">Las listas creadas inicialmente son:</span>
-<span class="idle-resp">['Carmen', 'Pepe', 'Alberto', 'Benito', 'David']</span>
-<span class="idle-resp">['Benito', 'Juan', 'Carmen']</span>
-<span class="idle-resp">Las listas tras borrar en la primera lista los elementos que aparecen en la segunda lista son:</span>
-<span class="idle-resp">['Pepe', 'David']</span>
-<span class="idle-resp">['Benito', 'Juan', 'Carmen']</span>
+Dígame cuántas palabras tiene la lista 1: <span class="entrada-usuario">5</span>
+Dígame la palabra 1: <span class="entrada-usuario">Carmen</span>
+Dígame la palabra 2: <span class="entrada-usuario">Carmen</span>
+Carmen ya está en la lista. Dígame la palabra 2: <span class="entrada-usuario">Pepe</span>
+Dígame la palabra 3: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 4: <span class="entrada-usuario">Benito</span>
+Dígame la palabra 5: <span class="entrada-usuario">David</span>
+
+Dígame cuántas palabras tiene la lista 2: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Benito</span>
+Dígame la palabra 2: <span class="entrada-usuario">Juan</span>
+Dígame la palabra 3: <span class="entrada-usuario">Carmen</span>
+
+Las listas creadas inicialmente son:
+['Carmen', 'Pepe', 'Alberto', 'Benito', 'David']
+['Benito', 'Juan', 'Carmen']
+Las listas tras borrar en la primera lista los elementos que aparecen en la segunda lista son:
+['Pepe', 'David']
+['Benito', 'Juan', 'Carmen']
 </pre>
       </div>
 
@@ -449,29 +459,31 @@ else:
 
       <p>Modifique el programa anterior de manera que se escriban varias listas y el programa elimine de las listas anteriores las palabras que aparecen en las siguientes:</p>
 
-      <div class="resultado-terminal">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Generador de listas</span>
-<span class="idle-resp">¿Cuántas listas quiere escribir?</span> 3
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 1:</span> 3
-<span class="idle-resp">Dígame la palabra 1:</span> Ana
-<span class="idle-resp">Dígame la palabra 2:</span>  Bárbara
-<span class="idle-resp">Dígame la palabra 3:</span>  Carmen
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 2:</span>  3
-<span class="idle-resp">Dígame la palabra 1:</span> Alberto
-<span class="idle-resp">Dígame la palabra 2:</span> Bernardo
-<span class="idle-resp">Dígame la palabra 3:</span> Bárbara
-<span class="idle-resp">Dígame cuántas palabras tiene la lista 3:</span> 2
-<span class="idle-resp">Dígame la palabra 1:</span> Carmen
-<span class="idle-resp">Dígame la palabra 2:</span> Alberto
-<span class="idle-resp">Las listas creadas inicialmente son:</span>
-<span class="idle-resp">['Ana', 'Bárbara', 'Carmen]</span>
-<span class="idle-resp">['Alberto', 'Bernardo', 'Bárbara']</span>
-<span class="idle-resp">['Carmen', 'Alberto']</span>
-<span class="idle-resp">Las listas tras borrar en cada lista las palabras de listas posteriores:</span>
-<span class="idle-resp">['Ana']</span>
-<span class="idle-resp">['Bernardo', 'Bárbara']</span>
-<span class="idle-resp">['Carmen', 'Alberto']</span>
+Generador de listas
+¿Cuántas listas quiere escribir? <span class="entrada-usuario">3</span>
+Dígame cuántas palabras tiene la lista 1: <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Ana</span>
+Dígame la palabra 2:  <span class="entrada-usuario">Bárbara</span>
+Dígame la palabra 3:  <span class="entrada-usuario">Carmen</span>
+
+Dígame cuántas palabras tiene la lista 2:  <span class="entrada-usuario">3</span>
+Dígame la palabra 1: <span class="entrada-usuario">Alberto</span>
+Dígame la palabra 2: <span class="entrada-usuario">Bernardo</span>
+Dígame la palabra 3: <span class="entrada-usuario">Bárbara</span>
+Dígame cuántas palabras tiene la lista 3: <span class="entrada-usuario">2</span>
+Dígame la palabra 1: <span class="entrada-usuario">Carmen</span>
+Dígame la palabra 2: <span class="entrada-usuario">Alberto</span>
+
+Las listas creadas inicialmente son:
+['Ana', 'Bárbara', 'Carmen]
+['Alberto', 'Bernardo', 'Bárbara']
+['Carmen', 'Alberto']
+Las listas tras borrar en cada lista las palabras de listas posteriores:
+['Ana']
+['Bernardo', 'Bárbara']
+['Carmen', 'Alberto']
 </pre>
       </div>
       <p><strong>Nota</strong>: Se puede crear una lista de listas en la que se vayan introduciendo las listas a medida que se generan</p>

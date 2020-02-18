@@ -218,6 +218,31 @@ if __name__ == "__main__":
     main()</code>
 </pre>
       </div>
+
+      <p>Si queremos utilizar variables auxiliares, deberíamos utilizar sentencias anidadas:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-python">def main():
+    print("DIVISOR DE NÚMEROS")
+    dividendo = int(input("Escriba el dividendo: "))
+    divisor = int(input("Escriba el divisor: "))
+    if divisor == 0:
+        print("No se puede dividir por cero.")
+    else:
+        cociente = dividendo // divisor
+        resto = dividendo % divisor
+        if resto == 0:
+            print(f"La división es exacta. Cociente: {cociente}")
+        else:
+            print(f"La división no es exacta. Cociente: {cociente} Resto: {resto}")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+
     </section>
   </section>
 
@@ -907,7 +932,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 17 de febrero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
