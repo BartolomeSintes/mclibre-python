@@ -42,34 +42,42 @@
 
     <p>Escriba un programa que solicite una cantidad de dinero (múltiplo de 100) y que responda cuántos billetes de 500, 200 y 100 euros son necesarios para pagar esa cantidad. El número de billetes total debe ser el menor posible, es decir, la cantidad en billetes de 100 y 200 € será inferior a 500 €.</p>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
-      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> -1000</p>
-      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+CONTANDO BILLETES
+Escriba una cantidad de dinero (múltiplo de 100): <span class="entrada-usuario">-1000</span>
+Ha indicado una cantidad negativa.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
-      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 1234</p>
-      <p><span class="idle-resp">No ha indicado una cantidad múltiplo de cien.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+CONTANDO BILLETES
+Escriba una cantidad de dinero (múltiplo de 100): <span class="entrada-usuario">1234</span>
+No ha indicado una cantidad múltiplo de cien.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
-      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 2800</p>
-      <p><span class="idle-resp">Puede pagar 2800 con:</span></p>
-      <p><span class="idle-resp">* 5 billete(s) de 500 €.</span></p>
-      <p><span class="idle-resp">* 1 billete(s) de 200 €.</span></p>
-      <p><span class="idle-resp">* 1 billete(s) de 100 €.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+CONTANDO BILLETES
+Escriba una cantidad de dinero (múltiplo de 100): <span class="entrada-usuario">2800</span>
+Puede pagar 2800 con:
+* 5 billete(s) de 500 €.
+* 1 billete(s) de 200 €.
+* 1 billete(s) de 100 €.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">CONTANDO BILLETES</span></p>
-      <p><span class="idle-resp">Escriba una cantidad de dinero (múltiplo de 100):</span> 900</p>
-      <p><span class="idle-resp">Puede pagar 900 con:</span></p>
-      <p><span class="idle-resp">* 1 billete(s) de 500 €.</span></p>
-      <p><span class="idle-resp">* 2 billete(s) de 200 €.</span></p>
-      <p><span class="idle-resp">* 0 billete(s) de 100 €.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+CONTANDO BILLETES
+Escriba una cantidad de dinero (múltiplo de 100): <span class="entrada-usuario">900</span>
+Puede pagar 900 con:
+* 1 billete(s) de 500 €.
+* 2 billete(s) de 200 €.
+* 0 billete(s) de 100 €.
+</pre>
     </div>
   </section>
 
@@ -83,41 +91,51 @@
 
     <p>Escriba un programa que pida una cantidad de dinero a pagar y el número de billetes de 200 y 100 € entregados y que responda cuánto dinero sobra o falta.</p>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">SU CAMBIO</span></p>
-      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> -1234</p>
-      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+SU CAMBIO
+¿Cuánto tiene que pagar? <span class="entrada-usuario">-1234</span>
+Ha indicado una cantidad negativa.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">SU CAMBIO</span></p>
-      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 1000</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> -1</p>
-      <p><span class="idle-resp">Ha indicado una cantidad negativa.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+SU CAMBIO
+¿Cuánto tiene que pagar? <span class="entrada-usuario">1000</span>
+¿Cuántos billetes de 200 € entrega? <span class="entrada-usuario">-1</span>
+Ha indicado una cantidad negativa.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">SU CAMBIO</span></p>
-      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 1000</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 3</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 4</p>
-      <p><span class="idle-resp">Ha entregado la cantidad exacta.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+SU CAMBIO
+¿Cuánto tiene que pagar? <span class="entrada-usuario">1000</span>
+¿Cuántos billetes de 200 € entrega? <span class="entrada-usuario">3</span>
+¿Cuántos billetes de 100 € entrega? <span class="entrada-usuario">4</span>
+Ha entregado la cantidad exacta.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">SU CAMBIO</span></p>
-      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 555</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 2</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 0</p>
-      <p><span class="idle-resp">Le falta entregar 155 €.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+SU CAMBIO
+¿Cuánto tiene que pagar? <span class="entrada-usuario">555</span>
+¿Cuántos billetes de 200 € entrega? <span class="entrada-usuario">2</span>
+¿Cuántos billetes de 100 € entrega? <span class="entrada-usuario">0</span>
+Le falta entregar 155 €.
+</pre>
     </div>
 
-    <div class="resultado-terminal">
-      <p><span class="idle-resp">SU CAMBIO</span></p>
-      <p><span class="idle-resp">¿Cuánto tiene que pagar?</span> 500</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 200 € entrega?</span> 3</p>
-      <p><span class="idle-resp">¿Cuántos billetes de 100 € entrega?</span> 3</p>
-      <p><span class="idle-resp">Su cambio es de 400 €.</span></p>
+    <div class="ejecucion-terminal">
+      <pre>
+SU CAMBIO
+¿Cuánto tiene que pagar? <span class="entrada-usuario">500</span>
+¿Cuántos billetes de 200 € entrega? <span class="entrada-usuario">3</span>
+¿Cuántos billetes de 100 € entrega? <span class="entrada-usuario">3</span>
+Su cambio es de 400 €.
+</pre>
     </div>
   </section>
 
@@ -147,70 +165,70 @@
       </svg>
     </p>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> -5
-<span class="idle-resp">¡El valor debe ser positivo!</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">-5</span>
+¡El valor debe ser positivo!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 10
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 14
-<span class="idle-resp">¡Le he pedido que escribiera primero el lado más largo!</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">10</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">14</span>
+¡Le he pedido que escribiera primero el lado más largo!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 10
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 8
-<span class="idle-resp">Escriba la longitud del tercer lado:</span> 12
-<span class="idle-resp">¡Le he pedido que escribiera primero el lado más largo!</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">10</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">8</span>
+Escriba la longitud del tercer lado: <span class="entrada-usuario">12</span>
+¡Le he pedido que escribiera primero el lado más largo!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 10
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 8
-<span class="idle-resp">Escriba la longitud del tercer lado:</span> 12
-<span class="idle-resp">¡Le he pedido que escribiera primero el lado más largo!</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">10</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">8</span>
+Escriba la longitud del tercer lado: <span class="entrada-usuario">12</span>
+¡Le he pedido que escribiera primero el lado más largo!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 8
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
-<span class="idle-resp">Escriba la longitud del tercer lado:</span> 6
-<span class="idle-resp">Un triángulo puede tener como lados 8, 3 y 6.</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">8</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">3</span>
+Escriba la longitud del tercer lado: <span class="entrada-usuario">6</span>
+Un triángulo puede tener como lados 8, 3 y 6.
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 9
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
-<span class="idle-resp">Escriba la longitud del tercer lado:</span> 4
-<span class="idle-resp">Un triángulo no puede tener como lados 9, 3 y 4.</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">9</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">3</span>
+Escriba la longitud del tercer lado: <span class="entrada-usuario">4</span>
+Un triángulo no puede tener como lados 9, 3 y 4.
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ANALIZADOR DE TRIÁNGULOS</span>
-<span class="idle-resp">Escriba la longitud del lado más largo:</span> 7
-<span class="idle-resp">Escriba la longitud del segundo lado:</span> 3
-<span class="idle-resp">Escriba la longitud del tercer lado:</span> 4
-<span class="idle-resp">Los datos corresponden a un triángulo degenerado.</span>
+ANALIZADOR DE TRIÁNGULOS
+Escriba la longitud del lado más largo: <span class="entrada-usuario">7</span>
+Escriba la longitud del segundo lado: <span class="entrada-usuario">3</span>
+Escriba la longitud del tercer lado: <span class="entrada-usuario">4</span>
+Los datos corresponden a un triángulo degenerado.
 </pre>
     </div>
   </section>
@@ -225,42 +243,42 @@
 
     <p>Escriba un programa que pida tres números y escriba cuál está en medio de los otros dos.</p>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">EL NÚMERO DE EN MEDIO</span>
-<span class="idle-resp">Escriba un número entero:</span> 4
-<span class="idle-resp">Escriba otro número entero distinto:</span> 4
-<span class="idle-resp">¡Ha repetido el número!</span>
+EL NÚMERO DE EN MEDIO
+Escriba un número entero: <span class="entrada-usuario">4</span>
+Escriba otro número entero distinto: <span class="entrada-usuario">4</span>
+¡Ha repetido el número!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">EL NÚMERO DE EN MEDIO</span>
-<span class="idle-resp">Escriba un número entero:</span> 4
-<span class="idle-resp">Escriba otro número entero distinto:</span> -6
-<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 4
-<span class="idle-resp">¡Ha repetido algún número!</span>
+EL NÚMERO DE EN MEDIO
+Escriba un número entero: <span class="entrada-usuario">4</span>
+Escriba otro número entero distinto: <span class="entrada-usuario">-6</span>
+Escriba otro número entero distinto a los anteriores: <span class="entrada-usuario">4</span>
+¡Ha repetido algún número!
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">EL NÚMERO DE EN MEDIO</span>
-<span class="idle-resp">Escriba un número entero:</span> 4
-<span class="idle-resp">Escriba otro número entero distinto:</span> -6
-<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 9
-<span class="idle-resp">4 está entre -6 y 9</span>
+EL NÚMERO DE EN MEDIO
+Escriba un número entero: <span class="entrada-usuario">4</span>
+Escriba otro número entero distinto: <span class="entrada-usuario">-6</span>
+Escriba otro número entero distinto a los anteriores: <span class="entrada-usuario">9</span>
+4 está entre -6 y 9
 </pre>
     </div>
 
-    <div class="resultado-terminal">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">EL NÚMERO DE EN MEDIO</span>
-<span class="idle-resp">Escriba un número entero:</span> 9
-<span class="idle-resp">Escriba otro número entero distinto:</span> -6
-<span class="idle-resp">Escriba otro número entero distinto a los anteriores:</span> 4
-<span class="idle-resp">4 está entre 9 y -6</span>
+EL NÚMERO DE EN MEDIO
+Escriba un número entero: <span class="entrada-usuario">9</span>
+Escriba otro número entero distinto: <span class="entrada-usuario">-6</span>
+Escriba otro número entero distinto a los anteriores: <span class="entrada-usuario">4</span>
+4 está entre 9 y -6
 </pre>
     </div>
   </section>
