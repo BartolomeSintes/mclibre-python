@@ -3,7 +3,5 @@
 # Example .gitignore files: https://github.com/github/gitignore
 /bower_components/
 /node_modules/
-/.htmlhintrc
 /.vscode
-/examenes/otros/
-/tmp
+/_oculto
