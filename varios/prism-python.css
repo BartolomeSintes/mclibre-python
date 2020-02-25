@@ -1,10 +1,10 @@
 /* PRISM.CSS                                */
 /* Bartolome Sintes Marco                   */
-/* https://www.mclibre.org                   */
+/* https://www.mclibre.org                  */
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 27 de enero de 2020                      */
+/* 24 de febrero de 2020                    */
 /*                                          */
 
 /* Colores para cuadros de código fuente y de terminal */
@@ -54,7 +54,7 @@ code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any
 
 div.codigo                                 { background-color: #1e1e1e; color: white;
                                              padding-top: 5px; padding-bottom: 5px; }
-code.language-python .boolean              { color: white;   } /* boolean                             */
+code.language-python .boolean              { color: #569CD6;   } /* boolean                             */
 code.language-python .builtin              { color: #dcdcac; } /* built-in functions                  */
 code.language-python .class-name           { color: white    } /* class header class SomeName(...):   */
 code.language-python .comment              { color: #6a9955; } /* comment                             */
