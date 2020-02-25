@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <h1>Lecciones impartidas en clase (curso 2018/19)</h1>
+  <h1>Lecciones impartidas en clase (curso 2019/20)</h1>
 
   <nav>
     <p>
@@ -34,9 +34,9 @@
       <ul>
         <li><a href="#introduccion">Introducción</a></li>
         <li><a href="#q09">Q09: del 20/01/20 al 02/02/20</a></li>
-        <!--
         <li><a href="#q10">Q10: del 03/02/20 al 16/02/20</a></li>
         <li><a href="#q11">Q11: del 17/02/20 al 01/03/20</a></li>
+        <!--
         <li><a href="#q12">Q12: del 02/03/20 al 15/03/20</a></li>
         <li><a href="#q13">Q13: del 23/03/20 al 05/04/20</a></li>
         <li><a href="#q14">Q14: del 06/04/20 al 26/04/20</a></li>
@@ -62,8 +62,6 @@
   <section id="q09">
     <h2>LMSGI Quincena Q09 del 20/01/20 al 02/02/20</h2>
 
-    <p>Estas son las lecciones a leer y las actividades a realizar durante esta quincena.</p>
-
     <h3>Presentación de los apuntes</h3>
 
     <ol>
@@ -72,7 +70,7 @@
 
     <h3>Instalación de Python</h3>
 
-    <p><img src="icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Los apuntes presuponen que no tenéis Python instalado en vuestros ordenadores y por tanto podéis instalar todas las cosas que os pida y configurarlas de la manera específica que os pida. Si ya tenéis Python instalado y configurado a vuestra manera, lo que os pida puede interferir con vuestra instalación actual. En ese caso, enviadme un correo y os comento cómo podemos resolver la situación.</p>
+    <p>Los apuntes presuponen que no tenéis Python instalado en vuestros ordenadores y por tanto podéis instalar todas las cosas que os pida y configurarlas de la manera específica que os pida. Si ya tenéis Python instalado y configurado a vuestra manera, lo que os pida puede interferir con vuestra instalación actual. En ese caso, enviadme un correo y os comento cómo podemos resolver la situación.</p>
 
     <ol>
       <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/lenguajes-programacion.html">Lenguajes de programación</a>.
@@ -131,6 +129,14 @@
       <li>Configurad Visual Studio Code de acuerdo con la lección.</li>
     </ul>
 
+    <h3>Ejercicios de puesta en marcha</h3>
+
+    <ul>
+      <li>Haced los ejercicios de puesta en marcha <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-puesta-en-marcha.html">Puesta en marcha</a>
+        <p>Estos ejercicios son para comprobar que habéis configurado correctamente Python y Visual Studio Code.</p>
+      </li>
+    </ul>
+
     <h3>Entrada y salida</h3>
 
     <ul>
@@ -147,14 +153,117 @@
     </ul>
   </section>
 
-  <!--
-
   <section id="q10">
+    <h2>LMSGI Quincena Q10: del 03/02/20 al 16/03/20</h2>
+
+    <h3>Prueba de programas</h3>
+
+    <ul>
+      <li>Instalad mclibre Python Testing Client de acuerdo con la lección <a href="https://www.mclibre.org/consultar/python/otros/python-testing-instalacion.html">Instalación de mclibre Python Testing Client</a>
+        <p>Si habéis instalado Python para seguir este curso, es decir, si no utilizáis Python para nada, quiero que hagáis la instalación en Windows que se comenta en el primer apartado. Los apartados dedicados a la instalación en entornos virtuales son para situaciones especiales en la que hay que compatibilizar Python para distintos usos. Enviadme un correo o mensaje si pensáis que estáis en esa situación.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/python-testing.html">Uso de mclibre Python Testing Client</a></li>
+      <li>Por favor, comentad en el foro los problemas que encontréis utilizando MPTC. Espero que la mayoría de errores sean culpa vuestra <span style="font-size: 200%">&#128512;</span>, pero muchas veces serán limitaciones o <i>bugs</i> de MPTC y vuestros comentarios me servirán para ir mejorando la herramienta.</li>
+      <li>Tened en cuenta también que estoy actualizando MPTC a menudo. Por eso es aconsejable que antes de utilizarla, comprobéis siempre si hay una nueva versión disponible ejecutando las órdenes:
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\>">
+<code class="language-shell">python -m pip install --upgrade pip</code>
+<code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+</pre>
+        </div>
+        <p>La primera orden actualiza <i>pip</i> y la segunda actualiza <i>mptc</i>.</p>
+      </li>
+      <li>Haced los ejercicios de ejemplo de la página <a href="https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html">Ejemplos de MPTC</a>.
+        <p>Estos ejercicios es para que practiquéis el funcionamiento de MPTC. No es necesario que escribáis los programas (entre otros motivos, porque en los últimos ejercicios se utilizan elementos que todavía no hemos visto), podéis copiar y pegar las soluciones que se encuentran en la propia página).</p>
+      </li>
+    </ul>
+
+    <h3>Variables y expresiones booleanas (lógicas)</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-booleanos.html">Tipos de datos booleanos</a>
+        <p>Las variables y expresiones booleanas son aquellas que pueden tomar dos valores: Verdadero (True) o Falso (False). Estas expresiones son necesarias para expresar condiciones y se utilizan en las estructuras de selección o repetición.</p>
+      </li>
+      <li>Haced los ejercicios: <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-booleanos.html">Expresiones lógicas (1)</a>
+        <p>Estos ejercicios son ejercicios tipo test para practicar expresiones booleanas. Repetidlos las veces que sea necesario, hasta que veáis que no cometéis errores. Las expresiones se generan al azar, así que pueden repetirse.</p>
+        <p><strong>Nota</strong>: Estos ejercicios y los siguientes utilizan una biblioteca que se llama Brython que traduce código de Python a código JavaScript, lo que permite incluir programas de Python (con ciertas limitaciones) en una página web y ejecutarlos en el navegador. Si os sale un ejercicio incorrecto o que evalúe incorrectamente vuestra respuesta, haced una captura de la pantalla y enviadla al foro.</p>
+      </li>
+      <li>Haced los ejercicios: <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-booleanos-2.html">Expresiones lógicas (2)</a>
+        <p>Estos ejercicios son ejercicios tipo test para practicar comparaciones. Repetidlos las veces que sea necesario, hasta que veáis que no cometéis errores.</p>
+      </li>
+    </ol>
+
+    <h3>Sentencias condicionales</h3>
+
+    <p>Las sentencias condicionales if ... elif ... else ... es la primera estructura de control del flujo del programa que vamos a ver. Permiten que un programa haga una cosa u otra en función de que se cumplan o no las condiciones que queramos.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-if-else.html">Sentencias condicionales if ... elif ... else ...</a></li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-1.html">if ... elif ... else ... (1)</a></li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-1-soluciones.html">if ... elif ... else ... (1)</a></li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-2.html">if ... elif ... else ... (2)</a></li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-2-soluciones.html">if ... elif ... else ... (2)</a>
+        <p>Si al principio no sabéis cómo realizar los ejercicios, consultad las soluciones. En algunos casos, tenéis pistas para realizar los programas. Estos ejercicios se pueden resolver siempre de varias maneras. Una vez escrito el programa completamente, tenéis que probar el programa manualmente, probando con todos los casos posibles (es decir, al menos un ejemplo de cada caso) y comprobar que la respuesta de vuestro programa es correcta. También podéis probar los programas con la herramienta mptc. Aunque hayáis escrito un programa correcto, mirad las soluciones para ver otras formas de resolver el problema e intentad entender por qué otras soluciones también funcionan.</p>
+      </li>
+    </ol>
   </section>
 
   <section id="q11">
+    <h2>LMSGI Quincena Q11: del 17/02/20 al 01/03/20</h2>
+
+    <h3>[optativo] Ejercicios adicionales</h3>
+
+    <ul>
+      <li>Podéis hacer también los ejercicios de <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html#variables">Variables, E/S y Operaciones aritméticas</a> e <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-mas-1.html#if-elif-else">if ... elif ... else ...</a>. Son ejercicios de exámenes de años anteriores, por lo que no hay disponibles soluciones.</li>
+    </ul>
+
+    <h3>Valores aleatorios</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-biblioteca-random.html">Valores aleatorios</a>.
+        <p>De todas las funciones que se comentan en la lección, usaremos básicamente la función randrange().</p>
+      </li>
+      <li>Leed el apartado "Otras funciones integradas" de la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-operaciones-matematicas.html#funciones-integradas">Números y operaciones aritméticas elementales</a>.
+        <p>Las funciones max() y min() os vendrán bien para los ejercicios que os propongo a continuación.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos.html">Minijuegos (1)</a></li>
+      <li>Consultad las soluciones de los ejercicios: <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-if-else-minijuegos-soluciones.html">Minijuegos 1)</a></li>
+    </ol>
+
+    <h3>[optativo] Simulacro de examen</h3>
+
+    <p>Podéis entregar la tarea voluntaria Simulacro de examen hasta el domingo 22 de marzo de 2020 a las 23:55.</p>
+    <p>Es un examen básico y <i>facilito</i> que cubre más o menos hasta la quincena Q10 ( hasta valores aleatorios).</p>
+    <p>Para facilitaros la realización del examen, os añadiré pruebas MPTC. Todavía no tengo decidido si cuando hagáis el examen podréis acceder a pruebas MPTC (para empezar, tendría que implementar la funcionalidad de trabajar <i>offline</i>), pero posiblemente plantee una consulta para pediros vuestra opinión igual que se la pediré a los alumnos de presencial.</p>
+
+    <h3>El tipo range</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-range.html">El tipo range</a>
+        <p>Python dispone de un tipo de datos que no es habitual en otros lenguajes de programación, el tipo range. En una variable de tipo de tipo range se pueden almacenar varios números (concretamente números enteros en progresión aritmética), pero estos valores no se pueden modificar.</p>
+        <p>En la primera parte de esta lección hay una referencia a las listas, otro tipo de datos de Python que permite agrupar varios datos en una sola variable. Lo he puesto porque el tipo range se puede entender como un caso particular de lista, pero lo importante en esta lección es que tengáis claro lo que es range, ya veremos las listas más adelante.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-range.html">El tipo range</a>
+        <p>Los tres primeros ejercicios son ejercicios tipo test para tener claro cómo se crean tipos range, con uno, dos o tres argumentos. Los podéis repetir las veces que sea necesario. El resto de ejercicio son programas en los que se pide un dato al usuario y se muestra un resultado en forma de range().</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-range-soluciones.html">El tipo range</a></li>
+    </ol>
+
+    <h3>Bucle for</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-for.html">Bucle for</a>
+        <p>La sentencia for ... es otra estructura de control del flujo del programa, que permite definir iteraciones (repeticiones). Permiten que un programa repita un conjunto de instrucciones un número definido de veces.</p>
+        <p>Para establecer el número de repeticiones, utilizaremos el tipo range.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos.html">Bucle for Minijuegos (2)</a></li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-for-minijuegos-soluciones.html">Bucle for Minijuegos (2)</a>.</li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-for-1.html">Bucle for (1)</a>.</li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-for-1-soluciones.html">Bucle for (1)</a>.</li>
+    </ol>
   </section>
 
+  <!--
   <section id="q12">
   </section>
 
@@ -169,7 +278,7 @@
 -->
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 27 de enero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
