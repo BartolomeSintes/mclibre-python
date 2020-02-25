@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Soluciones (1). if... elif... else... Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1><span class="idle-rese">if</span>... <span class="idle-rese">elif</span>... <span class="idle-rese">else</span>... - Soluciones (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... (1)</h2>
+
+      <h3><a href="ej-if-else-1.html">Enunciados</a></h3>
+      <ul>
+        <li>A - Par e impar
+          <ol>
+            <li><a href="ej-if-else-1.html#ejercicio-1">Aviso final único</a></li>
+            <li><a href="ej-if-else-1.html#ejercicio-2">Aviso inmediato</a></li>
+            <li><a href="ej-if-else-1.html#ejercicio-3">Avisos finales</a></li>
+          </ol>
+        </li>
+      </ul>
+
+      <h3>Soluciones</h3>
+      <ul>
+        <li>A - Par e impar
+          <ol>
+            <li><a href="#ejercicio-1">Aviso final único</a></li>
+            <li><a href="#ejercicio-2">Aviso inmediato</a></li>
+            <li><a href="#ejercicio-3">Avisos finales</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-if-else-1.html">ejercicios de <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - A - 1</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>31</p>
+    </aside>
+
+    <p>Una posible solución es la siguiente:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("PAR E IMPAR (1)")
+    par = int(input("Escriba un número par: "))
+    impar = int(input("Escriba un número impar: "))
+
+    if par % 2 == 1 or impar % 2 == 0:
+        print("Uno o más de los valores que ha escrito no son correctos.")
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    else:
+        print("¡Gracias por su colaboración!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+    <p>Otra posible solución es la siguiente:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("PAR E IMPAR (1)")
+    par = int(input("Escriba un número par: "))
+    impar = int(input("Escriba un número impar: "))
+
+    if par % 2 == 1:
+        print("Uno o más de los valores que ha escrito no son correctos.")
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    elif impar % 2 == 0:
+        print("Uno o más de los valores que ha escrito no son correctos.")
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    else:
+        print("¡Gracias por su colaboración!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - A-2</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>32</p>
+    </aside>
+
+    <p>Una posible solución es la siguiente:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("PAR E IMPAR (2)")
+    par = int(input("Escriba un número par: "))
+    if par % 2 == 1:
+        print("No ha escrito un número par.")
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    else:
+        impar = int(input("Escriba un número impar: "))
+        if impar % 2 == 0:
+            print("No ha escrito un número impar.")
+            print("Ejecute de nuevo el programa para volver a intentarlo.")
+        else:
+            print("¡Gracias por su colaboración!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - A-3</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>14</p>
+    </aside>
+
+    <p>Una posible solución es la siguiente:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("PAR E IMPAR (3)")
+    par = int(input("Escriba un número par: "))
+    impar = int(input("Escriba un número impar: "))
+    error = False
+    if par % 2 == 1:
+        print("No ha escrito un número par.")
+        error = True
+    if impar % 2 == 0:
+        print("No ha escrito un número impar.")
+        error = True
+    if error:
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    else:
+        print("¡Gracias por su colaboración!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de febrero de 2020</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

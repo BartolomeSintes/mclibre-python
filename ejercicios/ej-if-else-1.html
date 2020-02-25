@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios (1). if ... elif ... else ... Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - Ejercicios (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... (1)</h2>
+
+      <h3>Enunciados</h3>
+      <ul>
+        <li>A - Par e impar
+          <ol>
+            <li><a href="#ejercicio-1">Aviso final único</a></li>
+            <li><a href="#ejercicio-2">Aviso inmediato</a></li>
+            <li><a href="#ejercicio-3">Avisos finales</a></li>
+          </ol>
+        </li>
+      </ul>
+
+      <h3><a href="ej-if-else-1-soluciones.html">Soluciones</a></h3>
+      <ul>
+        <li>A - Par e impar
+          <ol>
+            <li><a href="ej-if-else-1-soluciones.html#ejercicio-1">Aviso final único</a></li>
+            <li><a href="ej-if-else-1-soluciones.html#ejercicio-2">Aviso inmediato</a></li>
+            <li><a href="ej-if-else-1-soluciones.html#ejercicio-3">Avisos finales</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en la lección <a href="../lecciones/python-if-else.html"><span class="idle-rese">If</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</a>.</p>
+
+  <p>Se pueden consultar unas <a href="ej-if-else-1-soluciones.html">posibles soluciones</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... (1) - A-1</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>31</p>
+    </aside>
+
+    <p>Escriba un programa que pida primero un número par y luego un número impar (positivos o negativos). En caso de que uno o los dos valores no sea correcto, se mostrará un único aviso.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (1)
+Escriba un número par: <span class="entrada-usuario">-42</span>
+Escriba un número impar: <span class="entrada-usuario">55</span>
+¡Gracias por su colaboración!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (1)
+Escriba un número par: <span class="entrada-usuario">4</span>
+Escriba un número impar: <span class="entrada-usuario">4</span>
+Uno o más de los valores que ha escrito no son correctos.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (1)
+Escriba un número par: <span class="entrada-usuario">9</span>
+Escriba un número impar: <span class="entrada-usuario">2</span>
+Uno o más de los valores que ha escrito no son correctos.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... (1) - A-2</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>32</p>
+    </aside>
+
+    <p>Escriba un programa que pida primero un número par (positivo o negativo) y si el valor no es correcto, muestre un aviso. Si el valor es correcto, pedirá un número impar (positivo o negativo) y si el valor no es correcto, mostrará un aviso.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (2)
+Escriba un número par: <span class="entrada-usuario">100</span>
+Escriba un número impar: <span class="entrada-usuario">-1</span>
+¡Gracias por su colaboración!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (2)
+Escriba un número par: <span class="entrada-usuario">11</span>
+No ha escrito un número par.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (2)
+Escriba un número par: <span class="entrada-usuario">-8</span>
+Escriba un número impar: <span class="entrada-usuario">16</span>
+No ha escrito un número impar.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... (1) - A-3</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>33</p>
+    </aside>
+
+    <p>Escriba un programa que pida primero un número par y un numero impar (positivos o negativos). En caso de que uno o los dos valores no sea correcto, se mostrarán uno o dos avisos.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (3)
+Escriba un número par: <span class="entrada-usuario">-222</span>
+Escriba un número impar: <span class="entrada-usuario">49</span>
+¡Gracias por su colaboración!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (3)
+Escriba un número par: <span class="entrada-usuario">35</span>
+Escriba un número impar: <span class="entrada-usuario">53</span>
+No ha escrito un número par.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (3)
+Escriba un número par: <span class="entrada-usuario">44</span>
+Escriba un número impar: <span class="entrada-usuario">-12</span>
+No ha escrito un número impar.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAR E IMPAR (3)
+Escriba un número par: <span class="entrada-usuario">-7</span>
+Escriba un número impar: <span class="entrada-usuario">12</span>
+No ha escrito un número par.
+No ha escrito un número impar.
+Ejecute de nuevo el programa para volver a intentarlo.
+</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de febrero de 2020</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
