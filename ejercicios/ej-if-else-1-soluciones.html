@@ -29,6 +29,7 @@
             <li><a href="ej-if-else-1.html#ejercicio-1">Aviso final único</a></li>
             <li><a href="ej-if-else-1.html#ejercicio-2">Aviso inmediato</a></li>
             <li><a href="ej-if-else-1.html#ejercicio-3">Avisos finales</a></li>
+            <li><a href="ej-if-else-1.html#ejercicio-4">Avisos inmediatos</a></li>
           </ol>
         </li>
       </ul>
@@ -40,6 +41,7 @@
             <li><a href="#ejercicio-1">Aviso final único</a></li>
             <li><a href="#ejercicio-2">Aviso inmediato</a></li>
             <li><a href="#ejercicio-3">Avisos finales</a></li>
+            <li><a href="#ejercicio-4">Avisos inmediatos</a></li>
           </ol>
         </li>
       </ul>
@@ -169,8 +171,43 @@ if __name__ == "__main__":
     </div>
   </section>
 
+  <section id="ejercicio-4">
+    <h2 class="con-aside"><span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... - A-4</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>34</p>
+    </aside>
+
+    <p>Una posible solución es la siguiente:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-python">def main():
+    print("PAR E IMPAR (4)")
+    error = False
+    par = int(input("Escriba un número par: "))
+    if par % 2 == 1:
+        print("No ha escrito un número par.")
+        error = True
+    impar = int(input("Escriba un número impar: "))
+    if impar % 2 == 0:
+        print("No ha escrito un número impar.")
+        error = True
+    if error:
+        print("Ejecute de nuevo el programa para volver a intentarlo.")
+    else:
+        print("¡Gracias por su colaboración!")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de febrero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 27 de febrero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
