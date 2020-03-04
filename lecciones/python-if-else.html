@@ -717,7 +717,7 @@ print("¡Hasta la próxima!")</code>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 <span class="codigo-resaltado">if edad &lt; 18</span>:
     print("Es usted menor de edad")
-else:
+<span class="codigo-resaltado">else:</span>
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
@@ -877,7 +877,7 @@ print("¡Hasta la próxima!")</code>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
 <span class="codigo-resaltado">if edad &lt; 18</span>:
     print("Es usted menor de edad")
-else:
+<span class="codigo-resaltado">else:</span>
     print("Es usted mayor de edad")
 print("¡Hasta la próxima!")</code>
 </pre>
@@ -985,11 +985,12 @@ print("¡Hasta la próxima!")</code>
     <ul>
       <li>al poner dos bloques <span class="idle-rese">if</span> estamos obligando a Python a evaluar siempre las dos condiciones, mientras que en un bloque <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ... sólo se evalúa una condición. En un programa sencillo la diferencia no es apreciable, pero en programas que ejecutan muchas comparaciones, el impacto puede ser apreciable.</li>
       <li>utilizando <span class="idle-rese">else</span> nos ahorramos escribir una condición (además, escribiendo la condición nos podemos equivocar, pero escribiendo <span class="idle-rese">else</span> no).</li>
+      <li>utilizando <span class="idle-rese">if ... else</span> nos aseguramos de que se ejecuta uno de los dos bloques de instrucciones. Utilizando dos <span class="idle-rese">if</span> cabría la posiblidad de que no se cumpliera ninguna de las dos condiciones y no se ejecutara ninguno de los dos bloques de instrucciones.</li>
     </ul>
 
     <hr class="corta">
 
-    <p>Si por algún motivo no se quisiera ejecutar ninguna orden en alguno de los bloques, el bloque de órdenes debe contener al menos la orden <span class="idle-rese">pass</span> (esta orden le dice a Python que no tiene que hacer nada).</p>
+    <p>Si por algún motivo no se quisiera ejecutar ninguna orden en alguno de los bloques, el bloque de órdenes debe contener al menos la instrucción <span class="idle-rese">pass</span> (esta orden le dice a Python que no tiene que hacer nada).</p>
 
     <div class="codigo">
       <pre>
@@ -1002,7 +1003,7 @@ print(f"Usted dice que tiene {edad} años.")</code>
 </pre>
     </div>
 
-    <p>Evidentemente este programa podría simplificarse cambiando la desigualdad. Era sólo un ejemplo para mostrar cómo se utiliza la orden <span class="idle-rese">pass</span>.</p>
+    <p>Evidentemente este programa podría simplificarse cambiando la desigualdad.</p>
 
     <div class="codigo">
       <pre>
@@ -1012,6 +1013,8 @@ if edad &gt;= 120:
 print(f"Usted dice que tiene {edad} años.")</code>
 </pre>
     </div>
+
+    <p>El primer ejemplo era sólo un ejemplo para mostrar cómo se utiliza la instrucción <span class="idle-rese">pass</span>. Normalmente, la instrucción <span class="idle-rese">pass</span> se utiliza para "rellenar" un bloque de instrucciones que todavía no hemos escrito y poder ejecutar el programa, ya que Python requiere que se escriba alguna instrucción en cualquier bloque.</p>
   </section>
 
   <section id="sangrado-bloques">
@@ -1069,8 +1072,21 @@ print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
-          <div class="resultado-captura">
-            <img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" width="200" height="152">
+          <div class="columnaflex">
+            <div class="ejecucion-terminal">
+              <pre>
+  File "prueba.py", line 4
+    print("Recuerde que está en la edad de aprender")
+    ^
+IndentationError: unexpected indent
+</pre>
+            </div>
+            <div class="resultado-captura">
+              <p>En IDLE se muestra una ventana indicando el error:</p>
+              <p class="captura">
+                <img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" width="200" height="152">
+              </p>
+            </div>
           </div>
         </div>
       </li>
@@ -1089,8 +1105,21 @@ print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
-          <div class="resultado-captura">
-            <img src="../img/error-sangrado.png" alt="Aviso: Error de sangrado" width="367" height="152">
+          <div class="columnaflex">
+            <div class="ejecucion-terminal">
+              <pre>
+  File "prueba.py", line 4
+    print("Recuerde que está en la edad de aprender")
+                                                     ^
+IndentationError: unindent does not match any outer indentation level
+</pre>
+            </div>
+            <div class="resultado-captura">
+              <p>En IDLE se muestra una ventana indicando el error:</p>
+              <p class="captura">
+                <img src="../img/error-sangrado.png" alt="Aviso: Error de sangrado" width="367" height="152">
+              </p>
+            </div>
           </div>
         </div>
       </li>
@@ -1109,8 +1138,21 @@ print("¡Hasta la próxima!")</code>
 </pre>
           </div>
 
-          <div class="resultado-captura">
-            <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="181" height="152">
+          <div class="columnaflex">
+            <div class="ejecucion-terminal">
+              <pre>
+  File "prueba.py", line 5
+    else:
+    ^
+SyntaxError: invalid syntax
+</pre>
+            </div>
+            <div class="resultado-captura">
+              <p>En IDLE se muestra una ventana indicando el error:</p>
+              <p class="captura">
+                <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="181" height="152">
+              </p>
+            </div>
           </div>
         </div>
       </li>
@@ -2145,7 +2187,7 @@ else:
   </script>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

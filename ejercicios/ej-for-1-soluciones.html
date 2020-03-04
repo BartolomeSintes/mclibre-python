@@ -139,8 +139,7 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>En el cuerpo del bucle, se comprueba en cada iteración si la variable de control
-          <var>i</var> es par o no (comprobando si el resto de la división entre 2 es 0 o no) y se imprime el mensaje correspondiente.
+        <li>En el cuerpo del bucle, se comprueba en cada iteración si la variable de control <var>i</var> es par o no (comprobando si el resto de la división entre 2 es 0 o no) y se imprime el mensaje correspondiente.
           <div class="codigo">
             <pre class="line-numbers" data-start="10">
 <code class="language-python">        if i % 2 == 0:
@@ -399,18 +398,15 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>Al pedir el número que se va a sumar, se utiliza la variable de control
-          <var>i</var>:
+        <li>Al pedir el número que se va a sumar, se utiliza la variable de control <var>i</var>:
           <div class="codigo">
             <pre class="line-numbers" data-start="10">
 <code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
-        <li>El programa utiliza un contador (
-          <var>contador</var>) para llevar la cuenta de los números negativos introducidos por el usuario.</li>
-        <li>Antes de pedir los valores el contador
-          <var>contador</var> se pone a 0.
+        <li>El programa utiliza un contador (<var>contador</var>) para llevar la cuenta de los números negativos introducidos por el usuario.</li>
+        <li>Antes de pedir los valores el contador <var>contador</var> se pone a 0.
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
 <code class="language-python">        contador = 0</code>
@@ -541,9 +537,7 @@ if __name__ == "__main__":
 
       <ul>
         <li>El algoritmo del programa se basa en que un número primo sólo tiene dos divisores: el 1 y el propio número. El programa cuenta los divisores del número y si sólo hay dos, es que el número es primo</li>
-        <li>El número de divisores se obtiene mediante un bucle desde 1 hasta el número y un contador
-          <var>contador</var> que aumenta en 1 cada vez que el resto de la división del número por la variable de control
-          <var>i</var> da 0.
+        <li>El número de divisores se obtiene mediante un bucle desde 1 hasta el número y un contador <var>contador</var> que aumenta en 1 cada vez que el resto de la división del número por la variable de control <var>i</var> da 0.
 
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
@@ -648,18 +642,15 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>Al pedir el número que se va a sumar, se utiliza la variable de control
-          <var>i</var>:
+        <li>Al pedir el número que se va a sumar, se utiliza la variable de control <var>i</var>:
           <div class="codigo">
             <pre class="line-numbers" data-start="10">
 <code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
-        <li>El programa utiliza un acumulador (
-          <var>suma</var>) para calcular la suma de los números introducidos por el usuario.</li>
-        <li>Antes de pedir los valores el acumulador
-          <var>suma</var> se pone a 0.
+        <li>El programa utiliza un acumulador (<var>suma</var>) para calcular la suma de los números introducidos por el usuario.</li>
+        <li>Antes de pedir los valores el acumulador <var>suma</var> se pone a 0.
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
 <code class="language-python">            suma = 0</code>
@@ -717,8 +708,7 @@ if __name__ == "__main__":
       <h4>Comentarios</h4>
 
       <ul>
-        <li>El núcleo del programa utiliza un acumulador (
-          <var>suma</var>) para sumar los enteros entre los dos números introducidos por el usuario y escribe el resultado. Este código es muy similar al ejemplo comentado en la lección <a href="../lecciones/python-for.html#acumulador">bucle for (1)</a>.
+        <li>El núcleo del programa utiliza un acumulador (<var>suma</var>) para sumar los enteros entre los dos números introducidos por el usuario y escribe el resultado. Este código es muy similar al ejemplo comentado en la lección <a href="../lecciones/python-for.html#acumulador">bucle for (1)</a>.
           <div class="codigo">
             <pre class="line-numbers" data-start="11">
 <code class="language-python">        suma = 0
@@ -822,9 +812,7 @@ if __name__ == "__main__":
       <h4>Comentarios</h4>
 
       <ul>
-        <li>La dificultad de este ejercicio consiste en que el programa debe detectar el número más pequeño y el más grande de los introducidos por el usuario. Para ello se utilizan dos variables auxiliares
-          <var>minimo</var> y
-          <var>maximo</var>.
+        <li>La dificultad de este ejercicio consiste en que el programa debe detectar el número más pequeño y el más grande de los introducidos por el usuario. Para ello se utilizan dos variables auxiliares <var>minimo</var> y <var>maximo</var>.
           <p>En cada iteración del bucle que va pidiendo valores al usuario, el programa comprueba si el valor introducido es menor que el mínimo o mayor que el máximo y, si es así, se guarda el nuevo valor.</p>
           <div class="codigo">
             <pre class="line-numbers" data-start="13">
@@ -834,15 +822,9 @@ if __name__ == "__main__":
                 maximo = valor</code>
 </pre>
           </div>
-          <p>El problema es que las variables
-            <var>minimo</var> y
-            <var>maximo</var> necesitan tener un valor inicial, pero, independientemente del valor elegido, el usuario puede escribir números que no sean menores (o mayores) que el valor inicial y por tanto ese valor no se modificaría durante la ejecución del programa. Por ejemplo, si damos el valor 0 a
-            <var>mínimo</var> y el usuario sólo escribe valores positivos,
-            <var>minimo</var> no se modificaría.</p>
+          <p>El problema es que las variables <var>minimo</var> y <var>maximo</var> necesitan tener un valor inicial, pero, independientemente del valor elegido, el usuario puede escribir números que no sean menores (o mayores) que el valor inicial y por tanto ese valor no se modificaría durante la ejecución del programa. Por ejemplo, si damos el valor 0 a <var>mínimo</var> y el usuario sólo escribe valores positivos, <var>minimo</var> no se modificaría.</p>
 
-          <p>La solución es guardar como valor inicial de
-            <var>minimo</var> y
-            <var>maximo</var> el primer valor que introduzca el usuario.</p>
+          <p>La solución es guardar como valor inicial de <var>minimo</var> y <var>maximo</var> el primer valor que introduzca el usuario.</p>
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
 <code class="language-python">        valor = float(input("Escriba el número 1: "))
@@ -859,24 +841,21 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>Al pedir el número que se va a sumar, se utiliza la variable de control
-          <var>i</var>:
+        <li>Al pedir el número que se va a sumar, se utiliza la variable de control <var>i</var>:
           <div class="codigo">
             <pre class="line-numbers" data-start="11">
 <code class="language-python">            valor = float(input(f"Escriba el número {i}: "))</code>
 </pre>
           </div>
         </li>
-        <li>Para el cálculo de la media se necesita la suma de todos los valores introducidos, por lo que el programa incluye un acumulador
-          <var>suma</var> que se modifica en cada iteración del bucle.
+        <li>Para el cálculo de la media se necesita la suma de todos los valores introducidos, por lo que el programa incluye un acumulador <var>suma</var> que se modifica en cada iteración del bucle.
           <div class="codigo">
             <pre class="line-numbers" data-start="12">
 <code class="language-python">            suma = suma + valor</code>
 </pre>
           </div>
         </li>
-        <li>El valor inicial del acumulador
-          <var>suma</var> es también el primer valor escrito por el usuario.
+        <li>El valor inicial del acumulador <var>suma</var> es también el primer valor escrito por el usuario.
           <div class="codigo">
             <pre class="line-numbers" data-start="9">
 <code class="language-python">        minimo = maximo = suma = valor</code>
@@ -925,8 +904,7 @@ if __name__ == "__main__":
       <h4>Comentarios</h4>
 
       <ul>
-        <li>El núcleo del programa utiliza un acumulador (
-          <var>factorial</var>) para calcular el factorial del número indicado por el usuario.
+        <li>El núcleo del programa utiliza un acumulador (<var>factorial</var>) para calcular el factorial del número indicado por el usuario.
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
 <code class="language-python">        factorial = 1
@@ -944,17 +922,14 @@ if __name__ == "__main__":
 </pre>
           </div>
         </li>
-        <li>El acumulador
-          <var>factorial</var> debe modificarse multiplicándose por la variable de control del bucle
-          <var>i</var>.
+        <li>El acumulador <var>factorial</var> debe modificarse multiplicándose por la variable de control del bucle <var>i</var>.
           <div class="codigo">
             <pre class="line-numbers" data-start="10">
 <code class="language-python">            factorial = factorial * i</code>
 </pre>
           </div>
         </li>
-        <li>El valor inicial del acumulador
-          <var>factorial</var> debe ser 1, porque si valiera 0 al hacer multiplicaciones el resultado daría siempre cero..
+        <li>El valor inicial del acumulador <var>factorial</var> debe ser 1, porque si valiera 0 al hacer multiplicaciones el resultado daría siempre cero..
           <div class="codigo">
             <pre class="line-numbers" data-start="8">
 <code class="language-python">        factorial = 1</code>

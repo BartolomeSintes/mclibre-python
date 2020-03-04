@@ -79,9 +79,7 @@
 
     <hr class="corta">
 
-    <p>El tipo <span class="idle-func">range</span>() con un único argumento se escribe <span class="idle-func">range</span>(n) y crea una lista inmutable de
-      <var>n</var> números enteros consecutivos que empieza en 0 y acaba en
-      <var>n - 1</var>.</p>
+    <p>El tipo <span class="idle-func">range</span>() con un único argumento se escribe <span class="idle-func">range</span>(n) y crea una lista inmutable de <var>n</var> números enteros consecutivos que empieza en 0 y acaba en <var>n - 1</var>.</p>
 
     <p>Para ver los valores del <span class="idle-func">range</span>(), es necesario convertirlo a lista mediante la función <span class="idle-func">list</span>().</p>
 
@@ -99,8 +97,7 @@
 </pre>
     </div>
 
-    <p>Si
-      <var>n</var> no es positivo, se crea un <span class="idle-func">range</span> vacío.</p>
+    <p>Si <var>n</var> no es positivo, se crea un <span class="idle-func">range</span> vacío.</p>
 
     <div class="codigo idle">
       <pre>
@@ -113,9 +110,7 @@
 
     <hr class="corta">
 
-    <p>El tipo <span class="idle-func">range</span> con dos argumentos se escribe <span class="idle-func">range</span>(m, n) y crea una lista inmutable de enteros consecutivos que empieza en
-      <var>m</var> y acaba en
-      <var>n - 1</var>.</p>
+    <p>El tipo <span class="idle-func">range</span> con dos argumentos se escribe <span class="idle-func">range</span>(m, n) y crea una lista inmutable de enteros consecutivos que empieza en <var>m</var> y acaba en <var>n - 1</var>.</p>
 
     <div class="codigo idle">
       <pre>
@@ -126,9 +121,7 @@
 </pre>
     </div>
 
-    <p>Si
-      <var>n</var> es menor o igual que
-      <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
+    <p>Si <var>n</var> es menor o igual que <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
 
     <div class="codigo idle">
       <pre>
@@ -141,14 +134,7 @@
 
     <hr class="corta">
 
-    <p>El tipo <span class="idle-func">range</span> con tres argumentos se escribe <span class="idle-func">range</span>(m, n, p) y crea una lista inmutable de enteros que empieza en
-      <var>m</var> y acaba justo antes de superar o igualar a
-      <var>n</var>, aumentando los valores de
-      <var>p</var> en
-      <var>p</var>. Si
-      <var>p</var> es negativo, los valores van disminuyendo de
-      <var>p</var> en
-      <var>p</var>.</p>
+    <p>El tipo <span class="idle-func">range</span> con tres argumentos se escribe <span class="idle-func">range</span>(m, n, p) y crea una lista inmutable de enteros que empieza en <var>m</var> y acaba justo antes de superar o igualar a <var>n</var>, aumentando los valores de <var>p</var> en <var>p</var>. Si <var>p</var> es negativo, los valores van disminuyendo de <var>p</var> en <var>p</var>.</p>
 
     <div class="codigo idle">
       <pre>
@@ -159,8 +145,7 @@
 </pre>
     </div>
 
-    <p>El valor de
-      <var>p</var> no puede ser cero:</p>
+    <p>El valor de <var>p</var> no puede ser cero:</p>
 
     <div class="codigo idle">
       <pre>
@@ -172,13 +157,7 @@ ValueError: range() arg 3 must not be zero</span>
 </pre>
     </div>
 
-    <p>Si
-      <var>p</var> es positivo y
-      <var>n</var> menor o igual que
-      <var>m</var>, o si
-      <var>p</var> es negativo y
-      <var>n</var> mayor o igual que
-      <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
+    <p>Si <var>p</var> es positivo y <var>n</var> menor o igual que <var>m</var>, o si <var>p</var> es negativo y <var>n</var> mayor o igual que <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
 
     <div class="codigo idle">
       <pre>
@@ -188,11 +167,7 @@ ValueError: range() arg 3 must not be zero</span>
 <span class="idle-resp">[]</span></pre>
     </div>
 
-    <p>En los <span class="idle-func">range</span>(
-      <var>m</var>,
-      <var>n</var>,
-      <var>p</var>), se pueden escribir
-      <var>p</var> <span class="idle-func">range</span> distintos que generan el mismo resultado. Por ejemplo:</p>
+    <p>En los <span class="idle-func">range</span>( <var>m</var>, <var>n</var>, <var>p</var>), se pueden escribir <var>p</var> <span class="idle-func">range</span> distintos que generan el mismo resultado. Por ejemplo:</p>
 
     <div class="codigo idle">
       <pre>
@@ -209,20 +184,14 @@ ValueError: range() arg 3 must not be zero</span>
     <p>En resumen, los tres argumentos del tipo <span class="idle-func">range</span>(m, n, p) son:</p>
 
     <ul>
-      <li>
-        <var>m</var>: el valor inicial</li>
-      <li>
-        <var>n</var>: el valor final (que no se alcanza nunca) </li>
-      <li>
-        <var>p</var>: el paso (la cantidad que se avanza cada vez).</li>
+      <li> <var>m</var>: el valor inicial</li>
+      <li> <var>n</var>: el valor final (que no se alcanza nunca) </li>
+      <li> <var>p</var>: el paso (la cantidad que se avanza cada vez).</li>
     </ul>
 
-    <p>Si se escriben sólo dos argumentos, Python le asigna a
-      <var>p</var> el valor 1. Es decir <span class="idle-func">range</span>(m, n) es lo mismo que <span class="idle-func">range</span>(m, n, 1)</p>
+    <p>Si se escriben sólo dos argumentos, Python le asigna a <var>p</var> el valor 1. Es decir <span class="idle-func">range</span>(m, n) es lo mismo que <span class="idle-func">range</span>(m, n, 1)</p>
 
-    <p>Si se escribe sólo un argumento, Python, le asigna a
-      <var>m</var> el valor 0 y a
-      <var>p</var> el valor 1. Es decir <span class="idle-func">range</span>(n) es lo mismo que <span class="idle-func">range</span>(0, n, 1)</p>
+    <p>Si se escribe sólo un argumento, Python, le asigna a <var>m</var> el valor 0 y a <var>p</var> el valor 1. Es decir <span class="idle-func">range</span>(n) es lo mismo que <span class="idle-func">range</span>(0, n, 1)</p>
 
     <hr class="corta">
 
