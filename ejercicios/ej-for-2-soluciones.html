@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -77,7 +79,7 @@
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -111,7 +113,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -150,7 +152,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -204,7 +206,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -241,7 +243,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -278,42 +280,42 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
-  def main():
-      print("CÁLCULO ESTIMADO (3)")
-      cantidad = int(input("Número de preguntas: "))
+def main():
+    print("CÁLCULO ESTIMADO (3)")
+    cantidad = int(input("Número de preguntas: "))
 
-      if cantidad &lt; 1:
-          print("El número de preguntas debe ser al menos 1.")
-      else:
-          correctas = 0.0
-          for _ in range(cantidad):
-              a = random.randrange(11, 100)
-              b = random.randrange(11, 100)
-              print()
-              respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
-              if respuesta == a * b:
-                  print("¡Respuesta correcta!")
-                  correctas += 10
-              elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
-                  print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}.")
-                  correctas += 6.66
-              elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
-                  print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}.")
-                  correctas += 3.33
-              else:
-                  print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}.")
+    if cantidad &lt; 1:
+        print("El número de preguntas debe ser al menos 1.")
+    else:
+        correctas = 0.0
+        for _ in range(cantidad):
+            a = random.randrange(11, 100)
+            b = random.randrange(11, 100)
+            print()
+            respuesta = int(input(f"¿Cuánto es {a} x {b}? "))
+            if respuesta == a * b:
+                print("¡Respuesta correcta!")
+                correctas += 10
+            elif abs(respuesta - a*b)/(a*b) &lt; 0.1:
+                print(f"¡Ha fallado por menos del 10%! La respuesta correcta era {a * b}.")
+                correctas += 6.66
+            elif abs(respuesta - a*b)/(a*b) &lt; 0.3:
+                print(f"¡Ha fallado por menos del 30%! La respuesta correcta era {a * b}.")
+                correctas += 3.33
+            else:
+                print(f"¡Ha fallado por más del 30%! La respuesta correcta era {a * b}.")
 
-          nota = round(correctas / cantidad, 1)
-          print()
-          print(f"Le corresponde una nota de {nota}.")
-          if nota &gt;= 9:
-              print("¡Enhorabuena!")
+        nota = round(correctas / cantidad, 1)
+        print()
+        print(f"Le corresponde una nota de {nota}.")
+        if nota &gt;= 9:
+            print("¡Enhorabuena!")
 
-  if __name__ == "__main__":
-      main()</code>
+if __name__ == "__main__":
+    main()</code>
 </pre>
       </div>
     </section>

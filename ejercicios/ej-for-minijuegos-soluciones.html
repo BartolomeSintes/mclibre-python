@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -65,7 +67,7 @@
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -95,7 +97,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -106,6 +108,28 @@ def main():
     else:
         for i in range(numero):
             print(f"Jugador {i + 1}: {random.randrange(1, 7)} ")
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+    </div>
+
+    <p>También podríamos cambiar el tipo range() para que la variable de control del bucle tomara exactamente los números de jugador deseado.</p>
+
+    <div class="codigo">
+      <pre>
+<code class="copy-language-python">import random
+
+
+def main():
+    print("TIRADAS DE DADO")
+    numero = int(input("Número de jugadores: "))
+    if numero &lt; 2:
+        print("¡Imposible!")
+    else:
+        for i in range(1, numero + 1):
+            print(f"Jugador {i}: {random.randrange(1, 7)} ")
 
 
 if __name__ == "__main__":
@@ -124,7 +148,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -161,7 +185,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -204,7 +228,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -240,7 +264,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -289,7 +313,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -338,7 +362,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -374,7 +398,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -431,7 +455,7 @@ if __name__ == "__main__":
 
     <div class="codigo">
       <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 
 def main():
@@ -464,7 +488,7 @@ if __name__ == "__main__":
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 18 de marzo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 5 de marzo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

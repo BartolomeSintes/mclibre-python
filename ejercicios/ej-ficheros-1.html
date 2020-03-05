@@ -24,14 +24,14 @@
 
       <h3><a href="#">Enunciados</a></h3>
       <ul>
-        <li>A - Hola, mundo
+        <li><a href="#ejercicio-1">A - Hola, mundo, sin estilo</a>
           <ol>
             <li><a href="#ejercicio-1-1">Hola, mundo!</a></li>
             <li><a href="#ejercicio-1-2">¡Hola, mundo!</a></li>
             <li><a href="#ejercicio-1-3">Hola, mundo! válido</a></li>
           </ol>
         </li>
-        <li>B - Estilos
+        <li><a href="#ejercicio-2">B - Hola, mundo, con estilo</a>
           <ol>
             <li><a href="#ejercicio-2-1">Color de fondo</a></li>
             <li><a href="#ejercicio-2-2">Tamaño</a></li>
@@ -43,14 +43,14 @@
 
       <h3><a href="ej-ficheros-1-soluciones.html">Soluciones</a></h3>
       <ul>
-        <li>A - Hola, mundo
+        <li><a href="ej-ficheros-1-soluciones.html#ejercicio-1">A - Hola, mundo, sin estilo</a>
           <ol>
             <li><a href="ej-ficheros-1-soluciones.html#ejercicio-1-1">Hola, mundo!</a></li>
             <li><a href="ej-ficheros-1-soluciones.html#ejercicio-1-2">¡Hola, mundo!</a></li>
             <li><a href="ej-ficheros-1-soluciones.html#ejercicio-1-3">Hola, mundo! válido</a></li>
           </ol>
         </li>
-        <li>B - Estilos
+        <li><a href="ej-ficheros-1-soluciones.html#ejercicio-2">B - Hola, mundo, con estilo</a>
           <ol>
             <li><a href="ej-ficheros-1-soluciones.html#ejercicio-2-1">Color de fondo</a></li>
             <li><a href="ej-ficheros-1-soluciones.html#ejercicio-2-2">Tamaño</a></li>
@@ -68,44 +68,47 @@
 
   <p>En todos estos ejercicios se trata de crear un fichero con el contenido que se muestra en los ejemplos. Como el contenido es html, es conveniente que el fichero se abra automáticamente en el navegador para ver el resultado, aunque se aconseja ver el código fuente html del resultado en el navegador para comprobar que no hay errores.</p>
 
-  <section id="ejercicio-1-1">
-    <h2>Ficheros (1) - A-1</h2>
+  <section id="ejercicio-1">
+    <h2>A. ¡Hola, mundo!, sin estilo</h2>
 
-    <p>Escriba un programa que genere una página web que salude al mundo. Es suficiente con poner la etiqueta <span class="html-eti">&lt;p&gt;</span>.</p>
+    <section id="ejercicio-1-1">
+      <h2>Ficheros (1) - A-1</h2>
 
-    <div class="resultado-html">
-      <pre><code class="language-html">&lt;p&gt;Hola, mundo!&lt;/p&gt;</code></pre>
-    </div>
+      <p>Escriba un programa que genere una página web que salude al mundo. Es suficiente con poner la etiqueta <span class="html-eti">&lt;p&gt;</span>.</p>
 
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-1-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
+      <div class="resultado-html">
+        <pre><code class="language-html">&lt;p&gt;Hola, mundo!&lt;/p&gt;</code></pre>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-1-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-1-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-1-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
 
-    <hr class="corta">
+      <hr class="corta">
 
-    <p><strong>Nota</strong>: En Windows, si añade un carácter que no está en el código ASCII original (por ejemplo, la exclamación inicial ¡), se muestran además otros caracteres (en este caso, Â). Este problema ocurre porque el navegador no sabe que el juego de caracteres del fichero es UTF-8 y lo muestra como si fuera ASCII.</p>
+      <p><strong>Nota</strong>: En Windows, si añade un carácter que no está en el código ASCII original (por ejemplo, la exclamación inicial ¡), se muestran además otros caracteres (en este caso, Â). Este problema ocurre porque el navegador no sabe que el juego de caracteres del fichero es UTF-8 y lo muestra como si fuera ASCII.</p>
 
-    <div class="resultado-html">
-      <pre><code class="language-html">&lt;p&gt;<span class="codigo-resaltado">Â¡</span>Hola, mundo!&lt;/p&gt;</code></pre>
-    </div>
-  </section>
+      <div class="resultado-html">
+        <pre><code class="language-html">&lt;p&gt;<span class="codigo-resaltado">Â¡</span>Hola, mundo!&lt;/p&gt;</code></pre>
+      </div>
+    </section>
 
-  <section id="ejercicio-1-2">
-    <h2>Ficheros (1) - A-2</h2>
+    <section id="ejercicio-1-2">
+      <h2>Ficheros (1) - A-2</h2>
 
-    <p>Mejore el programa anterior añadiendo las etiquetas mínimas para que el carácter ¡ se vea correctamente (aunque el html de esa página siga sin ser válido).</p>
+      <p>Mejore el programa anterior añadiendo las etiquetas mínimas para que el carácter ¡ se vea correctamente (aunque el html de esa página siga sin ser válido).</p>
 
-    <div class="resultado-html">
-      <pre>
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;html&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -116,29 +119,29 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
-
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-2-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-2-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-2-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-2-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ejercicio-1-3">
-    <h2>Ficheros (1) - A-3</h2>
+    <section id="ejercicio-1-3">
+      <h2>Ficheros (1) - A-3</h2>
 
-    <p>Mejore el programa anterior añadiendo las etiquetas necesarias para conseguir una página válida y que se vea correctamente en dispositivos móviles.</p>
+      <p>Mejore el programa anterior añadiendo las etiquetas necesarias para conseguir una página válida y que se vea correctamente en dispositivos móviles.</p>
 
-    <div class="resultado-html">
-      <pre>
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -152,29 +155,33 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
-
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-3-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-3-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-3-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-a-3-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
+    </section>
   </section>
 
-  <section id="ejercicio-2-1">
-    <h2>Ficheros (1) - B-1</h2>
+  <section id="ejercicio-2">
+    <h2>B. ¡Hola, mundo!, con estilo</h2>
 
-    <p>Escriba un programa que genere un programa que muestre un saludo y que el color de fondo de la página sea un color elegido al azar.</p>
+    <section id="ejercicio-2-1">
+      <h2>Ficheros (1) - B-1</h2>
 
-    <div class="resultado-html">
-      <pre>
+      <p>Escriba un programa que genere un programa que muestre un saludo y que el color de fondo de la página sea un color elegido al azar.</p>
+
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -188,31 +195,31 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
-
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-1-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-1-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-1-py27.py" style="width: 100%;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-1-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ejercicio-2-2">
-    <h2>Ficheros (1) - B-2</h2>
+    <section id="ejercicio-2-2">
+      <h2>Ficheros (1) - B-2</h2>
 
-    <p>Amplíe el programa anterior de manera que el saludo se muestre a un tamaño también elegido al azar entre 200% y 800% (con valores múltiplos de 100).</p>
+      <p>Amplíe el programa anterior de manera que el saludo se muestre a un tamaño también elegido al azar entre 200% y 800% (con valores múltiplos de 100).</p>
 
-    <p><strong>Nota</strong>: Para que el tamaño se muestre correctamente en el navegador, tenga en cuenta que el carácter porcentaje (%) debe estar unido al valor numérico, sin espacios.</p>
+      <p><strong>Nota</strong>: Para que el tamaño se muestre correctamente en el navegador, tenga en cuenta que el carácter porcentaje (%) debe estar unido al valor numérico, sin espacios.</p>
 
-    <div class="resultado-html">
-      <pre>
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -226,41 +233,41 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
-
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-2-py27.py" style="width: 100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-2-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-2-py27.py" style="width: 100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-2-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ejercicio-2-3">
-    <h2>Ficheros (1) - B-3</h2>
+    <section id="ejercicio-2-3">
+      <h2>Ficheros (1) - B-3</h2>
 
-    <p>Amplíe el programa anterior de manera que el saludo se muestre con un tipo de letra elegido al azar entre las cuatro familias <span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span> y <span class="css-valor">cursive</span>.</p>
+      <p>Amplíe el programa anterior de manera que el saludo se muestre con un tipo de letra elegido al azar entre las cuatro familias <span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span> y <span class="css-valor">cursive</span>.</p>
 
-    <details>
-      <summary><strong>Ayuda</strong></summary>
-      <ul>
-        <li>Para elegir una de las familias al azar, se puede:
-          <ul>
-            <li>utilizar la <a href="../lecciones/python-biblioteca-random.html#random-choice">función choice()</a> de la biblioteca random, o bien</li>
-            <li>utilizar la función randrange() de la biblioteca random y después con un <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... elegir una familia dependiendo del valor obtenido.con el randrange()</li>
-          </ul>
-        </li>
-      </ul>
-    </details>
+      <details>
+        <summary><strong>Ayuda</strong></summary>
+        <ul>
+          <li>Para elegir una de las familias al azar, se puede:
+            <ul>
+              <li>utilizar la <a href="../lecciones/python-biblioteca-random.html#random-choice">función choice()</a> de la biblioteca random, o bien</li>
+              <li>utilizar la función randrange() de la biblioteca random y después con un <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ... elegir una familia dependiendo del valor obtenido.con el randrange()</li>
+            </ul>
+          </li>
+        </ul>
+      </details>
 
-    <div class="resultado-html">
-      <pre>
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;!DOCTYPE html
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -274,29 +281,29 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
-
-    <hr class="corta">
-
-    <p>El resultado se mostrará automáticamente en el navegador:</p>
-
-    <div class="filaflex">
-      <div class="resultado-object">
-        <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-3-py27.py" style="width: 100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
-      <div class="icono-enlace">
-        <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-3-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+
+      <hr class="corta">
+
+      <p>El resultado se mostrará automáticamente en el navegador:</p>
+
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-3-py27.py" style="width: 100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="https://www.mclibre.org/python/python/ficheros-1/ficheros-1-b-3-py27.py"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="ejercicio-2-4">
-    <h2>Ficheros (1) - B-4</h2>
+    <section id="ejercicio-2-4">
+      <h2>Ficheros (1) - B-4</h2>
 
-    <p>Mejore el programa anterior haciendo que el programa genere dos ficheros: la página web y la hoja de estilo.</p>
+      <p>Mejore el programa anterior haciendo que el programa genere dos ficheros: la página web y la hoja de estilo.</p>
 
-    <div class="resultado-html">
-      <pre>
+      <div class="resultado-html">
+        <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -311,10 +318,10 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-    </div>
+      </div>
 
-    <div class="resultado-css">
-      <pre>
+      <div class="resultado-css">
+        <pre>
 <code class="language-css">body {
   background-color: hsl(<span class="codigo-resaltado">155</span>, 100%, 50%);
 }
@@ -324,7 +331,8 @@ p {
   font-size: <span class="codigo-resaltado">662%</span>;
 }</code>
 </pre>
-    </div>
+      </div>
+    </section>
   </section>
 
   <footer>
