@@ -126,39 +126,37 @@ if __name__ == "__main__":
         </div>
         <p>En el terminal, MPTC muestra tres grupos de mensajes:</p>
         <ul>
-          <li>En el primer grupo (WELCOME), MPTC informa del número de tests que se van a realizar.</li>
-          <li>En el segundo grupo (TESTS EXECUTION), MPTC informa del resultado de cada test a medida que se van ejecutando.</li>
-          <li>En el tercer grupo, MPTC (RESULTS), MPTC muestra un resumen del resultado final.</li>
+          <li>En el primer grupo (BIENVENIDO), MPTC informa del número de tests que se van a realizar.</li>
+          <li>En el segundo grupo (EJECUCIÓN DE LOS TESTS), MPTC informa del resultado de cada test a medida que se van ejecutando.</li>
+          <li>En el tercer grupo (RESULTADOS), MPTC muestra un resumen del resultado final.</li>
         </ul>
 
         <div class="terminal">
           <pre class="command-line" data-prompt="C:\Users\...\programas>" data-output="2-25">
   <code class="language-shell">mptc p_1001.py 1001
--+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-
--+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-
 
-1 test will be executed.
+<span style="color: yellow">-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-</span>
 
-Please, wait until all tests have been executed.
+-+-+-+-+-+-+-+-+-       BIENVENIDO       -+-+-+-+-+-+-+-+-
 
-A final report will be shown after.
+Se va a ejecutar 1 test.
 
--+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-
+Por favor, espere a que se ejecuten todos los tests.
 
-Running test 1. Please wait.
-Test 1 passed.
+Una vez ejecutados, se mostrará el resultado.
 
--+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-
--+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-
+-+-+-+-+-+-+-+-+- EJECUCION DE LOS TESTS -+-+-+-+-+-+-+-+-
 
-Tested program: p_1001.py
-MPTC number:    1001
+Ejecutando el test 1. Por favor, espere. Test 1 superado.
 
-1 test has been executed.
+-+-+-+-+-+-+-+-+-       RESULTADOS       -+-+-+-+-+-+-+-+-
 
-All tests have been passed. Congratulations!
+Programa probado: p_1001.py
+Número MPTC:      1001
 
-</code>
+Se ha ejecutado 1 test.
+
+<span style="color: green">Se han superado todos los tests. ¡Enhorabuena!</span></code>
 </pre>
         </div>
       </li>
@@ -178,37 +176,37 @@ if __name__ == "__main__":
 
         <p>... en el terminal, MPTC hubiera mostrado el siguiente resultado, que nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado (en este caso, faltan los signos de exclamación):</p>
         <div class="terminal">
-          <pre class="command-line" data-prompt="C:\Users\...\programas>" data-output="2-29">
+          <pre class="command-line" data-prompt="C:\Users\...\programas>" data-output="2-30">
 <code class="language-shell">mptc p_1001.py 1001
--+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-
--+-+-+-+-+-+-+-+-        WELCOME         -+-+-+-+-+-+-+-+-
 
-1 test will be executed.
+<span style="color: yellow">-+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-</span>
 
-Please, wait until all tests have been executed.
+-+-+-+-+-+-+-+-+-       BIENVENIDO       -+-+-+-+-+-+-+-+-
 
-A final report will be shown after.
+Se va a ejecutar 1 test.
 
--+-+-+-+-+-+-+-+-     TESTS EXECUTION    -+-+-+-+-+-+-+-+-
+Por favor, espere a que se ejecuten todos los tests.
 
-Running test 1. Please wait.
-Test 1 failed.
+Una vez ejecutados, se mostrará el resultado.
 
--+-+-+-+-+-+-+-+- MCLIBRE PYTHON TESTING -+-+-+-+-+-+-+-+-
--+-+-+-+-+-+-+-+-         RESULTS        -+-+-+-+-+-+-+-+-
+-+-+-+-+-+-+-+-+- EJECUCION DE LOS TESTS -+-+-+-+-+-+-+-+-
 
-Tested program: p_1001.py
-MPTC number:    1001
+Ejecutando el test 1. Por favor, espere. Test 1 fallado.
 
-1 test has been executed.
-0 test has been passed.
-1 test has been failed.
+-+-+-+-+-+-+-+-+-       RESULTADOS       -+-+-+-+-+-+-+-+-
 
-Failed test:
-  Expected result: "¡Hola, mundo!"
-  Obtained result: "Hola, mundo"
+Programa probado: p_1001.py
+Número MPTC:      1001
 
-</code>
+Se ha ejecutado 1 test.
+Se han superado 0 tests.
+Ha fallado 1 test.
+
+Test fallado:
+  Resultado esperado: "¡Hola, mundo!"
+  Resultado obtenido: "Hola, mundo"
+
+<span style="color: red">1 test ha fallado. Por favor, corrija el programa y pruebe de nuevo.</span></code>
 </pre>
         </div>
       </li>
@@ -266,6 +264,8 @@ if __name__ == "__main__":
 
     <p>La prueba MPTC podría consistir en este caso en inyectar un valor aleatorio del uno al seis y comprobar que ese valor se muestra al usuario. Se podrían realizar incluso seis pruebas distintas, inyectando en cada prueba uno de los valores del 1 al 6.</p>
 
+    <hr class="corta">
+
     <p>Sin embargo, consideremos el siguiente programa:</p>
 
     <div class="codigo">
@@ -285,6 +285,8 @@ if __name__ == "__main__":
 
     <p>Este programa superaría las pruebas MPTC igual que el programa anterior y sin embargo no es correcto, ya que este programa no mostraría nunca el valor 6. Como MPTC sustituye los valores aleatorios generados por el programa por los valores de la prueba, MPTC no puede darse cuenta de que el programa nunca genera el valor 6, porque al inyectar MPTC el valor 6, el programa escribiría el valor 6 correctamente. El problema es que el programa nunca genera el valor 6.</p>
 
+    <hr class="corta">
+
     <p>Consideremos ahora el siguiente programa:</p>
 
     <div class="codigo">
@@ -303,6 +305,8 @@ if __name__ == "__main__":
     </div>
 
     <p>Este programa es correcto porque mostraría siempre un valor entre 1 y 6 y sin embargo al pasarle las pruebas MPTC todas las pruebas fallarían. ¿Por qué? Porque al inyectar un valor, por ejemplo 5, MPTC espera que se escriba que se ha sacado un 5, pero este programa escribiría que se ha sacado un 6. El programa es correcto porque genera valores de 0 a 5 y escribe uno más del valor generado, pero como los valores inyectados van del 1 al 6, los resultados no coinciden con los valores inyectados.</p>
+
+    <hr class="corta">
 
     <p>El alumno debe ser consciente de estas limitaciones y utilizar MPTC como lo que es, una herramienta de ayuda para la prueba de programas, pero no como un oráculo infalible.</p>
   </section>
@@ -352,7 +356,7 @@ if __name__ == "__main__":
         </div>
       </li>
       <li>Abrir una ventana de terminal en el directorio que contiene el programa:
-        <p>Para ello, haga clic derecho sobre el directorio y elija la opción "Abrir en termninal":</p>
+        <p>Para ello, haga clic derecho sobre el directorio o el programa y elija la opción "Abrir en termninal":</p>
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-1.png" alt="VSC. Abrir terminal" width="1024" height="576">
         </p>
@@ -362,7 +366,7 @@ if __name__ == "__main__":
         </p>
       </li>
       <li>Comprobar el funcionamiento del programa manualmente:
-        <p>Compruebe que el programa funciona correctamente ejecutando el programa (escriba la orden <strong>python nombre_del_programa.py</strong>, donde nombre_del_programa.py es el nombre del programa) y comparando el resultado con el enunciado.</p>
+        <p>Compruebe que el programa funciona correctamente ejecutando el programa (escriba la orden <strong>python nombre_del_programa.py</strong> o <strong>py nombre_del_programa.py</strong>, donde nombre_del_programa.py es el nombre del programa) y comparando el resultado con el enunciado.</p>
         <p class="captura">
           <img src="../img/vscode/vsc-mptc-3.png" alt="VSC. Ejecución de programa" width="1024" height="576">
         </p>
@@ -374,17 +378,17 @@ if __name__ == "__main__":
         </p>
         <p>En el terminal, MPTC muestra tres grupos de mensajes:</p>
         <ul>
-          <li>En el primer grupo (WELCOME), MPTC informa del número de tests que se van a realizar.
+          <li>En el primer grupo (BIENVENIDO), MPTC informa del número de tests que se van a realizar.
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-5.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
           </li>
-          <li>En el segundo grupo (TESTS EXECUTION), MPTC informa del resultado de cada test a medida que se van ejecutando.
+          <li>En el segundo grupo (EJECUCIÓN DE LOS TESTS), MPTC informa del resultado de cada test a medida que se van ejecutando.
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-6.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
           </li>
-          <li>En el tercer grupo, MPTC (RESULTS), MPTC muestra un resumen del resultado final.
+          <li>En el tercer grupo (RESULTADOS), MPTC muestra un resumen del resultado final.
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-7.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
@@ -395,17 +399,17 @@ if __name__ == "__main__":
         <p>En caso de que falle alguno de los tests, MPTC muestra en el terminal información sobre el error producido, que puede utilizarse para corregir el error.</p>
         <p>En el terminal, MPTC muestra tres grupos de mensajes:</p>
         <ul>
-          <li>En el primer grupo (WELCOME), MPTC informa del número de tests que se van a realizar.
+          <li>En el primer grupo (BIENVENIDO), MPTC informa del número de tests que se van a realizar.
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-8.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
           </li>
-          <li>En el segundo grupo (TESTS EXECUTION), MPTC informa del resultado de cada test a medida que se van ejecutando.
+          <li>En el segundo grupo (EJECUCIÓN DE LOS TESTS), MPTC informa del resultado de cada test a medida que se van ejecutando.
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-9.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
           </li>
-          <li>En el tercer grupo, MPTC (RESULTS), MPTC muestra un resumen del resultado final y una explicación más detallada del error producido (en este caso, nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado ya que faltan los signos de exclamación:
+          <li>En el tercer grupo (RESULTADOS), MPTC muestra un resumen del resultado final y una explicación más detallada del error producido (en este caso, nos indica que el mensaje mostrado por el programa no es exactamente igual al solicitado en el enunciado ya que faltan los signos de exclamación:
             <p class="captura">
               <img src="../img/vscode/vsc-mptc-10.png" alt="VSC. Resultado MPTC" width="1024" height="576">
             </p>
@@ -419,7 +423,9 @@ if __name__ == "__main__":
     <h2>Protección de datos</h2>
     <p>El único dato que el cliente envía al servidor es el número de ejercicio, imprescindible para poder suministrar al cliente los valores de prueba.</p>
 
-    <p>Una vez recibidos los valores de prueba, esta se realiza en el ordenador del cliente. El cliente <strong>no</strong> envía el programa que se va a probar, ni los resultados de las pruebas.</p>
+    <p>Una vez recibidos los valores de prueba, la prueba se realiza en el ordenador del cliente.</p>
+
+    <p>El cliente <strong>no</strong> envía el programa que se va a probar, ni los resultados de las pruebas, ni la identificación.</p>
   </section>
 
   <section id="detalles">
@@ -427,7 +433,7 @@ if __name__ == "__main__":
 
     <h3>Si el primer argumento no es únicamente el nombre del fichero, MPTC no ejecuta los tests</h3>
 
-    <p>Al llamar a MPTC, el primer argumento debe ser el nombre del fichero que contiene el programa. No pueden usarse ni caminos relativos ni absolutos. Si se utilizan caminos absolutos o relativos, se mostrará un mensaje de error, como en el ejemplo siguiente:</p>
+    <p>MPTC debe invocarse desde el mismo directorio en el que se encuentra el programa que se desea probar. Al llamar a MPTC, el primer argumento debe ser el nombre del fichero que contiene el programa. No pueden usarse ni caminos relativos ni absolutos. Si se utilizan caminos absolutos o relativos, se mostrará un mensaje de error, como en el ejemplo siguiente:</p>
 
     <div class="powershell">
       <pre>
@@ -440,7 +446,7 @@ Please, execute MPTC from the directory where your program is located.</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de abril de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 26 de marzo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
