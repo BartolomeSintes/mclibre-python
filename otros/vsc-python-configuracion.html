@@ -219,7 +219,8 @@
         </li>
         <li>2020:
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-january-2020-release/">Enero</a> -
-          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2020-release/">Febrero</a>
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2020-release/">Febrero</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-march-2020-release/">Marzo</a>
         </li>
       </ul>
 
@@ -242,7 +243,7 @@
           </li>
           <li>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de pylint y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1026" height="162">
+              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="150">
             </p>
 
             <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
@@ -290,29 +291,23 @@
         <ol>
           <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift+Alt+f</span> para formatear el código.</li>
           <li>
-            Se mostrará el aviso indicando que no hay ningún formateador instalado.
+            Se mostrará el aviso indicando que no hay ningún formateador instalado y ofreciendo la instalación de <strong>black</strong>. Haga clic en "Yes" para instalarlo.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1026" height="150">
-            </p>
-          </li>
-          <li>
-            Haga clic en "Use black" para instalarlo.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1026" height="150">
+              <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1024" height="150">
             </p>
             <p><strong>Nota</strong>: En estos apuntes se recomienda el módulo <strong>black</strong>, pero se podría utilizar otro módulo. El formato aplicado no afecta al resultado ni a la velocidad de ejecución de los programas.</p>
           </li>
           <li>
             Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-3.png" alt="VSC. Instalación de black" width="1026" height="180">
+              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="180">
             </p>
             <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
           </li>
           <li>
             Se creará una carpeta <strong>.vscode</strong> con el archivo de configuración del área de trabajo <strong>settings.json</strong>. Este archivo contiene la preferencia de configuración que indica a Visual Studio Code que queremos utilizar el formateador black.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-4.png" alt="VSC. Instalación de black" width="1024" height="280">
+              <img src="../img/vscode/vsc-python-formatter-3.png" alt="VSC. Instalación de black" width="1024" height="230">
             </p>
           </li>
         </ol>
@@ -429,7 +424,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 3 de abril de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
