@@ -107,7 +107,7 @@
       </li>
 
       <li>Ejemplos de código:
-        <p>Los ejemplos de código que se pueden probar en el prompt de IDLE se muestran en cuadros diferenciados de las explicaciones:</p>
+        <p>Los ejemplos de código que se pueden probar en el prompt de IDLE o en una ventana de terminal se muestran en cuadros diferenciados de las explicaciones:</p>
 
         <div class="codigo idle">
           <pre>
@@ -130,13 +130,13 @@ print("¡Hasta la próxima!")
 </code></pre>
         </div>
 
-        <p>Los ejemplos de la salida de los programas aparecen también en cuadros diferenciados:</p>
+        <p>Los ejemplos de la salida de los programas aparecen también en cuadros diferenciados. En estos ejemplo, los datos introducidos por el usuario se muestran en color amarillo para que sea fácil identificarlos, aunque en el terminal todo se muestra de color blanco.</p>
 
-        <div class="resultado-idle-idle">
+        <div class="ejecucion-terminal">
           <pre>
-<span class="idle-resp">¿Cuántos años tiene?</span> 19
-<span class="idle-resp">Es usted mayor de edad</span>
-<span class="idle-resp">¡Hasta la próxima!</span>
+¿Cuántos años tiene? <span class="entrada-usuario">19</span>
+Es usted mayor de edad
+¡Hasta la próxima!
 </pre>
         </div>
 
@@ -161,10 +161,10 @@ print("¡Hasta la próxima!")
 print("Adiós")</code>
 </pre>
               </div>
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">Hola
-Adiós</span>
+Hola
+Adiós
 </pre>
               </div>
             </div>
@@ -186,8 +186,8 @@ Adiós</span>
 print("Adiós")</code>
 </pre>
               </div>
-              <div class="resultado-idle">
-                <pre><span class="idle-resp codigo-resaltado">Hola</span></pre>
+              <div class="ejecucion-terminal">
+                <pre><span class="codigo-resaltado">Hola</span></pre>
               </div>
             </div>
 
@@ -211,10 +211,10 @@ print("Adiós")</code>
 <span class="codigo-resaltado">print("Adiós")</span></code>
 </pre>
               </div>
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">Hola
-<span class="codigo-resaltado">Adiós</span></span>
+Hola
+<span class="codigo-resaltado">Adiós</span>
 </pre>
               </div>
             </div>

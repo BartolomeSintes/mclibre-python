@@ -52,9 +52,9 @@ print(time.localtime())</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)</span>
+time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)
 </pre>
           </div>
         </div>
@@ -70,9 +70,9 @@ print(localtime())</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)</span>
+time.struct_time(tm_year=2018, tm_mon=3, tm_mday=30, tm_hour=23, tm_min=28, tm_sec=13, tm_wday=4, tm_yday=89, tm_isdst=1)
 </pre>
           </div>
         </div>
@@ -88,9 +88,9 @@ print(asctime(localtime()))</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Fri Mar 30 23:31:39 2018</span>
+Fri Mar 30 23:31:39 2018
 </pre>
           </div>
         </div>
@@ -112,9 +112,9 @@ print(time.time())</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">1522445896.6054614</span>
+1522445896.6054614
 </pre>
       </div>
     </div>
@@ -128,7 +128,7 @@ print(time.time())</code>
 
 inicio = time.time()
 
-for i in range(500):
+for i in range(5000):
     print(f"{i} - ", end="")
 
 final = time.time()
@@ -137,9 +137,9 @@ print(f"He tardado {round(final - inicio, 1)} segundos.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - ... 499 - He tardado 5.3 segundos.</span>
+0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - ... - 4999 - He tardado 0.13 segundos.
 </pre>
       </div>
     </div>

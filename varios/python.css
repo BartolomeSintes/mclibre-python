@@ -1,10 +1,10 @@
 /* INICIACION A LA PROGRAMACION CON PYTHON  */
 /* Bartolome Sintes Marco                   */
-/* https://www.mclibre.org                   */
+/* https://www.mclibre.org                  */
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 14 de abril de 2019                      */
+/* 1 de abril de 2020                       */
 /*                                          */
 
 /* CSS comun */
@@ -295,7 +295,7 @@ div.filaflex pre {
   white-space: pre-wrap;
 }
 
-div.terminal, div.codigo, div.powershell, div[class^="resultado"], div[class^="enunciado"] {
+div.terminal, div.codigo, div.powershell, div[class^="resultado"], div[class^="enunciado"], div[class^="ejecucion"] {
   clear: both;
   border: 2px black solid;
   margin: 5px 10px;
@@ -690,17 +690,8 @@ code.language-sql {
 .idle-otro   { color: black; }
 
 /* Estilo para Python imitando a VSC */
-div.resultado-terminal { background-color: black; color: yellow; border-color: gray;}
-.resultado-terminal .idle-prompt { color: white; }
-.resultado-terminal .idle-resp   { color: white; }
-.resultado-terminal .idle-rese   { color: white; }
-.resultado-terminal .idle-cade   { color: white; }
-.resultado-terminal .idle-erro   { color: white; }
-.resultado-terminal .idle-errbg  { background-color: #FC7674; }
-.resultado-terminal .idle-func   { color: white; }
-.resultado-terminal .idle-fundef { color: white; }
-.resultado-terminal .idle-come   { color: white; }
-.resultado-terminal .idle-otro   { color: white; }
+div.ejecucion-terminal { background-color: black; color: white; border-color: gray;}
+.ejecucion-terminal .entrada-usuario { color: yellow; }
 
 /* Estilo para XML imitando a XML Copy Editor*/
 
@@ -725,11 +716,10 @@ div.resultado-terminal { background-color: black; color: yellow; border-color: g
 
 /* Para soluciones ejercicios for (2) y for (3) */
 
-.borde1 { border: black 2px solid; display: inline-block; padding: 5px;  margin: 5px;}
-.borde1b { border: black 2px dotted; display: inline-block; padding: 5px;  margin: 5px;}
-.borde1bb { border: black 2px dotted; display: block; padding: 5px;  margin: 5px;}
-.borde2 { border: black 3px dashed; display: inline-block; padding: 5px; }
-.borde3 { border: black 3px double; display: inline-block; padding: 5px; }
-.borde-transparente { border: white 3px dashed; display: block; padding: 5px;}
+.borde1 { border: red 2px solid; display: inline-block; padding: 5px;  margin: 5px;}
+.borde1b { border: red 2px dotted; display: inline-block; padding: 5px;  margin: 5px;}
+.borde2 { border: red 3px dashed; display: inline-block; padding: 5px; }
+.borde3 { border: red 3px double; display: inline-block; padding: 5px; }
+.borde-transparente { border: black 3px dashed; display: block; padding: 5px;}
 .borde2 span {line-height: 100%; }
 

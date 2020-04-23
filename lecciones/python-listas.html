@@ -480,8 +480,8 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B C</pre>
               </div>
             </div>
             <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
@@ -503,7 +503,7 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -525,7 +525,7 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">le
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de la lista <var>letras</var>.</p>
             <p>En este caso, la variable de control es <var>i</var> y toma el valor <span class="idle-cade">"A"</span>.</p>
@@ -547,8 +547,8 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp codigo-resaltado">A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre><span class="codigo-resaltado">A</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -571,8 +571,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">le
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el segundo valor de la lista <var>letras</var>.</p>
@@ -595,8 +595,8 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A <span class="codigo-resaltado">B</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A <span class="codigo-resaltado">B</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
@@ -619,8 +619,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">le
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el tercer y último valor de la lista <var>letras</var>.</p>
@@ -643,8 +643,8 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B <span class="codigo-resaltado">C</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B <span class="codigo-resaltado">C</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
@@ -668,8 +668,8 @@ for i in letras:
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B C</pre>
               </div>
             </div>
             <p>Una vez completado el bucle, el programa termina.</p>
@@ -695,8 +695,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B C</pre>
               </div>
             </div>
             <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
@@ -717,7 +717,7 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -739,7 +739,7 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
             <p>En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
@@ -756,13 +756,13 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
               <div class="codigo">
                 <pre>
 <code class="language-python">letras = ["A", "B", "C"]
-for i in range(len(letras))::
+for i in range(len(letras)):
     <span class="codigo-resaltado">print(letras[i], end="")</span>
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp codigo-resaltado">A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre><span class="codigo-resaltado">A</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -785,8 +785,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
@@ -804,13 +804,13 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
               <div class="codigo">
                 <pre>
 <code class="language-python">letras = ["A", "B", "C"]
-for i in range(len(letras))::
+for i in range(len(letras)):
     <span class="codigo-resaltado">print(letras[i], end="")</span>
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A <span class="codigo-resaltado">B</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A <span class="codigo-resaltado">B</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.
@@ -834,8 +834,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
@@ -853,13 +853,13 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
               <div class="codigo">
                 <pre>
 <code class="language-python">letras = ["A", "B", "C"]
-for i in range(len(letras))::
+for i in range(len(letras)):
     <span class="codigo-resaltado">print(letras[i], end="")</span>
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B <span class="codigo-resaltado">C</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B <span class="codigo-resaltado">C</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
@@ -883,8 +883,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">A B C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>A B C</pre>
               </div>
             </div>
             <p>Una vez completado el bucle, el programa termina.</p>
@@ -916,8 +916,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C B A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C B A</pre>
               </div>
             </div>
             <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
@@ -938,7 +938,7 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -960,7 +960,7 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras)-1 devuelve el valor 2 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1) devuelve <span class="idle-func">range</span>(2, -1, -1), es decir [2, 1, 0]. Es decir, que la variable de control va a tomar valores de [2, 1, 0]</p>
             <p>En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
@@ -982,8 +982,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp codigo-resaltado">C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre><span class="codigo-resaltado">C</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -1006,8 +1006,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0].</p>
@@ -1030,8 +1030,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C <span class="codigo-resaltado">B</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C <span class="codigo-resaltado">B</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.
@@ -1055,8 +1055,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C B</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C B</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el tercer y último valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1), es decir, de [2, 1, 0].</p>
@@ -1079,8 +1079,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C B <span class="codigo-resaltado">A</span></span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C B <span class="codigo-resaltado">A</span></pre>
               </div>
             </div>
             <p>A continuación se ejecutan por tercera y última vez las instrucciones del bloque.</p>
@@ -1103,8 +1103,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">C B A</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>C B A</pre>
               </div>
             </div>
             <p>Una vez completado el bucle, el programa termina.</p>
@@ -1117,7 +1117,7 @@ for i in range(len(letras)-1, -1, -1):
       </li>
       <li>modificar los elementos de una lista
 
-        <div class="mcl-diapo" style="height: 17em">
+        <div class="mcl-diapo" style="height: 19em">
           <div id="Paso40">
             <p><strong>Recorrer y modificar una lista</strong></p>
 
@@ -1132,12 +1132,12 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
-['X', 'X', 'X']</span>
+['X', 'X', 'X']
 </pre>
               </div>
             </div>
@@ -1161,7 +1161,7 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -1185,8 +1185,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
@@ -1210,8 +1210,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
@@ -1236,8 +1236,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -1262,10 +1262,10 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-<span class="codigo-resaltado">['X', 'B', 'C']</span></span>
+['A', 'B', 'C']
+<span class="codigo-resaltado">['X', 'B', 'C']</span>
 </pre>
               </div>
             </div>
@@ -1291,9 +1291,9 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']
-['X', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']
+['X', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación la variable de control toma el segundo valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)), es decir, de [0, 1, 2].</p>
@@ -1318,9 +1318,9 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']
-['X', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']
+['X', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecutan por segunda vez las instrucciones del bloque.</p>
@@ -1345,10 +1345,10 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']
 ['X', 'B', 'C']
-<span class="codigo-resaltado">['X', 'X', 'C']</span></span>
+<span class="codigo-resaltado">['X', 'X', 'C']</span>
 </pre>
               </div>
             </div>
@@ -1374,10 +1374,10 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']
 ['X', 'B', 'C']
-['X', 'X', 'C']</span>
+['X', 'X', 'C']
 </pre>
               </div>
             </div>
@@ -1403,11 +1403,11 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['X', 'B', 'C']
-['X', 'X', 'C']</span>
+['X', 'X', 'C']
 </pre>
               </div>
             </div>
@@ -1433,12 +1433,12 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
-<span class="codigo-resaltado">['X', 'X', 'X']</span></span>
+<span class="codigo-resaltado">['X', 'X', 'X']</span>
 </pre>
               </div>
             </div>
@@ -1464,12 +1464,12 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['X', 'B', 'C']
 ['X', 'X', 'C']
-['X', 'X', 'X']</span>
+['X', 'X', 'X']
 </pre>
               </div>
             </div>
@@ -1484,7 +1484,7 @@ for i in range(len(letras)):
       <li>eliminar elementos de la lista
         <p>Para eliminar los elementos de una lista necesitamos recorrer la lista al revés. Si recorremos la lista de principio a fin, al eliminar un valor de la lista, la lista se acorta y cuando intentamos acceder a los últimos valores se produce un error de índice fuera de rango, como muestra el siguiente ejemplo en el que se eliminan los valores de una lista que valen <span class="idle-cade">"B"</span>:</p>
 
-        <div class="mcl-diapo" style="height: 19em">
+        <div class="mcl-diapo" style="height: 22em">
           <div id="Paso50">
             <p><strong>Eliminar valores de una lista (incorrecto)</strong></p>
 
@@ -1500,11 +1500,11 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-['A', 'C']</span>
+['A', 'B', 'C']
+['A', 'C']
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 4, in &lt;module&gt;
     if letras[i] == "B":
@@ -1533,7 +1533,7 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -1558,8 +1558,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
@@ -1584,8 +1584,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras) devuelve el valor 3 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)) devuelve <span class="idle-func">range</span>(3), es decir [0, 1, 2]. Es decir, que la variable de control va a tomar valores de [0, 1, 2]</p>
@@ -1611,8 +1611,8 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -1638,10 +1638,10 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-<span class="codigo-resaltado">['A', 'B', 'C']</span></span>
+['A', 'B', 'C']
+<span class="codigo-resaltado">['A', 'B', 'C']</span>
 </pre>
               </div>
             </div>
@@ -1668,10 +1668,10 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -1698,10 +1698,10 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -1728,10 +1728,10 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -1758,11 +1758,11 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-<span class="codigo-resaltado">['A', 'C']</span></span>
+['A', 'B', 'C']
+<span class="codigo-resaltado">['A', 'C']</span>
 </pre>
               </div>
             </div>
@@ -1789,11 +1789,11 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-['A', 'C']</span>
+['A', 'B', 'C']
+['A', 'C']
 </pre>
               </div>
             </div>
@@ -1820,11 +1820,11 @@ for i in range(len(letras)):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-['A', 'C']</span>
+['A', 'B', 'C']
+['A', 'C']
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 4, in &lt;module&gt;
     if letras[i] == "B":
@@ -1842,7 +1842,7 @@ IndexError: list index out of range</span>
         </div>
         <p>La solución es recorrer la lista en orden inverso, de manera que aunque se eliminen elementos y la lista se acorte, los valores que todavía no se han recorrido siguen existiendo en la misma posición que al principio.</p>
 
-        <div class="mcl-diapo" style="height: 19em">
+        <div class="mcl-diapo" style="height: 21em">
           <div id="Paso60">
             <p><strong>Eliminar valores de una lista (correcto)</strong></p>
 
@@ -1858,12 +1858,12 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
-['A', 'C']</span>
+['A', 'C']
 </pre>
               </div>
             </div>
@@ -1888,7 +1888,7 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle"></div>
+              <div class="ejecucion-terminal"></div>
             </div>
             <p>Se ejecuta la primera instrucción del programa.</p>
             <p>En este caso, define la lista <var>letras</var>.</p>
@@ -1913,8 +1913,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre><span class="codigo-resaltado">['A', 'B', 'C']</span></pre>
               </div>
             </div>
             <p>A continuación escribe la lista <var>letras</var> que se acaba de definir.</p>
@@ -1939,8 +1939,8 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecuta el bucle. La variable de control toma el primer valor de <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)). Como la lista <var>letras</var> tiene 3 elementos, <span class="idle-func">len</span>(letras)-1 devuelve el valor 2 y <span class="idle-func">range</span>(<span class="idle-func">len</span>(letras)-1, -1, -1) devuelve <span class="idle-func">range</span>(2, -1, -1), es decir [2, 1, 0]. Es decir, que la variable de control va a tomar valores de [2, 1, 0]</p>
@@ -1966,8 +1966,8 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
-                <pre><span class="idle-resp">['A', 'B', 'C']</span></pre>
+              <div class="ejecucion-terminal">
+                <pre>['A', 'B', 'C']</pre>
               </div>
             </div>
             <p>A continuación se ejecutan las instrucciones del bloque.</p>
@@ -1993,10 +1993,10 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-<span class="codigo-resaltado">['A', 'B', 'C']</span></span>
+['A', 'B', 'C']
+<span class="codigo-resaltado">['A', 'B', 'C']</span>
 </pre>
               </div>
             </div>
@@ -2023,10 +2023,10 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -2053,10 +2053,10 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -2083,10 +2083,10 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
-['A', 'B', 'C']</span>
+['A', 'B', 'C']
+['A', 'B', 'C']
 </pre>
               </div>
             </div>
@@ -2113,11 +2113,11 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-<span class="codigo-resaltado">['A', 'C']</span></span>
+['A', 'B', 'C']
+<span class="codigo-resaltado">['A', 'C']</span>
 </pre>
               </div>
             </div>
@@ -2144,11 +2144,11 @@ for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">ra
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-['A', 'C']</span>
+['A', 'B', 'C']
+['A', 'C']
 </pre>
               </div>
             </div>
@@ -2175,11 +2175,11 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
 ['A', 'B', 'C']
-['A', 'C']</span>
+['A', 'B', 'C']
+['A', 'C']
 </pre>
               </div>
             </div>
@@ -2206,12 +2206,12 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
-<span class="codigo-resaltado">['A', 'C']</span></span>
+<span class="codigo-resaltado">['A', 'C']</span>
 </pre>
               </div>
             </div>
@@ -2238,12 +2238,12 @@ for i in range(len(letras)-1, -1, -1):
 </code></pre>
               </div>
 
-              <div class="resultado-idle">
+              <div class="ejecucion-terminal">
                 <pre>
-<span class="idle-resp">['A', 'B', 'C']
+['A', 'B', 'C']
 ['A', 'B', 'C']
 ['A', 'C']
-['A', 'C']</span>
+['A', 'C']
 </pre>
               </div>
             </div>

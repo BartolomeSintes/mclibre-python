@@ -44,8 +44,8 @@ print("¡Hola,", nombre, "!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">¡Hola, Pepe<span class="codigo-resaltado"> </span>!</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>¡Hola, Pepe<span class="codigo-resaltado"> </span>!</pre>
       </div>
     </div>
 
@@ -60,10 +60,10 @@ print("¡Hola, " + nombre + "!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¡Hola, Pepe!
-¡Hola, Pepe!</span>
+¡Hola, Pepe!
+¡Hola, Pepe!
 </pre>
       </div>
     </div>
@@ -73,12 +73,12 @@ print("¡Hola, " + nombre + "!")</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">fecha = 2017
+<code class="language-python">fecha = 2020
 print("¡Feliz " + fecha + "!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
@@ -94,7 +94,7 @@ implicitly</span>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">fecha = 2017
+<code class="language-python">fecha = 2020
 print("¡Feliz", fecha, "!")
 print("¡Feliz", str(fecha) + "!")
 print("¡Feliz " + str(fecha) + "!")</code>
@@ -102,11 +102,11 @@ print("¡Feliz " + str(fecha) + "!")</code>
 
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¡Feliz 2017 !
-¡Feliz 2017!
-¡Feliz 2017!</span>
+¡Feliz 2020 !
+¡Feliz 2020!
+¡Feliz 2020!
 </pre>
       </div>
     </div>
@@ -126,9 +126,9 @@ print("Me alegro de conocerle,", nombre, apellido)</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Dígame su nombre:</span> <span class="idle-otro">Pepito</span>
+Dígame su nombre: <span class="idle-otro">Pepito</span>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
     apellido = input("Dígame su apellido, ", nombre, ": ")
@@ -151,11 +151,11 @@ print("Me alegro de conocerle,", nombre, apellido)</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito : <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
+Dígame su nombre: <span class="entrada-usuario">Pepito</span>
+Dígame su apellido, Pepito : <span class="entrada-usuario">Conejo</span>
+Me alegro de conocerle, Pepito Conejo
 </pre>
           </div>
         </div>
@@ -172,11 +172,11 @@ print("Me alegro de conocerle,", nombre, apellido)</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
+Dígame su nombre: <span class="entrada-usuario">Pepito</span>
+Dígame su apellido, Pepito: <span class="entrada-usuario">Conejo</span>
+Me alegro de conocerle, Pepito Conejo
 </pre>
           </div>
         </div>
@@ -193,11 +193,11 @@ print("Me alegro de conocerle,", nombre, apellido)</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
+Dígame su nombre: <span class="entrada-usuario">Pepito</span>
+Dígame su apellido, Pepito: <span class="entrada-usuario">Conejo</span>
+Me alegro de conocerle, Pepito Conejo
 </pre>
           </div>
         </div>
@@ -213,9 +213,9 @@ print("La diferencia entre ellos es", numero2 - numero1)</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame un número:</span> <span class="idle-otro">5</span>
+Dígame un número: <span class="entrada-usuario">5</span>
 <span class="idle-erro">Traceback (most recent call last):
   File "ejemplo.py", line 2, in &lt;module&gt;
     numero2 = int(input("Dígame un número mayor que " + numero1 +  ": "))
@@ -233,11 +233,11 @@ print("La diferencia entre ellos es", numero2 - numero1)</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
-Dígame un número mayor que 5: <span class="idle-otro">8</span>
-La diferencia entre ellos es 3</span>
+Dígame un número: <span class="entrada-usuario">5</span>
+Dígame un número mayor que 5: <span class="entrada-usuario">8</span>
+La diferencia entre ellos es 3
 </pre>
           </div>
         </div>
@@ -254,11 +254,11 @@ print(f"Me alegro de conocerle, {nombre} {apellido}")</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame su nombre: <span class="idle-otro">Pepito</span>
-Dígame su apellido, Pepito: <span class="idle-otro">Conejo</span>
-Me alegro de conocerle, Pepito Conejo</span>
+Dígame su nombre: <span class="entrada-usuario">Pepito</span>
+Dígame su apellido, Pepito: <span class="entrada-usuario">Conejo</span>
+Me alegro de conocerle, Pepito Conejo
 </pre>
           </div>
         </div>
@@ -272,11 +272,11 @@ print(f"La diferencia entre ellos es {numero2 - numero1}")</code>
 </pre>
           </div>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">Dígame un número: <span class="idle-otro">5</span>
-Dígame un número mayor que 5: <span class="idle-otro">8</span>
-La diferencia entre ellos es 3</span>
+Dígame un número: <span class="entrada-usuario">5</span>
+Dígame un número mayor que 5: <span class="entrada-usuario">8</span>
+La diferencia entre ellos es 3
 </pre>
           </div>
         </div>

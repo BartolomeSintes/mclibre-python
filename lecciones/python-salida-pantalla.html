@@ -71,8 +71,8 @@
         <pre><code class="language-python">print("Hola")</code></pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Hola</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Hola</pre>
       </div>
     </div>
 
@@ -83,8 +83,8 @@
         <pre><code class="language-python">print('Hola')</code></pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Hola</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Hola</pre>
       </div>
     </div>
 
@@ -99,8 +99,8 @@
         <pre><code class="language-python">print("Hola", "Adiós")</code></pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Hola Adiós</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Hola Adiós</pre>
       </div>
     </div>
 
@@ -111,8 +111,8 @@
         <pre><code class="language-python">print("Hola" "Adiós")</code></pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">HolaAdios</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>HolaAdios</pre>
       </div>
     </div>
 
@@ -126,10 +126,10 @@ print("Adiós")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Hola
-Adiós</span>
+Hola
+Adiós
 </pre>
       </div>
     </div>
@@ -145,15 +145,15 @@ print("Adiós")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Hola
+Hola
 
-Adiós</span></pre>
+Adiós</pre>
       </div>
     </div>
 
-    <p>Si no se quiere que Python añada un salto de línea al final de un <span class="idle-func">print</span>(), se debe añadir al final el argumento end=<span class="idle-cade">""</span>:</p>
+    <p>Si se quiere que Python <strong>no</strong> añada un salto de línea al final de un <span class="idle-func">print</span>(), se debe añadir al final el argumento end=<span class="idle-cade">""</span>:</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -163,8 +163,8 @@ print("Adiós")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">HolaAdios</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>HolaAdios</pre>
       </div>
     </div>
 
@@ -178,8 +178,8 @@ print("Adiós")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Hola. Adiós</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Hola. Adiós</pre>
       </div>
     </div>
 
@@ -191,8 +191,24 @@ print("Adiós")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Hola. Adiós</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Hola. Adiós</pre>
+      </div>
+    </div>
+
+    <p>El valor del parámetro end puede ser una cadena f:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">texto = " y "
+print("Hola", end=<span class="codigo-resaltado">f"{texto}"</span>)
+print("Adiós")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>Hola y Adiós</pre>
       </div>
     </div>
 
@@ -205,8 +221,21 @@ print("Adiós")</code>
         <pre><code class="language-python">print("Un tipo le dice a otro: "¿Cómo estás?"")</code></pre>
       </div>
 
-      <div class="resultado-captura">
-        <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+      <div class="columnaflex">
+        <div class="ejecucion-terminal">
+          <pre>
+File "prueba.py", line 1
+    print("Un tipo le dice a otro: "¿Cómo estás?"")
+                                        ^
+SyntaxError: invalid character in identifier
+</pre>
+        </div>
+        <div class="resultado-captura">
+          <p>En IDLE se muestra una ventana indicando el error:</p>
+          <p class="captura">
+            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+          </p>
+        </div>
       </div>
     </div>
 
@@ -215,8 +244,21 @@ print("Adiós")</code>
         <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
       </div>
 
-      <div class="resultado-captura">
-        <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+      <div class="columnaflex">
+        <div class="ejecucion-terminal">
+          <pre>
+File "prueba.py", line 1
+    print('Un tipo le dice a otro: '¿Cómo estás?'')
+                                        ^
+SyntaxError: invalid character in identifier
+</pre>
+        </div>
+        <div class="resultado-captura">
+          <p>En IDLE se muestra una ventana indicando el error:</p>
+          <p class="captura">
+            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+          </p>
+        </div>
       </div>
     </div>
 
@@ -232,10 +274,10 @@ print('Y el otro le contesta: \'¡Pues anda que tú!\'')</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Un tipo le dice a otro: "¿Cómo estás?"
-Y el otro le contesta: '¡Pues anda que tú!'</span>
+Un tipo le dice a otro: "¿Cómo estás?"
+Y el otro le contesta: '¡Pues anda que tú!'
 </pre>
       </div>
     </div>
@@ -250,10 +292,10 @@ print('Y el otro le contesta: "¡Pues anda que tú!"')</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">Un tipo le dice a otro: '¿Cómo estás?'
-Y el otro le contesta: "¡Pues anda que tú!"</span>
+Un tipo le dice a otro: '¿Cómo estás?'
+Y el otro le contesta: "¡Pues anda que tú!"
 </pre>
       </div>
     </div>
@@ -271,8 +313,8 @@ print("Me llamo", nombre, "y tengo", edad, "años.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Me llamo Pepe y tengo 25 años.</pre>
       </div>
     </div>
 
@@ -284,8 +326,8 @@ print("En", semanas , "semanas hay", 7 * semanas, "días.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>En 4 semanas hay 28 días.</pre>
       </div>
     </div>
 
@@ -301,8 +343,8 @@ print("¡Hola,", nombre, "!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">¡Hola, Pepe<span class="codigo-resaltado"> </span>!</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>¡Hola, Pepe<span class="codigo-resaltado"> </span>!</pre>
       </div>
     </div>
 
@@ -316,14 +358,14 @@ print(f"¡Hola, {nombre}!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">¡Hola, Pepe!</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>¡Hola, Pepe!</pre>
       </div>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 1 de abril de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
