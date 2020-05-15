@@ -105,10 +105,10 @@
           <div class="codigo">
             <pre>
 <code class="copy-language-json">  //
+  //
   // Configuraciones recomendadas para el curso Introducción a la programación con Python
   //
   // Extensión multi-command
-  //
   "multiCommand.commands": [
     {
       "command": "multiCommand.pythonFocusAndExecuteInTerminal",
@@ -118,6 +118,20 @@
       ]
     },
   ],
+  //
+  // Extensión pylint (configuración para ejercicios pygame)
+  "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=pygame",
+    "--disable=C0103, C0114, C0115, C0116",
+    // Pylint features. Pylint global options and switches
+    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+    // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+    // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+    // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+    // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+    // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+  ],
+  //
   //</code>
 </pre>
           </div>
@@ -127,11 +141,9 @@
           <div class="codigo">
             <pre>
 <code class="copy-language-json">{
-  //
   // Configuraciones recomendadas para el curso Introducción a la programación con Python
   //
   // Extensión multi-command
-  //
   "multiCommand.commands": [
     {
       "command": "multiCommand.pythonFocusAndExecuteInTerminal",
@@ -140,6 +152,19 @@
         "python.execInTerminal"
       ]
     },
+  ],
+  //
+  // Extensión pylint (configuración para ejercicios pygame)
+  "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=pygame",
+    "--disable=C0103, C0114, C0115, C0116",
+    // Pylint features. Pylint global options and switches
+    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+    // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+    // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+    // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+    // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+    // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
   ],
   //
 }</code>
@@ -220,7 +245,9 @@
         <li>2020:
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-january-2020-release/">Enero</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2020-release/">Febrero</a> -
-          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-march-2020-release/">Marzo</a>
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-march-2020-release/">Marzo</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-april-2020-release/">Abril</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-may-2020-release/">Mayo</a>
         </li>
       </ul>
 
@@ -254,29 +281,30 @@
 
         <h4>Configuración de pylint</h4>
 
-        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que por el momento no modificaremos.</p>
+        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que convendrá modificar cuando trabajemos con pygame, para evitar que se muestren muchos avisos  irrelevantes.</p>
 
-        <p>La lista de mensajes de error y avisos de Pylint se encuentra en el apartado <a href="https://pylint.readthedocs.io/en/latest/technical_reference/features.html">Pylint Features de la documentación de Pylint.</a> En <a href="http://pylint-messages.wikidot.com/all-codes">Wikidot</a> hay también una lista ordenada por código de error, pero no sé si está actualizada.</p>
+        <p>La lista de mensajes de error y avisos de Pylint se encuentra en el apartado <a href="http://pylint.pycqa.org/en/2.4/technical_reference/features.html">Pylint Features de la documentación de Pylint.</a></p>
 
-        <!--
-      <p>Algunos avisos de Pylint no son relevantes para un curso de iniciación a la programación y prefiero que estén desactivados. Por ejemplo:</p>
-
-      <ul>
-        <li><strong>C0111</strong>: algún módulo, función, clase o método no tiene docstring</li>
-      </ul>
-
-      <p>Para que la desactivación de avisos afecte únicamente a los programas de este curso (ejercicios y pruebas), cree un archivo .pylintrc en la carpeta Python, con el contenido siguiente:</p>
-
-      <div class="codigo">
-        <pre>
-<code>disable=C0111</code>
+        <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
+        <div class="codigo">
+          <pre>
+<code class="copy-language-json">  //
+  // Extensión pylint (configuración para ejercicios pygame)
+  "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=pygame",
+    "--disable=C0103, C0114, C0115, C0116",
+    // Pylint features. Pylint global options and switches
+    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+    // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+    // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+    // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+    // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+    // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+  ],
+  //
+  //</code>
 </pre>
-      </div>
-
-      <p class="captura">
-        <img src="../img/vscode/vsc-python-pylintrc-1.png" alt="VSC. Configuración de pylint" width="1024" height="240">
-      </p>
-    -->
+        </div>
       </section>
 
       <section id="extension-autoformato">
@@ -424,7 +452,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 3 de abril de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 15 de mayo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
