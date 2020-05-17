@@ -111,11 +111,53 @@
   // Extensión multi-command
   "multiCommand.commands": [
     {
-      "command": "multiCommand.pythonFocusAndExecuteInTerminal",
+      "command": "multiCommand.clearTerminal",
+      "sequence": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "clear\u000D"
+          }
+        },
+        "workbench.action.focusActiveEditorGroup",
+      ],
+    },
+    {
+      "command": "multiCommand.pythonExecuteInTerminal",
       "sequence": [
         "workbench.action.terminal.focus",
-        "python.execInTerminal"
-      ]
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+          }
+        },
+        "workbench.action.focusActiveEditorGroup",
+      ],
+    },
+    {
+      "command": "multiCommand.pythonExecuteAndFocusInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+          }
+        },
+      ],
+    },
+    {
+      "command": "multiCommand.pythonMptcInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+          }
+        },
+      ],
     },
   ],
   //
@@ -146,11 +188,53 @@
   // Extensión multi-command
   "multiCommand.commands": [
     {
-      "command": "multiCommand.pythonFocusAndExecuteInTerminal",
+      "command": "multiCommand.clearTerminal",
+      "sequence": [
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "clear\u000D"
+          }
+        },
+        "workbench.action.focusActiveEditorGroup",
+      ],
+    },
+    {
+      "command": "multiCommand.pythonExecuteInTerminal",
       "sequence": [
         "workbench.action.terminal.focus",
-        "python.execInTerminal"
-      ]
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+          }
+        },
+        "workbench.action.focusActiveEditorGroup",
+      ],
+    },
+    {
+      "command": "multiCommand.pythonExecuteAndFocusInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+          }
+        },
+      ],
+    },
+    {
+      "command": "multiCommand.pythonMptcInTerminal",
+      "sequence": [
+        "workbench.action.terminal.focus",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+          }
+        },
+      ],
     },
   ],
   //
@@ -373,14 +457,34 @@
         "when": "terminalFocus"
     },
     {
-        // Ejecutar programa de Python en el terminal
+        // Eliminar atajo predeterminado para liberar el atajo Ctrl+Alt+t
+        "key": "ctrl+alt+t",
+        "command": "-workbench.action.terminal.focus"
+    },
+    {
+        // Limpiar el terminal
+        "key": "ctrl+alt+t ctrl+alt+l",
+        "command": "multiCommand.clearTerminal"
+    },
+    {
+        // Cerrar el terminal
+        "key": "ctrl+alt+t ctrl+alt+c",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        // Ejecutar programa de Python en el terminal (manteniendo el foco en el editor)
         "key": "ctrl+alt+f5",
-        "command": "python.execInTerminal"
+        "command": "multiCommand.pythonExecuteInTerminal",
     },
     {
         // Ejecutar programa de Python en el terminal (pasando el foco al termninal)
         "key": "ctrl+alt+shift+f5",
-        "command": "multiCommand.pythonFocusAndExecuteInTerminal"
+        "command": "multiCommand.pythonExecuteAndFocusInTerminal"
+    },
+    {
+        // Ejecutar MPTC en el terminal (el usuario debe escribir el código MPTC)
+        "key": "ctrl+alt+f6",
+        "command": "multiCommand.pythonMptcInTerminal",
     },
     //</code>
 </pre>
@@ -404,14 +508,34 @@
         "when": "terminalFocus"
     },
     {
-        // Ejecutar programa de Python en el terminal
+        // Eliminar atajo predeterminado para liberar el atajo Ctrl+Alt+t
+        "key": "ctrl+alt+t",
+        "command": "-workbench.action.terminal.focus"
+    },
+    {
+        // Limpiar el terminal
+        "key": "ctrl+alt+t ctrl+alt+l",
+        "command": "multiCommand.clearTerminal"
+    },
+    {
+        // Cerrar el terminal
+        "key": "ctrl+alt+t ctrl+alt+c",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        // Ejecutar programa de Python en el terminal (manteniendo el foco en el editor)
         "key": "ctrl+alt+f5",
-        "command": "python.execInTerminal"
+        "command": "multiCommand.pythonExecuteInTerminal",
     },
     {
         // Ejecutar programa de Python en el terminal (pasando el foco al termninal)
         "key": "ctrl+alt+shift+f5",
-        "command": "multiCommand.pythonFocusAndExecuteInTerminal"
+        "command": "multiCommand.pythonExecuteAndFocusInTerminal"
+    },
+    {
+        // Ejecutar MPTC en el terminal (el usuario debe escribir el código MPTC)
+        "key": "ctrl+alt+f6",
+        "command": "multiCommand.pythonMptcInTerminal",
     },
 ]</code>
 </pre>
@@ -452,7 +576,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de mayo de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 17 de mayo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
