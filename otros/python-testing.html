@@ -49,7 +49,7 @@
       <li>Un programa de cliente que solicita al servidor los parámetros de prueba para PyTest y que ejecuta PyTest con dichos parámetros y que muestra el resultado de las pruebas.</li>
     </ul>
 
-    <p>El alumno sólo necesita instalar el programa cliente. El programa cliente requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="http://docs.python-requests.org/en/master/">Requests</a>, que se deben instalar previamente, como se comenta en la lección <a href="python-testing-instalacion.html">Instalación de MPTC</a>.</p>
+    <p>El alumno sólo necesita instalar el programa cliente. El programa cliente requiere las bibliotecas <a href="https://docs.pytest.org/en/latest/">PyTest</a> y <a href="https://2.python-requests.org/en/master/">Requests</a>, que se deben instalar previamente, como se comenta en la lección <a href="python-testing-instalacion.html">Instalación de MPTC</a>.</p>
   </section>
 
   <section id="como-utilizar">
@@ -73,9 +73,9 @@
 
           <p>Escriba un programa que salude al mundo.</p>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">¡Hola, mundo!</span>
+¡Hola, mundo!
 </pre>
           </div>
         </div>
@@ -329,9 +329,9 @@ if __name__ == "__main__":
 
           <p>Escriba un programa que salude al mundo.</p>
 
-          <div class="resultado-idle">
+          <div class="ejecucion-terminal">
             <pre>
-<span class="idle-resp">¡Hola, mundo!</span>
+¡Hola, mundo!
 </pre>
           </div>
         </div>
@@ -417,6 +417,14 @@ if __name__ == "__main__":
         </ul>
       </li>
     </ul>
+
+    <hr class="corta">
+
+    <p>Si ha configurado Visual Studio Code de acuerdo con la lección <a href="vsc-python-configuracion.html">Configuración recomendada de VSCode</a>, puede utilizar los atajos de teclado:</p>
+    <ul>
+      <li><span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> para ejecutar los programas sin tener que abrir previamente la ventana de terminal (como se explica en el apartado <a href="vsc-python-configuracion.html#atajos-f5">Ejecutar un programa</a> de esa lección).</li>
+      <li><span class="soft-atajo-teclado">Ctrl+Alt+F6</span> para comprobar los programas sin tener que abrir previamente la ventana de terminal (como se explica en el apartado <a href="vsc-python-configuracion.html#atajo-f6">Ejecutar MPTC</a> de esa lección).</li>
+    </ul>
   </section>
 
   <section id="proteccion-datos">
@@ -438,15 +446,14 @@ if __name__ == "__main__":
     <div class="powershell">
       <pre>
 <code class="language-shell">PS C:\Users\Barto\Documents\LMSGI Barto\Python\&gt;<span class="ps-program">mptc</span> pruebas\ejemplo_mptc_1000.py 1000
-Error: Relative or absolute paths [pruebas\ejemplo_mptc_1000.py] are not allowed.
-Please, execute MPTC from the directory where your program is located.</code>
+Error: No se permiten caminos absolutos o relativos [pruebas\ejemplo_mptc_1000.py].
+Por favor, ejecute MPTC en el directorio en el que se encuentra su programa.</code>
 </pre>
     </div>
-
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 26 de marzo de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

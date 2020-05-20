@@ -365,7 +365,7 @@
 
         <h4>Configuración de pylint</h4>
 
-        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que convendrá modificar cuando trabajemos con pygame, para evitar que se muestren muchos avisos  irrelevantes.</p>
+        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que convendrá modificar cuando trabajemos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
 
         <p>La lista de mensajes de error y avisos de Pylint se encuentra en el apartado <a href="http://pylint.pycqa.org/en/2.4/technical_reference/features.html">Pylint Features de la documentación de Pylint.</a></p>
 
@@ -542,41 +542,84 @@
         </div>
       </li>
     </ul>
-  </section>
 
-  <section id="atajo-ctrl+alt+flecha">
-    <h3>Mover foco del editor al terminal y viceversa</h3>
+    <section id="atajo-ctrl+alt+t">
+      <h3>Atajos relacionados con el terminal</h3>
 
-    <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt++</span> y <span class="soft-atajo-teclado">Ctrl+Alt+-</span>) permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.</p>
+      <p>Entre los atajos recomendados, cuatro de ellos están relacionados con la ventan de terminal:</p>
 
-  </section>
+      <ul>
+        <li>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt++</span> y <span class="soft-atajo-teclado">Ctrl+Alt+-</span>) permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.
+          <p>Si no se había abierto todavía ninguna ventana de termninal, el atajo abre una nueva ventana de terminal automáticamente. La primera vez que se abre una ventana de terminal, la ventana se abre en el directorio raíz del área de trabajo.</p>
+        </li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+c</span> permite cerrar el terminal.</li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+l</span> permite limpiar el terminal.</li>
+      </ul>
+    </section>
 
-  <section id="atajo-f5">
-    <h3>Ejecutar programa</h3>
+    <section id="atajos-f5">
+      <h3>Ejecutar programa</h3>
 
-    <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span>) permiten ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
+      <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span>) permiten ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
 
-    <p>La diferencia entre ambos atajos es que:</p>
-    <ul>
-      <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> mantiene el foco en el editor. Este atajo es útil cuando el programa a ejecutar no pide datos al usuario.</li>
-      <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> cambia el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al editor se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.</li>
-    </ul>
+      <p>Ambos atajos cambian automáticamente al directorio en el que se encuentra el programa y lo ejecutan en ese directorio.</p>
 
-    <p class="captura">
-      <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1026" height="576">
-    </p>
+      <p>La diferencia entre ambos atajos es que:</p>
+      <ul>
+        <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> mantiene el foco en el editor. Este atajo es útil cuando el programa a ejecutar no pide datos al usuario.
+          <p class="captura">
+            <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="370">
+          </p>
+        </li>
+        <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> cambia el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al editor se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.
+          <p class="captura">
+            <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="370">
+          </p>
+        </li>
+      </ul>
 
-    <hr class="corta">
+      <hr class="corta">
 
-    <p>Si no se define el atajo de teclado, el programa se puede ejecutar igualmente haciendo clic derecho en el cuerpo del programa y eligiendo la opción "Ejecutar archivo Python en la terminal".</p>
+      <p>Si no se define el atajo de teclado, el programa se puede ejecutar igualmente haciendo clic derecho en el cuerpo del programa y eligiendo la opción "Ejecutar archivo Python en la terminal".</p>
 
-    <p class="captura">
-      <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
-    </p>
+      <p class="captura">
+        <img src="../img/vscode/vsc-python-atajo-3.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="576">
+      </p>
+
+      <p>En este caso, el terminal se abre en el directorio raíz del área de trabajo y el foco se mantiene en el editor.</p>
+
+      <p class="captura">
+        <img src="../img/vscode/vsc-python-atajo-4.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="460">
+      </p>
+    </section>
+
+    <section id="atajo-f6">
+      <h3>Ejecutar MPTC</h3>
+
+      <p>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+F6</span> está pensado para facilitar el uso de <a href="python-testing.html">MPTC</a>. . </p>
+
+      <ol>
+        <li>El atajo abre la ventana de terminal en el directorio en el que se encuentra el programa y escribe el principio del comando para ejecutar MPTC:
+          <p class="captura">
+            <img src="../img/vscode/vsc-python-atajo-11.png" alt="VSC. Ejecutar MPTC en VSC" width="1024" height="320">
+          </p>
+        </li>
+        <li>Únicamente falta añadir el número del identificador MPTC que se encuentra junto al enunciado del ejercicio y pulsar Intro ...
+          <p class="captura">
+            <img src="../img/vscode/vsc-python-atajo-12.png" alt="VSC. Ejecutar MPTC en VSC" width="1024" height="320">
+          </p>
+        </li>
+        <li>... para validar el programa.
+          <p class="captura">
+            <img src="../img/vscode/vsc-python-atajo-13.png" alt="VSC. Ejecutar MPTC en VSC" width="1024" height="576">
+          </p>
+        </li>
+      </ol>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de mayo de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
