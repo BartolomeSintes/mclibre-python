@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -86,7 +88,7 @@
       <li>Actualice <a href="https://pip.pypa.io/en/stable/">pip</a>:
         <div class="terminal">
           <pre class="command-line" data-prompt="C:\>">
-<code class="language-shell">pip install --upgrade pip</code>
+<code class="language-shell">python -m pip install --upgrade pip</code>
 </pre>
         </div>
       </li>
@@ -120,10 +122,10 @@
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_1.py: Ventana de juego
+<code class="copy-language-python"># pong_1_1.py: Ventana de juego
 
 import pygame
-from pygame.locals import *
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -156,7 +158,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -186,7 +189,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
           <p>Python no tiene un tipo de dato "constante" (es decir, un valor que no se pueda modificar). La costumbre, heredada de otros lenguajes, es simplemente escribir el nombre de una variable en mayúsculas para indicar a quien lea nuestro código fuente que esa variable no se va a modificar en ningún momento del programa. Definimos así varias constantes:</p>
           <ul>
             <li>El tamaño de la ventana de juego (en este caso, 800 x 600 px, la llamada <a href="https://es.wikipedia.org/wiki/Super_Video_Graphics_Array">resolución SVGA</a> original).</li>
-            <li>Normalmente FPS hace referencia al número de veces por segundo que se actualiza la imagen en la ventana. En principio, cuanto más alto es ese valor, mejor se verán los objetos en movimiento, aunque cada pantalla admite un valor máximo y dependiendo de la complejidad de la creación de la imagen puede que no se puedan alcanzar valores muy altos. En pygame, la ventana se está actualizando constantemente y en cada actualización los objetos se desplazan, por lo que si la ventana se actualiza demasiadas veces, los objetos se desplazarán demasiado rápido. Para evitarlo, en pygame FPS significa el número máximo de veces que queremos que se actualice la ventana, aunque si debido a la complejidad de la imagen el número de veces que se actualiza la imagen es inferior, pygame no podrá aumentarlo.</li>
+            <li>Normalmente FPS hace referencia al número de veces por segundo que se actualiza la imagen en la ventana. En principio, cuanto más alto es ese valor, mejor se verán los objetos en movimiento, aunque cada pantalla admite un valor máximo y dependiendo de la complejidad de la creación de la imagen puede que no se puedan alcanzar valores muy altos. En pygame, la ventana se está actualizando constantemente y en cada actualización los objetos se desplazan, por lo que si la ventana se actualiza demasiadas veces, los objetos se desplazarán demasiado rápido. Para evitarlo, en pygame FPS significa el número máximo de veces que queremos que se actualice la ventana, aunque si debido a la complejidad de la imagen el número de veces que se actualiza la imagen es inferior, pygame no podrá alcanzarlo.</li>
             <li>En pygame los colores se indican mediante códigos RGB, así que definimos una constante con el nombre del color para facilitar su referencia.</li>
           </ul>
         </li>
@@ -238,7 +241,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
                 <li>línea 28: La variable <i>jugando</i> pasa a <span class="idle-rese">False</span>, por lo que el bucle <span class="idle-rese">while</span> no se volverá a ejecutar.</li>
               </ul>
             </li>
-            <li>línea 30: Todos lo elementos de la pantalla se vuelven a dibujar (en este programa todavía no ha elementos, pero podemos añadir ya esta instrucción).</li>
+            <li>línea 30: Todos los elementos de la pantalla se vuelven a dibujar (en este programa todavía no ha elementos, pero podemos añadir ya esta instrucción).</li>
             <li>línea 31: Con esta instrucción pygame comprueba que la ejecución se mantiene en el número de FPS y no va demasiado rápida.</li>
             <li>línea 33: Si hemos salido del bucle es que se ha cerrado la ventana, así que con esta instrucción le pedimos a pygame que cierre todos sus procesos.</li>
           </ul>
@@ -273,11 +276,11 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_2.py: Clase PelotaPong
+<code class="copy-language-python"># pong_1_2.py: Clase PelotaPong
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -338,7 +341,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -406,10 +410,41 @@ if __name__ == "__main__":
                   </div>
                 </li>
                 <li>Dos atributos más serán la posición horizontal y vertical de la imagen, <i>x</i> e <i>y</i>. Inicialmente, queremos que la pelota se dibuje en el centro de la pantalla. Para ello, tenemos que tener en cuenta que cuando indicamos la posición de un objeto, estamos indicando la posición de la esquina superior izquierda de su imagen. Si el objeto es muy pequeño, no se notará la diferencia, pero lo mejor es tener en cuenta el ancho y alto del objeto, restando la mitad del tamaño del objeto a la posición del centro de la ventana.
+
+                  <p class="mcl-svg-figura">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="240" viewBox="-10 -10 820 240" style="background-color: #eeeeee">
+                      <defs>
+                        <marker id="flechaRojaIni1" markerWidth="12" markerHeight="8" refX="0" refY="4" orient="auto">
+                          <path d="M12,0 L0,4 L12,8" style="fill: red" />
+                        </marker>
+                        <marker id="flechaRojaFin1" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+                          <path d="M0,0 L12,4 L0,8" style="fill: red;" />
+                        </marker>
+                      </defs>
+                      <rect x="0" y="0" width="800" height="220" fill="white" stroke-width="1" stroke="black" />
+
+                      <line x1="400" y1="0" x2="400" y2="220" stroke="black" stroke-width="1" stroke-dasharray="10 10" />
+                      <line x1="0" y1="110" x2="800" y2="110" stroke="black" stroke-width="1" stroke-dasharray="10 10" />
+
+                      <text x="200" y="20" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">VENTANA_HORI / 2</text>
+                      <line x1="0" y1="30" x2="400" y2="30" stroke="red" stroke-width="1" style="marker-start: url(#flechaRojaIni1); marker-end: url(#flechaRojaFin1)" />
+                      <text x="380" y="50" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">self.ancho / 2</text>
+                      <line x1="360" y1="60" x2="400" y2="60" stroke="red" stroke-width="1" style="marker-start: url(#flechaRojaIni1); marker-end: url(#flechaRojaFin1)" />
+
+                      <text x="520" y="60" text-anchor="start" font-family="sans-serif" font-size="20" fill="black">VENTANA_VERT / 2</text>
+                      <line x1="510" y1="0" x2="510" y2="110" stroke="red" stroke-width="1" style="marker-start: url(#flechaRojaIni1); marker-end: url(#flechaRojaFin1)" />
+                      <text x="485" y="90" text-anchor="middle" transform="rotate(-90 485 90)" font-family="sans-serif" font-size="20" fill="black">self.alto / 2</text>
+                      <line x1="460" y1="70" x2="460" y2="110" stroke="red" stroke-width="1" style="marker-start: url(#flechaRojaIni1); marker-end: url(#flechaRojaFin1)" />
+
+                      <rect x="360" y="70" width="80" height="80" fill="red" />
+                      <circle cx="360" cy="70" r="3" fill="black" />
+                    </svg>
+                  </p>
+
                   <div class="codigo">
                     <pre class="line-numbers" data-start="25">
 <code class="language-python">        self.x = VENTANA_HORI / 2 - self.ancho / 2
-        self.y = VENTANA_VERT / 2 - self.ancho / 2</code>
+        self.y = VENTANA_VERT / 2 - self.alto / 2</code>
 </pre>
                   </div>
                 </li>
@@ -424,6 +459,46 @@ if __name__ == "__main__":
               </ul>
             </li>
             <li>El método <i>mover()</i> es la función que define cómo se mueve la pelota. En este caso, simplemente añadimos a las posiciones los valores de las direcciones. Este método sólo se ejecutará cuando la llamemos en el cuerpo del programa.
+
+              <p>La imagen siguiente muestra tres posiciones sucesivas de la pelota. La pelota se desplaza cada vez <i>dir_x</i> unidades en horizontal y <i>dir_y</i> unidades en vertical.</p>
+
+              <p class="mcl-svg-figura">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="820" height="240" viewBox="-10 -10 820 240" style="background-color: #eeeeee">
+                  <defs>
+                    <marker id="flechaRojaIni2" markerWidth="12" markerHeight="8" refX="0" refY="4" orient="auto">
+                      <path d="M12,0 L0,4 L12,8" style="fill: red" />
+                    </marker>
+                    <marker id="flechaRojaFin2" markerWidth="12" markerHeight="8" refX="12" refY="4" orient="auto">
+                      <path d="M0,0 L12,4 L0,8" style="fill: red;" />
+                    </marker>
+                  </defs>
+                  <rect x="0" y="0" width="800" height="220" fill="white" stroke-width="1" stroke="black" />
+
+                  <rect x="100" y="140" width="40" height="40" fill="red" />
+                  <circle cx="100" cy="140" r="3" fill="black" />
+                  <text x="120" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">(1)</text>
+                  <line x1="150" y1="160" x2="240" y2="120" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+
+                  <text x="85" y="120" text-anchor="middle" transform="rotate(-90 85 120)" font-family="sans-serif" font-size="20" fill="black">dir_y</text>
+                  <line x1="100" y1="140" x2="100" y2="100" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+                  <text x="175" y="90" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">dir_x</text>
+                  <line x1="100" y1="100" x2="250" y2="100" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+
+                  <rect x="250" y="100" width="40" height="40" fill="red" />
+                  <circle cx="250" cy="100" r="3" fill="black" />
+                  <text x="270" y="160" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">(2)</text>
+                  <line x1="300" y1="120" x2="390" y2="90" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+
+                  <text x="235" y="80" text-anchor="middle" transform="rotate(-90 235 80)" font-family="sans-serif" font-size="20" fill="black">dir_y</text>
+                  <line x1="250" y1="100" x2="250" y2="60" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+                  <text x="325" y="50" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">dir_x</text>
+                  <line x1="250" y1="60" x2="400" y2="60" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+
+                  <rect x="400" y="60" width="40" height="40" fill="red" />
+                  <circle cx="400" cy="60" r="3" fill="black" />
+                  <text x="420" y="120" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">(3)</text>
+                </svg>
+              </p>
               <div class="codigo">
                 <pre class="line-numbers" data-start="32">
 <code class="language-python">    def mover(self):
@@ -471,11 +546,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_3.py: Rebote de la pelota
+<code class="copy-language-python"># pong_1_3.py: Rebote de la pelota
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -547,7 +622,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -629,11 +705,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_4.py: Reiniciar pelota al salir por los lados
+<code class="copy-language-python"># pong_1_4.py: Reiniciar pelota al salir por los lados
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -665,9 +741,9 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -711,7 +787,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -734,9 +811,9 @@ if __name__ == "__main__":
           <div class="codigo">
             <pre class="line-numbers" data-start="36">
 <code class="language-python">    def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -755,11 +832,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_5.py: Clase RaquetaPong
+<code class="copy-language-python"># pong_1_5.py: Clase RaquetaPong
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -791,9 +868,9 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -865,7 +942,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -979,11 +1057,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_6.py: Mover raqueta con teclado
+<code class="copy-language-python"># pong_1_6.py: Mover raqueta con teclado
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -1015,9 +1093,9 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -1108,7 +1186,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -1175,11 +1254,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_7.py: Golpe raqueta jugador humano
+<code class="copy-language-python"># pong_1_7.py: Golpe raqueta jugador humano
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -1211,9 +1290,9 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -1315,7 +1394,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -1387,11 +1467,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_8.py: Jugador controlado por el programa (IA)
+<code class="copy-language-python"># pong_1_8.py: Jugador controlado por el programa (IA)
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -1423,9 +1503,9 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
         if self.y &lt;= 0:
             self.dir_y = -self.dir_y
@@ -1549,7 +1629,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -1605,7 +1686,7 @@ if __name__ == "__main__":
           </div>
         </li>
       </ul>
-    </section>
+    </section>cdcd
 
     <section id="programacion-9">
       <h3>Paso 9: Mostrar puntuación</h3>
@@ -1616,11 +1697,11 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre class="line-numbers">
-<code class="language-python"># pong_9.py: Mostrar puntuación de la partida
+<code class="copy-language-python"># pong_1_9.py: Mostrar puntuación de la partida
 
-import pygame
-from pygame.locals import *
 import random
+import pygame
+from pygame.locals import QUIT
 
 # Constantes para la inicialización de la superficie de dibujo
 VENTANA_HORI = 800  # Ancho de la ventana
@@ -1657,10 +1738,10 @@ class PelotaPong:
         self.y += self.dir_y
 
     def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
             self.puntuacion_ia += 1
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
             self.puntuacion += 1
         if self.y &lt;= 0:
@@ -1792,7 +1873,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()</code>
+    main()
+</code>
 </pre>
       </div>
 
@@ -1816,10 +1898,10 @@ if __name__ == "__main__":
               <div class="codigo">
                 <pre class="line-numbers" data-start="41">
 <code class="language-python">    def rebotar(self):
-        if self.x &lt;= 0:
+        if self.x &lt;= -self.ancho:
             self.reiniciar()
             self.puntuacion_ia += 1
-        if self.x + self.ancho &gt;= VENTANA_HORI:
+        if self.x &gt;= VENTANA_HORI:
             self.reiniciar()
             self.puntuacion += 1</code>
 </pre>
@@ -1878,7 +1960,7 @@ if __name__ == "__main__":
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de mayo de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 21 de mayo de 2020</p>
 
     <p><strong>Nota:</strong> Esta lección se basa en las actividades preparadas e impartidas por Daniel Benzal García, alumno del Máster de Secundaria, para sus prácticas del Máster realizadas en el curso 208/19 y al que agradezco su excelente disposición, trabajo y colaboración.</p>
 
