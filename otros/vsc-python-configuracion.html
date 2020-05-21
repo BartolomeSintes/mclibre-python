@@ -161,10 +161,10 @@
     },
   ],
   //
-  // Extensión pylint (configuración para ejercicios pygame)
+  // Extensión pylint
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116",
+    "--disable=C0103, C0114, C0115, C0116, C0330",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -172,6 +172,7 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
   //</code>
@@ -238,10 +239,10 @@
     },
   ],
   //
-  // Extensión pylint (configuración para ejercicios pygame)
+  // Extensión pylint
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116",
+    "--disable=C0103, C0114, C0115, C0116, C0330",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -249,6 +250,7 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
 }</code>
@@ -365,7 +367,7 @@
 
         <h4>Configuración de pylint</h4>
 
-        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que convendrá modificar cuando trabajemos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
+        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que conviene modificar, sobre todo si trabajamos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
 
         <p>La lista de mensajes de error y avisos de Pylint se encuentra en el apartado <a href="http://pylint.pycqa.org/en/2.4/technical_reference/features.html">Pylint Features de la documentación de Pylint.</a></p>
 
@@ -376,7 +378,7 @@
   // Extensión pylint (configuración para ejercicios pygame)
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116",
+    "--disable=C0103, C0114, C0115, C0116, C0330",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -384,6 +386,7 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
   //</code>
@@ -423,6 +426,53 @@
             </p>
           </li>
         </ol>
+      </section>
+
+      <section id="problemas">
+        <h4>Problemas</h4>
+
+        <p>Hay situaciones en las que el formateador black entra en conflicto con el validador pylint.</p>
+
+        <p>Una de estas situaciones se produce con el sangrado de las condiciones en una sentencia <span class="idle-rese">if</span> como el del ejemplo siguiente:</p>
+
+        <div class="codigo">
+          <pre class="line-numbers">
+<code class="language-python">a = 5
+b = 7
+c = 10
+if (
+    c &gt; a
+    and c &gt; b
+):
+    print("c es mayor que a y que b")
+else:
+    print("c no es mayor que a y que b")</code>
+</pre>
+        </div>
+
+        <p>En este ejemplo, las líneas de la condición (líneas 4 y 5) tienen el mismo sangrado que los bloques de instrucciones (líneas 8 y 10). Este sangrado unifrome es el que aplica black, pero pylint indica un aviso "Wrong hanging indentation before block (add 4 spaces). pylint(bad-continuation)"</p>
+
+        <p>pytlint prefiere que la condición tenga más sangrado que los bloques de instrucciones, como en el ejemplo siguiente:</p>
+        <div class="codigo">
+          <pre class="line-numbers">
+<code class="language-python">a = 5
+b = 7
+c = 10
+if (
+        c &gt; a
+        and c &gt; b
+):
+    print("c es mayor que a y que b")
+else:
+    print("c no es mayor que a y que b")</code>
+</pre>
+        </div>
+
+        <p>Ambos sangrados son sintácticamente válidos y siguen las reglas de formato de Python (<a href="https://www.python.org/dev/peps/pep-0008/">Pep 8</a>, pero el problema es que cada vez que formateamos con black el segundo programa, black lo deja como el primero y pylint muestra un aviso (en realidad, muestra varias veces el mismo aviso, uno por línea).</p>
+
+        <p>Hace tiempo que se ha pedido tanto a black como a pylint que resuelvan esta situación (<a href="https://github.com/PyCQA/pylint/issues/289">pylint issue #289</a> y <a href="https://github.com/psf/black/issues/48">black issue #48</a>), pero ninguno de los dos da su brazo a torcer.</p>
+
+        <p>A la espera de que black o pylint corrijan su comportamiento, la única solución que he encontrado ha sido desactivar el aviso C0330 de pylint.</p>
       </section>
     </section>
   </section>
@@ -619,7 +669,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de mayo de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 21 de mayo de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
