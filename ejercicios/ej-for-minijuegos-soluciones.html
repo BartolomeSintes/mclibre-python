@@ -107,7 +107,7 @@ def main():
         print("¡Imposible!")
     else:
         for i in range(numero):
-            print(f"Jugador {i + 1}: {random.randrange(1, 7)} ")
+            print(f"Jugador {i + 1}: {random.randrange(1, 7)}")
 
 
 if __name__ == "__main__":
@@ -129,7 +129,7 @@ def main():
         print("¡Imposible!")
     else:
         for i in range(1, numero + 1):
-            print(f"Jugador {i}: {random.randrange(1, 7)} ")
+            print(f"Jugador {i}: {random.randrange(1, 7)}")
 
 
 if __name__ == "__main__":
@@ -317,31 +317,26 @@ if __name__ == "__main__":
 
 
 def main():
-    print("EL DADO MÁS ALTO (2)")
+    print("PARES Y NONES")
     numero = int(input("Número de dados: "))
     if numero &lt; 1:
         print("¡Imposible!")
     else:
-        mayor_1 = 1
-        print(f"Jugador 1: ", end="")
+        pares = 0
+        impares = 0
+        print(f"Dados: ", end="")
         for _ in range(numero):
             dado = random.randrange(1, 7)
             print(f"{dado} ", end="")
-            if dado &gt; mayor_1:
-                mayor_1 = dado
+            if dado % 2 == 0:
+                pares += 1
+            else:
+                impares += 1
         print()
-        mayor_2 = 1
-        print(f"Jugador 2: ", end="")
-        for _ in range(numero):
-            dado = random.randrange(1, 7)
-            print(f"{dado} ", end="")
-            if dado &gt; mayor_2:
-                mayor_2 = dado
-        print()
-        if mayor_1 &gt; mayor_2:
-            print("Ha ganado el jugador 1.")
-        elif mayor_2 &gt; mayor_1:
-            print("Ha ganado el jugador 2.")
+        if pares &gt; impares:
+            print("Ha ganado el jugador de los pares.")
+        elif impares &gt; pares:
+            print("Ha ganado el jugador de los impares.")
         else:
             print("Han empatado.")
 

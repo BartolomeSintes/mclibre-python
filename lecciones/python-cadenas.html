@@ -84,10 +84,24 @@
 
       <div class="filaflex">
         <div class="codigo">
-          <pre><code class="language-python"><span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span></code></pre>
+          <pre><code class="language-python">print(<span class="string">"Esto es una cadena')</span></code></pre>
         </div>
-        <div class="resultado-captura">
-          <img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" width="260" height="152">
+
+        <div class="columnaflex">
+          <div class="ejecucion-terminal">
+            <pre>
+  File "prueba.py", line 1
+    print("Hola')
+                ^
+SyntaxError: EOL while scanning string literal
+</pre>
+          </div>
+          <div class="resultado-captura">
+            <p>En IDLE se muestra una ventana indicando el error:</p>
+            <p class="captura">
+              <img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" width="260" height="152">
+            </p>
+          </div>
         </div>
       </div>
 
@@ -164,18 +178,46 @@ que ocupa
 
     <div class="filaflex">
       <div class="codigo">
-        <pre><code class="language-python">print("Las comillas dobles " delimitan cadenas<span class="idle-cade">")</span></code></pre>
+        <pre><code class="language-python">print("Las comillas dobles " delimitan cadenas<span class="string">")</span></code></pre>
       </div>
-      <div class="resultado-captura">
-        <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="181" height="152">
+
+      <div class="columnaflex">
+        <div class="ejecucion-terminal">
+          <pre>
+  File "prueba.py", line 1
+    print("Las comillas dobles " delimitan cadenas")
+                                 ^
+SyntaxError: invalid syntaxFile "prueba.py", line 1
+</pre>
+        </div>
+        <div class="resultado-captura">
+          <p>En IDLE se muestra una ventana indicando el error:</p>
+          <p class="captura">
+            <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="181" height="152">
+          </p>
+        </div>
       </div>
     </div>
     <div class="filaflex">
       <div class="codigo">
         <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
       </div>
-      <div class="resultado-captura">
-        <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+
+      <div class="columnaflex">
+        <div class="ejecucion-terminal">
+          <pre>
+  File "prueba.py", line 1
+    print('Un tipo le dice a otro: '¿Cómo estás?'')
+                                        ^
+SyntaxError: invalid character in identifier
+</pre>
+        </div>
+        <div class="resultado-captura">
+          <p>En IDLE se muestra una ventana indicando el error:</p>
+          <p class="captura">
+            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
+          </p>
+        </div>
       </div>
     </div>
 
@@ -323,10 +365,10 @@ Otra línea</span></pre>
     print("a b c "
           "d e f ")</code></pre>
       </div>
-      <div class="resultado">
-        <pre><span class="idle-resp">a b c d e f
+      <div class="ejecucion-terminal">
+        <pre>a b c d e f
 a b c d e f
-a b c d e f</span></pre>
+a b c d e f</pre>
       </div>
     </div>
 
@@ -336,10 +378,10 @@ a b c d e f</span></pre>
     print(<span class="idle-cade">"a b c \
 d e f "</span>)</code></pre>
       </div>
-      <div class="resultado">
-        <pre><span class="idle-resp">a b c d e f
+      <div class="ejecucion-terminal">
+        <pre>a b c d e f
 a b c d e f
-a b c d e f</span></pre>
+a b c d e f</pre>
       </div>
     </div>
   </section>
@@ -358,8 +400,8 @@ print(f"Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Me llamo Pepe y tengo 25 años.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Me llamo Pepe y tengo 25 años.</pre>
       </div>
     </div>
 
@@ -371,8 +413,8 @@ print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">En 4 semanas hay 28 días.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>En 4 semanas hay 28 días.</pre>
       </div>
     </div>
 
@@ -381,16 +423,16 @@ print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">fecha = 2017
+<code class="language-python">fecha = 2020
 print("¡Feliz", fecha, "!")
 print(f"¡Feliz {fecha}!")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
+      <div class="ejecucion-terminal">
         <pre>
-<span class="idle-resp">¡Feliz 2017 !
-¡Feliz 2017!</span>
+¡Feliz 2020 !
+¡Feliz 2020!
 </pre>
       </div>
     </div>
@@ -408,8 +450,8 @@ print("Me llamo {nombre} y tengo {edad} años.")</code>
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Me llamo {nombre} y tengo {edad} años.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Me llamo {nombre} y tengo {edad} años.</pre>
       </div>
     </div>
 
@@ -427,8 +469,8 @@ print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
 </pre>
       </div>
 
-      <div class="resultado-idle">
-        <pre><span class="idle-resp">Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</span></pre>
+      <div class="ejecucion-terminal">
+        <pre>Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</pre>
       </div>
     </div>
 

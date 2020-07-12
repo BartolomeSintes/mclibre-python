@@ -121,14 +121,28 @@ print(area)</code>
 <span class="idle-erro">SyntaxError: unexpected indent</span></pre>
     </div>
 
-    <p>Al ejecutar un programa, se mostraría una ventana con el mensaje de error de sintaxis:</p>
+    <p>Al ejecutar un programa, se mostraría el mensaje de error de sintaxis:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre><code class="language-python">     x = 42</code></pre>
       </div>
-      <div class="resultado-captura">
-        <img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" width="200" height="152">
+
+      <div class="columnaflex">
+        <div class="ejecucion-terminal">
+          <pre>
+File "prueba.py", line 1
+    x = 42
+    ^
+IndentationError: unexpected indent
+</pre>
+        </div>
+        <div class="resultado-captura">
+          <p>En IDLE se muestra una ventana indicando el error:</p>
+          <p class="captura">
+            <img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" width="200" height="152">
+          </p>
+        </div>
       </div>
     </div>
 

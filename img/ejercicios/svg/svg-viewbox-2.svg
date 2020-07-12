@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg" width="525" height="500" viewBox="-270 -280 525 500" style="background-color: #eeeeee">
+    <defs>
+        <marker id="markerArrow" markerWidth="48" markerHeight="48" refX="0" refY="6" orient="auto">
+            <path d="M0,4 L0,8 L6,6" style="fill: red;" />
+        </marker>
+    </defs>
+    <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+    <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+    <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
+    <polyline points="-5,190 0,200 5,190" fill="none" stroke-width="1" stroke="black" />
+    <text x="180" y="-10" font-family="sans-serif" font-size="20" fill="black">X</text>
+    <polyline points="190,5 200,0 190,-5" fill="none" stroke-width="1" stroke="black" />
+
+    <text x="-178" y="-250" font-family="sans-serif" font-size="20" fill="black">viewBox="-160 -160 320 320"</text>
+
+    <polygon points="-160,-160 160,-160 160,160, -160,160" fill="none" stroke-width="2" stroke="red" stroke-dasharray="5,5" />
+    <circle cx="-160" cy="-160" r="3" fill="red" />
+    <text x="-165" y="-165" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-160, -160)</text>
+    <circle cx="160" cy="160" r="3" fill="red" />
+    <text x="165" y="180" font-family="sans-serif" font-size="18" fill="black">(160, 160)</text>
+
+    <path fill="none" stroke="red" stroke-width="2" d="M -80,-245 A 50 30, 0, 0, 0, 0,-245" />
+    <line x1="-40" y1="-233" x2="-149" y2="-169" stroke-width="2" stroke="red" style="marker-end: url(#markerArrow)" />
+
+    <path fill="none" stroke="red" stroke-width="2" d="M 5,-245 A 50 90, 0, 0, 0, 40,-245" />
+    <line x1="23" y1="-240" x2="10" y2="-213" stroke-width="2" stroke="red" />
+    <path fill="none" stroke="red" stroke-width="2" d="M -160,-160 A 100 30, 0, 0, 1, 155,-170" style="marker-end: url(#markerArrow)" />
+
+    <path fill="none" stroke="red" stroke-width="2" d="M 45,-245 A 50 90, 0, 0, 0, 80,-245" />
+    <path fill="none" stroke="red" stroke-width="2" d="M 160,-157 A 40 100, 0, 0, 1, 175,155" style="marker-end: url(#markerArrow)" />
+    <polyline points="62,-240 240,-213 230,0" stroke-width="2" stroke="red" fill="none"/>
+
+    <polygon points="-150,-150 150,-150 150,150, -150,150" fill="none" stroke-width="2" stroke="black" stroke-dasharray="5,5" />
+    <circle cx="-150" cy="-150" r="3" fill="black" />
+    <text x="-45" y="-125" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-150, -150)</text>
+    <circle cx="150" cy="150" r="3" fill="black" />
+    <text x="140" y="135" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(150, 150)</text>
+
+    <text x="-230" y="-80" font-family="sans-serif" font-size="18" fill="red" text-anchor="middle">Zona</text>
+    <text x="-230" y="-50" font-family="sans-serif" font-size="18" fill="red" text-anchor="middle">visible</text>
+    <line x1="-205" y1="-70" x2="-160" y2="-70" stroke-width="2" stroke="red" />
+
+    <text x="-230" y="50" font-family="sans-serif" font-size="18" fill="black" text-anchor="middle">Zona</text>
+    <text x="-230" y="80" font-family="sans-serif" font-size="18" fill="black" text-anchor="middle">de dibujo</text>
+    <line x1="-205" y1="60" x2="-150" y2="60" stroke-width="2" stroke="black" />
+
+</svg>

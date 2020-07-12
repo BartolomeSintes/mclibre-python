@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -45,9 +47,9 @@
 
     <p>Escriba un programa que escriba ¡Hola, mundo!.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">¡Hola, mundo!</span>
+¡Hola, mundo!
 </pre>
     </div>
 
@@ -56,7 +58,7 @@
 
       <div class="codigo">
         <pre>
-<code class="language-python">def main():
+<code class="copy-language-python">def main():
     print("¡Hola, mundo!")
 
 if __name__ == "__main__":
@@ -76,11 +78,11 @@ if __name__ == "__main__":
 
     <p>Escriba un programa que salude y se despida.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">SALUDANDO</span>
-<span class="idle-resp">¡Hola, mundo!</span>
-<span class="idle-resp">¡Adiós, amigo!</span>
+SALUDANDO
+¡Hola, mundo!
+¡Adiós, amigo!
 </pre>
     </div>
 
@@ -89,7 +91,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">def main():
+<code class="copy-language-python">def main():
     print("SALUDANDO")
     print("¡Hola, mundo!")
     print("¡Adiós, amigo!")
@@ -111,11 +113,11 @@ if __name__ == "__main__":
 
     <p>Escriba un programa que pida un número entero y lo muestre.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">ESCRIBA NÚMERO</span>
-<span class="idle-resp">Escriba un número entero:</span> 1234
-<span class="idle-resp">Ha escrito el número 1234.</span>
+ESCRIBA NÚMERO
+Escriba un número entero: <span class="entrada-usuario">1234</span>
+Ha escrito el número 1234.
 </pre>
     </div>
 
@@ -124,7 +126,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">def main():
+<code class="copy-language-python">def main():
     print("ESCRIBA NÚMERO")
     numero = int(input("Escriba un número entero: "))
     print(f"Ha escrito el número {numero}.")
@@ -146,12 +148,12 @@ if __name__ == "__main__":
 
     <p>Escriba un programa que pida dos números decimales y los sume.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">SUMA NÚMEROS</span>
-<span class="idle-resp">Escriba un número:</span> 5
-<span class="idle-resp">Escriba otro número:</span> 5.5
-<span class="idle-resp">5.0 + 5.5 = 10.5</span>
+SUMA NÚMEROS
+Escriba un número: <span class="entrada-usuario">5</span>
+Escriba otro número: <span class="entrada-usuario">5.5</span>
+5.0 + 5.5 = 10.5
 </pre>
     </div>
 
@@ -160,7 +162,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">def main():
+<code class="copy-language-python">def main():
     print("SUMA NÚMEROS")
     numero_1 = float(input("Escriba un número: "))
     numero_2 = float(input("Escriba otro número: "))
@@ -183,21 +185,30 @@ if __name__ == "__main__":
 
     <p>Escriba un programa que pida dos números, el segundo más grande que el primero.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">NÚMEROS CRECIENTES</span>
-<span class="idle-resp">Escriba un número:</span> 5
-<span class="idle-resp">Escriba otro número más grande:</span> 1.5
-<span class="idle-resp">¡Le he pedido un número más grande!</span>
+NÚMEROS CRECIENTES
+Escriba un número: <span class="entrada-usuario">5</span>
+Escriba otro número más grande: <span class="entrada-usuario">1.5</span>
+¡Le he pedido un número más grande!
 </pre>
     </div>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">NÚMEROS CRECIENTES</span>
-<span class="idle-resp">Escriba un número:</span> 3.5
-<span class="idle-resp">Escriba otro número más grande:</span> 8
-<span class="idle-resp">Gracias por su colaboración.</span>
+NÚMEROS CRECIENTES
+Escriba un número: <span class="entrada-usuario">20</span>
+Escriba otro número más grande: <span class="entrada-usuario">20</span>
+¡Le he pedido un número más grande!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+NÚMEROS CRECIENTES
+Escriba un número: <span class="entrada-usuario">3.5</span>
+Escriba otro número más grande: <span class="entrada-usuario">8</span>
+Gracias por su colaboración.
 </pre>
     </div>
 
@@ -206,7 +217,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">def main():
+<code class="copy-language-python">def main():
     print("NÚMEROS CRECIENTES")
     numero_1 = float(input("Escriba un número: "))
     numero_2 = float(input("Escriba otro número más grande: "))
@@ -232,10 +243,10 @@ if __name__ == "__main__":
 
     <p>Escriba un programa que simule la tirada de un dado.</p>
 
-    <div class="resultado-idle">
+    <div class="ejecucion-terminal">
       <pre>
-<span class="idle-resp">TIRADA DE DADO</span>
-<span class="idle-resp">Ha salido un 3.</span>
+TIRADA DE DADO
+Ha salido un 3.
 </pre>
     </div>
 
@@ -244,7 +255,7 @@ if __name__ == "__main__":
 
       <div class="codigo">
         <pre>
-<code class="language-python">import random
+<code class="copy-language-python">import random
 
 def main():
     print("TIRADA DE DADO")

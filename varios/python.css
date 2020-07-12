@@ -4,7 +4,7 @@
 /*                                          */
 /* CSS curso: Programacion con Python       */
 /*                                          */
-/* 1 de abril de 2020                       */
+/* 24 de abril de 2020                      */
 /*                                          */
 
 /* CSS comun */
@@ -236,7 +236,11 @@ div.filaflex.nogrow h2, div.filaflex.nogrow h3 {
   margin: 0;
 }
 
-div.filaflex div:not([class="icono"]) {
+/* 2020-04-24: Modifico el selector añadiendo > para que soluciones SVG con el botón Copiar se vean bien
+   pro no sé si estropeará algo
+*/
+
+div.filaflex > div:not([class="icono"]) {
   width: 100px;
   flex-grow: 1;
 }
