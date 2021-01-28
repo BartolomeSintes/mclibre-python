@@ -108,6 +108,10 @@
   //
   // Configuraciones recomendadas para el curso Introducción a la programación con Python
   //
+  // Files: Insert Final Newline
+  // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
+  "files.insertFinalNewline": true,
+  //
   // Extensión multi-command
   "multiCommand.commands": [
     {
@@ -164,7 +168,7 @@
   // Extensión pylint
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116, C0330",
+    "--disable=C0103, C0114, C0115, C0116",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -172,7 +176,6 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
   //</code>
@@ -186,6 +189,10 @@
 <code class="copy-language-json">{
   // Configuraciones recomendadas para el curso Introducción a la programación con Python
   //
+  // Files: Insert Final Newline
+  // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
+  "files.insertFinalNewline": true,
+  //
   // Extensión multi-command
   "multiCommand.commands": [
     {
@@ -242,7 +249,7 @@
   // Extensión pylint
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116, C0330",
+    "--disable=C0103, C0114, C0115, C0116",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -250,7 +257,6 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
 }</code>
@@ -337,7 +343,13 @@
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-june-2020-release/">Junio</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-july-2020-release/">Julio</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-august-2020-release/">Agosto</a> -
-          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-september-2020-release/">Septiembre</a>
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-september-2020-release/">Septiembre</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-october-2020-release/">Octubre</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-november-2020-release/">Noviembre</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-december-2020-release/">Diciembre</a>
+        </li>
+        <li>2021:
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-january-2021-release/">Enero</a> -
         </li>
       </ul>
 
@@ -348,12 +360,12 @@
       <section id="extension-pylint">
         <h4>Instalación de pylint</h4>
 
-        <p>Al guardar por primera vez un programa de Python, Visual Studio Code mostrará un aviso indicando que <i>pylint</i> no está instalado y que le ofrecerá la opción de instalarlo automáticamente.</p>
+        <p>Al guardar por primera vez un programa de Python, Visual Studio Code mostrará un aviso indicando que no hay ningún <i>linter</i> instalado y ofrecerá la opción de instalar <i>pylint</i> automáticamente.</p>
 
         <ol>
           <li>Abra o escriba un programa cualquiera y guárdelo.</li>
           <li>
-            Se mostrará el aviso indicando que <i>pylint</i> no está instalado. Haga clic en "Install" para instalarlo.
+            Se mostrará el aviso indicando que no hay ningún <i>linter</i> instalado. Haga clic en "Install pylint" para instalar <i>pylint</i>.
             <p class="captura">
               <img src="../img/vscode/vsc-python-pylint-1.png" alt="VSC. Instalación de pylint" width="1024" height="576">
             </p>
@@ -363,7 +375,7 @@
               <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="150">
             </p>
 
-            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
+            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
           </li>
         </ol>
 
@@ -382,7 +394,7 @@
   // Extensión pylint (configuración para ejercicios pygame)
   "python.linting.pylintArgs": [
     "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116, C0330",
+    "--disable=C0103, C0114, C0115, C0116",
     // Pylint features. Pylint global options and switches
     // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
@@ -390,7 +402,6 @@
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
     // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
     // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
   ],
   //
   //</code>
@@ -401,7 +412,7 @@
       <section id="extension-autoformato">
         <h4>Instalación de módulo de autoformato</h4>
 
-        <p>Al formatear código por primera vez después de instalar la extensión Python, Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2020), los módulos de autoformato que ofrece son:</p>
+        <p>Al formatear código por primera vez después de instalar la extensión Python, Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2021), los módulos de autoformato que ofrece son:</p>
         <ul>
           <li><a href="https://pypi.org/project/autopep8/">autopep8</a></li>
           <li><a href="https://pypi.org/project/black/">black</a></li>
@@ -410,7 +421,7 @@
         <ol>
           <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift+Alt+f</span> para formatear el código.</li>
           <li>
-            Se mostrará el aviso indicando que no hay ningún formateador instalado y ofreciendo la instalación de <strong>black</strong>. Haga clic en "Yes" para instalarlo.
+            Se mostrará el aviso indicando que no hay ningún formateador instalado y ofreciendo la instalación de<strong>autopep8</strong>, pero en estos apuntes se recomienda el uso de  <strong>black</strong>. Haga clic en "Use black" para instalarlo.
             <p class="captura">
               <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1024" height="150">
             </p>
@@ -419,9 +430,9 @@
           <li>
             Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="180">
+              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="160">
             </p>
-            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Programs\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
+            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
           </li>
           <li>
             Se creará una carpeta <strong>.vscode</strong> con el archivo de configuración del área de trabajo <strong>settings.json</strong>. Este archivo contiene la preferencia de configuración que indica a Visual Studio Code que queremos utilizar el formateador black.
@@ -430,53 +441,6 @@
             </p>
           </li>
         </ol>
-      </section>
-
-      <section id="problemas">
-        <h4>Problemas</h4>
-
-        <p>Hay situaciones en las que el formateador black entra en conflicto con el validador pylint.</p>
-
-        <p>Una de estas situaciones se produce con el sangrado de las condiciones en una sentencia <span class="idle-rese">if</span> como el del ejemplo siguiente:</p>
-
-        <div class="codigo">
-          <pre class="line-numbers">
-<code class="language-python">a = 5
-b = 7
-c = 10
-if (
-    c &gt; a
-    and c &gt; b
-):
-    print("c es mayor que a y que b")
-else:
-    print("c no es mayor que a y que b")</code>
-</pre>
-        </div>
-
-        <p>En este ejemplo, las líneas de la condición (líneas 4 y 5) tienen el mismo sangrado que los bloques de instrucciones (líneas 8 y 10). Este sangrado uniforme es el que aplica black, pero pylint indica un aviso "Wrong hanging indentation before block (add 4 spaces). pylint(bad-continuation)"</p>
-
-        <p>pylint prefiere que la condición tenga más sangrado que los bloques de instrucciones, como en el ejemplo siguiente:</p>
-        <div class="codigo">
-          <pre class="line-numbers">
-<code class="language-python">a = 5
-b = 7
-c = 10
-if (
-        c &gt; a
-        and c &gt; b
-):
-    print("c es mayor que a y que b")
-else:
-    print("c no es mayor que a y que b")</code>
-</pre>
-        </div>
-
-        <p>Ambos sangrados son sintácticamente válidos y siguen las reglas de formato de Python (<a href="https://www.python.org/dev/peps/pep-0008/">Pep 8</a>, pero el problema es que cada vez que formateamos con black el segundo programa, black lo deja como el primero y pylint muestra un aviso (en realidad, muestra varias veces el mismo aviso, uno por línea).</p>
-
-        <p>Hace tiempo que se ha pedido tanto a black como a pylint que resuelvan esta situación (<a href="https://github.com/PyCQA/pylint/issues/289">pylint issue #289</a> y <a href="https://github.com/psf/black/issues/48">black issue #48</a>), pero ninguno de los dos da su brazo a torcer.</p>
-
-        <p>A la espera de que black o pylint corrijan su comportamiento, la única solución que he encontrado ha sido desactivar el aviso C0330 de pylint.</p>
       </section>
     </section>
   </section>
@@ -673,7 +637,7 @@ else:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de septiembre de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 28 de enero de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
