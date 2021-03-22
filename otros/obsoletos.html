@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Temas obsoletos. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
+  <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
+</head>
+
+<body>
+  <h1>Temas obsoletos</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Obsoletos</h2>
+
+      <ul>
+        <li><a href="#vscode">VSCode</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección he mantenido algunas explicaciones que ya no son necesarias actualmente.</p>
+
+  <section id="vscode-pylint-black">
+    <h2>Conflictos entre pylint y black en VSCode</h2>
+
+    <p>Antes de la versión 2.6.0 de Pylint (publicada en agosto de 2020), el formateador black entraba en conflicto con el validador pylint con el sangrado de las condiciones en una sentencia <span class="idle-rese">if</span> como el del ejemplo siguiente:</p>
+
+    <div class="codigo">
+      <pre class="line-numbers">
+<code class="language-python">a = 5
+b = 7
+c = 10
+if (
+    c &gt; a
+    and c &gt; b
+):
+    print("c es mayor que a y que b")
+else:
+    print("c no es mayor que a y que b")</code>
+</pre>
+    </div>
+
+    <p>En este ejemplo, las líneas de la condición (líneas 4 y 5) tienen el mismo sangrado que los bloques de instrucciones (líneas 8 y 10). Este sangrado uniforme es el que aplica black, pero pylint indicaba un aviso "Wrong hanging indentation before block (add 4 spaces). pylint(bad-continuation)"</p>
+
+    <p>pylint prefería que la condición tenga más sangrado que los bloques de instrucciones, como en el ejemplo siguiente:</p>
+    <div class="codigo">
+      <pre class="line-numbers">
+<code class="language-python">a = 5
+b = 7
+c = 10
+if (
+        c &gt; a
+        and c &gt; b
+):
+    print("c es mayor que a y que b")
+else:
+    print("c no es mayor que a y que b")</code>
+</pre>
+    </div>
+
+    <p>Ambos sangrados son sintácticamente válidos y siguen las reglas de formato de Python (<a href="https://www.python.org/dev/peps/pep-0008/">Pep 8</a>, pero el problema es que cada vez que formateabamos con black el segundo programa, black lo dejaba como el primero y pylint mostraba un aviso (en realidad, mostraba varias veces el mismo aviso, uno por línea).</p>
+
+    <p>Se pidió tanto a black como a pylint que resolvieran esta situación (<a href="https://github.com/PyCQA/pylint/issues/289">pylint issue #289</a> y <a href="https://github.com/psf/black/issues/48">black issue #48</a>), y finalmente fue pylint el que dio su brazo a torcer (punto 2 de la <a href="http://pylint.pycqa.org/en/latest/whatsnew/changelog.html#what-s-new-in-pylint-2-6-0">lista de novedades en pylint 2.6.0</a>).</p>
+
+    <p>En el curso 2019-20, la única solución que encontré fue desactivar el aviso C0330 de pylint en el archivo de configuración de VSCode.</p>
+
+    <div class="codigo">
+      <pre>
+<code class="copy-language-json">  //
+  // Extensión pylint (configuración para ejercicios pygame)
+  "python.linting.pylintArgs": [
+    "--extension-pkg-whitelist=pygame",
+    "--disable=C0103, C0114, C0115, C0116, C0330",
+    // Pylint features. Pylint global options and switches
+    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+    // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+    // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+    // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+    // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+    // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+    // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
+  ],
+  //
+  //</code>
+</pre>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 26 de enero de 2021</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
