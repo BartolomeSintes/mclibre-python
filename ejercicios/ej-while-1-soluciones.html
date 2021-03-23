@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Soluciones (2). Bucle while. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Soluciones (1). Bucle while. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <h1>Bucle <span class="idle-rese">while</span> - Soluciones (2)</h1>
+  <h1>Bucle <span class="idle-rese">while</span> - Soluciones (1)</h1>
 
   <nav>
     <p>
@@ -22,40 +22,44 @@
     </p>
 
     <div class="toc">
-      <h2>Bucle <span class="idle-rese">while</span> (2)</h2>
+      <h2>Bucle <span class="idle-rese">while</span> (1)</h2>
 
-      <h3><a href="ej-while-2.html">Enunciados</a></h3>
+      <h3><a href="ej-while-1.html">Enunciados</a></h3>
       <ol>
-        <li><a href="ej-while-2.html#ejercicio-1">Menores que primero</a></li>
-        <li><a href="ej-while-2.html#ejercicio-2">Mayores que primero</a></li>
-        <li><a href="ej-while-2.html#ejercicio-3">Cada vez más grandes</a></li>
-        <li><a href="ej-while-2.html#ejercicio-4">Números positivos</a></li>
-        <li><a href="ej-while-2.html#ejercicio-5">Suma números positivos</a></li>
-        <li><a href="ej-while-2.html#ejercicio-6">Suma hasta límite</a></li>
-        <li><a href="ej-while-2.html#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="ej-while-2.html#ejercicio-8">S para seguir</a></li>
-        <li><a href="ej-while-2.html#ejercicio-9">Descomposición primos</a></li>
+        <li><a href="ej-while-1.html#ejercicio-1">sí para continuar</a></li>
+        <li><a href="ej-while-1.html#ejercicio-2">SI para terminar</a></li>
+        <li><a href="ej-while-1.html#ejercicio-3">N para continuar</a></li>
+        <li><a href="ej-while-1.html#ejercicio-4">no para terminar</a></li>
+        <li><a href="ej-while-1.html#ejercicio-5">S o s para continuar</a></li>
+        <li><a href="ej-while-1.html#ejercicio-6">S o s para terminar</a></li>
+        <!--
+        <li><a href="ej-while-1.html#ejercicio-7">Suma entre límites</a></li>
+        <li><a href="ej-while-1.html#ejercicio-8">S para seguir</a></li>
+        <li><a href="ej-while-1.html#ejercicio-9">Descomposición primos</a></li>
+        -->
       </ol>
 
       <h3>Soluciones</h3>
       <ol>
-        <li><a href="#ejercicio-1">Menores que primero</a></li>
-        <li><a href="#ejercicio-2">Mayores que primero</a></li>
-        <li><a href="#ejercicio-3">Cada vez más grandes</a></li>
-        <li><a href="#ejercicio-4">Números positivos</a></li>
-        <li><a href="#ejercicio-5">Suma números positivos</a></li>
-        <li><a href="#ejercicio-6">Suma hasta límite</a></li>
+        <li><a href="#ejercicio-1">sí para continuar</a></li>
+        <li><a href="#ejercicio-2">SI para terminar</a></li>
+        <li><a href="#ejercicio-3">N para continuar</a></li>
+        <li><a href="#ejercicio-4">no para terminar</a></li>
+        <li><a href="#ejercicio-5">S o s para continuar</a></li>
+        <li><a href="#ejercicio-6">S o s para terminar</a></li>
+        <!--
         <li><a href="#ejercicio-7">Suma entre límites</a></li>
         <li><a href="#ejercicio-8">S para seguir</a></li>
         <li><a href="#ejercicio-9">Descomposición primos</a></li>
+        -->
       </ol>
     </div>
   </nav>
 
-  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-while-2.html">ejercicios (2) de bucle <span class="idle-rese">while</span></a>.</p>
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-while-1.html">ejercicios (1) de bucle <span class="idle-rese">while</span></a>.</p>
 
   <section id="ejercicio-1">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 1</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 1</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -65,17 +69,13 @@
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("NÚMERO MAYOR")
-    primero = int(input("Escriba un número: "))
-    segundo = int(input(f"Escriba un número mayor que {primero}: "))
+    print("DIGA sí PARA CONTINUAR")
+    respuesta = input("¿Desea continuar el programa?: ")
 
-    while segundo &lt;= primero:
-        segundo = int(
-            input(f"{segundo} no es mayor que {primero}. Inténtelo de nuevo: ")
-        )
+    while respuesta == "sí":
+        respuesta = input("¿Desea continuar el programa?: ")
 
-    print()
-    print(f"Los números que ha escrito son {primero} y {segundo}.")
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -85,7 +85,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-2">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 2</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 2</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -95,15 +95,13 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("NÚMEROS MAYORES")
-    primero = float(input("Escriba un número: "))
-    segundo = float(input(f"Escriba un número mayor que {primero}: "))
+    print("DIGA SI PARA TERMINAR")
+    respuesta = input("¿Desea terminar el programa?: ")
 
-    while segundo &gt; primero:
-        segundo = float(input(f"Escriba un número mayor que {primero}: "))
+    while respuesta != "SI":
+        respuesta = input("¿Desea terminar el programa?: ")
 
-    print()
-    print(f"{segundo} no es mayor que {primero}.")
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -113,7 +111,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-3">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 3</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 3</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -123,16 +121,13 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("CADA VEZ MÁS GRANDES")
-    primero = int(input("Escriba un número: "))
-    segundo = int(input(f"Escriba un número mayor que {primero}: "))
+    print("DIGA N PARA CONTINUAR")
+    respuesta = input("¿Desea terminar el programa?: ")
 
-    while segundo &gt; primero:
-        primero = segundo
-        segundo = int(input(f"Escriba un número mayor que {primero}: "))
+    while respuesta == "N":
+        respuesta = input("¿Desea terminar el programa?: ")
 
-    print()
-    print(f"{segundo} no es mayor que {primero}.")
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -142,7 +137,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-4">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 4</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 4</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -152,32 +147,13 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("NÚMEROS POSITIVOS")
-    objetivo = int(input("Escriba la cantidad de números positivos a escribir: "))
-    while objetivo &lt; 1:
-        objetivo = int(input("La cantidad debe ser mayor que 0. Inténtelo de nuevo: "))
+    print("DIGA no PARA TERMINAR")
+    respuesta = input("¿Desea continuar el programa?: ")
 
-    print()
-    numero = int(input("Escriba un número: "))
-    total = 1
-    if numero &gt; 0:
-        cantidad = 1
-    else:
-        cantidad = 0
+    while respuesta != "no":
+        respuesta = input("¿Desea continuar el programa?: ")
 
-    while cantidad &lt; objetivo:
-        numero = int(input("Escriba otro número: "))
-        if numero &gt; 0:
-            cantidad += 1
-        total += 1
-
-    print()
-    if total == 1:
-        print("Ha escrito 1 número positivo.")
-    elif objetivo == 1:
-        print(f"Ha escrito {total} números, {objetivo} de ellos positivo.")
-    else:
-        print(f"Ha escrito {total} números, {objetivo} de ellos positivos.")
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -187,7 +163,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-5">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 5</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 5</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -197,14 +173,13 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("SUMA DE NÚMEROS")
-    numero = int(input("Escriba un número: "))
-    suma = 0
-    while numero &gt;= 0:
-        suma += numero
-        numero = int(input("Escriba otro número: "))
-    print()
-    print(f"La suma de los números positivos introducidos es {suma}.")
+    print("DIGA S O s PARA CONTINUAR")
+    respuesta = input("¿Desea continuar el programa?: ")
+
+    while respuesta == "S" or respuesta == "s":
+        respuesta = input("¿Desea continuar el programa?: ")
+
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -214,7 +189,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-6">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 6</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 6</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -224,21 +199,13 @@ if __name__ == "__main__":
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("HASTA EL LÍMITE")
-    limite = float(input("Escriba el valor límite: "))
-    while limite &lt;= 0:
-        limite = float(input("El límite debe ser mayor que 0. Inténtelo de nuevo: "))
+    print("DIGA S O s PARA TERMINAR")
+    respuesta = input("¿Desea terminar el programa?: ")
 
-    print()
-    numero = float(input("Escriba un número: "))
-    suma = numero
+    while respuesta != "S" and respuesta != "s":
+        respuesta = input("¿Desea terminar el programa?: ")
 
-    while suma &lt; limite:
-        numero = float(input("Escriba otro número: "))
-        suma += numero
-
-    print()
-    print(f"Ha superado el límite. La suma de los números introducidos es {suma}.")
+    print("¡Hasta la vista!")
 
 
 if __name__ == "__main__":
@@ -247,8 +214,9 @@ if __name__ == "__main__":
     </div>
   </section>
 
+  <!--
   <section id="ejercicio-7">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 7</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 7</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -288,7 +256,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-8">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 8</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 8</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -368,7 +336,7 @@ if __name__ == "__main__":
   </section>
 
   <section id="ejercicio-9">
-    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (2) - 9</h2>
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 9</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
@@ -452,9 +420,9 @@ if __name__ == "__main__":
 </pre>
     </div>
   </section>
-
+-->
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de abril de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

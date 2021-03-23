@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios (1). Bucle while. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Bucle <span class="idle-rese">while</span> - Ejercicios (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Bucle <span class="idle-rese">while</span> (1)</h2>
+
+      <h3>Enunciados</h3>
+      <ol>
+        <li><a href="#ejercicio-1">sí para continuar</a></li>
+        <li><a href="#ejercicio-2">SI para terminar</a></li>
+        <li><a href="#ejercicio-3">N para continuar</a></li>
+        <li><a href="#ejercicio-4">no para terminar</a></li>
+        <li><a href="#ejercicio-5">S o s para continuar</a></li>
+        <li><a href="#ejercicio-6">S o s para terminar</a></li>
+        <!--
+        <li><a href="#ejercicio-7">Suma entre límites</a></li>
+        <li><a href="#ejercicio-8">S para seguir</a></li>
+        <li><a href="#ejercicio-9">Descomposición primos</a></li>
+        -->
+      </ol>
+
+      <h3><a href="ej-while-1-soluciones.html">Soluciones</a></h3>
+      <ol>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-1">sí para continuar</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-2">SI para terminar</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-3">N para continuar</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-4">no para terminar</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-5">S o s para continuar</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-6">S o s para terminar</a></li>
+        <!--
+        <li><a href="ej-while-1-soluciones.html#ejercicio-7">Suma entre límites</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-8">S para seguir</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-9">Descomposición primos</a></li>
+        -->
+      </ol>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en la lección sobre el <a href="../lecciones/python-while.html">bucle <span class="idle-rese">while</span></a>.</p>
+
+  <p>Se pueden consultar unas <a href="ej-while-1-soluciones.html">posibles soluciones</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 1</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>141</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea continuar con el programa, siempre que se conteste exactamente sí (en minúsculas y con tilde).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA sí PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">sí</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">sí</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">NO</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA sí PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">no</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA sí PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">si</span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 2</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>142</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea terminar el programa, salvo si se contesta exactamente SI (en mayúsculas y sin tilde).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA SI PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">s</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">S</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">SI</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA SI PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">no</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">SI</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA SI PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario"></span>
+¿Desea terminar el programa?: <span class="entrada-usuario">sí</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">SÍ</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">SI</span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 3</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>143</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea terminar el programa, siempre que se conteste exactamente N (en mayúsculas).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA N PARA CONTINUAR
+¿Desea terminar el programa?: <span class="entrada-usuario">N</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">N</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">tal vez</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA N PARA CONTINUAR
+¿Desea terminar el programa?: <span class="entrada-usuario">S</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA N PARA CONTINUAR
+¿Desea terminar el programa?: <span class="entrada-usuario">N</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">n</span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 4</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>144</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea continuar el programa, salvo si se contesta exactamente no (en minúsculas).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA no PARA TERMINAR
+¿Desea continuar el programa?: <span class="entrada-usuario">sí</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">puede</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">no</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA no PARA TERMINAR
+¿Desea continuar el programa?: <span class="entrada-usuario">NO</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">n</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">no</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA no PARA TERMINAR
+¿Desea continuar el programa?: <span class="entrada-usuario"></span>
+¿Desea continuar el programa?: <span class="entrada-usuario">no</span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 5</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>145</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea continuar con el programa, siempre que se conteste S o s (en mayúsculas o en minúsculas).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">S</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">s</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">S</span>
+¿Desea continuar el programa?: <span class="entrada-usuario">N</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">sí</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA CONTINUAR
+¿Desea continuar el programa?: <span class="entrada-usuario">s</span>
+¿Desea continuar el programa?: <span class="entrada-usuario"></span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-6">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 6</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>146</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea terminar el programa, salvo si se contesta S o s (en mayúsculas o en minúsculas).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">NO</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">no</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">s</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">S</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA S O s PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario"></span>
+¿Desea terminar el programa?: <span class="entrada-usuario">s</span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+        <!--
+  <section id="ejercicio-7">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 7</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>147</p>
+    </aside>
+
+    <p>Escriba un programa que pregunte una y otra vez si desea terminar el programa, salvo si se contesta exactamente NO, no, N, n, No o nO (cualquiera de ellas).</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA NO O N PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">No</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">n</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">sí</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA NO O N PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">nO</span>
+¿Desea terminar el programa?: <span class="entrada-usuario">non</span>
+¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DIGA NO O N PARA TERMINAR
+¿Desea terminar el programa?: <span class="entrada-usuario">N</span>
+¿Desea terminar el programa?: <span class="entrada-usuario"></span>
+¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-8">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 8</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>148</p>
+    </aside>
+
+    <p>Escriba un programa que pida un valor límite positivo y a continuación pida números hasta que la suma de los números introducidos supere el límite inicial.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+HASTA EL LÍMITE
+Escriba el valor límite: <span class="entrada-usuario">-3</span>
+El límite debe ser mayor que 0. Inténtelo de nuevo:<span class="entrada-usuario"> 0</span>
+El límite debe ser mayor que 0. Inténtelo de nuevo: <span class="entrada-usuario">5.5</span>
+
+Escriba un número: <span class="entrada-usuario">7.2</span>
+
+Ha superado el límite. La suma de los números introducidos es 7.2.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-9">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 9</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>149</p>
+    </aside>
+
+    <p>Escriba un programa que pida primero dos números enteros (mínimo y máximo) y que después pida números enteros situados entre ellos. El programa terminará cuando se escriba un número que no esté comprendido entre los dos valores iniciales. El programa termina escribiendo la cantidad de números escritos.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+ENTRE DOS VALORES
+Escriba un número: <span class="entrada-usuario">6</span>
+Escriba un número mayor que 6: <span class="entrada-usuario">4</span>
+4 no es mayor que 6. Inténtelo de nuevo: <span class="entrada-usuario">50</span>
+
+Escriba un número entre 6 y 50: <span class="entrada-usuario">45</span>
+Escriba otro número entre 6 y 50: <span class="entrada-usuario">6</span>
+Escriba otro número entre 6 y 50: <span class="entrada-usuario">4</span>
+
+Ha escrito 2 números entre 6 y 50.
+</pre>
+    </div>
+  </section>
+-->
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2021</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
