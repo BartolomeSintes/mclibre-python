@@ -30,11 +30,10 @@
         <li><a href="#ejercicio-4">no para terminar</a></li>
         <li><a href="#ejercicio-5">S o s para continuar</a></li>
         <li><a href="#ejercicio-6">S o s para terminar</a></li>
-        <!--
-        <li><a href="#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="#ejercicio-8">S para seguir</a></li>
-        <li><a href="#ejercicio-9">Descomposición primos</a></li>
-        -->
+        <li><a href="#ejercicio-7">Confirme contraseña</a></li>
+        <li><a href="#ejercicio-8">Hucha</a></li>
+        <li><a href="#ejercicio-9">Hucha mejorada</a></li>
+        <li><a href="#ejercicio-10">Confirme contraseña (2)</a></li>
       </ol>
 
       <h3><a href="ej-while-1-soluciones.html">Soluciones</a></h3>
@@ -45,11 +44,10 @@
         <li><a href="ej-while-1-soluciones.html#ejercicio-4">no para terminar</a></li>
         <li><a href="ej-while-1-soluciones.html#ejercicio-5">S o s para continuar</a></li>
         <li><a href="ej-while-1-soluciones.html#ejercicio-6">S o s para terminar</a></li>
-        <!--
-        <li><a href="ej-while-1-soluciones.html#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="ej-while-1-soluciones.html#ejercicio-8">S para seguir</a></li>
-        <li><a href="ej-while-1-soluciones.html#ejercicio-9">Descomposición primos</a></li>
-        -->
+        <li><a href="ej-while-1-soluciones.html#ejercicio-7">Confirme contraseña</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-8">Hucha</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-9">Hucha mejorada</a></li>
+        <li><a href="ej-while-1-soluciones.html#ejercicio-10">Confirme contraseña (2)</a></li>
       </ol>
     </div>
   </nav>
@@ -291,7 +289,6 @@ DIGA S O s PARA TERMINAR
     </div>
   </section>
 
-        <!--
   <section id="ejercicio-7">
     <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 7</h2>
 
@@ -300,33 +297,26 @@ DIGA S O s PARA TERMINAR
       <p>147</p>
     </aside>
 
-    <p>Escriba un programa que pregunte una y otra vez si desea terminar el programa, salvo si se contesta exactamente NO, no, N, n, No o nO (cualquiera de ellas).</p>
+    <p>Escriba un programa que solicite una contraseña (el texto de la contraseña no es importante) y la vuelva a solicitar hasta que las dos contraseñas coincidan.</p>
 
     <div class="ejecucion-terminal">
       <pre>
-DIGA NO O N PARA TERMINAR
-¿Desea terminar el programa?: <span class="entrada-usuario">No</span>
-¿Desea terminar el programa?: <span class="entrada-usuario">n</span>
-¿Desea terminar el programa?: <span class="entrada-usuario">sí</span>
-¡Hasta la vista!
+CONFIRME SU CONTRASEÑA
+Escriba su contraseña: <span class="entrada-usuario">cantidubi dubi dubi</span>
+Escriba de nuevo su contraseña: <span class="entrada-usuario">cantidubi dubi da</span>
+Las contraseñas no coinciden. Inténtelo de nuevo.
+Escriba su contraseña: <span class="entrada-usuario">cantidubi dubi dubi</span>
+Escriba de nuevo su contraseña: <span class="entrada-usuario">cantidubi dubi dubi</span>
+Contraseña confirmada. ¡Hasta la vista!
 </pre>
     </div>
 
     <div class="ejecucion-terminal">
       <pre>
-DIGA NO O N PARA TERMINAR
-¿Desea terminar el programa?: <span class="entrada-usuario">nO</span>
-¿Desea terminar el programa?: <span class="entrada-usuario">non</span>
-¡Hasta la vista!
-</pre>
-    </div>
-
-    <div class="ejecucion-terminal">
-      <pre>
-DIGA NO O N PARA TERMINAR
-¿Desea terminar el programa?: <span class="entrada-usuario">N</span>
-¿Desea terminar el programa?: <span class="entrada-usuario"></span>
-¡Hasta la vista!
+CONFIRME SU CONTRASEÑA
+Escriba su contraseña: <span class="entrada-usuario">pezespada</span>
+Escriba de nuevo su contraseña: <span class="entrada-usuario">pezespada</span>
+Contraseña confirmada. ¡Hasta la vista!
 </pre>
     </div>
   </section>
@@ -338,19 +328,45 @@ DIGA NO O N PARA TERMINAR
       <p><a href="../otros/python-testing.html">MPTC</a></p>
       <p>148</p>
     </aside>
-
-    <p>Escriba un programa que pida un valor límite positivo y a continuación pida números hasta que la suma de los números introducidos supere el límite inicial.</p>
+    <p>Escriba un programa que simule una hucha. El programa solicitará primero una cantidad, que será la cantidad de dinero que queremos ahorrar. A continuación, el programa solicitará una y otra vez las cantidades que se irán ahorrando, hasta que el total ahorrado iguale o supere al objetivo. El programa no comprobará que las cantidades sean positivas.</p>
 
     <div class="ejecucion-terminal">
       <pre>
-HASTA EL LÍMITE
-Escriba el valor límite: <span class="entrada-usuario">-3</span>
-El límite debe ser mayor que 0. Inténtelo de nuevo:<span class="entrada-usuario"> 0</span>
-El límite debe ser mayor que 0. Inténtelo de nuevo: <span class="entrada-usuario">5.5</span>
+HUCHA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">30</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">10</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">5</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">20</span>
+¡Objetivo conseguido! Ha ahorrado usted 35.0 euros.
+</pre>
+    </div>
 
-Escriba un número: <span class="entrada-usuario">7.2</span>
+    <div class="ejecucion-terminal">
+      <pre>
+HUCHA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">50</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">10.50</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">39.50</span>
+¡Objetivo conseguido! Ha ahorrado usted 50.0 euros.
+</pre>
+    </div>
 
-Ha superado el límite. La suma de los números introducidos es 7.2.
+    <div class="ejecucion-terminal">
+      <pre>
+HUCHA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">50</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">30</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">-20</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">100</span>
+¡Objetivo conseguido! Ha ahorrado usted 110.0 euros.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+HUCHA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">0</span>
+¡Objetivo conseguido! Ha ahorrado usted 0.0 euros.
 </pre>
     </div>
   </section>
@@ -363,26 +379,79 @@ Ha superado el límite. La suma de los números introducidos es 7.2.
       <p>149</p>
     </aside>
 
-    <p>Escriba un programa que pida primero dos números enteros (mínimo y máximo) y que después pida números enteros situados entre ellos. El programa terminará cuando se escriba un número que no esté comprendido entre los dos valores iniciales. El programa termina escribiendo la cantidad de números escritos.</p>
+    <p>Escriba un programa que mejore la simulación de la hucha del ejercicio anterior, no permitiendo que se escriban cantidades negativas.</p>
 
     <div class="ejecucion-terminal">
       <pre>
-ENTRE DOS VALORES
-Escriba un número: <span class="entrada-usuario">6</span>
-Escriba un número mayor que 6: <span class="entrada-usuario">4</span>
-4 no es mayor que 6. Inténtelo de nuevo: <span class="entrada-usuario">50</span>
+HUCHA MEJORADA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">30</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">10</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">-5</span>
+Por favor, escriba una cantidad positiva.
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">20</span>
+¡Objetivo conseguido! Ha ahorrado usted 30.0 euros.
+</pre>
+    </div>
 
-Escriba un número entre 6 y 50: <span class="entrada-usuario">45</span>
-Escriba otro número entre 6 y 50: <span class="entrada-usuario">6</span>
-Escriba otro número entre 6 y 50: <span class="entrada-usuario">4</span>
+    <div class="ejecucion-terminal">
+      <pre>
+HUCHA MEJORADA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">-10</span>
+Por favor, escriba una cantidad positiva.
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">20.5</span>
+¿Cuántos euros quiere meter en la hucha?: <span class="entrada-usuario">20.6</span>
+¡Objetivo conseguido! Ha ahorrado usted 20.6 euros.
+</pre>
+    </div>
 
-Ha escrito 2 números entre 6 y 50.
+    <div class="ejecucion-terminal">
+      <pre>
+HUCHA MEJORADA
+¿Cuántos euros quiere ahorrar?: <span class="entrada-usuario">0</span>
+¡Objetivo conseguido! Ha ahorrado usted 0.0 euros.
 </pre>
     </div>
   </section>
--->
+
+  <section id="ejercicio-10">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 10</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>150</p>
+    </aside>
+
+    <p>Escriba un programa que solicite una contraseña (el texto de la contraseña no es importante) y la vuelva a solicitar hasta que las dos contraseñas coincidan, con un límite de tres peticiones.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONFIRME SU CONTRASEÑA (2)
+Escriba su contraseña: <span class="entrada-usuario">cantidubi dubi dubi</span>
+Tiene 3 intentos para confirmar su contraseña.
+Escriba de nuevo su contraseña: <span class="entrada-usuario">cantidubi dubi da</span>
+Las contraseñas no coinciden. Inténtelo de nuevo.
+Escriba de nuevo su contraseña: <span class="entrada-usuario">cantidubi dubi dubi</span>
+Contraseña confirmada. ¡Hasta la vista!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONFIRME SU CONTRASEÑA
+Escriba su contraseña: <span class="entrada-usuario">pezespada</span>
+Tiene 3 intentos para confirmar su contraseña.
+Escriba de nuevo su contraseña: <span class="entrada-usuario">Pezespada</span>
+Las contraseñas no coinciden. Inténtelo de nuevo.
+Escriba de nuevo su contraseña: <span class="entrada-usuario">pezEspada</span>
+Las contraseñas no coinciden. Inténtelo de nuevo.
+Escriba de nuevo su contraseña: <span class="entrada-usuario">PezEspada</span>
+Lo siento, no ha confirmado la contraseña. ¡Hasta la vista!
+</pre>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

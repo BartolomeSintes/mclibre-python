@@ -32,11 +32,10 @@
         <li><a href="ej-while-1.html#ejercicio-4">no para terminar</a></li>
         <li><a href="ej-while-1.html#ejercicio-5">S o s para continuar</a></li>
         <li><a href="ej-while-1.html#ejercicio-6">S o s para terminar</a></li>
-        <!--
-        <li><a href="ej-while-1.html#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="ej-while-1.html#ejercicio-8">S para seguir</a></li>
-        <li><a href="ej-while-1.html#ejercicio-9">Descomposición primos</a></li>
-        -->
+        <li><a href="ej-while-1.html#ejercicio-7">Confirme contraseña</a></li>
+        <li><a href="ej-while-1.html#ejercicio-8">Hucha</a></li>
+        <li><a href="ej-while-1.html#ejercicio-9">Hucha mejorada</a></li>
+        <li><a href="ej-while-1.html#ejercicio-10">Confirme contraseña (2)</a></li>
       </ol>
 
       <h3>Soluciones</h3>
@@ -47,11 +46,10 @@
         <li><a href="#ejercicio-4">no para terminar</a></li>
         <li><a href="#ejercicio-5">S o s para continuar</a></li>
         <li><a href="#ejercicio-6">S o s para terminar</a></li>
-        <!--
-        <li><a href="#ejercicio-7">Suma entre límites</a></li>
-        <li><a href="#ejercicio-8">S para seguir</a></li>
-        <li><a href="#ejercicio-9">Descomposición primos</a></li>
-        -->
+        <li><a href="#ejercicio-7">Confirme contraseña</a></li>
+        <li><a href="#ejercicio-8">Hucha</a></li>
+        <li><a href="#ejercicio-9">Hucha mejorada</a></li>
+        <li><a href="#ejercicio-10">Confirme contraseña (2)</a></li>
       </ol>
     </div>
   </nav>
@@ -63,7 +61,7 @@
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>101</p>
+      <p>141</p>
     </aside>
 
     <div class="codigo">
@@ -89,7 +87,7 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>102</p>
+      <p>142</p>
     </aside>
 
     <div class="codigo">
@@ -115,7 +113,7 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>103</p>
+      <p>143</p>
     </aside>
 
     <div class="codigo">
@@ -141,7 +139,7 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>104</p>
+      <p>144</p>
     </aside>
 
     <div class="codigo">
@@ -167,7 +165,7 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>105</p>
+      <p>145</p>
     </aside>
 
     <div class="codigo">
@@ -193,7 +191,7 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>106</p>
+      <p>146</p>
     </aside>
 
     <div class="codigo">
@@ -214,43 +212,31 @@ if __name__ == "__main__":
     </div>
   </section>
 
-  <!--
   <section id="ejercicio-7">
     <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 7</h2>
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>107</p>
+      <p>147</p>
     </aside>
 
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("ENTRE DOS VALORES")
-    minimo = int(input("Escriba un número: "))
-    maximo = int(input(f"Escriba un número mayor que {minimo}: "))
-    while minimo &gt;= maximo:
-        maximo = int(input(f"{maximo} no es mayor que {minimo}. Inténtelo de nuevo: "))
+    print("CONFIRME SU CONTRASEÑA")
+    password_1 = input("Escriba su contraseña: ")
+    password_2 = input("Escriba de nuevo su contraseña: ")
 
-    print()
-    numero = float(input(f"Escriba un número entre {minimo} y {maximo}: "))
-    contador = 0
+    while password_1 != password_2:
+        print("Las contraseñas no coinciden. Inténtelo de nuevo.")
+        password_1 = input("Escriba su contraseña: ")
+        password_2 = input("Escriba de nuevo su contraseña: ")
 
-    while minimo &lt;= numero and numero &lt;= maximo:
-        contador += 1
-        numero = float(input(f"Escriba otro número entre {minimo} y {maximo}: "))
-
-    print()
-    if contador == 0:
-        print(f"No ha escrito ningún número entre {minimo} y {maximo}.")
-    elif contador == 1:
-        print(f"Ha escrito 1 número entre {minimo} y {maximo}.")
-    else:
-        print(f"Ha escrito {contador} números entre {minimo} y {maximo}.")
+    print("Contraseña confirmada. ¡Hasta la vista!")
 
 
 if __name__ == "__main__":
-    main()</code>
+  main()</code>
 </pre>
     </div>
   </section>
@@ -260,79 +246,27 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>108</p>
+      <p>148</p>
     </aside>
 
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("CUENTA PARES (1)")
-    numero = int(input("Escriba un número par: "))
-    while numero % 2 != 0:
-        numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-    contador = 1
-    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+    print("HUCHA")
 
-    while respuesta == "S" or respuesta == "s":
-        numero = int(input("Escriba un número par: "))
-        while numero % 2 != 0:
-            numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-        contador += 1
-        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
+    objetivo = float(input("¿Cuántos euros quiere ahorrar?: "))
 
-    print()
-    if contador == 1:
-        print("Ha escrito 1 número par.")
-    else:
-        print(f"Ha escrito {contador} números pares.")
+    ahorrado = 0.0
+    while objetivo &gt; ahorrado:
+        ahorrado += float(input("¿Cuántos euros quiere meter en la hucha?: "))
+
+    print(f"¡Objetivo conseguido! Ha ahorrado usted {ahorrado} euros.")
 
 
 if __name__ == "__main__":
-    main()</code>
+  main()</code>
 </pre>
     </div>
-
-    <h2 class="con-aside">8-2 - Aceptar únicamente S, s, N o n</h2>
-
-    <aside class="aside-minienlace">
-      <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>109</p>
-    </aside>
-
-    <p>La versión que sólo acepta S, N, s o n por respuesta podría ser:</p>
-
-    <div class="codigo">
-        <pre>
-<code class="copy-language-python">def main():
-    print("CUENTA PARES (2)")
-    numero = int(input("Escriba un número par: "))
-    while numero % 2 != 0:
-        numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-    contador = 1
-    respuesta = input("¿Quiere escribir otro número par? (S/N): ")
-    while (
-        respuesta != "S" and respuesta != "N" and respuesta != "s" and respuesta != "n"
-    ):
-        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
-
-    while respuesta == "S" or respuesta == "s":
-        numero = int(input("Escriba un número par: "))
-        while numero % 2 != 0:
-            numero = int(input(f"{numero} no es un número par. Inténtelo de nuevo: "))
-        contador += 1
-        respuesta = input("¿Quiere escribir otro número par? (S/N): ")
-
-    print()
-    if contador == 1:
-        print("Ha escrito 1 número par.")
-    else:
-        print(f"Ha escrito {contador} números pares.")
-
-
-if __name__ == "__main__":
-    main()</code>
-</pre>
-      </div>
   </section>
 
   <section id="ejercicio-9">
@@ -340,89 +274,72 @@ if __name__ == "__main__":
 
     <aside class="aside-minienlace">
       <p><a href="../otros/python-testing.html">MPTC</a></p>
-      <p>110</p>
+      <p>149</p>
     </aside>
 
-    <p>Un algoritmo sencillo, pero poco eficiente, sería el siguiente:</p>
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
-    numero = int(input("Escriba un número entero mayor que 1: "))
-    while numero &lt;= 1:
-        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
-    copia = numero
+    print("HUCHA MEJORADA")
 
-    print("Descomposición en factores primos:", end="")
-    for i in range(2, numero + 1):
-        while copia % i == 0:
-            copia = copia // i
-            print(f" {i}", end="")
-    print()
+    objetivo = float(input("¿Cuántos euros quiere ahorrar?: "))
+    while objetivo &lt; 0:
+        print("Por favor, escriba una cantidad positiva.")
+        objetivo = float(input("¿Cuántos euros quiere ahorrar?: "))
+
+    ahorrado = 0.0
+    while objetivo &gt; ahorrado:
+        ahorro = float(input("¿Cuántos euros quiere meter en la hucha?: "))
+        while ahorro &lt; 0:
+            print("Por favor, escriba una cantidad positiva.")
+            ahorro = float(input("¿Cuántos euros quiere meter en la hucha?: "))
+        ahorrado += ahorro
+
+    print(f"¡Objetivo conseguido! Ha ahorrado usted {ahorrado} euros.")
 
 
 if __name__ == "__main__":
-    main()</code>
+  main()</code>
 </pre>
     </div>
+  </section>
 
-    <p>Una solución más complicada, pero mucho más rápida, sería la siguiente:</p>
+  <section id="ejercicio-10">
+    <h2 class="con-aside">Bucle <span class="idle-rese">while</span> (1) - 10</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../otros/python-testing.html">MPTC</a></p>
+      <p>150</p>
+    </aside>
 
     <div class="codigo">
       <pre>
 <code class="copy-language-python">def main():
-    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
-    numero = int(input("Escriba un número entero mayor que 1: "))
-    while numero &lt;= 1:
-        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
-    copia = numero
+    print("CONFIRME SU CONTRASEÑA (2)")
+    password_1 = input("Escriba su contraseña: ")
+    limite = 3
+    print(f"Tiene {limite} intentos para confirmar su contraseña.")
+    password_2 = input("Escriba de nuevo su contraseña: ")
+    contador = 1
 
-    print("Descomposición en factores primos:", end="")
-    i = 2
-    while copia &gt; i:
-        while copia % i == 0:
-            copia = copia // i
-            print(f" {i}", end="")
-        i += 1
-    if copia != 1:
-        print(f" {copia}")
+    while password_1 != password_2 and contador &lt; limite:
+        print("Las contraseñas no coinciden. Inténtelo de nuevo.")
+        password_2 = input("Escriba de nuevo su contraseña: ")
+        contador += 1
 
-
-if __name__ == "__main__":
-    main()</code>
-</pre>
-    </div>
-
-    <p>Solución que, ligeramente modificada, sería más rápida para números grandes:</p>
-
-    <div class="codigo">
-      <pre>
-<code class="copy-language-python">def main():
-    print("DESCOMPOSICIÓN EN NÚMEROS PRIMOS")
-    numero = int(input("Escriba un número entero mayor que 1: "))
-    while numero &lt;= 1:
-        numero = int(input(f"{numero} no es mayor que 1. Inténtelo de nuevo: "))
-    copia = numero
-
-    print("Descomposición en factores primos:", end="")
-    i = 2
-    while copia &gt; i * i:
-        while copia % i == 0:
-            copia = copia // i
-            print(f" {i}", end="")
-        i += 1
-    if copia != 1:
-        print(f" {copia}")
-
+    if password_1 == password_2:
+        print("Contraseña confirmada. ¡Hasta la vista!")
+    else:
+        print("Lo siento, no ha confirmado la contraseña. ¡Hasta la vista!")
 
 if __name__ == "__main__":
     main()</code>
 </pre>
     </div>
   </section>
--->
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
