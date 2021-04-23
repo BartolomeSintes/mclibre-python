@@ -26,8 +26,8 @@
         <li><a href="#bucle-for">El bucle <span class="idle-rese">for</span></a></li>
         <li><a href="#contadores-acumuladores">Contadores y acumuladores</a>
           <ul>
-            <li><a href="#contador">Contador</a></li>
             <li><a href="#testigo">Testigo</a></li>
+            <li><a href="#contador">Contador</a></li>
             <li><a href="#acumulador">Acumulador</a></li>
           </ul>
         </li>
@@ -2240,503 +2240,7 @@ Adiós
   <section id="contadores-acumuladores">
     <h2>Contadores, testigos y acumuladores</h2>
 
-    <p>En muchos programas se necesitan variables que cuenten cuántas veces ha ocurrido algo (contadores) o que indiquen si simplemente ha ocurrido algo (testigos) o que acumulen valores (acumuladores). Las situaciones pueden ser muy diversas, por lo que en este apartado simplemente se ofrecen unos ejemplos para mostrar la idea.</p>
-
-    <section id="contador">
-      <h3>Contador</h3>
-
-      <p>Se entiende por contador una variable que lleva la cuenta del número de veces que se ha cumplido una condición. El ejemplo siguiente es un ejemplo de programa con contador (en este caso, la variable que hace de contador es la variable <var>cuenta</var>):</p>
-
-      <div class="mcl-diapo" style="height: 18em">
-        <div id="Paso310">
-          <p><strong>Ejemplo de contador</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>
-Comienzo
-Desde 1 hasta 5 hay 2 múltiplos de 2
-</pre>
-            </div>
-          </div>
-
-          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-          <p class="control">
-            <a href="#Paso311"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso311">
-          <p><strong>Ejemplo de contador - Paso 1</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python"><span class="codigo-resaltado">print("Comienzo")</span>
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre><span class="codigo-resaltado">Comienzo</span></pre>
-            </div>
-          </div>
-
-          <p>Se ejecuta la primera instrucción del programa.</p>
-
-          <p>En este caso, imprime el párrafo de comienzo.</p>
-
-          <p class="control">
-            <a href="#Paso310"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso312"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso312">
-          <p><strong>Ejemplo de contador - Paso 2</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-<span class="codigo-resaltado">cuenta = 0</span>
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta la siguiente instrucción</p>
-
-          <p>La variable <var>cuenta</var>, que hace el papel de contador, toma el valor inicial 0.</p>
-
-          <p class="control">
-            <a href="#Paso311"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso313"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso313">
-          <p><strong>Ejemplo de contador - Paso 3</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
-
-          <p class="control">
-            <a href="#Paso312"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso314"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso314">
-          <p><strong>Ejemplo de contador - Paso 4</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (1 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso313"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso315"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso315">
-          <p><strong>Ejemplo de contador - Paso 5</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
-
-          <p class="control">
-            <a href="#Paso314"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso316"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso316">
-          <p><strong>Ejemplo de contador - Paso 6</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (2 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso315"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso317"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso317">
-          <p><strong>Ejemplo de contador - Paso 7</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>En este caso a la variable <var>cuenta</var> (que valía 0) se le añade 1, por lo que ahora <var>cuenta</var> vale 1.</p>
-
-          <p class="control">
-            <a href="#Paso316"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso318"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso318">
-          <p><strong>Ejemplo de contador - Paso 8</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el tercer valor tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
-
-          <p class="control">
-            <a href="#Paso317"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso319"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso319">
-          <p><strong>Ejemplo de contador - Paso 9</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (3 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso318"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3110"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3110">
-          <p><strong>Ejemplo de contador - Paso 10</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el cuarto valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
-
-          <p class="control">
-            <a href="#Paso319"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3111"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3111">
-          <p><strong>Ejemplo de contador - Paso 11</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (4 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso3110"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3112"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3112">
-          <p><strong>Ejemplo de contador - Paso 12</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>En este caso a la variable <var>cuenta</var> (que valía 1) se le añade 1, por lo que ahora <var>cuenta</var> vale 2.</p>
-
-          <p class="control">
-            <a href="#Paso3111"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3113"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3113">
-          <p><strong>Ejemplo de contador - Paso 13</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>La variable de control toma el quinto y último valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
-
-          <p class="control">
-            <a href="#Paso3112"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3114"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3114">
-          <p><strong>Ejemplo de contador - Paso 14</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (5 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso3113"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3115"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3115">
-          <p><strong>Ejemplo de contador - Paso final</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-<span class="codigo-resaltado">print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</span></code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>
-Comienzo
-<span class="codigo-resaltado">Desde 1 hasta 5 hay 2 múltiplos de 2</span></pre>
-            </div>
-          </div>
-
-          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
-
-          <p>En este caso, imprime el párrafo final. En total, la variable contador ha aumentado hasta 2 (los dos múltiplos de 2 que hay entre 1 y 5).</p>
-
-          <p class="control">
-            <a href="#Paso3114"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
-        </div>
-      </div>
-
-      <p>Detalles importantes:</p>
-      <ul>
-        <li>En cada iteración, el programa comprueba si <var>i</var> es múltiplo de 2.</li>
-        <li>El contador se modifica sólo si la variable de control <var>i</var> es múltiplo de 2.</li>
-        <li>El contador va aumentando de uno en uno.</li>
-        <li>Antes del bucle se debe dar un valor inicial al contador (en este caso, 0)</li>
-      </ul>
-
-    </section>
+    <p>En muchos programas se necesitan variables que indiquen si simplemente ha ocurrido algo (testigos), o que cuenten cuántas veces ha ocurrido algo (contadores), o que acumulen valores (acumuladores). Las situaciones pueden ser muy diversas, por lo que en este apartado simplemente se ofrecen unos ejemplos para mostrar la idea.</p>
 
     <section id="testigo">
       <h3>Testigo</h3>
@@ -3314,7 +2818,501 @@ Comienzo
         <li>El testigo no cambia una vez ha cambiado.</li>
         <li>Antes del bucle se debe dar un valor inicial al testigo (en este caso, False)</li>
       </ul>
+    </section>
 
+    <section id="contador">
+      <h3>Contador</h3>
+
+      <p>Se entiende por contador una variable que lleva la cuenta del número de veces que se ha cumplido una condición. El ejemplo siguiente es un ejemplo de programa con contador (en este caso, la variable que hace de contador es la variable <var>cuenta</var>):</p>
+
+      <div class="mcl-diapo" style="height: 18em">
+        <div id="Paso310">
+          <p><strong>Ejemplo de contador</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>
+Comienzo
+Desde 1 hasta 5 hay 2 múltiplos de 2
+</pre>
+            </div>
+          </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso311"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso311">
+          <p><strong>Ejemplo de contador - Paso 1</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python"><span class="codigo-resaltado">print("Comienzo")</span>
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre><span class="codigo-resaltado">Comienzo</span></pre>
+            </div>
+          </div>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso310"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso312"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso312">
+          <p><strong>Ejemplo de contador - Paso 2</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+<span class="codigo-resaltado">cuenta = 0</span>
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta la siguiente instrucción</p>
+
+          <p>La variable <var>cuenta</var>, que hace el papel de contador, toma el valor inicial 0.</p>
+
+          <p class="control">
+            <a href="#Paso311"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso313"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso313">
+          <p><strong>Ejemplo de contador - Paso 3</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bucle.</p>
+
+          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+
+          <p class="control">
+            <a href="#Paso312"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso314"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso314">
+          <p><strong>Ejemplo de contador - Paso 4</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="codigo-resaltado">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (1 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso313"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso315"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso315">
+          <p><strong>Ejemplo de contador - Paso 5</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bucle.</p>
+
+          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso314"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso316"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso316">
+          <p><strong>Ejemplo de contador - Paso 6</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="codigo-resaltado">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (2 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso315"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso317"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso317">
+          <p><strong>Ejemplo de contador - Paso 7</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso a la variable <var>cuenta</var> (que valía 0) se le añade 1, por lo que ahora <var>cuenta</var> vale 1.</p>
+
+          <p class="control">
+            <a href="#Paso316"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso318"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso318">
+          <p><strong>Ejemplo de contador - Paso 8</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bucle.</p>
+
+          <p>La variable de control toma el tercer valor tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+
+          <p class="control">
+            <a href="#Paso317"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso319"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso319">
+          <p><strong>Ejemplo de contador - Paso 9</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="codigo-resaltado">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (3 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso318"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3110"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3110">
+          <p><strong>Ejemplo de contador - Paso 10</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bucle.</p>
+
+          <p>La variable de control toma el cuarto valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+
+          <p class="control">
+            <a href="#Paso319"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3111"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3111">
+          <p><strong>Ejemplo de contador - Paso 11</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="codigo-resaltado">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (4 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3110"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3112"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3112">
+          <p><strong>Ejemplo de contador - Paso 12</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso a la variable <var>cuenta</var> (que valía 1) se le añade 1, por lo que ahora <var>cuenta</var> vale 2.</p>
+
+          <p class="control">
+            <a href="#Paso3111"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3113"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3113">
+          <p><strong>Ejemplo de contador - Paso 13</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>La variable de control toma el quinto y último valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
+
+          <p class="control">
+            <a href="#Paso3112"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3114"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3114">
+          <p><strong>Ejemplo de contador - Paso 14</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    <span class="codigo-resaltado">if i % 2 == 0:</span>
+        cuenta = cuenta + 1
+print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (5 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3113"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3115"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3115">
+          <p><strong>Ejemplo de contador - Paso final</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">print("Comienzo")
+cuenta = 0
+for i in range(1, 6):
+    if i % 2 == 0:
+        cuenta = cuenta + 1
+<span class="codigo-resaltado">print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</span></code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>
+Comienzo
+<span class="codigo-resaltado">Desde 1 hasta 5 hay 2 múltiplos de 2</span></pre>
+            </div>
+          </div>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, imprime el párrafo final. En total, la variable contador ha aumentado hasta 2 (los dos múltiplos de 2 que hay entre 1 y 5).</p>
+
+          <p class="control">
+            <a href="#Paso3114"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
+        </div>
+      </div>
+
+      <p>Detalles importantes:</p>
+      <ul>
+        <li>En cada iteración, el programa comprueba si <var>i</var> es múltiplo de 2.</li>
+        <li>El contador se modifica sólo si la variable de control <var>i</var> es múltiplo de 2.</li>
+        <li>El contador va aumentando de uno en uno.</li>
+        <li>Antes del bucle se debe dar un valor inicial al contador (en este caso, 0)</li>
+      </ul>
     </section>
 
     <section id="acumulador">
@@ -3683,7 +3681,7 @@ Comienzo
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de marzo de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 23 de abril de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
