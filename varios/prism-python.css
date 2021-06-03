@@ -4,7 +4,7 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 24 de febrero de 2020                    */
+/* 3 de junio de 2021                       */
 /*                                          */
 
 /* Colores para cuadros de código fuente y de terminal */
@@ -34,7 +34,7 @@ code.language-python { }
 /* si se cambia aquí line-height, hay que cambiar line-height también en los números de línea */
 
 /* Estilo para Python imitando a IDLE */
-div.codigo.idle                                 { background-color: white; color: black;
+div.codigo.idle                            { background-color: white; color: black;
                                              padding-top: 5px; padding-bottom: 5px; }
 code.language-python .boolean              { color: black;   } /* boolean                             */
 code.language-python .builtin              { color: #800080; } /* built-in functions                  */
@@ -52,22 +52,27 @@ code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any
 
 /* Estilo para Python imitando a Visual Studio Code con tema Dark+ */
 
-div.codigo                                 { background-color: #1e1e1e; color: white;
+div.codigo                                 { background-color: #1e1e1e; color: #9cdcfe;
                                              padding-top: 5px; padding-bottom: 5px; }
-code.language-python .boolean              { color: #569CD6;   } /* boolean                             */
-code.language-python .builtin              { color: #dcdcac; } /* built-in functions                  */
+code.language-python .boolean              { color: #569CD6; } /* boolean                             */
+code.language-python .builtin              { color: #4ec9b0; } /* built-in functions                  */
 code.language-python .class-name           { color: white    } /* class header class SomeName(...):   */
 code.language-python .comment              { color: #6a9955; } /* comment                             */
 code.language-python .decorator            { color: white;   } /* decorator                           */
-code.language-python .function             { color: #4ccab2; } /* function header def some_name(...): */
+code.language-python .function             { color: #dcdcaa; } /* function header def some_name(...): */
 code.language-python .keyword              { color: #c586c0; } /* keyword                             */
 code.language-python .number               { color: #b5cea8; } /* number                              */
 code.language-python .operator             { color: #d4d4d4; } /* operators                           */
-code.language-python .punctuation          { color: white;   } /* punctuation                         */
+code.language-python .punctuation          { color: #d4d4d4; } /* punctuation                         */
 code.language-python .string               { color: #ce9178; } /* string (of any type)                */
-code.language-python .string-interpolation { color: white;   } /* string-interpolation                */
+code.language-python .string-interpolation { color: #9cdcfe; } /* string-interpolation                */
 code.language-python .triple-quoted-string { color: #ce9178; } /* string (of any type)                */
 
+code.language-python .builtin-module       { color: #4ec9b0; } /* built-in module names               */
+code.language-python .module               { color: #4ec9b0; } /* module names                        */
+code.language-python .builtin2             { color: #dcdcaa; } /* input main print                    */
+code.language-python .storage              { color: #569cd6; } /* def                                 */
+code.language-python .intrinsic            { color: #d4d4d4; } /* __name__                            */
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 
@@ -82,20 +87,6 @@ pre code.language-html .namespace      { }                            /* namespa
 pre code.language-html .prolog         { }                            /* prolog                    */
 pre code.language-html .punctuation    { color: #000000; }          /* punctuation               */
 pre code.language-html .tag            { color: #911F00; }          /* Tags, attributes, configs */
-
-/* Estilo para HTML imitando a Brackets */
-/* Tengo pendiente comprobar los nombres de las clases en prism */
-
-code.language-markup { }
-
-code.language-markup .tag         { color: #446FBD; } /* any tag from "<" till ">"              */
-code.language-markup .punctuation { color: #446FBD; } /*                                        */
-code.language-markup .attr-name   { color: #6D8600; } /* tag's attribute with or without value  */
-code.language-markup .attr-value  { color: #E88501; } /* attribute's value                      */
-code.language-markup .comment     { color: #535353; } /* comment                                */
-code.language-markup .pi          { color: #535353; } /* processing instruction (<? ... ?>)     */
-code.language-markup .doctype     { color: #535353; } /* <!DOCTYPE ... > declaration            */
-code.language-markup .cdata       { color: #E88501; } /* CDATA section                          */
 
 /* Estilo para CSS imitando a Brackets */
 /* Pasado a medias a Prism */
@@ -254,7 +245,7 @@ div.code-toolbar > .toolbar button {
 }
 
 div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
+/* div.code-toolbar > .toolbar button, */
 div.code-toolbar > .toolbar span {
   color: black;
   font-size: 1.2em;
