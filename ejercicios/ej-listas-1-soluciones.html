@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
   <script src="../varios/prism.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -60,17 +62,22 @@
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)</code></pre>
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
+
+
+if __name__ == "__main__":
+  main()</code>
+</pre>
     </div>
   </section>
 
@@ -85,29 +92,33 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    buscar = input("Dígame la palabra a buscar: ")
-    contador = 0
-    for i in lista:
-        if i == buscar:
-            contador += 1;
-    if contador == 0:
-        print("La palabra '" + buscar + "' no aparece en la lista.")
-    elif contador == 1:
-        print("La palabra '" + buscar + "' aparece una vez en la lista.")
-    else:
-        print("La palabra '" + buscar + "' aparece", contador, "veces en la lista.")</code>
+      buscar = input("Dígame la palabra a buscar: ")
+      contador = 0
+      for i in lista:
+          if i == buscar:
+              contador += 1
+      if contador == 0:
+          print(f"La palabra '{buscar}' no aparece en la lista.")
+      elif contador == 1:
+          print(f"La palabra '{buscar}' aparece una vez en la lista.")
+      else:
+          print(f"La palabra '{buscar}' aparece {contador} veces en la lista.")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -123,24 +134,27 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    buscar = input("Sustituir la palabra: ")
-    sustituir = input("por la palabra: ")
-    for i in range(len(lista)):
-        if lista[i] == buscar:
-            lista[i] = sustituir
-    print("La lista es ahora:", lista)</code>
+      buscar = input("Sustituir la palabra: ")
+      sustituir = input("por la palabra: ")
+      for i in range(len(lista)):
+          if lista[i] == buscar:
+              lista[i] = sustituir
+      print(f"La lista es ahora: {lista}")
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -164,23 +178,27 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    eliminar = input("Palabra a eliminar: ")
-    for i in range(len(lista)-1, -1, -1):
-        if lista[i] == eliminar:
-            del(lista[i])
-    print("La lista es ahora:", lista)</code>
+      eliminar = input("Palabra a eliminar: ")
+      for i in range(len(lista) - 1, -1, -1):
+          if lista[i] == eliminar:
+              del lista[i]
+      print(f"La lista es ahora: {lista}")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -196,35 +214,40 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    numero2 = int(input("Dígame cuántas palabras tiene la lista de palabras a eliminar: "))
+      numero2 = int(
+          input("Dígame cuántas palabras tiene la lista de palabras a eliminar: ")
+      )
 
-    if numero2 &lt; 1:
-        print("¡Imposible!")
-    else:
-        eliminar = []
-        for i in range(numero2):
-            print("Dígame la palabra", str(i + 1) + ": ", end="")
-            palabra = input()
-            eliminar += [palabra]
-        print("La lista de palabras a eliminar es:", eliminar)
+      if numero2 &lt; 1:
+          print("¡Imposible!")
+      else:
+          eliminar = []
+          for i in range(numero2):
+              palabra = input(f"Dígame la palabra {i + 1}: ")
+              eliminar += [palabra]
+          print(f"La lista de palabras a eliminar es: {eliminar}")
 
-        for i in eliminar:
-            for j in range(len(lista)-1, -1, -1):
-                if lista[j] == i:
-                    del(lista[j])
-        print("La lista es ahora:", lista)</code>
+          for i in eliminar:
+              for j in range(len(lista) - 1, -1, -1):
+                  if lista[j] == i:
+                      del lista[j]
+          print(f"La lista es ahora: {lista}")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -240,22 +263,26 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    inversa = []
-    for i in lista:
-        inversa = [i] + inversa
-    print("La lista inversa es:", inversa)</code>
+      inversa = []
+      for i in lista:
+          inversa = [i] + inversa
+      print(f"La lista inversa es: {inversa}")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -271,22 +298,26 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    lista = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        lista += [palabra]
-    print("La lista creada es:", lista)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      lista = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          lista += [palabra]
+      print(f"La lista creada es: {lista}")
 
-    for i in range(len(lista)-1, -1, -1):
-        if lista[i] in lista[:i]:
-            del(lista[i])
-    print("La lista sin repeticiones es:", lista)</code>
+      for i in range(len(lista) - 1, -1, -1):
+          if lista[i] in lista[:i]:
+              del lista[i]
+      print(f"La lista sin repeticiones es: {lista}")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
@@ -302,66 +333,67 @@ else:
 
     <div class="codigo">
       <pre>
-<code class="language-python">numero = int(input("Dígame cuántas palabras tiene la primera lista: "))
+<code class="copy-language-python">def main():
+  numero = int(input("Dígame cuántas palabras tiene la primera lista: "))
 
-if numero &lt; 1:
-    print("¡Imposible!")
-else:
-    primera = []
-    for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
-        primera += [palabra]
-    print("La primera lista es:", primera)
+  if numero &lt; 1:
+      print("¡Imposible!")
+  else:
+      primera = []
+      for i in range(numero):
+          palabra = input(f"Dígame la palabra {i + 1}: ")
+          primera += [palabra]
+      print(f"La primera lista es: {primera}")
 
-    for i in range(len(primera)-1, -1, -1):
-        if primera[i] in primera[:i]:
-            del(primera[i])
-    # print("La primera lista sin repeticiones es:", primera)
+      for i in range(len(primera) - 1, -1, -1):
+          if primera[i] in primera[:i]:
+              del primera[i]
 
-    numero2 = int(input("Dígame cuántas palabras tiene la segunda lista: "))
+      numero2 = int(input("Dígame cuántas palabras tiene la segunda lista: "))
 
-    if numero2 &lt; 1:
-        print("¡Imposible!")
-    else:
-        segunda = []
-        for i in range(numero2):
-            print("Dígame la palabra", str(i + 1) + ": ", end="")
-            palabra = input()
-            segunda += [palabra]
-        print("La segunda lista es:", segunda)
+      if numero2 &lt; 1:
+          print("¡Imposible!")
+      else:
+          segunda = []
+          for i in range(numero2):
+              palabra = input(f"Dígame la palabra {i + 1}: ")
+              segunda += [palabra]
+          print(f"La segunda lista es: {segunda}")
 
-        for i in range(len(segunda)-1, -1, -1):
-            if segunda[i] in segunda[:i]:
-                del(segunda[i])
-        # print("La segunda lista sin repeticiones es:", segunda)
+          for i in range(len(segunda) - 1, -1, -1):
+              if segunda[i] in segunda[:i]:
+                  del segunda[i]
 
-        comunes = []
-        for i in primera:
-            if i in segunda:
-                comunes += [i]
-        print("Palabras que aparecen en las dos listas:", comunes)
+          comunes = []
+          for i in primera:
+              if i in segunda:
+                  comunes += [i]
+          print(f"Palabras que aparecen en las dos listas: {comunes}")
 
-        soloPrimera = []
-        for i in primera:
-            if i not in segunda:
-                soloPrimera += [i]
-        print("Palabras que sólo aparecen en la primera lista:", soloPrimera)
+          soloPrimera = []
+          for i in primera:
+              if i not in segunda:
+                  soloPrimera += [i]
+          print(f"Palabras que sólo aparecen en la primera lista: {soloPrimera}")
 
-        soloSegunda = []
-        for i in segunda:
-            if i not in primera:
-                soloSegunda += [i]
-        print("Palabras que sólo aparecen en la segunda lista:", soloSegunda)
+          soloSegunda = []
+          for i in segunda:
+              if i not in primera:
+                  soloSegunda += [i]
+          print(f"Palabras que sólo aparecen en la segunda lista: {soloSegunda}")
 
-        todas = comunes + soloPrimera + soloSegunda
-        print("Todas las palabras:", todas)</code>
+          todas = comunes + soloPrimera + soloSegunda
+          print(f"Todas las palabras: {todas}")
+
+
+if __name__ == "__main__":
+  main()</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de marzo de 2013 </p>
+    <p class="ultmod">Última modificación de esta página: 4 de junio de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
