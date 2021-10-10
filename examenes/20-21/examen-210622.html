@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 22/06/21. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.ico">
+  <link rel="stylesheet" href="../../varios/prism-python.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 22 de junio de 2021</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 22/06/21</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>Un puesto de venta de buñuelos vende buñuelos de calabaza a 75 céntimos la unidad y buñuelos vacíos a 50 céntimos la unidad, pero hace un descuento de 1 € por cada docena de buñuelos que se compra. Escriba un programa que simule una venta de buñuelos en dicho puesto.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PUESTO DE BUÑUELOS
+¿Cuántos buñuelos vacíos quiere? <span class="entrada-usuario">10</span>
+¿Cuántos buñuelos de calabaza quiere? <span class="entrada-usuario">10</span>
+Son 11.5 €
+¿Cuánto dinero entrega? <span class="entrada-usuario">11</span>
+No ha entregado bastante dinero. Le faltan 0.5 €.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PUESTO DE BUÑUELOS
+¿Cuántos buñuelos vacíos quiere? <span class="entrada-usuario">3</span>
+¿Cuántos buñuelos de calabaza quiere? <span class="entrada-usuario">4</span>
+Son 4.5 €
+¿Cuánto dinero entrega? <span class="entrada-usuario">4.5</span>
+Ha entregado la cantidad exacta.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PUESTO DE BUÑUELOS
+¿Cuántos buñuelos vacíos quiere? <span class="entrada-usuario">20</span>
+¿Cuántos buñuelos de calabaza quiere? <span class="entrada-usuario">20</span>
+Son 22.0 €
+¿Cuánto dinero entrega? <span class="entrada-usuario">25</span>
+Su cambio son 3.0 €.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>, legionarios romanos y grandes aficionados a los juegos de azar, juegan hoy a un juego sencillo. Cada jugador lanza primero un dado y a continuación lanza tantos dados como indique el primer dado. La puntuación que obtiene el jugador es el mayor de los valores obtenidos en la segunda tirada. gana el jugador que obtenga la puntuación más alta.</p>
+
+    <p>Escriba un programa que muestre una partida de este juego.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (1)
+  Primera tirada de Cubitus: 2 dados
+  Tirada de Cubitus: 4 - 1 =&gt; 4 puntos
+  Primera tirada de Humerus: 3 dados
+  Tirada de Humerus: 4 - 2 - 6 =&gt; 6 puntos
+  Ha ganado Humerus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (1)
+  Primera tirada de Cubitus: 4 dados
+  Tirada de Cubitus: 4 - 2 - 5 - 5 =&gt; 5 puntos
+  Primera tirada de Humerus: 1 dado
+  Tirada de Humerus: 5 =&gt; 5 puntos
+  Han empatado.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (1)
+  Primera tirada de Cubitus: 4 dados
+  Tirada de Cubitus: 4 - 1 - 1 - 5 =&gt; 5 puntos
+  Primera tirada de Humerus: 1 dado
+  Tirada de Humerus: 3 =&gt; 3 puntos
+  Ha ganado Cubitus.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> prueban un nuevo juego. Esta vez juegan a tirar un dado hasta sacar un cinco. Gana el jugador que lo ha conseguido antes. Escriba un programa que simule una partida de este juego.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SACAR UN CINCO
+  Tiradas de Marcus: 2 3 5
+  Marcus ha tenido que tirar 3 veces.
+  Tiradas de Julius: 2 6 2 6 3 2 6 6 6 4 3 1 5
+  Julius ha tenido que tirar 13 veces.
+  Ha ganado Marcus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SACAR UN CINCO
+  Tiradas de Marcus: 6 2 2 5
+  Marcus ha tenido que tirar 4 veces.
+  Tiradas de Julius: 5
+  Julius sólo ha tenido que tirar 1 vez.
+  Ha ganado Julius.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SACAR UN CINCO
+Tiradas de Marcus: 2 1 3 5
+Marcus ha tenido que tirar 4 veces.
+Tiradas de Julius: 3 4 6 5
+Julius ha tenido que tirar 4 veces.
+Han empatado.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/210622-4-1-svg.png" alt="Ejercicio 4-1" width="324" height="324">
+      </div>
+
+      <div class="resultado-html">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Nota: El objeto imposible representado en la imagen anterior recibe el nombre de <a href="https://en.wikipedia.org/wiki/Impossible_trident">tridente imposible</a>.</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/210622-4-2-svg.png" alt="Ejercicio 4-2" width="324" height="324">
+      </div>
+
+      <div class="resultado-html">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">gold</span> <span style="background-color: gold; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> y
+      <span class="css-valor">orange</span> <span style="background-color: orange; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 22 de junio de 2021</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
