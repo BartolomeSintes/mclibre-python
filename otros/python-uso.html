@@ -23,6 +23,7 @@
       <h2>Ejecutar programas</h2>
 
       <ul>
+        <li><a href="#ejecutar-vscode">en VSCode</a></li>
         <li><a href="#ejecutar-terminal">en terminal</a></li>
         <li><a href="#ejecutar-idle">en IDLE</a></li>
         <li><a href="#ejecutar-entorno">en entorno interactivo</a></li>
@@ -37,11 +38,26 @@
 
   <p>En esta lección se comentan las diferentes formas posibles de ejecutar un programa de Python:</p>
   <ul>
+    <li>en el editor Visual Studio Code, que es la forma más cómoda si estamos utilizando Visual Studio Code como editor</li>
     <li>en un terminal (o una ventana de terminal de Windows), que suele ser la forma más habitual</li>
     <li>en el editor IDLE, que es la forma más cómoda si estamos utilizando IDLE como editor</li>
-    <li>en el editor Visual Studio Code, que es la forma más cómoda si estamos utilizando Visual Studio Code como editor</li>
     <li>en el entorno interactivo, que apenas suele hacerse</li>
   </ul>
+
+  <section id="ejecutar-vscode">
+    <h2>Ejecutar programas en Visual Studio Code</h2>
+
+    <p>Si se ha configurado Visual Studio Code de acuerdo con la lección <a href="vsc-python-configuracion.html">Configuración recomendada para VSCode</a>, se recomienda ejecutar los programas mediante los <a href="vsc-python-configuracion.html#atajo-ctrl+alt+t">atajos de teclado comentados en esa lección</a>:</p>
+    <ul>
+      <li>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt++</span> y <span class="soft-atajo-teclado">Ctrl+Alt+-</span>) permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.
+        <p>Si no se había abierto todavía ninguna ventana de terminal, el atajo abre una nueva ventana de terminal automáticamente. La primera vez que se abre una ventana de terminal, la ventana se abre en el directorio raíz del área de trabajo.</p>
+      </li>
+      <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+c</span> permite cerrar el terminal.</li>
+      <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+l</span> permite limpiar el terminal.</li>
+      <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> ejecuta el programa que se está editando, manteniendo el foco en el editor. Este atajo es útil cuando el programa a ejecutar no pide datos al usuario. </li>
+      <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> ejecuta el programa que se está editando, pasando el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al editor se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.</li>
+    </ul>
+  </section>
 
   <section id="ejecutar-terminal">
     <h2>Ejecutar programas en ventana de terminal</h2>
@@ -150,7 +166,7 @@ PS C:\Users\Barto\Documents\LMSGI Barto\Python\pruebas&gt;</code>
 
     <div class="terminal">
       <pre>
-<code class="language-shell">Python 3.9.1 (tags/v3.9.1:1e5d33e, Dec  7 2020, 17:08:21) [MSC v.1927 64 bit (AMD64)] on win32
+<code class="language-shell">Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 &gt;&gt;&gt; exec(open("ejemplo.py").read())</code>
 </pre>
@@ -173,7 +189,7 @@ Type "help", "copyright", "credits" or "license" for more information.
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 26 de enero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 31 de enero de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

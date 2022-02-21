@@ -217,24 +217,82 @@ async      elif       if        or         yield</span></pre>
     <section id="funciones-integradas">
       <h3>Funciones integradas (<i>built-in functions</i>)</h3>
 
-      <p>Una función es un bloque de instrucciones agrupadas, que permiten reutilizar partes de un programa.</p>
+      <p>Una función es un bloque de instrucciones agrupadas, que permiten reutilizar partes de un programa. </p>
 
-      <p>Python incluye las siguientes funciones de forma predeterminada (es decir, estas funciones siempre están disponibles):</p>
+      <p>Python incluye algunas funciones que están disponibles sin necesidad de importar ninguna biblioteca:</p>
 
-      <pre><span class="idle-func">abs</span>()         <span class="idle-func">dict</span>()      <span class="idle-func">help</span>()       <span class="idle-func">min(</span>)      <span class="idle-func">setattr</span>()
-<span class="idle-func">all</span>()         <span class="idle-func">dir</span>()       <span class="idle-func">hex</span>()        <span class="idle-func">next</span>()     <span class="idle-func">slice</span>()
-<span class="idle-func">any</span>()         <span class="idle-func">divmod</span>()    <span class="idle-func">id</span>()         <span class="idle-func">object</span>()   <span class="idle-func">sorted</span>()
-<span class="idle-func">ascii</span>()       <span class="idle-func">enumerate</span>() <span class="idle-func">input</span>()      <span class="idle-func">oct</span>()      <span class="idle-func">staticmethod</span>()
-<span class="idle-func">bin</span>()         <span class="idle-func">eval</span>()      <span class="idle-func">int</span>()        <span class="idle-func">open</span>()     <span class="idle-func">str</span>()
-<span class="idle-func">bool</span>()        <span class="idle-func">exec</span>()      <span class="idle-func">isinstance</span>() <span class="idle-func">ord</span>()      <span class="idle-func">sum</span>()
-<span class="idle-func">bytearray</span>()   <span class="idle-func">filter</span>()    <span class="idle-func">issubclass</span>() <span class="idle-func">pow</span>()      <span class="idle-func">super</span>()
-<span class="idle-func">bytes</span>()       <span class="idle-func">float</span>()     <span class="idle-func">iter</span>()       <span class="idle-func">print</span>()    <span class="idle-func">tuple</span>()
-<span class="idle-func">callable</span>()    <span class="idle-func">format</span>()    <span class="idle-func">len</span>()        <span class="idle-func">property</span>() <span class="idle-func">type</span>()
-<span class="idle-func">chr</span>()         <span class="idle-func">frozenset</span>() <span class="idle-func">list</span>()       <span class="idle-func">range</span>()    <span class="idle-func">vars(</span>)
-<span class="idle-func">classmethod</span>() <span class="idle-func">getattr</span>()   <span class="idle-func">locals</span>()     <span class="idle-func">repr</span>()     <span class="idle-func">zip</span>()
-<span class="idle-func">compile</span>()     <span class="idle-func">globals</span>()   <span class="idle-func">map</span>()        <span class="idle-func">reversed</span>() __import__()
-<span class="idle-func">complex</span>()     <span class="idle-func">hasattr</span>()   <span class="idle-func">max</span>()        <span class="idle-func">round</span>()
-<span class="idle-func">delattr</span>()     <span class="idle-func">hash</span>()      <span class="idle-func">memoryview</span>() <span class="idle-func">set</span>()
+      <pre style="column-width: 8em;">
+<a href="https://docs.python.org/3/library/functions.html#abs"><span class="idle-func">abs</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#aiter"><span class="idle-func">aiter</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#all"><span class="idle-func">all</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#any"><span class="idle-func">any</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#anext"><span class="idle-func">anext</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#ascii"><span class="idle-func">ascii</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#bin"><span class="idle-func">bin</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#bool"><span class="idle-func">bool</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#breakpoint"><span class="idle-func">breakpoints</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-bytearray"><span class="idle-func">bytearray</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-bytes"><span class="idle-func">bytes</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#callable"><span class="idle-func">callable</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#chr"><span class="idle-func">chr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#classmethod"><span class="idle-func">classmethod</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#compile"><span class="idle-func">compile</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#complex"><span class="idle-func">complex</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#delattr"><span class="idle-func">delattr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-dict"><span class="idle-func">dict</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#dir"><span class="idle-func">dir</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#divmod"><span class="idle-func">divmod</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#enumerate"><span class="idle-func">enumerate</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#eval"><span class="idle-func">eval</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#exec"><span class="idle-func">exec</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#filter"><span class="idle-func">filter</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#float"><span class="idle-func">float</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#format"><span class="idle-func">format</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-frozenset"><span class="idle-func">frozenset</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#getattr"><span class="idle-func">getattr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#globals"><span class="idle-func">globals</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#hasattr"><span class="idle-func">hasattr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#hash"><span class="idle-func">hash</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#help"><span class="idle-func">help</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#hex"><span class="idle-func">hex</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#id"><span class="idle-func">id</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#input"><span class="idle-func">input</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#int"><span class="idle-func">int</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#isinstance"><span class="idle-func">isinstance</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#issubclass"><span class="idle-func">issubclass</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#iter"><span class="idle-func">iter</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#len"><span class="idle-func">len</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-list"><span class="idle-func">list</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#locals"><span class="idle-func">locals</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#map"><span class="idle-func">map</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#max"><span class="idle-func">max</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-memoryview"><span class="idle-func">memoryview</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#min"><span class="idle-func">min</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#next"><span class="idle-func">next</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#object"><span class="idle-func">object</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#oct"><span class="idle-func">oct</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#oct"><span class="idle-func">open</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#ord"><span class="idle-func">ord</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#pow"><span class="idle-func">pow</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#print"><span class="idle-func">print</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#property"><span class="idle-func">property</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-range"><span class="idle-func">range</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#repr"><span class="idle-func">repr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#reversed"><span class="idle-func">reversed</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#round"><span class="idle-func">round</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-set"><span class="idle-func">set</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#setattr"><span class="idle-func">setattr</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#slice"><span class="idle-func">slice</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#sorted"><span class="idle-func">sorted</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#staticmethod"><span class="idle-func">staticmethod</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-str"><span class="idle-func">str</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#sum"><span class="idle-func">sum</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#super"><span class="idle-func">super</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#func-tuple"><span class="idle-func">tuple</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#type"><span class="idle-func">type</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#vars"><span class="idle-func">vars</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#zip"><span class="idle-func">zip</span>()</a>
+<a href="https://docs.python.org/3/library/functions.html#import__"><span class="idle-func">__import__</span>()</a>
 </pre>
 
       <p>Como se comenta en la lección <a href="python-variables.html#variables-nombres">Variables (1)</a>, los nombres de las funciones integradas se pueden utilizar para nombrar variables, pero entonces las funciones ya no estarán disponibles en el programa. Si se eliminan las variables, las funciones vuelven a estar disponibles.</p>
@@ -254,7 +312,7 @@ async      elif       if        or         yield</span></pre>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de junio de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
