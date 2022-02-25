@@ -44,23 +44,23 @@
   <section id="entorno">
     <h2>IDLE como entorno interactivo</h2>
 
-    <p>Al abrir IDLE con el acceso directo <span class="soft-menu">Inicio &gt; Python 3.9 &gt; IDLE (Python 3.9)</span>, se abrirá la ventana principal de IDLE, como muestra la imagen siguiente.</p>
+    <p>Al abrir IDLE con el acceso directo <span class="soft-menu">Inicio &gt; Python 3.10 &gt; IDLE (Python 3.10 64-bit)</span>, se abrirá la ventana principal de IDLE, como muestra la imagen siguiente.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-1.png" alt="IDLE: Ventana principal" width="671" height="160">
+      <img src="../img/idle/idle-1.png" alt="IDLE: Ventana principal" width="703" height="160">
     </p>
 
     <p>Esta ventana indica la versión de Python instalada.</p>
 
-    <p><strong>Nota</strong>: La ventana de IDLE tiene un tamaño predeterminado de 80x40 caracteres que se puede modificar con el menú <span class="soft-menu">Options &gt; Configure IDLE &gt; General</span>.</p>
+    <p><strong>Nota</strong>: La ventana de IDLE tiene un tamaño predeterminado de 80 x 20 caracteres que se puede modificar con el menú <span class="soft-menu">Options &gt; Configure IDLE &gt; Windows</span>.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-2.png" alt="IDLE: Opciones generales" width="465" height="210">
+      <img src="../img/idle/idle-2.png" alt="IDLE: Opciones generales" width="469" height="210">
     </p>
 
     <hr class="corta">
 
-    <p>La ventana principal de IDLE es un entorno interactivo de Python en la que se pueden escribir órdenes de Python después del símbolo de petición <span class="idle-prompt">&gt;&gt;&gt;</span> (en inglés, prompt). Al pulsar Intro, IDLE ejecutará la orden inmediatamente. Si la orden produce algún resultado, éste se mostrará en color <span class="idle-resp">azul</span> y sin el símbolo de petición. Por ejemplo, se puede comprobar que Python sabe sumar dos más dos:</p>
+    <p>La ventana principal de IDLE es un entorno interactivo de Python en la que se pueden escribir órdenes de Python a la deerecha del símbolo de petición <span class="idle-prompt">&gt;&gt;&gt;</span> (en inglés, prompt). Al pulsar Intro, IDLE ejecutará la orden inmediatamente. Si la orden produce algún resultado, éste se mostrará en color <span class="idle-resp">azul</span> y sin el símbolo de petición. Por ejemplo, se puede comprobar que Python sabe sumar dos más dos:</p>
 
     <div class="codigo idle">
       <pre>
@@ -130,13 +130,13 @@
     <p>La primera vez que guarde un programa se abrirá la ventana de diálogo estándar de Windows. Elija la carpeta y el nombre del archivo. La extensión habitual de los programas de Python es <strong>.py</strong>. Si no escribe la extensión, IDLE la añadirá automáticamente.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-16.png" alt="IDLE. Guardar fichero" width="800" height="540">
+      <img src="../img/idle/idle-16.png" alt="IDLE. Guardar fichero" width="800" height="560">
     </p>
 
     <p>Una vez guardado el programa, el nombre del archivo aparece en la barra de título de la ventana.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-17.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="270">
+      <img src="../img/idle/idle-17.png" alt="IDLE. Menú Run &gt; Run Module" width="800" height="260">
     </p>
 
     <section id="colores">
@@ -166,7 +166,7 @@
     <p>La salida del programa se mostrará en la ventana principal de IDLE.</p>
 
     <p class="captura">
-      <img src="../img/idle/idle-22.png" alt="IDLE. Ejecución de un programa" width="800" height="220">
+      <img src="../img/idle/idle-22.png" alt="IDLE. Ejecución de un programa" width="800" height="240">
     </p>
 
     <hr class="corta">
@@ -175,15 +175,15 @@
 
     <hr class="corta">
 
-    <p>También puede ejecutar en IDLE programas creados anteriormente, abriéndolo previamente. Puede abrir un programa de dos formas:</p>
+    <p>También puede ejecutar en IDLE programas creados anteriormente, abriéndolos previamente. Puede abrir un programa de dos formas:</p>
 
     <ul>
-      <li>Abra IDLE y abra desde IDLE el fichero del programa (menú <span class="soft-menu">File &gt; Open</span>):
+      <li>Desde IDLE, puede abrir el menú <span class="soft-menu">File &gt; Open</span>:
         <p class="captura">
-          <img src="../img/idle/idle-file-open.png" alt="IDLE. Abrir con IDLE desde Explorador de Windows" width="671" height="175">
+          <img src="../img/idle/idle-file-open.png" alt="IDLE. Abrir con IDLE desde Explorador de Windows" width="800" height="190">
         </p>
       </li>
-      <li>Abra en el Explorador de Windows la carpeta que contiene el programa, haga clic derecho sobre el programa y elija la opción "Edit with IDLE &gt; Edit with IDLE 3.7 (64-bit)";
+      <li>Desde el Explorador de Windows, puede abrir la carpeta que contiene el programa, hacer clic derecho sobre el programa y elegir la opción "Edit with IDLE &gt; Edit with IDLE 3.10 (64-bit)";
         <p class="captura">
           <img src="../img/idle/idle-edit-with-1.png" alt="IDLE. Abrir con IDLE desde Explorador de Windows" width="1024" height="280">
         </p>
@@ -207,7 +207,7 @@
             <div class="codigo idle">
               <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> <span class="idle-cade">"hola"</span>
-<span class="idle-resp"><span class="idle-erro">SyntaxError: Missing parentheses in call to 'print'. Did you mean print("hola")?</span></span>
+<span class="idle-resp"><span class="idle-erro">SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?</span></span>
 <span class="idle-prompt">&gt;&gt;&gt;</span></pre>
             </div>
           </li>
@@ -246,9 +246,9 @@ NameError: name 'hola' is not defined</span>
             <div class="codigo idle">
               <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(hola)
-=== RESTART: C:\Users\barto\Documents\LMSGI Barto\Python\pruebas\prueba-01.py ==
+=== RESTART: C:\Users\barto\Documents\LMSGI\Python\pruebas\prueba-01.py ==
 <span class="idle-erro">Traceback (most recent call last):
-  File " C:\Users\barto\Documents\LMSGI Barto\Python\pruebas\prueba-01.py", line 1, in &lt;module&gt;
+  File " C:\Users\barto\Documents\LMSGI\Python\pruebas\prueba-01.py", line 1, in &lt;module&gt;
     print(hola)
 NameError: name 'hola' is not defined</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
@@ -261,7 +261,7 @@ NameError: name 'hola' is not defined</span>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de enero de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
