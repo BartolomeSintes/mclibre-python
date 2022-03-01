@@ -29,6 +29,7 @@
               <ul>
                 <li><a href="#windows-sistema-instalar">Instalar</a></li>
                 <li><a href="#windows-sistema-usar">Usar</a></li>
+                <li><a href="#windows-problemas">Problemas</a></li>
                 <li><a href="#windows-sistema-actualizar">Actualizar</a></li>
                 <li><a href="#windows-sistema-desinstalar">Desinstalar</a></li>
               </ul>
@@ -142,12 +143,54 @@
           <pre class="command-line">
 <code>...
 Installing collected packages: mclibre-python-testing-client
-<span style="color: gold">  WARNING: The script mptc.exe is installed in 'C:\Users\XXXX\AppData\Local\Packages\PythonSoftwareFoundation.Python.
-310_XXXXX\LocalCache\local-packages\Python310\Scripts' which is not on PATH.
+<span style="color: gold">  WARNING: The script mptc.exe is installed in <span class="codigo-resaltado">'C:\Users\XXXX\AppData\Local\Packages\PythonSoftwareFoundation.Python.
+310_XXXXX\LocalCache\local-packages\Python310\Scripts'</span> which is not on PATH.
   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span></code>
 </pre>
         </div>
-        <p>Para añadir esa ruta al PATH de Windows, en primer lugar ... </p>
+        <p>En ese caso, al intentar ejecutar MPTC se mostrará un mensaje de error:</p>
+        <div class="terminal">
+          <pre class="command-line">
+<code>C:\Users\XXXX\Documents\LMSGI\Python\pruebas&gt;mptc prueba.py 1
+"mptc" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.</code>
+</pre>
+        </div>
+        <p>Las rutas que pueden verse en estos mensajes pueden ser ligeramente distintas a la del ejemplo anterior (por ejemplo, C:\Users\XXXX\AppData\Local\Programs\Python\Python310\Scripts\ o C:\Users\XXXX\AppData\Local\packages\LocalCache\local-packages\Python310\Scripts\) . Para añadir la ruta indicada al PATH de Windows, ejecute los pasos siguientes:</p>
+
+        <ul>
+          <li>Haga clic en Inicio, escriba <i>variables de entorno</i> y haga clic en alguno de los accesos directos a "Editar las variables de entorno del sistema".
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-1.png" alt="Windows. Añadir PATH" width="1024" height="460">
+            </p>
+          </li>
+          <li>Se abrirá la ventana de "Propiedades del sistema". En la pestaña "Opciones avanzadas", haga clic en "Variables de entorno":
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-2.png" alt="Windows. Añadir PATH" width="412" height="486">
+            </p>
+          </li>
+          <li>Se abrirá la ventana "Variables de entorno". Haga clic en la variable de entorno "Path" y haga clic en "Editar...":
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-3.png" alt="Windows. Añadir PATH" width="618" height="585">
+            </p>
+          </li>
+          <li>Se abrirá la ventana "Editar variables de entorno". Para incluir la ruta, haga clic en "Nuevo":
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-4.png" alt="Windows. Añadir PATH" width="527" height="501">
+            </p>
+          </li>
+          <li>Se mostrará el curso en una fila vacía de la tabla:
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-5.png" alt="Windows. Añadir PATH" width="527" height="180">
+            </p>
+          </li>
+          <li>Pegue en ella la ruta y haga clic en "Aceptar":
+            <p class="captura">
+              <img src="../img/mptc/mptc-script-path-6.png" alt="Windows. Añadir PATH" width="527" height="501">
+            </p>
+          </li>
+          <li>Reinicie Windows y compruebe que MPTC funciona.</li>
+        </ul>
       </section>
 
       <section id="windows-sistema-actualizar">
@@ -678,7 +721,7 @@ python mclibre-pytesting.py XX</code>
 -->
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de febrero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 1 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
