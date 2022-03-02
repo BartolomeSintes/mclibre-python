@@ -131,10 +131,34 @@
     <p>Si el instalador detecta que ya está instalada la misma versión de Python (por ejemplo si el instalador de Python 3.10.2 detecta que ya está instalado Python 3.10.2), ofrecerá la opción de modificar, reparar o desinstalar Python.</p>
 
     <p><strong>Nota</strong>: La imagen siguiente corresponde al instalador de Python 3.10.2 (64 bits), pero es similar en cualquier versión 3.X.</p>
-
     <p class="captura">
       <img src="../img/instalacion/py310-modificacion-1.png" alt="Modificación / Reparación de Python" width="666" height="410">
     </p>
+
+    <p>Antes de reparar la instalación, se recomienda comprobar las opciones elegidas.</p>
+
+    <ul>
+      <li>Para ello, haga clic en "Modify":
+        <p class="captura">
+          <img src="../img/instalacion/py310-modificacion-2.png" alt="Modificación / Reparación de Python" width="666" height="410">
+        </p>
+      </li>
+      <li>En la pantalla "Optional Features", compruebe que están marcadas todas las casilla y haga clic en "Next":
+        <p class="captura">
+          <img src="../img/instalacion/py310-modificacion-3.png" alt="Modificación / Reparación de Python" width="666" height="410">
+        </p>
+      </li>
+      <li>En la pantalla "Advanced Options", compruebe que están marcadas las tres primeras casillas y haga clic en "Install":
+        <p class="captura">
+          <img src="../img/instalacion/py310-modificacion-4.png" alt="Modificación / Reparación de Python" width="666" height="410">
+        </p>
+      </li>
+      <li>Una vez realizada la modificación/reparación, se mostrará la pantalla final. Haciendo clic en en el botón "Close" se cerrará el programa de instalación.
+        <p class="captura">
+          <img src="../img/instalacion/py310-modificacion-5.png" alt="Modificación / Reparación de Python" width="666" height="410">
+        </p>
+      </li>
+    </ul>
   </section>
 
   <section id="actualizar-pip">
@@ -150,7 +174,7 @@
     <p>Aunque pip se instala con Python, pip se desarrolla de forma independiente, así que es conveniente actualizar pip cuando se publica una nueva versión.</p>
 
     <p>Para saber la versión de pip instalada, ejecute en una ventana de terminal la orden: <i>pip --version</i></p>
-    <div class="codigo">
+    <div class="terminal">
       <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-8">
 <code class="language-shell">pip --version
 pip 21.2.4 from C:\Users\barto\AppData\Local\Programs\Python\Python310\lib\site-packages\pip (python 3.10)</code>
@@ -160,7 +184,7 @@ pip 21.2.4 from C:\Users\barto\AppData\Local\Programs\Python\Python310\lib\site-
     <p><strong>Nota</strong>: La versión instalada con Python 3.10.1 es pip 21.2.4, pero versiones posteriores de Python pueden incluir versiones posteriores de pip.</p>
 
     <p>Para saber los paquetes instalados, ejecute en una ventana de terminal la orden: <i>pip list</i></p>
-    <div class="codigo">
+    <div class="terminal">
       <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-8">
 <code class="language-shell">pip list
 Package    Version
@@ -173,7 +197,7 @@ You should consider upgrading via the 'python -m pip install --upgrade pip' comm
     </div>
 
     <p>Para saber los paquetes instalados para los que existe una versión posterior, ejecute en una ventana de terminal la orden: <i>pip list --outdated</i></p>
-    <div class="codigo">
+    <div class="terminal">
       <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-8">
 <code class="language-shell">pip list --outdated
 Package    Version Latest Type
@@ -186,7 +210,7 @@ You should consider upgrading via the 'python -m pip install --upgrade pip' comm
     </div>
 
     <p>Para actualizar pip, ejecute en una ventana de terminal la orden: <i>python -m pip install --upgrade pip</i>:</p>
-    <div class="codigo">
+    <div class="terminal">
       <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-9">
 <code class="language-shell">python -m pip install --upgrade pip
 Requirement already satisfied: pip in c:\users\barto\appdata\local\programs\python\python310\lib\site-packages (21.2.4)
@@ -202,8 +226,8 @@ Successfully installed pip-21.3.1</code>
 </pre>
     </div>
 
-    <p>Compruebe de nuevo la versión de pip instalada con  la orden: <i>pip list</i></p>
-    <div class="codigo">
+    <p>Compruebe de nuevo la versión de pip instalada con la orden: <i>pip list</i></p>
+    <div class="terminal">
       <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-8">
 <code class="language-shell">pip list
 Package    Version
@@ -217,7 +241,7 @@ setuptools 58.1.0</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de enero de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 2 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
