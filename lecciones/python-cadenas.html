@@ -75,7 +75,7 @@
       <div class="codigo idle">
         <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span><span class="idle-errbg">                      </span>
-<span class="idle-erro">SyntaxError: EOL while scanning string literal</span>
+<span class="idle-erro">SyntaxError: unterminated string literal (detected at line 1)</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
       </div>
@@ -91,15 +91,15 @@
           <div class="ejecucion-terminal">
             <pre>
   File "prueba.py", line 1
-    print("Hola')
-                ^
-SyntaxError: EOL while scanning string literal
+    print("Esto es una cadena')
+          ^
+SyntaxError: unterminated string literal (detected at line 1)
 </pre>
           </div>
           <div class="resultado-captura">
             <p>En IDLE se muestra una ventana indicando el error:</p>
             <p class="captura">
-              <img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" width="260" height="152">
+              <img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" width="328" height="152">
             </p>
           </div>
         </div>
@@ -159,7 +159,7 @@ que ocupa
     <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles "</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">")</span>
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<span class="idle-erro">SyntaxError: invalid syntax. Perhaps you forgot a comma?</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
     </div>
@@ -167,7 +167,7 @@ que ocupa
     <div class="codigo idle">
       <pre>
 <span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples '</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">')</span>
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<span class="idle-erro">SyntaxError: invalid syntax. Perhaps you forgot a comma?</span>
 <span class="idle-prompt">&gt;&gt;&gt;</span>
 </pre>
     </div>
@@ -186,14 +186,14 @@ que ocupa
           <pre>
   File "prueba.py", line 1
     print("Las comillas dobles " delimitan cadenas")
-                                 ^
-SyntaxError: invalid syntaxFile "prueba.py", line 1
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
 </pre>
         </div>
         <div class="resultado-captura">
           <p>En IDLE se muestra una ventana indicando el error:</p>
           <p class="captura">
-            <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="181" height="152">
+            <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="322" height="152">
           </p>
         </div>
       </div>
@@ -208,8 +208,8 @@ SyntaxError: invalid syntaxFile "prueba.py", line 1
           <pre>
   File "prueba.py", line 1
     print('Un tipo le dice a otro: '¿Cómo estás?'')
-                                        ^
-SyntaxError: invalid character in identifier
+                                    ^
+SyntaxError: invalid character '¿' (U+00BF)
 </pre>
         </div>
         <div class="resultado-captura">
@@ -423,7 +423,7 @@ print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-python">fecha = 2020
+<code class="language-python">fecha = 2022
 print("¡Feliz", fecha, "!")
 print(f"¡Feliz {fecha}!")</code>
 </pre>
@@ -431,8 +431,8 @@ print(f"¡Feliz {fecha}!")</code>
 
       <div class="ejecucion-terminal">
         <pre>
-¡Feliz 2020 !
-¡Feliz 2020!
+¡Feliz 2022 !
+¡Feliz 2022!
 </pre>
       </div>
     </div>
