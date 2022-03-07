@@ -8,8 +8,6 @@
   <link rel="icon" href="../varios/favicon.svg">
   <link rel="stylesheet" href="../varios/prism-python.css">
   <script src="../varios/prism-copy.js"></script>
-  <script src="../varios/prism.js"></script>
-  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -120,9 +118,9 @@
         <img src="../img/pygame/pong-1-1.png" alt="Pygame - Pong 1" width="802" height="200">
       </p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_1.py: Ventana de juego
+<code class="language-python"># pong_1_1.py: Ventana de juego
 
 import pygame
 from pygame.locals import QUIT
@@ -274,9 +272,9 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
         </svg>
       </p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_2.py: Clase PelotaPong
+<code class="language-python"># pong_1_2.py: Clase PelotaPong
 
 import random
 import pygame
@@ -544,9 +542,9 @@ if __name__ == "__main__":
 
       <p>En este paso mejoraremos el comportamiento de la pelota haciendo que la pelota rebote al chocar con los cuatro lados de la ventana. Para ello, añadiremos un nuevo método a la clase (<i>rebotar()</i>) que utilizaremos en el bucle principal del programa.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_3.py: Rebote de la pelota
+<code class="language-python"># pong_1_3.py: Rebote de la pelota
 
 import random
 import pygame
@@ -703,9 +701,9 @@ if __name__ == "__main__":
 
       <p>En este paso, modificaremos el método <i>rebotar()</i> y añadiremos un método <i>reiniciar()</i> para conseguir el comportamiento comentado en el párrafo anterior.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_4.py: Reiniciar pelota al salir por los lados
+<code class="language-python"># pong_1_4.py: Reiniciar pelota al salir por los lados
 
 import random
 import pygame
@@ -830,9 +828,9 @@ if __name__ == "__main__":
 
       <p>En este paso añadiremos las raquetas. Para ello definiremos una clase <i>RaquetaPong</i>, similar a <i>PelotaPong</i> y crearemos dos variables de esa clase.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_5.py: Clase RaquetaPong
+<code class="language-python"># pong_1_5.py: Clase RaquetaPong
 
 import random
 import pygame
@@ -1055,9 +1053,9 @@ if __name__ == "__main__":
 
       <p>El jugador humano va a controlar su raqueta (por ejemplo, la raqueta <i>raqueta_1</i>) mediante el teclado, concretamente la raqueta subirá al pulsar la tecla "w" y la raqueta "bajará" al pulsar la tecla "s". Para ello, no es necesario modificar la clase, pero en el bucle principal del programa tenemos que detectar la pulsación (y liberación) de las teclas y modificiar el atributo de dirección del movimiento.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_6.py: Mover raqueta con teclado
+<code class="language-python"># pong_1_6.py: Mover raqueta con teclado
 
 import random
 import pygame
@@ -1252,9 +1250,9 @@ if __name__ == "__main__":
 
       <p>Para ello, crearemos el método <i>golpear_raqueta()</i> en la clase <i>RaquetaPong</i> y en el bucle principal llamaremos al método.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_7.py: Golpe raqueta jugador humano
+<code class="language-python"># pong_1_7.py: Golpe raqueta jugador humano
 
 import random
 import pygame
@@ -1465,9 +1463,9 @@ if __name__ == "__main__":
 
       <p>Para ello, crearemos los método <i>mover_raqueta_ia()</i> y <i>golpear_raqueta_ia()</i> en la clase <i>RaquetaPong</i> y en el bucle principal llamaremos a estos métodos.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_8.py: Jugador controlado por el programa (IA)
+<code class="language-python"># pong_1_8.py: Jugador controlado por el programa (IA)
 
 import random
 import pygame
@@ -1695,9 +1693,9 @@ if __name__ == "__main__":
 
       <p>Para ello, crearemos unos contadores que se actualizarán al ganar uno de los dos jugadores y que se mostrarán en la ventana.</p>
 
-      <div class="codigo">
+      <div class="codigo copy">
         <pre class="line-numbers">
-<code class="copy-language-python"># pong_1_9.py: Mostrar puntuación de la partida
+<code class="language-python"># pong_1_9.py: Mostrar puntuación de la partida
 
 import random
 import pygame
