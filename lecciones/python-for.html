@@ -2245,606 +2245,40 @@ Adiós
     <section id="testigo">
       <h3>Testigo</h3>
 
-      <p>Se entiende por testigo una variable que indica simplemente si una condición se ha cumplido o no. Es un caso particular de contador, pero se suele hacer con variables lógicas en vez de numéricas (en este caso, la variable que hace de testigo es la variable <var>encontrado</var>):</p>
+      <p>Se entiende por testigo una variable que indica simplemente si una condición se ha cumplido o no. Es un caso particular de contador, pero se suele hacer con variables lógicas en vez de numéricas (en este caso, la variable que hace de testigo es la variable <var>sacaste_cinco</var>):</p>
 
-      <div class="mcl-diapo" style="height: 24em">
-        <div id="Paso320">
+      <div class="mcl-diapo" style="height: 32em">
+        <div id="Paso310">
           <p><strong>Ejemplo de testigo</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
 else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
               <pre>
 Comienzo
-Entre 1 y 5 hay al menos un múltiplo de 2.
-</pre>
-            </div>
-          </div>
-
-          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
-
-          <p class="control">
-            <a href="#Paso321"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso321">
-          <p><strong>Ejemplo de testigo - Paso 1</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python"><span class="codigo-resaltado">print("Comienzo")</span>
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre><span class="codigo-resaltado">Comienzo</span></pre>
-            </div>
-          </div>
-
-          <p>Se ejecuta la primera instrucción del programa.</p>
-
-          <p>En este caso, imprime el párrafo de comienzo.</p>
-
-          <p class="control">
-            <a href="#Paso320"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso322"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso322">
-          <p><strong>Ejemplo de testigo - Paso 2</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-<span class="codigo-resaltado">encontrado = False</span>
-for i in range(1, 6):
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta la siguiente instrucción</p>
-
-          <p>La variable <var>encontrado</var>, que hace el papel de testigo, toma el valor inicial False.</p>
-
-          <p class="control">
-            <a href="#Paso321"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso323"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso323">
-          <p><strong>Ejemplo de testigo - Paso 3</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
-
-          <p class="control">
-            <a href="#Paso322"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso324"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso324">
-          <p><strong>Ejemplo de testigo - Paso 4</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (1 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso323"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso325"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso325">
-          <p><strong>Ejemplo de testigo - Paso 5</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
-
-          <p class="control">
-            <a href="#Paso324"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso326"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso326">
-          <p><strong>Ejemplo de testigo - Paso 6</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (2 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso325"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso327"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso327">
-          <p><strong>Ejemplo de testigo - Paso 7</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">encontrado = True</span>
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>En este caso a la variable <var>encontrado</var> (que valía False) pasa a valor True.</p>
-
-          <p class="control">
-            <a href="#Paso326"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso328"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso328">
-          <p><strong>Ejemplo de testigo - Paso 8</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el tercer valor tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
-
-          <p class="control">
-            <a href="#Paso327"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso329"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso329">
-          <p><strong>Ejemplo de testigo - Paso 9</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (3 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso328"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3210"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3210">
-          <p><strong>Ejemplo de testigo - Paso 10</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el cuarto valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
-
-          <p class="control">
-            <a href="#Paso329"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3211"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3211">
-          <p><strong>Ejemplo de testigo - Paso 11</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (4 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso3210"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3212"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3212">
-          <p><strong>Ejemplo de testigo - Paso 12</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">encontrado = True</span>
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>En este caso la variable <var>encontrado</var> ya valía True, por lo que sigue valiendo True</p>
-
-          <p class="control">
-            <a href="#Paso3211"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3213"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3213">
-          <p><strong>Ejemplo de testigo - Paso 13</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>La variable de control toma el quinto y último valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
-
-          <p class="control">
-            <a href="#Paso3212"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3214"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3214">
-          <p><strong>Ejemplo de testigo - Paso 14</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        encontrado = True
-if encontrado:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (5 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
-
-          <p class="control">
-            <a href="#Paso3213"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3215"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3215">
-          <p><strong>Ejemplo de testigo - Paso 15</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        encontrado = True
-if <span class="codigo-resaltado">encontrado</span>:
-    print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>
-Comienzo</pre>
-            </div>
-          </div>
-
-          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
-
-          <p>En este caso, comprueba el valor del testigo <var>encontrado</var>. Como es True, se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p class="control">
-            <a href="#Paso3214"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3216"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
-          </p>
-        </div>
-
-        <div id="Paso3216">
-          <p><strong>Ejemplo de testigo - Paso final</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-encontrado = False
-for i in range(1, 6):
-    if i % 2 == 0:
-        encontrado = True
-if encontrado:
-    <span class="codigo-resaltado">print(f"Entre 1 y 5 hay al menos un múltiplo de 2.")</span>
-else:
-    print(f"Entre 1 y 5 no hay ningún múltiplo de 2.")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>
-Comienzo
-<span class="codigo-resaltado">Entre 1 y 5 hay al menos un múltiplo de 2.</span>
-</pre>
-            </div>
-          </div>
-
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>Imprime el párrafo final indicando que entre el 1 y el 5 hay al menos un múltiplo de 2.</p>
-
-          <p class="control">
-            <a href="#Paso3215"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
-        </div>
-      </div>
-
-      <p>Detalles importantes:</p>
-      <ul>
-        <li>En cada iteración, el programa comprueba si <var>i</var> es múltiplo de 2.</li>
-        <li>El testigo se modifica la primera vez que la variable de control <var>i</var> es múltiplo de 2.</li>
-        <li>El testigo no cambia una vez ha cambiado.</li>
-        <li>Antes del bucle se debe dar un valor inicial al testigo (en este caso, False)</li>
-      </ul>
-    </section>
-
-    <section id="contador">
-      <h3>Contador</h3>
-
-      <p>Se entiende por contador una variable que lleva la cuenta del número de veces que se ha cumplido una condición. El ejemplo siguiente es un ejemplo de programa con contador (en este caso, la variable que hace de contador es la variable <var>cuenta</var>):</p>
-
-      <div class="mcl-diapo" style="height: 18em">
-        <div id="Paso310">
-          <p><strong>Ejemplo de contador</strong></p>
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
-</pre>
-            </div>
-
-            <div class="ejecucion-terminal">
-              <pre>
-Comienzo
-Desde 1 hasta 5 hay 2 múltiplos de 2
+Tirada 1: 3
+Tirada 2: 5
+Tirada 3: 1
+Ha salido al menos un 5.
+Final
 </pre>
             </div>
           </div>
@@ -2857,28 +2291,36 @@ Desde 1 hasta 5 hay 2 múltiplos de 2
         </div>
 
         <div id="Paso311">
-          <p><strong>Ejemplo de contador - Paso 1</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 1</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python"><span class="codigo-resaltado">print("Comienzo")</span>
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python"><span class="codigo-resaltado">import random</span>
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre><span class="codigo-resaltado">Comienzo</span></pre>
+              <pre></pre>
             </div>
           </div>
 
           <p>Se ejecuta la primera instrucción del programa.</p>
 
-          <p>En este caso, imprime el párrafo de comienzo.</p>
+          <p>En este caso, importa la biblioteca random.</p>
 
           <p class="control">
             <a href="#Paso310"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -2887,28 +2329,34 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso312">
-          <p><strong>Ejemplo de contador - Paso 2</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 2</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-<span class="codigo-resaltado">cuenta = 0</span>
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+<span class="codigo-resaltado">print("Comienzo")</span>
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre><span class="codigo-resaltado">Comienzo</span></pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta la siguiente instrucción</p>
-
-          <p>La variable <var>cuenta</var>, que hace el papel de contador, toma el valor inicial 0.</p>
+          <p>Imprime el párrafo de comienzo.</p>
 
           <p class="control">
             <a href="#Paso311"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -2917,17 +2365,25 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso313">
-          <p><strong>Ejemplo de contador - Paso 3</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 3</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+<span class="codigo-resaltado">sacaste_cinco = False</span>
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
@@ -2936,9 +2392,7 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+          <p>La variable <var>sacaste_cinco</var>, que hace el papel de testigo, toma el valor inicial <span class="idle-rese">False</span>.</p>
 
           <p class="control">
             <a href="#Paso312"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -2947,17 +2401,25 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso314">
-          <p><strong>Ejemplo de contador - Paso 4</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 4</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
@@ -2966,9 +2428,9 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+          <p>A continuación se ejecuta el bucle.</p>
 
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (1 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
 
           <p class="control">
             <a href="#Paso313"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -2977,17 +2439,25 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso315">
-          <p><strong>Ejemplo de contador - Paso 5</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 5</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
@@ -2996,9 +2466,9 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
             <a href="#Paso314"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3007,28 +2477,36 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso316">
-          <p><strong>Ejemplo de contador - Paso 6</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 6</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+<span class="codigo-resaltado">Tirada 1: 3</span>
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (2 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 3). Para el número de tirada se aprovecha la variable {i}, aunque debemos aumentarla en una unidad.</p>
 
           <p class="control">
             <a href="#Paso315"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3037,28 +2515,36 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso317">
-          <p><strong>Ejemplo de contador - Paso 7</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 7</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">if dado == 5:</span>
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
-
-          <p>En este caso a la variable <var>cuenta</var> (que valía 0) se le añade 1, por lo que ahora <var>cuenta</var> vale 1.</p>
+          <p>Se comprueba si el valor del dado es 5. Como no lo es (3 no es igual que 5), el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
 
           <p class="control">
             <a href="#Paso316"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3067,28 +2553,38 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso318">
-          <p><strong>Ejemplo de contador - Paso 8</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 8</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
 
-          <p>La variable de control toma el tercer valor tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
 
           <p class="control">
             <a href="#Paso317"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3097,28 +2593,37 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso319">
-          <p><strong>Ejemplo de contador - Paso 9</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 9</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3</pre>
             </div>
           </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (3 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
             <a href="#Paso318"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3127,17 +2632,582 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
         </div>
 
         <div id="Paso3110">
-          <p><strong>Ejemplo de contador - Paso 10</strong></p>
+          <p><strong>Ejemplo de testigo - Paso 10</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+<span class="codigo-resaltado">Tirada 2: 5</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 5).</p>
+
+          <p class="control">
+            <a href="#Paso319"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3111"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3111">
+          <p><strong>Ejemplo de testigo - Paso 11</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">if dado == 5:</span>
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5</pre>
+            </div>
+          </div>
+
+          <p>Se comprueba si el valor del dado es 5. Como sí lo es (5 es igual que 5), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3110"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3112"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3112">
+          <p><strong>Ejemplo de testigo - Paso 12</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        <span class="codigo-resaltado">sacaste_cinco = True</span>
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+          <p>En este caso la variable <var>sacaste_cinco</var> (que valía <span class="idle-rese">False</span>) pasa a valer <span class="idle-rese">True</span>.</p>
+
+          <p class="control">
+            <a href="#Paso3111"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3113"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3113">
+          <p><strong>Ejemplo de testigo - Paso 13</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+              </pre>
+            </div>
+          </div>
+
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
+
+          <p>La variable de control toma el tercer y último valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso3112"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3114"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3114">
+          <p><strong>Ejemplo de testigo - Paso 14</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
+
+          <p class="control">
+            <a href="#Paso3113"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3115"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3115">
+          <p><strong>Ejemplo de testigo - Paso 15</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+<span class="codigo-resaltado">Tirada 3: 1</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 1).</p>
+
+          <p class="control">
+            <a href="#Paso3114"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3116"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3116">
+          <p><strong>Ejemplo de testigo - Paso 16</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">if dado == 5:</span>
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+Tirada 3: 1</pre>
+            </div>
+          </div>
+
+          <p>Se comprueba si el valor del dado es 5. Como no lo es (1 no es igual que 5), el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3115"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3117"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3117">
+          <p><strong>Ejemplo de testigo - Paso 17</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if <span class="codigo-resaltado">sacaste_cinco</span>:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+Tirada 3: 1
+              </pre>
+            </div>
+          </div>
+
+          <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
+
+          <p>En este caso, comprueba el valor del testigo <var>sacaste_cinco</var>. Como es True, se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+          <p class="control">
+            <a href="#Paso3116"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3118"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3118">
+          <p><strong>Ejemplo de testigo - Paso 18</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    <span class="codigo-resaltado">print("Ha salido al menos un 5.")</span>
+else:
+    print("No ha salido ningún 5.")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+Tirada 3: 1
+<span class="codigo-resaltado">Ha salido al menos un 5.</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
+
+          <p>Imprime el párrafo final indicando que ha salido al menos un 5.</p>
+
+          <p class="control">
+            <a href="#Paso3117"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3119"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3119">
+          <p><strong>Ejemplo de testigo - Paso final</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+sacaste_cinco = False
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        sacaste_cinco = True
+if sacaste_cinco:
+    print("Ha salido al menos un 5.")
+else:
+    print("No ha salido ningún 5.")
+<span class="codigo-resaltado">print("Final")</span></code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 5
+Tirada 3: 1
+Ha salido al menos un 5.
+<span class="codigo-resaltado">Final</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Por último, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso3118"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
+        </div>
+      </div>
+
+      <p>Detalles importantes:</p>
+      <ul>
+        <li>Antes del bucle se debe dar un valor inicial al testigo (en este caso, <span class="idle-rese">False</span>)</li>
+        <li>En cada iteración, el programa comprueba si <var>dado</var> es 5.</li>
+        <li>El testigo se modifica la primera vez que la variable <var>i</var> es 5.</li>
+        <li>El testigo no cambia a <span class="idle-rese">False</span> una vez ha cambiado <span class="idle-rese">True</span>.</li>
+        <li>Se podría haber utilizado un range(1, 4) para poder escribir la tirada escribiendo {i} en vez de {i + 1}.</li>
+      </ul>
+    </section>
+
+    <section id="contador">
+      <h3>Contador</h3>
+
+      <p>Se entiende por contador una variable que lleva la cuenta del número de veces que se ha cumplido una condición. El ejemplo siguiente es un ejemplo de programa con contador (en este caso, la variable que hace de contador es la variable <var>cuenta_cincos</var>):</p>
+
+      <div class="mcl-diapo" style="height: 28em">
+        <div id="Paso320">
+          <p><strong>Ejemplo de contador</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>
+Comienzo
+Tirada 1: 5
+Tirada 2: 1
+Tirada 3: 5
+En total ha(n) salido 2 cinco(s).
+Final
+</pre>
+            </div>
+          </div>
+
+          <p class="oculta-small">Puede ver la ejecución paso a paso de este programa utilizando los iconos de avance y retroceso situados abajo a la derecha.</p>
+
+          <p class="control">
+            <a href="#Paso321"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso321">
+          <p><strong>Ejemplo de contador - Paso 1</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python"><span class="codigo-resaltado">import random</span>
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre></pre>
+            </div>
+          </div>
+
+          <p>Se ejecuta la primera instrucción del programa.</p>
+
+          <p>En este caso, importa la biblioteca random.</p>
+
+          <p class="control">
+            <a href="#Paso320"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso322"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso322">
+          <p><strong>Ejemplo de contador - Paso 2</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+<span class="codigo-resaltado">print("Comienzo")</span>
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre><span class="codigo-resaltado">Comienzo</span></pre>
+            </div>
+          </div>
+
+          <p>Imprime el párrafo de comienzo.</p>
+
+          <p class="control">
+            <a href="#Paso321"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso323"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso323">
+          <p><strong>Ejemplo de contador - Paso 3</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+<span class="codigo-resaltado">cuenta_cincos = 0</span>
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo</pre>
+            </div>
+          </div>
+
+          <p>La variable <var>cuenta_cincos</var>, que hace el papel de contador, toma el valor inicial 0.</p>
+
+          <p class="control">
+            <a href="#Paso322"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso324"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso324">
+          <p><strong>Ejemplo de contador - Paso 4</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
@@ -3148,26 +3218,31 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
 
           <p>A continuación se ejecuta el bucle.</p>
 
-          <p>La variable de control toma el cuarto valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
 
           <p class="control">
-            <a href="#Paso319"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3111"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+            <a href="#Paso323"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso325"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
           </p>
         </div>
 
-        <div id="Paso3111">
-          <p><strong>Ejemplo de contador - Paso 11</strong></p>
+        <div id="Paso325">
+          <p><strong>Ejemplo de contador - Paso 5</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
@@ -3178,167 +3253,571 @@ print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como sí lo es (4 es múltiplo de 2), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
-            <a href="#Paso3110"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3112"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+            <a href="#Paso324"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso326"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
           </p>
         </div>
 
-        <div id="Paso3112">
-          <p><strong>Ejemplo de contador - Paso 12</strong></p>
+        <div id="Paso326">
+          <p><strong>Ejemplo de contador - Paso 6</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        <span class="codigo-resaltado">cuenta = cuenta + 1</span>
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+<span class="codigo-resaltado">Tirada 1: 5</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 5). Para el número de tirada se aprovecha la variable {i}, aunque debemos aumentarla en una unidad.</p>
+
+          <p class="control">
+            <a href="#Paso325"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso327"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso327">
+          <p><strong>Ejemplo de contador - Paso 7</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if <span class="codigo-resaltado">dado == 5</span>:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+              </pre>
+            </div>
+          </div>
+
+          <p>Se comprueba si el valor del dado es 5. Como lo es (5 es igual que 5), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso326"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso328"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso328">
+          <p><strong>Ejemplo de contador - Paso 8</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        <span class="codigo-resaltado">cuenta_cincos += 1</span>
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+              </pre>
             </div>
           </div>
 
           <p>A continuación se ejecuta el bloque dentro del <span class="idle-rese">if</span>.</p>
 
-          <p>En este caso a la variable <var>cuenta</var> (que valía 1) se le añade 1, por lo que ahora <var>cuenta</var> vale 2.</p>
+          <p>En este caso, al aumentar la variable <var>cuenta_cincos</var>, que valía 0, pasa a valer 1.</p>
 
           <p class="control">
-            <a href="#Paso3111"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3113"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+            <a href="#Paso327"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso329"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
           </p>
         </div>
 
-        <div id="Paso3113">
-          <p><strong>Ejemplo de contador - Paso 13</strong></p>
+        <div id="Paso329">
+          <p><strong>Ejemplo de contador - Paso 9</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(1, 6)</span>:
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 5</pre>
             </div>
           </div>
 
-          <p>La variable de control toma el quinto y último valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 5.</p>
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
+
+          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
 
           <p class="control">
-            <a href="#Paso3112"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3114"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+            <a href="#Paso328"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3210"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
           </p>
         </div>
 
-        <div id="Paso3114">
-          <p><strong>Ejemplo de contador - Paso 14</strong></p>
+        <div id="Paso3210">
+          <p><strong>Ejemplo de contador - Paso 10</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    <span class="codigo-resaltado">if i % 2 == 0:</span>
-        cuenta = cuenta + 1
-print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 5
+              </pre>
             </div>
           </div>
 
           <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>En este caso se comprueba si la variable <var>i</var> es múltiplo de 2 (comprobando si el resto de la división por 2 es igual a 0). Como no lo es, (5 no es múltiplo de 2) el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
-            <a href="#Paso3113"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-            <a href="#Paso3115"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+            <a href="#Paso329"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3211"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
           </p>
         </div>
 
-        <div id="Paso3115">
-          <p><strong>Ejemplo de contador - Paso final</strong></p>
+        <div id="Paso3211">
+          <p><strong>Ejemplo de contador - Paso 11</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-cuenta = 0
-for i in range(1, 6):
-    if i % 2 == 0:
-        cuenta = cuenta + 1
-<span class="codigo-resaltado">print(f"Desde 1 hasta 5 hay {cuenta} múltiplos de 2")</span></code>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+<span class="codigo-resaltado">Tirada 2: 1</span></pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 1).</p>
+
+          <p class="control">
+            <a href="#Paso3210"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3212"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3212">
+          <p><strong>Ejemplo de contador - Paso 12</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
               <pre>
-Comienzo
-<span class="codigo-resaltado">Desde 1 hasta 5 hay 2 múltiplos de 2</span></pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if <span class="codigo-resaltado">dado == 5</span>:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1</pre>
+            </div>
+          </div>
+
+          <p>Se comprueba si el valor del dado es 5. Como no lo es (1 no es igual que 5), el bloque dentro del <span class="idle-rese">if</span> no se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3211"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3213"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3213">
+          <p><strong>Ejemplo de contador - Paso 13</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+              </pre>
+            </div>
+          </div>
+
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
+
+          <p>La variable de control toma el tercer y último valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso3212"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3214"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3214">
+          <p><strong>Ejemplo de contador - Paso 14</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
+
+          <p class="control">
+            <a href="#Paso3213"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3215"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3215">
+          <p><strong>Ejemplo de contador - Paso 15</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+<span class="codigo-resaltado">Tirada 3: 5</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 5).</p>
+
+          <p class="control">
+            <a href="#Paso3214"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3216"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3216">
+          <p><strong>Ejemplo de contador - Paso 16</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if <span class="codigo-resaltado">dado == 5</span>:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+Tirada 3: 5</pre>
+            </div>
+          </div>
+
+          <p>Se comprueba si el valor del dado es 5. Como sí lo es (5 es igual que 5), el bloque dentro del <span class="idle-rese">if</span> se ejecuta.</p>
+
+          <p class="control">
+            <a href="#Paso3215"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3217"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3217">
+          <p><strong>Ejemplo de contador - Paso 17</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        <span class="codigo-resaltado">cuenta_cincos += 1</span>
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+Tirada 3: 5
+              </pre>
+            </div>
+          </div>
+
+          <p>En este caso, al aumentar la variable <var>cuenta_cincos</var>, que valía 1, pasa a valer 2.</p>
+
+          <p class="control">
+            <a href="#Paso3216"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3218"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3218">
+          <p><strong>Ejemplo de contador - Paso 18</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+<span class="codigo-resaltado">print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")</span>
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+Tirada 3: 5
+<span class="codigo-resaltado">En total ha(n) salido 2 cinco(s).</span>
+</pre>
             </div>
           </div>
 
           <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
 
-          <p>En este caso, imprime el párrafo final. En total, la variable contador ha aumentado hasta 2 (los dos múltiplos de 2 que hay entre 1 y 5).</p>
+          <p>Imprime el párrafo indicando cuántos cincos han salido.</p>
 
           <p class="control">
-            <a href="#Paso3114"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3217"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3219"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3219">
+          <p><strong>Ejemplo de contador - Paso final</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+cuenta_cincos = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    if dado == 5:
+        cuenta_cincos += 1
+print(f"En total ha(n) salido {cuenta_cincos} cinco(s).")
+<span class="codigo-resaltado">print("Final")</span></code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 5
+Tirada 2: 1
+Tirada 3: 5
+En total ha(n) salido 2 cinco(s).
+<span class="codigo-resaltado">Final</span>
+</pre>
+            </div>
+          </div>
+
+          <p>Por último, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso3218"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
             <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
         </div>
       </div>
 
       <p>Detalles importantes:</p>
       <ul>
-        <li>En cada iteración, el programa comprueba si <var>i</var> es múltiplo de 2.</li>
-        <li>El contador se modifica sólo si la variable de control <var>i</var> es múltiplo de 2.</li>
-        <li>El contador va aumentando de uno en uno.</li>
         <li>Antes del bucle se debe dar un valor inicial al contador (en este caso, 0)</li>
+        <li>En cada iteración, el programa comprueba si <var>dado</var> es 5.</li>
+        <li>El contador se modifica sólo si la variable <var>dado</var> es cinco.</li>
+        <li>El contador va aumentando de uno en uno.</li>
+        <li>Si la frase indicando el número de cincos obtenidos se quisiera adaptar al número de cincos obtenidos (por ejmplo, "no se han obtenido cincos", "sólo se ha obtenido un cinco" o "se han obtenido XX cincos") se debería utilizar una estructura <span class="idle-rese">if</span> ... <span class="idle-rese">elif</span> ... <span class="idle-rese">else</span> ...</li>
       </ul>
     </section>
 
     <section id="acumulador">
       <h3>Acumulador</h3>
 
-      <p>Se entiende por acumulador una variable que acumula el resultado de una operación. El ejemplo siguiente es un ejemplo de programa con acumulador (en este caso, la variable que hace de acumulador es la variable <var>suma</var>):</p>
+      <p>Se entiende por acumulador una variable que acumula el resultado de una operación. El ejemplo siguiente es un ejemplo de programa con acumulador (en este caso, la variable que hace de acumulador es la variable <var>total</var>):</p>
 
-      <div class="mcl-diapo" style="height: 16em">
+      <div class="mcl-diapo" style="height: 29em">
         <div id="Paso330">
           <p><strong>Ejemplo de acumulador</strong></p>
 
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
               <pre>
 Comienzo
-La suma de los números de 1 a 4 es 10
+Tirada 1: 3
+Tirada 2: 2
+Tirada 3: 6
+En total ha obtenido 11 punto(s).
+Final
 </pre>
             </div>
           </div>
@@ -3356,22 +3835,27 @@ La suma de los números de 1 a 4 es 10
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python"><span class="codigo-resaltado">print("Comienzo")</span>
-suma = 0
-for i in [1, 2, 3, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python"><span class="codigo-resaltado">import random</span>
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre><span class="codigo-resaltado">Comienzo</span></pre>
+              <pre></pre>
             </div>
           </div>
 
           <p>Se ejecuta la primera instrucción del programa.</p>
 
-          <p>En este caso, imprime el párrafo de comienzo.</p>
+          <p>En este caso, importa la biblioteca random.</p>
 
           <p class="control">
             <a href="#Paso330"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3385,22 +3869,25 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-<span class="codigo-resaltado">suma = 0</span>
-for i in [1, 2, 3, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+<span class="codigo-resaltado">print("Comienzo")</span>
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre><span class="codigo-resaltado">Comienzo</span></pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta la siguiente instrucción</p>
-
-          <p>La variable <var>suma</var>, que hace el papel de acumulador, toma el valor inicial 0.</p>
+          <p>Imprime el párrafo de comienzo.</p>
 
           <p class="control">
             <a href="#Paso331"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3414,11 +3901,16 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for <span class="codigo-resaltado">i</span> in [<span class="codigo-resaltado">1</span>, 2, 3, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+<span class="codigo-resaltado">total = 0</span>
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
@@ -3427,9 +3919,7 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el primer valor de la lista.En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
+          <p>La variable <var>total</var>, que hace el papel de contador, toma el valor inicial 0.</p>
 
           <p class="control">
             <a href="#Paso332"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3443,11 +3933,16 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    <span class="codigo-resaltado">suma = suma + i</span>
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
@@ -3456,9 +3951,9 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+          <p>A continuación se ejecuta el bucle.</p>
 
-          <p>En este caso a la variable <var>suma</var> (que valía 0) se le añade <var>i</var> (que vale 1), por lo que ahora <var>suma</var> vale 1.</p>
+          <p>La variable de control toma el primer valor del tipo <span class="idle-func">range</span>(). En este caso, la variable de control es <var>i</var> y toma el valor 0.</p>
 
           <p class="control">
             <a href="#Paso333"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3472,11 +3967,16 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for <span class="codigo-resaltado">i</span> in [1, <span class="codigo-resaltado">2</span>, 3, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
@@ -3485,9 +3985,9 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>La variable de control toma el segundo valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
             <a href="#Paso334"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3501,22 +4001,27 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    <span class="codigo-resaltado">suma = suma + i</span>
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+<span class="codigo-resaltado">Tirada 1: 3</span>
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
-
-          <p>En este caso a la variable <var>suma</var> (que valía 1) se le añade <var>i</var> (que vale 2), por lo que ahora <var>suma</var> vale 3.</p>
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 3). Para el número de tirada se aprovecha la variable {i}, aunque debemos aumentarla en una unidad.</p>
 
           <p class="control">
             <a href="#Paso335"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3530,22 +4035,27 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for <span class="codigo-resaltado">i</span> in [1, 2, <span class="codigo-resaltado">3</span>, 4]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">total += dado</span>
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
-
-          <p>La variable de control toma el tercer valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 3.</p>
+          <p>El valor del dado (3) se añade a la variable <var>total</var>, que pasa de valer 0, a valer 3.</p>
 
           <p class="control">
             <a href="#Paso336"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3559,22 +4069,28 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    <span class="codigo-resaltado">suma = suma + i</span>
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3</pre>
             </div>
           </div>
 
-          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
 
-          <p>En este caso a la variable <var>suma</var> (que valía 3) se le añade <var>i</var> (que vale 3), por lo que ahora <var>suma</var> vale 6.</p>
+          <p>La variable de control toma el segundo valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 1.</p>
 
           <p class="control">
             <a href="#Paso337"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3588,22 +4104,30 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for <span class="codigo-resaltado">i</span> in [1, 2, 3, <span class="codigo-resaltado">4</span>]:
-    suma = suma + i
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+              </pre>
             </div>
           </div>
 
-          <p>A continuación se ejecuta el bucle.</p>
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
 
-          <p>La variable de control toma el cuarto y último valor de la lista. En este caso, la variable de control es <var>i</var> y toma el valor 4.</p>
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
 
           <p class="control">
             <a href="#Paso338"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3617,22 +4141,27 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    <span class="codigo-resaltado">suma = suma + i</span>
-print(f"La suma de los números de 1 a 4 es {suma}")</code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
-              <pre>Comienzo</pre>
+              <pre>Comienzo
+Tirada 1: 3
+<span class="codigo-resaltado">Tirada 2: 2</span></pre>
             </div>
           </div>
 
-          <p>A continuación se ejecutan por última vez las instrucciones del bloque.</p>
-
-          <p>En este caso a la variable <var>suma</var> (que valía 6) se le añade <var>i</var> (que vale 4), por lo que ahora <var>suma</var> vale 10.</p>
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 2).</p>
 
           <p class="control">
             <a href="#Paso339"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
@@ -3646,42 +4175,266 @@ print(f"La suma de los números de 1 a 4 es {suma}")</code>
           <div class="filaflex">
             <div class="codigo">
               <pre>
-<code class="language-python">print("Comienzo")
-suma = 0
-for i in [1, 2, 3, 4]:
-    suma = suma + i
-<span class="codigo-resaltado">print(f"La suma de los números de 1 a 4 es {suma}")</span></code>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">total += dado</span>
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
 </pre>
             </div>
 
             <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2</pre>
+            </div>
+          </div>
+
+          <p>El valor del dado (2) se añade a la variable <var>total</var>, que pasa de valer 3, a valer 5.</p>
+
+          <p class="control">
+            <a href="#Paso3310"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3312"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3312">
+          <p><strong>Ejemplo de acumulador - Paso 12</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
               <pre>
-Comienzo
-<span class="codigo-resaltado">La suma de los números de 1 a 4 es 10</span>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for <span class="codigo-resaltado">i</span> in <span class="codigo-resaltado">range(3)</span>:
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+              </pre>
+            </div>
+          </div>
+
+          <p>A continuación se vuelve a ejecutar el bucle.</p>
+
+          <p>La variable de control toma el tercer y último valor del tipo <span class="idle-func">range</span>(3). En este caso, la variable de control es <var>i</var> y toma el valor 2.</p>
+
+          <p class="control">
+            <a href="#Paso3311"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3313"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3313">
+          <p><strong>Ejemplo de acumulador - Paso 13</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    <span class="codigo-resaltado">dado = random.randrange(1, 7)</span>
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2</pre>
+            </div>
+          </div>
+
+          <p>A continuación se ejecutan las instrucciones del bloque.</p>
+
+          <p>Se obtiene un valor al azar entre 1 y 6 que se guarda en la variable <i>dado</i></p>
+
+          <p class="control">
+            <a href="#Paso3312"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3314"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3314">
+          <p><strong>Ejemplo de acumulador - Paso 14</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    <span class="codigo-resaltado">print(f"Tirada {i + 1}: {dado}")</span>
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+<span class="codigo-resaltado">Tirada 3: 6</span>
+              </pre>
+            </div>
+          </div>
+
+          <p>Se imprime el número de tirada y el valor del dado obtenido (en este caso, 6).</p>
+
+          <p class="control">
+            <a href="#Paso3313"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3315"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3315">
+          <p><strong>Ejemplo de acumulador - Paso 15</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    <span class="codigo-resaltado">total += dado</span>
+print(f"En total ha obtenido {total} punto(s).")
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+Tirada 3: 6</pre>
+            </div>
+          </div>
+
+          <p>El valor del dado (6) se añade a la variable <var>total</var>, que pasa de valer 5, a valer 11.</p>
+
+          <p class="control">
+            <a href="#Paso3314"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3316"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3316">
+          <p><strong>Ejemplo de acumulador - Paso 16</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+<span class="codigo-resaltado">print(f"En total ha obtenido {total} punto(s).")</span>
+print("Final")</code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+Tirada 3: 6
+<span class="codigo-resaltado">En total ha obtenido 11 punto(s).</span>
 </pre>
             </div>
           </div>
 
           <p>Una vez terminado el bucle, se ejecuta la instrucción que sigue al bucle.</p>
 
-          <p>En este caso, imprime el párrafo final. En total, en la variable <var>suma</var> se han sumado los valores 1, 2, 3 y 4.</p>
+          <p>Imprime el párrafo indicando cuántos puntos se han obtenido en total.</p>
 
           <p class="control">
-            <a href="#Paso3310"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3315"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+            <a href="#Paso3317"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          </p>
+        </div>
+
+        <div id="Paso3317">
+          <p><strong>Ejemplo de acumulador - Paso final</strong></p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-python">import random
+
+print("Comienzo")
+total = 0
+for i in range(3):
+    dado = random.randrange(1, 7)
+    print(f"Tirada {i + 1}: {dado}")
+    total += dado
+print(f"En total ha obtenido {total} punto(s).")
+<span class="codigo-resaltado">print("Final")</span></code>
+</pre>
+            </div>
+
+            <div class="ejecucion-terminal">
+              <pre>Comienzo
+Tirada 1: 3
+Tirada 2: 2
+Tirada 3: 6
+En total ha obtenido 11 punto(s).
+<span class="codigo-resaltado">Final</span>
+</pre>
+            </div>
+          </div>
+
+          <p>Por último, imprime el párrafo final.</p>
+
+          <p class="control">
+            <a href="#Paso3316"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
             <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48"></p>
         </div>
       </div>
 
       <p>Detalles importantes:</p>
       <ul>
-        <li>El acumulador se modifica en cada iteración del bucle (en este caso, el valor de <var>i</var> se añade al acumulador <var>suma</var>).</li>
+        <li>El acumulador se modifica en cada iteración del bucle (en este caso, el valor de <var>dado</var> se añade al acumulador <var>total</var>).</li>
         <li>Antes del bucle se debe dar un valor inicial al acumulador (en este caso, 0)</li>
+        <li>Si la frase indicando el número de puntos obtenidos se quisiera adaptar al número de puntos obtenidos (por ejmplo, "sólo se ha obtenido un puntos" o "se han obtenido XX puntos") se debería utilizar una estructura <span class="idle-rese">if</span> ... <span class="idle-rese">else</span> ...</li>
       </ul>
     </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de abril de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 16 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
