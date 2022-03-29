@@ -5,6 +5,7 @@
   <title>Lecciones impartidas en clase (curso 2021/22). Python. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="stylesheet" href="../varios/prism-python.css">
   <link rel="icon" href="../varios/favicon.svg">
   <style>
     div.terminal {
@@ -37,8 +38,8 @@
         <li><a href="#q09">Q09: del 17/01/22 al 06/02/22</a></li>
         <li><a href="#q10">Q10: del 07/02/22 al 20/02/22</a></li>
         <li><a href="#q11">Q11: del 21/02/22 al 06/03/22</a></li>
-        <!--
         <li><a href="#q12">Q12: del 07/03/22 al 20/03/22</a></li>
+        <!--
         <li><a href="#q13">Q13: del 21/03/22 al 06/04/22</a></li>
         <li><a href="#q14">Q14: del 07/04/22 al 24/04/22</a></li>
         <li><a href="#q15">Q15: del 25/04/22 al 08/05/22</a></li>
@@ -113,11 +114,14 @@
       <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-operaciones-matematicas.html">Números y operaciones aritméticas</a>.
         <p>Los números son el tipo de dato más simple. En esta lección se comentan los diferentes tipos de números de Python y las operaciones aritméticas elementales.</p>
       </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-cadenas.html">Cadenas de texto (1)</a>.
+        <p>Las cadenas de texto (es decir, fragmentos de texto) es otro tipo básico que se utiliza en cualquier programa. En esta lección se comenta cómo se escriben las cadenas en Python.</p>
+      </li>
       <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-variables.html">Variables (1)</a>.
         <p>Para guardar información (números o letras) durante la ejecución de un programa, se utilizan variables. En esta lección se explica cómo se gastan las variables en Python.</p>
       </li>
-      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-cadenas.html">Cadenas de texto</a>.
-        <p>Las cadenas de texto (es decir, fragmentos de texto) es otro tipo básico que se utiliza en cualquier programa. En esta lección se comenta cómo se escriben las cadenas en Python. Para incluir variables en cadenas, nosotros utilizaremos las cadenas "f".</p>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-cadenas-2.html">Cadenas de texto (2)</a>.
+        <p>Esta lección completa la lección Cadenas de texto (1), pero como en los ejemplos se utilizan variables he dividido las explicaciones en dos partes. El apartado más importante de esta lección son las cadenas "f", que utilizaremos ampliamente.</p>
       </li>
     </ol>
 
@@ -145,8 +149,8 @@
       <li>Tened en cuenta también que de vez en cuando puedo actualizar MPTC. Por el momento, para comprobar si hay una nueva versión disponible se deben ejecutar las órdenes:
         <div class="terminal">
           <pre class="command-line" data-prompt="C:\>">
-  <code class="language-shell">python -m pip install --upgrade pip</code>
-  <code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+  <code class="language-shell">python -m pip install --upgrade pip
+  pip install --upgrade mclibre-python-testing-client</code>
   </pre>
         </div>
         <p>La primera orden actualiza <i>pip</i> y la segunda actualiza <i>mptc</i>.</p>
@@ -248,10 +252,6 @@
       </li>
       <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-range-soluciones.html">El tipo range</a></li>
     </ol>
-</section>
-
-<section id="q11">
-  <h2>Quincena Q11: del 21/02/22 al 06/03/22</h2>
 
     <h3>Bucle for</h3>
 
@@ -267,24 +267,76 @@
     </ol>
   </section>
 
+  <section id="q11">
+    <h2>Quincena Q11: del 21/02/22 al 06/03/22</h2>
 
-  <h3>Bucle while</h3>
+    <h3>Bucle while</h3>
 
-  <p>El bucle <strong>while</strong> es el tipo de bucle que se utiliza cuando no sabemos cuántas veces va a ser necesario realizar el bucle.</p>
+    <p>El bucle <strong>while</strong> es el tipo de bucle que se utiliza cuando no sabemos cuántas veces va a ser necesario realizar el bucle.</p>
 
-  <ol>
-    <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-while.html">Bucle while</a></li>
-    <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html">Bucle while (1)</a>.</li>
-    <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-1-soluciones.html">Bucle while (1)</a>.</li>
-    <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html">Bucle while (2)</a>.</li>
-    <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2-soluciones.html">Bucle while (2)</a>.</li>
-    <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-biblioteca-time.html">Biblioteca fecha y hora</a> (necesarios para algunos ejercicios Bucle while (3).</li>
-    <li>[opcional] Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html">Bucle while (3)</a>.</li>
-    <li>[opcional] Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2-soluciones.html">Bucle while (3)</a>.</li>
-  </ol>
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-while.html">Bucle while</a></li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-1.html">Bucle while (1)</a>.</li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-1-soluciones.html">Bucle while (1)</a>.</li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html">Bucle while (2)</a>.</li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2-soluciones.html">Bucle while (2)</a>.</li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-biblioteca-time.html">Biblioteca fecha y hora</a> (necesarios para algunos ejercicios Bucle while (3).</li>
+      <li>[opcional] Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2.html">Bucle while (3)</a>.</li>
+      <li>[opcional] Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-while-2-soluciones.html">Bucle while (3)</a>.</li>
+    </ol>
+  </section>
+
+  <section id="q12">
+    <h2>Quincena Q12: del 07/03/22 al 20/03/22</h2>
+
+    <h3>Actualizar Python a Python 3.10.4</h3>
+
+    <p>El 24 de marzo se publicó Python 3.10.4. Aunque seguramente los <em>bugs</em> corregidos en esta versión no nos afectaban, es conveniente utilizar siempre la última versión publicada, así que os aconsejo que os actualicéis a Python 3.10.4. Al tratarse de una actualización, no es necesario desinstalar previamente la versión anterior. En la lección sobre <a href="https://www.mclibre.org/consultar/python/otros/python-instalacion.html">Instalación de Python</a> he actualizado los enlaces de descarga.</p>
+
+    <h3>Ficheros</h3>
+
+    <p>Python permite escribir y leer ficheros. En los ejercicios lo que haremos básicamente es crear páginas web html.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-ficheros.html">Ficheros</a></li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-ficheros-1.html">Ficheros (1).</a></li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-ficheros-1-soluciones.html">Ficheros (1)</a>.</li>
+    </ol>
+
+    <h3>Gráficos SVG</h3>
+
+    <p>En la parte de HTML y CSS utilizamos gráficos SVG insertándolos en páginas web mediante la etiqueta &lt;img&gt;. En esta parte de programación los vamos a volver a ver, pero esta vez creando los gráficos nosotros mismos. En esta quincena se trata de familiarizarnos con el sistema de coordenadas de SVG y las formas básicas.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> (apuntes de HTML).</li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/htmlcss/html/svg-formas-1.html">Formas básicas SVG</a> (apuntes de HTML).</li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-1.html">SVG (1)</a>
+        <p>Estos ejercicios son para repasar el sistema de coordenadas de SVG. Son ejercicios tipo test que podéis repetir las veces necesarias. Hay en total doce ejercicios, divididos en bloques de cuatro ejercicios, uno para cada una de las principales formas SVG: puntos (en realidad son círculos pequeños), rectángulos, líneas y círculos.</p>
+        <ul>
+          <li>el primer ejercicio de cada es muy sencillo porque las coordenadas van de 0 a 5</li>
+          <li>el segundo ejercicio es un poco más complicado porque las coordenadas van de 0 a 100 (de 10 en 10) y hay que afinar más la vista.</li>
+          <li>el tercero es un poco más complicado porque las coordenadas van de -100 a 100 y hay que aclararse con los negativos</li>
+          <li>el cuarto es el más lioso porque salvo con el caso de los círculos, la escala es distinta en cada eje (para ayudaros, el enunciado dice de cuánto en cuánto va la escala).</li>
+        </ul>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-2.html">SVG (2) viewBox</a>
+        <p>Aunque en las plantillas de los ejercicios os indico el atributo viewBox (es decir, la porción del plano SVG que se muestra en el dibujo), he preparado una página de ejercicios de tipo test para que podáis practicar los valores del atributo viewBox. Como las preguntas se generan al azar, podéis repetirlos las veces que sea necesario.</p>
+        <p><strong>Nota</strong>: En el examen os indicaré los valores de los atributos viewBox, como en cursos anteriores.</p>
+      </li>
+    </ol>
+
+    <h3>Gráficos SVG (sin bucles)</h3>
+
+    <ol>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-ficheros-1.html">SVG Ficheros (1)</a>
+        <p>En cada ejercicio se proporciona una plantilla y se piden seis dibujos, es decir, en cada ejercicio habrá que hacer seis páginas web (una para cada dibujo), todas basadas en la misma plantilla. Tened en cuenta que la plantilla del segundo ejercicio es distinta a la del primero y tercero, en el primer y tercer ejercicio las coordenadas que tenéis que utilizar están entre 0 y 300, mientras que en el segundo están entre -150 y 150.</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-ficheros-1-soluciones.html">SVG Ficheros (1)</a>.</li>
+    </ol>
+  </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
