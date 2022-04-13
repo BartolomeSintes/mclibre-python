@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Soluciones (1 B). Ficheros. SVG. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
+</head>
+
+<body>
+  <h1>Gráficos SVG - Ficheros - Soluciones (1 B)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>SVG - Ficheros (1 B)</h2>
+
+      <h3><a href="ej-svg-ficheros-1-b.html">Enunciados</a></h3>
+      <ul>
+        <li><a href="ej-svg-ficheros-1-b.html#ejercicio-1">1 - Dibujos</a></li>
+        <li><a href="ej-svg-ficheros-1-b.html#ejercicio-2">2 - Dibujos</a></li>
+        <li><a href="ej-svg-ficheros-1-b.html#ejercicio-3">3 - Dibujos</a></li>
+      </ul>
+
+      <h3><a href="#">Soluciones</a></h3>
+      <ul>
+        <li><a href="#ejercicio-1">1 - Dibujos</a><br>
+          <a href="#ejercicio-1-1">1</a> -
+          <a href="#ejercicio-1-2">2</a> -
+          <a href="#ejercicio-1-3">3</a>
+        </li>
+        <li><a href="#ejercicio-2">2 - Dibujos</a><br>
+          <a href="#ejercicio-2-1">1</a> -
+          <a href="#ejercicio-2-2">2</a> -
+          <a href="#ejercicio-2-3">3</a>
+        </li>
+        <li><a href="#ejercicio-3">3 - Dibujos</a><br>
+          <a href="#ejercicio-3-1">1</a> -
+          <a href="#ejercicio-3-2">2</a> -
+          <a href="#ejercicio-3-3">3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-svg-ficheros-1-b.html">ejercicios de SVG Ficheros (1 B)</a>.</p>
+
+  <section id="ejercicio-1">
+    <h2>Gráficos SVG Ficheros (1 B) - 1 - Dibujos</h2>
+
+    <div class="filaflex" id="ejercicio-1-1">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-1-1.png" alt="SVG Ficheros (1 B) 1 1" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-1-1.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 1-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
+              file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;line x1=\"100\" y1=\"0\" x2=\"200\" y2=\"300\" stroke=\"black\" stroke-width=\"2\" /&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"100\" cy=\"0\" r=\"5\" stroke=\"black\" stroke-width=\"2\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"200\" cy=\"300\" r=\"5\" stroke=\"black\" stroke-width=\"2\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("    &lt;line x1=\"0\" y1=\"200\" x2=\"300\" y2=\"100\" stroke=\"black\" stroke-width=\"2\" /&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"0\" cy=\"200\" r=\"5\" stroke=\"black\" stroke-width=\"2\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"300\" cy=\"100\" r=\"5\" stroke=\"black\" stroke-width=\"2\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"150\" r=\"5\" stroke=\"black\" stroke-width=\"2\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()
+</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-1-2">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-1-2.png" alt="SVG Ficheros (1 B) 1 2" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-1-2.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 1-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
+              file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;polygon points=\"225,0 300,225 75,300 0,75\" fill=\"none\" stroke=\"red\" stroke-width=\"5\" /&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"150\" r=\"118\" stroke=\"red\" stroke-width=\"5\" fill=\"white\"/&gt;",
+              file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-1-3">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-1-3.png" alt="SVG Ficheros (1 B) 1 3" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-1-3.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 1-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;",
+              file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;circle cx=\"0\" cy=\"0\" r=\"150\" stroke=\"black\" stroke-width=\"3\" fill=\"none\"/&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"50\" cy=\"-50\" r=\"25\" stroke=\"black\" stroke-width=\"3\" fill=\"none\"/&gt;",
+              file=fichero)
+        print("    &lt;circle cx=\"-50\" cy=\"-50\" r=\"25\" stroke=\"black\" stroke-width=\"3\" fill=\"none\"/&gt;",
+              file=fichero)
+        print("    &lt;polyline points=\"0,0 25,25 0,50 25,75 0,100\" stroke=\"black\" stroke-width=\"3\" fill=\"none\"/&gt;",
+              file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Gráficos SVG Ficheros (1) - 2 - Dibujos</h2>
+
+    <div class="filaflex" id="ejercicio-2-1">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-2-1.png" alt="SVG Ficheros (1 B) 2 1" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-2-1.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 2-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;rect x=\"0\" y=\"0\" width=\"100\" height=\"100\" fill=\"green\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"200\" y=\"0\" width=\"100\" height=\"100\" fill=\"blue\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"200\" y=\"200\" width=\"100\" height=\"100\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"0\" y=\"200\" width=\"100\" height=\"100\" fill=\"yellow\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"100\" y=\"100\" width=\"100\" height=\"100\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"50\" cy=\"50\" r=\"10\" fill=\"white\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"250\" cy=\"250\" r=\"10\" fill=\"white\" /&gt;", file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-2-2">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-2-2.png" alt="SVG Ficheros (1 B) 2 2" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-2-2.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 2-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;polygon points=\"0,300 100,300 50,200\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;polygon points=\"100,300 200,300 150,200\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;polygon points=\"200,300 300,300 250,200\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;polygon points=\"50,200 150,200 100,100\" fill=\"green\" /&gt;", file=fichero)
+        print("    &lt;polygon points=\"150,200 250,200 200,100\" fill=\"green\" /&gt;", file=fichero)
+        print("    &lt;polygon points=\"100,100 200,100 150,0\" fill=\"blue\" /&gt;", file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-2-3">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-2-3.png" alt="SVG Ficheros (1 B) 2 3" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-2-3.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 2-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;circle cx=\"75\" cy=\"0\" r=\"75\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"-75\" cy=\"0\" r=\"75\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"-75\" y=\"-75\" width=\"150\" height=\"150\" fill=\"red\" /&gt;", file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Gráficos SVG Ficheros (1) - 3 - Dibujos</h2>
+
+    <div class="filaflex" id="ejercicio-3-1">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-3-1.png" alt="SVG Ficheros (1 B) 3 1" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-3-1.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 3-1. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-160 -160 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;rect x=\"-100\" y=\"-100\" width=\"100\" height=\"100\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"-100\" cy=\"-50\" r=\"50\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"-50\" cy=\"-100\" r=\"50\" fill=\"red\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"0\" y=\"0\" width=\"100\" height=\"100\" fill=\"pink\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"100\" cy=\"50\" r=\"50\" fill=\"pink\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"50\" cy=\"100\" r=\"50\" fill=\"pink\" /&gt;", file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-3-2">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-3-2.png" alt="SVG Ficheros (1 B) 3 2" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-3-2.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 3-2. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;rect x=\"0\" y=\"0\" width=\"300\" height=\"300\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"50\" y=\"150\" width=\"200\" height=\"100\" fill=\"orange\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"150\" r=\"100\" fill=\"orange\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"70\" cy=\"250\" r=\"20\" fill=\"orange\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"110\" cy=\"250\" r=\"20\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"250\" r=\"20\" fill=\"orange\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"190\" cy=\"250\" r=\"20\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"230\" cy=\"250\" r=\"20\" fill=\"orange\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"210\" cy=\"130\" r=\"25\" fill=\"white\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"220\" cy=\"135\" r=\"15\" fill=\"blue\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"130\" r=\"25\" fill=\"white\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"160\" cy=\"135\" r=\"15\" fill=\"blue\" /&gt;", file=fichero)
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex" id="ejercicio-3-3">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="../img/ejercicios/svg-ficheros-1-b/svg-ficheros-1-b-3-3.png" alt="SVG Ficheros (1 B) 3 3" width="324" height="324">
+      </div>
+
+      <div class="codigo copy">
+        <pre>
+<code class="language-python">import webbrowser
+
+
+def main():
+    ruta = "svg-ficheros-1-b-3-3.html"
+
+    with open(ruta, mode="w", encoding="utf-8") as fichero:
+        print("&lt;!DOCTYPE html&gt;", file=fichero)
+        print("&lt;html lang=\"es\"&gt;", file=fichero)
+        print("&lt;head&gt;", file=fichero)
+        print("  &lt;meta charset=\"utf-8\" /&gt;", file=fichero)
+        print("  &lt;title&gt;Ficheros (1 B) 3-3. SVG. Ejercicios. Python&lt;/title&gt;", file=fichero)
+        print("  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;", file=fichero)
+        print("&lt;/head&gt;", file=fichero)
+        print("", file=fichero)
+        print("&lt;body&gt;", file=fichero)
+        print("  &lt;svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"", file=fichero)
+        print("    width=\"320\" height=\"320\" viewBox=\"-10 -10 320 320\"", file=fichero)
+        print("    style=\"border: black 1px solid\"&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"150\" r=\"150\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;rect x=\"0\" y=\"0\" width=\"150\" height=\"300\" fill=\"white\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"150\" r=\"151\" fill=\"none\" stroke=\"black\" stroke-width=\"2\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"225\" r=\"75\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"75\" r=\"75\" fill=\"white\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"75\" r=\"25\" fill=\"black\" /&gt;", file=fichero)
+        print("    &lt;circle cx=\"150\" cy=\"225\" r=\"25\" fill=\"white\" /&gt;", file=fichero)
+
+
+        print("  &lt;/svg&gt;", file=fichero)
+        print("&lt;/body&gt;", file=fichero)
+        print("&lt;/html&gt;", file=fichero)
+
+    webbrowser.open(ruta)
+
+
+if __name__ == "__main__":
+    main()</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 13 de abril de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
