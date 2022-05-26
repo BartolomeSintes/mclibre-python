@@ -11,7 +11,7 @@
 
 div.terminal { background-color: #1e1e1e; color: white; padding-top: 5px; padding-bottom: 5px; }
 
-div.codigo { background-color: white; color: black; padding-top: 5px; padding-bottom: 5px; }
+div.codigo { background-color: #1e1e1e; color: #ffffff; padding-top: 5px; padding-bottom: 5px; }
 
 div.codigo.idle { background-color: white; color: black; }
 
@@ -52,7 +52,7 @@ code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any
 
 /* Estilo para Python imitando a Visual Studio Code con tema Dark+ */
 
-div.codigo                                 { background-color: #1e1e1e; color: #9cdcfe;
+div.codigo code.language-python            { background-color: #1e1e1e; color: #9cdcfe;
                                              padding-top: 5px; padding-bottom: 5px; }
 code.language-python .boolean              { color: #569CD6; } /* boolean                             */
 code.language-python .builtin              { color: #4ec9b0; } /* built-in functions                  */
@@ -71,8 +71,9 @@ code.language-python .triple-quoted-string { color: #ce9178; } /* string (of any
 code.language-python .builtin-module       { color: #4ec9b0; } /* built-in module names               */
 code.language-python .module               { color: #4ec9b0; } /* module names                        */
 code.language-python .builtin2             { color: #dcdcaa; } /* input main print                    */
+code.language-python .keyword2             { color: #569cd6; } /* keyword                             */
 code.language-python .storage              { color: #569cd6; } /* def                                 */
-code.language-python .intrinsic            { color: #d4d4d4; } /* __name__                            */
+code.language-python .intrinsic            { color: #9cdcfe; } /* __name__                            */
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 
@@ -112,12 +113,12 @@ pre code.language-css .hljs-hexcolor      { color: #E88501; }          /* hex co
 
 /* Estilo para JSON imitando a Visual Studio Code con tema Dark+ */
 
-pre code[class*=language-json] .boolean       { color: #569cd6; }          /* valor (booleano)          */
-pre code[class*=language-json] .comment       { color: #6a9955; }          /* comentario                */
-pre code[class*=language-json] .number        { color: #b5cea8; }          /* valor (número)            */
-pre code[class*=language-json] .property      { color: #9cdcfe; }          /* clave                     */
-pre code[class*=language-json] .punctuation   { color: #d4d4d4; }          /* puntuación, llaves, etc   */
-pre code[class*=language-json] .string        { color: #ce9178; }          /* valor (cadena)            */
+pre code.language-json .boolean       { color: #569cd6; }          /* valor (booleano)          */
+pre code.language-json .comment       { color: #6a9955; }          /* comentario                */
+pre code.language-json .number        { color: #b5cea8; }          /* valor (número)            */
+pre code.language-json .property      { color: #9cdcfe; }          /* clave                     */
+pre code.language-json .punctuation   { color: #d4d4d4; }          /* puntuación, llaves, etc   */
+pre code.language-json .string        { color: #ce9178; }          /* valor (cadena)            */
 
 
 /* CSS para plugin Line Numbers de Prism */
@@ -135,12 +136,11 @@ pre.line-numbers > code {
 .line-numbers .line-numbers-rows {
     position: absolute;
     pointer-events: none;
-    top: -2px;            /* para ajustar la posición de los números */
+    top: 1px;            /* para ajustar la posición de los números */
     font-size: 100%;
     left: -2.8em;
     width: 2em; /* works for line-numbers below 1000 lines */
     letter-spacing: -1px;
-    line-height: 144.8%;
     border-right: 1px solid #999;
 
     -webkit-user-select: none;
@@ -173,7 +173,6 @@ pre.line-numbers > code {
     letter-spacing: -1px;
     margin-right: 1em;
     pointer-events: none;
-    line-height: 144.8%;
 
     -webkit-user-select: none;
     -moz-user-select: none;
