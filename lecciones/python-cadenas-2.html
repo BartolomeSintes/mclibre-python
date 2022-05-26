@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Cadenas de texto (2). Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
+</head>
+
+<body class="corta">
+  <h1>Cadenas de texto (2)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Cadenas (2)</h2>
+
+      <ul>
+        <li><a href="#cadenas-f">Cadenas "f"</a></li>
+        <li><a href="#operaciones-cadenas">Operaciones cadenas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección y en la lección <a href="python-cadenas.html">Cadenas de texto (1)</a> se tratan el tipo de datos cadena de texto (string) en Python.</p>
+
+  <p>En esta lección se tratan los conceptos más básicos de las cadenas, pero en los que intervienen variables.</p>
+
+  <section id="cadenas-f">
+    <h3>Cadenas "f"</h3>
+
+    <p>En Python 3.6 se añadió (<a href="https://www.python.org/dev/peps/pep-0498/">PEP 498</a>) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor. Las cadenas "f" se reconocen porque comienzan por una letra f antes de las comillas de apertura.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print(f"Me llamo {nombre} y tengo {edad} años.")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>Me llamo Pepe y tengo 25 años.</pre>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">semanas = 4
+print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>En 4 semanas hay 28 días.</pre>
+      </div>
+    </div>
+
+    <p>Esta notación no añade espacios que en la notación "clásica" aparecían al incluir varios argumentos separados por comas:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">fecha = 2022
+print("¡Feliz", fecha, "!")
+print(f"¡Feliz {fecha}!")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>
+¡Feliz 2022 !
+¡Feliz 2022!
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>Si no se escribe la letra f antes de la cadena, Python no sustituye los valores de las variables ni calcula las expresiones.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print("Me llamo {nombre} y tengo {edad} años.")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>Me llamo {nombre} y tengo {edad} años.</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>Si se quieren escribir los caracteres { o }, se deben escribir duplicados.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print(f"Si escribe {{nombre}} se escribirá el valor de la variable nombre, "
+      f"en este caso {nombre}.")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>Si escribe {nombre} se escribirá el valor de la variable nombre, en este caso Pepe.</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>Las cadenas "f" permiten dar formato a las variables, siguiendo la sintaxis del <a href="https://docs.python.org/3/library/string.html#formatstrings">método str.format()</a></p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por escribir ejemplos de formato.</p>
+  </section>
+
+  <section id="operaciones-cadenas">
+    <h2>Operaciones con cadenas</h2>
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por completar</p>
+
+    <p>Las cadenas se pueden concatenar (unir) mediante la operación suma (+).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">cadena_1 = "aaaa"
+cadena_2 = "bbbb"
+print(cadena_2 + cadena_1)
+cadena_3 = cadena_1 + cadena_2
+print(cadena_3)</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>bbbbaaaa
+aaaabbbb</pre>
+      </div>
+    </div>
+
+    <p>Aunque no es una operación muy habitual, una cadena se puede multiplicar por un número y como en el caso de los números, se trata de una suma repetida:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">cadena_1 = "abcde"
+print(3 * cadena_1)</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>abcdeabcdeabcde</pre>
+      </div>
+    </div>
+
+    <p>Las cadenas se pueden modificar concatenando otras cadenas:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">cadena_1 = "me"
+cadena_1 = cadena_1 + "olvides"
+print(cadena_1)
+cadena_1 = "no" + cadena_1
+print(cadena_1)</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>meolvides
+nomeolvides
+        </pre>
+      </div>
+    </div>
+
+    <ul>
+      <li>concatenar cadenas</li>
+      <li>concatenar cadenas y variables</li>
+      <li>trocear cadenas ([])</li>
+    </ul>
+
+    <hr>
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por completar</p>
+
+    <ul>
+      <li>cadenas en bruto (raw)</li>
+    </ul>
+  </section>
+
+  <section id="saber-mas">
+    <h2>Para saber más</h2>
+
+    <ul>
+      <li><a href="https://realpython.com/python-string-formatting/">The 4 Major Ways to Do String Formatting in Python</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 14 de marzo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
