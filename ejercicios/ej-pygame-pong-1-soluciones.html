@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Soluciones (1). Pong (1). pygame. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism-python.css">
+  <script src="../varios/prism-copy.js"></script>
+</head>
+
+<body>
+  <h1>Juegos (pygame) - Soluciones Pong (1)</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Pygame Pong (1) (1)</h2>
+
+      <h3><a href="ej-pygame-pong-1.html">Enunciados</a></h3>
+      <ol>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-1">Paso 1</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-2">Paso 2</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-3">Paso 3</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-4">Paso 4</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-5">Paso 5</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-6">Paso 6</a></li>
+        <li><a href="ej-pygame-pong-1.html#ejercicio-7">Paso 7</a></li>
+      </ol>
+
+      <h3>Soluciones</h3>
+      <ol>
+        <li><a href="#ejercicio-1">Paso 1</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <p>Se ofrecen a continuación unas posibles soluciones de los <a href="ej-while-1.html">ejercicios (1) de bucle <span class="idle-rese">while</span></a>.</p>
+
+  <section id="ejercicio-1">
+    <h2>Pong (1) - Paso 1</h2>
+
+    <div class="codigo copy">
+      <pre class="line-numbers">
+<code class="language-python">import pygame
+from pygame.locals import QUIT
+
+# Constantes para la inicialización de la superficie de dibujo
+VENTANA_HORI = 640  # Ancho de la ventana
+VENTANA_VERT = 480  # Alto de la ventana
+FPS = 60  # Fotogramas por segundo
+BLANCO = (204, 204, 204)  # Color del fondo de la ventana (RGB)
+
+
+def main():
+    # Inicialización de Pygame
+    pygame.init()
+
+    # Inicialización de la superficie de dibujo (display surface)
+    ventana = pygame.display.set_mode((VENTANA_HORI, VENTANA_VERT))
+    pygame.display.set_caption("Ejercicio 1-1")
+
+    # Bucle principal
+    jugando = True
+    while jugando:
+        ventana.fill(BLANCO)
+
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                jugando = False
+
+        pygame.display.flip()
+        pygame.time.Clock().tick(FPS)
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
+</code>
+</pre>
+    </div>
+  </section>
+
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 4 de mayo de 2022</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

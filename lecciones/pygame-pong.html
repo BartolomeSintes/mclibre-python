@@ -51,7 +51,7 @@
   <section id="historia">
     <h2>Historia de Pong</h2>
 
-    <p>Aunque desde la aparición de los ordenadores programables en los años 40 del siglo XX se han escrito programas que podían considerarse juegos, se suele considerar que el primer videojuego fue <a href="https://en.wikipedia.org/wiki/Tennis_for_Two">Computer Tennis</a>. Este videojuego fue creado en 1958 para la exposición anual del Laboratorio Nacional de Brookhaven (EEUU) y simulaba un pista de tenis vista lateralmente. El juego se visualizaba en la pantalla de un osciloscopio y se convirtió en la mayor atracción de esa exposición. Aunque al año siguiente la exposición contó con una versión mejorada, tras ella el equipo se desmontó para reutilizar los componentes en el Laboratorio.</p>
+    <p>Aunque desde la aparición de los ordenadores programables en los años 40 del siglo XX se han escrito programas que podían considerarse juegos, se suele considerar que el primer videojuego fue <a href="https://en.wikipedia.org/wiki/Tennis_for_Two">Computer Tennis</a>. Este videojuego fue creado en 1958 para la exposición anual del Laboratorio Nacional de Brookhaven (EEUU) y simulaba un pista de tenis vista lateralmente. El juego se visualizaba en la pantalla de un osciloscopio y se convirtió en la mayor atracción de esa exposición. Aunque al año siguiente la exposición contó con una versión mejorada del juego, el equipo se acabó desmontando para reutilizar los componentes en el Laboratorio.</p>
 
     <p>Bastante años después, en septiembre de 1972, se comercializó la primera videoconsola de la historia dirigida a los hogares, <a href="https://en.wikipedia.org/wiki/Magnavox_Odyssey">Magnavox Odyssey</a>. Esta videoconsola se conectaba a una pantalla de televisor y uno de los juegos incluidos era Table Tennis. En este juego cada jugador controlaba una paleta que golpeaba una pelota. El mismo año, pero en noviembre, la compañía Atari comercializó <a href="https://es.wikipedia.org/wiki/Pong">Pong</a>, una de las primeras máquinas de <a href="https://es.wikipedia.org/wiki/Arcade">arcade</a>, destinadas a lugares públicos.</p>
 
@@ -65,7 +65,7 @@
   <section id="pygame">
     <h2>Pygame</h2>
 
-    <p><a href="https://www.pygame.org/news">Pygame</a> es un conjunto de módulos de Python que facilitan la creación de videojuegos. Pygame utiliza internamente la biblioteca <a href="http://www.libsdl.org/">SDL</a> (Simple DirectMedia Layer), escrita principalmente en C.</p>
+    <p><img src="../img/pygame/pygame-logo.png" alt="Logotipo pygame" width="202" height="80" class="izquierda"><a href="https://www.pygame.org/news">Pygame</a> es un conjunto de módulos de Python que facilitan la creación de videojuegos. Pygame utiliza internamente la biblioteca <a href="http://www.libsdl.org/">SDL</a> (Simple DirectMedia Layer), escrita principalmente en C.</p>
 
     <p>Pygame se distribuye bajo la licencia libre LGPL, lo que permite utilizarla tanto en proyecto libres como comerciales.</p>
 
@@ -187,7 +187,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
           <p>Python no tiene un tipo de dato "constante" (es decir, un valor que no se pueda modificar). La costumbre, heredada de otros lenguajes, es simplemente escribir el nombre de una variable en mayúsculas para indicar a quien lea nuestro código fuente que esa variable no se va a modificar en ningún momento del programa. Definimos así varias constantes:</p>
           <ul>
             <li>El tamaño de la ventana de juego (en este caso, 800 x 600 px, la llamada <a href="https://es.wikipedia.org/wiki/Super_Video_Graphics_Array">resolución SVGA</a> original).</li>
-            <li>Normalmente FPS hace referencia al número de veces por segundo que se actualiza la imagen en la ventana. En principio, cuanto más alto es ese valor, mejor se verán los objetos en movimiento, aunque cada pantalla admite un valor máximo y dependiendo de la complejidad de la creación de la imagen puede que no se puedan alcanzar valores muy altos. En pygame, la ventana se está actualizando constantemente y en cada actualización los objetos se desplazan, por lo que si la ventana se actualiza demasiadas veces, los objetos se desplazarán demasiado rápido. Para evitarlo, en pygame FPS significa el número máximo de veces que queremos que se actualice la ventana, aunque si debido a la complejidad de la imagen el número de veces que se actualiza la imagen es inferior, pygame no podrá alcanzarlo.</li>
+            <li>Normalmente FPS hace referencia al número de veces por segundo que se actualiza la imagen en la ventana. En principio, cuanto más alto es ese valor, mejor se verán los objetos en movimiento, aunque cada pantalla admite un valor máximo y dependiendo de la complejidad de la creación de la imagen puede que no se puedan alcanzar valores muy altos. En pygame, la ventana se está actualizando constantemente y en cada actualización los objetos se desplazan, por lo que si la ventana se actualiza demasiadas veces, los objetos se desplazarán demasiado rápido. Para evitarlo, en pygame FPS significa el número máximo de veces que queremos que se actualice la ventana, aunque si debido a la complejidad de la imagen el número de veces que se actualiza la imagen es inferior, pygame no podrá alcanzar ese número.</li>
             <li>En pygame los colores se indican mediante códigos RGB, así que definimos una constante con el nombre del color para facilitar su referencia.</li>
           </ul>
         </li>
@@ -235,7 +235,7 @@ BLANCO = (255, 255, 255)  # Color del fondo de la ventana (RGB)</code>
             <li>líneas 26 a 28: Las pulsaciones de tecla o del ratón se reciben en forma de <i>eventos</i>.
               <ul>
                 <li>línea 26: El bucle <span class="idle-rese">for</span> recorre en cada iteración los eventos recibidos</li>
-                <li>línea 27: Si el evento es de tipo QUIT (es decir, que se ha cerrado la ventana del juego) ...</li>
+                <li>línea 27: Si el evento es de tipo QUIT (es decir, que se ha cerrado la ventana del juego, con el ratón o con el atajo de teclado <span class="soft-atajo-teclado">Alt+F4</span>) ...</li>
                 <li>línea 28: La variable <i>jugando</i> pasa a <span class="idle-rese">False</span>, por lo que el bucle <span class="idle-rese">while</span> no se volverá a ejecutar.</li>
               </ul>
             </li>
@@ -446,7 +446,7 @@ if __name__ == "__main__":
 </pre>
                   </div>
                 </li>
-                <li>Dos atributos más serán la dirección horizontal y vertical de movimiento de la imagen, <i>dir_x</i> y <i>dir_y</i>. Numéricamente, serán los píxeles que se desplazará la pelota cada vez que se redibuje la pantalla.Inicialmente, la pelota se desplazará 5px aleatoriamente hacia arriba (-5) o hacia abajo (5), hacia la izquierda (-5) o hacia la derecha (5):
+                <li>Dos atributos más serán la dirección horizontal y vertical de movimiento de la imagen, <i>dir_x</i> y <i>dir_y</i>. Numéricamente, serán los píxeles que se desplazará la pelota cada vez que se redibuje la pantalla. Inicialmente, la pelota se desplazará 5px aleatoriamente hacia arriba (-5) o hacia abajo (5), hacia la izquierda (-5) o hacia la derecha (5):
                   <div class="codigo">
                     <pre class="line-numbers" data-start="29">
 <code class="language-python">        self.dir_x = random.choice([-5, 5])
@@ -475,7 +475,7 @@ if __name__ == "__main__":
                   <rect x="100" y="140" width="40" height="40" fill="red" />
                   <circle cx="100" cy="140" r="3" fill="black" />
                   <text x="120" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">(1)</text>
-                  <line x1="150" y1="160" x2="240" y2="120" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+                  <line x1="150" y1="152" x2="240" y2="128" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
 
                   <text x="85" y="120" text-anchor="middle" transform="rotate(-90 85 120)" font-family="sans-serif" font-size="20" fill="black">dir_y</text>
                   <line x1="100" y1="140" x2="100" y2="100" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
@@ -485,7 +485,7 @@ if __name__ == "__main__":
                   <rect x="250" y="100" width="40" height="40" fill="red" />
                   <circle cx="250" cy="100" r="3" fill="black" />
                   <text x="270" y="160" text-anchor="middle" font-family="sans-serif" font-size="20" fill="black">(2)</text>
-                  <line x1="300" y1="120" x2="390" y2="90" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
+                  <line x1="300" y1="112" x2="390" y2="88" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
 
                   <text x="235" y="80" text-anchor="middle" transform="rotate(-90 235 80)" font-family="sans-serif" font-size="20" fill="black">dir_y</text>
                   <line x1="250" y1="100" x2="250" y2="60" stroke="red" stroke-width="1" style="marker-end: url(#flechaRojaFin1)" />
@@ -1033,6 +1033,7 @@ if __name__ == "__main__":
     raqueta_2.x = VENTANA_HORI - 60 - raqueta_2.ancho</code>
 </pre>
           </div>
+          <p><strong>Nota</strong>: La posición <i>x</i> podría ser un argumento del método <i>__init__()</i> para no tener que modificar el atributo nada más crear el objeto. En el caso de la primera raqueta, efectivamente podríamos hacerlo así, pero el problema es que la posición de la segunda raqueta depende del ancho de la imagen de la raqueta, que el programa no conoce antes de crear el objeto. Por eso creamos primero el objeto, para poder utilizar su tamaño en la fórmula de la posición. Es verdad que en este caso, como las dos raquetas utilizan la misma imagen podríamos utilizar el ancho de la primera raqueta, pero el problema aparecería cuando quisiéramos utilizar imágenes de raquetas distintas, como se pide en uno de los ejercicios propuestos.</p>
         </li>
         <li>Dibujar las raquetas
           <p>Para ello recurrimos al método <i>bit()</i> del objeto ventana, indicando la imagen que queremos dibujar y su posición en la ventana:</p>
@@ -1219,7 +1220,7 @@ if __name__ == "__main__":
           <ul>
             <li>línea 99-100: Si se ha pulsado la tecla "w", daremos un valor negativo (por ejemplo, -5) al atributo <i>dir_y</i>, para que la raqueta se desplace hacia arriba.</li>
             <li>línea 101-102: Si se ha pulsado la tecla "s", daremos un valor positivo (por ejemplo, 5) al atributo <i>dir_y</i>, para que la raqueta se desplace hacia abajo.</li>
-            <li>líneas 106-109: Si se libewran las teclas "s" y "w", daremos un valor nulo (0) al atributo <i>dir_y</i>, para detener la raqueta.</li>
+            <li>líneas 106-109: Si se liberan las teclas "s" y "w", daremos un valor nulo (0) al atributo <i>dir_y</i>, para detener la raqueta.</li>
           </ul>
 
           <div class="codigo">
@@ -1958,7 +1959,7 @@ if __name__ == "__main__":
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de mayo de 2020</p>
+    <p class="ultmod">Última modificación de esta página:  de mayo de 2022</p>
 
     <p><strong>Nota:</strong> Esta lección se basa en las actividades preparadas e impartidas por Daniel Benzal García, alumno del Máster de Secundaria, para sus prácticas del Máster realizadas en el curso 208/19 y al que agradezco su excelente disposición, trabajo y colaboración.</p>
 
