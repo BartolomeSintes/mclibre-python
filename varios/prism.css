@@ -4,7 +4,7 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 7 de marzo de 2022                       */
+/* 24 de septiembre de 2022                 */
 /*                                          */
 
 /* Colores para cuadros de código fuente y de terminal */
@@ -17,23 +17,67 @@ div.codigo.idle { background-color: white; color: black; }
 
 code { line-height: 120%; /* font-weight: bold; */ }
 
-.line-numbers-rows > span:before {
-    color: black;
-}
+.line-numbers-rows > span:before { color: black; }
 
-.command-line-prompt {
-    border-right: 1px solid #999;
-}
+.command-line-prompt { border-right: 1px solid #999; }
 
-.command-line-prompt > span:before {
-    color: white;
-}
+.command-line-prompt > span:before { color: white; }
+
+
+/* Estilo para HTML imitando a Visual Studio Code con tema Dark+ */
+
+div.codigo code.language-html      { background-color: #1e1e1e; color: #ffffff;
+                                     padding-top: 5px; padding-bottom: 5px; }
+code.language-html .attr-name      { color: #9cdcfe; }          /* attribute name            */
+code.language-html .attr-value     { color: #ce9178; }          /* attribute value           */
+code.language-html .comment        { color: #6a9955; }          /* comment                   */
+code.language-html .doctype-tag    { color: #569cd6; }          /* doctype tag               */
+code.language-html .entity         { color: #569cd6; }          /* entity                    */
+code.language-html .name           { color: #9cdcfe; }          /* name                      */
+code.language-html .punctuation    { color: #808080; }          /* punctuation               */
+code.language-html .attr-equals    { color: #d4d4d4; }          /* = en atributos            */
+code.language-html .tag            { color: #569cd6; }          /* Tags, attributes, configs */
+/* code.language-html .cdata          { }                            /* cdata                     */
+/* code.language-html .namespace      { }                            /* namespace                 */
+/* code.language-html .prolog         { }                            /* prolog                    */
+
+/* Estilo para código fuente HTML imitando a Firefox */
+
+div.resultado-codigo code.language-html .attr-name      { color: #000000; font-weight: bold; }  /* attribute name            */
+div.resultado-codigo code.language-html .attr-value     { color: #0000ff; }                     /* attribute value           */
+div.resultado-codigo code.language-html .comment        { color: #008000; }                     /* comment                   */
+div.resultado-codigo code.language-html .doctype        { color: #4682b4; }                     /* doctype                   */
+div.resultado-codigo code.language-html .entity         { color: #ff4500; }                     /* entity                    */
+div.resultado-codigo code.language-html .operator       { color: #000000; }                     /* operators                 */
+div.resultado-codigo code.language-html .punctuation    { color: #000000; }                     /* punctuation               */
+div.resultado-codigo code.language-html .tag            { color: #800080; font-weight: bold; }  /* Tags, attributes, configs */
+
+/* Estilo para CSS imitando a Visual Studio Code con tema Dark+ */
+
+code.language-css                 { color: #ce9178; }          /* color por defecto                  */
+code.language-css .atrule         { color: #c586c0; }          /* at-rule lo que no es @rule         */
+code.language-css .attribute      { color: #9cdcfe; }          /* atributo                           */
+code.language-css .attr-value     { color: #ce9178; }          /* valor de atributo                  */
+code.language-css .color          { color: #ce9178; }          /* color                              */
+code.language-css .comment        { color: #6a9955; }          /* comment                            */
+code.language-css .function       { color: #dcdcaa; }          /* CSS function within a value        */
+code.language-css .important      { color: #569cd6; }          /* "!important" symbol                */
+code.language-css .number         { color: #b5cea8; }          /* number                             */
+code.language-css .operator       { color: #d4d4d4; }          /* operator                           */
+code.language-css .property       { color: #9cdcfe; }          /* property name inside a rule        */
+code.language-css .pseudo-element { color: #d7ba7d; }          /* pseudo-element, pseudo-class       */
+code.language-css .punctuation    { color: #d4d4d4; }          /* punctuation                        */
+code.language-css .rule           { color: #ce9178; }          /* @-rule till first "{" or ";"       */
+code.language-css .selector       { color: #d7ba7d; }          /* tag in selectors                   */
+code.language-css .string         { color: #ce9178; }          /* NO SE DETECTA                      */
+code.language-css .string.url     { text-decoration: underline; text-decoration-skip-ink: none; } /* url */
+code.language-css .unit           { color: #b5cea8; }          /* unit                               */
+code.language-css .variable       { color: #9cdcfe; }          /* variable                           */
+/* code.language-css .constant       { color: #ce9178; }          /* constant (añadida por mí)          */
+
+
 /* Estilo para Python imitando a IDLE */
 
-code.language-python { }
-/* si se cambia aquí line-height, hay que cambiar line-height también en los números de línea */
-
-/* Estilo para Python imitando a IDLE */
 div.codigo.idle                            { background-color: white; color: black;
                                              padding-top: 5px; padding-bottom: 5px; }
 code.language-python .boolean              { color: black;   } /* boolean                             */
@@ -75,42 +119,7 @@ code.language-python .keyword2             { color: #569cd6; } /* keyword       
 code.language-python .storage              { color: #569cd6; } /* def                                 */
 code.language-python .intrinsic            { color: #9cdcfe; } /* __name__                            */
 
-/* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
-
-code.language-html { }
-pre code.language-html .attr-name      { color: #FF0000; }          /* attribute name            */
-pre code.language-html .attr-value     { color: #0000FF; }          /* attribute value           */
-pre code.language-html .cdata          { }                            /* cdata                     */
-pre code.language-html .comment        { color: #008000; }          /* comment                   */
-pre code.language-html .doctype        { color: #000000; }          /* doctype                   */
-pre code.language-html .entity         { }                            /* entity                    */
-pre code.language-html .namespace      { }                            /* namespace                 */
-pre code.language-html .prolog         { }                            /* prolog                    */
-pre code.language-html .punctuation    { color: #000000; }          /* punctuation               */
-pre code.language-html .tag            { color: #911F00; }          /* Tags, attributes, configs */
-
-/* Estilo para CSS imitando a Brackets */
-/* Pasado a medias a Prism */
-
-code.language-css { }
-
-pre code.language-css .atrule        { color: #8757AD; }          /* @-rule till first "{" or ";"       */
-pre code.language-css .comment       { color: #535353; }          /* comment                            */
-pre code.language-css .string        { color: #E88501; }          /* string within a value              */
-pre code.language-css .function      { color: #E88501; }          /* CSS function within a value        */
-pre code.language-css .important     { color: rgb( 63,127,127); } /* "!important" symbol                */
-pre code.language-css .property      { color: #8757AD; }          /* property name inside a rule        */
-pre code.language-css .selector      { color: #446FBD; }          /* tag in selectors                   */
-
-pre code.language-css .hljs-id            { color: #446FBD; }          /* #some_name in selectors            */
-pre code.language-css .hljs-class         { color: #446FBD; }          /* .some_name in selectors            */
-pre code.language-css .hljs-attr_selector { color: rgb( 63,127,127); } /* attribute selector ([])            */
-pre code.language-css .hljs-pseudo        { color: #535353; }          /* pseudo classes/elements            */
-pre code.language-css .hljs-rules         { color: #000000; }          /* everything from "{" till "}"       */
-pre code.language-css .hljs-value         { color: #E88501; }          /* property value inside a rule       */
-pre code.language-css .hljs-number        { color: #6D8600; }          /* number within a value              */
-pre code.language-css .hljs-hexcolor      { color: #E88501; }          /* hex color (#FFFFFF) within a value */
-
+/* 
 /* Estilo para JSON imitando a Visual Studio Code con tema Dark+ */
 
 pre code.language-json .boolean       { color: #569cd6; }          /* valor (booleano)          */
