@@ -237,7 +237,7 @@ div.filaflex.nogrow h2, div.filaflex.nogrow h3 {
 }
 
 /* 2020-04-24: Modifico el selector añadiendo > para que soluciones SVG con el botón Copiar se vean bien
-   pro no sé si estropeará algo
+   pero no sé si estropeará algo
 */
 
 div.filaflex > div:not([class="icono"]) {
