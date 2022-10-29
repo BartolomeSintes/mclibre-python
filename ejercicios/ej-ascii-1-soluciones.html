@@ -43,7 +43,8 @@
           <a href="ej-ascii-1.html#ejercicio-3-3">3</a> -
           <a href="ej-ascii-1.html#ejercicio-3-4">4</a> -
           <a href="ej-ascii-1.html#ejercicio-3-5">5</a> -
-          <a href="ej-ascii-1.html#ejercicio-3-6">6</a></li>
+          <a href="ej-ascii-1.html#ejercicio-3-6">6</a>
+        </li>
       </ul>
 
       <h3>Soluciones</h3>
@@ -67,7 +68,8 @@
           <a href="#ejercicio-3-3">3</a> -
           <a href="#ejercicio-3-4">4</a> -
           <a href="#ejercicio-3-5">5</a> -
-          <a href="#ejercicio-3-6">6</a></li>
+          <a href="#ejercicio-3-6">6</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -183,45 +185,43 @@ Anchura del rectángulo: <span class="entrada-usuario">5</span>
         <li>Pero por otro lado, la figura contiene varias veces la misma línea. Eso nos dice que tendremos que escribir un bucle para generar varias líneas, es decir un bucle que contiene otro bucle (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
-                    <div class="borde2">
-                      <pre><code class="language-python">for i in range(altura):</code></pre>
+                  <div class="borde2">
+                    <pre><code class="language-python">for i in range(altura):</code></pre>
 
-                      <div class="borde1">
-                        <pre>
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">    for j in range(anchura):
         print("* ", end="")
     print()</code>
 </pre>
-                      </div>
                     </div>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">5</span>
 Altura del rectángulo: <span class="entrada-usuario">3</span>
 </pre>
 
-                    <div class="borde2">
-                      <pre>
+                  <div class="borde2">
+                    <pre>
 <span class="borde1">* * * * *</span>
 <span class="borde1">* * * * *</span>
 <span class="borde1">* * * * *</span>
 </pre>
-                    </div>
                   </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>Una posible solución es por tanto:
@@ -269,112 +269,106 @@ Altura del rectángulo: <span class="entrada-usuario">4</span>
         <li>La primera y última línea se generan mediante un bucle simple:
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
 
-                    <div class="borde1">
-                      <pre>
+                  <div class="borde1">
+                    <pre>
 <code class="language-python">for j in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                    </div>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">5</span>
 <span class="borde1">* * * * *</span>
 </pre>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>Las líneas centrales son similares al ejercicio anterior y requieren un bucle anidado. Por un lado, cada línea de la figura está formada por dos estrellas y varios espacios en blanco. Eso nos dice que tendremos que escribir un bucle como este (se ha rodeado con un borde el código que genera el dibujo rodeado por el mismo borde):
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 
 print("* ", end="")</code>
 </pre>
 
-                    <div class="borde1">
-                      <pre>
+                  <div class="borde1">
+                    <pre>
 <code class="language-python">for j in range(anchura - 2):
     print("  ", end="")</code>
 </pre>
-                    </div>
-                    <pre><code class="language-python">print("*")</code></pre>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                  <pre><code class="language-python">print("*")</code></pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">5</span>
 *<span class="borde1">        </span>*
 </pre>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>Esta línea se debe repetir varias veces, necesitando un bucle anidado como este:
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
 
-                    <div class="borde2">
-                      <pre>
+                  <div class="borde2">
+                    <pre>
 <code class="language-python">for i in range(altura - 2):
     print("* ", end="")</code>
 </pre>
 
-                      <div class="borde1">
-                        <pre>
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">    for j in range(anchura - 2):
         print("  ", end="")</code>
 </pre>
-                      </div>
-                      <pre><code class="language-python">    print("*")</code></pre>
                     </div>
+                    <pre><code class="language-python">    print("*")</code></pre>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">5</span>
 Altura del rectángulo: <span class="entrada-usuario">4</span>
 </pre>
 
-                    <div class="borde2">
-                      <pre>
+                  <div class="borde2">
+                    <pre>
 *<span class="borde1">        </span>*
 *<span class="borde1">        </span>*
 </pre>
-                    </div>
                   </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado que genera las líneas centrales y por último otro bucle simple que genera una línea de estrellas):
@@ -433,59 +427,111 @@ for i in range(anchura):
         <li>La primera línea se puede generar mediante un bucle simple (como en ejercicios anteriores):
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre><code class="language-python">anchura = int(input("Anchura del rectángulo: "))</code></pre>
 
-                    <div class="borde1">
-                      <pre>
+                  <div class="borde1">
+                    <pre>
 <code class="language-python">for i in range(anchura):
     print("* ", end="")
 print()</code>
 </pre>
-                    </div>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">5</span>
 <span class="borde1">* * * * *</span>
 </pre>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>La figura en forma de U se puede generar mediante un bucle simple seguido de un bucle anidado (como en el ejercicio anterior):
 
           <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre>
 <code class="language-python">anchura = int(input("Anchura del rectángulo: "))
 altura = int(input("Altura del rectángulo: "))</code>
 </pre>
 
-                    <div class="borde2">
-                      <pre>
+                  <div class="borde2">
+                    <pre>
 <code class="language-python">for j in range(altura - 2):
     print("* ", end="")</code>
 </pre>
 
-                      <div class="borde1">
-                        <pre>
+                    <div class="borde1">
+                      <pre>
 <code class="language-python">    for k in range(anchura - 2):
         print("  ", end="")</code>
 </pre>
-                      </div>
-                      <pre><code class="language-python">    print("*")</code></pre>
                     </div>
+                    <pre><code class="language-python">    print("*")</code></pre>
+                  </div>
+                  <div class="borde1b">
+                    <pre>
+<code class="language-python">for k in range(anchura):
+    print("* ", end="")</code>
+</pre>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
+Anchura del rectángulo: <span class="entrada-usuario">6</span>
+Altura del rectángulo: <span class="entrada-usuario">4</span>
+</pre>
+                  <div class="borde2">
+                    <pre>
+*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*
+</pre>
+                  </div>
+                  <pre><span class="borde1b">* * * * * *</span></pre>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </li>
+        <li>Para que se repita la figura en forma de U se puede incluir el bucle anidado del ejemplo anterior en otro bucle:
+
+          <table>
+            <tr>
+              <td>
+                <div class="codigo">
+                  <pre>
+<code class="language-python">anchura = int(input("Anchura del rectángulo: "))
+altura = int(input("Altura del rectángulo: "))
+numero = int(input("Número de rectángulos en vertical: "))</code></pre>
+
+                  <div class="borde3">
+                    <pre><code class="language-python">for i in range(numero):</code></pre>
+
+                    <div class="borde2">
+                      <pre>
+<code class="language-python">    for j in range(altura - 2):
+        print("* ", end="")</code>
+</pre>
+
+                      <div class="borde1">
+                        <pre>
+<code class="language-python">        for k in range(anchura - 2):
+            print("  ", end="")</code>
+</pre>
+                      </div>
+                      <pre><code class="language-python">        print("*")</code></pre>
+                    </div>
+
                     <div class="borde1b">
                       <pre>
 <code class="language-python">for k in range(anchura):
@@ -493,13 +539,34 @@ altura = int(input("Altura del rectángulo: "))</code>
 </pre>
                     </div>
                   </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
+                </div>
+              </td>
+              <td>
+                <div class="ejecucion-terminal">
+                  <pre>
 Anchura del rectángulo: <span class="entrada-usuario">6</span>
 Altura del rectángulo: <span class="entrada-usuario">4</span>
+Número de rectángulos en vertical: <span class="entrada-usuario">3</span>
 </pre>
+                  <div class="borde3">
+                    <div class="borde2">
+                      <pre>
+*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*
+</pre>
+                    </div>
+
+                    <pre><span class="borde1b">* * * * * *</span></pre>
+
+                    <div class="borde2">
+                      <pre>
+*<span class="borde1">        </span>*
+*<span class="borde1">        </span>*
+</pre>
+                    </div>
+
+                    <pre><span class="borde1b">* * * * * *</span></pre>
+
                     <div class="borde2">
                       <pre>
 *<span class="borde1">        </span>*
@@ -508,88 +575,9 @@ Altura del rectángulo: <span class="entrada-usuario">4</span>
                     </div>
                     <pre><span class="borde1b">* * * * * *</span></pre>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </li>
-        <li>Para que se repita la figura en forma de U se puede incluir el bucle anidado del ejemplo anterior en otro bucle:
-
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="codigo">
-                    <pre>
-<code class="language-python">anchura = int(input("Anchura del rectángulo: "))
-altura = int(input("Altura del rectángulo: "))
-numero = int(input("Número de rectángulos en vertical: "))</code></pre>
-
-                    <div class="borde3">
-                      <pre><code class="language-python">for i in range(numero):</code></pre>
-
-                      <div class="borde2">
-                        <pre>
-<code class="language-python">    for j in range(altura - 2):
-        print("* ", end="")</code>
-</pre>
-
-                        <div class="borde1">
-                          <pre>
-<code class="language-python">        for k in range(anchura - 2):
-            print("  ", end="")</code>
-</pre>
-                        </div>
-                        <pre><code class="language-python">        print("*")</code></pre>
-                      </div>
-
-                      <div class="borde1b">
-                        <pre>
-<code class="language-python">for k in range(anchura):
-    print("* ", end="")</code>
-</pre>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div class="ejecucion-terminal">
-                    <pre>
-Anchura del rectángulo: <span class="entrada-usuario">6</span>
-Altura del rectángulo: <span class="entrada-usuario">4</span>
-Número de rectángulos en vertical: <span class="entrada-usuario">3</span>
-</pre>
-                    <div class="borde3">
-                      <div class="borde2">
-                        <pre>
-*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*
-</pre>
-                      </div>
-
-                      <pre><span class="borde1b">* * * * * *</span></pre>
-
-                      <div class="borde2">
-                        <pre>
-*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*
-</pre>
-                      </div>
-
-                      <pre><span class="borde1b">* * * * * *</span></pre>
-
-                      <div class="borde2">
-                        <pre>
-*<span class="borde1">        </span>*
-*<span class="borde1">        </span>*
-</pre>
-                      </div>
-                      <pre><span class="borde1b">* * * * * *</span></pre>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+                </div>
+              </td>
+            </tr>
           </table>
         </li>
         <li>Finalmente, para generar la figura completa, hay que escribir un bucle detrás del otro (primero el bucle simple que genera una línea de estrellas, después el bucle anidado triple que dibuja las figuras en forma de U:
