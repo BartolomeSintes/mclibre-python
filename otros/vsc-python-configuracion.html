@@ -25,8 +25,8 @@
       <ul>
         <li><a href="#temas">Tema de color</a></li>
         <li><a href="#area-trabajo">Área de trabajo</a></li>
-        <li><a href="#preferencias">Preferencias</a></li>
         <li><a href="#extensiones">Extensiones</a></li>
+        <li><a href="#preferencias">Preferencias</a></li>
         <li><a href="#tareas">Tareas</a></li>
         <li><a href="#atajos-teclado">Atajos de teclado</a></li>
       </ul>
@@ -70,13 +70,13 @@
 
       <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="210">
+          <img src="../img/vscode/vsc-python-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="225">
         </p>
       </li>
 
       <li>Elija la carpeta Documentos &gt; LMSGI &gt; Python:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="576">
+          <img src="../img/vscode/vsc-python-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="390">
         </p>
       </li>
 
@@ -88,201 +88,10 @@
 
       <li>Se abrirá el Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="210">
+          <img src="../img/vscode/vsc-python-area-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="220">
         </p>
       </li>
     </ol>
-  </section>
-
-  <section id="preferencias">
-    <h2>Preferencias de configuración recomendadas para el curso de Python</h2>
-
-    <p>Estas son las preferencias de configuración que se aconseja establecer para seguir este curso.</p>
-
-    <p>Las preferencias propuestas relacionadas con extensiones requieren la instalación de las extensiones correspondientes.</p>
-
-    <section id="todas-preferencias">
-      <h3>Preferencias globales (Usuario)</h3>
-      <ul>
-        <li>
-          Si ya tiene definidas otras preferencias en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, añada las siguientes preferencias de configuración:
-          <div class="codigo copy">
-            <pre>
-<code class="language-json">    //
-    //
-    // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    //
-    // Files: Insert Final Newline
-    // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
-    "files.insertFinalNewline": true,
-    //
-    // Python &gt; Formatting: Provider
-    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
-    "python.formatting.provider": "black",
-    //
-    // Extensión multi-command
-    "multiCommand.commands": [
-        {
-            "command": "multiCommand.clearTerminal",
-            "sequence": [
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "clear\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-            ],
-        },
-        {
-            "command": "multiCommand.pythonMptcInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
-                    }
-                },
-            ],
-        },
-    ],
-    //
-    // Extensión pylint
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame",
-        "--disable=C0103, C0114, C0115, C0116, C0301, C0302, C0330",
-        // Pylint features. Pylint global options and switches
-        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
-        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-        // C0301: line-too-long
-        // C0302: too-many-lines
-        // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
-    ],
-    //
-    //</code>
-</pre>
-          </div>
-        </li>
-        <li>
-          Si no tiene definida ninguna preferencia en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, sustituya el contenido del archivo de preferencias de configuración por este:
-          <div class="codigo copy">
-            <pre>
-<code class="language-json">{
-    // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    //
-    // Files: Insert Final Newline
-    // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
-    "files.insertFinalNewline": true,
-    //
-    // Python &gt; Formatting: Provider
-    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
-    "python.formatting.provider": "black",
-    //
-    // Extensión multi-command
-    "multiCommand.commands": [
-        {
-            "command": "multiCommand.clearTerminal",
-            "sequence": [
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "clear\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-            ],
-        },
-        {
-            "command": "multiCommand.pythonMptcInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
-                    }
-                },
-            ],
-        },
-    ],
-    //
-    // Extensión pylint
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame",
-        "--disable=C0103, C0114, C0115, C0116, C0301, C0302, C0330",
-        // Pylint features. Pylint global options and switches
-        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
-        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-        // C0301: line-too-long
-        // C0302: too-many-lines
-        // C0330: bad-continuation - Wrong %s indentation%s%s. TODO
-    ],
-    //
-}</code>
-</pre>
-          </div>
-        </li>
-      </ul>
-    </section>
   </section>
 
   <section id="extensiones">
@@ -397,12 +206,216 @@
 
       <hr class="corta">
 
-      <p>Al instalar la extensión Python en Visual Studio Code, se debe instalar el módulo pylint y es conveniente instalar un módulo de autoformato.</p>
+      <p>Al instalar la extensión Python en Visual Studio Code, se debe instalar el módulo pylint y también es conveniente instalar un módulo de autoformato, como se explica en el apartado siguiente de Preferencias de configuración.</p>
+    </section>
+  </section>
+
+  <section id="preferencias">
+    <h2>Preferencias de configuración recomendadas para el curso de Python</h2>
+
+    <p>Estas son las preferencias de configuración que se aconseja establecer para seguir este curso.</p>
+
+    <p>Las preferencias propuestas relacionadas con extensiones requieren la instalación de las extensiones correspondientes.</p>
+
+    <section id="todas-preferencias">
+      <h3>Preferencias globales (Usuario)</h3>
+      <ul>
+        <li>Si ya tiene definidas otras preferencias en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, añada las siguientes preferencias de configuración en su archivo de configuración:
+          <details>
+            <summary>Haga clic aquí para mostrar las preferencias</summary>
+            <div class="codigo copy">
+              <pre>
+<code class="language-json">    //
+    //
+    // Configuraciones recomendadas para el curso Introducción a la programación con Python
+    //
+    // Files: Insert Final Newline
+    // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
+    "files.insertFinalNewline": true,
+    //
+    // Python &gt; Formatting: Provider
+    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
+    "python.formatting.provider": "black",
+    //
+    // Extensión multi-command
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.clearTerminal",
+            "sequence": [
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "clear\u000D"
+                    }
+                },
+                "workbench.action.focusActiveEditorGroup",
+            ],
+        },
+        {
+            "command": "multiCommand.pythonExecuteInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                },
+                "workbench.action.focusActiveEditorGroup",
+            ],
+        },
+        {
+            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                },
+            ],
+        },
+        {
+            "command": "multiCommand.pythonMptcInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+                    }
+                },
+            ],
+        },
+    ],
+    //
+    // Extensión pylint (configuración para ejercicios pygame y otros)
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame",
+        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
+        // Pylint features. Pylint global options and switches
+        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+        // C0301: line-too-long
+        // C0302: too-many-lines
+    ],
+    //
+    //</code>
+</pre>
+            </div>
+          </details>
+        </li>
+        <li>
+          Si no tiene definida ninguna preferencia en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">archivo de configuración</a>, sustituya el contenido del archivo de preferencias de configuración por este:
+          <details>
+            <summary>Haga clic aquí para mostrar las preferencias</summary>
+            <div class="codigo copy">
+              <pre>
+<code class="language-json">{
+    // Configuraciones recomendadas para el curso Introducción a la programación con Python
+    //
+    // Files: Insert Final Newline
+    // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
+    "files.insertFinalNewline": true,
+    //
+    // Python &gt; Formatting: Provider
+    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
+    "python.formatting.provider": "black",
+    //
+    // Extensión multi-command
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.clearTerminal",
+            "sequence": [
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "clear\u000D"
+                    }
+                },
+                "workbench.action.focusActiveEditorGroup",
+            ],
+        },
+        {
+            "command": "multiCommand.pythonExecuteInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                },
+                "workbench.action.focusActiveEditorGroup",
+            ],
+        },
+        {
+            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                },
+            ],
+        },
+        {
+            "command": "multiCommand.pythonMptcInTerminal",
+            "sequence": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+                    }
+                },
+            ],
+        },
+    ],
+    //
+    // Extensión pylint (configuración para ejercicios pygame y otros)
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame",
+        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
+        // Pylint features. Pylint global options and switches
+        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+        // C0301: line-too-long
+        // C0302: too-many-lines
+    ],
+    //
+}</code>
+</pre>
+            </div>
+          </details>
+        </li>
+      </ul>
+    </section>
+
+    <section id="instalacion-modulos">
+      <h3>Instalación de módulos de Python</h3>
+
+      <p>Como las preferencias de configuración propuestas activan el uso de pylint y black en Visual Studio Code, se deben instalar ambos módulos.</p>
 
       <section id="extension-pylint">
-        <h4>Instalación de pylint</h4>
+        <h4>Instalación de pylint (analizador de código estático)</h4>
 
-        <p>Al guardar por primera vez un programa de Python, Visual Studio Code mostrará un aviso indicando que no hay ningún <i>linter</i> instalado y ofrecerá la opción de instalar <i>pylint</i> automáticamente.</p>
+        <p>Al guardar el fichero de configuración (o al guardar por primera vez un programa de Python si no se hace entonces), Visual Studio Code mostrará un aviso indicando que no hay ningún <i>linter</i> instalado y ofrecerá la opción de instalar <i>pylint</i> automáticamente.</p>
 
         <ol>
           <li>Abra o escriba un programa cualquiera y guárdelo.</li>
@@ -414,16 +427,16 @@
           </li>
           <li>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de pylint y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="150">
+              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="215">
             </p>
 
-            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
+            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que uno de los paquetes no utiliza el formato de instalación moderno.</p>
           </li>
         </ol>
 
         <hr class="corta">
 
-        <h4>Configuración de pylint</h4>
+        <h4>Configuración de pylint (analizador de código estático)</h4>
 
         <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que conviene modificar, sobre todo si trabajamos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
 
@@ -432,38 +445,37 @@
         <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
         <div class="codigo copy">
           <pre>
-<code class="language-json">  //
-  // Extensión pylint (configuración para ejercicios pygame)
-  "python.linting.pylintArgs": [
-    "--extension-pkg-whitelist=pygame",
-    "--disable=C0103, C0114, C0115, C0116",
-    // Pylint features. Pylint global options and switches
-    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
-    // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-    // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-    // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-    // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-    // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-  ],
-  //
-  //</code>
+<code class="language-json">    //
+    // Extensión pylint (configuración para ejercicios pygame y otros)
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=pygame",
+        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
+        // Pylint features. Pylint global options and switches
+        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
+        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
+        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
+        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
+        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
+        // C0301: line-too-long
+        // C0302: too-many-lines
+    ],
+    //
+    //</code>
 </pre>
         </div>
       </section>
 
       <section id="extension-autoformato">
-        <h4>Instalación de módulo de autoformato</h4>
+        <h4>Instalación de black (autoformato)</h4>
 
-        <p>Al formatear código por primera vez después de instalar la extensión Python, Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2021), los módulos de autoformato que ofrece son:</p>
-        <ul>
-          <li><a href="https://pypi.org/project/autopep8/">autopep8</a></li>
-          <li><a href="https://pypi.org/project/black/">black</a></li>
-          <li><a href="https://pypi.org/project/yapf/">yapf</a></li>
-        </ul>
+        <p>En general, al formatear código por primera vez después de instalar la extensión Python (atajo <span class="soft-atajo-teclado">Alt+Mayús+f</span>), Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2023), los módulos de autoformato que ofrece son: <a href="https://pypi.org/project/autopep8/">autopep8</a>, <a href="https://pypi.org/project/black/">black</a> y <a href="https://pypi.org/project/yapf/">yapf</a>.</p>
+
+        <p>En nuestro caso, como en las preferencias de configuración recomendadas en estos apuntes se incluye la preferencia del formateador <strong>black</strong>, se mostrará un aviso indicando que el formateador <strong>black</strong> no está instalado.</p>
         <ol>
-          <li>Abra o escriba un programa cualquiera y teclee el atajo <span class="soft-atajo-teclado">Shift+Alt+f</span> para formatear el código.</li>
-          <li>
-            Se mostrará el aviso indicando que no hay ningún formateador instalado y ofreciendo la instalación de <strong>autopep8</strong>, pero en estos apuntes se recomienda el uso de <strong>black</strong>. Haga clic en "Use black" para instalarlo.
+          <li>Haga clic en "Sí" para instalarlo.
             <p class="captura">
               <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1024" height="150">
             </p>
@@ -472,14 +484,7 @@
           <li>
             Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
             <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="160">
-            </p>
-            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que los paquetes se han instalado en una carpeta que no está en la variable de entorno de Windows <i>PATH</i>. Eso se debe a que VSCode instala los paquetes con la opción <i>--user</i>, por lo que los paquetes se instalan en la carpeta ..\AppData\Roaming\Python\..., mientras que Python está instalado en ..\AppData\Local\Programs\Python\... En principio no es necesario añadir ninguna carpeta al <i>PATH</i> de Windows.</p>
-          </li>
-          <li>
-            Se creará una carpeta <strong>.vscode</strong> con el archivo de configuración del área de trabajo <strong>settings.json</strong>. Este archivo contiene la preferencia de configuración que indica a Visual Studio Code que queremos utilizar el formateador black.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-3.png" alt="VSC. Instalación de black" width="1024" height="230">
+              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="110">
             </p>
           </li>
         </ol>
@@ -501,8 +506,10 @@
     <ul>
       <li>
         Si ya tiene definidos otros atajos de teclado en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#atajos">archivo de configuración de atajos de teclado</a>, añada los siguientes atajos al archivo de atajos de teclado:
-        <div class="codigo copy">
-          <pre>
+        <details>
+          <summary>Haga clic aquí para mostrar los atajos de teclado</summary>
+          <div class="codigo copy">
+            <pre>
 <code class="language-json">    //
     // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
     {
@@ -548,12 +555,15 @@
     },
     //</code>
 </pre>
-        </div>
+          </div>
+        </details>
       </li>
       <li>
         Si no tiene definido ningún atajo en el <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#atajos">archivo de configuración de atajos de teclado</a>, sustituya el contenido del archivo de atajos de teclado por este:
-        <div class="codigo copy">
-          <pre>
+        <details>
+          <summary>Haga clic aquí para mostrar los atajos de teclado</summary>
+          <div class="codigo copy">
+            <pre>
 <code class="language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
 [
     {
@@ -599,7 +609,8 @@
     },
 ]</code>
 </pre>
-        </div>
+          </div>
+        </details>
       </li>
     </ul>
 
@@ -620,7 +631,7 @@
     <section id="atajos-f5">
       <h3>Ejecutar programa</h3>
 
-      <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span>) permiten ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
+      <p>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt+F5</span> y <span class="soft-atajo-teclado">Ctrl+Alt+Mayús+F5</span>) permiten ejecutar el programa de Python que se esté editando. El programa se ejecuta en la ventana de terminal PowerShell de Visual Studio Code. Se ha elegido la tecla F5 ya que esta es la tecla que permite ejecutar programas en IDLE.</p>
 
       <p>Ambos atajos cambian automáticamente al directorio en el que se encuentra el programa y lo ejecutan en ese directorio.</p>
 
@@ -628,12 +639,12 @@
       <ul>
         <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> mantiene el foco en el editor. Este atajo es útil cuando el programa a ejecutar no pide datos al usuario.
           <p class="captura">
-            <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="370">
+            <img src="../img/vscode/vsc-python-atajo-1.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="330">
           </p>
         </li>
-        <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+Shift+F5</span> cambia el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al editor se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.
+        <li>el atajo <span class="soft-atajo-teclado">Ctrl+Alt+Mayús+F5</span> cambia el foco al terminal. Este atajo es útil cuando el programa a ejecutar pide datos al usuario. Una vez ejecutado el programa, para volver al editor se puede utilizar el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>.
           <p class="captura">
-            <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="370">
+            <img src="../img/vscode/vsc-python-atajo-2.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="330">
           </p>
         </li>
       </ul>
@@ -643,7 +654,7 @@
       <p>Si no se han definido los atajos de teclado anteriores, el programa se puede ejecutar igualmente haciendo clic derecho en el nombre del programa en el explorador y eligiendo la opción "Ejecutar archivo Python en la terminal" ... </p>
 
       <p class="captura">
-        <img src="../img/vscode/vsc-python-atajo-3.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="583">
+        <img src="../img/vscode/vsc-python-atajo-3.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="597">
       </p>
 
       <p>... o haciendo clic derecho en el cuerpo del programa y eligiendo la opción "Ejecutar archivo Python en la terminal".</p>
@@ -655,7 +666,7 @@
       <p>En ambos casos, el terminal se abre en el directorio raíz del área de trabajo y el foco se mantiene en el editor.</p>
 
       <p class="captura">
-        <img src="../img/vscode/vsc-python-atajo-5.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="460">
+        <img src="../img/vscode/vsc-python-atajo-5.png" alt="VSC. Ejecutar programas Python en VSC" width="1024" height="350">
       </p>
     </section>
 
@@ -685,7 +696,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de diciembre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 20 de enero de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
