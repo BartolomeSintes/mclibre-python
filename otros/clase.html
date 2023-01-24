@@ -34,8 +34,8 @@
 
       <ul>
         <li><a href="#introduccion">Introducción</a></li>
-        <!--
         <li><a href="#q08">Q08: del 19/12/22 al 15/01/23</a></li>
+        <!--
         <li><a href="#q09">Q09: del 23/01/23 al 05/02/23</a></li>
         <li><a href="#q10">Q10: del 06/02/23 al 19/02/23</a></li>
         <li><a href="#q11">Q11: del 20/02/23 al 05/03/23</a></li>
@@ -61,11 +61,128 @@
     <p>También se pueden consultar las <a href="clase/clase-2122.html">lecciones impartidas en el curso 2021/22</a> (en el curso 2020/21 no impartí este curso).</p>
   </section>
 
-<!--
+
   <section id="q08">
     <h2>Quincena Q08: del 19/12/22 al 15/01/23</h2>
-  </section>
 
+    <p>El objetivo de esta primera quincena es que empecéis a escribir programas que pidan valores al usuario, hagan cálculos sencillos y muestren resultados al usuario. Para ello se necesitan combinar varias instrucciones y utilizar variables.</p>
+
+    <h3>Presentación de los apuntes</h3>
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/presentacion.html">Presentación de los apuntes</a></li>
+    </ol>
+
+    <h3>Instalación de Python</h3>
+    <p><span style="font-size: 300%; display: inline-block; margin: 20px 10px;" title="¡Atención!">&#9888;&#65039;</span>Los apuntes presuponen que no tenéis Python instalado en vuestros ordenadores y por tanto podéis instalar todas las cosas que os pida y configurarlas de la manera específica que os pida. Si ya tenéis Python instalado y configurado a vuestra manera, lo que os pida puede interferir con vuestra instalación actual. En ese caso, enviadme un correo y os comento cómo podemos resolver la situación.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/lenguajes-programacion.html">Lenguajes de programación</a>.
+        <p>Esta lección es una breve presentación de lo que son los lenguajes de programación.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/historia.html">Historia de Python</a>.
+        <p>Esta lección comenta las diferentes versión de Python que existen. La versión que vamos a utilizar nosotros es la más moderna, es decir, Python 3.11.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/python-instalacion.html">Instalación de Python</a>.
+        <p>Esta lección comenta la instalación del intérprete de Python que incluye un entorno de desarrollo bastante elemental llamado IDLE.</p>
+      </li>
+      <li>Descargad e instalad Python 3.11.1.</li>
+    </ol>
+
+    <h3>El editor IDLE</h3>
+    <p>Aunque para editar los programas utilizaremos Visual Studio Code, es conveniente conocer también el editor IDLE, un editor muy elemental y limitado pero que se instala al instalar Python.</p>
+
+    <p>IDLE también resulta cómodo para probar instrucciones sueltas, como podéis hacer mientras leéis las lecciones, probando los ejemplos incluidos.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/python-idle.html">IDLE, entorno de desarrollo</a>.
+        <p>Esta lección comenta el funcionamiento básico de IDLE: el uso del prompt para probar instrucciones y la edición y ejecución de programas. Podéis leer toda la lección, pero tened en cuenta que esta semana no os pido que hagáis programas..</p>
+        <p>Una de las ventajas de IDLE es que permite ejecutar directamente instrucciones de Python. Al leer las lecciones de teoría, es importante que probéis los ejemplos que se ofrecen y poder experimentar por vuestra cuenta las instrucciones.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/python-entorno-interactivo.html">El entorno interactivo de Python</a>.
+        <p>En principio, cuando haya que utilizar el entorno interactivo, os aconsejo utilizar IDLE, pero debéis saber que se puede utilizar el entorno interactivo también en un terminal.</p>
+      </li>
+    </ol>
+
+    <h3>Conceptos básicos de programación</h3>
+    <p>Antes de hacer los ejercicios, tenéis que leer unas lecciones que introducen los conceptos necesarios. Os aconsejo que probéis los ejemplos en el prompt del IDLE para comprobar y que intentéis variaciones de los ejemplos para comprobar que entendéis cómo funciona Python.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-elementos.html">Elementos de un programa</a>.
+        <p>Esta lección comenta brevemente los elementos que componen un programa de Python, que se abordarán con más detalles en temas posteriores. Lo importante es que os vayáis familiarizando con el vocabulario (palabras reservadas, funciones, operadores, delimitadores, literales, etc.).</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-operaciones-matematicas.html">Números y operaciones aritméticas</a>.
+        <p>Los números son el tipo de dato más simple. En esta lección se comentan los diferentes tipos de números de Python y las operaciones aritméticas elementales.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-cadenas.html">Cadenas de texto (1)</a>.
+        <p>Las cadenas de texto (es decir, fragmentos de texto) es otro tipo básico que se utiliza en cualquier programa. En esta lección se comenta cómo se escriben las cadenas en Python.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-variables.html">Variables (1)</a>.
+        <p>Para guardar información (números o letras) durante la ejecución de un programa, se utilizan variables. En esta lección se explica cómo se gastan las variables en Python.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-cadenas-2.html">Cadenas de texto (2)</a>.
+        <p>Esta lección completa la lección Cadenas de texto (1), pero como en los ejemplos se utilizan variables he dividido las explicaciones en dos partes. El apartado más importante de esta lección son las cadenas "f", que utilizaremos ampliamente.</p>
+      </li>
+      <li>En la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-plantilla.html">Programa básico de Python.</a> tenéis un ejemplo de programa básico que debéis utilizar. Las instrucciones de vuestros programas debéis escribirlas dentro de la función main(), sangradas cuatro espacios.</li>
+    </ol>
+
+    <h3>Configuración de Visual Studio Code</h3>
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/vsc-python-configuracion.html">Visual Studio Code. Configuración recomendada para el curso Introducción a la programación con Python</a>.
+        <p>Esta lección comenta la configuración necesaria para facilitar la programación de Python en VSC. No es necesario volver a instalar VSC, esta configuración se añade a la que ya tenéis para el desarrollo de HTML+CSS.</p>
+      </li>
+      <li>Configurad Visual Studio Code de acuerdo con la lección.</li>
+    </ol>
+
+    <h2>Instalación de mclibre Python Testing Client</h2>
+    <p>En el campo del desarrollo del software, la prueba de programas, y especialmente las pruebas automatizadas, tienen cada vez más importancia. En este curso no vamos a tratar este tema, pero sí que os puede venir muy bien poder probar vuestros programas. Para ello, hace unos años programé una herramienta llamada MPTC (mclibre Python Testing Client) que espero que os resulte útil y fácil de utilizar. Al margen de las pruebas que realicéis vosotros a vuestros programas, esta herramienta realiza a cada programa una batería de pruebas para que podáis confiar en que vuestros programas resuelven correctamente los ejercicios (incluso los ejercicios de los exámenes).</p>
+
+    <p>Os recomiendo que, una vez familiarizados con ella, paséis la herramienta a todos vuestros programas. Y si os salen resultados "raros", comentadmelo no vaya a ser un fallo de la herramienta.</p>
+
+    <p>Un detalle que quizás os interese por el tema de la privacidad es que la única información que se envía al servidor es el número de ejercicio que queréis comprobar, pero en ningún caso el programa que estáis probando. Y por otro lado, el servidor no conserva ninguna estadística de uso de la herramienta, por lo que no queda absolutamente ningún rastro del uso que hagáis.</p>
+
+    <ol>
+      <li>Instalad mclibre Python Testing Client de acuerdo con la lección <a href="https://www.mclibre.org/consultar/python/otros/python-testing-instalacion.html">Instalación de mclibre Python Testing Client</a>
+        <p>Si habéis instalado Python para seguir este curso, es decir, si antes de empezar este curso no utilizábais Python para nada, quiero que hagáis la instalación en Windows que se comenta en el primer apartado de esta lección. Los apartados dedicados a la instalación en entornos virtuales son para situaciones especiales en la que hay que compatibilizar Python para distintos usos. Enviadme un correo o mensaje si pensáis que estáis en esa situación.</p>
+      </li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/otros/python-testing.html">Uso de mclibre Python Testing Client</a></li>
+      <li>Por favor, comentad en el foro los problemas que encontréis utilizando MPTC. Espero que la mayoría de errores sean culpa vuestra <span style="font-size: 200%">&#128512;</span>, pero muchas veces serán limitaciones o <i>bugs</i> de MPTC y vuestros comentarios me servirán para ir mejorando la herramienta.</li>
+      <li>Tened en cuenta también que de vez en cuando puedo actualizar MPTC. Por el momento, para comprobar si hay una nueva versión disponible se deben ejecutar las órdenes:
+        <div class="terminal">
+          <pre class="command-line" data-prompt="C:\>">
+  <code class="language-shell">python -m pip install --upgrade pip
+  pip install --upgrade mclibre-python-testing-client</code>
+  </pre>
+        </div>
+        <p>La primera orden actualiza <i>pip</i> y la segunda actualiza <i>mptc</i>.</p>
+      </li>
+    </ol>
+
+    <h3>Ejercicios de puesta en marcha</h3>
+    <ol>
+      <li>Haced los ejercicios de puesta en marcha <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-puesta-en-marcha.html">Puesta en marcha</a>
+        <p>Estos ejercicios son para comprobar que habéis configurado correctamente Python y Visual Studio Code. Los dos últimos los podréis hacer después de hacer el apartado siguiente (Entrada y salida).</p>
+      </li>
+    </ol>
+
+    <h3>Entrada y salida</h3>
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-salida-pantalla.html">Salida por pantalla</a>.
+        <p>Para hacer programas interactivos hace falta mostrar mensajes al usuario. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección de una sola línea se pueden probar en el entorno interactivo de IDLE. Los ejemplos de varias líneas se pueden probar también en el entorno interactivo de IDLE escribiendo y ejecutando una detrás de otra, pero resulta más cómodo hacerlo en programas que hay que guardar y ejecutar. Si lo hacéis en IDLE, la salida por pantalla se muestra en la ventana de IDLE.</p>
+      </li>
+      <li>En la lección <a href="https://www.mclibre.org/consultar/python/otros/vsc-python-configuracion.html#atajo-ctrl+alt+t">Configuración recomendada de VSCode.</a> tenéis las instrucciones para ejecutar los programas.</li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-entrada-teclado.html">Entrada por teclado</a>.
+        <p>Para hacer programas interactivos hace falta que el programa solicite datos al usuario y trabaje con ellos. En esta lección se explica cómo hacerlo. Los ejemplos de esta lección sería mejor probarlos programas que hay que guardar y ejecutar.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-variables.html">Variables, E/S y Operaciones aritméticas</a>.
+      </li>
+      <li>En la página de <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-variables-soluciones.html">soluciones Variables, E/S y Operaciones aritméticas</a> podéis consultar soluciones de los ejercicios.</li>
+      <li>Haced los primeros ejercicios de la página <a href="https://www.mclibre.org/consultar/python/otros/python-testing-ejemplos.html">Ejemplos de MPTC</a>.
+        <p>Estos ejercicios es para que practiquéis el funcionamiento de MPTC.</p>
+      </li>
+    </ol>
+
+  </section>
+<!--
   <section id="q09">
     <h2>Quincena Q09: del 23/01/23 al 05/02/23</h2>
   </section>
@@ -88,7 +205,7 @@
 -->
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de enero de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 23 de enero de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
