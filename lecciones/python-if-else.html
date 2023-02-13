@@ -1059,6 +1059,9 @@ print("¡Hasta la próxima!")</code>
     <ul>
       <li>En este primer caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, con un sangrado mayor, se produce el error "unexpected indent" (sangrado inesperado).
         <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
           <div class="codigo">
             <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
@@ -1092,6 +1095,9 @@ IndentationError: unexpected indent
       </li>
       <li>En este segundo caso, la primera instrucción determina el sangrado de ese bloque, por lo que al encontrar la segunda instrucción, con un sangrado menor, Python entiende que esa instrucción pertenece a otro bloque, pero como no hay ningún bloque con ese nivel de sangrado, se produce el error "unindent does not match any outer indentation level" (el sangrado no coincide con el de ningún nivel superior).
         <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
           <div class="codigo">
             <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
@@ -1125,6 +1131,9 @@ IndentationError: unindent does not match any outer indentation level
       </li>
       <li>En este tercer caso, como la segunda instrucción no tiene sangrado, Python entiende que la bifurcación <span class="idle-rese">if</span> ha terminado, por lo que al encontrar un <span class="idle-rese">else</span> sin su <span class="idle-rese">if</span> correspondiente se produce el error "invalid syntax" (sintaxis no válida).
         <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
           <div class="codigo">
             <pre>
 <code class="language-python">edad = int(input("¿Cuántos años tiene? "))
@@ -1939,8 +1948,12 @@ else:
           </li>
           <li>Pero hay que tener cuidado, porque si los casos del programa anterior se ordenan al revés manteniendo las condiciones, el programa no funcionaría como se espera, puesto que al escribir un valor negativo mostraría el mensaje "Es usted menor de edad".
 
-            <div class="codigo">
-              <pre>
+            <div class="filaflex">
+              <div class="icono-ok">
+                <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-python"># Este programa no funciona correctamente
 edad = int(input("¿Cuántos años tiene? "))
 if edad &lt; 18:
@@ -1950,6 +1963,7 @@ elif edad &lt; 0:
 else:
     print("Es usted mayor de edad")</code>
 </pre>
+              </div>
             </div>
           </li>
         </ul>
@@ -1966,9 +1980,14 @@ else:
         <p>Los casos no son mutuamente excluyentes, puesto que los múltiplos de cuatro son también múltiplos de dos.</p>
         <ul>
           <li>El siguiente programa no sería correcto:
+            l escribir un valor negativo mostraría el mensaje "Es usted menor de edad".
 
-            <div class="codigo">
-              <pre>
+            <div class="filaflex">
+              <div class="icono-ok">
+                <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-python"># Este programa no funciona correctamente
 numero = int(input("Escriba un número: "))
 if numero % 2 == 0:
@@ -1978,6 +1997,7 @@ elif numero % 4 == 0:
 else:
     print(f"{numero} no es múltiplo de dos")</code>
 </pre>
+              </div>
             </div>
             <p>El error de este programa es que si <var>numero</var> cumple la segunda condición, cumple también la primera. Es decir, si <var>numero</var> es un múltiplo de cuatro, como también es múltiplo de dos, cumple la primera condición y el programa ejecuta el primer bloque de instrucciones, sin llegar a comprobar el resto de condiciones.</p>
           </li>
@@ -2187,7 +2207,7 @@ else:
   </script>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

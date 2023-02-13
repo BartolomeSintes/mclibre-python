@@ -4,7 +4,7 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 24 de septiembre de 2022                 */
+/* 27 de septiembre de 2022                 */
 /*                                          */
 
 /* Colores para cuadros de código fuente y de terminal */
@@ -228,7 +228,7 @@ pre.line-numbers > code {
 .line-numbers .line-numbers-rows {
     position: absolute;
     pointer-events: none;
-    top: -2px;            /* para ajustar la posición de los números */
+    top: 3px;            /* para ajustar la posición de los números */
     font-size: 100%;
     left: -2.8em;
     width: 2em; /* works for line-numbers below 1000 lines */
