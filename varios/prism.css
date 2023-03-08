@@ -4,7 +4,7 @@
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 27 de septiembre de 2022                 */
+/* 8 de marzo de 2023                       */
 /*                                          */
 
 /* Colores para cuadros de código fuente y de terminal */
@@ -351,6 +351,6 @@ button.copy-to-clipboard-button {
     display: none;
 }
 
-div.codigo.copy button.copy-to-clipboard-button {
+div.copy button.copy-to-clipboard-button {
     display: inline
 }

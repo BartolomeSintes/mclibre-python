@@ -74,7 +74,7 @@
       </li>
       <li>Una posible solución es por tanto:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -87,7 +87,7 @@ for i in range(1, altura + 1):
       </li>
       <li>Otra posible solución equivalente es que la variable de control tome los valores desde cero (0, 1, 2, 3, etc.) y que el bucle interior dibuje una estrella más que el valor de la variable de control del bucle exterior:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -106,7 +106,7 @@ for i in range(altura):
     <ul>
       <li>Este ejercicio es muy similar al anterior, excepto que cada vez se tienen que dibujar menos estrellas. Para ello, basta con que la variable de control del bucle exterior empiece en el valor máximo (la altura introducida por el usuario) y vaya bajando hasta 1. El programa quedaría así:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -125,7 +125,7 @@ for i in range(altura, 0, -1):
 
         <p>El programa quedaría así:</p>
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -161,7 +161,7 @@ for i in range(altura):
       </li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura de la línea: "))
 
@@ -181,7 +181,7 @@ for i in range(altura):
     <ul>
       <li>Este ejercicio es similar al ejercicio 12, dibujando cada vez menos espacios en blanco. Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura de la línea: "))
 
@@ -227,7 +227,7 @@ for i in range(altura, 0, -1):
       </li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -242,7 +242,7 @@ for i in range(1, altura + 1):
       </li>
       <li>Otra posible solución consistiría en un bucle exterior cuya variable de control disminuya desde la altura menos 1 hasta 0 y los bucles interiores utilizando esa variable de control
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -265,7 +265,7 @@ for i in range(altura - 1, -1, -1):
       <li>Este ejercicio es muy similar al anterior, excepto en que el número de espacios aumenta y el de estrellas se reduce.</li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -308,7 +308,7 @@ for i in range(altura):
       </li>
       <li>Una posible solución es por tanto escribir dos bucles anidados como los de los ejercicios 10 y 11, excepto que el segundo bucle debe escribir una línea menos que el primero:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">anchura = int(input("Anchura del triángulo: "))
 
@@ -326,7 +326,7 @@ for i in range(1, anchura):
       </li>
       <li>Otra posible solución es hacerlo todo en un único bucle anidado, pero en el que la variable de control del bucle exterior aumente y disminuya tomando como valores el número de estrellas que deben dibujarse en cada línea. Para ello se puede concatenar dos tipos <span class="idle-func">range</span>(), uno que aumente y otro que disminuya, con el operador suma (+). Dado que range() es un tipo inmutable, para poder concatenarlos es necesario convertirlos a listas con la función list().
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">anchura = int(input("Anchura del triángulo: "))
 
@@ -365,7 +365,7 @@ for i in list(range(1, anchura)) + list(range(anchura, 0, -1)):
       </li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -395,7 +395,7 @@ for i in range(1, altura+1):
       </li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del triángulo: "))
 
@@ -436,7 +436,7 @@ Altura del triángulo: <span class="entrada-usuario">4</span>
       </li>
       <li>Una posible solución sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del dibujo: "))
 
@@ -456,7 +456,7 @@ for i in range(1, altura):
       </li>
       <li>Otra posible solución en las que los range comienzan en 0 sería:
 
-        <div class="codigo">
+        <div class="codigo copy">
           <pre>
 <code class="language-python">altura = int(input("Altura del dibujo: "))
 
