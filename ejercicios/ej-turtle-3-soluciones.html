@@ -118,8 +118,8 @@ lado = int(numinput("Módulo turtle", "Tamaño del cuadrado (1-20): ", 10, 1, 20
 grosor = int(numinput("Módulo turtle", "Grosor del punto (3-20): ", 10, 3, 20))
 separaMin = grosor * 2
 separaMax = grosor * 6
-separa = int(numinput("Módulo turtle", "Separación entre puntos (" + str(separaMin)
-                      + "-" + str(separaMax) + "): ", grosor * 4 , separaMin, separaMax))
+separa = int(numinput("Módulo turtle", f"Separación entre puntos ({separaMin}-{separaMax}): ",
+                      grosor * 4 , separaMin, separaMax))
 
 screensize(2*lado*separa + 30, 2*lado*separa + 30)
 
@@ -151,8 +151,8 @@ ny = int(numinput("Módulo turtle", "Número de puntos en vertical (1-20): ", 10
 grosor = int(numinput("Módulo turtle", "Grosor del punto (3-20): ", 10, 3, 20))
 separaMin = grosor * 2
 separaMax = grosor * 6
-separa = int(numinput("Módulo turtle", "Separación entre puntos (" + str(separaMin)
-                      + "-" + str(separaMax) + "): ", grosor * 4 , separaMin, separaMax))
+separa = int(numinput("Módulo turtle", f"Separación entre puntos ({separaMin}-{separaMax}): ",
+                      grosor * 4 , separaMin, separaMax))
 
 screensize(2*nx*separa + 30, 2*ny*separa + 30)
 
@@ -487,7 +487,7 @@ for i in range(ny):
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2015</p>
+    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

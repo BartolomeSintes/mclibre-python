@@ -157,9 +157,9 @@ for i in range(anchura, 0, -1):
 print("Comprobador de años bisiestos")
 fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 if es_bisiesto(fecha):
-    print("El año", fecha, "es un año bisiesto.")
+    print(f"El año {fecha} es un año bisiesto.")
 else:
-    print("El año", fecha, "no es un año bisiesto.")</code>
+    print(f"El año {fecha} no es un año bisiesto.")</code>
 </pre>
     </div>
   </section>
@@ -174,20 +174,16 @@ else:
 
 print("Contador de años bisiestos")
 inicio = int(input("Escriba un año: "))
-print("Escriba otro año posterior a", str(inicio) + ": ", end="")
-final = int(input())
+final = int(input(f"Escriba otro año posterior a {inicio}: "))
 while final &lt; inicio:
-    print(final, "no es mayor que", str(inicio) + ". Inténtelo de nuevo: ",
-          end="")
-    final = int(input())
+    final = int(input(f"{final} no es mayor que {inicio}. Inténtelo de nuevo: "))
 
 contador = 0
 for i in range(inicio, final + 1):
     if es_bisiesto(i):
         contador += 1
 
-print("De", inicio, "a", final, "hay", final - inicio + 1, "años,",
-      contador, "de ellos bisiestos.")</code>
+print(f"De {inicio} a {final} hay {final - inicio + 1} años, {contador} de ellos bisiestos.")</code>
 </pre>
     </div>
   </section>
@@ -201,13 +197,11 @@ print("De", inicio, "a", final, "hay", final - inicio + 1, "años,",
     numero = int(input("Dígame cuántas palabras tiene la lista: "))
     lista = []
     for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
+        palabra = input(f"Dígame la palabra {i + 1}: ")
         lista += [palabra]
     return lista
 
-lista = crea_lista()
-print("La lista creada es:", lista())</code>
+print(f"La lista creada es: {crea_lista()}")</code>
 </pre>
     </div>
   </section>
@@ -218,19 +212,17 @@ print("La lista creada es:", lista())</code>
     <div class="codigo">
       <pre>
 <code class="language-python">def crea_lista(contador):
-    print("Dígame cuántas palabras tiene la lista", str(contador) + ": ", end="")
-    numero = int(input())
+    numero = int(input(f"Dígame cuántas palabras tiene la lista {contador}: "))
     lista = []
     for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
+        palabra = input(f"Dígame la palabra {i + 1}: ")
         lista += [palabra]
     return lista
 
 print("Generador de listas")
 numero = int(input("¿Cuántas listas quiere escribir? "))
 for i in range(1, numero + 1):
-    print("La lista", i, "es:", crea_lista(i))</code>
+    print(f"La lista {i} es: {crea_lista(i)}")</code>
 </pre>
     </div>
   </section>
@@ -241,12 +233,10 @@ for i in range(1, numero + 1):
     <div class="codigo">
       <pre>
 <code class="language-python">def crea_lista(contador):
-    print("Dígame cuántas palabras tiene la lista", str(contador) + ": ", end="")
-    numero = int(input())
+    numero = int(input(f"Dígame cuántas palabras tiene la lista {contador}: "))
     lista = []
     for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
+        palabra = input(f"Dígame la palabra {i + 1}: ")
         lista += [palabra]
     return lista
 
@@ -258,7 +248,7 @@ for i in range(1, numero + 1):
     listas += [crea_lista(i)]
 
 for i in range(numero):
-    print("La lista", i + 1, "es:", listas[i])</code>
+    print(f"La lista {i + 1} es: {listas[i]}")</code>
 </pre>
     </div>
   </section>
@@ -282,7 +272,7 @@ for i in range(numero):
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de junio de 2016</p>
+    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

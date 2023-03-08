@@ -196,13 +196,29 @@ print("Adiós")</code>
       </div>
     </div>
 
-    <p>El valor del parámetro end puede ser una cadena f:</p>
+    <p>El valor del parámetro end puede ser una variable:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-python">texto = " y "
-print("Hola", end=<span class="codigo-resaltado">f"{texto}"</span>)
+print("Hola", end=<span class="codigo-resaltado">texto</span>)
+print("Adiós")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>Hola y Adiós</pre>
+      </div>
+    </div>
+
+    <p>El valor del parámetro end puede ser una cadena f:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">texto = "y"
+print("Hola", end=<span class="codigo-resaltado">f" {texto} "</span>)
 print("Adiós")</code>
 </pre>
       </div>
@@ -302,7 +318,7 @@ Y el otro le contesta: "¡Pues anda que tú!"
 
     <hr class="corta">
 
-    <p>La función <span class="idle-func">print</span>() permite incluir variables o expresiones como argumento, lo que nos permite combinar texto y variables:</p>
+    <p>La función <span class="idle-func">print</span>() permite incluir variables o expresiones como argumentos, lo que nos permite combinar texto y variables:</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -348,7 +364,7 @@ print("¡Hola,", nombre, "!")</code>
       </div>
     </div>
 
-    <p>Antes de Python 3.6 estas situaciones se podían resolver de una forma algo engorrosa (que se comenta en la <a href="./python-obsoletos.html#print">lección de temas obsoletos</a>), pero a partir de Python 3.6 se pueden utilizar <a href="./python-cadenas.html#cadenas-f">las cadenas "f"</a>.</p>
+    <p>Antes de Python 3.6 estas situaciones se podían resolver de una forma algo engorrosa (que se comenta en la <a href="./python-obsoletos.html#print">lección de temas obsoletos</a>), pero a partir de Python 3.6 se recomienda utilizar <a href="./python-cadenas.html#cadenas-f">las cadenas "f"</a>.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -364,8 +380,37 @@ print(f"¡Hola, {nombre}!")</code>
     </div>
   </section>
 
+  <p>En general, las cadenas "f" permiten combinar, cadenas, variables y expresiones de una forma más clara:</p>
+
+  <div class="filaflex">
+    <div class="codigo">
+      <pre>
+<code class="language-python">nombre = "Pepe"
+edad = 25
+print(f"Me llamo {nombre} y tengo {edad} años.")</code>
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>Me llamo Pepe y tengo 25 años.</pre>
+    </div>
+  </div>
+
+  <div class="filaflex">
+    <div class="codigo">
+      <pre>
+<code class="language-python">semanas = 4
+print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>En 4 semanas hay 28 días.</pre>
+    </div>
+  </div>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de abril de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

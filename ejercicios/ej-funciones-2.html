@@ -228,9 +228,9 @@ El año 2000 es un año bisiesto.
 fecha = int(input("Escriba un año y le diré si es bisiesto: "))
 
 if fecha % 400 == 0 or (fecha % 100 != 0 and fecha % 4 == 0):
-    print("El año", fecha, "es un año bisiesto.")
+    print(f"El año {fecha} es un año bisiesto.")
 else:
-    print("El año", fecha, "no es un año bisiesto.")</code>
+    print(f"El año {fecha} no es un año bisiesto.")</code>
 </pre>
           </div>
         </li>
@@ -287,10 +287,9 @@ if numero &lt; 1:
 else:
     lista = []
     for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
+        palabra = input(f"Dígame la palabra {i + 1}: ")
         lista += [palabra]
-    print("La lista creada es:", lista)</code>
+    print(f"La lista creada es: {lista}")</code>
 </pre>
           </div>
           <p><strong>Nota</strong>: En el enunciado original, la lista no podía ser vacía, pero en este ejercicio se permite que la lista tenga 0 elementos. En caso de que el usuario escriba un número negativo, el programa puede avisar al usuario o simplemente crear una lista vacía.</p>
@@ -393,10 +392,9 @@ if numero &lt; 1:
 else:
     lista = []
     for i in range(numero):
-        print("Dígame la palabra", str(i + 1) + ": ", end="")
-        palabra = input()
+        palabra = input(f"Dígame la palabra {i + 1}: ")
         lista += [palabra]
-    print("La lista creada es:", lista)
+    print(f"La lista creada es: {lista}")
 
     numero2 = int(input("Dígame cuántas palabras tiene la lista de palabras a eliminar: "))
 
@@ -405,16 +403,15 @@ else:
     else:
         eliminar = []
         for i in range(numero2):
-            print("Dígame la palabra", str(i + 1) + ": ", end="")
-            palabra = input()
+            palabra = input(f"Dígame la palabra {i + 1}: ")
             eliminar += [palabra]
-        print("La lista de palabras a eliminar es:", eliminar)
+        print(f"La lista de palabras a eliminar es: {eliminar}")
 
         for i in eliminar:
             for j in range(len(lista)-1, -1, -1):
                 if lista[j] == i:
-                    del(lista[j])
-        print("La lista es ahora:", lista)</code>
+                    del lista[j]
+        print(f"La lista es ahora: {lista}")</code>
 </pre>
           </div>
           <p><strong>Nota</strong>: En el enunciado original, la lista no podía ser vacía, pero en este ejercicio se permite que la lista tenga 0 elementos. En caso de que el usuario escriba un número negativo, el programa puede avisar al usuario o simplemente crear una lista vacía.</p>
@@ -491,7 +488,7 @@ Las listas tras borrar en cada lista las palabras de listas posteriores:
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de abril de 2013</p>
+    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
