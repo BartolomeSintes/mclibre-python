@@ -73,9 +73,9 @@
   </section>
 
   <section id="ventana-dibujo">
-    <h2>La ventana de dibujo: setup() y title()</h2>
+    <h2>La ventana de dibujo: setup(), title() y exitonclick()</h2>
 
-    <p>El módulo turtle dibuja en una ventana distinta a la ventana de IDLE. Esta ventana de dibujo se crea al ejecutar un programa y se mantiene al acabar la ejecución del programa, pero se destruye al volver a ejecutar el programa).</p>
+    <p>El módulo turtle dibuja en una ventana distinta a la ventana de IDLE. Esta ventana de dibujo se crea al ejecutar un programa y se mantiene al acabar la ejecución del programa, pero se destruye al volver a ejecutar el programa.</p>
 
     <p>La función <strong>setup(ancho, alto, posicionX, posicionY)</strong> permite definir el tamaño y la posición inicial de la ventana. Los cuatro argumentos de la función son (en píxeles):</p>
     <ul>
@@ -85,13 +85,16 @@
       <li>posicionY: posición vertical de la ventana. Los valores positivos se miden desde el borde superior de la pantalla, los negativos desde el borde inferior de la pantalla.</li>
     </ul>
 
+    <p>La función <strong>exitonclick()</strong> mantiene abierta la ventana hasta que se hace click en la ventana. Si el programa se ejecuta en IDLE, esta función no es necesaria, pero si el programa se ejecuta desde la línea de comandos la función es necesaria porque si no la ventana se cierra automáticamente una vez ejecutado el programa.</p>
+
     <div class="filaflex">
       <div class="codigo">
         <pre>
-        <code class="language-python">
-from turtle import *
+<code class="language-python">from turtle import *
 
-setup(640, 480, 0, 0)</code>
+setup(640, 480, 0, 0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -112,7 +115,9 @@ setup(640, 480, 0, 0)</code>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
-title("Ejemplo de ventana")</code>
+title("Ejemplo de ventana")
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -132,7 +137,9 @@ title("Ejemplo de ventana")</code>
         <pre>
 <code class="language-python">from turtle import *
 
-title("Ejemplo de ventana")</code>
+title("Ejemplo de ventana")
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -156,7 +163,9 @@ setup(250, 100, 0, 0)
 title("Ejemplo de ventana")
 hideturtle()
 dot(10, 0, 0, 0)
-setup(450, 150, 0, 0)</code>
+setup(450, 150, 0, 0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -185,7 +194,9 @@ setup(450, 150, 0, 0)</code>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
-screensize(10, 10)</code>
+screensize(10, 10)
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -206,7 +217,9 @@ screensize(10, 10)</code>
 <code class="language-python">from turtle import *
 
 setup(150, 150, 0, 0)
-screensize(300, 300)</code>
+screensize(300, 300)
+
+exitonclick()</code>
 </pre>
               </div>
 
@@ -225,7 +238,9 @@ screensize(300, 300)</code>
 <code class="language-python">from turtle import *
 
 setup(450, 150, 0, 0)
-screensize(400, 300)</code>
+screensize(400, 300)
+
+exitonclick()</code>
 </pre>
               </div>
 
@@ -255,7 +270,9 @@ setup(250, 100, 0, 0)
 screensize(100, 100)
 hideturtle()
 dot(10, 0, 0, 0)
-screensize(200, 100)</code>
+screensize(200, 100)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -299,7 +316,9 @@ screensize(200, 100)</code>
 setup(450, 150, 0, 0)
 screensize(300, 150)
 
-showturtle()</code>
+showturtle()
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -320,7 +339,9 @@ showturtle()</code>
 setup(450, 150, 0, 0)
 screensize(300, 150)
 
-goto(100, 0)</code>
+goto(100, 0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -342,7 +363,9 @@ setup(450, 150, 0, 0)
 screensize(300, 150)
 
 goto(100, 0)
-hideturtle()</code>
+hideturtle()
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -364,7 +387,9 @@ setup(450, 150, 0, 0)
 screensize(300, 150)
 
 hideturtle()
-goto(100, 0)</code>
+goto(100, 0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -394,7 +419,9 @@ goto(100, 0)</code>
 setup(450, 200, 0, 0)
 screensize(300, 150)
 
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -415,7 +442,9 @@ goto(0, 0)</code>
 setup(450, 200, 0, 0)
 screensize(300, 150)
 
-goto(100, 50)</code>
+goto(100, 50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -438,7 +467,9 @@ screensize(300, 150)
 
 goto(100, 50)
 goto(100, -50)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -463,7 +494,9 @@ screensize(300, 150)
 
 goto(100, 50)
 sety(-50)
-setx(50)</code>
+setx(50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -492,7 +525,9 @@ goto(100, 50)
 penup()
 goto(100, -50)
 pendown()
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -521,7 +556,9 @@ goto(100, 50)
 pensize(4)
 goto(100, -50)
 pensize(8)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -552,7 +589,9 @@ goto(100, 50)
 pencolor(0, 255, 0)
 goto(100, -50)
 pencolor(0, 0, 255)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -577,7 +616,9 @@ goto(100, 50)
 pencolor(0, 1, 0)
 goto(100, -50)
 pencolor(0, 0, 1)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -602,7 +643,9 @@ goto(100, 50)
 pencolor(0, 128, 0)
 goto(100, -50)
 pencolor(0, 0, 128)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -627,7 +670,9 @@ goto(100, 50)
 pencolor(0, 0.5, 0)
 goto(100, -50)
 pencolor(0, 0, 0.5)
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -655,7 +700,9 @@ goto(100, 50)
 pencolor("green")
 goto(100, -50)
 pencolor("blue")
-goto(50, -50)</code>
+goto(50, -50)
+
+exitonclick()</code>
 </pre>
         </div>
 
@@ -688,7 +735,9 @@ goto(100, -50)
 dot(10, 0, 255, 0)
 goto(50, -50)
 dot(10, 0, 0, 255)
-goto(0,0)</code>
+goto(0,0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -717,7 +766,9 @@ goto(100, -50)
 dot(10, 0, 255, 0)
 goto(50, -50)
 dot(10, 0, 0, 255)
-goto(0,0)</code>
+goto(0,0)
+
+exitonclick()</code>
 </pre>
       </div>
 
@@ -756,7 +807,9 @@ goto(100, 0)
 goto(100, 50)
 goto(0, 50)
 goto(0, 0)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -786,7 +839,9 @@ goto(100, 0)
 goto(100, 50)
 goto(0, 50)
 goto(0, 0)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -814,7 +869,9 @@ begin_fill()
 goto(100, 0)
 goto(100, 50)
 goto(0, 50)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -843,7 +900,9 @@ goto(50, 50)
 goto(100, -50)
 goto(150, 0)
 goto(0, 0)
-end_fill()</code></pre>
+end_fill()
+
+exitonclick()</code></pre>
           </div>
 
           <div class="resultado-captura">
@@ -871,7 +930,9 @@ begin_fill()
 goto(0, 75)
 goto(100, 0)
 goto(100, 75)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -904,7 +965,9 @@ goto(-100, 75)
 pendown()
 goto(-100,0)
 goto(-25, 0)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -939,7 +1002,9 @@ pendown()
 begin_fill()
 goto(-100,0)
 goto(-25, 0)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -973,7 +1038,9 @@ pendown()
 goto(-100,0)
 goto(-25, 0)
 goto(-100, 75)
-end_fill()</code>
+end_fill()
+
+exitonclick()</code>
 </pre>
           </div>
 
@@ -994,7 +1061,7 @@ end_fill()</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de marzo de 2015</p>
+    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

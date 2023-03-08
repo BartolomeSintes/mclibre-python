@@ -91,7 +91,9 @@ pendown()
 goto(-size, size)
 goto(-size, -size)
 goto(size, -size)
-goto(size, size)</code>
+goto(size, size)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -117,7 +119,9 @@ pendown()
 goto(-size // 2, size // 2)
 goto(-size // 2, -size // 2)
 goto(size // 2, -size // 2)
-goto(size // 2, size // 2)</code>
+goto(size // 2, size // 2)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -142,7 +146,9 @@ goto(size, 0)
 goto(0, -size)
 goto(-size, 0)
 goto(-size // 2, size // 2)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -167,7 +173,9 @@ goto(size // 2, 0)
 goto(0, -size // 2)
 goto(-size // 2, 0)
 goto(-size // 4, size // 4)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -202,7 +210,9 @@ goto(-size, -3 * size)
 goto(-size, 3 * size)
 goto(-3 * size, 3 * size)
 goto(-3 * size, size)
-goto(size, size)</code>
+goto(size, size)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -237,7 +247,9 @@ goto(-size // 3, -size)
 goto(-size // 3, size)
 goto(-size, size)
 goto(-size, size // 3)
-goto(size // 3, size // 3)</code>
+goto(size // 3, size // 3)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -275,7 +287,9 @@ goto(-size, size)
 goto(-size, 3 * size)
 goto(0, size)
 goto(size, 3 * size)
-goto(size, size)</code>
+goto(size, size)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -313,7 +327,9 @@ goto(-size // 3, size // 3)
 goto(-size // 3, size)
 goto(0, size // 3)
 goto(size // 3, size)
-goto(size // 3, size // 3)</code>
+goto(size // 3, size // 3)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -351,7 +367,9 @@ goto(size, 4 * size)
 goto(3 * size, 4 * size)
 goto(3 * size, 5 * size)
 goto(0, 5 * size)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -385,7 +403,9 @@ goto(size // 3, 4 * size // 3)
 goto(size, 4 * size // 3)
 goto(size, 5 * size // 3)
 goto(0, 5 * size // 3)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -418,7 +438,9 @@ goto(3 * size, 3 * size)
 goto(0, 3 * size)
 goto(0, 2 * size)
 goto(size, 2 * size)
-goto(size, 0)</code>
+goto(size, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -451,7 +473,9 @@ goto(size, size)
 goto(0, size)
 goto(0, 2 * size // 3)
 goto(size // 3, 2 * size // 3)
-goto(size // 3, 0)</code>
+goto(size // 3, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -485,7 +509,9 @@ goto(3 * size, 3 * size)
 goto(2 * size, 4 * size)
 goto(0, 4 * size)
 goto(2 * size, 2 * size)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -519,7 +545,9 @@ goto(size // 2, size // 2)
 goto(size // 3, 2 * size // 3)
 goto(0, 2 * size // 3)
 goto(size // 3, size // 3)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -551,7 +579,9 @@ goto(2 * size, 3 * size)
 goto(2 * size, 1.5 * size)
 goto(size, 3 * size)
 goto(0, 3 * size)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -583,7 +613,9 @@ goto(2 * size // 3, size)
 goto(2 * size // 3, 2 * size // 3)
 goto(size // 3, size)
 goto(0, size)
-goto(0, 0)</code>
+goto(0, 0)
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -614,7 +646,10 @@ n = int(numinput("Módulo turtle", "Número de puntos (0-10): ", 5, 0, 10))
 
 for i in range(n):
     goto(50 * i, 0)
-    dot(10, 0, 0, 0)</code>
+    dot(10, 0, 0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -639,7 +674,10 @@ separacion = int(numinput("Módulo turtle","Separación entre puntos (10-50): ",
 
 for i in range(n):
     goto(separacion * i , 0)
-    dot(10, 0, 0, 0)</code>
+    dot(10, 0, 0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -665,7 +703,10 @@ for i in range(n):
     goto(separacion * i , 0)
     dot(10, 0, 0, 0)
     goto(separacion * i + 1, 5)
-    write(i + 1, False, "center")</code>
+    write(i + 1, False, "center")
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -692,7 +733,10 @@ for i in range(n):
     goto(separacion * i , 0)
     dot(10, 0, 0, 0)
     goto(separacion * i + 1, 5)
-    write(i + 1, False, "center")</code>
+    write(i + 1, False, "center")
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -722,7 +766,10 @@ for i in range(n):
     goto(separacion * i , 0)
     dot(grosor, 0, 0, 0)
     goto(separacion * i + 1, grosor // 2)
-    write(i + 1, False, "center")</code>
+    write(i + 1, False, "center")
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -749,7 +796,10 @@ n = int(numinput("Módulo turtle", "Número de puntos: ", 5, 0, 10))
 
 for i in range(n):
     goto(-50 * (n-1) / 2 + 50 * i , 0)
-    dot(10, 0, 0, 0)</code>
+    dot(10, 0, 0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -779,7 +829,10 @@ for i in range(n):
     goto(grosor * i, 0)
     dot(grosor, 0, 0, 0)
     goto(grosor * i, grosor // 2)
-    write(i+1, False, "center")</code>
+    write(i+1, False, "center")
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -806,7 +859,10 @@ for i in range(n):
     goto(grosor * i, 0)
     dot(grosor, color * i, color * i, color * i)
     goto(grosor * i, grosor // 2)
-    write(i+1, False, "center")</code>
+    write(i+1, False, "center")
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -839,7 +895,10 @@ for i in range(n):
     dot(grosor, 0, 0, 0)
 for i in range(n):
     goto(grosor * (n-1), grosor * i)
-    dot(grosor, 0, 0, 0)</code>
+    dot(grosor, 0, 0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -873,7 +932,10 @@ for i in range(n):
     dot(grosor, color * i, color * i, color * i)
 for i in range(n):
     goto(grosor * (n-1), grosor * i)
-    dot(grosor, color * i, color * i, color * i)</code>
+    dot(grosor, color * i, color * i, color * i)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -907,7 +969,10 @@ for i in range(n): # arriba
     dot(grosor, color * i, color * i, color * i)
 for i in range(n): # derecha
     goto(grosor * (n-1), grosor * (n-1) - grosor * i)
-    dot(grosor, color * i, color * i, color * i)</code>
+    dot(grosor, color * i, color * i, color * i)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -941,7 +1006,10 @@ for i in range(n - 1): # arriba
     dot(grosor, color * i, color * i, color * i)
 for i in range(n - 1): # derecha
     goto(grosor * (n-1), grosor * i)
-    dot(grosor, color * i, color * i, color * i)</code>
+    dot(grosor, color * i, color * i, color * i)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -968,7 +1036,10 @@ for i in range(11):
     goto(20 * i, 0)
     pendown()
     goto(20 * i, 200)
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -993,7 +1064,10 @@ for i in range(n):
     goto(20 * i, 0)
     pendown()
     goto(20 * i, 20 * (n-1))
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1019,7 +1093,10 @@ for i in range(n):
     goto(separa * i, 0)
     pendown()
     goto(separa * i, separa * (n-1))
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1051,7 +1128,10 @@ for i in range(n):
     goto(0, separa * i)
     pendown()
     goto(separa * (n-1) + 1, separa * i)
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1084,7 +1164,10 @@ for i in range(ny + 1):
     goto(0, separa * i)
     pendown()
     goto(separa * nx + 1, separa * i)
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1111,7 +1194,10 @@ pendown()
 goto(50, 0)
 goto(50, 50)
 goto(0, 50)
-goto(0,0)</code>
+goto(0,0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1136,7 +1222,10 @@ pendown()
 goto(lado, 0)
 goto(lado, lado)
 goto(0, lado)
-goto(0, 0)</code>
+goto(0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1167,7 +1256,10 @@ for i in range(n):
     goto(origen + lado, lado)
     goto(origen, lado)
     goto(origen, 0)
-    penup()</code>
+    penup()
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
@@ -1196,7 +1288,10 @@ for i in range(n):
     goto(lado + 20*i, 0)
     goto(lado + 20*i, lado + 20*i)
     goto(0, lado + 20*i)
-    goto(0, 0)</code>
+    goto(0, 0)
+
+
+exitonclick()</code>
 </pre>
         </div>
       </div>
