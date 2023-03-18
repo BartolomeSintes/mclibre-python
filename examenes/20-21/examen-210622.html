@@ -33,9 +33,34 @@
   </nav>
 
   <section id="ejercicio-1">
-    <h2>Ejercicio 1</h2>
+    <h2 class="con-aside">Ejercicio 1</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../../otros/python-testing.html">MPTC</a></p>
+      <p>202141</p>
+    </aside>
 
     <p>Un puesto de venta de buñuelos vende buñuelos de calabaza a 75 céntimos la unidad y buñuelos vacíos a 50 céntimos la unidad, pero hace un descuento de 1 € por cada docena de buñuelos que se compra. Escriba un programa que simule una venta de buñuelos en dicho puesto.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PUESTO DE BUÑUELOS
+¿Cuántos buñuelos vacíos quiere? <span class="entrada-usuario">-3</span>
+¿Cuántos buñuelos de calabaza quiere? <span class="entrada-usuario">7</span>
+No puede indicar cantidades negativas.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PUESTO DE BUÑUELOS
+¿Cuántos buñuelos vacíos quiere? <span class="entrada-usuario">1</span>
+¿Cuántos buñuelos de calabaza quiere? <span class="entrada-usuario">1</span>
+Son 1.25 €
+¿Cuánto dinero entrega? <span class="entrada-usuario">-3</span>
+Debe entregar una cantidad positiva.
+</pre>
+    </div>
 
     <div class="ejecucion-terminal">
       <pre>
@@ -72,7 +97,12 @@ Su cambio son 3.0 €.
   </section>
 
   <section id="ejercicio-2">
-    <h2>Ejercicio 2</h2>
+    <h2 class="con-aside">Ejercicio 2</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../../otros/python-testing.html">MPTC</a></p>
+      <p>202142</p>
+    </aside>
 
     <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>, legionarios romanos y grandes aficionados a los juegos de azar, juegan hoy a un juego sencillo. Cada jugador lanza primero un dado y a continuación lanza tantos dados como indique el primer dado. La puntuación que obtiene el jugador es el mayor de los valores obtenidos en la segunda tirada. gana el jugador que obtenga la puntuación más alta.</p>
 
@@ -110,10 +140,26 @@ JUEGO DE DADOS (1)
   Ha ganado Cubitus.
 </pre>
     </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (1)
+  Primera tirada de Cubitus: 1 dado
+  Tirada de Cubitus: 1 =&gt; 1 punto
+  Primera tirada de Humerus: 3 dados
+  Tirada de Humerus: 3 - 5 - 2 =&gt; 5 puntos
+  Ha ganado Humerus.
+</pre>
+    </div>
   </section>
 
   <section id="ejercicio-3">
-    <h2>Ejercicio 3</h2>
+    <h2 class="con-aside">Ejercicio 3</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../../otros/python-testing.html">MPTC</a></p>
+      <p>202143</p>
+    </aside>
 
     <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> prueban un nuevo juego. Esta vez juegan a tirar un dado hasta sacar un cinco. Gana el jugador que lo ha conseguido antes. Escriba un programa que simule una partida de este juego.</p>
 
@@ -142,11 +188,11 @@ SACAR UN CINCO
     <div class="ejecucion-terminal">
       <pre>
 SACAR UN CINCO
-Tiradas de Marcus: 2 1 3 5
-Marcus ha tenido que tirar 4 veces.
-Tiradas de Julius: 3 4 6 5
-Julius ha tenido que tirar 4 veces.
-Han empatado.
+  Tiradas de Marcus: 2 1 3 5
+  Marcus ha tenido que tirar 4 veces.
+  Tiradas de Julius: 3 4 6 5
+  Julius ha tenido que tirar 4 veces.
+  Han empatado.
 </pre>
     </div>
   </section>
