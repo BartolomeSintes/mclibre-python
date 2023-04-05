@@ -145,6 +145,59 @@ NameError: name 'j' is not defined</span>
 </pre>
       </div>
     </section>
+
+    <section id="guion-bajo">
+      <h3>Notación de números con guiones bajos</h3>
+
+      <p>Desde Python 3.6 (publicado en diciembre de 2016), Python permite intercalar guiones bajos (_) en cualquier número. Este carácter no tiene ningún significado matemático, simplemente se puede utilizar para facilitar al programador la lectura de números largos en el código fuente o al usuarrio de un programa la introducción de números largos. El intérprete de Python no lo utiliza al escribir los resultados.</p>
+      <div class="codigo idle">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 100_000 + 1_000_000
+<span class="idle-resp">1100000</span>
+</pre>
+      </div>
+
+      <p>El guion bajo suele utilizarse para separar miles, millones, etc. pero se puede utilizar en cualquier posición.</p>
+      <div class="codigo idle">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 100_000 + 0.000_001
+<span class="idle-resp">100000.000001</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 10_00_00 + 0.00_00_01
+<span class="idle-resp">100000.000001</span>
+</pre>
+      </div>
+
+      <p>El guion bajo no puede aparecer en el extremo de los números, ni en los extremos de las partes entera o decimal de los números decimales, ni escribirse dos guiones bajos seguidos.</p>
+
+      <div class="codigo idle">
+        <pre>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + _1000
+<span class="idle-erro">Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name '_1000' is not defined</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 1000_
+<span class="idle-erro">  File "&lt;stdin&gt;", line 1
+    1_000 + 1000_
+                ^
+SyntaxError: invalid decimal literal</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 0._1
+<span class="idle-erro">  File "&lt;stdin&gt;", line 1
+    1_000 + 0._1
+             ^
+SyntaxError: invalid decimal literal</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 0.1_
+<span class="idle-erro">  File "&lt;stdin&gt;", line 1
+    1_000 + 0.1_
+               ^
+SyntaxError: invalid decimal literal</span>
+<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 1__000
+<span class="idle-erro">  File "&lt;stdin&gt;", line 1
+    1_000 + 1__000
+             ^
+SyntaxError: invalid decimal literal</span>
+</pre>
+      </div>
+    </section>
   </section>
 
   <section id="operaciones-basicas">
@@ -820,7 +873,7 @@ NameError: name 'ceil' is not defined</span>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 25 de febrero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
