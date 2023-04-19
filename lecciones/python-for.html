@@ -2108,6 +2108,39 @@ El bucle ha terminado. Ahora i vale 4
 
     <hr class="corta">
 
+    <p>La variable de control se puede modificar en el interior del bucle, pero en cada iteración Python asigna a la variable de control el valor que le corresponde de acuerdo con el elemento iterable que define el bucle:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-python">i = 10
+print(f"El bucle no ha comenzado. Ahora i vale {i}")
+
+for i in [0, 1, 2]:
+    print(f"Ahora i vale {i}")
+    i = 100
+    print(f"Ahora i vale {i}")
+
+print(f"El bucle ha terminado. Ahora i vale {i}")</code>
+</pre>
+      </div>
+
+      <div class="ejecucion-terminal">
+        <pre>
+El bucle no ha comenzado. Ahora i vale 10
+Ahora i vale 0
+Ahora i vale 100
+Ahora i vale 1
+Ahora i vale 100
+Ahora i vale 2
+Ahora i vale 100
+El bucle ha terminado. Ahora i vale 100
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
     <p>Cuando se escriben dos o más bucles seguidos, la costumbre es utilizar el mismo nombre de variable puesto que cada bucle establece los valores de la variable sin importar los valores anteriores:</p>
 
     <div class="filaflex">
@@ -4434,7 +4467,7 @@ En total ha obtenido 11 punto(s).
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

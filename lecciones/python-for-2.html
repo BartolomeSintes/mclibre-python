@@ -2142,33 +2142,36 @@ print(i, end=" ")</code>
 
     <p>La costumbre más extendida es utilizar la letra "i" como nombre de la variable de control del bucle externo y la letra "j" como nombre de la variable de control del bucle interno (o "k" si hay un tercer nivel de anidamiento), pero se puede utilizar cualquier otro nombre válido.</p>
 
-    <p>En Python se puede incluso utilizar la misma variable en los dos bucles anidados porque Python las trata como si fueran dos variables distintas. Por ejemplo:</p>
+    <p>En Python se puede incluso utilizar la misma variable en los dos bucles anidados porque Python asigna el valor que corresponde a la variable de control cada vez que se ejecuta el cuerpo de un bucle. Por ejemplo:</p>
 
     <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40">
+      </div>
       <div class="codigo">
         <pre>
-<code class="language-python">for i in range(3):
-    print(f"i (externa) vale {i}")
-    for i in range(2):
-        print(f"i (interna) vale {i}")</code>
+<code class="language-python">for i in range(1, 4):
+    print(f"i vale {i}")
+    for i in range(11, 13):
+        print(f"  i  vale {i}")</code>
 </pre>
       </div>
       <div class="ejecucion-terminal">
         <pre>
-i (externa) vale 0
-i (interna) vale 0
-i (interna) vale 1
-i (externa) vale 1
-i (interna) vale 0
-i (interna) vale 1
-i (externa) vale 2
-i (interna) vale 0
-i (interna) vale 1
+i vale 1
+  i  vale 11
+  i  vale 12
+i vale 2
+  i  vale 11
+  i  vale 12
+i vale 3
+  i  vale 11
+  i  vale 12
 </pre>
       </div>
     </div>
 
-    <p>De todas formas, este uso no se recomienda porque da lugar a programas difíciles de interpretar y además no es habitual en otros lenguajes de programación. Se aconseja utilizar siempre nombres de variables distintos.</p>
+    <p>De todas formas, este uso no se recomienda porque da lugar a programas difíciles de interpretar y en otros lenguajes de programación puede dar problemas. Se aconseja utilizar siempre nombres de variables distintos.</p>
   </section>
 
   <section id="variables-dependientes">
@@ -2634,7 +2637,7 @@ i (interna) vale 1
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de abril de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
