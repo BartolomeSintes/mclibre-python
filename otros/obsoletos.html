@@ -69,9 +69,9 @@ else:
 </pre>
     </div>
 
-    <p>Ambos sangrados son sintácticamente válidos y siguen las reglas de formato de Python (<a href="https://www.python.org/dev/peps/pep-0008/">Pep 8</a>, pero el problema es que cada vez que formateabamos con black el segundo programa, black lo dejaba como el primero y pylint mostraba un aviso (en realidad, mostraba varias veces el mismo aviso, uno por línea).</p>
+    <p>Ambos sangrados son sintácticamente válidos y siguen las reglas de formato de Python (<a href="https://peps.python.org/pep-0008/">Pep 8</a>, pero el problema es que cada vez que formateabamos con black el segundo programa, black lo dejaba como el primero y pylint mostraba un aviso (en realidad, mostraba varias veces el mismo aviso, uno por línea).</p>
 
-    <p>Se pidió tanto a black como a pylint que resolvieran esta situación (<a href="https://github.com/PyCQA/pylint/issues/289">pylint issue #289</a> y <a href="https://github.com/psf/black/issues/48">black issue #48</a>), y finalmente fue pylint el que dio su brazo a torcer (punto 2 de la <a href="http://pylint.pycqa.org/en/latest/whatsnew/changelog.html#what-s-new-in-pylint-2-6-0">lista de novedades en pylint 2.6.0</a>).</p>
+    <p>Se pidió tanto a black como a pylint que resolvieran esta situación (<a href="https://github.com/pylint-dev/pylint/issues/289">pylint issue #289</a> y <a href="https://github.com/psf/black/issues/48">black issue #48</a>), y finalmente fue pylint el que dio su brazo a torcer (punto 2 de la <a href="https://pylint.readthedocs.io/en/latest/whatsnew/2/2.6/full.html#what-s-new-in-pylint-2-6-0">lista de novedades en pylint 2.6.0</a>).</p>
 
     <p>En el curso 2019-20, la única solución que encontré fue desactivar el aviso C0330 de pylint en el archivo de configuración de VSCode.</p>
 
@@ -83,7 +83,7 @@ else:
     "--extension-pkg-whitelist=pygame",
     "--disable=C0103, C0114, C0115, C0116, C0330",
     // Pylint features. Pylint global options and switches
-    // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
+    // https://pylint.pycqa.org/en/2.4/technical_reference/features.html
     // http://pylint.pycqa.org/en/latest/technical_reference/features.html
     // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
     // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
@@ -104,7 +104,7 @@ else:
     <ul>
       <li>Traducciones al castellano de la documentación original
         <ul>
-          <li><a href="http://pyspanishdoc.sourceforge.net/index.html">Documentación de Python 2.4 (2005)</a></li>
+          <li><a href="https://pyspanishdoc.sourceforge.net/index.html">Documentación de Python 2.4 (2005)</a></li>
           <li>The Python: Rag<br> Revista publicada en 2009 y 2010. La página web ya no existe, aunque se puede visitar la <a href="http://web.archive.org/web/20130621101109/http://pythonrag.org/">copia de la Wayback machine de Internet archive</a>. No he podido encontrar los ejemplares publicados en ningún sitio.</li>
         </ul>
       </li>
@@ -115,7 +115,7 @@ else:
       </li>
       <li>Libros
         <ul>
-          <li><a href="https://diveintopython.net/">Dive into Python</a>, de Mark Pilgrim (año 2004, para Python 2.3).</li>
+          <li><a href="https://diveintopython.org/">Dive into Python</a>, de Mark Pilgrim (año 2004, para Python 2.3).</li>
           <li><a href="https://learnpythonthehardway.org/">Learn Python the hard way</a>, de Zed A. Shaw (año 2010, para Python 2.6).</li>
           <li><a href="http://mundogeek.net/tutorial-python/">Python para todos</a>, de Raúl González Duque (para Python 2.6).</li>
         </ul>
