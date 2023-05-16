@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 16/05/23. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 16 de mayo de 2023</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 16/05/23</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+        <li><a href="#ejercicio-5">Ejercicio 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>El sistema métrico decimal se impuso en España mediante la Ley de 19 de julio de 1849. La equivalencia entre las antiguas unidades españolas y las nuevas unidades métricas habían sido establecidas a principios del siglo XIX por los matemáticos Gabriel Císcar y Agustín Pedrayes, representantes españoles en la comisión que definió el sistema métrico en París en 1798.</p>
+
+    <p>Según la <a href="https://web.archive.org/web/20120626112247/http://www.cem.es/sites/default/files/00000458recurso.pdf">Real Orden de 9 de diciembre de 1852</a>, en <a href="https://www.boe.es/datos/pdfs/BOE//1851/6199/A00002-00003.pdf">Valencia</a> una libra equivalía a 355 gr, 12 onzas equivalían a una libra, 4 cuartas equivalían a una onza y también se utilizaban milésimas de cuarta.</p>
+
+    <p>Escriba un programa que convierta una cantidad de gramos en libras, onzas, cuartas y milésimas de cuarta.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE GRAMOS EN LIBRAS, ONZAS, CUARTAS Y MILÉSIMAS
+Escriba una cantidad de gramos: <span class="entrada-usuario">1000</span>
+1000 gramos son 2 libras, 9 onzas, 3 cuartas y 211 milésimas de cuarta
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE GRAMOS EN LIBRAS, ONZAS, CUARTAS Y MILÉSIMAS
+Escriba una cantidad de gramos: <span class="entrada-usuario">392</span>
+392 gramos son 1 libras, 1 onzas, 1 cuartas y 2 milésimas de cuarta
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE GRAMOS EN LIBRAS, ONZAS, CUARTAS Y MILÉSIMAS
+Escriba una cantidad de gramos: <span class="entrada-usuario">123456</span>
+123456 gramos son 347 libras, 9 onzas, 0 cuartas y 642 milésimas de cuarta
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE GRAMOS EN LIBRAS, ONZAS, CUARTAS Y MILÉSIMAS
+Escriba una cantidad de gramos: <span class="entrada-usuario">0</span>
+0 gramos son 0 libras, 0 onzas, 0 cuartas y 0 milésimas de cuarta
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE GRAMOS EN LIBRAS, ONZAS, CUARTAS Y MILÉSIMAS
+Escriba una cantidad de gramos: <span class="entrada-usuario">-500</span>
+Por favor, escriba un número positivo.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> son dos legionarios que se entretienen en sus ratos libres jugando a juegos de dados, el pasatiempo favorito de los antiguos romanos. Un juego que pudieron haber jugado estos amigos consiste en tirar cada jugador cinco dados. La puntuación es la suma total de puntos, sin contar los valores que coincidan con el mínimo o el máximo obtenido. El jugador que saca más puntos gana la partida.</p>
+
+    <p>Escriba un programa que simule varias partidas seguidas de este juego de dados.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (1)
+
+¿Cuántos partidas van a jugar? <span class="entrada-usuario">0</span>
+¡Como mínimo se debe jugar una partida!
+</pre>
+    </div>
+
+  <div class="ejecucion-terminal">
+    <pre>
+JUEGO DE DADOS (1)
+
+¿Cuántos partidas van a jugar? <span class="entrada-usuario">1</span>
+
+Partida 1
+  Tirada de Cubitus: 4 4 6 4 3 =&gt; 12 puntos.
+  Tirada de Humerus: 1 3 6 4 2 =&gt; 9 puntos.
+  Ha ganado Cubitus.
+</pre>
+  </div>
+
+  <div class="ejecucion-terminal">
+    <pre>
+JUEGO DE DADOS (1)
+
+¿Cuántos partidas van a jugar? <span class="entrada-usuario">2</span>
+
+Partida 1
+  Tirada de Cubitus: 3 5 6 2 2 =&gt; 8 puntos.
+  Tirada de Humerus: 5 6 3 1 6 =&gt; 8 puntos.
+  Han empatado.
+
+Partida 2
+  Tirada de Cubitus: 3 4 4 4 4 =&gt; 0 puntos.
+  Tirada de Humerus: 4 2 5 5 1 =&gt; 6 puntos.
+  Ha ganado Humerus.
+</pre>
+  </div>
+</section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> juegan esta vez a ver quién alcanza antes una puntuación determinada. Una vez decidido el número de puntos a alcanzar o superar, cada jugador lanza un dado hasta que haya conseguido el objetivo. El jugador que haya necesitado menos tiradas es el ganador. </p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (2)
+
+¿Cuántos puntos hay que conseguir? <span class="entrada-usuario">4</span>
+
+Tiradas de Cubitus: 5
+Cubitus ha conseguido el objetivo en 1 tirada.
+
+Tiradas de Humerus: 2 3
+Humerus ha conseguido el objetivo en 2 tiradas.
+
+Ha ganado Cubitus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (2)
+
+¿Cuántos puntos hay que conseguir? <span class="entrada-usuario">8</span>
+
+Tiradas de Cubitus: 3 4 4
+Cubitus ha conseguido el objetivo en 3 tiradas.
+
+Tiradas de Humerus: 2 5 4
+Humerus ha conseguido el objetivo en 3 tiradas.
+
+Han empatado.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (2)
+
+¿Cuántos puntos hay que conseguir? <span class="entrada-usuario">10</span>
+
+Tiradas de Cubitus: 5 3 1 1
+Cubitus ha superado el objetivo en 4 tiradas.
+
+Tiradas de Humerus: 2 5 3
+Humerus ha superado el objetivo en 3 tiradas.
+
+Ha ganado Humerus.
+</pre>
+    </div>
+
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/230516-4-1-svg.png" alt="Ejercicio 4-1" width="324" height="324">
+      </div>
+
+      <div class="resultado-html">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/230516-4-2-svg.png" alt="Ejercicio 4-2" width="324" height="324">
+      </div>
+
+      <div class="resultado-html">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">blue</span> <span style="background-color: blue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">green</span> <span style="background-color: green; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">red</span> <span style="background-color: red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">yellow</span> <span style="background-color: yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente <strong>utilizando bucles</strong>:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/230516-5-1-svg.png" alt="Ejercicio 5-1" width="324" height="324">
+      </div>
+
+      <div class="resultado-html">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 16 de mayo de 2023</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
