@@ -100,10 +100,12 @@
     <p>Estas son las dos extensiones que se aconseja instalar para seguir este curso.</p>
     <ul>
       <li>multi-command</li>
-      <li>Python extension for Visual Studio Code</li>
+      <li>Python</li>
+      <li>Pylint</li>
+      <li>Black Formatter</li>
     </ul>
 
-    <section id="multi-command">
+    <section id="extension-multi-command">
       <h3>multi-command</h3>
       <p>Autor: ryuta46</p>
 
@@ -111,13 +113,11 @@
 
       <p>Repositorio GitHub: <a href="https://github.com/ryuta46/vscode-multi-command">multi-command</a></p>
 
-      <hr class="corta">
-
       <p>Esta extensión permite crear comandos que ejecuten a su vez varios comandos de Visual Studio Code.</p>
     </section>
 
-    <section id="python-for-vsc">
-      <h3>Python extension for Visual Studio Code</h3>
+  <section id="extension-python">
+      <h3>Python</h3>
 
       <p><img src="../img/vscode/vsc-extension-python.png" alt="Logotipo de Python for VSC" width="128" height="128" class="izquierda"></p>
 
@@ -205,12 +205,48 @@
         <li>2023:
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2023-release/">Febrero</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-march-2023-release/">Marzo</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-april-2023-release/">Abril</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-may-2023-release/">Mayo</a> -
         </li>
       </ul>
 
+      <p>Para complementar la extensión Python, se recomienda instalar las extensiones Pylint y Black Formatter.</p>
+    </section>
+
+    <section id="extension-pylint">
+      <h3>Pylint</h3>
+
+      <p><img src="../img/vscode/vsc-extension-python.png" alt="Logotipo de Python for VSC" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Microsoft</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.pylint">Pylint</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/microsoft/vscode-pylint">Pylint</a></p>
+
       <hr class="corta">
 
-      <p>Al instalar la extensión Python en Visual Studio Code, se debe instalar el módulo pylint y también es conveniente instalar un módulo de autoformato, como se explica en el apartado siguiente de Preferencias de configuración.</p>
+      <p><a href="https://pypi.org/project/pylint/">pylint</a> es un analizador de código estático para Python. Esta extensión incluye la última versión de pylint para su uso por la extensión Python.</p>
+
+      <p>La lista de mensajes de error y avisos de Pylint se puede consultar en el apartado <a href="https://pylint.pycqa.org/en/latest/technical_reference/features.html">Pylint Features</a> de la documentación de Pylint.</p>
+
+      <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que conviene modificar, sobre todo si trabajamos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
+    </section>
+
+    <section id="extension-black-formatter">
+      <h3>Black Formatter</h3>
+
+      <p><img src="../img/vscode/vsc-extension-python.png" alt="Logotipo de Python for VSC" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Microsoft</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter">Black Formatter</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/microsoft/vscode-black-formatter">Black Formatter</a></p>
+
+      <hr class="corta">
+
+      <p><a hre="https://pypi.org/project/black/">Black</a> es un formateador de código Python. Esta extensión incluye la última versión de black para su uso por la extensión Python.</p>
     </section>
   </section>
 
@@ -237,10 +273,6 @@
     // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
     "files.insertFinalNewline": true,
     //
-    // Python &gt; Formatting: Provider
-    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
-    "python.formatting.provider": "black",
-    //
     // Extensión multi-command
     "multiCommand.commands": [
         {
@@ -294,14 +326,13 @@
         },
     ],
     //
-    // Extensión pylint (configuración para ejercicios pygame y otros)
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": [
+    // Extensión Pylint
+    "pylint.importStrategy": "useBundled",
+    "pylint.args":[
         "--extension-pkg-whitelist=pygame",
         "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
         // Pylint features. Pylint global options and switches
-        // https://pylint.pycqa.org/en/2.4/technical_reference/features.html
+        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
         // http://pylint.pycqa.org/en/latest/technical_reference/features.html
         // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
         // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
@@ -310,6 +341,13 @@
         // C0301: line-too-long
         // C0302: too-many-lines
     ],
+    //
+    // Extensión Black Formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "python.formatting.provider": "none",
+    "black-formatter.importStrategy": "useBundled",
     //
     //</code>
 </pre>
@@ -329,10 +367,6 @@
     // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
     "files.insertFinalNewline": true,
     //
-    // Python &gt; Formatting: Provider
-    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
-    "python.formatting.provider": "black",
-    //
     // Extensión multi-command
     "multiCommand.commands": [
         {
@@ -386,14 +420,13 @@
         },
     ],
     //
-    // Extensión pylint (configuración para ejercicios pygame y otros)
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": [
+    // Extensión Pylint
+    "pylint.importStrategy": "useBundled",
+    "pylint.args":[
         "--extension-pkg-whitelist=pygame",
         "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
         // Pylint features. Pylint global options and switches
-        // https://pylint.pycqa.org/en/2.4/technical_reference/features.html
+        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
         // http://pylint.pycqa.org/en/latest/technical_reference/features.html
         // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
         // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
@@ -402,6 +435,14 @@
         // C0301: line-too-long
         // C0302: too-many-lines
     ],
+    //
+    // Extensión Black Formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+    },
+    "python.formatting.provider": "none",
+    "black-formatter.importStrategy": "useBundled",
+    //
     //
 }</code>
 </pre>
@@ -409,90 +450,6 @@
           </details>
         </li>
       </ul>
-    </section>
-
-    <section id="instalacion-modulos">
-      <h3>Instalación de módulos de Python</h3>
-
-      <p>Como las preferencias de configuración propuestas activan el uso de pylint y black en Visual Studio Code, se deben instalar ambos módulos.</p>
-
-      <section id="extension-pylint">
-        <h4>Instalación de pylint (analizador de código estático)</h4>
-
-        <p>Al guardar el fichero de configuración (o al guardar por primera vez un programa de Python si no se hace entonces), Visual Studio Code mostrará un aviso indicando que no hay ningún <i>linter</i> instalado y ofrecerá la opción de instalar <i>pylint</i> automáticamente.</p>
-
-        <ol>
-          <li>Abra o escriba un programa cualquiera y guárdelo.</li>
-          <li>
-            Se mostrará el aviso indicando que no hay ningún <i>linter</i> instalado. Haga clic en "Install pylint" para instalar <i>pylint</i>.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-pylint-1.png" alt="VSC. Instalación de pylint" width="1024" height="576">
-            </p>
-          </li>
-          <li>Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de pylint y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-pylint-2.png" alt="VSC. Instalación de pylint" width="1024" height="215">
-            </p>
-
-            <p><strong>Nota</strong>: Como puede verse en la captura, se muestra un aviso en color amarillo indicando que uno de los paquetes no utiliza el formato de instalación moderno.</p>
-          </li>
-        </ol>
-
-        <hr class="corta">
-
-        <h4>Configuración de pylint (analizador de código estático)</h4>
-
-        <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que conviene modificar, sobre todo si trabajamos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
-
-        <p>La lista de mensajes de error y avisos de Pylint se encuentra en el apartado <a href="https://pylint.pycqa.org/en/2.4/technical_reference/features.html">Pylint Features de la documentación de Pylint.</a></p>
-
-        <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
-        <div class="codigo copy">
-          <pre>
-<code class="language-json">    //
-    // Extensión pylint (configuración para ejercicios pygame y otros)
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": [
-        "--extension-pkg-whitelist=pygame",
-        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
-        // Pylint features. Pylint global options and switches
-        // https://pylint.pycqa.org/en/2.4/technical_reference/features.html
-        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-        // C0301: line-too-long
-        // C0302: too-many-lines
-    ],
-    //
-    //</code>
-</pre>
-        </div>
-      </section>
-
-      <section id="extension-autoformato">
-        <h4>Instalación de black (autoformato)</h4>
-
-        <p>En general, al formatear código por primera vez después de instalar la extensión Python (atajo <span class="soft-atajo-teclado">Alt+Mayús+f</span>), Visual Studio Code mostrará un aviso indicando que no hay ningún formateador de código de Python instalado y que le ofrecerá la opción de instalar algún módulo de autoformato. Actualmente (enero de 2023), los módulos de autoformato que ofrece son: <a href="https://pypi.org/project/autopep8/">autopep8</a>, <a href="https://pypi.org/project/black/">black</a> y <a href="https://pypi.org/project/yapf/">yapf</a>.</p>
-
-        <p>En nuestro caso, como en las preferencias de configuración recomendadas en estos apuntes se incluye la preferencia del formateador <strong>black</strong>, se mostrará un aviso indicando que el formateador <strong>black</strong> no está instalado.</p>
-        <ol>
-          <li>Haga clic en "Sí" para instalarlo.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-1.png" alt="VSC. Instalación de black" width="1024" height="150">
-            </p>
-            <p><strong>Nota</strong>: En estos apuntes se recomienda el módulo <strong>black</strong>, pero se podría utilizar otro módulo. El formato aplicado no afecta al resultado ni a la velocidad de ejecución de los programas.</p>
-          </li>
-          <li>
-            Se abrirá en la parte inferior una ventana de terminal en la que se ejecutará la instalación de black y de sus dependencias. Si la instalación se realiza correctamente, se mostrará el aviso correspondiente. Puede cerrar la ventana haciendo clic en el icono de cierre.
-            <p class="captura">
-              <img src="../img/vscode/vsc-python-formatter-2.png" alt="VSC. Instalación de black" width="1024" height="110">
-            </p>
-          </li>
-        </ol>
-      </section>
     </section>
   </section>
 
@@ -700,7 +657,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 17 de mayo de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
