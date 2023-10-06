@@ -25,6 +25,8 @@
       <ul>
         <li><a href="#vscode-pylint-black">VSCode</a></li>
         <li><a href="#documentacion-python2">Documentación Python 2</a></li>
+        <li><a href="#transicion">De Python 2 a Python 3</a></li>
+        <li><a href="#retirada-guido">Retirada Guido</a></li>
       </ul>
     </div>
   </nav>
@@ -96,12 +98,27 @@ else:
 </pre>
     </div>
 
-    <p>En pylint 2.6.0  (publicado el 28/03/2021) eliminaron los avisos bad-continuation C0330 y bad-whitespace C0326, por lo que esté problema despareció.</p>
+    <p>En pylint 2.6.0 (publicado el 28/03/2021) eliminaron los avisos bad-continuation C0330 y bad-whitespace C0326, por lo que esté problema despareció.</p>
   </section>
 
   <section id="documentacion-python2">
     <h2>Documentación Python 2</h2>
     <ul>
+      <li>Principales novedades en Python 2.X (documentación oficial):
+        <a href="https://docs.python.org/2/whatsnew/2.0.html">2.0</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.1.html">2.1</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.2.html">2.2</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.3.html">2.3</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.4.html">2.4</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.5.html">2.5</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.6.html">2.6</a> -
+        <a href="https://docs.python.org/2/whatsnew/2.7.html">2.7</a>
+      </li>
+      <li>Planificación de la publicación de Python 2.X (release schedules):
+        <a href="https://peps.python.org/pep-0361/">2.6</a> -
+        <a href="https://peps.python.org/pep-0373/">2.7</a> -
+        <a href="https://peps.python.org/pep-0404/">2.8</a>
+      </li>
       <li>Traducciones al castellano de la documentación original
         <ul>
           <li><a href="https://pyspanishdoc.sourceforge.net/index.html">Documentación de Python 2.4 (2005)</a></li>
@@ -130,8 +147,68 @@ else:
     </ul>
   </section>
 
+  <section id="transicion">
+    <h2>Transición de Python 2 a Python 3</h2>
+
+    <p>La transición de Python 2 a Python 3 resultó mucho más costosa de lo esperado, debido a que Python 3 introdujo muchos cambios en el lenguaje y obligaba a reescribir prácticamente todos los programas (aunque se han creado herramientas para ayudar en ese proceso).</p>
+
+    <p>La intención inicial era haber terminado Python 2 con la versión 2.6, pero en 2010 se tuvo que publicar la versión 2.7, incorporando parte de las novedades de Python 3. Además, el período de mantenimiento de Python 2.7 se tuvo que duplicar de los cinco años habituales a diez, hasta 2020.</p>
+
+    <hr class="corta">
+
+    <p>Un primer obstáculo en el proceso de transición de Python 2 a Python 3 fue la propia disponibilidad de Python 3 en las distribuciones GNU/Linux. Muchas herramientas internas de las distribuciones están escritas en Python y su conversión de Python 2 a Python 3 no era fácil, por lo que las distribuciones no podían pasar simplemente de incluir una versión a otra.</p>
+
+    <p>Hasta 2015, Python 2 siguió siendo la versión predeterminada de Python en la mayoría de distribuciones GNU/Linux (aunque se podía instalar Python 3 sin problemas en ellas). Felizmente, esta situación está resuelta en las principales distribuciones:</p>
+
+    <ul>
+      <li>Fedora hizo la transición a Python 3 en noviembre de 2015 (Fedora 23), incluyendo Python 3.4 [<a href="https://fedoraproject.org/wiki/Changes/Python_3_as_Default">wiki de Fedora</a>]. RedHat Linux hizo la transición a Python 3 en mayo de 2019 (RedHat Linux 8), incluyendo Python 3.6, ya que está basada en Fedora 28.</li>
+      <li>Ubuntu hizo la transición a Python 3 en abril de 2016 (Ubuntu 16.04), incluyendo Python 3.5 [<a href="https://wiki.ubuntu.com/Python/Python35Transition">wiki de Ubuntu</a>].</li>
+      <li><a href="https://www.openstack.org/">OpenStack</a>, una importante plataforma de virtualización, hizo la transición a Python 3 en agosto de 2017 (<a href="https://www.openstack.org/news/view/340/openstack-pike-delivers-composable-infrastructure-services-and-improved-lifecycle-management">Pike</a>), incluyendo Python 3.5 </li>
+      <li>Debian hizo la transición a Python 3 en julio de 2019 (Debian 10), incluyendo Python 3.7.</li>
+    </ul>
+
+    <p>Aunque las nuevas versiones de las distribuciones se basan en Python 3, las distribuciones basadas en Python 2 seguirán instaladas en servidores durante bastantes años. Ese es el motivo por el que la fundación Python prolongó el período de publicación de actualizaciones de seguridad de Python 2.7 hasta finales de 2019. A partir de 2020 son las distribuciones las que mantienen Python 2.7 durante el tiempo que se mantengan las propias distribuciones (por ejemplo, RedHat 7 se mantendrá hasta el año 2024, como mínimo, y RedHat 8 o Debian 10 todavía permiten instalar Python 2.7).</p>
+
+    <hr class="corta">
+
+    <p>Un segundo obstáculo en el proceso de transición de Python 2 a Python 3 (y que ha afectado además a todos los sistemas operativos) ha sido la disponibilidad de las bibliotecas.</p>
+
+    <p>Python cuenta con un gran número de bibliotecas, cuyo repositorio oficial es <a href="https://pypi.org/">PyPI</a> (Python Package Index), que facilitan la programación de aplicaciones complejas. Cuando se publicó Python 3, la inmensa mayoría de bibliotecas sólo estaban disponibles para Python 2 y, lógicamente, si un programa necesitaba alguna biblioteca que sólo estaba disponible para Python 2, el programa no se podía pasar tampoco a Python 3.</p>
+
+    <p>Poco a poco, la mayoría de bibliotecas de Python fueron publicando versiones para Python 3, por lo que este problema también está resuelto. Las bibliotecas que no han hecho la transición a Python 3 es normalmente porque están abandonadas.</p>
+
+    <p>En marzo de 2016, un <a href="https://devblogs.microsoft.com/python/python-3-is-winning/">estudio de empleados de Microsoft</a> señalaba que por aquel entonces algo más del 50% de las bibliotecas estaban disponibles tanto para Python 2 como para Python 3, un 25% estaban disponibles sólo para Python 2 y un poco menos del 25% estaban disponibles sólo para Python 3, pero la tendencia parecía indicar que a mediados de 2016 Python 3 pasaría a ser la versión más popular.</p>
+
+    <p>Varias páginas web hacen un seguimiento de la compatibilidad con Python 3 de las bibliotecas más populares</p>
+    <ul>
+      <li>La distribución GNU/Linux Fedora lleva el seguimiento de los paquetes de Python que forman parte de la distribución: <a href="https://fedora.portingdb.xyz/">paquetes</a> y <a href="https://fedora.portingdb.xyz/history/">evolución</a>.</li>
+      <li><a href="https://hugovk.github.io/drop-python/">Drop Python</a> muestra la proporción de las bibliotecas más populares que han dejado de dar soporte a las versiones obsoletas más recientes de Python (Python 2.6, 2.7, 3.4, 3.5 y 3.6). El color verde en las gráficas significa que la biblioteca ya no da soporte a la versión.</li>
+      <li>En junio de 2019 <a href="https://web.archive.org/web/20190619140318/http://py3readiness.org/">Python 3 Readiness</a> mostraba cómo las 360 bibliotecas más populares de Python ya estaban disponibles en Python 3 (la página está abandonada, el enlace es a la copia en archive.org).</li>
+    </ul>
+  </section>
+
+  <section id="retirada-guido">
+    <h3>Retirada de Guido van Rossum</h3>
+
+    <p>En julio de 2018, Guido van Rossum <a href="https://www.mail-archive.com/python-committers@python.org/msg05628.html">anunció su retirada como BDOF</a>.</p>
+
+    <p>En diciembre de 2018 se aprobó el <a href="https://peps.python.org/pep-8016/">PEP 8016 -- The Steering Council Model</a> que establece como modelo de gobernanza de Python un consejo directivo formado por cinco miembros elegidos entre los desarrolladores de Python y que será renovado tras cada publicación de una versión principal de Python. El primer consejo directivo se eligió en enero de 2019 [<a href="https://lwn.net/Articles/777997/">artículo en lwn.net 04/02/2019</a>]. El segundo consejo directivo se eligió en diciembre de 2019 [<a href="https://peps.python.org/pep-8101/">PEP 8101</a>].</p>
+
+    <p>Guido van Rossum formó parte del primer consejo directivo, pero no del segundo, completando así su retirada de la dirección de Python.</p>
+
+    <p>En noviembre de 2020, Guido van Rossum <a href="https://twitter.com/gvanrossum/status/1326932991566700549?lang=es">anunció</a> que se incoporaba a la Developer Division de Microsoft para trabajar en temas relacionados con Python. En mayo de 2021 <a href="https://lwn.net/Articles/857754/">anunció</a> que centraría su trabajo en la mejora del rendimiento de Python.</p>
+
+    <p>Referencias:</p>
+    <ul>
+      <li><a href="https://lwn.net/Articles/759654/">Guido van Rossum resigns as Python leader</a></li>
+      <li><a href="https://lwn.net/Articles/757713/">PEP 572 and decision-making in Python</a></li>
+      <li><a href="https://peps.python.org/pep-0572/">PEP 572 -- Assignment Expressions</a></li>
+      <li><a href="https://lwn.net/Articles/775105/">Python gets a new governance model</a></li>
+    </ul>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 26 de febrero de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
