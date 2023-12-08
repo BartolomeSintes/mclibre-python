@@ -35,6 +35,8 @@
 
   <p>Esta es la configuración de Visual Studio Code que se recomienda para seguir este curso.</p>
 
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">La forma más sencilla de configurar Visual Studio Code de acuerdo con esta configuración recomendada es importar un perfil ya preparado, como se comenta en la lección <a href="vsc-python-perfil.html">Perfil recomendado</a>.</p>
+
   <p>Esta lección no detalla los pasos para configurar Visual Studio Code. En caso necesario, puede consultar la lección <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html">Personalización de VSC</a> de los apuntes de <a href="https://www.mclibre.org/consultar/informatica/index.html">Informática general</a>, en la que se explica detalladamente cómo se personaliza Visual Studio Code. En dichos apuntes también puede consultar lecciones dedicadas a Visual Studio Code, como <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc.html">Presentación general</a>, <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-instalacion.html">Instalación</a>, <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-uso.html">Uso</a> y otras, que le pueden ser de ayuda si no conoce Visual Studio Code.</p>
 
   <section id="temas">
@@ -42,17 +44,17 @@
 
     <p>El tema de color es un aspecto muy personal por lo que se deja a elección del alumno el tema de color empleado.</p>
 
-    <p>En las capturas de los apuntes se empleará el Tema Dark+ (default dark).</p>
+    <p>En las capturas de los apuntes se empleará el tema predeterminado Dark Modern (moderno oscuro).</p>
 
     <p class="captura">
-      <img src="../img/vscode/vsc-python-tema-dark.png" alt="VSC. Tema Dark+ predeterminado" width="1024" height="576">
+      <img src="../img/vscode/vsc-python-tema-dark.png" alt="VSC. Tema Dark Modern predeterminado" width="1024" height="576">
     </p>
   </section>
 
   <section id="area-trabajo">
     <h2>Área de trabajo</h2>
 
-    <p>Esta es el área de trabajo recomendada para seguir este curso.</p>
+    <p>En estos apuntes se recomienda utilizar una <strong>carpeta</strong> como área de trabajo de Visual Studio Code (no un Área de trabajo).</p>
 
     <ol>
       <li>Cree la carpeta Documentos &gt; LMSGI &gt; Python:
@@ -76,7 +78,7 @@
 
       <li>Elija la carpeta Documentos &gt; LMSGI &gt; Python:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="390">
+          <img src="../img/vscode/vsc-python-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="410">
         </p>
       </li>
 
@@ -88,7 +90,7 @@
 
       <li>Se abrirá el Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
         <p class="captura">
-          <img src="../img/vscode/vsc-python-area-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="220">
+          <img src="../img/vscode/vsc-python-area-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="225">
         </p>
       </li>
     </ol>
@@ -99,22 +101,10 @@
 
     <p>Estas son las dos extensiones que se aconseja instalar para seguir este curso.</p>
     <ul>
-      <li>multi-command</li>
       <li>Python</li>
-      <li>Pylint</li>
       <li>Black Formatter</li>
+      <li>Ruff</li>
     </ul>
-
-    <section id="extension-multi-command">
-      <h3>multi-command</h3>
-      <p>Autor: ryuta46</p>
-
-      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command">multi-command</a></p>
-
-      <p>Repositorio GitHub: <a href="https://github.com/ryuta46/vscode-multi-command">multi-command</a></p>
-
-      <p>Esta extensión permite crear comandos que ejecuten a su vez varios comandos de Visual Studio Code.</p>
-    </section>
 
   <section id="extension-python">
       <h3>Python</h3>
@@ -212,30 +202,30 @@
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-august-2023-release/">Agosto</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-september-2023-release/">Septiembre</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-october-2023-release/">Octubre</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-november-2023-release/">Noviembre</a> -
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-december-2023-release/">Diciembre</a>
         </li>
       </ul>
-
-      <p>Para complementar la extensión Python, se recomienda instalar las extensiones Pylint y Black Formatter.</p>
     </section>
 
-    <section id="extension-pylint">
-      <h3>Pylint</h3>
+    <section id="extension-ruff">
+      <h3>Ruff</h3>
 
-      <p><img src="../img/vscode/vsc-extension-python.png" alt="Logotipo de Python for VSC" width="128" height="128" class="izquierda"></p>
+      <p><img src="../img/vscode/vsc-extension-ruff.png" alt="Logotipo de Ruff for VSC" width="128" height="128" class="izquierda"></p>
 
-      <p>Autor: Microsoft</p>
+      <p>Autor: Astral Software</p>
 
-      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.pylint">Pylint</a></p>
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff">Ruff</a></p>
 
-      <p>Repositorio GitHub: <a href="https://github.com/microsoft/vscode-pylint">Pylint</a></p>
+      <p>Repositorio GitHub: <a href="https://github.com/astral-sh/ruff-vscodet">Ruff</a></p>
 
       <hr class="corta">
 
-      <p><a href="https://pypi.org/project/pylint/">pylint</a> es un analizador de código estático para Python. Esta extensión incluye la última versión de pylint para su uso por la extensión Python.</p>
+      <p><a href="https://pypi.org/project/ruff/">Ruff</a> es un analizador de código estático y un formateador de código para Python. Esta extensión incluye la última versión de ruff para su uso por la extensión Python.</p>
 
-      <p>La lista de mensajes de error y avisos de Pylint se puede consultar en el apartado <a href="https://pylint.pycqa.org/en/latest/technical_reference/features.html">Pylint Features</a> de la documentación de Pylint.</p>
+      <p>La lista de mensajes de error y avisos de Ruff se puede consultar en el apartado <a href="https://docs.astral.sh/ruff/rules/">Rules</a> de la documentación de Ruff.</p>
 
-      <p>La configuración inicial de Pylint en VSCode es una configuración mínima (<a href="https://code.visualstudio.com/docs/python/linting#_default-pylint-rules">documentación de VSCode</a>) que conviene modificar, sobre todo si trabajamos con pygame, para evitar que se muestren muchos avisos irrelevantes.</p>
+      <p>La configuración inicial de Ruff en VSCode es una configuración mínima (<a href="https://docs.astral.sh/ruff/configuration/">documentación de Ruff</a>).</p>
     </section>
 
     <section id="extension-black-formatter">
@@ -251,7 +241,7 @@
 
       <hr class="corta">
 
-      <p><a hre="https://pypi.org/project/black/">Black</a> es un formateador de código Python. Esta extensión incluye la última versión de black para su uso por la extensión Python.</p>
+      <p><a href="https://pypi.org/project/black/">Black</a> es un formateador de código Python. Esta extensión incluye la última versión de black para su uso por la extensión Python.</p>
     </section>
   </section>
 
@@ -270,90 +260,74 @@
             <summary>Haga clic aquí para mostrar las preferencias</summary>
             <div class="codigo copy">
               <pre>
-<code class="language-json">    //
+<code class="language-json">    // Configuraciones recomendadas para el curso Introducción a la programación con Python
+    // Versión 2023-12-08
     //
-    // Configuraciones recomendadas para el curso Introducción a la programación con Python
+    // Configuraciones generales "cosméticas"
+    //
+    // Editor: Minimap enabled
+    // Controla si se muestra el minimapa.
+    "editor.minimap.enabled": false,
+    //
+    // Editor: Render Whitespace
+    // Controla la forma en que el editor debe representar los caracteres de espacio en blanco.
+    "editor.renderWhitespace": "all",
+    //
+    // Editor: Word Wrap
+    // Controla cómo deben ajustarse las líneas.
+    "editor.wordWrap": "on",
+    //
+    // Window: Command Center
+    // Controla si la paleta de comandos se muestra en la barra de título. Esta configuración solo actúa cuando "window.titleBarStyle" tiene el valor "custom".
+    "window.commandCenter": false,
+    //
+    // Workbench &gt; Layout Control
+    // Controla si el control de disposición se muestra en la barra de título. Esta configuración solo actúa cuando "window.titleBarStyle" tiene el valor "custom".
+    "workbench.layoutControl.enabled": false,
+    //
+    //
+    // Configuraciones generales
+    //
+    // Editor: Insert Spaces
+    // Insertar espacios al presionar "TAB"
+    "editor.insertSpaces": true,
+    //
+    // Editor: Linked Editing
+    // Controla si el editor tiene habilitada la edición vinculada. Dependiendo del lenguaje, los símbolos relacionados (por ejemplo, las etiquetas HTML) se actualizan durante la edición.
+    "editor.linkedEditing": true,
+    //
+    // Files: eol
+    // Carácter predeterminado de final de línea.
+    "files.eol": "\n",
     //
     // Files: Insert Final Newline
     // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
     "files.insertFinalNewline": true,
     //
-    // Extensión multi-command
-    "multiCommand.commands": [
-        {
-            "command": "multiCommand.clearTerminal",
-            "sequence": [
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "clear\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-            ],
-        },
-        {
-            "command": "multiCommand.pythonMptcInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
-                    }
-                },
-            ],
-        },
-    ],
+    // Files: Trim Trailing Whitespace
+    // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
+    "files.trimTrailingWhitespace": true,
     //
-    // Extensión Pylint
-    "pylint.importStrategy": "useBundled",
-    "pylint.args":[
-        "--extension-pkg-whitelist=pygame",
-        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
-        // Pylint features. Pylint global options and switches
-        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
-        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-        // C0301: line-too-long
-        // C0302: too-many-lines
-    ],
     //
-    // Extensión Black Formatter
+    // Configuraciones específicas para programas en Python
+    //
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "source.fixAll": false
+        },
+        // Extensión Ruff
+        "ruff.importStrategy": "useBundled",
+        "ruff.enable": true,
+        "ruff.args": [
+            "--ignore E501"     // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
+        ],
+        // Extensión Black Formatter
+        "black-formatter.importStrategy": "useBundled",
+        "python.formatting.provider": "none",
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.formatting.provider": "none",
-    "black-formatter.importStrategy": "useBundled",
-    //
     //</code>
 </pre>
             </div>
@@ -367,89 +341,76 @@
               <pre>
 <code class="language-json">{
     // Configuraciones recomendadas para el curso Introducción a la programación con Python
+    // Versión 2023-12-08
+    //
+    // Configuraciones generales "cosméticas"
+    //
+    // Editor: Minimap enabled
+    // Controla si se muestra el minimapa.
+    "editor.minimap.enabled": false,
+    //
+    // Editor: Render Whitespace
+    // Controla la forma en que el editor debe representar los caracteres de espacio en blanco.
+    "editor.renderWhitespace": "all",
+    //
+    // Editor: Word Wrap
+    // Controla cómo deben ajustarse las líneas.
+    "editor.wordWrap": "on",
+    //
+    // Window: Command Center
+    // Controla si la paleta de comandos se muestra en la barra de título. Esta configuración solo actúa cuando "window.titleBarStyle" tiene el valor "custom".
+    "window.commandCenter": false,
+    //
+    // Workbench &gt; Layout Control
+    // Controla si el control de disposición se muestra en la barra de título. Esta configuración solo actúa cuando "window.titleBarStyle" tiene el valor "custom".
+    "workbench.layoutControl.enabled": false,
+    //
+    //
+    // Configuraciones generales
+    //
+    // Editor: Insert Spaces
+    // Insertar espacios al presionar "TAB"
+    "editor.insertSpaces": true,
+    //
+    // Editor: Linked Editing
+    // Controla si el editor tiene habilitada la edición vinculada. Dependiendo del lenguaje, los símbolos relacionados (por ejemplo, las etiquetas HTML) se actualizan durante la edición.
+    "editor.linkedEditing": true,
+    //
+    // Files: eol
+    // Carácter predeterminado de final de línea.
+    "files.eol": "\n",
     //
     // Files: Insert Final Newline
     // Si se habilita, inserte una nueva línea al final del archivo cuando lo guarde.
     "files.insertFinalNewline": true,
     //
-    // Extensión multi-command
-    "multiCommand.commands": [
-        {
-            "command": "multiCommand.clearTerminal",
-            "sequence": [
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "clear\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-                "workbench.action.focusActiveEditorGroup",
-            ],
-        },
-        {
-            "command": "multiCommand.pythonExecuteAndFocusInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
-                    }
-                },
-            ],
-        },
-        {
-            "command": "multiCommand.pythonMptcInTerminal",
-            "sequence": [
-                "workbench.action.terminal.focus",
-                {
-                    "command": "workbench.action.terminal.sendSequence",
-                    "args": {
-                        "text": "cd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
-                    }
-                },
-            ],
-        },
-    ],
+    // Files: Trim Trailing Whitespace
+    // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
+    "files.trimTrailingWhitespace": true,
     //
-    // Extensión Pylint
-    "pylint.importStrategy": "useBundled",
-    "pylint.args":[
-        "--extension-pkg-whitelist=pygame",
-        "--disable=C0103, C0114, C0115, C0116, C0301, C0302",
-        // Pylint features. Pylint global options and switches
-        // http://pylint.pycqa.org/en/2.4/technical_reference/features.html
-        // http://pylint.pycqa.org/en/latest/technical_reference/features.html
-        // C0103: invalid-name - Used when the name doesn't conform to naming rules associated to its type (constant, variable, class...).
-        // C0114: missing-module-docstring - Used when a module has no docstring.Empty modules do not require a docstring.
-        // C0115: missing-class-docstring - Used when a class has no docstring.Even an empty class must have a docstring.
-        // C0116: missing-function-docstring - Used when a function or method has no docstring.Some special methods like __init__ do not require a docstring.
-        // C0301: line-too-long
-        // C0302: too-many-lines
-    ],
     //
-    // Extensión Black Formatter
+    // Configuraciones específicas para programas en Python
+    //
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "source.fixAll": false
+        },
+        // Extensión Ruff
+        "ruff.importStrategy": "useBundled",
+        "ruff.enable": true,
+        "ruff.args": [
+            "--ignore E501"     // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
+        ],
+        // Extensión Black Formatter
+        "black-formatter.importStrategy": "useBundled",
+        "python.formatting.provider": "none",
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.formatting.provider": "none",
-    "black-formatter.importStrategy": "useBundled",
     //
-    //
-}</code>
+}
+</code>
 </pre>
             </div>
           </details>
@@ -478,6 +439,7 @@
             <pre>
 <code class="language-json">    //
     // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
+    // Versión 2023-12-08
     {
         // Pasar el foco al terminal
         "key": "ctrl+alt+NumPad_Add",
@@ -497,7 +459,19 @@
     {
         // Limpiar el terminal
         "key": "ctrl+alt+t ctrl+alt+l",
-        "command": "multiCommand.clearTerminal"
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        // caracteres Home Delete
+                        "text": "\u0001\u007F"
+                    }
+                },
+                "workbench.action.terminal.clear"
+            ]
+        }
     },
     {
         // Cerrar el terminal
@@ -505,20 +479,54 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo el foco en el editor)
+        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el editor)
         "key": "ctrl+alt+f5",
-        "command": "multiCommand.pythonExecuteInTerminal",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                "workbench.action.focusActiveEditorGroup",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                }
+            ]
+        }
     },
     {
-        // Ejecutar programa de Python en el terminal (pasando el foco al terminal)
+        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el terminal)
         "key": "ctrl+alt+shift+f5",
-        "command": "multiCommand.pythonExecuteAndFocusInTerminal"
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                }
+            ]
+        }
     },
     {
         // Ejecutar MPTC en el terminal (el usuario debe escribir el código MPTC)
         "key": "ctrl+alt+f6",
-        "command": "multiCommand.pythonMptcInTerminal",
-    },
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+                    }
+                }
+            ]
+        }
+    }
     //</code>
 </pre>
           </div>
@@ -531,6 +539,7 @@
           <div class="codigo copy">
             <pre>
 <code class="language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
+// Versión 2023-12-08
 [
     {
         // Pasar el foco al terminal
@@ -551,7 +560,19 @@
     {
         // Limpiar el terminal
         "key": "ctrl+alt+t ctrl+alt+l",
-        "command": "multiCommand.clearTerminal"
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        // caracteres Home Delete
+                        "text": "\u0001\u007F"
+                    }
+                },
+                "workbench.action.terminal.clear"
+            ]
+        }
     },
     {
         // Cerrar el terminal
@@ -559,21 +580,56 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo el foco en el editor)
+        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el editor)
         "key": "ctrl+alt+f5",
-        "command": "multiCommand.pythonExecuteInTerminal",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                "workbench.action.focusActiveEditorGroup",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                }
+            ]
+        }
     },
     {
-        // Ejecutar programa de Python en el terminal (pasando el foco al terminal)
+        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el terminal)
         "key": "ctrl+alt+shift+f5",
-        "command": "multiCommand.pythonExecuteAndFocusInTerminal"
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                    }
+                }
+            ]
+        }
     },
     {
         // Ejecutar MPTC en el terminal (el usuario debe escribir el código MPTC)
         "key": "ctrl+alt+f6",
-        "command": "multiCommand.pythonMptcInTerminal",
-    },
-]</code>
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.focus",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dmptc '${fileBasename}' "
+                    }
+                }
+            ]
+        }
+    }
+]
+</code>
 </pre>
           </div>
         </details>
@@ -662,7 +718,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
