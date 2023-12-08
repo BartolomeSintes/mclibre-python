@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Perfil recomendado para curso Python. Visual Studio Code. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Visual Studio Code. Perfil recomendado para el curso Introducción a la programación con Python</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>VSC: Perfil</h2>
+
+      <ul>
+        <li><a href="#perfil">Importar perfil</a></li>
+        <li><a href="#preferencias">Preferencias</a></li>
+        <li><a href="#area-trabajo">Área de trabajo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Visual Studio Code permite utilizar perfiles, lo que permite cambiar de forma sencilla entre distintas configuraciones (extensiones instaladas, preferencias, tareas, atajos y aspecto del interfaz). Además, los perfiles se pueden compartir, lo que facilita la puesta a punto del editor en distintos ordenadores. Por desgracia, los perfiles todavía tienen algunas limitaciones, por lo que la configuración a veces no puede ser completamente automática y requiere algunos pasos finales manuales.</p>
+
+  <p>En esta lección se comenta cómo instalar y completar la configuración de un perfil que incluye la <a href="vsc-python-configuracion.html">Configuración recomendada</a> para seguir este curso de Python. Consulte esas lecciones para conocer todo lo que incluye el perfil.</p>
+
+  <p>Referencias:</p>
+  <ul>
+    <li>Documentación oficial <a href="https://code.visualstudio.com/docs/editor/profiles">Profiles in Visual Studio Code</a></li>
+  </ul>
+
+  <section id="perfil">
+    <h2>Importar el perfil recomendado</h2>
+
+    <p>La URL del perfil recomendado para seguir estos apuntes en Windows es: <a href="https://gist.github.com/BartolomeSintes/d26604a1c08d6261eb0183d50f7ace6a">https://gist.github.com/BartolomeSintes/d26604a1c08d6261eb0183d50f7ace6a</a></p>
+
+    <hr class="corta">
+
+    <p>Para importar el perfil de Visual Studio Code recomendado para este curso ...</p>
+    <ul>
+      <li>Haga clic en la rueda dentada y elija la opción <span class="soft-menu">Perfiles &gt; Importar perfil</span>:
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-1.png" alt="VSC. Importar perfil recomendado" width="1024" height="350">
+        </p>
+      </li>
+      <li>Se abrirá una caja de texto para escribir la URL del perfil compartido:
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-2.png" alt="VSC. Importar perfil recomendado" width="1024" height="270">
+        </p>
+      </li>
+      <li>La URL del perfil recomendado para seguir estos apuntes en Windows es: <a href="https://gist.github.com/BartolomeSintes/d26604a1c08d6261eb0183d50f7ace6a">https://gist.github.com/BartolomeSintes/d26604a1c08d6261eb0183d50f7ace6a</a></li>
+      <li>Copie y pegue el enlace en la caja de texto y pulse <kbd>Intro</kbd>:
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-3.png" alt="VSC. Importar perfil recomendado" width="1024" height="175">
+        </p>
+      </li>
+      <li>Se mostrará la lista de elementos incluidos en el perfil (que se pueden seleccionar de forma individual). Para importar los elementos seleccionados, haga clic en el botón "Crear perfil":
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-4.png" alt="VSC. Importar perfil recomendado" width="1024" height="425">
+        </p>
+      </li>
+      <li>Se mostrará una caja de texto con el nombre del perfil:
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-5.png" alt="VSC. Importar perfil recomendado" width="1024" height="270">
+        </p>
+      </li>
+      <li>Ese nombre se puede cambiar, por ejemplo, por un nombre más corto. Es aconsejable que el nombre de cada perfil empiece de forma distinta (el motivo se explica en la captura siguiente). Para terminar, haga clic en el botón "Crear".
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-6.png" alt="VSC. Importar perfil recomendado" width="1024" height="270">
+        </p>
+      </li>
+      <li>Una vez creado el perfil, Visual Studio se reiniciará cargando el perfil. El nombre del perfil activo se muestra en la parte superior de la ventana. En este caso, el perfil tiene asociado el icono de la serpiente, lo que permite identificar el perfil que se está utilizando. Si el perfil no tuviera asociado ningún icono, se mostraría el icono de la rueda dentada junto con un par de caracteres que corresponden al principio del nombre del perfil. Si los nombres de perfiles empiezan de forma distinta, de un vistazo se puede identificar el perfil que se está utilizando.
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-7.png" alt="VSC. Importar perfil recomendado" width="1024" height="576">
+        </p>
+        <p><strong>Nota</strong>: Actualmente (diciembre de 2023), si dos perfiles tienen asociado el mismo icono, no se añaden las dos letras que permitirían distinguir los perfiles de un vistazo. He abierto una <i>issue</i>, <a href="https://github.com/microsoft/vscode/issues/200392">VSCode GitHub issue #2000392</a>, para pedir que añadan el texto cuando el icono es utilizado por varios perfiles.</p>
+      </li>
+      <li>El perfil importado se mostrará en el menú de congiguración.
+        <p class="captura">
+          <img src="../img/vscode/vsc-perfil-importar-8.png" alt="VSC. Importar perfil recomendado" width="1024" height="350">
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="area-trabajo">
+    <h2>Área de trabajo</h2>
+
+    <p>En este curso <a href="https://www.mclibre.org/consultar/python/index.html">Iniciación a la programación en Python</a> de <a href="https://www.mclibre.org/">mclibre.org</a> se utilizará una <strong>carpeta</strong> como área de trabajo de Visual Studio Code (no un Área de trabajo).</p>
+
+    <ol>
+      <li>Con el Explorador de archivos de Windows, cree la carpeta Documentos &gt; LMSGI &gt; Python:
+
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="170">
+        </p>
+      </li>
+
+      <li>Cree la carpeta Documentos &gt; LMSGI &gt; Python &gt; ejercicios y la carpeta Documentos &gt; LMSGI &gt; Python &gt; pruebas:
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
+        </p>
+      </li>
+
+      <li>En Visual Studio Code, elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="240">
+        </p>
+      </li>
+
+      <li>Seleccione la carpeta Documentos &gt; LMSGI &gt; Python:
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="440">
+        </p>
+      </li>
+
+      <li>Si es la primera vez que abre la carpeta, le pedirá confirmar que confía en el contenido de la carpeta.:
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="576">
+        </p>
+      </li>
+
+      <li>La carpeta elegida se mostrará al hacer clic en el icono Explorador de la barra de actividades:
+        <p class="captura">
+          <img src="../img/vscode/vsc-python-area-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="230">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2023</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
