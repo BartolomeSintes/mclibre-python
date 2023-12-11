@@ -314,20 +314,20 @@
     "[python]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-            "source.fixAll": false
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
         },
-        // Extensión Ruff
-        "ruff.importStrategy": "useBundled",
-        "ruff.enable": true,
-        "ruff.args": [
-            "--ignore E501"     // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
-        ],
-        // Extensión Black Formatter
-        "black-formatter.importStrategy": "useBundled",
-        "python.formatting.provider": "none",
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    //
+    // Extensión Ruff
+    "ruff.importStrategy": "useBundled",
+    "ruff.enable": true,
+    "ruff.lint.args": [
+        "--ignore E501" // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
+    ],
+    // Extensión Black Formatter
+    "black-formatter.importStrategy": "useBundled",
     //</code>
 </pre>
             </div>
@@ -394,20 +394,20 @@
     "[python]": {
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-            "source.fixAll": false
+            "source.organizeImports": "explicit",
+            "source.fixAll": "never"
         },
-        // Extensión Ruff
-        "ruff.importStrategy": "useBundled",
-        "ruff.enable": true,
-        "ruff.args": [
-            "--ignore E501"     // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
-        ],
-        // Extensión Black Formatter
-        "black-formatter.importStrategy": "useBundled",
-        "python.formatting.provider": "none",
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    //
+    // Extensión Ruff
+    "ruff.importStrategy": "useBundled",
+    "ruff.enable": true,
+    "ruff.lint.args": [
+        "--ignore E501" // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
+    ],
+    // Extensión Black Formatter
+    "black-formatter.importStrategy": "useBundled",
     //
 }
 </code>
@@ -718,7 +718,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 11 de diciembre de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
