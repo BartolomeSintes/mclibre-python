@@ -261,7 +261,7 @@
             <div class="codigo copy">
               <pre>
 <code class="language-json">    // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    // Versión 2023-12-08
+    // Versión 2023-12-12
     //
     // Configuraciones generales "cosméticas"
     //
@@ -312,22 +312,45 @@
     // Configuraciones específicas para programas en Python
     //
     "[python]": {
+        // Formatea al guardar
         "editor.formatOnSave": true,
+        // Acciones que se realizan al guardar
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit",
+            // Ruff ordena imports
+            "source.organizeImports.ruff": "explicit",
+            // Ruff no corrige los errores que sabe corregir
             "source.fixAll": "never"
         },
+        // Usa Black como formateador
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     //
     // Extensión Ruff
+    //
+    // Utiliza el Ruff incluido en la extensión
     "ruff.importStrategy": "useBundled",
+    // Ruff está activado
     "ruff.enable": true,
+    // Argumentos para personalizar el funcionamiento de Ruff
     "ruff.lint.args": [
-        "--ignore=E501" // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
+        // Reglas de configuración  https://docs.astral.sh/ruff/rules/
+        // Reglas predeterminadas   https://docs.astral.sh/ruff/configuration/
+        // E501: línea demasiado larga
+        // "--select=E501",
+        // "--ignore=E501",
+        // Longitud de línea en caracteres
+        // "--line-length=120",
     ],
+    //
     // Extensión Black Formatter
+    //
+    // Utiliza el Black incluido en la extensión
     "black-formatter.importStrategy": "useBundled",
+    // Argumentos para personalizar el funcionamiento de Black
+    "black-formatter.args": [
+        // Longitud de línea en caracteres
+        // "--line-length=88"
+    ]
     //</code>
 </pre>
             </div>
@@ -341,7 +364,7 @@
               <pre>
 <code class="language-json">{
     // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    // Versión 2023-12-08
+    // Versión 2023-12-12
     //
     // Configuraciones generales "cosméticas"
     //
@@ -392,25 +415,47 @@
     // Configuraciones específicas para programas en Python
     //
     "[python]": {
+        // Formatea al guardar
         "editor.formatOnSave": true,
+        // Acciones que se realizan al guardar
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit",
+            // Ruff ordena imports
+            "source.organizeImports.ruff": "explicit",
+            // Ruff no corrige los errores que sabe corregir
             "source.fixAll": "never"
         },
+        // Usa Black como formateador
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     //
     // Extensión Ruff
-    "ruff.importStrategy": "useBundled",
-    "ruff.enable": true,
-    "ruff.lint.args": [
-        "--ignore=E501" // line-too-long    https://docs.astral.sh/ruff/rules/line-too-long/
-    ],
-    // Extensión Black Formatter
-    "black-formatter.importStrategy": "useBundled",
     //
-}
-</code>
+    // Utiliza el Ruff incluido en la extensión
+    "ruff.importStrategy": "useBundled",
+    // Ruff está activado
+    "ruff.enable": true,
+    // Argumentos para personalizar el funcionamiento de Ruff
+    "ruff.lint.args": [
+        // Reglas de configuración  https://docs.astral.sh/ruff/rules/
+        // Reglas predeterminadas   https://docs.astral.sh/ruff/configuration/
+        // E501: línea demasiado larga
+        // "--select=E501",
+        // "--ignore=E501",
+        // Longitud de línea en caracteres
+        // "--line-length=120",
+    ],
+    //
+    // Extensión Black Formatter
+    //
+    // Utiliza el Black incluido en la extensión
+    "black-formatter.importStrategy": "useBundled",
+    // Argumentos para personalizar el funcionamiento de Black
+    "black-formatter.args": [
+        // Longitud de línea en caracteres
+        // "--line-length=88"
+    ]
+    //
+}</code>
 </pre>
             </div>
           </details>
