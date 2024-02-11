@@ -104,6 +104,7 @@
       <li>Python</li>
       <li>Black Formatter</li>
       <li>Ruff</li>
+      <li>multi-command</li>
     </ul>
 
   <section id="extension-python">
@@ -205,6 +206,9 @@
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-november-2023-release/">Noviembre</a> -
           <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-december-2023-release/">Diciembre</a>
         </li>
+        <li>2024:
+          <a href="https://devblogs.microsoft.com/python/python-in-visual-studio-code-february-2024-release/">Febrero</a>
+        </li>
       </ul>
     </section>
 
@@ -243,6 +247,17 @@
 
       <p><a href="https://pypi.org/project/black/">Black</a> es un formateador de código Python. Esta extensión incluye la última versión de black para su uso por la extensión Python.</p>
     </section>
+
+    <section id="extension-multi-command">
+      <h3>multi-command</h3>
+      <p>Autor: ryuta46</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command">multi-command</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/ryuta46/vscode-multi-command">multi-command</a></p>
+
+      <p>Esta extensión permite crear comandos que ejecuten a su vez varios comandos de Visual Studio Code.</p>
+    </section>
   </section>
 
   <section id="preferencias">
@@ -261,7 +276,7 @@
             <div class="codigo copy">
               <pre>
 <code class="language-json">    // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    // Versión 2023-12-12
+    // Versión 2024-02-11
     //
     // Configuraciones generales "cosméticas"
     //
@@ -364,7 +379,7 @@
               <pre>
 <code class="language-json">{
     // Configuraciones recomendadas para el curso Introducción a la programación con Python
-    // Versión 2023-12-12
+    // Versión 2024-02-11
     //
     // Configuraciones generales "cosméticas"
     //
@@ -482,13 +497,13 @@
           <summary>Haga clic aquí para mostrar los atajos de teclado</summary>
           <div class="codigo copy">
             <pre>
-<code class="language-json">    //
-    // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
-    // Versión 2023-12-08
+<code class="language-json">    // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
+    // Versión 2024-02-11
     {
         // Pasar el foco al terminal
         "key": "ctrl+alt+NumPad_Add",
-        "command": "workbench.action.terminal.focus"
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
     },
     {
         // Pasar el foco al editor de programa
@@ -524,24 +539,24 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el editor)
+        // Ejecutar programa de Python en el terminal (foco final en el editor)
         "key": "ctrl+alt+f5",
-        "command": "runCommands",
+        "command": "extension.multiCommand.execute",
         "args": {
-            "commands": [
+            "sequence": [
                 "workbench.action.terminal.focus",
-                "workbench.action.focusActiveEditorGroup",
                 {
                     "command": "workbench.action.terminal.sendSequence",
                     "args": {
-                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
                     }
-                }
+                },
+                "workbench.action.focusActiveEditorGroup"
             ]
         }
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el terminal)
+        // Ejecutar programa de Python en el terminal (foco final en el terminal)
         "key": "ctrl+alt+shift+f5",
         "command": "runCommands",
         "args": {
@@ -572,7 +587,7 @@
             ]
         }
     }
-    //</code>
+</code>
 </pre>
           </div>
         </details>
@@ -584,12 +599,13 @@
           <div class="codigo copy">
             <pre>
 <code class="language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
-// Versión 2023-12-08
+// Versión 2024-02-11
 [
     {
         // Pasar el foco al terminal
         "key": "ctrl+alt+NumPad_Add",
-        "command": "workbench.action.terminal.focus"
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
     },
     {
         // Pasar el foco al editor de programa
@@ -625,24 +641,24 @@
         "command": "workbench.action.terminal.kill"
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el editor)
+        // Ejecutar programa de Python en el terminal (foco final en el editor)
         "key": "ctrl+alt+f5",
-        "command": "runCommands",
+        "command": "extension.multiCommand.execute",
         "args": {
-            "commands": [
+            "sequence": [
                 "workbench.action.terminal.focus",
-                "workbench.action.focusActiveEditorGroup",
                 {
                     "command": "workbench.action.terminal.sendSequence",
                     "args": {
-                        "text": "\u0001\u007Fcd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
+                        "text": "cd '${fileDirname}'\u000Dclear\u000Dpy '${fileBasename}'\u000D"
                     }
-                }
+                },
+                "workbench.action.focusActiveEditorGroup"
             ]
         }
     },
     {
-        // Ejecutar programa de Python en el terminal (manteniendo/pasando el foco en el terminal)
+        // Ejecutar programa de Python en el terminal (foco final en el terminal)
         "key": "ctrl+alt+shift+f5",
         "command": "runCommands",
         "args": {
@@ -673,8 +689,7 @@
             ]
         }
     }
-]
-</code>
+]</code>
 </pre>
           </div>
         </details>
@@ -763,7 +778,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de diciembre de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
