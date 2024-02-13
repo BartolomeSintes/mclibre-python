@@ -498,18 +498,35 @@
           <div class="codigo copy">
             <pre>
 <code class="language-json">    // Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
-    // Versión 2024-02-11
+    // Versión 2024-02-13
     {
-        // Pasar el foco al terminal
+        // Pasar el foco al Explorador de archivos
+        "key": "ctrl+alt+NumPad_Divide",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!filesExplorerFocus"
+    },
+    // Pasar el foco a Panel &gt; Problemas
+    {
+        "key": "ctrl+alt+NumPad_Multiply",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        // Pasar el foco al Editor
+        "key": "ctrl+alt+NumPad_Subtract",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        // Pasar el foco al Panel &gt; Terminal
         "key": "ctrl+alt+NumPad_Add",
         "command": "workbench.action.terminal.focus",
         "when": "!terminalFocus"
     },
     {
-        // Pasar el foco al editor de programa
-        "key": "ctrl+alt+NumPad_Subtract",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
+        // Ocultar Panel
+        "key": "ctrl+alt+t ctrl+alt+o",
+        "command": "workbench.action.togglePanel"
     },
     {
         // Eliminar atajo predeterminado para liberar el atajo Ctrl+Alt+t
@@ -599,19 +616,36 @@
           <div class="codigo copy">
             <pre>
 <code class="language-json">// Atajos de teclado recomendados para el curso Introducción a la programación con Python de www.mclibre.org
-// Versión 2024-02-11
+// Versión 2024-02-13
 [
     {
-        // Pasar el foco al terminal
+        // Pasar el foco al Explorador de archivos
+        "key": "ctrl+alt+NumPad_Divide",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!filesExplorerFocus"
+    },
+    // Pasar el foco a Panel &gt; Problemas
+    {
+        "key": "ctrl+alt+NumPad_Multiply",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        // Pasar el foco al Editor
+        "key": "ctrl+alt+NumPad_Subtract",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        // Pasar el foco al Panel &gt; Terminal
         "key": "ctrl+alt+NumPad_Add",
         "command": "workbench.action.terminal.focus",
         "when": "!terminalFocus"
     },
     {
-        // Pasar el foco al editor de programa
-        "key": "ctrl+alt+NumPad_Subtract",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
+        // Ocultar Panel
+        "key": "ctrl+alt+t ctrl+alt+o",
+        "command": "workbench.action.togglePanel"
     },
     {
         // Eliminar atajo predeterminado para liberar el atajo Ctrl+Alt+t
@@ -696,16 +730,29 @@
       </li>
     </ul>
 
+    <section id="atajo-numpad">
+      <h3>Atajos relacionados con la navegación </h3>
+
+      <p>Entre los atajos recomendados, cuatro de ellos están relacionados con la navegación entre elementos del interfaz. En los cuatro intervienen teclas de operaciones aritméticas del teclado numérico(suma +, resta -, multiplicación * y división /):</p>
+
+      <ul>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+/</span> permite pasar el foco al explorador de archivos.</li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span> permite pasar el foco al editor.</li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt++</span> permite pasar el foco a la ventana de Terminal del panel.
+          <p>Si no se había abierto todavía ninguna ventana de terminal, el atajo abre una nueva ventana de terminal automáticamente. La primera vez que se abre una ventana de terminal, la ventana se abre en el directorio raíz del área de trabajo.</p>
+        </li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+*</span> permite pasar el foco a la ventana de Problemas del panel.</li>
+      </ul>
+    </section>
+
     <section id="atajo-ctrl+alt+t">
       <h3>Atajos relacionados con el terminal</h3>
 
-      <p>Entre los atajos recomendados, cuatro de ellos están relacionados con la ventana de terminal:</p>
+      <p>Entre los atajos recomendados, tres de ellos están relacionados con la ventana de terminal:</p>
 
       <ul>
-        <li>Los dos atajos (<span class="soft-atajo-teclado">Ctrl+Alt++</span> y <span class="soft-atajo-teclado">Ctrl+Alt+-</span>) permiten pasar el foco de la ventana de edición a la ventana del terminal y viceversa.
-          <p>Si no se había abierto todavía ninguna ventana de terminal, el atajo abre una nueva ventana de terminal automáticamente. La primera vez que se abre una ventana de terminal, la ventana se abre en el directorio raíz del área de trabajo.</p>
-        </li>
-        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+c</span> permite cerrar el terminal.</li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+o</span> oculta o muestra el terminal.</li>
+        <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+c</span> permite cerrar el terminal (equivalente a hacer clic en el icono de cubo de la basura incluido en el terminal).</li>
         <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+l</span> permite limpiar el terminal.</li>
       </ul>
     </section>
@@ -778,7 +825,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 13 de febrero de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
