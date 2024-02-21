@@ -29,7 +29,6 @@
               <ul>
                 <li><a href="#windows-sistema-instalar">Instalar</a></li>
                 <li><a href="#windows-sistema-usar">Usar</a></li>
-                <li><a href="#windows-problemas">Problemas</a></li>
                 <li><a href="#windows-sistema-actualizar">Actualizar</a></li>
                 <li><a href="#windows-sistema-desinstalar">Desinstalar</a></li>
               </ul>
@@ -89,20 +88,6 @@
 </pre>
             </div>
           </li>
-          <li>Instale <a href="https://docs.pytest.org/en/latest/">PyTest</a>:
-            <div class="terminal">
-              <pre class="command-line" data-prompt="C:\>">
-<code class="language-shell">pip install pytest</code>
-</pre>
-            </div>
-          </li>
-          <li>Instale <a href="https://docs.python-requests.org/en/latest/">Requests</a>:
-            <div class="terminal">
-              <pre class="command-line" data-prompt="C:\>">
-<code class="language-shell">pip install requests</code>
-</pre>
-            </div>
-          </li>
           <li>Instale <a href="https://pypi.org/project/mclibre-python-testing-client/">mclibre Python Testing Client</a>:
             <div class="terminal">
               <pre class="command-line" data-prompt="C:\>">
@@ -126,68 +111,6 @@
 </pre>
             </div>
           </li>
-        </ul>
-      </section>
-
-      <section id="windows-problemas">
-        <h4>Problemas en la instalación/ejecución de MPTC</h4>
-
-        <p>En algunos casos y por motivos que actualmente (marzo de 2022) no he identificado, al instalar MPTC se puede obtener un mensaje similar a este:</p>
-        <div class="terminal">
-          <pre class="command-line">
-<code>...
-Installing collected packages: mclibre-python-testing-client
-<span style="color: gold">  WARNING: The script mptc.exe is installed in <span class="codigo-resaltado">'C:\Users\XXXX\AppData\Local\Packages\PythonSoftwareFoundation.Python.
-310_XXXXX\LocalCache\local-packages\Python310\Scripts'</span> which is not on PATH.
-  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span></code>
-</pre>
-        </div>
-        <p>En ese caso, al intentar ejecutar MPTC se mostrará un mensaje de error:</p>
-        <div class="terminal">
-          <pre class="command-line">
-<code>C:\Users\XXXX\Documents\LMSGI\Python\pruebas&gt;mptc prueba.py 1
-"mptc" no se reconoce como un comando interno o externo,
-programa o archivo por lotes ejecutable.</code>
-</pre>
-        </div>
-        <p><strong>Nota</strong>: Las rutas que pueden verse en estos mensajes pueden ser ligeramente distintas a la del ejemplo anterior (por ejemplo, C:\Users\XXXX\AppData\Local\Programs\Python\Python310\Scripts\ o C:\Users\XXXX\AppData\Local\packages\LocalCache\local-packages\Python310\Scripts\).</p>
-
-        <p>Para resolver este problema, pruebe primero a reparar la instalación de Python, tal y como se comenta en la lección <a href="python-instalacion.html#modificar">Instalación de Python</a> (compruebe en concreto que esté marcada la casilla "Add Python to environment variables" en la pantalla "Advanced Options").</p>
-
-        <p>En caso de que la reparación de la instalación de Python no resuelva el problema, añada manualmente la ruta indicada al PATH de Windows, ejecutando los pasos siguientes:</p>
-
-        <ul>
-          <li>Haga clic en Inicio, escriba <i>variables de entorno</i> y haga clic en alguno de los accesos directos a "Editar las variables de entorno del sistema".
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-1.png" alt="Windows. Añadir PATH" width="1024" height="460">
-            </p>
-          </li>
-          <li>Se abrirá la ventana de "Propiedades del sistema". En la pestaña "Opciones avanzadas", haga clic en "Variables de entorno":
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-2.png" alt="Windows. Añadir PATH" width="412" height="486">
-            </p>
-          </li>
-          <li>Se abrirá la ventana "Variables de entorno". Haga clic en la variable de entorno "Path" y haga clic en "Editar...":
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-3.png" alt="Windows. Añadir PATH" width="618" height="585">
-            </p>
-          </li>
-          <li>Se abrirá la ventana "Editar variables de entorno". Para incluir la ruta, haga clic en "Nuevo":
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-4.png" alt="Windows. Añadir PATH" width="527" height="501">
-            </p>
-          </li>
-          <li>Se mostrará el curso en una fila vacía de la tabla:
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-5.png" alt="Windows. Añadir PATH" width="527" height="180">
-            </p>
-          </li>
-          <li>Pegue en ella la ruta y haga clic en "Aceptar":
-            <p class="captura">
-              <img src="../img/mptc/mptc-script-path-6.png" alt="Windows. Añadir PATH" width="527" height="501">
-            </p>
-          </li>
-          <li>Reinicie Windows y compruebe que MPTC funciona.</li>
         </ul>
       </section>
 

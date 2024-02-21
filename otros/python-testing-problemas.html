@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Problemas. Python testing. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Problemas con Mclibre Python Testing Client, comprobador de ejercicios</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <ul>
+        <li><a href="#windows-problemas">Problemas en Windows</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comentan algunos problemas que puede encontrar al utilizar MPTC y cómo intentar solucionarlos.</p>
+
+  <section id="windows-problemas">
+    <h2>Problemas de MPTC en Windows</h2>
+
+    <section id="mptc-path">
+      <h4>Problemas en la instalación/ejecución de MPTC</h4>
+
+      <p>En algunos casos y por motivos que actualmente (marzo de 2022) no he identificado, al instalar MPTC se puede obtener un mensaje similar a este:</p>
+      <div class="terminal">
+        <pre class="command-line">
+<code>...
+Installing collected packages: mclibre-python-testing-client
+<span style="color: gold">  WARNING: The script mptc.exe is installed in <span class="codigo-resaltado">'C:\Users\XXXX\AppData\Local\Packages\PythonSoftwareFoundation.Python.
+310_XXXXX\LocalCache\local-packages\Python310\Scripts'</span> which is not on PATH.
+Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.</span></code>
+</pre>
+      </div>
+      <p>En ese caso, al intentar ejecutar MPTC se mostrará un mensaje de error:</p>
+      <div class="terminal">
+        <pre class="command-line">
+<code>C:\Users\XXXX\Documents\LMSGI\Python\pruebas&gt;mptc prueba.py 1
+"mptc" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.</code>
+</pre>
+      </div>
+      <p><strong>Nota</strong>: Las rutas que pueden verse en estos mensajes pueden ser ligeramente distintas a la del ejemplo anterior (por ejemplo, C:\Users\XXXX\AppData\Local\Programs\Python\Python310\Scripts\ o C:\Users\XXXX\AppData\Local\packages\LocalCache\local-packages\Python310\Scripts\).</p>
+
+      <p>Para resolver este problema, pruebe primero a reparar la instalación de Python, tal y como se comenta en la lección <a href="python-instalacion.html#modificar">Instalación de Python</a> (compruebe en concreto que esté marcada la casilla "Add Python to environment variables" en la pantalla "Advanced Options").</p>
+
+      <p>En caso de que la reparación de la instalación de Python no resuelva el problema, añada manualmente la ruta indicada al PATH de Windows, ejecutando los pasos siguientes:</p>
+
+      <ul>
+        <li>Haga clic en Inicio, escriba <i>variables de entorno</i> y haga clic en alguno de los accesos directos a "Editar las variables de entorno del sistema".
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-1.png" alt="Windows. Añadir PATH" width="1024" height="460">
+          </p>
+        </li>
+        <li>Se abrirá la ventana de "Propiedades del sistema". En la pestaña "Opciones avanzadas", haga clic en "Variables de entorno":
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-2.png" alt="Windows. Añadir PATH" width="412" height="486">
+          </p>
+        </li>
+        <li>Se abrirá la ventana "Variables de entorno". Haga clic en la variable de entorno "Path" y haga clic en "Editar...":
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-3.png" alt="Windows. Añadir PATH" width="618" height="585">
+          </p>
+        </li>
+        <li>Se abrirá la ventana "Editar variables de entorno". Para incluir la ruta, haga clic en "Nuevo":
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-4.png" alt="Windows. Añadir PATH" width="527" height="501">
+          </p>
+        </li>
+        <li>Se mostrará el curso en una fila vacía de la tabla:
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-5.png" alt="Windows. Añadir PATH" width="527" height="180">
+          </p>
+        </li>
+        <li>Pegue en ella la ruta y haga clic en "Aceptar":
+          <p class="captura">
+            <img src="../img/mptc/mptc-script-path-6.png" alt="Windows. Añadir PATH" width="527" height="501">
+          </p>
+        </li>
+        <li>Reinicie Windows y compruebe que MPTC funciona.</li>
+      </ul>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 20 de febrero de 2024</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
