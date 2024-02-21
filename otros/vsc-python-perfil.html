@@ -24,8 +24,8 @@
 
       <ul>
         <li><a href="#perfil">Importar perfil</a></li>
-        <li><a href="#preferencias">Preferencias</a></li>
         <li><a href="#area-trabajo">Área de trabajo</a></li>
+        <li><a href="#mptc">MPTC</a></li>
       </ul>
     </div>
   </nav>
@@ -138,8 +138,83 @@
     </ol>
   </section>
 
+  <section id="mptc">
+    <h2>Mclibre Python Testing Client (MPTC)</h2>
+
+    <p>MPTC utiliza la biblioteca <a href="https://docs.pytest.org/">pytest</a>. Para acelerar la ejecución de los tests pytest crea un par de directorios (<strong>.pytest_cache</strong> y <strong>__pycache__</strong>) en los que se guardan toda una serie de ficheros. De forma predeterminada esos directorios se crean en el directorio desde el que se invoca pytest, en nuestro caso en el área de trabajo. Estos directorios se pueden borrar, pero volverán a crearse cada vez que se ejecute MPTC.</p>
+
+    <p class="captura">
+      <img src="../img/mptc/mptc-cache-1.png" alt="Directorios __pycache__ y .pytest_cache" width="1024" height="265">
+    </p>
+
+    <p>Para configurar python y pytest de manera que estos directorios se creen en otra ubicación (por ejemplo en C:\tmp\python), siga estos pasos:</p>
+
+    <p><strong>Directorio __pycache__</strong></p>
+
+    <p>La ubicación del directorio __pycache__ se puede configurar en Windows con la variable de entorno PYTHONPYCACHEPREFIX. Para crearla:</p>
+
+    <ol>
+      <li>Haga clic en Inicio, escriba variables de entorno y haga clic en alguno de los accesos directos a "Editar las variables de entorno del sistema".
+        <p class="captura">
+          <img src="../img/mptc/mptc-cache-11.png" alt="Ubicación directorio __pycache__" width="1024" height="440">
+        </p>
+      </li>
+      <li>Se abrirá la ventana de "Propiedades del sistema". En la pestaña "Opciones avanzadas", haga clic en "Variables de entorno":
+        <p class="captura">
+          <img src="../img/mptc/mptc-cache-12.png" alt="Ubicación directorio __pycache__" width="412" height="486">
+        </p>
+      </li>
+      <li>Compruebe que todavía no está definida la variable de entorno PYTHONPYCACHEPREFIX y haga clic en en "Nueva...":
+        <p class="captura">
+          <img src="../img/mptc/mptc-cache-13.png" alt="Ubicación directorio __pycache__" width="618" height="585">
+        </p>
+      </li>
+      <li>Se abrirá una ventana para introducir el nombre y valor de la variable de entorno. Escriba <strong>PYTHONPYCACHEPREFIX</strong> como nombre de la variable y la ruta del directorio en el que se quieran guardar todos los ficheros temporales creados por python para MPTC, por ejemplo: <strong>C:\tmp\python\__pycache__</strong>. Haga clic en "Aceptar".
+        <p class="captura">
+          <img src="../img/mptc/mptc-cache-14.png" alt="Ubicación directorio __pycache__" width="653" height="165">
+        </p>
+      </li>
+      <li>Compruebe que la variable de entorno se ha creado correctamente.
+        <p class="captura">
+          <img src="../img/mptc/mptc-cache-15.png" alt="Ubicación directorio __pycache__" width="618" height="585">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <p><strong>Directorio .pytest_cache</strong></p>
+
+  <p>La ubicación del directorio .pytest_cache se debe configurar en Windows mediante un fichero de configuración pytest. </p>
+
+  <ol>
+    <li>En VSCode, cree el fichero <strong>pytest.ini</strong> en la raíz del área de trabajo con el siguiente contenido:
+      <div class="codigo">
+        <pre>
+<code class="language-configuracion">[pytest]
+cache_dir=C:\tmp\python\.pytest_cache</code>
+</pre>
+      </div>
+      <p class="captura">
+        <img src="../img/mptc/mptc-cache-21.png" alt="Ubicación directorio .pytest_cache" width="1024" height="200">
+      </p>
+    </li>
+  </ol>
+
+  <p>Comprobación</p>
+  <ol>
+    <li>Ejecute una prueba MPTC en algún programa y compruebe que no se han creado los directorios en el área de trabajo pero si se han creado en las ubicaciones establecidas:
+      <p class="captura">
+        <img src="../img/mptc/mptc-cache-3.png" alt="Ubicación directorios __pycache__ y .pytest_cache" width="1024" height="300">
+      </p>
+      <p class="captura">
+        <img src="../img/mptc/mptc-cache-4.png" alt="Ubicación directorios __pycache__ y .pytest_cache" width="1024" height="200">
+      </p>
+    </li>
+  </ol>
+
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 21 de febrero de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
