@@ -24,6 +24,7 @@
 
       <h3>Enunciados</h3>
       <ol>
+        <li><a href="#ejercicio-0">Navegación entre ventanas</a></li>
         <li><a href="#ejercicio-1">Programa no interactivo</a></li>
         <li><a href="#ejercicio-2">Programa interactivo</a></li>
         <li><a href="#ejercicio-3">Formatear programa</a></li>
@@ -38,15 +39,73 @@
 
 
   <section id="ejercicio-0">
-    <h2>Puesta en marcha - 0 - Preparación de las plantillas</h2>
+    <h2>Puesta en marcha - 0 - Preparación de las plantillas y navegación entre ventanas</h2>
 
     <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="plantillas/puesta-en-marcha-plantillas.zip">plantillas de los ejercicios Visual Studio Code. Puesta en marcha</a>.</p>
 
     <ul>
       <li>Descargue las plantillas y descomprímalas en la carpeta <strong>Python/ejercicios</strong>.</li>
       <li>Abra Visual Studio Code eligiendo como área de trabajo la carpeta <strong>Python</strong>, de acuerdo con la lección <a href="../otros/vsc-python-configuracion.html#area-trabajo">Configuración recomendada</a>.</li>
-      <li>Compruebe que la carpeta <strong>ejercicios/puesta-en-marcha</strong> contiene seis programas.</li>
+      <li>Compruebe que la carpeta <strong>ejercicios/puesta-en-marcha</strong> contiene seis programas.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-1.png" alt="Puesta en marcha 0-1" width="1024" height="320">
+        </p>
+      </li>
     </ul>
+
+    <p>Compruebe el funcionamiento de los cuatro atajos de teclado de navegación entre paneles.</p>
+
+    <ol>
+      <li>Cierre y/o oculte todas las ventanas.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-2.png" alt="Puesta en marcha 0-2" width="1024" height="320">
+        </p>
+      </li>
+    </ol>
+
+    <h3>Ventana de Explorador de archivos</h3>
+
+    <ol>
+      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+/</span> (la tecla <kbd>/</kbd> es la del teclado numérico). Compruebe que se abre y mueve el foco a la ventana del Explorador de archivos si el Explorador de archivos no estaba visible. Compruebe que se oculta la ventana del Explorador de archivos si el Explorador de archivos estaba visible.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-11.png" alt="Puesta en marcha 0-11" width="1024" height="320">
+        </p>
+      </li>
+      <li>Una vez abierto el Explorador de archivos, compruebe que puede desplazarse por los directorios con las flechas de desplazamiento, que puede abrir y cerrar directorios con <span class="soft-atajo-teclado">Intro</span> y que puede abrir ficheros con <span class="soft-atajo-teclado">Intro</span>
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-12.png" alt="Puesta en marcha 0-12" width="1024" height="180">
+        </p>
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-13.png" alt="Puesta en marcha 0-13" width="1024" height="290">
+        </p>
+      </li>
+    </ol>
+
+    <h3>Ventana de Panel</h3>
+
+    <ol>
+      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span> (la tecla <kbd>+</kbd> es la del teclado numérico). Compruebe que se abre y mueve el foco a la pestaña Terminal del Panel si el Panel no estaba visible. Compruebe que se oculta el Panel si el Panel estaba visible.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-21.png" alt="Puesta en marcha 0-21" width="1024" height="360">
+        </p>
+      </li>
+      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+*</span> (la tecla <kbd>*</kbd> es la del teclado numérico). Compruebe que se abre y mueve el foco a la pestaña Problemas del Panel si el Panel no estaba visible. Compruebe que se oculta el Panel si el Panel estaba visible.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-22.png" alt="Puesta en marcha 0-22" width="1024" height="360">
+        </p>
+      </li>
+    </ol>
+
+    <h3>Ventana del editor</h3>
+
+    <ol>
+      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+-</span> (la tecla <kbd>-</kbd> es la del teclado numérico). Compruebe que el foco se desplaza a la ventana del Editor si el foco se encuentra en otra ventana.
+        <p class="captura">
+          <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-0-21.png" alt="Puesta en marcha 0-21" width="1024" height="360">
+        </p>
+      </li>
+      <li>Compruebe que puede desplazarse con los cuatro atajos de una ventana a otra.</li>
+    </ol>
   </section>
 
   <section id="ejercicio-1">
@@ -59,45 +118,45 @@
         <ol>
           <li>Abra en Visual Studio Code el archivo puesta_en_marcha_1.py.</li>
           <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+F5</span>.</li>
-          <li>Compruebe que se abre una ventana de terminal y se muestra el resultado de la ejecución del programa, aunque el foco permanece en la ventana de edición del programa.
+          <li>Compruebe que se abre una pestaña de Terminal y se muestra el resultado de la ejecución del programa, aunque el foco permanece en la ventana de edición del programa.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-1.png" alt="Puesta en marcha 1-1" width="1024" height="220">
             </p>
-            <p>Si no se abre la ventana de terminal, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</p>
+            <p>Si no se abre la pestaña de Terminal, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</p>
           </li>
           <li>Si no se muestra el resultado de la ejecución del programa, compruebe que ha instalado Python, como se explica en la lección <a href="../otros/python-instalacion.html">Instalación de Python</a>.</li>
           <li>Observe la orden que genera Visual Studio Code para ejecutar el programa. En amarillo escribe la orden (py) y en azul el nombre del fichero del programa (puesta_en_marcha_1.py).</li>
-          <li>Cierre la ventana de terminal haciendo clic en el icono en forma de aspa.
+          <li>Puede ocultar la pestaña de Terminal haciendo clic en el icono en forma de aspa, mediante el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span> o mediante el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+p</span>.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-2.png" alt="Puesta en marcha 1-1" width="1024" height="220">
             </p>
           </li>
         </ol>
       </li>
-      <li><strong>Ejecutar en una ventana de terminal de Visual Studio Code</strong>
+      <li><strong>Ejecutar en una pestaña de Terminal de Visual Studio Code</strong>
         <ol>
           <li>Abra en Visual Studio Code el archivo puesta_en_marcha_1.py.</li>
-          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span> (la tecla <kbd>+</kbd> es la del teclado numérico).</li>
-          <li>Compruebe que se abre una ventana de terminal y que el foco cambia a la ventana del terminal.
+          <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span> (la tecla <kbd>+</kbd> es la del teclado numérico) o el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+p</span>.</li>
+          <li>Compruebe que se abre la pestaña de Terminal y que el foco cambia a la ventana del Panel.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-11.png" alt="Puesta en marcha 1-2" width="1024" height="220">
             </p>
             <p>Si no es así, compruebe que ha añadido el atajo en el archivo de configuración de atajos de teclado, como se explica en la lección <a href="../otros/vsc-python-configuracion.html#atajos-teclado">Configuración recomendada</a>.</p>
-            <p>Compruebe que la ventana de terminal es la misma que cerró antes y todavía muestra el contenido de la ejecución del programa anterior. Compruebe también que el foco cambia a la ventana de terminal y el cursor se muestra en la ventana de terminal.</p>
+            <p>Compruebe que la pestaña de Terminal es la misma que cerró antes y todavía muestra el contenido de la ejecución del programa anterior. Compruebe también que el foco cambia a la pestaña de Terminal y el cursor se muestra en la pestaña de Terminal.</p>
           </li>
-          <li>Cierre la ventana de terminal haciendo clic en el icono en forma de papelera.
+          <li>Cierre la pestaña de Terminal haciendo clic en el icono en forma de papelera o mediante el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+c</span>.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-12.png" alt="Puesta en marcha 1-2" width="1024" height="220">
             </p>
           </li>
           <li>Pulse de nuevo el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span>.</li>
-          <li>Compruebe que se abre una ventana de terminal y que el foco cambia a la ventana de terminal.
-            <p>Compruebe también que la ventana de terminal es una nueva ventana y no muestra el contenido de la ejecución de ningún programa.</p>
+          <li>Compruebe que se abre una pestaña de Terminal y que el foco cambia a la pestaña de Terminal.
+            <p>Compruebe también que la pestaña de Terminal es una nueva ventana y no muestra el contenido de la ejecución de ningún programa.</p>
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-13.png" alt="Puesta en marcha 1-2" width="1024" height="220">
             </p>
           </li>
-          <li>Compruebe que la ruta actual en la ventana de terminal es el directorio <strong>.../Python</strong>.
+          <li>Compruebe que la ruta actual en la pestaña de Terminal es el directorio <strong>.../Python</strong>.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-14.png" alt="Puesta en marcha 1-2" width="1024" height="220">
             </p>
@@ -118,11 +177,11 @@
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-17.png" alt="Puesta en marcha 1-2" width="1024" height="220">
             </p>
           </li>
-          <li>Compruebe que puede desplazarse de la ventana de terminal a la ventana del editor con el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>. (la tecla <kbd>-</kbd> es la del teclado numérico).</li>
-          <li>Cierre la ventana de terminal.</li>
+          <li>Compruebe que puede desplazarse de la pestaña de Terminal a la ventana del editor con el atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span>. (la tecla <kbd>-</kbd> es la del teclado numérico).</li>
+          <li>Cierre la pestaña de Terminal.</li>
         </ol>
       </li>
-      <li><strong>Ejecutar en una ventana de terminal de Windows (fuera de Visual Studio Code)</strong>
+      <li><strong>Ejecutar en una pestaña de Terminal de Windows (fuera de Visual Studio Code)</strong>
         <ol>
           <li>Abra el explorador de Windows en la carpeta <strong>python/ejercicios/puesta-en-marcha</strong>.
             <p class="captura">
@@ -134,7 +193,7 @@
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-22.png" alt="Puesta en marcha 1-3" width="1024" height="220">
             </p>
           </li>
-          <li>Se abrirá una ventana de terminal en la carpeta <strong>python/ejercicios/puesta-en-marcha</strong>.
+          <li>Se abrirá una pestaña de Terminal en la carpeta <strong>python/ejercicios/puesta-en-marcha</strong>.
             <p class="captura">
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-23.png" alt="Puesta en marcha 1-3" width="979" height="200">
             </p>
@@ -145,7 +204,7 @@
               <img src="../img/ejercicios/puesta-en-marcha/puesta-en-marcha-1-24.png" alt="Puesta en marcha 1-3" width="979" height="200">
             </p>
           </li>
-          <li>Cierre la ventana de terminal.</li>
+          <li>Cierre la pestaña de Terminal.</li>
         </ol>
       </li>
     </ul>
@@ -161,33 +220,33 @@
         <ol>
           <li>Abra en Visual Studio Code el archivo puesta_en_marcha_2.py.</li>
           <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+Mayús+F5</span>.</li>
-          <li>Compruebe que se abre una ventana de terminal y se muestra el resultado de la ejecución del programa.</li>
-          <li>Compruebe que el foco cambia a la ventana de terminal. Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Compruebe que se abre una pestaña de Terminal y se muestra el resultado de la ejecución del programa.</li>
+          <li>Compruebe que el foco cambia a la pestaña de Terminal. Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la pestaña de Terminal, contestando a la petición del programa.</li>
           <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
-          <li>Cierre la ventana de terminal.</li>
+          <li>Cierre la pestaña de Terminal.</li>
         </ol>
       </li>
-      <li><strong>Ejecutar en una ventana de terminal de Visual Studio Code</strong>
+      <li><strong>Ejecutar en una pestaña de Terminal de Visual Studio Code</strong>
         <ol>
           <li>Abra en Visual Studio Code el archivo puesta_en_marcha_2.py.</li>
           <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt++</span>.</li>
-          <li>Compruebe que se abre una ventana de terminal y que el foco cambia a la ventana de terminal.</li>
+          <li>Compruebe que se abre una pestaña de Terminal y que el foco cambia a la pestaña de Terminal.</li>
           <li>Ejecute el programa puesta_en_marcha_2.py con la orden <i>py puesta_en_marcha_2.py</i> o <i>python puesta_en_marcha_2.py</i></li>
           <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
-          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la pestaña de Terminal, contestando a la petición del programa.</li>
           <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
-          <li>Cierre la ventana de terminal.</li>
+          <li>Cierre la pestaña de Terminal.</li>
         </ol>
       </li>
-      <li><strong>Ejecutar en una ventana de terminal de Windows</strong>
+      <li><strong>Ejecutar en una pestaña de Terminal de Windows</strong>
         <ol>
           <li>Abra el explorador de Windows en la carpeta /python/ejercicios/puesta-en-marcha.</li>
-          <li>Escriba <i>cmd</i> en la barra de dirección y pulse <span class="soft-atajo-teclado">Intro</span>. Se abrirá una ventana de terminal.</li>
+          <li>Escriba <i>cmd</i> en la barra de dirección y pulse <span class="soft-atajo-teclado">Intro</span>. Se abrirá una pestaña de Terminal.</li>
           <li>Ejecute el programa puesta_en_marcha_2.py con la orden <i>py puesta_en_marcha_2.py</i> o <i>python puesta_en_marcha_2.py</i></li>
           <li>Compruebe que se muestra el resultado de la ejecución del programa.</li>
-          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la ventana de terminal, contestando a la petición del programa.</li>
+          <li>Escriba su nombre y pulse <span class="soft-atajo-teclado">Intro</span> en la pestaña de Terminal, contestando a la petición del programa.</li>
           <li>Comprueba que el programa termina escribiendo un saludo personalizado con su nombre.</li>
-          <li>Cierre la ventana de terminal.</li>
+          <li>Cierre la pestaña de Terminal.</li>
         </ol>
       </li>
     </ul>
@@ -216,7 +275,7 @@
       <li>Abra el programa puesta_en_marcha_4.py.</li>
       <li>Observe que en la barra lateral situada abajo a la izquierda se muestra errores y que en la barra de actividades el nombre del programa se muestra en rojo (al igual que la carpeta que lo contiene).</li>
       <li>Haga clic en los iconos de error para abrir el panel de problemas.</li>
-      <li>Ejecute el programa y compruebe que el programa no puede ejecutarse y que en la ventana de terminal obtiene el mismo mensaje de error (o similar).</li>
+      <li>Ejecute el programa y compruebe que el programa no puede ejecutarse y que en la pestaña de Terminal obtiene el mismo mensaje de error (o similar).</li>
       <li>Corrija el error ayudándose del mensaje indicado en el panel de problemas.</li>
       <li>Una vez corregido el error, guarde el programa. Como el programa contiene varios errores sintácticos, se mostrará un nuevo mensaje de error.</li>
       <li>Corrija todos los errores hasta que el contador en los iconos de error sea cero y el nombre del fichero deje de mostrarse en rojo. Recuerde que el análisis del programa se produce al guardar el programa, por lo que es necesario guardar el programa para confirmar que se ha corregido el error.</li>
@@ -274,7 +333,7 @@ Ha escrito el número 1234.
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de febrero de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 26 de febrero de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
