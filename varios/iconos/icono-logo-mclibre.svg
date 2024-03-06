@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
 <svg xmlns="http://www.w3.org/2000/svg" width="144.49" height="75.88">
   <path fill="green" stroke="green" stroke-width="2" d="M7.26 51.2c-3 .5-5.8 3.14-6.25 5.27 4.5 2.65 11.5 10.83 16.6 18.4 5-34.77 39.1-38.67 39.1-38.67S24 38.36 15 61.8c-1.98-3.84-4.46-7.34-7.74-10.6z" stroke-linecap="round" stroke-linejoin="round"/>
   <path fill="#d38d5f" d="M59.8 47.27l-8.15-23.05-17.06 19 25.2 4.05z"/>

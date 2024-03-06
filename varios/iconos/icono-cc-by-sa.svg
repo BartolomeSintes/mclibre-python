@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="42" viewBox="0 0 120 42">
   <path fill="#aab2ab" d="M3.4.48l113.36.2c1.6 0 3-.24 3 3.16l-.14 37.33H.55V3.7C.55 2.03.7.48 3.4.48z"/>
   <path fill="#fff" d="M34.52 19.58c0 7.52-6.1 13.63-13.62 13.64-7.53 0-13.64-6.1-13.65-13.63v-.1c0-7.5 6.1-13.6 13.63-13.6 7.53 0 13.64 6.1 13.64 13.6z"/>
