@@ -42,8 +42,8 @@
         <li><a href="#q10">Q10: del 05/02/24 al 18/02/24</a></li>
         <li><a href="#q11">Q11: del 19/02/24 al 03/03/24</a></li>
         <li><a href="#q12">Q12: del 04/03/24 al 17/03/24</a></li>
-        <!--
         <li><a href="#q13">Q13: del 18/03/24 al 14/04/24</a></li>
+        <!--
         <li><a href="#q14">Q14: del 15/04/24 al 28/04/24</a></li>
         <li><a href="#q15">Q15: del 29/04/24 al 12/05/24</a></li>
         <li><a href="#q16">Q16: del 13/05/24 al 19/05/24</a></li>
@@ -423,11 +423,77 @@ pip install --upgrade mclibre-python-testing-client</code>
     </ol>
   </section>
 
-  <!--
   <section id="q13">
     <h2>LMSGI Quincena Q13: del 18/03/24 al 14/04/24</h2>
 
+    <h3>Actualizar MPTC a versión 0.0.45</h3>
+
+    <p>El 22 de abril de 2024 he actualizado el paquete MPTC a la versión 0.0.45. La novedad de esta versión es que no
+      tiene en cuenta los espacios finales de las líneas (salvo cuando se trata de una línea en la que se pide un dato
+      al usuario). Es decir, que sí vuestras líneas contienen espacios finales cuando no son necesarios, no se generará
+      un aviso de MPTC. Como he tenido que cambiar tanto el cliente como los tests, es necesario que actualicéis el
+      paquete escribiendo en una ventana de comandos CMD o en el terminal de VSCode la orden:</p>
+
+    <div style="background-color: black; color: white; padding: 2px 20px; font-size: 120%">
+      <pre class="command-line">
+<code class="language-shell">pip install --upgrade mclibre-python-testing-client</code>
+</pre>
+    </div>
+
+    <h3>Ficheros</h3>
+
+    <p>Python permite escribir y leer ficheros. En los ejercicios propuestos de ficheros lo que haremos es básicamente
+      crear páginas web html.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/lecciones/python-ficheros.html">Ficheros</a>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-ficheros-1.html">Ficheros
+          (1).</a></li>
+      <li>Consultad las soluciones de los ejercicios <a
+          href="https://www.mclibre.org/consultar/python/ejercicios/ej-ficheros-1-soluciones.html">Ficheros (1)</a>.
+      </li>
+    </ol>
+
+    <h3>Gráficos SVG</h3>
+
+    <p>En la parte de HTML y CSS utilizamos gráficos SVG insertándolos en páginas web mediante la etiqueta &lt;img&gt;.
+      En esta parte de programación los vamos a volver a ver, pero esta vez creando los gráficos nosotros mismos. En
+      esta quincena se trata de familiarizarnos con el sistema de coordenadas de SVG y las formas básicas.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> (apuntes de
+        HTML).</li>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/htmlcss/html/svg-formas-1.html">Formas básicas
+          SVG</a> (apuntes de HTML).</li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-1.html">SVG (1)</a>
+        <p>Estos ejercicios son para repasar el sistema de coordenadas de SVG. Son ejercicios tipo test que podéis
+          repetir las veces necesarias. Hay en total doce ejercicios, divididos en bloques de cuatro ejercicios, uno
+          para cada una de las principales formas SVG: puntos (en realidad son círculos pequeños), rectángulos, líneas y
+          círculos.</p>
+        <ul>
+          <li>el primer ejercicio de cada es muy sencillo porque las coordenadas van de 0 a 5</li>
+          <li>el segundo ejercicio es un poco más complicado porque las coordenadas van de 0 a 100 (de 10 en 10) y hay
+            que afinar más la vista.</li>
+          <li>el tercero es un poco más complicado porque las coordenadas van de -100 a 100 y hay que aclararse con los
+            negativos</li>
+          <li>el cuarto es el más lioso porque salvo con el caso de los círculos, la escala es distinta en cada eje
+            (para ayudaros, el enunciado dice de cuánto en cuánto va la escala).</li>
+        </ul>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-2.html">SVG (2)
+          viewBox</a>
+        <p>Aunque en las plantillas de los ejercicios os indico el atributo viewBox (es decir, la porción del plano SVG
+          que se muestra en el dibujo), he preparado una página de ejercicios de tipo test para que podáis practicar los
+          valores del atributo viewBox. Como las preguntas se generan al azar, podéis repetirlos las veces que sea
+          necesario.</p>
+        <p><strong>Nota</strong>: En el examen os indicaré los valores de los atributos viewBox, como en cursos
+          anteriores.</p>
+      </li>
+    </ol>
   </section>
+
+  <!--
 
   <section id="q14">
     <h2>LMSGI Quincena Q14: del 15/04/24 al 28/04/24</h2>
@@ -446,7 +512,7 @@ pip install --upgrade mclibre-python-testing-client</code>
 
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de marzo de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 22 de abril de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img
