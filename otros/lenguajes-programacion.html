@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <title>Lenguajes de programación. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
@@ -15,8 +16,10 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python"
+          title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página"
+          title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -41,23 +44,47 @@
   <section id="que-es">
     <h2>Qué es un lenguaje de programación</h2>
 
-    <p>El "cerebro" de un ordenador es la Unidad Central de Procesamiento (CPU). En general una CPU no puede almacenar más que unos pocos números y realizar operaciones matemáticas básicas con ellos. Además esos números se pueden recibir de o enviar a la memoria o a los distintos dispositivos de entrada y salida (teclado, monitor, disco duro, impresora, etc). Para cada una una de estas operaciones (obtener números de un sitio, hacer cálculos con esos valores, enviar el resultado a otro sitio) existe una instrucción diferente y cada CPU tiene su propio juego de instrucciones, más o menos amplio dependiendo de la complejidad de la CPU.</p>
+    <p>El "cerebro" de un ordenador es la Unidad Central de Procesamiento (CPU). En general una CPU no puede almacenar
+      más que unos pocos números y realizar operaciones matemáticas básicas con ellos. Además esos números se pueden
+      recibir de o enviar a la memoria o a los distintos dispositivos de entrada y salida (teclado, monitor, disco duro,
+      impresora, etc). Para cada una una de estas operaciones (obtener números de un sitio, hacer cálculos con esos
+      valores, enviar el resultado a otro sitio) existe una instrucción diferente y cada CPU tiene su propio juego de
+      instrucciones, más o menos amplio dependiendo de la complejidad de la CPU.</p>
 
-    <p>En la memoria del ordenador se puede guardar una secuencia de esas instrucciones, que el ordenador es capaz de seguir desde el principio hasta el final (aunque esas instrucciones no tienen por qué ejecutarse siempre en el mismo orden porque existen instrucciones para saltar de un punto a otro de la secuencia de instrucciones). Esas secuencias se llaman programas ejecutables.</p>
+    <p>En la memoria del ordenador se puede guardar una secuencia de esas instrucciones, que el ordenador es capaz de
+      seguir desde el principio hasta el final (aunque esas instrucciones no tienen por qué ejecutarse siempre en el
+      mismo orden porque existen instrucciones para saltar de un punto a otro de la secuencia de instrucciones). Esas
+      secuencias se llaman programas ejecutables.</p>
 
-    <p>Cualquier función que realice un ordenador, por sofisticada que parezca, en realidad no es más que una larga secuencia de instrucciones elementales. Para los humanos resulta muy complicado escribir directamente los programas ejecutables porque cualquier tarea requiere muchísimos pasos, que el ordenador ejecuta de forma instantánea, pero para que los ordenadores funcionen es necesario disponer de programas ejecutables.</p>
+    <p>Cualquier función que realice un ordenador, por sofisticada que parezca, en realidad no es más que una larga
+      secuencia de instrucciones elementales. Para los humanos resulta muy complicado escribir directamente los
+      programas ejecutables porque cualquier tarea requiere muchísimos pasos, que el ordenador ejecuta de forma
+      instantánea, pero para que los ordenadores funcionen es necesario disponer de programas ejecutables.</p>
 
-    <p>Los lenguajes de programación se han creado para facilitar la elaboración de programas ejecutables. Un lenguaje de programación es un lenguaje artificial diseñado para dictar instrucciones a un ordenador, pero tienen la ventaja de que no es necesario desmenuzar las tareas tanto como lo requiere la CPU sino que permiten definir tareas de forma más abstracta. Por ejemplo, un lenguaje de programación puede tener una instrucción para calcular raíces cuadradas, aunque haya CPUs que no tengan la capacidad de calcular raíces cuadradas.</p>
+    <p>Los lenguajes de programación se han creado para facilitar la elaboración de programas ejecutables. Un lenguaje
+      de programación es un lenguaje artificial diseñado para dictar instrucciones a un ordenador, pero tienen la
+      ventaja de que no es necesario desmenuzar las tareas tanto como lo requiere la CPU sino que permiten definir
+      tareas de forma más abstracta. Por ejemplo, un lenguaje de programación puede tener una instrucción para calcular
+      raíces cuadradas, aunque haya CPUs que no tengan la capacidad de calcular raíces cuadradas.</p>
 
-    <p>Existen muchos lenguajes de programación diferentes, pero en general, un programador que quiere conseguir que el ordenador realice determinadas operaciones, tiene que seguir estos pasos:</p>
+    <p>Existen muchos lenguajes de programación diferentes, pero en general, un programador que quiere conseguir que el
+      ordenador realice determinadas operaciones, tiene que seguir estos pasos:</p>
 
     <ul>
-      <li>El programador escribe una secuencia de instrucciones siguiendo las reglas de un lenguaje de programación. Esa secuencia de instrucciones se guarda en uno o varios archivos de texto. A estos archivos se les llama <strong>código fuente del programa</strong>.</li>
-      <li>Mediante un programa especial (llamado compilador o intérprete) capaz de realizar esa tarea el ordenador convierte los archivos de texto en archivos ejecutables, es decir, traduce la secuencia de instrucciones escritas por el programador en instrucciones. A estos archivos ejecutables se les llama <strong>programas ejecutables</strong>.</li>
+      <li>El programador escribe una secuencia de instrucciones siguiendo las reglas de un lenguaje de programación. Esa
+        secuencia de instrucciones se guarda en uno o varios archivos de texto. A estos archivos se les llama
+        <strong>código fuente del programa</strong>.
+      </li>
+      <li>Mediante un programa especial (llamado compilador o intérprete) capaz de realizar esa tarea el ordenador
+        convierte los archivos de texto en archivos ejecutables, es decir, traduce la secuencia de instrucciones
+        escritas por el programador en instrucciones. A estos archivos ejecutables se les llama <strong>programas
+          ejecutables</strong>.</li>
       <li>El programador o cualquier otro usuario le puede pedir al ordenador que ejecute el programa ejecutable.</li>
     </ul>
 
-    <p>En el ejemplo citado de las raíces cuadradas, el compilador o intérprete tendría que ser capaz de convertir la instrucción de raíz cuadrada que hubiera escrito el programador en una serie de sumas, restas, multiplicaciones o divisiones que acaben dando el resultado deseado.</p>
+    <p>En el ejemplo citado de las raíces cuadradas, el compilador o intérprete tendría que ser capaz de convertir la
+      instrucción de raíz cuadrada que hubiera escrito el programador en una serie de sumas, restas, multiplicaciones o
+      divisiones que acaben dando el resultado deseado.</p>
     <hr class="corta">
 
     <p>En Informática, normalmente se utiliza el término <strong>programa</strong> para referirse a las dos cosas:</p>
@@ -66,25 +93,38 @@
       <li>al fichero ejecutable que ejecuta el ordenador para producir un resultado.</li>
     </ul>
 
-    <p>Eso puede causar alguna confusión, pero se espera que el lector/oyente entienda por el contexto de cuál de los dos conceptos se está hablando.</p>
+    <p>Eso puede causar alguna confusión, pero se espera que el lector/oyente entienda por el contexto de cuál de los
+      dos conceptos se está hablando.</p>
     <hr class="corta">
 
     <p>Las ventajas de usar lenguajes de programación son numerosas:</p>
     <ul>
-      <li>los lenguajes de programación son infinitamente más comprensibles para los humanos que las secuencias de instrucciones.</li>
-      <li>un mismo código fuente se puede acabar ejecutando en ordenadores con diferentes juegos de instrucciones, usando compiladores o intérpretes que sean capaces de realizar la traducción.</li>
-      <li>mejorando los compiladores o intérpretes, un mismo código fuente se puede acabar convirtiendo en programas ejecutables más rápidos.</li>
+      <li>los lenguajes de programación son infinitamente más comprensibles para los humanos que las secuencias de
+        instrucciones.</li>
+      <li>un mismo código fuente se puede acabar ejecutando en ordenadores con diferentes juegos de instrucciones,
+        usando compiladores o intérpretes que sean capaces de realizar la traducción.</li>
+      <li>mejorando los compiladores o intérpretes, un mismo código fuente se puede acabar convirtiendo en programas
+        ejecutables más rápidos.</li>
     </ul>
     <hr class="corta">
 
-    <p>Los ordenadores siguen al pie de la letra las instrucciones de los programas ejecutables. Por tanto, los programas deben tener en cuenta todos los posibles resultados de todas las instrucciones e incluir las instrucciones a seguir en cada caso, de manera que el ordenador no se quede atascado en algún punto del programa. En el ejemplo citado de las raíces cuadradas, el programa tiene que tener en cuenta que no se pueden calcular las raíces cuadradas de números negativos (sin recurrir a los números complejos) y no tiene que pedirle al ordenador que lo haga porque seguramente se producirá un error y el programa se interrumpirá.</p>
+    <p>Los ordenadores siguen al pie de la letra las instrucciones de los programas ejecutables. Por tanto, los
+      programas deben tener en cuenta todos los posibles resultados de todas las instrucciones e incluir las
+      instrucciones a seguir en cada caso, de manera que el ordenador no se quede atascado en algún punto del programa.
+      En el ejemplo citado de las raíces cuadradas, el programa tiene que tener en cuenta que no se pueden calcular las
+      raíces cuadradas de números negativos (sin recurrir a los números complejos) y no tiene que pedirle al ordenador
+      que lo haga porque seguramente se producirá un error y el programa se interrumpirá.</p>
 
   </section>
 
   <section id="lenguajes-importancia">
     <h2>La importancia de la programación</h2>
 
-    <p>La programación es importante porque permite automatizar todo tipo de tareas. La gráfica siguiente (copiada de un post de Bruno Oliveira que ya no está disponible en Internet y que <a href="https://blog.jonudell.net/2012/01/09/another-way-to-think-about-geeks-and-repetitive-tasks/">Jon Udell criticó y perfeccionó en enero de 2012</a>) ilustra de forma humorística la diferencia entre un informático y un no informático a la hora de enfrentarse con un trabajo repetitivo:</p>
+    <p>La programación es importante porque permite automatizar todo tipo de tareas. La gráfica siguiente (copiada de un
+      post de Bruno Oliveira que ya no está disponible en Internet y que <a
+        href="https://blog.jonudell.net/2012/01/09/another-way-to-think-about-geeks-and-repetitive-tasks/">Jon Udell
+        criticó y perfeccionó en enero de 2012</a>) ilustra de forma humorística la diferencia entre un informático y un
+      no informático a la hora de enfrentarse con un trabajo repetitivo:</p>
 
     <div class="mcl-diapo" style="height: 640px">
       <div id="d1">
@@ -92,10 +132,12 @@
           <img src="../img/lenguajes/trabajo-tiempo-1.png" alt="Gráfica Trabajo-Tiempo 1" width="764" height="500">
         </p>
 
-        <p>Cuando un trabajo se hace manualmente, el tiempo empleado para realizar un trabajo suele ser directamente proporcional a la cantidad de trabajo.</p>
+        <p>Cuando un trabajo se hace manualmente, el tiempo empleado para realizar un trabajo suele ser directamente
+          proporcional a la cantidad de trabajo.</p>
 
         <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d2"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -107,8 +149,10 @@
         <p>Cuando un informático hace un trabajo manualmente, su rendimiento es como el del no informático.</p>
 
         <p class="control">
-          <a href="#d1"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d3"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d1"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d3"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -120,8 +164,10 @@
         <p>Pero llega un punto en el que el informático se aburre de las tareas repetitivas ...</p>
 
         <p class="control">
-          <a href="#d2"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d4"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d2"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d4"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -130,11 +176,14 @@
           <img src="../img/lenguajes/trabajo-tiempo-4.png" alt="Gráfica Trabajo-Tiempo 4" width="764" height="500">
         </p>
 
-        <p>... y escribe un programa para automatizar la tarea. Por supuesto, escribir, probar y corregir un programa exige mucho tiempo. Tiempo que el no informático puede dedicar a seguir trabajando.</p>
+        <p>... y escribe un programa para automatizar la tarea. Por supuesto, escribir, probar y corregir un programa
+          exige mucho tiempo. Tiempo que el no informático puede dedicar a seguir trabajando.</p>
 
         <p class="control">
-          <a href="#d3"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d5"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d3"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d5"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -143,11 +192,14 @@
           <img src="../img/lenguajes/trabajo-tiempo-5.png" alt="Gráfica Trabajo-Tiempo 5" width="764" height="500">
         </p>
 
-        <p>Cuando el informático puede empezar a usar el programa, el no informático llevará mucho trabajo adelantado.</p>
+        <p>Cuando el informático puede empezar a usar el programa, el no informático llevará mucho trabajo adelantado.
+        </p>
 
         <p class="control">
-          <a href="#d4"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d6"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d4"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d6"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -156,11 +208,14 @@
           <img src="../img/lenguajes/trabajo-tiempo-6.png" alt="Gráfica Trabajo-Tiempo 6" width="764" height="500">
         </p>
 
-        <p>Pero si el programa funciona, sin apenas esfuerzo adicional, el informático puede aumentar la carga de trabajo realizada...</p>
+        <p>Pero si el programa funciona, sin apenas esfuerzo adicional, el informático puede aumentar la carga de
+          trabajo realizada...</p>
 
         <p class="control">
-          <a href="#d5"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d7"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d5"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d7"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -172,8 +227,10 @@
         <p>... y superar en productividad al no informático.</p>
 
         <p class="control">
-          <a href="#d6"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
-          <a href="#d8"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48" height="48"></a>
+          <a href="#d6"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
+          <a href="#d8"><img src="../varios/iconos/icono-siguiente.svg" alt="Siguiente" title="Siguiente" width="48"
+              height="48"></a>
         </p>
       </div>
 
@@ -182,10 +239,12 @@
           <img src="../img/lenguajes/trabajo-tiempo-8.png" alt="Gráfica Trabajo-Tiempo 8" width="764" height="500">
         </p>
 
-        <p>Al final, el informático puede hacer más y más trabajo sin necesidad de invertir más tiempo, mientras que el no informático descubre que no puede competir y necesita seguir invirtiendo horas y horas.</p>
+        <p>Al final, el informático puede hacer más y más trabajo sin necesidad de invertir más tiempo, mientras que el
+          no informático descubre que no puede competir y necesita seguir invirtiendo horas y horas.</p>
 
         <p class="control">
-          <a href="#d7"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48" height="48"></a>
+          <a href="#d7"><img src="../varios/iconos/icono-anterior.svg" alt="Anterior" title="Anterior" width="48"
+              height="48"></a>
           <img src="../varios/iconos/icono-vacio.svg" alt="" width="48" height="48">
         </p>
       </div>
@@ -195,20 +254,33 @@
   <section id="lenguajes-genealogia">
     <h2>Genealogía de los lenguajes de programación</h2>
 
-    <p>El inicio de la informática moderna se suele situar en 1946, con <a href="https://es.wikipedia.org/wiki/ENIAC">ENIAC</a>, el primer ordenador de propósito general (aunque entre 1936 y 1945 Konrad Zuse construyó en Alemania varios prototipos de ordenadores de propósito general que fueron destruidos durante la segunda guerra mundial).</p>
+    <p>El inicio de la informática moderna se suele situar en 1946, con <a
+        href="https://es.wikipedia.org/wiki/ENIAC">ENIAC</a>, el primer ordenador de propósito general (aunque entre
+      1936 y 1945 Konrad Zuse construyó en Alemania varios prototipos de ordenadores de propósito general que fueron
+      destruidos durante la segunda guerra mundial).</p>
 
-    <p>Esos ordenadores, como todos los que han venido después, tenían su propio <strong>lenguaje máquina</strong>, el conjunto de instrucciones que puede ejecutar la CPU. Para hacer manejable la tarea de programar los ordenadores, se crearon los <strong>lenguajes ensamblador</strong>, que utilizan palabras para referirse a las instrucciones. El problema de estos lenguajes es que están ligados a la CPU utilizada.</p>
+    <p>Esos ordenadores, como todos los que han venido después, tenían su propio <strong>lenguaje máquina</strong>, el
+      conjunto de instrucciones que puede ejecutar la CPU. Para hacer manejable la tarea de programar los ordenadores,
+      se crearon los <strong>lenguajes ensamblador</strong>, que utilizan palabras para referirse a las instrucciones.
+      El problema de estos lenguajes es que están ligados a la CPU utilizada.</p>
 
-    <p>En los años 50 aparecieron los lenguajes de programación independientes de una máquina en concreto y en los años 60 se desarrollaron la mayoría de los conceptos en que se basan los actuales lenguajes de programación, perfeccionados a lo largo del tiempo.</p>
+    <p>En los años 50 aparecieron los lenguajes de programación independientes de una máquina en concreto y en los años
+      60 se desarrollaron la mayoría de los conceptos en que se basan los actuales lenguajes de programación,
+      perfeccionados a lo largo del tiempo.</p>
 
-    <p>Desde entonces, se han inventado muchísimos lenguajes de programación, que han permitido a los programadores resolver problemas cada vez más complejos.</p>
+    <p>Desde entonces, se han inventado muchísimos lenguajes de programación, que han permitido a los programadores
+      resolver problemas cada vez más complejos.</p>
 
     <hr class="corta">
 
-    <p>La imagen siguiente, basada en un <a href="https://commons.wikimedia.org/wiki/File:Genealogical_tree_of_programming_languages.svg">dibujo de la Wikipedia</a>, muestra algunos de los lenguajes de programación más importantes de la historia, la mayoría de los cuales se siguen utilizando en la actualidad:</p>
+    <p>La imagen siguiente, basada en un <a
+        href="https://commons.wikimedia.org/wiki/File:Genealogical_tree_of_programming_languages.svg">dibujo de la
+        Wikipedia</a>, muestra algunos de los lenguajes de programación más importantes de la historia, la mayoría de
+      los cuales se siguen utilizando en la actualidad, y algunos de los nuevos lenguajes más prometedores:</p>
 
     <p class="mcl-svg-figura">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="900" height="800" viewBox="0 0 900 830" style="font-family: sans-serif; border: black 1px solid">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="900" height="800" viewBox="0 0 900 830"
+        style="font-family: sans-serif; border: black 1px solid">
         <line x1="120" y1="141" x2="200" y2="199" stroke="black" stroke-width="2" />
         <line x1="120" y1="141" x2="160" y2="279" stroke="black" stroke-width="2" />
         <line x1="120" y1="141" x2="70" y2="409" stroke="black" stroke-width="2" />
@@ -232,19 +304,20 @@
         <line x1="590" y1="401" x2="590" y2="669" stroke="black" stroke-width="2" />
         <line x1="425" y1="411" x2="500" y2="479" stroke="black" stroke-width="2" />
         <line x1="505" y1="395" x2="555" y2="529" stroke="black" stroke-width="2" />
-        <line x1="345" y1="395" x2="215" y2="619" stroke="black" stroke-width="2" />
+        <line x1="345" y1="395" x2="230" y2="619" stroke="black" stroke-width="2" />
         <line x1="425" y1="411" x2="425" y2="629" stroke="black" stroke-width="2" />
         <line x1="162" y1="415" x2="215" y2="429" stroke="black" stroke-width="2" />
         <line x1="135" y1="431" x2="165" y2="479" stroke="black" stroke-width="2" />
         <line x1="135" y1="431" x2="80" y2="479" stroke="black" stroke-width="2" />
         <line x1="215" y1="461" x2="165" y2="479" stroke="black" stroke-width="2" />
-        <line x1="215" y1="461" x2="215" y2="619" stroke="black" stroke-width="2" />
-        <line x1="290" y1="431" x2="355" y2="488" stroke="black" stroke-width="2" />
+        <line x1="215" y1="461" x2="230" y2="619" stroke="black" stroke-width="2" />
+        <line x1="215" y1="461" x2="180" y2="763" stroke="black" stroke-width="2" />
+        <line x1="290" y1="431" x2="360" y2="488" stroke="black" stroke-width="2" />
         <line x1="785" y1="471" x2="747" y2="539" stroke="black" stroke-width="2" />
-        <line x1="470" y1="495" x2="415" y2="504" stroke="black" stroke-width="2" />
+        <line x1="470" y1="495" x2="420" y2="504" stroke="black" stroke-width="2" />
         <line x1="500" y1="511" x2="532" y2="545" stroke="black" stroke-width="2" />
         <line x1="500" y1="511" x2="500" y2="639" stroke="black" stroke-width="2" />
-        <line x1="355" y1="520" x2="315" y2="656" stroke="black" stroke-width="2" />
+        <line x1="360" y1="520" x2="315" y2="656" stroke="black" stroke-width="2" />
         <line x1="578" y1="545" x2="652" y2="555" stroke="black" stroke-width="2" />
         <text x="0" y="50" text-anchor="start" font-size="16">1950</text>
         <text x="850" y="50" text-anchor="start" font-size="16">1950</text>
@@ -294,6 +367,9 @@
         <text x="0" y="800" text-anchor="start" font-size="16">2025</text>
         <text x="850" y="800" text-anchor="start" font-size="16">2025</text>
         <line x1="40" y1="795" x2="845" y2="795" stroke="black" stroke-width="0.5" stroke-dasharray="10 10" />
+        <text x="0" y="850" text-anchor="start" font-size="16">2030</text>
+        <text x="850" y="850" text-anchor="start" font-size="16">2030</text>
+        <line x1="40" y1="845" x2="845" y2="845" stroke="black" stroke-width="0.5" stroke-dasharray="10 10" />
         <rect x="545" y="39" width="50" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
         <text x="570" y="63" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/A-0_System">A-0</a>
@@ -402,8 +478,8 @@
         <text x="80" y="503" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/PHP">PHP</a>
         </text>
-        <rect x="295" y="488" width="120" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
-        <text x="355" y="512" text-anchor="middle" font-size="24">
+        <rect x="300" y="488" width="120" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
+        <text x="360" y="512" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>
         </text>
         <rect x="532" y="529" width="45" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
@@ -414,8 +490,8 @@
         <text x="747" y="563" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/Visual_Basic_.NET">VisualBasic .NET</a>
         </text>
-        <rect x="195" y="619" width="40" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
-        <text x="215" y="643" text-anchor="middle" font-size="24">
+        <rect x="210" y="619" width="40" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
+        <text x="230" y="643" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/Go_(programming_language)">Go</a>
         </text>
         <rect x="395" y="629" width="60" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
@@ -434,116 +510,192 @@
         <text x="590" y="693" text-anchor="middle" font-size="24">
           <a href="https://en.wikipedia.org/wiki/Swift_(programming_language)">Swift</a>
         </text>
+        <rect x="150" y="763" width="60" height="32" fill="white" stroke="black" stroke-width="2" rx="5" ry="5" />
+        <text x="180" y="787" text-anchor="middle" font-size="24">
+          <a href="https://en.wikipedia.org/wiki/Mojo_(programming_language)">Mojo</a>
+        </text>
       </svg>
     </p>
 
     <ul>
-      <li>Al hacer clic en el nombre de un lenguaje, se abre la página de la Wikipedia (en inglés) dedicada al lenguaje.</li>
-      <li>La posición vertical de cada lenguaje indica su fecha de creación. Posteriormente, cada lenguaje ha seguido su propia evolución y las versiones actuales pueden ser incluso incompatibles con las versiones originales.</li>
-      <li>Las líneas que unen los lenguajes significan que un lenguaje ha influido en el diseño del otro, aunque el dibujo es una simplificación y hay muchas más influencias que las indicadas, especialmente en los lenguajes más modernos que aúnan características de muchos lenguajes anteriores.</li>
-      <li>Algunos de estos lenguajes han sido importantes por la cantidad de aplicaciones que se han escrito con ellos, mientras que otros lo han sido por introducir ideas radicalmente nuevas que han influido en los lenguajes posteriores.</li>
+      <li>Al hacer clic en el nombre de un lenguaje, se abre la página de la Wikipedia (en inglés) dedicada al lenguaje.
+      </li>
+      <li>La posición vertical de cada lenguaje indica su fecha de creación. Posteriormente, cada lenguaje ha seguido su
+        propia evolución y las versiones actuales pueden ser incluso incompatibles con las versiones originales.</li>
+      <li>Las líneas que unen los lenguajes significan que un lenguaje ha influido en el diseño del otro, aunque el
+        dibujo es una simplificación y hay muchas más influencias que las indicadas, especialmente en los lenguajes más
+        modernos que aúnan características de muchos lenguajes anteriores.</li>
+      <li>Algunos de estos lenguajes han sido importantes por la cantidad de aplicaciones que se han escrito con ellos,
+        mientras que otros lo han sido por introducir ideas radicalmente nuevas que han influido en los lenguajes
+        posteriores.</li>
       <li>En este gráfico se podrían haber incluido otros lenguajes como Erlang, Haskell o Julia.</li>
-      <li>La mayoría de estos lenguajes siguen en uso y, en realidad, resulta cada vez más difícil que un lenguaje nuevo reemplace a los anteriores, pues no solamente tiene que tener ventajas evidentes sobre los anteriores, sino que debe competir con todas las herramientas auxiliares y colecciones de programas disponibles en los lenguajes antiguos.</li>
+      <li>La mayoría de estos lenguajes siguen en uso y, en realidad, resulta cada vez más difícil que un lenguaje nuevo
+        reemplace a los anteriores, pues no solamente tiene que tener ventajas evidentes sobre los anteriores, sino que
+        debe competir con todas las herramientas auxiliares y colecciones de programas disponibles en los lenguajes
+        antiguos.</li>
     </ul>
   </section>
 
   <section id="lenguajes-popularidad">
     <h2>Popularidad de los lenguajes de programación</h2>
 
-    <p>No es fácil establecer la popularidad de los diferentes lenguajes de programación, pero algunos sitios web elaboran comparaciones basándose en diferentes conjuntos de datos.</p>
+    <p>No es fácil establecer la popularidad de los diferentes lenguajes de programación, pero algunos sitios web
+      elaboran comparaciones basándose en diferentes conjuntos de datos.</p>
 
     <ul>
-      <li><a href="https://github.com/">GitHub</a>, actualmente el repositorio público de software más importante, publica cada año el informe The State of the Octoverse, en el que incluye información sobre los <a href="https://octoverse.github.com/#top-languages-over-the-years">lenguajes de programación más utilizados en GitHub</a>. En el informe de 2021, JavaScript es el lenguaje más popular, Python se sitúa en segundo lugar y PHP ha descendido a la sexta posición.</li>
-      <li><a href="https://trends.google.es/home">Google Trends</a> permite comparar la frecuencia de búsqueda de varios términos, por ejemplo los cinco lenguajes de los años 90 que son los más populares en GitHub: JavaScript, Python, Java, PHP y C#.
+      <li><a href="https://github.com/">GitHub</a>, actualmente el repositorio público de software más importante,
+        publica cada año el informe The State of the Octoverse, en el que incluye información sobre los <a
+          href="https://octoverse.github.com/#top-languages-over-the-years">lenguajes de programación más utilizados en
+          GitHub</a>. En el informe de 2021, JavaScript es el lenguaje más popular, Python se sitúa en segundo lugar y
+        PHP ha descendido a la sexta posición.</li>
+      <li><a href="https://trends.google.es/home">Google Trends</a> permite comparar la frecuencia de búsqueda de varios
+        términos, por ejemplo los cinco lenguajes de los años 90 que son los más populares en GitHub: JavaScript,
+        Python, Java, PHP y C#.
         <div class="resultado-object">
           <script src="https://ssl.gstatic.com/trends_nrtr/3316_RC01/embed_loader.js"></script>
           <script>
             trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "Python", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "Java", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "PHP", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "JavaScript", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "C#", "geo": "", "time": "2013-01-01 2023-01-01" }], "category": 0, "property": "" }, { "exploreQuery": "date=2012-01-01%202022-01-01&q=Python,Java,PHP,JavaScript,C%23", "guestPath": "https://trends.google.es:443/trends/embed/" });
           </script>
         </div>
-        <p>También podemos comparar cinco lenguajes creados entre 2010 y 2015 que son "herederos" de los anteriores (Go, TypeScript, Rust, Kotlin y Swift).</p>
+        <p>También podemos comparar cinco lenguajes creados entre 2010 y 2015 que son "herederos" de los anteriores (Go,
+          TypeScript, Rust, Kotlin y Swift).</p>
         <div class="resultado-object">
           <script>
-            trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"TypeScript","geo":"","time":"2013-01-01 2023-01-01"},{"keyword":"Kotlin","geo":"","time":"2013-01-01 2023-01-01"},{"keyword":"Go language","geo":"","time":"2013-01-01 2023-01-01"},{"keyword":"Swift apple","geo":"","time":"2013-01-01 2023-01-01"},{"keyword":"Rust programming","geo":"","time":"2013-01-01 2023-01-01"}],"category":0,"property":""}, {"exploreQuery":"date=2012-01-01%202022-01-01&q=TypeScript,Kotlin,Go%20language,Swift%20apple,Rust%20programming","guestPath":"https://trends.google.es:443/trends/embed/"});
+            trends.embed.renderExploreWidget("TIMESERIES", { "comparisonItem": [{ "keyword": "TypeScript", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "Kotlin", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "Go language", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "Swift apple", "geo": "", "time": "2013-01-01 2023-01-01" }, { "keyword": "Rust programming", "geo": "", "time": "2013-01-01 2023-01-01" }], "category": 0, "property": "" }, { "exploreQuery": "date=2012-01-01%202022-01-01&q=TypeScript,Kotlin,Go%20language,Swift%20apple,Rust%20programming", "guestPath": "https://trends.google.es:443/trends/embed/" });
           </script>
         </div>
       </li>
-      <li><a href="https://www.tiobe.com/tiobe-index/">TIOBE</a> es un sitio que compara mensualmente desde hace muchos años la popularidad de los lenguajes de programación basándose en información de diversas fuentes. En 2022 Python ha alcanzado el primer puesto.</li>
-      <li><a href="https://pypl.github.io/PYPL.html">PYPL PopularitY of Programming Language</a> es otro sitio web que compara la popularidad de los lenguajes de programación basándose en las búsquedas sobre tutoriales realizadas en Google. Python alcanzó en 2019 el primer puesto, en el que sigue desde entonces.</li>
-      <li>Piotr Sroczkowski, programador polaco, publicó en 2019 un interesante <a href="https://brainhub.eu/library/most-popular-languages-on-github">artículo sobre la popularidad de los lenguajes de programación</a> basándose en datos de GitHub y ofrece <a href="https://github.com/oprogramador/github-languages#all">datos actualizados en un repositorio</a>.</li>
+      <li><a href="https://www.tiobe.com/tiobe-index/">TIOBE</a> es un sitio que compara mensualmente desde hace muchos
+        años la popularidad de los lenguajes de programación basándose en información de diversas fuentes. En 2022
+        Python ha alcanzado el primer puesto.</li>
+      <li><a href="https://pypl.github.io/PYPL.html">PYPL PopularitY of Programming Language</a> es otro sitio web que
+        compara la popularidad de los lenguajes de programación basándose en las búsquedas sobre tutoriales realizadas
+        en Google. Python alcanzó en 2019 el primer puesto, en el que sigue desde entonces.</li>
+      <li>Piotr Sroczkowski, programador polaco, publicó en 2019 un interesante <a
+          href="https://brainhub.eu/library/most-popular-languages-on-github">artículo sobre la popularidad de los
+          lenguajes de programación</a> basándose en datos de GitHub y ofrece <a
+          href="https://github.com/oprogramador/github-languages#all">datos actualizados en un repositorio</a>.</li>
     </ul>
   </section>
 
   <section id="lenguajes-tipos">
     <h2>Tipos de lenguajes de programación</h2>
 
-    <p>Se pueden dar algunos criterios generales para distinguir unos lenguajes de otros, aunque cada vez más los lenguajes incluyen características que antes distinguían unos lenguajes de otros y las frontera están menos definidas. Algunos de esos criterios son los siguientes:</p>
+    <p>Se pueden dar algunos criterios generales para distinguir unos lenguajes de otros, aunque cada vez más los
+      lenguajes incluyen características que antes distinguían unos lenguajes de otros y las frontera están menos
+      definidas. Algunos de esos criterios son los siguientes:</p>
 
     <section id="imperativos-declarativos">
       <h3>Lenguajes imperativos y lenguajes declarativos</h3>
 
       <ul>
-        <li>En los <strong>lenguajes imperativos</strong> el programador escribe paso a paso las tareas a realizar. Entre ellos, están
+        <li>En los <strong>lenguajes imperativos</strong> el programador escribe paso a paso las tareas a realizar.
+          Entre ellos, están
           <ul>
-            <li>los <strong>lenguajes modulares</strong>, que permiten definir bloques de instrucciones y reutilizarlos para construir programas más complejos (Algol, COBOL, Fortran, etc.).</li>
-            <li>los <strong>lenguajes procedurales</strong>, que permiten definir procedimientos (rutinas, subrutinas, funciones, etc) y reutilizarlos (BASIC, Pascal, C, etc.).</li>
-            <li>los <strong>lenguajes orientados a objetos</strong>, en los que no se permite que cualquier porción del programa acceda a cualquier dato, sino que se agrupan en clases todos los procedimientos que se pueden aplicar a un tipo de datos (Smalltalk, C++, Java, etc.).</li>
+            <li>los <strong>lenguajes modulares</strong>, que permiten definir bloques de instrucciones y reutilizarlos
+              para construir programas más complejos (Algol, COBOL, Fortran, etc.).</li>
+            <li>los <strong>lenguajes procedurales</strong>, que permiten definir procedimientos (rutinas, subrutinas,
+              funciones, etc) y reutilizarlos (BASIC, Pascal, C, etc.).</li>
+            <li>los <strong>lenguajes orientados a objetos</strong>, en los que no se permite que cualquier porción del
+              programa acceda a cualquier dato, sino que se agrupan en clases todos los procedimientos que se pueden
+              aplicar a un tipo de datos (Smalltalk, C++, Java, etc.).</li>
           </ul>
         </li>
-        <li>En los <strong>lenguajes declarativos</strong> el programador no escribe los pasos a realizar, sino los pasos permitidos en cada situación y es el ordenador el que busca la secuencia adecuada. Entre ellos están:
+        <li>En los <strong>lenguajes declarativos</strong> el programador no escribe los pasos a realizar, sino los
+          pasos permitidos en cada situación y es el ordenador el que busca la secuencia adecuada. Entre ellos están:
           <ul>
-            <li>los <strong>lenguajes funcionales</strong>, que utilizan como elemento básico las funciones y la recursividad (APL, Haskell, Erlang, etc.).</li>
-            <li>los <strong>lenguajes lógicos</strong>, que expresan las relaciones en términos lógicos y utilizan reglas de inferencia lógica para conseguir el resultado (Prolog, Datalog, etc.).</li>
+            <li>los <strong>lenguajes funcionales</strong>, que utilizan como elemento básico las funciones y la
+              recursividad (APL, Haskell, Erlang, etc.).</li>
+            <li>los <strong>lenguajes lógicos</strong>, que expresan las relaciones en términos lógicos y utilizan
+              reglas de inferencia lógica para conseguir el resultado (Prolog, Datalog, etc.).</li>
           </ul>
         </li>
       </ul>
 
-      <p>Existen lenguajes puros que siguen a rajatabla los principios de uno de estos tipos, pero la mayoría de lenguajes permiten mezclar tipos de programación diferentes.</p>
+      <p>Existen lenguajes puros que siguen a rajatabla los principios de uno de estos tipos, pero la mayoría de
+        lenguajes permiten mezclar tipos de programación diferentes.</p>
 
-      <p>No se puede afirmar la superioridad intrínseca de un tipo de lenguaje sobre otro, puesto que existen problemas que se abordan mejor con un tipo de lenguaje que otro.</p>
+      <p>No se puede afirmar la superioridad intrínseca de un tipo de lenguaje sobre otro, puesto que existen problemas
+        que se abordan mejor con un tipo de lenguaje que otro.</p>
 
-      <p>Por ejemplo, en los años finales del siglo XX y en los primeros del siglo XXI, con el aumento de potencia de los microprocesadores, parecía que los lenguajes imperativos habían ganado la partida a los declarativos. Pero en los últimos años el crecimiento de la potencia bruta de las CPU individuales se ha detenido y en su lugar lo que se multiplica es el número de núcleos en cada CPU y en esa situación en la que lo más importante es poder "paralelizar" los programas (que se puedan ejecutar los programas en varios núcleos a la vez), los lenguajes declarativos llevan ventaja, por lo que en los últimos años está aumentando el interés por esos lenguajes, sin que por desgracia se hayan obtenido todavía resultados revolucionarios.</p>
+      <p>Por ejemplo, en los años finales del siglo XX y en los primeros del siglo XXI, con el aumento de potencia de
+        los microprocesadores, parecía que los lenguajes imperativos habían ganado la partida a los declarativos. Pero
+        en los últimos años el crecimiento de la potencia bruta de las CPU individuales se ha detenido y en su lugar lo
+        que se multiplica es el número de núcleos en cada CPU y en esa situación en la que lo más importante es poder
+        "paralelizar" los programas (que se puedan ejecutar los programas en varios núcleos a la vez), los lenguajes
+        declarativos llevan ventaja, por lo que en los últimos años está aumentando el interés por esos lenguajes, sin
+        que por desgracia se hayan obtenido todavía resultados revolucionarios.</p>
     </section>
 
     <section id="compilados-interpretados">
       <h3>Lenguajes compilados y lenguajes interpretados</h3>
 
-      <p>El programa de ordenador que es capaz de convertir el programa fuente escrito por el programador en el programa ejecutable que ejecuta el ordenador puede realizar esa tarea de dos formas distintas:</p>
+      <p>El programa de ordenador que es capaz de convertir el programa fuente escrito por el programador en el programa
+        ejecutable que ejecuta el ordenador puede realizar esa tarea de dos formas distintas:</p>
       <ul>
-        <li>en un <strong>lenguaje compilado</strong>, la tarea de conversión se realiza una sola vez. El compilador crea un fichero ejecutable a partir del código fuente del programa y a partir de entonces el usuario ejecuta el fichero ejecutable tantas veces como quiera, sin tener que volver a utilizar el código fuente.</li>
-        <li>en un <strong>lenguaje interpretado</strong>, la tarea de conversión se realiza cada vez que se quiere ejecutar el programa. El intérprete lee una instrucción del programa fuente, la convierte en código ejecutable, la ejecuta y pasa a la siguiente. En este caso, el usuario necesita tener el programa fuente para poder ejecutarlo.</li>
+        <li>en un <strong>lenguaje compilado</strong>, la tarea de conversión se realiza una sola vez. El compilador
+          crea un fichero ejecutable a partir del código fuente del programa y a partir de entonces el usuario ejecuta
+          el fichero ejecutable tantas veces como quiera, sin tener que volver a utilizar el código fuente.</li>
+        <li>en un <strong>lenguaje interpretado</strong>, la tarea de conversión se realiza cada vez que se quiere
+          ejecutar el programa. El intérprete lee una instrucción del programa fuente, la convierte en código
+          ejecutable, la ejecuta y pasa a la siguiente. En este caso, el usuario necesita tener el programa fuente para
+          poder ejecutarlo.</li>
       </ul>
 
-      <p>En principio, cualquier lenguaje de programación puede ser compilado o interpretado, aunque por tradición hay lenguajes que suelen utilizar compiladores y otros que suelen utilizar intérpretes.</p>
+      <p>En principio, cualquier lenguaje de programación puede ser compilado o interpretado, aunque por tradición hay
+        lenguajes que suelen utilizar compiladores y otros que suelen utilizar intérpretes.</p>
 
-      <p>Se solía decir que para un mismo programa fuente, la compilación produce programas ejecutables más rápidos que los programas interpretados, pero la tendencia es a que esas diferencias se reduzcan.</p>
+      <p>Se solía decir que para un mismo programa fuente, la compilación produce programas ejecutables más rápidos que
+        los programas interpretados, pero la tendencia es a que esas diferencias se reduzcan.</p>
 
-      <p>También se debe tener en cuenta que las preferencias por compiladores o intérpretes pueden deberse a motivaciones no técnicas. Por ejemplo, el programador de software comercial preferirá el uso de lenguajes compilados para poder comercializar el programa ejecutable sin necesidad de hacer público el programa fuente, mientras que el programador de software libre no tiene problemas con los lenguajes interpretados puesto que va a proporcionar también el código fuente.</p>
+      <p>También se debe tener en cuenta que las preferencias por compiladores o intérpretes pueden deberse a
+        motivaciones no técnicas. Por ejemplo, el programador de software comercial preferirá el uso de lenguajes
+        compilados para poder comercializar el programa ejecutable sin necesidad de hacer público el programa fuente,
+        mientras que el programador de software libre no tiene problemas con los lenguajes interpretados puesto que va a
+        proporcionar también el código fuente.</p>
     </section>
 
     <section id="tipificados-no">
       <h3>Lenguajes tipificados y lenguajes no tipificados</h3>
 
-      <p>En programación, los elementos que pueden almacenar información se llaman variables. Dependiendo del tipo de información (números, letras, etc) que se almacena se usan variables de un tipo o de otro. Una característica que diferencia unos lenguajes de otros es la rigidez o permisividad con respecto a los tipos de variables.</p>
+      <p>En programación, los elementos que pueden almacenar información se llaman variables. Dependiendo del tipo de
+        información (números, letras, etc) que se almacena se usan variables de un tipo o de otro. Una característica
+        que diferencia unos lenguajes de otros es la rigidez o permisividad con respecto a los tipos de variables.</p>
       <ul>
-        <li>Los <strong>lenguajes tipificados</strong> (también llamados de tipado estático) son aquellos en los que una variable guarda siempre un mismo tipo de datos. En algunos lenguajes tipificados se exige al programador que declare el tipo de cada variable y en otros lo determina el compilador. En algunos lenguajes tipificados se permite la conversión entre tipos de variables y en otros no.</li>
-        <li>Los <strong>lenguajes no tipificados</strong> (también llamados de tipado dinámico) no requieren la declaración de tipo de las variables y una misma variable puede almacenar valores de tipos distintos a lo largo de la ejecución del programa.</li>
+        <li>Los <strong>lenguajes tipificados</strong> (también llamados de tipado estático) son aquellos en los que una
+          variable guarda siempre un mismo tipo de datos. En algunos lenguajes tipificados se exige al programador que
+          declare el tipo de cada variable y en otros lo determina el compilador. En algunos lenguajes tipificados se
+          permite la conversión entre tipos de variables y en otros no.</li>
+        <li>Los <strong>lenguajes no tipificados</strong> (también llamados de tipado dinámico) no requieren la
+          declaración de tipo de las variables y una misma variable puede almacenar valores de tipos distintos a lo
+          largo de la ejecución del programa.</li>
       </ul>
 
-      <p>Algunas ventajas de los lenguajes tipificados es que permiten detectar errores de tipo (cuando un dato de un tipo se guarda en una variable de otro tipo), que permiten a los compiladores optimizar mejor el código ejecutable y, en el caso de exigir la declaración de tipo de las variables, que facilitan la comprensión de los programas.</p>
+      <p>Algunas ventajas de los lenguajes tipificados es que permiten detectar errores de tipo (cuando un dato de un
+        tipo se guarda en una variable de otro tipo), que permiten a los compiladores optimizar mejor el código
+        ejecutable y, en el caso de exigir la declaración de tipo de las variables, que facilitan la comprensión de los
+        programas.</p>
 
-      <p>Algunas ventajas de los lenguajes no tipificados es la mayor flexibilidad de los programas, y una serie de características que aunque no se derivan necesariamente de la falta de tipificación suelen presentar los lenguajes no tipificados: simplicidad, mayor número de tipos de datos, metaprogramación (introspección, eval, etc.).</p>
+      <p>Algunas ventajas de los lenguajes no tipificados es la mayor flexibilidad de los programas, y una serie de
+        características que aunque no se derivan necesariamente de la falta de tipificación suelen presentar los
+        lenguajes no tipificados: simplicidad, mayor número de tipos de datos, metaprogramación (introspección, eval,
+        etc.).</p>
     </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 15 de mayo de 2024</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
-      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
-      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img
+          src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons"
+          title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la
+          programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia
+        Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>
 </body>
+
 </html>
