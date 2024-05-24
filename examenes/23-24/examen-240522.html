@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 22/05/24. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 22 de mayo de 2024</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 22/05/24</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+        <li><a href="#ejercicio-5">Ejercicio 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>Escriba un programa que pida tres números positivos cada vez más grandes y que diga qué números son múltiplos de otros.</p>
+
+    <p><strong>Nota</strong>: Los ejemplos siguientes no cubren todas las situaciones posibles.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DETECTOR DE MÚLTIPLOS
+Escriba tres números enteros crecientes.
+Le indicaré si alguno es múltiplo de otro.
+Primer número: <span class="entrada-usuario">5</span>
+Segundo número: <span class="entrada-usuario">5</span>
+Por favor, escriba números crecientes.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DETECTOR DE MÚLTIPLOS
+Escriba tres números enteros crecientes.
+Le indicaré si alguno es múltiplo de otro.
+Primer número: <span class="entrada-usuario">2</span>
+Segundo número: <span class="entrada-usuario">8</span>
+Tercer número: <span class="entrada-usuario">10</span>
+10 y 8 son múltiplos de 2.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DETECTOR DE MÚLTIPLOS
+Escriba tres números enteros crecientes.
+Le indicaré si alguno es múltiplo de otro.
+Primer número: <span class="entrada-usuario">2</span>
+Segundo número: <span class="entrada-usuario">9</span>
+Tercer número: <span class="entrada-usuario">21</span>
+Ningún número es múltiplo de otro.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+DETECTOR DE MÚLTIPLOS
+Escriba tres números enteros crecientes.
+Le indicaré si alguno es múltiplo de otro.
+Primer número: <span class="entrada-usuario">3</span>
+Segundo número: <span class="entrada-usuario">4</span>
+Tercer número: <span class="entrada-usuario">20</span>
+20 es múltiplo de 4.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>, legionarios destinados en el famoso campamento de <i>Babaorum</i>, entretienen sus horas muertas jugando a juegos de dados. Esta vez, el juego consiste en tirar dos dados un número de veces. Cubitus se anota un punto cada vez que los valores de los dados son diferentes y Humerus se anota cinco puntos cuando los valores coinciden. El jugador que obtenga el valor más alto, gana. Escriba un programa que simule una partida de este juego.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS: IGUALES O DISTINTOS
+¿Cuántas veces se van a tirar los dados? <span class="entrada-usuario">0</span>
+¡Al menos hay que tirar los dados una vez!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS: IGUALES O DISTINTOS
+¿Cuántas veces se van a tirar los dados? <span class="entrada-usuario">6</span>
+Tiradas de dados: 2 5 - 2 4 - 2 2 - 1 2 - 5 3 - 1 4 -
+Han empatado a 5.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS: IGUALES O DISTINTOS
+¿Cuántas veces se van a tirar los dados? <span class="entrada-usuario">9</span>
+Tiradas de dados: 2 1 - 1 3 - 3 4 - 6 1 - 1 3 - 4 1 - 3 4 - 4 1 - 5 2 -
+Ha ganado Cubitus 9 a 0.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS: IGUALES O DISTINTOS
+¿Cuántas veces se van a tirar los dados? <span class="entrada-usuario">5</span>
+Tiradas de dados: 3 6 - 2 4 - 3 3 - 3 4 - 1 1 -
+Ha ganado Humerus 10 a 3.
+</pre>
+    </div>
+</section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><img src="img/d20-dado-romano.jpg" alt="Dado romano 20 caras" width="200" class="derecha">Volvamos atrás en el tiempo, a nuestros amigos <strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>, legionarios muy aficionados a los juegos de dados. Esta vez juegan a tirar un dado de cien caras mientras saquen valores menores que el primer valor obtenido. El jugador que tira más veces el dado, gana. Escriba un programa que simule una partida de este juego.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DADO A TIERRA
+Cubitus: 88 39 44 78 88
+Humerus: 19 66
+Ha ganado Cubitus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DADO A TIERRA
+Cubitus: 56 67
+Humerus: 15 28
+Han empatado.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DADO A TIERRA
+Cubitus: 42 100
+Humerus: 84 46 9 96
+Ha ganado Humerus.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240522-4-1-svg.png" alt="Ejercicio 4-1" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240522-4-2-svg.png" alt="Ejercicio 4-2" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">tomato</span> <span style="background-color: tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">green</span> <span style="background-color: green; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">black</span> <span style="background-color: black; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">white</span> <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente <strong>utilizando bucles</strong>:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240522-5-svg.png" alt="Ejercicio 5-1" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">hwb(0 80% 20%)</span> <span style="background-color: hwb(0 80% 20%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">black</span> <span style="background-color: black; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">white</span> <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de mayo de 2024</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
