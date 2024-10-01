@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 18/06/24. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 18 de junio de 2024</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 29/05/24</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="ejercicio-1">
+    <h3>Ejercicio 1</h3>
+
+    <p><a href="https://es.wikipedia.org/wiki/Dionisio_el_Exiguo">Dionisio el Exiguo</a>, monje y matemático del siglo V, propuso la fecha de celebración de la Pascua que todavía se utiliza actualmente. Desde el año 525, la Iglesia Católica celebra el domingo de Pascua (o domingo de Resurección) en el primer domingo posterior a la primera luna llena de la primavera en el hemisferio Norte.</p>
+
+    <p>Escriba un programa que calcule la fecha exacta del domingo de Pascua, utilizando el algoritmo de Butcher (1876), válido para cualquier año posterior a 1583. El algoritmo es el siguiente:</p>
+
+    <ul>
+      <li>A es el resto de la división del año entre 19,</li>
+      <li>B es el cociente de la división del año entre 100,</li>
+      <li>C es el resto de la división del año entre 100,</li>
+      <li>D es el cociente de la división de B entre 4,</li>
+      <li>E es el resto de la división de B entre 4,</li>
+      <li>F es el cociente de la división de (B + 8) entre 25,</li>
+      <li>G es el cociente de la división de (B - F + 1) entre 3,</li>
+      <li>H es el resto de la división de (19A + B - D - G + 15) entre 30,</li>
+      <li>I es el cociente de la división de C entre 4,</li>
+      <li>K es el resto de la división de C entre 4,</li>
+      <li>L es el resto de la división de (32 + 2E + 2I - H - K) entre 7,</li>
+      <li>M es el cociente de la división de (A + 11H + 22L) entre 451,</li>
+      <li>N es H + L - 7M + 114,</li>
+      <li>el mes en que se celebra la Pascua (marzo o abril) es el cociente de la división de N entre 31,</li>
+      <li>el día en que se celebra la Pascua es 1 más el resto de la división de N entre 31.</li>
+    </ul>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CÁLCULO DE LA FECHA DEL DOMINGO DE PASCUA
+Escriba un número de año posterior a 1583: <span class="entrada-usuario">525</span>
+¡Le he pedido un año posterior a 1583!
+</pre>
+    </div>
+
+  <div class="ejecucion-terminal">
+    <pre>
+CÁLCULO DE LA FECHA DEL DOMINGO DE PASCUA
+Escriba un número de año posterior a 1583: <span class="entrada-usuario">2024</span>
+Resultado: Mes = 3 Dia = 31
+En 2024 el domingo de Pascua fue/es/será el 31 de marzo.
+</pre>
+  </div>
+
+  <div class="ejecucion-terminal">
+    <pre>
+CÁLCULO DE LA FECHA DEL DOMINGO DE PASCUA
+Escriba un número de año posterior a 1583: <span class="entrada-usuario">2025</span>
+Resultado: Mes = 4 Dia = 20
+En 2025 el domingo de Pascua fue/es/será el 20 de abril.
+</pre>
+  </div>
+</section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>El <i>argentarii</i> pompeyano <strong>Lucius Caecilius Iucundus</strong> ha ampliado su negocio al territorio del juego. Y allá que han ido <strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> a arriesgar sus denarios. Escriba un programa que simule un juego de dados con el que los dos legionarios acabarán seguramente desplumados.</p>
+
+    <p>En este juego, la banca tira varios dados. Los dos jugadores tiran también el mismo número de dados. Los dados se comparan en orden. Si el dado de un jugador coincide con el de la banca, pero el dado del otro jugador no coincide, el jugador del dado coincidente gana un punto. Si en total un jugador gana más puntos que el otro, gana la partida. Si no es así, gana la banca.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LA BANCA GANA
+¿Cuántos dados van a tirarse? <span class="entrada-usuario">0</span>
+¡Al menos debe tirarse un dado!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LA BANCA GANA
+¿Cuántos dados van a tirarse? <span class="entrada-usuario">5</span>
+IUCUNDUS CUBITUS HUMERUS
+    5       4       4
+    3       5       1
+    5       1       5    ¡Punto para Humerus!
+    6       1       3
+    3       3       2    ¡Punto para Cubitus!
+Ha ganado el argentarii.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LA BANCA GANA
+¿Cuántos dados van a tirarse? <span class="entrada-usuario">4</span>
+IUCUNDUS CUBITUS HUMERUS
+    2       2       2
+    4       4       1    ¡Punto para Cubitus!
+    1       3       6
+    1       3       4
+Ha ganado Cubitus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LA BANCA GANA
+¿Cuántos dados van a tirarse? <span class="entrada-usuario">3</span>
+IUCUNDUS CUBITUS HUMERUS
+    2       6       5
+    2       2       2
+    4       5       2
+Ha ganado el argentarii.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240618-3-svg.png" alt="Ejercicio 3" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 3-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente <strong>utilizando bucles</strong>:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240618-4-svg.png" alt="Ejercicio 4" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 18 de junio de 2024</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
