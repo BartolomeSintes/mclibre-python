@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 29/05/24. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 29 de mayo de 2024</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 29/05/24</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+        <li><a href="#ejercicio-5">Ejercicio 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="ejercicio-1">
+    <h3>Ejercicio 1</h3>
+
+    <p>Escriba un programa que solicite dos fechas y que diga qué fecha es posterior. No es necesario comprobar que las fechas son fechas correctas.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+COMPARADOR DE FECHAS
+Escriba una fecha:
+Día: <span class="entrada-usuario">27</span>
+Mes: <span class="entrada-usuario">10</span>
+Año: <span class="entrada-usuario">1997</span>
+Escriba otra fecha:
+Día: <span class="entrada-usuario">24</span>
+Mes: <span class="entrada-usuario">10</span>
+Año: <span class="entrada-usuario">1997</span>
+El día 27/10/1997 es posterior al día 24/10/1997.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+COMPARADOR DE FECHAS
+Escriba una fecha:
+Día: <span class="entrada-usuario">23</span>
+Mes: <span class="entrada-usuario">5</span>
+Año: <span class="entrada-usuario">2017</span>
+Escriba otra fecha:
+Día: <span class="entrada-usuario">23</span>
+Mes: <span class="entrada-usuario">5</span>
+Año: <span class="entrada-usuario">2017</span>
+Las dos fechas son iguales.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+COMPARADOR DE FECHAS
+Escriba una fecha:
+Día: <span class="entrada-usuario">31</span>
+Mes: <span class="entrada-usuario">12</span>
+Año: <span class="entrada-usuario">2016</span>
+Escriba otra fecha:
+Día: <span class="entrada-usuario">1</span>
+Mes: <span class="entrada-usuario">1</span>
+Año: <span class="entrada-usuario">2017</span>
+El día 1/1/2017 es posterior al día 31/12/2016.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Escriba un programa que pida al usuario un número de dados y tire esa cantidad de dados. El jugador habrá ganado si obtiene los valores del 1 al 6 y habrá perdido si falta alguno de los valores.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LOS SEIS VALORES
+Elija un número de dados: <span class="entrada-usuario">9</span>
+Dados: 1 - 1 - 4 - 6 - 3 - 5 - 2 - 3 - 6
+¡Ha ganado!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LOS SEIS VALORES
+Elija un número de dados: <span class="entrada-usuario">7</span>
+Dados: 5 - 2 - 6 - 2 - 4 - 5 - 1
+¡Ha perdido!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LOS SEIS VALORES
+Elija un número de dados: <span class="entrada-usuario">-3</span>
+Escriba un número positivo, por favor.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+LOS SEIS VALORES
+Elija un número de dados: <span class="entrada-usuario">4</span>
+Así pierde seguro, no hace falta ni tirar los dados.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> han inventado un nuevo juego. Van tirando un dado alternativamente y cuentan quién ha sido el primero en sacar un uno, quién ha sido el primero en sacar un dos (una vez ha salido el uno) y quién ha sido el primero en sacar un tres (una vez ha salido el dos). El que ha sido el primero más veces, gana la partida. Escriba un programa que simule una partida de este juego, en el que empiece el juego uno de los dos, al azar.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO UN, DOS, TRES
+C: 5 - H: 2 - C: 1
+¡Punto para Cubitus!
+H: 3 - C: 4 - H: 4 - C: 6 - H: 2
+¡Punto para Humerus!
+C: 4 - H: 3
+¡Punto para Humerus!
+Ha ganado Humerus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO UN, DOS, TRES
+C: 2 - H: 5 - C: 1
+¡Punto para Cubitus!
+H: 3 - C: 2
+¡Punto para Cubitus!
+H: 2 - C: 6 - H: 3
+¡Punto para Humerus!
+Ha ganado Cubitus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO UN, DOS, TRES
+H: 2 - C: 5 - H: 5 - C: 3 - H: 4 - C: 1
+¡Punto para Cubitus!
+H: 2
+¡Punto para Humerus!
+C: 1 - H: 5 - C: 3
+¡Punto para Cubitus!
+Ha ganado Cubitus.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240529-4-1-svg.png" alt="Ejercicio 4-1" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240529-4-2-svg.png" alt="Ejercicio 4-2" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente <strong>utilizando bucles</strong>:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/240529-5-svg.png" alt="Ejercicio 5-1" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 29 de mayo de 2024</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
