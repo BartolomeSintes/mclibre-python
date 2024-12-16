@@ -32,15 +32,15 @@
     </div>
   </nav>
 
-  <p>En la lección <a href="historia.html">Historia de Python</a> se comentan las diferentes versión de Python existentes. En esta lección se comenta cómo conseguir e instalar la versión recomendada para seguir este curso, Python 3.12.</p>
+  <p>En la lección <a href="historia.html">Historia de Python</a> se comentan las diferentes versión de Python existentes. En esta lección se comenta cómo conseguir e instalar la versión recomendada para seguir este curso, Python 3.13.</p>
 
-  <p>Python permite tener instaladas distintas versiones de Python (por ejemplo, Python 3.11 y Python 3.12).</p>
+  <p>Python permite tener instaladas distintas versiones de Python (por ejemplo, Python 3.12 y Python 3.13).</p>
 
-  <p>En este curso se recomienda tener instalada únicamente una versión de Python, la más reciente. Tenga en cuenta, si va a instalar una versión de Python 3.12:</p>
+  <p>En este curso se recomienda tener instalada únicamente una versión de Python, la más reciente. Tenga en cuenta, si va a instalar una versión de Python 3.13:</p>
 
   <ul>
-    <li>si ya tiene instalada una versión anterior (Python 3.11 o anteriores) y no necesita mantenerla, se recomienda desinstalar primero la versión anterior.</li>
-    <li>si ya tiene instalada una versión de Python 3.12, no es necesario desinstalar nada, pero se recomienda actualizar a la última versión disponible de Python 3.12.</li>
+    <li>si ya tiene instalada una versión anterior (Python 3.12 o anteriores) y no necesita mantenerla, se recomienda desinstalar primero la versión anterior.</li>
+    <li>si ya tiene instalada una versión de Python 3.13, no es necesario desinstalar nada, pero se recomienda actualizar a la última versión disponible de Python 3.13.</li>
   </ul>
 
   <p><strong>Nota</strong>: Tenga en cuenta que al instalar una nueva versión de Python es necesario reinstalar todos los módulos y bibliotecas que se quieran utilizar en esa versión, independientemente de los módulos que se hayan instalado en versiones anteriores .</p>
@@ -50,12 +50,12 @@
 
     <p>La página oficial de Python es <a href="https://www.python.org/">https://www.python.org/</a>.</p>
 
-    <p>La última versión de Python 3.12 disponible actualmente (octubre de 2024) es Python 3.12.7 (del 1 de octubre de 2024).</p>
+    <p>La última versión de Python 3.13 disponible actualmente (diciembre de 2024) es Python 3.13.1 (del 3 de diciembre de 2024).</p>
 
     <p>Enlaces:</p>
     <ul>
-      <li>instalador de Python 3.12.7 para <a href="https://www.python.org/ftp/python/3.12.7/python-3.12.7-amd64.exe">Windows de 64 bits (25,3 MB)</a></li>
-      <li>Página de <a href="https://www.python.org/downloads/release/python-3127/">descarga de Python 3.12.7</a>, desde la que se pueden descargar otros instaladores (por ejemplo, para Windows de 32 bits).</li>
+      <li>instalador de Python 3.13.1 para <a href="https://www.python.org/ftp/python/3.13.1/python-3.13.1-amd64.exe">Windows de 64 bits (27,3 MB)</a></li>
+      <li>Página de <a href="https://www.python.org/downloads/release/python-3131/">descarga de Python 3.13.1</a>, desde la que se pueden descargar otros instaladores (por ejemplo, para Windows de 32 bits).</li>
     </ul>
 
     <p>En <a href="https://www.cdlibre.org/">cdlibre.org</a> hay una sección dedicada al <a href="https://www.cdlibre.org/consultar/catalogo/Programacion_Python.html">intérprete de Python</a>, con información detallada sobre las últimas versiones publicadas para Windows.</p>
@@ -66,31 +66,31 @@
 
     <p>Una vez descargado el instalador, haga doble clic en él para iniciar la instalación.</p>
 
-    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.12.0 (64 bits), pero son similares en cualquier versión 3.X.</p>
+    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.13.0 (64 bits), pero son similares en cualquier versión 3.X.</p>
 
     <ul>
-      <li>La primera pantalla permite seleccionar las opciones de instalación haciendo clic en "Customize installation", aunque en principio, no es necesario modificarlas. Tan sólo se aconseja marcar la casilla "Add Python 3.12 to PATH" para poder ejecutar programas desde la línea de comandos. Para continuar, haga clic en "Install Now".
+      <li>La primera pantalla permite seleccionar las opciones de instalación haciendo clic en "Customize installation", aunque en principio, no es necesario modificarlas. Tan sólo se aconseja marcar la casilla "Add Python 3.13 to PATH" para poder ejecutar programas desde la línea de comandos. Para continuar, haga clic en "Install Now".
         <p class="captura">
-          <img src="../img/instalacion/py312-instalacion-1.png" alt="Instalación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-instalacion-1.png" alt="Instalación de Python" width="656" height="405">
         </p>
       </li>
 
       <li>A continuación se iniciará el proceso de instalación. La instalación de Python puede durar varios minutos.
         <p class="captura">
-          <img src="../img/instalacion/py312-instalacion-2.png" alt="Instalación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-instalacion-2.png" alt="Instalación de Python" width="656" height="405">
         </p>
       </li>
 
       <li>Una vez completada la instalación, se mostrará la pantalla final.
         <p>Si el instalador detecta que Windows tiene activado el límite de 260 caracteres de rutas de archivos (una limitación de versiones antiguas de Windows que se mantiene por compatibilidad con aplicaciones antiguas), le ofrecerá la opción de eliminar la limitación. Si utiliza alguna aplicación que necesite tener ese límite activado, no lo desactive. En caso contrario, haga clic en el botón "Disable path length limit". Si en el futuro descubriera que alguna aplicación necesita tener el límite activado, abra el editor del registro de Windows y modifique la clave HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\LongPathsEnabled (el valor 0 significa que el límite está desactivado y 1 significa que está activado).</p>
         <p class="captura">
-          <img src="../img/instalacion/py312-instalacion-3.png" alt="Instalación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-instalacion-3.png" alt="Instalación de Python" width="656" height="405">
         </p>
       </li>
 
       <li>Finalmente, haga clic en en el botón "Close" para cerrar el programa de instalación. ¡Ya puede empezar a programar en Python!
         <p class="captura">
-          <img src="../img/instalacion/py312-instalacion-4.png" alt="Instalación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-instalacion-4.png" alt="Instalación de Python" width="656" height="405">
         </p>
       </li>
     </ul>
@@ -99,27 +99,27 @@
   <section id="actualizar">
     <h2>Actualizar Python</h2>
 
-    <p>Una vez descargado el instalador, haga doble clic en él para iniciar la actualización. Si el instalador detecta una subversión anterior de la misma versión de Python (por ejemplo si el instalador de Python 3.12.X detecta que está instalado un Python 3.12.X anterior), ofrecerá la opción de actualizar.</p>
+    <p>Una vez descargado el instalador, haga doble clic en él para iniciar la actualización. Si el instalador detecta una subversión anterior de la misma versión de Python (por ejemplo si el instalador de Python 3.13.X detecta que está instalado un Python 3.13.X anterior), ofrecerá la opción de actualizar.</p>
 
-    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.12.1 (64 bits), pero son similares en cualquier versión 3.X.</p>
+    <p><strong>Nota</strong>: Las imágenes siguientes corresponden a la instalación de Python 3.13.1 (64 bits), pero son similares en cualquier versión 3.X.</p>
 
     <ul>
       <li>La primera pantalla permite seleccionar las opciones de instalación haciendo clic en "Customize installation", aunque en principio, no es necesario modificarlas. Para continuar, haga clic en "Upgrade Now".
 
         <p class="captura">
-          <img src="../img/instalacion/py312-actualizacion-1.png" alt="Actualización de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-actualizacion-1.png" alt="Actualización de Python" width="656" height="405">
         </p>
       </li>
 
       <li>A continuación se iniciará el proceso de actualización. La actualización de Python puede durar varios minutos.
         <p class="captura">
-          <img src="../img/instalacion/py312-actualizacion-2.png" alt="Actualización de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-actualizacion-2.png" alt="Actualización de Python" width="656" height="405">
         </p>
       </li>
 
       <li>Una vez completada la actualización, se mostrará la pantalla final. Haciendo clic en en el botón "Close" se cerrará el programa de instalación.
         <p class="captura">
-          <img src="../img/instalacion/py312-actualizacion-3.png" alt="Actualización de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-actualizacion-3.png" alt="Actualización de Python" width="656" height="405">
         </p>
       </li>
     </ul>
@@ -128,11 +128,11 @@
   <section id="modificar">
     <h2>Modificar o reparar Python</h2>
 
-    <p>Si el instalador detecta que ya está instalada la misma versión de Python (por ejemplo si el instalador de Python 3.12 detecta que ya está instalado Python 3.12), ofrecerá la opción de modificar, reparar o desinstalar Python.</p>
+    <p>Si el instalador detecta que ya está instalada la misma versión de Python (por ejemplo si el instalador de Python 3.13 detecta que ya está instalado Python 3.13), ofrecerá la opción de modificar, reparar o desinstalar Python.</p>
 
-    <p><strong>Nota</strong>: La imagen siguiente corresponde al instalador de Python 3.12 (64 bits), pero es similar en cualquier versión 3.X.</p>
+    <p><strong>Nota</strong>: La imagen siguiente corresponde al instalador de Python 3.13 (64 bits), pero es similar en cualquier versión 3.X.</p>
     <p class="captura">
-      <img src="../img/instalacion/py312-modificacion-1.png" alt="Modificación / Reparación de Python" width="656" height="405">
+      <img src="../img/instalacion/py313-modificacion-1.png" alt="Modificación / Reparación de Python" width="656" height="405">
     </p>
 
     <p>Antes de reparar la instalación, se recomienda comprobar las opciones elegidas.</p>
@@ -140,22 +140,22 @@
     <ul>
       <li>Para ello, haga clic en "Modify":
         <p class="captura">
-          <img src="../img/instalacion/py312-modificacion-2.png" alt="Modificación / Reparación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-modificacion-2.png" alt="Modificación / Reparación de Python" width="656" height="405">
         </p>
       </li>
       <li>En la pantalla "Optional Features", compruebe que están marcadas todas las casilla y haga clic en "Next":
         <p class="captura">
-          <img src="../img/instalacion/py312-modificacion-3.png" alt="Modificación / Reparación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-modificacion-3.png" alt="Modificación / Reparación de Python" width="656" height="405">
         </p>
       </li>
       <li>En la pantalla "Advanced Options", compruebe que están marcadas las tres primeras casillas y haga clic en "Install":
         <p class="captura">
-          <img src="../img/instalacion/py312-modificacion-4.png" alt="Modificación / Reparación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-modificacion-4.png" alt="Modificación / Reparación de Python" width="656" height="405">
         </p>
       </li>
       <li>Una vez realizada la modificación/reparación, se mostrará la pantalla final. Haciendo clic en en el botón "Close" se cerrará el programa de instalación.
         <p class="captura">
-          <img src="../img/instalacion/py312-modificacion-5.png" alt="Modificación / Reparación de Python" width="656" height="405">
+          <img src="../img/instalacion/py313-modificacion-5.png" alt="Modificación / Reparación de Python" width="656" height="405">
         </p>
       </li>
     </ul>
@@ -166,7 +166,7 @@
 
     <p>A lo largo de su historia, Python ha utilizado varios sistemas para la distribución de módulos:</p>
     <ul>
-      <li><a href="https://docs.python.org/3/library/distutils.html#module-distutils">distutils</a> fue el primer sistema incluido en la biblioteca estándar, en 1998, y sigue siendo la base de los sistemas posteriores. Desde Python 2.7, no se recomendaba usarlo directamente. En Python 3.12 ya no forma parte de la biblioteca estándar [referencia: <a href="https://peps.python.org/pep-0632/">PEP 632</a>].</li>
+      <li><a href="https://docs.python.org/3/library/distutils.html#module-distutils">distutils</a> fue el primer sistema incluido en la biblioteca estándar, en 1998, y sigue siendo la base de los sistemas posteriores. Desde Python 2.7, no se recomendaba usarlo directamente. Desde Python 3.12 (publicado en octubre de 2023) ya no forma parte de la biblioteca estándar [referencia: <a href="https://peps.python.org/pep-0632/">PEP 632</a>].</li>
       <li><a href="https://setuptools.pypa.io/en/latest/">setuptools</a> fue el sistema introducido en 2004. Aunque todavía se mantiene, no se aconseja su uso desde la línea de comandos. Desde octubre de 2021 el uso de los comandos setup.py install y easy_install están desaconsejados [referencia: <a href="https://setuptools.pypa.io/en/latest/history.html#v58-3-0">setuptools 58.3.0 release notes</a>].</li>
       <li><a href="https://pypi.org/project/pip/">pip</a> es el instalador "oficial" actual. Desde 2014 (Python 3.4), el módulo pip se instala junto con Python.</li>
     </ul>
@@ -240,7 +240,7 @@ pip     23.3.1</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 16 de diciembre de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
