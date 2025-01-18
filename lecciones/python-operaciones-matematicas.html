@@ -68,12 +68,12 @@
 
       <p>Python distingue entre números enteros y decimales. Al escribir un número decimal, el separador entre la parte entera y la parte decimal es un punto.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4.5
-<span class="idle-resp">4.5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> 4.5
+4.5</code>
 </pre>
       </div>
 
@@ -81,10 +81,10 @@
       <ul>
         <li><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Si se escribe una coma como separador entre la parte entera y la decimal, Python no lo entiende como separador, sino como una pareja de números (concretamente, lo entiende como una tupla de dos elementos, un tipo de datos que se comenta en la <a href="python-tupla.html">lección sobre tuplas</a>).
 
-          <div class="codigo idle">
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3,5
-<span class="idle-resp">(3, 5)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3,5
+(3, 5)</code>
 </pre>
           </div>
         </li>
@@ -92,18 +92,19 @@
 
       <p>Si se escribe un número con parte decimal 0, Python considera el número como número decimal.</p>
 
-      <div class="codigo idle">
-        <pre><span class="idle-prompt">&gt;&gt;&gt;</span> 3.0
-<span class="idle-resp">3.0</span>
+      <div class="terminal">
+        <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3.0
+3.0</code>
 </pre>
       </div>
 
       <p>Se puede escribir un número decimal sin parte entera, pero lo habitual es escribir siempre la parte entera:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> .3
-<span class="idle-resp">0.3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> .3
+0.3</code>
 </pre>
       </div>
     </section>
@@ -113,35 +114,42 @@
 
       <p>Python puede hacer cálculos con número complejos. La parte imaginaria se acompaña de la letra "j".</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1j + 2 + 3j
-<span class="idle-resp">(3+4j)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (1+1j) * 1j
-<span class="idle-resp">(-1+1j)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1 + 1j + 2 + 3j
+(3+4j)
+<span class="python-prompt">&gt;&gt;&gt;</span> (1 + 1j) * 1j
+(-1+1j)</code>
 </pre>
       </div>
 
       <p>La letra "j" debe ir acompañada siempre de un número y unida a él.</p>
-      <div class="codigo idle">
+
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + j
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#25&gt;", line 1, in &lt;module&gt;
-    1 + j
-NameError: name 'j' is not defined</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1 j
-<span class="idle-erro">SyntaxError: invalid syntax</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 1j
-<span class="idle-resp">(-1+1j)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1 + j
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-2&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    1 + <span class="error-message-highlight">j</span>
+        <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>NameError</strong>: name 'j' is not defined</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1 + 1 j
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-3&gt;"</span>, line <span class="error-message">1</span>
+    1 + 1 <span class="error-message-highlight">j</span>
+          <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>NameError</strong>: name 'j' is not defined</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1 + 1j
+(1+1j)</code>
 </pre>
       </div>
 
       <p>El resultado de una operación en la que intervienen números complejos es un número complejo, aunque el resultado no tenga parte imaginaria.</p>
-      <div class="codigo idle">
+
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1j * 1j
-<span class="idle-resp">(-1+0j)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1j * 1j
+(-1+0j)</code>
 </pre>
       </div>
     </section>
@@ -150,51 +158,55 @@ NameError: name 'j' is not defined</span>
       <h3>Notación de números con guiones bajos</h3>
 
       <p>Desde Python 3.6 (publicado en diciembre de 2016), Python permite intercalar guiones bajos (_) en cualquier número. Este carácter no tiene ningún significado matemático, simplemente se puede utilizar para facilitar al programador la lectura de números largos en el código fuente o al usuario de un programa la introducción de números largos. El intérprete de Python no lo utiliza al escribir los resultados.</p>
-      <div class="codigo idle">
+
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 100_000 + 1_000_000
-<span class="idle-resp">1100000</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 100_000 + 1_000_000
+1100000</code>
 </pre>
       </div>
 
       <p>El guion bajo suele utilizarse para separar miles, millones, etc. pero se puede utilizar en cualquier posición.</p>
-      <div class="codigo idle">
+
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 100_000 + 0.000_001
-<span class="idle-resp">100000.000001</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10_00_00 + 0.00_00_01
-<span class="idle-resp">100000.000001</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 100_000 + 0.000_001
+100000.000001
+<span class="python-prompt">&gt;&gt;&gt;</span> 10_00_00 + 0.00_00_01
+100000.000001</code>
 </pre>
       </div>
 
       <p>El guion bajo no puede aparecer en el extremo de los números, ni en los extremos de las partes entera o decimal de los números decimales, ni escribirse dos guiones bajos seguidos.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + _1000
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-NameError: name '_1000' is not defined</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 1000_
-<span class="idle-erro">  File "&lt;stdin&gt;", line 1
-    1_000 + 1000_
-                ^
-SyntaxError: invalid decimal literal</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 0._1
-<span class="idle-erro">  File "&lt;stdin&gt;", line 1
-    1_000 + 0._1
-             ^
-SyntaxError: invalid decimal literal</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 0.1_
-<span class="idle-erro">  File "&lt;stdin&gt;", line 1
-    1_000 + 0.1_
-               ^
-SyntaxError: invalid decimal literal</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1_000 + 1__000
-<span class="idle-erro">  File "&lt;stdin&gt;", line 1
-    1_000 + 1__000
-             ^
-SyntaxError: invalid decimal literal</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1_000 + _1000
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-4&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    1_000 + <span class="error-message-highlight">_1000</span>
+            <span class="error-message-highlight">^^^^^</span>
+<span class="error-message"><strong>NameError</strong>: name '_1000' is not defined</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1_000 + 1000_
+  File <span class="error-message">"&lt;python-input-5&gt;"</span>, line <span class="error-message">1</span>
+    1_000 + 1000<span class="error-message-highlight">_</span>
+                <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid deciaml literal</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1_000 + 0._1
+  File <span class="error-message">"&lt;python-input-6&gt;"</span>, line <span class="error-message">1</span>
+    1_000 + 0<span class="error-message-highlight">.</span>_1
+             <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid deciaml literal</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1_000 + 0.1_
+  File <span class="error-message">"&lt;python-input-7&gt;"</span>, line <span class="error-message">1</span>
+    1_000 + 0.1<span class="error-message-highlight">_</span>
+               <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid deciaml literal</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> 1_000 + 1__000
+  File <span class="error-message">"&lt;python-input-8&gt;"</span>, line <span class="error-message">1</span>
+    1_000 + 1<span class="error-message-highlight">_</span>_000
+             <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid deciaml literal</span></code>
 </pre>
       </div>
     </section>
@@ -207,49 +219,51 @@ SyntaxError: invalid decimal literal</span>
 
     <p>Al hacer operaciones en las que intervienen números enteros y decimales, el resultado es siempre decimal. En el caso de que el resultado no tenga parte decimal, Python escribe 0 como parte decimal para indicar que el resultado es un número decimal:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4.5 * 3
-<span class="idle-resp">13.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4.5 * 2
-<span class="idle-resp">9.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 4.5 * 3
+13.5
+<span class="python-prompt">&gt;&gt;&gt;</span> 4.5 * 2
+9.0</code>
 </pre>
     </div>
 
     <p>Al sumar, restar o multiplicar números enteros, el resultado es entero.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 - 4
-<span class="idle-resp">-1</span><br><span class="idle-prompt">&gt;&gt;&gt;</span> 5 * 6
-<span class="idle-resp">30</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1 + 2
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> 3 - 4
+-1
+<span class="python-prompt">&gt;&gt;&gt;</span> 5 * 6
+30</code>
 </pre>
     </div>
 
     <p>Al dividir números enteros, el resultado es siempre decimal, aunque sea un número entero. Cuando Python escribe un número decimal, lo escribe siempre con parte decimal, aunque sea nula.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 9 / 2
-<span class="idle-resp">4.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 9 / 3
-<span class="idle-resp">3.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 9 / 2
+4.5
+<span class="python-prompt">&gt;&gt;&gt;</span> 9 / 3
+3.0</code>
 </pre>
     </div>
+
     <hr class="corta">
 
     <p>Dividir por cero genera un error:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 5 / 0
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#22&gt;", line 1, in &lt;module&gt;
-    5 / 0
-ZeroDivisionError: division by zero</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 5 / 0
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-7&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">5 / 0</span>
+    <span class="error-message-highlight">~~^~~</span>
+<span class="error-message"><strong>ZeroDivisionError</strong>: division by zero</span></code>
 </pre>
     </div>
 
@@ -257,21 +271,21 @@ ZeroDivisionError: division by zero</span>
 
     <p>Cuando en una fórmula aparecen varias operaciones, Python las efectúa aplicando las reglas usuales de prioridad de las operaciones (primero multiplicaciones y divisiones, después sumas y restas).</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 1 + 2 * 3
-<span class="idle-resp">7</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 - 4 * 2
-<span class="idle-resp">2</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 1 + 2 * 3
+7
+<span class="python-prompt">&gt;&gt;&gt;</span> 10 - 4 / 2
+8.0</code>
 </pre>
     </div>
 
     <p>En caso de querer que las operaciones se realicen en otro orden, se deben utilizar paréntesis.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (5 + 8) / (7 - 2)
-<span class="idle-resp">2.6</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> (5 + 8) / (7 - 2)
+2.6</code>
 </pre>
     </div>
 
@@ -279,10 +293,10 @@ ZeroDivisionError: division by zero</span>
 
     <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al realizar operaciones con decimales, los resultados pueden presentar errores de redondeo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 100 / 3
-<span class="idle-resp">33.333333333333336</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 100 / 3
+33.333333333333336</code>
 </pre>
     </div>
 
@@ -292,12 +306,12 @@ ZeroDivisionError: division by zero</span>
 
     <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Debido a los errores de redondeo, dos operaciones que debieran dar el mismo resultado pueden dar resultados diferentes:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4 * 3 / 5
-<span class="idle-resp">2.4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4 / 5 * 3
-<span class="idle-resp">2.4000000000000004</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 4 * 3 / 5
+2.4
+<span class="python-prompt">&gt;&gt;&gt;</span> 4 / 5 * 3
+2.4000000000000004</code>
 </pre>
     </div>
 
@@ -305,22 +319,24 @@ ZeroDivisionError: division by zero</span>
 
     <p>Se pueden escribir sumas y restas seguidas, pero no se recomienda hacerlo porque no es una notación habitual:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 + - + 4
-<span class="idle-resp">-1</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 - + - + 4
-<span class="idle-resp">7</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 + - + 4
+-1
+<span class="python-prompt">&gt;&gt;&gt;</span> 3 - + - + 4
+7</code>
 </pre>
     </div>
 
     <p>Lo que no se puede hacer es escribir multiplicaciones y divisiones seguidas:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 * / 4
-<span class="idle-erro">SyntaxError: invalid syntax</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 * / 4
+  File <span class="error-message">"&lt;python-input-16&gt;"</span>, line <span class="error-message">1</span>
+    3 * <span class="error-message-highlight">/</span> 4
+        <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid syntax</span></code>
 </pre>
     </div>
   </section>
@@ -343,40 +359,40 @@ ZeroDivisionError: division by zero</span>
 
       <p>El cociente de una división se calcula en Python con el operador //. El resultado es siempre un número entero, pero será de tipo entero o decimal dependiendo del tipo de los números empleados (en caso de ser decimal, la parte decimal es siempre cero). Por ejemplo:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 // 3
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 // 4
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 20.0 // 7
-<span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 20 // 6.0
-<span class="idle-resp">3.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 11 // 3
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> 9 // 2
+4
+<span class="python-prompt">&gt;&gt;&gt;</span> 20.0 // 7
+2.0
+<span class="python-prompt">&gt;&gt;&gt;</span> 20 // 6.0
+3.0</code>
 </pre>
       </div>
 
       <p>El operador cociente // tiene la misma prioridad que la división:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 // 5 / 2
-<span class="idle-resp">2.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26 // 5) / 2
-<span class="idle-resp">2.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 // (5 / 2)
-<span class="idle-resp">10.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 26 // 5 / 2
+2.5
+<span class="python-prompt">&gt;&gt;&gt;</span> (26 // 5) / 2
+2.5
+<span class="python-prompt">&gt;&gt;&gt;</span> 26 // (5 / 2)
+10.0</code>
 </pre>
       </div>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 // 2
-<span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26 / 5) // 2
-<span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5 // 2)
-<span class="idle-resp">13.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 26 / 5 // 2
+2.0
+<span class="python-prompt">&gt;&gt;&gt;</span> (26 / 5) // 2
+2.0
+<span class="python-prompt">&gt;&gt;&gt;</span> 26 / (5 // 2)
+13.0</code>
 </pre>
       </div>
     </section>
@@ -386,53 +402,53 @@ ZeroDivisionError: division by zero</span>
 
       <p>El resto de una división se calcula en Python con el operador %. El resultado tendrá tipo entero o decimal, de acuerdo con el resultado de la operación</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 3
-<span class="idle-resp">1</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 4
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 5
-<span class="idle-resp">0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10.5 % 3
-<span class="idle-resp">1.5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 11 % 3
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> 9 % 2
+1
+<span class="python-prompt">&gt;&gt;&gt;</span> 10 % 5
+0
+<span class="python-prompt">&gt;&gt;&gt;</span> 10.5 % 3
+1.5</code>
 </pre>
       </div>
 
       <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Cuando el resultado es decimal, pueden aparecer los problemas de redondeo comentados anteriormente.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10.2 % 3
-<span class="idle-resp">1.1999999999999993</span> <span class="idle-come"># El resultado correcto es 1.2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 % 4.2
-<span class="idle-resp">1.5999999999999996</span> <span class="idle-come"># El resultado correcto es 1.6</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10.1 % 5.1
-<span class="idle-resp">5.0</span>                <span class="idle-come"># Este resultado coincide con el resultado correcto</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 10.2 % 3
+1.1999999999999993 # El resultado correcto es 1.2
+<span class="python-prompt">&gt;&gt;&gt;</span> 10 % 4.2
+1.5999999999999996 # El resultado correcto es 1.6
+<span class="python-prompt">&gt;&gt;&gt;</span> 10.1 % 5.1
+5.0                # Este resultado coincide con el resultado correcto</code>
 </pre>
       </div>
 
       <p>El operador resto % tiene la misma prioridad que la división:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 % 5 / 2
-<span class="idle-resp">0.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26 % 5) / 2
-<span class="idle-resp">0.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 % (5 / 2)
-<span class="idle-resp">1.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 26 % 5 / 2
+0.5
+<span class="python-prompt">&gt;&gt;&gt;</span> (26 % 5) / 2
+0.5
+<span class="python-prompt">&gt;&gt;&gt;</span> 26 % (5 / 2)
+1.0</code>
 </pre>
       </div>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / 5 % 2
-<span class="idle-resp">1.2000000000000002</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (26 / 5) % 2
-<span class="idle-resp">1.2000000000000002</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 26 / (5 % 2)
-<span class="idle-resp">26.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 26 / 5 % 2
+1.2000000000000002
+<span class="python-prompt">&gt;&gt;&gt;</span> (26 / 5) % 2
+1.2000000000000002
+<span class="python-prompt">&gt;&gt;&gt;</span> 26 / (5 % 2)
+26.0</code>
 </pre>
       </div>
     </section>
@@ -442,10 +458,10 @@ ZeroDivisionError: division by zero</span>
 
       <p>La función integrada <span class="idle-func">divmod</span>(<var>x</var>, <var>y</var>) devuelve una tupla formada por el cociente y el resto de la división de <var>x</var> entre <var>y</var>..</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">divmod</span>(13, 4)
-<span class="idle-resp">(3, 1)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> divmod(13, 4)
+(3, 1)</code>
 </pre>
       </div>
     </section>
@@ -464,20 +480,19 @@ ZeroDivisionError: division by zero</span>
       <img src="../img/matematicas/mates-potencias.svg" alt="Potencias negativas y fraccionarias" width="466" height="159">
     </p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 ** 3
-<span class="idle-resp">8</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 10 ** -4
-<span class="idle-resp">0.0001</span>           <span class="idle-come"># Recuerde que a</span><sup class="idle-come">-b</sup><span class="idle-come">= 1/a</span><sup><span class="idle-come">b</span></sup>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 9 ** 0.5
-<span class="idle-resp">3.0</span>              <span class="idle-come"># Recuerde que a</span><sup class="idle-come">1/b</sup><span class="idle-come"> es la raíz b-ésima de a</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (-1) ** 0.5  <span class="idle-erro"># Esto va a dar error porque es la raíz cuadrada de -1</span>
-<span class="idle-erro">Traceback (most recent call last):</span>
-  <span class="idle-erro">File "&lt;pyshell#7&gt;", line 1, in ?</span>
-    <span class="idle-erro">(-1)**0.5 ValueError: negative number cannot be raised to a fractional power</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> -9 ** 0.5    <span class="idle-come"># Esto no da error porque hace primero la raíz y luego le pone el -</span>
-<span class="idle-resp">-3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 2 ** 3
+8
+<span class="python-prompt">&gt;&gt;&gt;</span> 10 ** -4           # Recuerde que a<sup>-b</sup> = 1 / a<sup>b</sup>
+0.0001
+<span class="python-prompt">&gt;&gt;&gt;</span> 9 ** 0.5           # Recuerde que a<sup>1/b</sup> es la raíz b-ésima de a
+3.0
+<span class="python-prompt">&gt;&gt;&gt;</span> -9 ** 0.5          # Calcula primero la raíz cuadrada y luego pone el -
+-3.0
+<span class="python-prompt">&gt;&gt;&gt;</span> (-9) ** 0.5        # La raíz cuadrada de un número negativo es un número complejo
+                       # Debería dar (3j) pero aparece un error de redondeo
+(1.8369701987210297e-16+3j)</code>
 </pre>
     </div>
 
@@ -485,14 +500,14 @@ ZeroDivisionError: division by zero</span>
 
     <p>También se pueden calcular potencias o raíces mediante la función integrada <span class="idle-func">pow</span>(x,y). Si se da un tercer argumento, <span class="idle-func">pow</span>(x, y, z), la función calcula primero <var>x</var> elevado a <var>y</var> después calcula el resto de la división por <var>z</var>.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(2, 3)
-<span class="idle-resp">8</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(4, 0.5)
-<span class="idle-resp">2.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">pow</span>(2, 3, 5)
-<span class="idle-resp">3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> pow(2, 3)
+8
+<span class="python-prompt">&gt;&gt;&gt;</span> pow(4, 0.5)
+2.0
+<span class="python-prompt">&gt;&gt;&gt;</span> pow(2, 3, 5)
+3</code>
 </pre>
     </div>
   </section>
@@ -511,76 +526,78 @@ ZeroDivisionError: division by zero</span>
 
       <ul>
         <li>Si sólo hay un argumento, la función devuelve el argumento redondeado al entero más próximo:
-          <div class="codigo idle">
+
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.35)
-<span class="idle-resp">4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.62)
-<span class="idle-resp">5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(-4.35)
--<span class="idle-resp">4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(-4.62)
--<span class="idle-resp">5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(4.35)
+4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4.62)
+5
+<span class="python-prompt">&gt;&gt;&gt;</span> round(-4.35)
+-4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(-4.62)
+-5</code>
 </pre>
           </div>
         </li>
         <li>Si se escriben dos argumentos, siendo el segundo un número entero, la función integrada <span class="idle-func">round</span>() devuelve el primer argumento redondeado en la posición indicada por el segundo argumento.
           <ul>
             <li>Si el segundo argumento es positivo, el primer argumento se redondea con el número de decimales indicado:
-              <div class="codigo idle">
+
+              <div class="terminal">
                 <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 2)
-<span class="idle-resp">4.35</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 1)
-<span class="idle-resp">4.4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 3)
-<span class="idle-resp">4.353</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527, 1)
+4.4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527, 2)
+4.35
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527, 3)
+4.353</code>
 </pre>
               </div>
 
-              <p>Si se piden más decimales de los que tiene el número, se obtiene el primer argumento, sin cambios:</p>
-              <div class="codigo idle">
+              <p>Si se piden más decimales de los que tiene el número, se obtiene el mismo número, sin cambios:</p>
+
+              <div class="terminal">
                 <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 7)
-<span class="idle-resp">4.3527</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(435, 2)
-<span class="idle-resp">435</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527, 7)
+4.3527
+<span class="python-prompt">&gt;&gt;&gt;</span> round(435, 2)
+435</code>
 </pre>
               </div>
             </li>
             <li>Si el segundo argumento es 0 y el primero es un número decimal, se redondea al entero más próximo, como cuando no se escribe segundo argumento, pero la diferencia es que el resultado es decimal y no entero.
 
-              <div class="codigo idle">
+              <div class="terminal">
                 <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527, 0)
-<span class="idle-resp">4.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.3527)
-<span class="idle-resp">4</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527, 0)
+4.0
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4.3527)
+4</code>
 </pre>
               </div>
 
               <p>Si el segundo argumento es 0 y el primero es un número entero, el resultado es entero:</p>
-              <div class="codigo idle">
+
+              <div class="terminal">
                 <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(435, 0)
-<span class="idle-resp">435</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(435, 0)
+435</code>
 </pre>
               </div>
             </li>
             <li>Si el segundo argumento es negativo, se redondea a decenas, centenas, etc.
 
-              <div class="codigo idle">
+              <div class="terminal">
                 <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -1)
-<span class="idle-resp">43530</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -2)
-<span class="idle-resp">43500</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -3)
-<span class="idle-resp">44000</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -4)
-<span class="idle-resp">40000</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(43527, -5)
-<span class="idle-resp">0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(4352, -1) # El número está más cerca de 4350 que de 4360
+4350
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4352, -2) # El número está más cerca de 4400 que de 4300
+4400
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4352, -3) # El número está más cerca de 4000 que de 5000
+4000
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4352, -4)  # El número está más cerca de 0 que de 10000
+0</code>
 </pre>
               </div>
             </li>
@@ -594,69 +611,70 @@ ZeroDivisionError: division by zero</span>
       <ul>
         <li>Cuando se redondea a enteros, decenas, centenas, etc., Python redondea de manera que la última cifra (la redondeada) sea par.
 
-          <div class="codigo idle">
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.5)
-<span class="idle-resp">4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(4.5)
-<span class="idle-resp">4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(5.5)
-<span class="idle-resp">6</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(6.5)
-<span class="idle-resp">6</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(3.5)
+4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(4.5)
+4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(5.5)
+6
+<span class="python-prompt">&gt;&gt;&gt;</span> round(6.5)
+6</code>
 </pre>
           </div>
 
-          <div class="codigo idle">
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(450, -2)
-<span class="idle-resp">400</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(350, -2)
-<span class="idle-resp">400</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(250, -2)
-<span class="idle-resp">200</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(150, -2)
-<span class="idle-resp">200</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(50, -2)
-<span class="idle-resp">0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(450, -2)
+400
+<span class="python-prompt">&gt;&gt;&gt;</span> round(350, -2)
+400
+<span class="python-prompt">&gt;&gt;&gt;</span> round(250, -2)
+200
+<span class="python-prompt">&gt;&gt;&gt;</span> round(150, -2)
+200
+<span class="python-prompt">&gt;&gt;&gt;</span> round(50, -2)
+0</code>
 </pre>
           </div>
         </li>
-        <li>Cuando se redondea a décimas, centésimas, etc., Python redondea en unos casos para arriba y en otros para abajo, debido a la forma en que se representan internamente los números decimales (como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>):
+        <li>Cuando se redondea a décimas, centésimas, etc., Python redondea en unos casos para arriba y en otros para abajo, debido a la forma inexacta en que se representan internamente los números decimales (como se explica en el apartado <a href="#decimales-binario">Representación de números decimales en binario</a>):
 
-          <div class="codigo idle">
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.15, 1)
-<span class="idle-resp">3.1</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.25, 1)
-<span class="idle-resp">3.2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.35, 1)
-<span class="idle-resp">3.4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.45, 1)
-<span class="idle-resp">3.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.55, 1)
-<span class="idle-resp">3.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.65, 1)
-<span class="idle-resp">3.6</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(3.15, 1)
+3.1
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.25, 1)
+3.2
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.35, 1)
+3.4
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.45, 1)
+3.5
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.55, 1)
+3.5
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.65, 1)
+3.6</code>
 </pre>
           </div>
 
-          <div class="codigo idle">
+          <div class="terminal">
             <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.315, 2)
-<span class="idle-resp">0.32</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.325, 2)
-<span class="idle-resp">0.33</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.335, 2)
-<span class="idle-resp">0.34</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.345, 2)
-<span class="idle-resp">0.34</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.355, 2)
-<span class="idle-resp">0.35</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(0.365, 2)
-<span class="idle-resp">0.36</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(0.315, 2)
+0.32
+<span class="python-prompt">&gt;&gt;&gt;</span> round(0.325, 2)
+0.33
+<span class="python-prompt">&gt;&gt;&gt;</span> round(0.335, 2)
+0.34
+<span class="python-prompt">&gt;&gt;&gt;</span> round(0.345, 2)
+0.34
+<span class="python-prompt">&gt;&gt;&gt;</span> round(0.355, 2)
+0.35
+<span class="python-prompt">&gt;&gt;&gt;</span> round(0.365, 2)
+0.36</code>
 </pre>
           </div>
+
           <p>Este redondeo se debe a la forma en que Python representa internamente los números decimales. Es un problema que presentan la mayoría de lenguajes de programación y se explica en el apartado siguiente.</p>
         </li>
       </ul>
@@ -669,33 +687,51 @@ ZeroDivisionError: division by zero</span>
 
       <p>Antes de utilizar estas funciones, hay que importarlas, o se generará un error.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(5 / 2)
-<span class="idle-come">Traceback (most recent call last):
-  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
-    floor(5 / 2)
-NameError: name 'floor' is not defined</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(5 / 2)
-<span class="idle-come">Traceback (most recent call last):
-  File "&lt;pyshell#0&gt;", line 2, in &lt;module&gt;
-    ceil(5 / 2)
-NameError: name 'ceil' is not defined</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> floor(5 / 2)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-0&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">floor</span>(5 / 2)
+    <span class="error-message-highlight">^^^^^</span>
+<span class="error-message"><strong>NameError</strong>: name 'floor' is not defined. Did you mean: 'float'?</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> ceil(5 / 2)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-1&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">ceil</span>(5 / 2)
+    <span class="error-message-highlight">^^^^</span>
+<span class="error-message"><strong>NameError</strong>: name 'ceil' is not defined</span></code>
 </pre>
       </div>
 
-      <div class="codigo idle">
+      <p>Las funciones includias en alguna biblioteca se pueden importar de forma conjunta o de manera individual. Se suele recomendar importarlas de forma conjunta.</p>
+
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> math <span class="idle-rese">import</span> floor
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(5 / 2)
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">floor</span>(2.9999)
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> math <span class="idle-rese">import</span> ceil
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(5 / 2)
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">ceil</span>(2.0001)
-<span class="idle-resp">3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> import math
+<span class="python-prompt">&gt;&gt;&gt;</span> math.floor(5 / 2)
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> math.floor(2.9999)
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> math.ceil(5 / 2)
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> math.ceil(2.9999)
+3</code>
+</pre>
+      </div>
+
+      <div class="terminal">
+        <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> from math import floor
+<span class="python-prompt">&gt;&gt;&gt;</span> floor(5 / 2)
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> floor(2.9999)
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> from math import ceil
+<span class="python-prompt">&gt;&gt;&gt;</span> ceil(5 / 2)
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> ceil(2.9999)
+3</code>
 </pre>
       </div>
     </section>
@@ -708,12 +744,12 @@ NameError: name 'ceil' is not defined</span>
 
     <p>El problema es que muchos números decimales no se pueden representarse de forma exacta en binario, por lo que los resultados no pueden ser exactos. Eso explica, por ejemplo, los resultados del ejemplo anterior:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.45, 1)
-<span class="idle-resp">3.5</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">round</span>(3.55, 1)
-<span class="idle-resp">3.5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> round(3.45, 1)
+3.5
+<span class="python-prompt">&gt;&gt;&gt;</span> round(3.55, 1)
+3.5</code>
 </pre>
     </div>
 
@@ -725,13 +761,13 @@ NameError: name 'ceil' is not defined</span>
     <ul>
       <li>Para ver el valor que se obtiene al convertir un número decimal a binario se puede utilizar el tipo Decimal de la biblioteca decimal:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">from</span> decimal <span class="idle-rese">import</span> Decimal
-<span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.45)
-<span class="idle-resp">Decimal('3.45000000000000017763568394002504646778106689453125')</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> Decimal(3.55)
-<span class="idle-resp">Decimal('3.54999999999999982236431605997495353221893310546875')</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> from decimal import Decimal
+<span class="python-prompt">&gt;&gt;&gt;</span> Decimal(3.45)
+Decimal('3.45000000000000017763568394002504646778106689453125')
+<span class="python-prompt">&gt;&gt;&gt;</span> Decimal(3.55)
+Decimal('3.54999999999999982236431605997495353221893310546875')</code>
 </pre>
         </div>
       </li>
@@ -742,10 +778,10 @@ NameError: name 'ceil' is not defined</span>
 
     <p>En algunos casos extremos, el error es apreciable en cálculos muy sencillos:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 0.1 + 0.1 + 0.1
-<span class="idle-resp">0.30000000000000004</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 0.1 + 0.1 + 0.1
+0.30000000000000004</code>
 </pre>
     </div>
 
@@ -773,12 +809,12 @@ NameError: name 'ceil' is not defined</span>
 
       <p>La función integrada <span class="idle-func">abs</span>() calcula el valor absoluto de un número, es decir, el valor sin signo.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(-6)
-<span class="idle-resp">6</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">abs</span>(7)
-<span class="idle-resp">7</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> abs(-6)
+6
+<span class="python-prompt">&gt;&gt;&gt;</span> abs(7)
+7</code>
 </pre>
       </div>
     </section>
@@ -788,21 +824,21 @@ NameError: name 'ceil' is not defined</span>
 
       <p>La función integrada <span class="idle-func">max</span>() calcula el valor máximo de un conjunto de valores (numéricos o alfabéticos). En el caso de cadenas, el valor máximo corresponde al último valor en orden alfabético, sin importar la longitud de la cadena.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(4, 5, -2, 8, 3.5, -10)
-<span class="idle-resp">8</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>)
-<span class="idle-resp">'Tomás'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> max(4, 5, -2, 8, 3.5, -10)
+8
+<span class="python-prompt">&gt;&gt;&gt;</span> max("David", "Alicia", "Tomás", "Emilio")
+'Tomás'</code>
 </pre>
       </div>
 
       <p>Las vocales acentuadas, la letra ñ o ç se consideran posteriores al resto de vocales y consonantes</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">max</span>(<span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Roberto"</span>)
-<span class="idle-resp">'Ángeles'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> max("Ángeles", "Roberto")
+'Ángeles'</code>
 </pre>
       </div>
     </section>
@@ -812,21 +848,21 @@ NameError: name 'ceil' is not defined</span>
 
       <p>La función integrada <span class="idle-func">min</span>() calcula el valor mínimo de un conjunto de valores (numéricos o alfabéticos). En el caso de cadenas, el valor mínimo corresponde al primer valor en orden alfabético, sin importar la longitud de la cadena.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(4, 5, -2, 8, 3.5, -10)
-<span class="idle-resp">-10</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>)
-<span class="idle-resp">'Alicia'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> min(4, 5, -2, 8, 3.5, -10)
+-10
+<span class="python-prompt">&gt;&gt;&gt;</span> min("David", "Alicia", "Tomás", "Emilio")
+'Alicia'</code>
 </pre>
       </div>
 
       <p>Las vocales acentuadas, la letra ñ o ç se consideran posteriores al resto de vocales y consonantes</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">min</span>(<span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Roberto"</span>)
-<span class="idle-resp">'Roberto'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> min("Ángeles", "Roberto")
+'Roberto'</code>
 </pre>
       </div>
     </section>
@@ -836,16 +872,22 @@ NameError: name 'ceil' is not defined</span>
 
       <p>La función integrada <span class="idle-func">sum</span>() calcula la suma de un conjunto de valores. El conjunto de valores debe ser un tipo de datos iterable (tupla, rango, lista, conjunto o diccionario).</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>((1, 2, 3, 4, 5))
-<span class="idle-resp">15</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>([1, 2, 3, 4, 5])
-<span class="idle-resp">15</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>(<span class="idle-func">range</span>(6))
-<span class="idle-resp">15</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sum</span>({1, 2, 3, 4, 5})
-<span class="idle-resp">15</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> sum((1, 2, 3, 4, 5))
+15
+<span class="python-prompt">&gt;&gt;&gt;</span> sum([1, 2, 3, 4, 5])
+15
+<span class="python-prompt">&gt;&gt;&gt;</span> sum(range(6))
+15
+<span class="python-prompt">&gt;&gt;&gt;</span> sum({1, 2, 3, 4, 5})
+15
+<span class="python-prompt">&gt;&gt;&gt;</span> sum(1, 2, 3, 4, 5)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-4&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    sum<span class="error-message-highlight">(1, 2, 3, 4, 5)</span>
+    ~~~<span class="error-message-highlight">^^^^^^^^^^^^^^^</span>
+<span class="error-message"><strong>TypeError</strong>: sum() takes at most 2 arguments (5 given)</span></code>
 </pre>
       </div>
     </section>
@@ -855,25 +897,31 @@ NameError: name 'ceil' is not defined</span>
 
       <p>La función integrada <span class="idle-func">sorted</span>() ordena un conjunto de valores. El conjunto de valores debe ser un tipo de datos iterable (tupla, rango, lista, conjunto o diccionario). El conjunto de valores no se modifica, la función devuelve una lista con los elementos ordenados.</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>((10, 2, 8, -3, 6))
-<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>([10, 2, 8, -3, 6])
-<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>({10, 2, 8, -3, 6})
-<span class="idle-resp">[-3, 2, 6, 8, 10]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>((<span class="idle-cade">"David"</span>, <span class="idle-cade">"Alicia"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Emilio"</span>))
-<span class="idle-resp">['Alicia', 'David', 'Emilio', 'Tomás']</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">sorted</span>([<span class="idle-cade">"David"</span>, <span class="idle-cade">"Ángeles"</span>, <span class="idle-cade">"Tomás"</span>, <span class="idle-cade">"Óscar"</span>, <span class="idle-cade">"Emilio"</span>])
-<span class="idle-resp">['David', 'Emilio', 'Tomás', 'Ángeles', 'Óscar']</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> sorted((10, 2, 8, -3, 6))
+[-3, 2, 6, 8, 10]
+<span class="python-prompt">&gt;&gt;&gt;</span> sorted([10, 2, 8, -3, 6])
+[-3, 2, 6, 8, 10]
+<span class="python-prompt">&gt;&gt;&gt;</span> ({10, 2, 8, -3, 6})
+[-3, 2, 6, 8, 10]
+<span class="python-prompt">&gt;&gt;&gt;</span> sorted(("David", "Alicia", "Tomás", "Emilio"))
+['Alicia', 'David', 'Emilio', 'Tomás']
+<span class="python-prompt">&gt;&gt;&gt;</span> sorted(["David", "Ángeles", "Tomás", "Óscar", "Emilio"])
+['David', 'Emilio', 'Tomás', 'Ángeles', 'Óscar']
+<span class="python-prompt">&gt;&gt;&gt;</span> sorted(10, 2, 8, -3, 6)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-4&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">&lt;module&gt;</span>
+    sorted<span class="error-message-highlight">(10, 2, 8, -3, 6)</span>
+    ~~~~~~<span class="error-message-highlight">^^^^^^^^^^^^^^^^^</span>
+<span class="error-message"><strong>TypeError</strong>: sorted() expected 1 argument, got 5</span></code>
 </pre>
       </div>
     </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 18 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
