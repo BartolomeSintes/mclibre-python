@@ -34,7 +34,7 @@
         <li><a href="#variables-borrar">Borrar una variable</a></li>
         <li><a href="#variables-nombres">Nombres de variables</a></li>
         <li><a href="#variables-tipos">Tipos de variables</a></li>
-        <li><a href="#variables-idle-valores">Mostrar en IDLE</a></li>
+        <li><a href="#variables-entorno-interactivo">Mostrar en entorno interactivo</a></li>
         <li><a href="#variables-utilizar">Utilizar variables</a></li>
         <li><a href="#asignaciones-aumentadas">Asignaciones aumentadas</a></li>
         <li><a href="#variables-varias">Varias variables a la vez</a></li>
@@ -189,27 +189,33 @@ c = a + b
 
     <p>En el ejemplo siguiente se almacena el número decimal 2.5 en una variable de nombre <var>x</var> (como se comenta en el apartado anterior, realmente habría que decir que se crea la etiqueta <var>x</var> para hacer referencia al objeto número decimal 2.5). Fíjese en que los números decimales se escriben con punto (.) y no con coma (,).</p>
 
-    <div class="codigo idle">
-      <pre><span class="idle-prompt">&gt;&gt;&gt;</span> x = 2.5</pre>
+    <div class="terminal">
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> x = 2.5</code>
+</pre>
     </div>
 
     <p>La variable se escribe siempre a la izquierda de la igualdad. Si se escribe al revés, Python genera un mensaje de error:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2.5 = x
-<span class="idle-erro">SyntaxError: can't assign to literal</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 2.5 = x
+  File <span class="error-message">"&lt;python-input-1&gt;"</span>, line <span class="error-message">1</span>
+    <span class="error-message-highlight">2.5</span> = x
+    <span class="error-message-highlight">^^^</span>
+<span class="error-message"><strong>SyntaxError</strong>: cannot assign to literal here. Maybe you meant '==' instead of '='?</span></code>
 </pre>
     </div>
+
     <hr class="corta">
 
-    <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre:</p>
+    <p>Para que el entorno interactivo muestre el valor de una variable, basta con escribir su nombre:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> x = 2.5
-<span class="idle-prompt">&gt;&gt;&gt;</span> x
-<span class="idle-resp">2.5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> x = 2.5
+<span class="python-prompt">&gt;&gt;&gt;</span> x
+2.5</code>
 </pre>
     </div>
 
@@ -217,44 +223,48 @@ c = a + b
 
     <p>Si una variable no se ha definido previamente, escribir su nombre genera un mensaje de error:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> x = -10
-<span class="idle-prompt">&gt;&gt;&gt;</span> y
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    y
-NameError: name 'y' is not defined</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> xyz
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-4&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">module</span>
+    xyz
+<span class="error-message"><strong>NameError</strong>: name 'xyz' is not defined</span></code>
+</pre>
     </div>
 
     <hr class="corta">
 
     <p>Una variable puede almacenar números, texto o estructuras más complicadas (que se verán más adelante). Si se va a almacenar texto, el texto debe escribirse entre comillas simples (') o dobles ("), que son equivalentes. A las variables que almacenan texto se les suele llamar cadenas (de texto).</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre
-<span class="idle-resp">'Pepito Conejo'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> nombre = "Pepito Conejo"
+<span class="python-prompt">&gt;&gt;&gt;</span> nombre
+'Pepito Conejo'</code>
 </pre>
     </div>
 
     <p>Si no se escriben comillas, Python supone que estamos haciendo referencia a otra variable (que, si no está definida, genera un mensaje de error):</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre = Pepe
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
-    nombre = Pepe
-NameError: name 'Pepe' is not defined</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> nombre = Pepe
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-7&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">module</span>
+    nombre = <span class="error-message-highlight">Pepe</span>
+             <span class="error-message-highlight">^^^^</span>
+<span class="error-message"><strong>NameError</strong>: name 'Pepe' is not defined</span></code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre = Pepito <span class="idle-errbg">Conejo</span>
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> nombre = Pepito Conejo
+  File <span class="error-message">"&lt;python-input-8&gt;"</span>, line <span class="error-message">1</span>
+    nombre = Pepito <span class="error-message-highlight">Conejo</span>
+                    <span class="error-message-highlight">^^^^^^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid syntax</span></code>
 </pre>
     </div>
   </section>
@@ -264,17 +274,17 @@ NameError: name 'Pepe' is not defined</span>
 
     <p>La instrucción <span class="idle-rese">del</span> borra completamente una variable.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre
-<span class="idle-resp">'Pepito Conejo'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> nombre
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
-    nombre
-NameError: name 'nombre' is not defined</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> nombre = Pepito Conejo
+<span class="python-prompt">&gt;&gt;&gt;</span> nombre
+'Pepito Conejo'
+<span class="python-prompt">&gt;&gt;&gt;</span> del nombre
+<span class="python-prompt">&gt;&gt;&gt;</span> nombre
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-0&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">module</span>
+    x
+<span class="error-message"><strong>NameError</strong>: name 'nombre' is not defined</span></code>
 </pre>
     </div>
   </section>
@@ -290,27 +300,27 @@ NameError: name 'nombre' is not defined</span>
 
     <p>El nombre de una variable debe empezar por una letra o por un guion bajo (_) y puede seguir con más letras, números o guiones bajos.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> _x = 3.8
-<span class="idle-prompt">&gt;&gt;&gt;</span> _x
-<span class="idle-resp">3.8</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> _x = 3.8
+<span class="python-prompt">&gt;&gt;&gt;</span> _x
+3.8</code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> x1 = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> x
-<span class="idle-resp">100</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> x1 = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> x1
+100</code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento
-<span class="idle-resp">'27 de octubre de 1997'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = "27 de octubre de 1997"
+<span class="python-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento
+'27 de octubre de 1997'</code>
 </pre>
     </div>
 
@@ -318,10 +328,13 @@ NameError: name 'nombre' is not defined</span>
 
     <p>Los nombres de variables no pueden incluir espacios en blanco.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha de nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> fecha de nacimiento = "27 de octubre de 1997"
+  File <span class="error-message">"&lt;python-input-6&gt;"</span>, line <span class="error-message">1</span>
+    fecha <span class="error-message-highlight">de</span> nacimiento = "27 de octubre de 1997"
+          <span class="error-message-highlight">^^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid syntax</span></code>
 </pre>
     </div>
 
@@ -329,9 +342,11 @@ NameError: name 'nombre' is not defined</span>
 
     <p>Los nombres de variables pueden contener cualquier carácter alfabético (los del alfabeto inglés, pero también ñ, ç o vocales acentuadas), aunque se recomienda utilizar únicamente los caracteres del alfabeto inglés.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span>año = 1997
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> año = 1997
+<span class="python-prompt">&gt;&gt;&gt;</span> año
+1997</code>
 </pre>
     </div>
 
@@ -341,70 +356,81 @@ NameError: name 'nombre' is not defined</span>
 
     <p>Los nombres de las variables pueden contener mayúsculas, pero tenga en cuenta que Python distingue entre mayúsculas y minúsculas (en inglés se dice que Python es <i>case-sensitive</i>).</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre = <span class="idle-cade">"Pepito Conejo"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> Nombre = <span class="idle-cade">"Numa Nigerio"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nomBre = <span class="idle-cade">"Fulanito Mengánez"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nombre
-<span class="idle-resp">'Pepito Conejo'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> Nombre
-<span class="idle-resp">'Numa Nigerio'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> nomBre
-<span class="idle-resp">'Fulanito Mengánez'</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> nombre = "Pepito Conejo"
+<span class="python-prompt">&gt;&gt;&gt;</span> Nombre = "Numa Nigerio"
+<span class="python-prompt">&gt;&gt;&gt;</span> NOMBRE = "Fulanito Mengánez"
+<span class="python-prompt">&gt;&gt;&gt;</span> nombre
+Pepito Conejo
+<span class="python-prompt">&gt;&gt;&gt;</span> Nombre
+Numa Nigerio
+<span class="python-prompt">&gt;&gt;&gt;</span> NOMBRE
+Fulanito Mengánez</code>
+</pre>
     </div>
 
     <hr class="corta">
 
     <p>Cuando el nombre de una variable contiene varias palabras, se aconseja separarlas con guiones bajos para facilitar la legibilidad, aunque también se utiliza la notación <a href="https://en.wikipedia.org/wiki/Camel_case">camelCase</a>, en las que las palabras no se separan pero empiezan con mayúsculas (salvo la primera palabra).</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fechaDeNacimiento = <span class="idle-cade">"27 de octubre de 1997"</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento = "27 de octubre de 1997"
+<span class="python-prompt">&gt;&gt;&gt;</span> fechaDeNacimiento = "27 de octubre de 1997"
+<span class="python-prompt">&gt;&gt;&gt;</span> fecha_de_nacimiento
+27 de octubre de 1997
+<span class="python-prompt">&gt;&gt;&gt;</span> fechaDeNacimiento
+27 de octubre de 1997</code>
 </pre>
     </div>
 
     <hr class="corta">
 
-    <p>Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (las que IDLE escribe en <span class="idle-rese">naranja</span>) están prohibidas como nombres de variables:</p>
+    <p>Las <a href="python-elementos.html#palabras-reservadas">palabras reservadas</a> del lenguaje (que IDLE muestra en naranja o Visual Studio Code con tema Dark muestra en rosa) están prohibidas como nombres de variables:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">lambda</span> = 3
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> lambda = 3
+  File <span class="error-message">"&lt;python-input-19&gt;"</span>, line <span class="error-message">1</span>
+    lambda <span class="error-message-highlight">=</span> 3
+           <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid syntax</span></code>
 </pre>
     </div>
 
     <hr class="corta">
 
     <p>Los nombres de las funciones integradas sí que se pueden utilizar como nombres de variables, pero más vale no hacerlo porque a continuación ya no se puede utilizar la función como tal:</p>
-    <div class="codigo idle">
+
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> = 3
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    print("Hola")
-TypeError: 'int' object is not callable</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print = 3
+<span class="python-prompt">&gt;&gt;&gt;</span> print ("Hola")
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-21&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">module</span>
+    <span class="error-message-highlight">print<strong>("Hola")</strong></span>
+    <span class="error-message-highlight">~~~~~<strong>^^^^^^^^</strong></span>
+<span class="error-message"><strong>TypeError</strong>: 'int' object is not callable</span></code>
 </pre>
     </div>
 
     <p>Borrando con <span class="idle-rese">del</span> la variable con nombre de función, se recupera la función.</p>
-    <div class="codigo idle">
+
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span> = 3
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    print("Hola")
-TypeError: 'int' object is not callable</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">del</span> <span class="idle-func">print</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Hola"</span>)
-<span class="idle-resp">Hola</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print = 3
+<span class="python-prompt">&gt;&gt;&gt;</span> print ("Hola")
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-23&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">module</span>
+    <span class="error-message-highlight">print<strong>("Hola")</strong></span>
+    <span class="error-message-highlight">~~~~~<strong>^^^^^^^^</strong></span>
+<span class="error-message"><strong>TypeError</strong>: 'int' object is not callable</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> del print
+<span class="python-prompt">&gt;&gt;&gt;</span> print ("Hola")
+Hola</code>
 </pre>
     </div>
-
   </section>
 
   <section id="variables-tipos">
@@ -416,12 +442,12 @@ TypeError: 'int' object is not callable</span>
 
     <p>Por tanto, estas tres definiciones de variables no son equivalentes:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha = 1997
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha = 1997.0
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha = <span class="idle-cade">"1997"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> fecha = [27, <span class="idle-cade">"octubre"</span>, 1997]
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> fecha = 1997
+<span class="python-prompt">&gt;&gt;&gt;</span> fecha = 1997.0
+<span class="python-prompt">&gt;&gt;&gt;</span> fecha = "1997"
+<span class="python-prompt">&gt;&gt;&gt;</span> fecha = [27, "octubre", 1997]</code>
 </pre>
     </div>
 
@@ -431,30 +457,29 @@ TypeError: 'int' object is not callable</span>
 
   </section>
 
-  <section id="variables-idle-valores">
-    <h2>Mostrar el valor de las variables en IDLE</h2>
+  <section id="variables-entorno-interactivo">
+    <h2>Mostrar el valor de las variables en el entorno interactivo</h2>
 
-    <p>Para que IDLE muestre el valor de una variable, basta con escribir su nombre.</p>
+    <p>Para que el entorno interactivo muestre el valor de una variable, basta con escribir su nombre.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">2</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 2
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+2</code>
+</pre>
     </div>
 
-    <p>También se puede conocer el valor de varias variables a la vez escribiéndolas entre comas (IDLE las mostrará entre paréntesis porque Python las considera como un conjunto ordenado llamado tupla), como muestra el siguiente ejemplo:</p>
+    <p>También se puede conocer el valor de varias variables a la vez escribiéndolas entre comas (el entorno interactivo las mostrará entre paréntesis porque Python las considera como un conjunto ordenado llamado tupla), como muestra el siguiente ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = b = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> c = <span class="idle-cade">"pepe"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> c, b
-<span class="idle-resp">('pepe', 2)</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 2
+<span class="python-prompt">&gt;&gt;&gt;</span> b = "pepe"
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(2, 'pepe')</code>
+</pre>
     </div>
-
   </section>
 
   <section id="variables-utilizar">
@@ -462,43 +487,44 @@ TypeError: 'int' object is not callable</span>
 
     <p>Una vez se ha definido una variable, se puede utilizar para hacer cálculos o para definir nuevas variables, como muestran los siguientes ejemplos:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> a + 3
-<span class="idle-resp">5</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 2
+<span class="python-prompt">&gt;&gt;&gt;</span> a + 3
+5</code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> horas = 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> minutos = 60 * horas
-<span class="idle-prompt">&gt;&gt;&gt;</span> segundos = 60 * minutos
-<span class="idle-prompt">&gt;&gt;&gt;</span> segundos
-<span class="idle-resp">18000</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> horas = 1
+<span class="python-prompt">&gt;&gt;&gt;</span> minutos = 60 * horas
+<span class="python-prompt">&gt;&gt;&gt;</span> segundos = 60 * minutos
+<span class="python-prompt">&gt;&gt;&gt;</span> segundos
+3600</code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> horas = 1
-<span class="idle-prompt">&gt;&gt;&gt;</span> minutos = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> segundos = 3
-<span class="idle-prompt">&gt;&gt;&gt;</span> segundos + 60 * minutos + 3600 * horas
-<span class="idle-resp">3723</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> horas = 1
+<span class="python-prompt">&gt;&gt;&gt;</span> minutos = 1
+<span class="python-prompt">&gt;&gt;&gt;</span> segundos = 1
+<span class="python-prompt">&gt;&gt;&gt;</span> horas * 3600 + minutos * 60 + segundos
+3661</code>
 </pre>
     </div>
 
     <p>En caso de utilizar una variable no definida anteriormente, Python genera un mensaje de error.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> dias = 7 * semanas
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    dias = 7 * semanas
-NameError: name 'semanas' is not defined</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> dias = 7 * semanas
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-10&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">module</span>
+    dias = 7 * <span class="error-message-highlight">semanas</span>
+               <span class="error-message-highlight">^^^^^^^</span>
+<span class="error-message"><strong>NameError</strong>: name 'semanas' is not defined</span></code>
 </pre>
     </div>
 
@@ -506,12 +532,12 @@ NameError: name 'semanas' is not defined</span>
 
     <p>Se puede redefinir una variable a partir de su propio valor. Por ejemplo</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = a + 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">15</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a = a + 5
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+15</code>
 </pre>
     </div>
 
@@ -523,29 +549,29 @@ NameError: name 'semanas' is not defined</span>
 
     <p>Es importante también tener presente que los nombres de las variables no tienen sentido real para Python, son simples etiquetas para referirse al contenido.</p>
 
-    <p>Por ejemplo, en el siguiente ejemplo se crean dos variables y se suman, aunque en el mundo real hay gente que opina que se pueden sumar <var>peras</var> y <var>manzanas</var> ;-):</p>
+    <p>Por ejemplo, en el siguiente ejemplo se crean dos variables y se suman, aunque en el mundo real se suele decir que no hay que sumar <var>peras</var> y <var>manzanas</var> ;-):</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> peras = 7
-<span class="idle-prompt">&gt;&gt;&gt;</span> manzanas = 22
-<span class="idle-prompt">&gt;&gt;&gt;</span> peras + manzanas
-<span class="idle-resp">29</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> peras = 7
+<span class="python-prompt">&gt;&gt;&gt;</span> manzanas = 22
+<span class="python-prompt">&gt;&gt;&gt;</span> peras + manzanas
+29</code>
 </pre>
     </div>
 
     <p>O el siguiente ejemplo en el que Python permite realizar cualquier operación con las variables <var>distancia</var> y <var>tiempo</var>, aunque no tengan sentido físico (de hecho, sólo la división lo tiene, es la velocidad).</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia + tiempo
-<span class="idle-resp">104</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia * tiempo
-<span class="idle-resp">400</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
-<span class="idle-resp">25.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> distancia = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> tiempo = 4
+<span class="python-prompt">&gt;&gt;&gt;</span> distancia + tiempo
+104
+<span class="python-prompt">&gt;&gt;&gt;</span> distancia * tiempo
+400
+<span class="python-prompt">&gt;&gt;&gt;</span> distancia / tiempo
+25.0</code>
 </pre>
     </div>
 
@@ -562,29 +588,30 @@ NameError: name 'semanas' is not defined</span>
     <ul>
       <li>Si se trata objetos inmutables, el resto de variables no resultan afectadas, como muestra el siguiente ejemplo:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(10, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 20
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(20, 10)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="python-prompt">&gt;&gt;&gt;</span> b = a
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(10, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(20, 10)</code>
 </pre>
         </div>
       </li>
+
       <li>Pero si se trata de objetos mutables y al modificar la variable se modifica el objeto, el resto de variables sí resultan afectadas, como muestra el siguiente ejemplo:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = [10]
-<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">([10], [10])</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a[0] = 20
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">([20], [20])</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = [10]
+<span class="python-prompt">&gt;&gt;&gt;</span> b = a
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+([10], [10])
+<span class="python-prompt">&gt;&gt;&gt;</span> a = 20
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+([20], [20])</code>
 </pre>
         </div>
       </li>
@@ -598,23 +625,23 @@ NameError: name 'semanas' is not defined</span>
 
     <p>Por ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a += 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">15</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a += 5
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+15</code>
 </pre>
     </div>
 
     <p>es equivalente a:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = a + 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">15</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a = a + 5
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+15</code>
 </pre>
     </div>
 
@@ -661,11 +688,14 @@ NameError: name 'semanas' is not defined</span>
 
     <p>En Python no existen los operadores incremento (++) o decremento (--) que sí existen en otros lenguajes de programación:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 5
-<span class="idle-prompt">&gt;&gt;&gt;</span> a++
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 5
+<span class="python-prompt">&gt;&gt;&gt;</span> a++
+  File <span class="error-message">"&lt;python-input-6&gt;"</span>, line <span class="error-message">1</span>
+    a++
+       <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid syntax</span></code>
 </pre>
     </div>
   </section>
@@ -675,10 +705,10 @@ NameError: name 'semanas' is not defined</span>
 
     <p>En una misma línea se pueden definir simultáneamente varias variables, con el mismo valor o con valores distintos, como muestra el siguiente ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = b = 99
-<span class="idle-prompt">&gt;&gt;&gt;</span> c, d, e = <span class="idle-cade">"Mediterráneo"</span>, 10, [<span class="idle-cade">"pan"</span>, <span class="idle-cade">"queso"</span>]
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = b = 99
+<span class="python-prompt">&gt;&gt;&gt;</span> c, d, e = "Mediterráneo", 10, ["pan", "queso"]</code>
 </pre>
     </div>
 
@@ -688,74 +718,76 @@ NameError: name 'semanas' is not defined</span>
 
     <p>Si el número de variables no coincide con el de valores, Python genera un mensaje de error.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    a, b, c = 1, 2
-ValueError: need more than 2 values to unpack</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-2&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">module</span>
+    <span class="error-message-highlight">a, b, c</span> = 1, 2
+    <span class="error-message-highlight">^^^^^^^</span>
+<span class="error-message"><strong>ValueError</strong>: not enough values to unpack (expected 3, got 2)</span></code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2, 3, 4
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    a, b, c = 1, 2, 3, 4
-ValueError: too many values to unpack</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a, b, c = 1, 2, 3, 4
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-3&gt;"</span>, line <span class="error-message">1</span>, in <span class="error-message">module</span>
+    <span class="error-message-highlight">a, b, c</span> = 1, 2, 3, 4
+    <span class="error-message-highlight">^^^^^^^</span>
+<span class="error-message"><strong>ValueError</strong>: too many values to unpack (expected 3)</span></code>
 </pre>
     </div>
 
     <hr class="corta">
 
-    <p>Se pueden modificar varias variables en una sola instrucción y la modificación se realiza en un solo paso.</p>
+    <p>Esta notación permite modificar varias variables en una sola instrucción y la modificación se realiza en un solo paso.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(5, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b = b, a
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(10, 5)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(5, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b = b, a
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(10, 5)</code>
 </pre>
     </div>
 
-    <p>Obsérvese que si este procedimiento lo hubiéramos hecho paso a paso, el resultado hubiera sido distinto:</p>
+    <p>Observe que si este procedimiento lo hubiéramos hecho paso a paso, el resultado hubiera sido distinto:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(5, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = b
-<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(10, 10)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(5, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> a = b
+<span class="python-prompt">&gt;&gt;&gt;</span> b = a
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(10, 10)</code>
 </pre>
     </div>
 
     <p>El motivo de este resultado se entiende fácilmente mostrando los valores tras cada operación:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(5, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = b
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(10, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> b = a
-<span class="idle-prompt">&gt;&gt;&gt;</span> a, b
-<span class="idle-resp">(10, 10)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a, b = 5, 10
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(5, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> a = b
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(10, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> b = a
+<span class="python-prompt">&gt;&gt;&gt;</span> a, b
+(10, 10)</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de enero de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 22 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
