@@ -31,7 +31,7 @@
         </li>
         <li><a href="#comillas-dentro-comillas">Comillas entre comillas</a></li>
         <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
-        <li><a href="#prompt-idle">Cadenas en prompt IDLE</a></li>
+        <li><a href="#prompt">Cadenas en el prompt</a></li>
         <li><a href="#largas">Cadenas largas</a></li>
       </ul>
     </div>
@@ -51,12 +51,12 @@
 
       <p>Las cadenas de texto se pueden delimitar con comillas simples (') o con comillas dobles ("):</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Esto es una cadena'</span>)
-<span class="idle-resp">Esto es una cadena</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena"</span>)
-<span class="idle-resp">Esto es una cadena</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Esto es una cadena')
+Esto es una cadena
+<span class="python-prompt">&gt;&gt;&gt;</span> print("Esto es una cadena")
+Esto es una cadena</code>
 </pre>
       </div>
 
@@ -72,40 +72,15 @@
 
       <p>Las cadenas se deben cerrar con las mismas comillas con las que se abrieron, de lo contrario estaremos cometiendo un error de sintaxis:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esto es una cadena')</span><span class="idle-errbg">                      </span>
-<span class="idle-erro">SyntaxError: unterminated string literal (detected at line 1)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Esto es una cadena')
+  File <span class="error-message">"&lt;python-input-0&gt;"</span>, line <span class="error-message">1</span>
+    print(<span class="error-message-highlight">"</span>Esto es una cadena')
+          <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: unterminated string literal (detected at line 1)</span></code>
 </pre>
       </div>
-
-      <p>En un programa, al intentar ejecutar el programa se abriría una ventana de error:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-python">print(<span class="string">"Esto es una cadena')</span></code></pre>
-        </div>
-
-        <div class="columnaflex">
-          <div class="ejecucion-terminal">
-            <pre>
-  File "prueba.py", line 1
-    print("Esto es una cadena')
-          ^
-SyntaxError: unterminated string literal (detected at line 1)
-</pre>
-          </div>
-          <div class="resultado-captura">
-            <p>En IDLE se muestra una ventana indicando el error:</p>
-            <p class="captura">
-              <img src="../img/error-cadena-delimitador.png" alt="Aviso: Error de delimitador de cadena" width="328" height="152">
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p>Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden nos ayuda a identificar que hay algo incorrecto en el programa. En el ejemplo anterior, el paréntesis de cierre se muestra de color verde, lo que indica que IDLE no identifica la comilla simple como cierre de la cadena abierta con comilla doble.</p>
     </section>
 
     <section id="comillas-triples">
@@ -113,14 +88,14 @@ SyntaxError: unterminated string literal (detected at line 1)
 
       <p>Las comillas triples permiten que las cadenas ocupen más de una línea:</p>
 
-      <div class="codigo idle">
+      <div class="terminal">
         <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"""Esto es una cadena
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("""Esto es una cadena
+<span class="python-prompt">...</span> que ocupa
+<span class="python-prompt">...</span> varias líneas""")
+Esto es una cadena
 que ocupa
-  varias líneas"""</span>)
-<span class="idle-resp">Esto es una cadena
-que ocupa
-  varias líneas</span>
+  varias líneas</code>
 </pre>
       </div>
 
@@ -132,7 +107,7 @@ que ocupa
         <pre>
 <code class="language-python">def licencia():
     """Escribe la licencia de estos apuntes"""
-    print("Copyright 2013 Bartolomé Sintes Marco")
+    print("Copyright 2025 Bartolomé Sintes Marco")
     print("Licencia CC-BY-SA 4.0")
     return</code>
 </pre>
@@ -145,106 +120,74 @@ que ocupa
 
     <p>Se pueden escribir comillas simples en cadenas delimitadas con comillas dobles y viceversa:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>)
-<span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas dobles " delimitan cadenas.'</span>)
-<span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Las comillas simples ' delimitan cadenas.")
+Las comillas simples ' delimitan cadenas.
+<span class="python-prompt">&gt;&gt;&gt;</span> print('Las comillas dobles " delimitan cadenas.')
+Las comillas dobles " delimitan cadenas.</code>
 </pre>
     </div>
 
     <p>Pero no se pueden escribir en el interior de una cadena comillas del mismo tipo que las comillas delimitadoras:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles "</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">")</span>
-<span class="idle-erro">SyntaxError: invalid syntax. Perhaps you forgot a comma?</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Las comillas dobles " delimitan cadenas")
+File <span class="error-message">"&lt;python-input-1&gt;"</span>, line <span class="error-message">1</span>
+print("Las comillas dobles " delimitan cadenas<span class="error-message-highlight">"</span>)
+                                              <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: unterminated string literal (detected at line 1)</span></code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples '</span> <span class="idle-errbg">delimitan</span> cadenas<span class="idle-cade">')</span>
-<span class="idle-erro">SyntaxError: invalid syntax. Perhaps you forgot a comma?</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Las comillas simples ' delimitan cadenas')
+File <span class="error-message">"&lt;python-input-2&gt;"</span>, line <span class="error-message">1</span>
+print('Las comillas simples ' delimitan cadenas<span class="error-message-highlight">'</span>)
+                                               <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: unterminated string literal (detected at line 1)</span></code>
 </pre>
     </div>
 
-    <p>El motivo es que Python entiende que la comilla escrita en medio de la cadena está cerrando la cadena y no puede interpretar lo que viene a continuación. Sin necesidad de ejecutar la orden o el programa, la forma en que IDLE colorea la orden así nos lo indica.</p>
+    <p>El motivo es que Python entiende que la comilla escrita en medio de la cadena está cerrando la cadena y no puede interpretar lo que viene a continuación. Sin necesidad de ejecutar la orden o el programa, la forma en que el entorno interactivo colorea la orden así nos lo indica.</p>
 
-    <p>En un programa, obtendríamos también una ventana de error de sintaxis. Dependiendo del número y la posición de las cadenas, el mensaje de error puede ser distinto:</p>
+    <p>Dependiendo del número y la posición de las comillas, el mensaje de error puede ser distinto:</p>
 
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-python">print("Las comillas dobles " delimitan cadenas<span class="string">")</span></code></pre>
-      </div>
-
-      <div class="columnaflex">
-        <div class="ejecucion-terminal">
-          <pre>
-  File "prueba.py", line 1
-    print("Las comillas dobles " delimitan cadenas")
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax. Perhaps you forgot a comma?
+    <div class="terminal">
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Un tipo le dice a otro: '¿Cómo estás?'')
+File <span class="error-message">"&lt;python-input-3&gt;"</span>, line <span class="error-message">1</span>
+print('Un tipo le dice a otro: '<span class="error-message-highlight">¿</span>Cómo estás?'')
+                                <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid character '¿' (U+00BF)</span></code>
 </pre>
-        </div>
-        <div class="resultado-captura">
-          <p>En IDLE se muestra una ventana indicando el error:</p>
-          <p class="captura">
-            <img src="../img/error-sintaxis.png" alt="Aviso: Error de sintaxis" width="322" height="152">
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
-      </div>
-
-      <div class="columnaflex">
-        <div class="ejecucion-terminal">
-          <pre>
-  File "prueba.py", line 1
-    print('Un tipo le dice a otro: '¿Cómo estás?'')
-                                    ^
-SyntaxError: invalid character '¿' (U+00BF)
-</pre>
-        </div>
-        <div class="resultado-captura">
-          <p>En IDLE se muestra una ventana indicando el error:</p>
-          <p class="captura">
-            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
-          </p>
-        </div>
-      </div>
     </div>
 
     <hr class="corta">
 
     <p>Otra forma de escribir comillas en una cadena es utilizar los caracteres especiales <span class="idle-cade">\"</span> y <span class="idle-cade">\'</span> que representan los caracteres comillas dobles y simples respectivamente y que Python no interpreta en ningún caso como delimitadores de cadena:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
-<span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles \" delimitan cadenas."</span>)
-<span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Las comillas simples \' delimitan cadenas.')
+Las comillas simples ' delimitan cadenas.
+<span class="python-prompt">&gt;&gt;&gt;</span> print("Las comillas dobles \" delimitan cadenas.")
+Las comillas dobles " delimitan cadenas.</code>
 </pre>
     </div>
 
     <p>Se pueden utilizar ambos caracteres especiales independientemente del delimitador utilizado</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' y las comillas dobles \" delimitan cadenas.')</span>
-<span class="idle-resp">Las comillas simples ' y las comillas dobles " delimitan cadenas.</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas simples \' y las comillas dobles \" delimitan cadenas."</span>)
-<span class="idle-resp">Las comillas simples ' y las comillas dobles " delimitan cadenas.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Las comillas simples \' y las comillas dobles \" delimitan cadenas.')
+Las comillas simples ' y las comillas dobles " delimitan cadenas.
+<span class="python-prompt">&gt;&gt;&gt;</span> print("Las comillas simples \' y las comillas dobles \" delimitan cadenas.")
+Las comillas simples ' y las comillas dobles " delimitan cadenas.</code>
 </pre>
     </div>
-
   </section>
 
   <section id="caracteres-especiales">
@@ -253,36 +196,38 @@ SyntaxError: invalid character '¿' (U+00BF)
     <p>Los caracteres especiales empiezan por una contrabarra (<span class="idle-cade">\</span>).</p>
     <ul>
       <li>Comilla doble: <span class="idle-cade">\"</span>
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Las comillas dobles \" delimitan cadenas."</span>)
-<span class="idle-resp">Las comillas dobles " delimitan cadenas.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Las comillas dobles \" delimitan cadenas.")
+Las comillas dobles " delimitan cadenas.</code>
 </pre>
         </div>
       </li>
 
       <li>Comilla simple: <span class="idle-cade">\'</span>
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>)
-<span class="idle-resp">Las comillas simples ' delimitan cadenas.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Las comillas simples \' delimitan cadenas.')
+Las comillas simples ' delimitan cadenas.</code>
 </pre>
         </div>
       </li>
 
       <li>Salto de línea: <span class="idle-cade">\n</span>
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Una línea\nOtra línea"</span>)
-<span class="idle-resp">Una línea
-Otra línea</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Una línea\nOtra línea")
+Una línea
+Otra línea</code>
+</pre>
         </div>
       </li>
+
       <li>Tabulador: <span class="idle-cade">\t</span>
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"1\t2\t3"</span>)
-<span class="idle-resp">1       2       3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("1\t2\t3")
+1       2       3</code>
 </pre>
         </div>
       </li>
@@ -291,41 +236,43 @@ Otra línea</span></pre>
     <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Por completar con todos los caracteres especiales</p>
   </section>
 
-  <section id="prompt-idle">
-    <h2>Evaluación de cadenas en el prompt de IDLE</h2>
+  <section id="prompt">
+    <h2>Evaluación de cadenas en el entorno interactivo</h2>
 
-    <p>En el prompt de IDLE se pueden escribir cadenas sueltas, sin necesidad de escribir la función <span class="idle-func">print</span>(). Al pulsar Intro, IDLE evalúa la cadena y escribe el resultado, como hace cuando se escribe una expresión aritmética.</p>
+    <p>En un programa, se puede escribir una cadena en un línea, pero no se produciría ninguna salida. Para generar algún tipo de salida, debe utilizarse la función <span class="idle-func">print</span>().</p>
 
-    <p>En la mayoría de los casos IDLE escribe el resultado entre comillas simples, para indicar que se trata de una cadena.</p>
+    <p>En el entorno interactivo también se pueden escribir cadenas sueltas, pero al pulsar Intro, se evalúa la cadena y se escribe el resultado, como ocurre cuando se escribe una expresión aritmética.</p>
 
-    <div class="codigo idle">
+    <p>En la mayoría de los casos el entorno interactivo escribe el resultado entre comillas simples, para indicar que se trata de una cadena.</p>
+
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Esto es una cadena"</span>
-<span class="idle-resp">'Esto es una cadena'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Esto es una cadena'</span>
-<span class="idle-resp">'Esto es una cadena'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> "Esto es una cadena"
+'Esto es una cadena'
+<span class="python-prompt">&gt;&gt;&gt;</span> 'Esto es una cadena'
+'Esto es una cadena'</code>
 </pre>
     </div>
 
-    <p>Si el resultado contiene únicamente comillas simples, IDLE lo escribe entre comillas dobles.</p>
+    <p>Si el resultado contiene únicamente comillas simples, el entorno interactivo lo escribe entre comillas dobles.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Las comillas simples ' delimitan cadenas."</span>
-<span class="idle-resp">"Las comillas simples ' delimitan cadenas."</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Las comillas simples \' delimitan cadenas.'</span>
-<span class="idle-resp">"Las comillas dobles ' delimitan cadenas."</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> "Las comillas simples ' delimitan cadenas."
+"Las comillas simples ' delimitan cadenas."
+<span class="python-prompt">&gt;&gt;&gt;</span> 'Las comillas simples \' delimitan cadenas.'
+"Las comillas simples ' delimitan cadenas."</code>
 </pre>
     </div>
 
-    <p>Pero si aparecen ambas comillas, IDLE lo escribe entre comillas simples y las comillas simples se muestran como caracteres especiales.</p>
+    <p>Pero si aparecen ambas comillas, el entorno interactivo lo escribe entre comillas simples y las comillas simples se muestran como caracteres especiales.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">'Las comillas simples \' y dobles \" delimitan cadenas.'</span>
-<span class="idle-resp">'Las comillas simples \' y dobles " delimitan cadenas.'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-cade">"Las comillas simples \' y dobles \" delimitan cadenas."</span>
-<span class="idle-resp">'Las comillas simples \' y dobles " delimitan cadenas.'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 'Las comillas simples \' y dobles \" delimitan cadenas.'
+'Las comillas simples \' y dobles " delimitan cadenas.'
+<span class="python-prompt">&gt;&gt;&gt;</span> "Las comillas simples \' y dobles \" delimitan cadenas."
+'Las comillas simples \' y dobles " delimitan cadenas.'</code>
 </pre>
     </div>
   </section>
@@ -337,27 +284,27 @@ Otra línea</span></pre>
 
     <p>Si un programa contiene cadenas muy largas, las cadenas se pueden simplemente partir en varias cadenas.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres "</span>
-          <span class="idle-cade">"partiendo la cadena en dos"</span>)
-<span class="idle-resp">Esta línea está cortada en dos líneas de menos de 79 caracteres partiendo la cadena en dos</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Esta línea está cortada en dos líneas de menos de 79 caracteres "
+<span class="python-prompt">...</span> "partiendo la cadena en dos")
+Esta línea está cortada en dos líneas de menos de 79 caracteres partiendo la cadena en dos</code>
 </pre>
     </div>
 
     <p>También se puede escribir el carácter contrabarra (\) para partir una cadena en varias líneas.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">print</span>(<span class="idle-cade">"Esta línea está cortada en dos líneas de menos de 79 caracteres \</span>
-<span class="idle-cade">partiendo la cadena en dos"</span>)
-<span class="idle-resp">Esta línea está cortada en dos líneas de menos de 79 caracteres partiendo la cadena en dos</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Esta línea está cortada en dos líneas de menos de 79 caracteres \
+<span class="python-prompt">...</span> partiendo la cadena en dos")
+Esta línea está cortada en dos líneas de menos de 79 caracteres partiendo la cadena en dos</code>
 </pre>
     </div>
 
     <hr class="corta">
 
-    <p>En los programas en los que hay bloques, la segunda notación hace más difícil la lectura del programa.</p>
+    <p>En los programas en los que hay bloques, la segunda notación hace algo más difícil la lectura del programa.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -387,7 +334,7 @@ a b c d e f</pre>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 22 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
