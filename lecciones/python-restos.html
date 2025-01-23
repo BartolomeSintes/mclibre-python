@@ -41,10 +41,10 @@
         <ul>
           <li>Python 2:
 
-            <div class="codigo idle">
+            <div class="terminal">
               <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> año = 1492
-<span class="idle-erro">SyntaxError: invalid syntax</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> año = 1492
+<span class="idle-erro">SyntaxError: invalid syntax</span></code>
 </pre>
             </div>
           </li>
@@ -59,24 +59,25 @@
         <ul>
           <li>Python 2:
 
-            <div class="codigo idle">
+            <div class="terminal">
               <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
-<span class="idle-resp">25</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> distancia = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> tiempo = 4
+<span class="python-prompt">&gt;&gt;&gt;</span> distancia / tiempo
+25</code>
 </pre>
             </div>
 
-            <div class="codigo idle">
+            <div class="terminal">
               <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
-<span class="idle-resp">100</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
-<span class="idle-resp">60</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> variable = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
+100
+<span class="python-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
+60</code>
 </pre>
             </div>
+
             <p>Para entender por qué se obtienen resultados distintos, hay que tener en cuenta que Python efectúa los cálculos de izquierda a derecha y en cada paso el resultado es un número entero:</p>
             <ul>
               <li>En el primer caso primero multiplica (100 * 60 = 6000) y luego divide (6000 / 60 = 100)</li>
@@ -87,22 +88,22 @@
         <ul>
           <li>Python 3:
 
-            <div class="codigo idle">
+            <div class="terminal">
               <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> tiempo = 4
-<span class="idle-prompt">&gt;&gt;&gt;</span> distancia / tiempo
-<span class="idle-resp">25.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> distancia = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> tiempo = 4
+<span class="python-prompt">&gt;&gt;&gt;</span> distancia / tiempo
+25.0</code>
 </pre>
             </div>
 
-            <div class="codigo idle">
+            <div class="terminal">
               <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable = 100
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
-<span class="idle-resp">100.0</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
-<span class="idle-resp">100.0</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> variable = 100
+<span class="python-prompt">&gt;&gt;&gt;</span> variable * 60 / 60
+100.0
+<span class="python-prompt">&gt;&gt;&gt;</span> variable / 60 * 60
+100.0</code>
 </pre>
             </div>
           </li>

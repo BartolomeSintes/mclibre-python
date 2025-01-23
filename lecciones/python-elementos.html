@@ -114,36 +114,15 @@ print(area)</code>
 
     <p>Los espacios al principio de una línea (el sangrado) son significativos porque indican un nivel de agrupamiento. El sangrado inicial es una de las características de Python que lo distinguen de otros lenguajes, que utilizan un caracter para delimitar agrupamientos (en muchos lenguajes se utilizan las llaves { }). Por ello, una línea no puede contener espacios iniciales, a menos que forme parte de un bloque de instrucciones o de una instrucción dividida en varias líneas.</p>
 
-    <p>Al ejecutar en IDLE una instrucción con espacios iniciales, se mostraría un aviso de error de sintaxis:</p>
+    <p>Al ejecutar en el entorno interactivo (o en un programa) una instrucción con espacios iniciales, se mostraría un aviso de error de sangrado:</p>
 
-    <div class="codigo idle">
-      <pre><span class="idle-prompt">&gt;&gt;&gt;</span>    <span class="idle-errbg"> </span>x = 42
-<span class="idle-erro">SyntaxError: unexpected indent</span></pre>
-    </div>
-
-    <p>Al ejecutar un programa, se mostraría el mensaje de error de sintaxis:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-python">     x = 42</code></pre>
-      </div>
-
-      <div class="columnaflex">
-        <div class="ejecucion-terminal">
-          <pre>
-File "prueba.py", line 1
+    <div class="terminal">
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span>  x = 42
+  File <span class="error-message">"&lt;python-input-0&gt;"</span>, line <span class="error-message">1</span>
     x = 42
-    ^
-IndentationError: unexpected indent
+<span class="error-message"><strong>IndentationError</strong>: unexpected indent</span></code>
 </pre>
-        </div>
-        <div class="resultado-captura">
-          <p>En IDLE se muestra una ventana indicando el error:</p>
-          <p class="captura">
-            <img src="../img/error-sangrado-2.png" alt="Aviso: Error de sangrado" width="200" height="152">
-          </p>
-        </div>
-      </div>
     </div>
 
     <hr class="corta">
@@ -312,7 +291,7 @@ async      elif       if        or         yield</span></pre>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de febrero de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 23 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

@@ -115,12 +115,13 @@
 
     <p>Python permite utilizar valores no booleanos en las expresiones lógicas. Para evaluar las expresiones, Python convierte esos valores en booleanos. Lo curioso en estos casos es que la respuesta de Python no es un valor booleano, sino alguno de los valores de la expresión. Por ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 <span class="idle-rese">or</span> 3
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">and</span> 5
-<span class="idle-resp">5</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 2 or 3
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> 3 and 5
+5</code>
+</pre>
     </div>
 
     <p>Desde el punto de vista lógico, ambas respuestas son correctas. Teniendo en cuenta que los números distintos de 0 se consideran <span class="idle-rese">True</span>, el resultado de las dos expresiones es <span class="idle-rese">True</span>. Python nos contesta con dos números distintos de cero, que considerados como booleanos, son <span class="idle-rese">True</span>.</p>
@@ -136,16 +137,19 @@
     <hr class="corta">
 
     <p>Los ejemplos siguientes muestran cómo Python sigue este criterio en expresiones más complejas:</p>
-    <div class="codigo idle">
+
+
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 0 <span class="idle-rese">or</span> "" <span class="idle-rese">or</span> "Pepe" <span class="idle-rese">or</span> True
-<span class="idle-resp">'Pepe'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3  <span class="idle-rese">and</span> "" <span class="idle-rese">and</span> 5 <span class="idle-rese">and</span> [1, 2, 3]
-<span class="idle-resp">''</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4  <span class="idle-rese">or</span> 3 <span class="idle-rese">and</span> 2 <span class="idle-rese">or</span> 5
-<span class="idle-resp">4</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (4  <span class="idle-rese">or</span> 3) <span class="idle-rese">and</span> (2 <span class="idle-rese">or</span> 5)
-<span class="idle-resp">2</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 0 or "" or "Pepe" or True
+'Pepe'
+<span class="python-prompt">&gt;&gt;&gt;</span> 3 and "" and 5 and [1, 2, 3]
+''
+<span class="python-prompt">&gt;&gt;&gt;</span> 4 or 3 and 2 or 5
+4
+<span class="python-prompt">&gt;&gt;&gt;</span> (4 or 3) and (2 or 5)
+2</code>
+</pre>
     </div>
   </section>
 

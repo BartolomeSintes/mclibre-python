@@ -34,35 +34,34 @@
   <section id="salida-idle">
     <h2>Salida por pantalla en el entorno interactivo</h2>
 
-    <p>En un entorno interactivo (por ejemplo, en IDLE), para que python nos muestre el valor de una variable basta con escribir su nombre.</p>
+    <p>En un entorno interactivo, para que python muestre el valor de una variable basta con escribir su nombre.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">2</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = 2
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+2</code>
 </pre>
     </div>
 
     <p>También se puede conocer el valor de varias variables a la vez escribiéndolas entre comas (el entorno interactivo las mostrará entre paréntesis), como muestra el siguiente ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a = b = 2
-<span class="idle-prompt">&gt;&gt;&gt;</span> c = <span class="idle-cade">"pepe"</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> a
-<span class="idle-resp">2</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> c, b
-<span class="idle-resp">('pepe', 2)</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> a = b = 2
+<span class="python-prompt">&gt;&gt;&gt;</span> c = "pepe"
+<span class="python-prompt">&gt;&gt;&gt;</span> a
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> c, b
+('pepe', 2)</code>
 </pre>
     </div>
-
   </section>
 
   <section id="funcion-print">
     <h2>La función <span class="idle-func">print</span>()</h2>
 
-    <p>En los programas, para que python nos muestre texto o variables hay que utilizar la función <span class="idle-func">print</span>().</p>
+    <p>En los programas, para que python muestre texto o variables hay que utilizar la función <span class="idle-func">print</span>().</p>
 
     <p>La función <span class="idle-func">print</span>() permite mostrar texto en pantalla. El texto a mostrar se escribe como argumento de la función:</p>
 
@@ -237,21 +236,14 @@ print("Adiós")</code>
         <pre><code class="language-python">print("Un tipo le dice a otro: "¿Cómo estás?"")</code></pre>
       </div>
 
-      <div class="columnaflex">
-        <div class="ejecucion-terminal">
-          <pre>
-File "prueba.py", line 1
-    print("Un tipo le dice a otro: "¿Cómo estás?"")
-                                        ^
-SyntaxError: invalid character in identifier
+      <div class="terminal">
+        <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print("Un tipo le dice a otro: "¿Cómo estás?""")
+File <span class="error-message">"tmp.py"</span>, line <span class="error-message">1</span>
+print('Un tipo le dice a otro: "<span class="error-message-highlight">¿</span>Cómo estás?"")
+                                <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid character '¿' (U+00BF)</span></code>
 </pre>
-        </div>
-        <div class="resultado-captura">
-          <p>En IDLE se muestra una ventana indicando el error:</p>
-          <p class="captura">
-            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
-          </p>
-        </div>
       </div>
     </div>
 
@@ -260,21 +252,14 @@ SyntaxError: invalid character in identifier
         <pre><code class="language-python">print('Un tipo le dice a otro: '¿Cómo estás?'')</code></pre>
       </div>
 
-      <div class="columnaflex">
-        <div class="ejecucion-terminal">
-          <pre>
-File "prueba.py", line 1
-    print('Un tipo le dice a otro: '¿Cómo estás?'')
-                                        ^
-SyntaxError: invalid character in identifier
+      <div class="terminal">
+        <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> print('Un tipo le dice a otro: '¿Cómo estás?'')
+File <span class="error-message">"tmp.py"</span>, line <span class="error-message">1</span>
+print('Un tipo le dice a otro: '<span class="error-message-highlight">¿</span>Cómo estás?'')
+                                <span class="error-message-highlight">^</span>
+<span class="error-message"><strong>SyntaxError</strong>: invalid character '¿' (U+00BF)</span></code>
 </pre>
-        </div>
-        <div class="resultado-captura">
-          <p>En IDLE se muestra una ventana indicando el error:</p>
-          <p class="captura">
-            <img src="../img/error-cadena.png" alt="Aviso: Error de sintaxis (cadena incorrecta)" width="241" height="152">
-          </p>
-        </div>
       </div>
     </div>
 
@@ -410,7 +395,7 @@ print(f"En {semanas} semanas hay {7 * semanas} días.")</code>
   </div>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de marzo de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 23 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
