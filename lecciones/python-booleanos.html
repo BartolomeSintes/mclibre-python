@@ -16,10 +16,8 @@
 
   <nav>
     <p>
-      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python"
-          title="Índice de Python" width="48" height="48"></a>
-      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página"
-          title="Principio de la página" width="36" height="36"></a>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
 
     <div class="toc">
@@ -36,60 +34,56 @@
 
   <p>En esta lección se tratan los tipos de datos lógicos, también llamados booleanos.</p>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Los
-    ejemplos de esta lección muestran el resultado de ejecutar las operaciones en el prompt de IDLE.</p>
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Los ejemplos de esta lección muestran el resultado de ejecutar las operaciones en el entorno interactivo.</p>
 
   <section id="true-false">
     <h2>Tipos booleanos: <span class="idle-rese">True</span> y <span class="idle-rese">False</span></h2>
 
-    <p>Una variable booleana es una variable que sólo puede tomar dos posibles valores: <span
-        class="idle-rese">True</span> (verdadero) o <span class="idle-rese">False</span> (falso).</p>
+    <p>Una variable booleana es una variable que sólo puede tomar dos posibles valores: <span class="idle-rese">True</span> (verdadero) o <span class="idle-rese">False</span> (falso).</p>
 
-    <p>En Python cualquier variable (en general, cualquier objeto) puede considerarse como una variable booleana. En
-      general los elementos nulos o vacíos se consideran <span class="idle-rese">False</span> y el resto se consideran
-      <span class="idle-rese">True</span>.</p>
+    <p>En Python cualquier variable (en general, cualquier objeto) puede considerarse como una variable booleana. En general los elementos nulos o vacíos se consideran <span class="idle-rese">False</span> y el resto se consideran <span class="idle-rese">True</span>.</p>
 
-    <p>Para comprobar si un elemento se considera <span class="idle-rese">True</span> o <span
-        class="idle-rese">False</span>, se puede convertir a su valor booleano mediante la función <span
-        class="idle-func">bool</span>().</p>
+    <p>Para comprobar si un elemento se considera <span class="idle-rese">True</span> o <span class="idle-rese">False</span>, se puede convertir a su valor booleano mediante la función <span class="idle-func">bool</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(0)
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(0.0)
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(0 + 0j)
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(<span class="idle-cade">""</span>)
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(<span class="idle-rese">None</span>)
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(())
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>([])
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>({})
-<span class="idle-resp">False</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> bool(0)
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(0.0)
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(0 + 0j)
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool("")
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(())
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool([])
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool({})
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(None)
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> bool()
+False</code>
 </pre>
     </div>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(25)
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(-9.5)
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(1 + 1j)
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(<span class="idle-cade">"abc"</span>)
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>((1, 2, 3))
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>([27, <span class="idle-cade">"octubre"</span>, 1997])
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>({27, <span class="idle-cade">"octubre"</span>, 1997})
-<span class="idle-resp">True</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> bool(25)
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(-9.5)
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(1 + 1j)
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool("abc")
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool((1, 2, 3))
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool([27, "octubre", 1997])
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> bool({27, "octubre, 1997"})
+True</code>
 </pre>
     </div>
   </section>
@@ -99,22 +93,23 @@
 
     <p>Los <strong>operadores lógicos</strong> son unas operaciones que trabajan con valores booleanos.</p>
     <ul>
-      <li><span class="idle-rese">and</span>: "y" lógico. Este operador da como resultado <span
-          class="idle-rese">True</span> si y sólo si sus dos operandos son <span class="idle-rese">True</span>:
+      <li><span class="idle-rese">and</span>: "y" lógico. Este operador da como resultado <span class="idle-rese">True</span> si y sólo si sus dos operandos son <span class="idle-rese">True</span>:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> True and True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> True and False
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> False and True
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> False and False
+False</code>
 </pre>
         </div>
-        <p>Estos resultados se suelen escribir en forma de tabla.</p>
+
+        <p>Estos resultados se suelen escribir en forma de tabla:</p>
+
         <table style="border-collapse: collapse; text-align: center; margin-left: auto; margin-right: auto;">
           <col style="border-right: black 2px solid">
           <tr style="border-bottom: black 2px solid">
@@ -134,23 +129,23 @@
           </tr>
         </table>
       </li>
-      <li><span class="idle-rese">or</span>: "o" lógico. Este operador da como resultado <span
-          class="idle-rese">True</span> si algún operando es <span class="idle-rese">True</span>:
+      <li><span class="idle-rese">or</span>: "o" lógico. Este operador da como resultado <span class="idle-rese">True</span> si algún operando es <span class="idle-rese">True</span>:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">False</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">or</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> True or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> True or False
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> False or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> False or False
+False</code>
 </pre>
         </div>
 
-        <p>Estos resultados se suelen escribir en forma de tabla de doble entrada.</p>
+        <p>Estos resultados se suelen escribir en forma de tabla de doble entrada:</p>
+
         <table style="border-collapse: collapse; text-align: center; margin-left: auto; margin-right: auto;">
           <col style="border-right: black 2px solid">
           <tr style="border-bottom: black 2px solid">
@@ -170,24 +165,21 @@
           </tr>
         </table>
 
-        <p><strong>Nota</strong>: En el lenguaje cotidiano, el "o" se utiliza a menudo en situaciones en las que sólo
-          puede darse una de las dos alternativas. Por ejemplo, en un menú de restaurante se puede elegir "postre o
-          café", pero no las dos cosas (salvo que se pague aparte, claro). En lógica, ese tipo de "o" se denomina "o
-          exclusivo" (xor).</p>
-        </li>
+        <p><strong>Nota</strong>: En el lenguaje cotidiano, el "o" se utiliza a menudo en situaciones en las que sólo puede darse una de las dos alternativas. Por ejemplo, en un menú de restaurante se puede elegir "postre o café", pero no las dos cosas (salvo que se pague aparte, claro). En lógica, ese tipo de "o" se denomina "o exclusivo" (xor).</p>
       </li>
-      <li><span class="idle-rese">not</span>: negación. Este operador da como resultado <span
-          class="idle-rese">True</span> si y sólo si su argumento es <span class="idle-rese">False</span>:
+      <li><span class="idle-rese">not</span>: negación. Este operador da como resultado <span class="idle-rese">True</span> si y sólo si su argumento es <span class="idle-rese">False</span>:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">not</span> <span class="idle-rese">True</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">not</span> <span class="idle-rese">False</span>
-<span class="idle-resp">True</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> not True
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> not False
+True</code>
+</pre>
         </div>
 
-        <p>Estos resultados se suelen escribir en forma de tabla de doble entrada.</p>
+        <p>Estos resultados se suelen escribir en forma de tabla:</p>
+
         <table style="border-collapse: collapse; text-align: center; margin-left: auto; margin-right: auto;">
           <col style="border-right: black 2px solid">
           <tr style="border-bottom: black 2px solid">
@@ -210,62 +202,57 @@
   <section id="expresiones-compuestas">
     <h2>Expresiones compuestas</h2>
 
-    <p>Si no se está acostumbrado a evaluar expresiones lógicas compuestas, se recomienda utilizar paréntesis para
-      asegurar el orden de las operaciones.</p>
+    <p>Si no se está acostumbrado a evaluar expresiones lógicas compuestas, se recomienda utilizar paréntesis para asegurar el orden de las operaciones.</p>
 
-    <p>Al componer expresiones más complejas hay que tener en cuenta que Python evalúa primero los <span
-        class="idle-rese">not</span>, luego los <span class="idle-rese">and</span> y por último los <span
-        class="idle-rese">or</span>, como puede comprobarse en los ejemplos siguientes:</p>
+    <p>Al componer expresiones más complejas hay que tener en cuenta que Python evalúa primero los <span class="idle-rese">not</span>, luego los <span class="idle-rese">and</span> y por último los <span class="idle-rese">or</span>, como puede comprobarse en los ejemplos siguientes:</p>
     <ul>
-      <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span
-          class="idle-rese">and</span>:
+      <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span class="idle-rese">and</span>:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span>  <span class="idle-rese">not</span> <span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (<span class="idle-rese">not</span> <span class="idle-rese">True</span>) <span class="idle-rese">and</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">not</span> (<span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>)
-<span class="idle-resp">True</span></pre>
-        </div>
-      </li>
-      <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span
-          class="idle-rese">or</span>:
-
-        <div class="codigo idle">
-          <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span>  <span class="idle-rese">not</span> <span class="idle-rese">False</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (<span class="idle-rese">not</span> <span class="idle-rese">False</span>) <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">not</span> (<span class="idle-rese">False</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>)
-<span class="idle-resp">False</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> not True and False
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> (not True) and False
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> not (True and False)
+True</code>
 </pre>
         </div>
       </li>
-      <li>El operador <span class="idle-rese">and</span> se evalúa antes que el operador <span
-          class="idle-rese">or</span>:
+      <li>El operador <span class="idle-rese">not</span> se evalúa antes que el operador <span class="idle-rese">or</span>:
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (<span class="idle-rese">False</span> <span class="idle-rese">and</span> <span class="idle-rese">True</span>) <span class="idle-rese">or</span> <span class="idle-rese">True</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">False</span> <span class="idle-rese">and</span> (<span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span>)
-<span class="idle-resp">False</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> not False or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> (not False) or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> not (False or True)
+False</code>
+</pre>
+        </div>
+      </li>
+      <li>El operador <span class="idle-rese">and</span> se evalúa antes que el operador <span class="idle-rese">or</span>:
+
+        <div class="terminal">
+          <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> False and True or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> (False and True) or True
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> False and (True or True)
+False</code>
 </pre>
         </div>
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> <span class="idle-rese">True</span> <span class="idle-rese">and False</span>
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> (<span class="idle-rese">True or</span> <span class="idle-rese">True</span>) <span class="idle-rese">and</span> <span class="idle-rese">False</span>
-<span class="idle-resp">False</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-rese">True</span> <span class="idle-rese">or</span> (<span class="idle-rese">True</span> <span class="idle-rese">and</span> <span class="idle-rese">False</span>)
-<span class="idle-resp">True</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> True or True and False
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> (True or True) and False
+False
+<span class="python-prompt">&gt;&gt;&gt;</span> True or (True and False)
+True</code>
 </pre>
         </div>
       </li>
@@ -277,21 +264,21 @@
 
     <p>Al utilizar valores distintos a <span class="idle-rese">True</span> o <span class="idle-rese">False</span> en las expresiones lógicas, el resultado puede estar expresado mediante estos valores:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">or</span> 4
-<span class="idle-resp">3</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 or 4
+3</code>
 </pre>
     </div>
 
-    <p>Si se quieren mostrar valores booleanos, se puede convertir el resultado a un valor booleano:</p>
+    <p>Si se quieren mostrar valores booleanos, se puede convertir el resultado a un valor booleano.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 <span class="idle-rese">or</span> 4
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">bool</span>(3 <span class="idle-rese">or</span> 4)     <span class="idle-come"># Verdadero porque 3 es diferente de 0</span>
-<span class="idle-resp">True</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 or 4
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> bool(3 or 4)
+True</code>
 </pre>
     </div>
 
@@ -305,80 +292,77 @@
     <ul>
       <li><strong>&gt;</strong> Mayor que; <strong>&lt;</strong> Menor que;
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 &gt; 2
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 3 &lt; 2
-<span class="idle-resp">False</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 &gt; 2
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> 3 &lt; 2
+False</code>
+</pre>
         </div>
       </li>
       <li><strong>&gt;=</strong> Mayor o igual que; <strong>&lt;=</strong> Menor o igual que;
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 &gt;= 1 + 1
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4 - 2 &lt;= 1
-<span class="idle-resp">False</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 2 &gt;= 1 + 1
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> 4 - 2 &lt;= 1
+False</code>
+</pre>
         </div>
       </li>
       <li><strong>==</strong> Igual que; <strong>!=</strong> Distinto de;
 
-        <div class="codigo idle">
+        <div class="terminal">
           <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 == 1 + 1
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 6 / 2 != 3
-<span class="idle-resp">False</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 2 == 1 + 1
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> 6 / 2 != 3
+False</code>
+</pre>
         </div>
       </li>
     </ul>
 
-    <p>Es importante señalar que en matemáticas el signo igual se utiliza tanto en las asignaciones como en las
-      comparaciones, mientras que en Python (y en otros muchos lenguajes de programación):</p>
+    <p>Es importante señalar que en matemáticas el signo igual se utiliza tanto en las asignaciones como en las comparaciones, mientras que en Python (y en otros muchos lenguajes de programación):</p>
     <ul>
       <li>un signo igual (=) significa asignación, es decir, almacenar un valor en una variable</li>
-      <li>mientras que dos signos iguales seguidos (==) significa comparación, es decir, decir si es verdad o mentira
-        que dos expresiones son iguales</li>
+      <li>mientras que dos signos iguales seguidos (==) significa comparación, es decir, decir si es verdad o mentira que dos expresiones son iguales</li>
     </ul>
 
-    <p>Cuando se aprende a programar es habitual confundir una cosa con la otra (el error más frecuente es escribir una
-      sola igualdad en las comparaciones), por lo que se recomienda prestar atención a este detalle.</p>
+    <p>Cuando se aprende a programar es habitual confundir una cosa con la otra (el error más frecuente es escribir una sola igualdad en las comparaciones), por lo que se recomienda prestar atención a este detalle.</p>
 
     <hr class="corta">
 
-    <p>Python permite encadenar varias comparaciones y el resultado será verdadero si y sólo si todas las comparaciones
-      lo son.</p>
+    <p>Python permite encadenar varias comparaciones y el resultado será verdadero si y sólo si todas las comparaciones lo son.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1 &gt; 2
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 != 1 + 1 &gt; 0
-<span class="idle-resp">False</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1 &gt; 2
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> 2 != 1 + 1 &gt; 0
+False</code>
+</pre>
     </div>
 
-    <p>Encadenar comparaciones no está permitido en otros lenguajes como PHP, en los que las comparaciones deben
-      combinarse mediante operadores lógicos <span class="idle-rese">and</span>, lo que también puede hacerse en Python:
-    </p>
+    <p>Encadenar comparaciones no está permitido en otros lenguajes como PHP, en los que las comparaciones deben combinarse mediante operadores lógicos <span class="idle-rese">and</span>, lo que también puede hacerse en Python:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1  <span class="idle-rese">and</span> 3 + 1 &gt; 2
-<span class="idle-resp">True</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> 2 != 1 + 1 <span class="idle-rese">and</span> 1 + 1 &gt; 0
-<span class="idle-resp">False</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 4 == 3 + 1  and 3 + 1 &gt; 2
+True
+<span class="python-prompt">&gt;&gt;&gt;</span> 2 != 1 + 1 and 1 + 1 &gt; 0
+False</code>
+</pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de marzo de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 22 de enero de 2025</p>
 
     <p class="licencia">
-      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img
-          src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons"
-          title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
       Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la
           programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
       que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia
