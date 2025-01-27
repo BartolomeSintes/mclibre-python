@@ -24,6 +24,7 @@
 
       <ul>
         <li><a href="#terminal">en terminal</a></li>
+        <li><a href="#vscode">en VSCode</a></li>
         <li><a href="#idle">en IDLE</a></li>
       </ul>
     </div>
@@ -33,13 +34,13 @@
 
   <p>En las lecciones sobre el lenguaje Python de estos apuntes, los ejemplos se muestran a veces en forma de programas y a veces en forma de entorno interactivo.</p>
   <ul>
-    <li>Los ejemplos en forma de entorno interactivo se muestran en los apuntes con fondo blanco y texto en colores, imitando el interfaz de IDLE. Esos ejemplos se pueden ejecutar en el entorno interactivo de terminal, pero entonces se verán en blanco y negro.</li>
+    <li>Los ejemplos ejecutados en el entorno interactivo se muestran en los apuntes con fondo negro y texto blanco, imitando el interfaz del terminal.</li>
     <li>Los ejemplos en forma de programa se muestran en los apuntes con fondo negro y texto en colores, imitando el interfaz de Visual Studio Code.</li>
   </ul>
 
   <p>En las páginas de ejercicios de estos apuntes:</p>
   <ul>
-    <li>Los ejemplos que acompañan a los enunciados de los ejercicios se muestran en los apuntes imitando el interfaz de IDLE. Así, es fácil distinguir los datos introducidos por el usuario, que se muestran en negro, del texto escrito por el programa, que se muestra en azul.</li>
+    <li>Los ejemplos que acompañan a los enunciados de los ejercicios se muestran en los apuntes imitando el entorno interactivo, aunque para distinguir claramente los datos introducidos por el usuario del texto generado por el programa, los datos introducidos por el usuario se muestran en color amarillo.</li>
     <li>Las soluciones de los ejercicios se muestran en los apuntes imitando el interfaz de Visual Studio Code.</li>
   </ul>
 
@@ -48,10 +49,11 @@
   <section id="terminal">
     <h2>Entorno interactivo de Python en terminal</h2>
 
-    <p>Para entrar en el entorno interactivo de Python, abra una ventana de terminal y escriba <i>python</i>:</p>
+    <p>Para entrar en el entorno interactivo de Python, abra una ventana de terminal (CMD, PowerShell, etc.) y escriba <i>python</i> o simplemente <i>py</i>:</p>
+
     <div class="terminal">
-      <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-4">
-<code class="language-shell">python
+      <pre>
+<code class="language-shell">C:\Users\barto&gt;python
 Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 <span class="python-prompt">&gt;&gt;&gt;</span></code>
@@ -61,9 +63,10 @@ Type "help", "copyright", "credits" or "license" for more information.
     <p>La primera línea nos indica la versión de Python que tenemos instalada.</p>
 
     <p>El símbolo de petición &gt;&gt;&gt; (en inglés, <i>prompt</i>) nos indica que podemos escribir una instrucción de Python. Si escribimos una instrucción y pulsamos <kbd>Intro</kbd>, Python ejecutará la instrucción, escribirá el resultado de la ejecución y volverá a mostrar el <i>prompt</i>, como muestra el siguiente ejemplo:</p>
+
     <div class="terminal">
-      <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-6">
-<code class="language-shell">python
+      <pre>
+<code class="language-shell">C:\Users\barto&gt;python
 Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 <span class="python-prompt">&gt;&gt;&gt;</span> 3 * 4
@@ -72,13 +75,27 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
     </div>
 
-    <p>Si escribimos una instrucción incorrecta, Python nos mostrará el mensaje correspondiente:</p>
+    <p>Podemos escribir varias líneas antes de ejecutarlas si las instrucciones lo requieren. Para indicarlo, el entorno interactivo añade tres puntos al principio de la línea, en vez del <i>prompt</i>. LAs líneas se ejecutan cuando dejamos una línea en blanco y pulsamos <kbd>Intro</kbd>.</p>
+
     <div class="terminal">
-      <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-10">
-<code class="language-shell">python
-Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
-Type "help", "copyright", "credits" or "license" for more information.
-<span class="python-prompt">&gt;&gt;&gt;</span> 3 4
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> for i in range(3):
+<span class="python-prompt">...</span>    print(i)
+<span class="python-prompt">...</span>
+0
+1
+2
+<span class="python-prompt">&gt;&gt;&gt;</span> </code>
+</pre>
+    </div>
+
+    <hr class="corta">
+
+    <p>Si escribimos una instrucción incorrecta, Python nos mostrará el mensaje correspondiente:</p>
+
+    <div class="terminal">
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> 3 4
   File <span class="error-message">"&lt;python-input-0&gt;"</span>, line <span class="error-message">1</span>
     3 <span class="error-message-highlight">4</span>
       <span class="error-message-highlight">^</span>
@@ -87,19 +104,58 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
     </div>
 
+    <p>En algunos errores, el mensaje de error menciona el <i>Traceback</i>, que aporta información adicional sobre el orrigen del error:</p>
+
+    <div class="terminal">
+      <pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> x
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-1&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">&lt;module&gt;</span>
+    x
+<span class="error-message">NameError</span>: <span class="error-message">name 'x' is not defined</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> </code>
+</pre>
+    </div>
+
+    <hr class="corta">
+
     <p>Podemos recorrer la lista de instrucciones ya ejecutadas pulsando las teclas <kbd>Flecha arriba</kbd> y <kbd>Flecha abajo</kbd>. Una vez recuperada una instrucción, podemos modificarla si fuera necesario y pulsar <kbd>Intro</kbd> para ejecutarla.</p>
 
-    <p>Para salir del entorno interactivo, cierre la ventana de terminal, pulse el atjo de teclado <span class="soft-atajo-teclado">Ctrl+d</span> o escriba exit:</p>
+    <p>Para salir del entorno interactivo, cierre la ventana de terminal, pulse el atajo de teclado <span class="soft-atajo-teclado">Ctrl+d</span> o escriba exit:</p>
+
     <div class="terminal">
-      <pre class="command-line" data-prompt="C:\Users\barto>" data-output="2-5">
-<code class="language-shell">python
+      <pre>
+<code class="language-shell">C:\Users\barto&gt;python
 Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 <span class="python-prompt">&gt;&gt;&gt;</span> exit
-
-</code>
+C:\Users\barto&gt;</code>
 </pre>
     </div>
+  </section>
+
+  <section id="vscode">
+    <h2>Entorno interactivo de Python en Visual Studio Code</h2>
+
+    <p>Para abrir una ventana de panel en la pestaña Terminal puede elegir la opción del menú <span class="soft-menu">Terminal &gt; Nuevo terminal</span>, puede utilizar el atajo estándar <span class="soft-atajo-teclado">Ctrl+Mayús+ñ</span> o puede utilizar el atajo definido en el perfil recomendado <span class="soft-atajo-teclado">Ctrl+Alt+t Ctrl+Alt+p</span>. El panel se abrirá en la parte inferior de la ventana de Visual Studio Code. El cursor se colocará en el panel.</p>
+
+    <p class="captura">
+      <img src="../img/vscode/vsc-terminal-1.png" alt="Pestaña de Terminal de VSCode abierta" width="1024" height="400">
+    </p>
+
+    <p>Para abrir el entorno interactivo de Python, escriba <i>python</i> o simplemente <i>py</i>. A continuación podrá escribir comandos o expresiones de Python.</p>
+
+    <p class="captura">
+      <img src="../img/vscode/vsc-terminal-2.png" alt="Entorno interactivo en Terminal de VSCode" width="1024" height="400">
+    </p>
+
+    <p>Para pegar texto en el entorno interactivo, recuerde que el atajo que utiliza Visual Studio Code es <span class="soft-atajo-teclado">Ctrl+Mayús+v</span>.</p>
+
+    <p>Tenga en cuenta que si ejecuta un programa con los atajos <span class="soft-atajo-teclado">Ctrl+Alt+F5</span> o <span class="soft-atajo-teclado">Ctrl+Alt+Mayús+F5</span> cuando en el terminal está abierto el entorno interactivo, se mostrará un error. Para poder ejecutar programas con los atajos, debe salir primero del entorno interactivo o terminar el terminal (cerrar el Panel no es suficiente, porque al volver a abrir el panel, el entorno interactivo se mantiene).</p>
+
+    <p class="captura">
+      <img src="../img/vscode/vsc-terminal-3.png" alt="Error al ejecutar programa en entoreno interactivo" width="1024" height="400">
+    </p>
   </section>
 
   <section id="idle">
@@ -111,7 +167,7 @@ Type "help", "copyright", "credits" or "license" for more information.
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de diciembre de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 27 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
