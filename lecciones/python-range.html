@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
 </head>
 
 <body>
@@ -42,11 +44,11 @@
 
     <p>Las variables de tipo lista hacen referencia a la lista completa.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> lista = [1, <span class="idle-cade">"abcde"</span>, 45.5, -32]
-<span class="idle-prompt">&gt;&gt;&gt;</span> lista
-<span class="idle-resp">[1, 'abcde', 45.5, -32]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> lista = [1, "abcde", 45.5, -32]
+<span class="python-prompt">&gt;&gt;&gt;</span> lista
+[1, 'abcde', 45.5, -32]</code>
 </pre>
     </div>
 
@@ -54,11 +56,11 @@
 
     <p>Una lista que no contiene ningún elemento se denomina <strong>lista vacía</strong>:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> lista = [ ]
-<span class="idle-prompt">&gt;&gt;&gt;</span> lista
-<span class="idle-resp">[ ]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> lista = []
+<span class="python-prompt">&gt;&gt;&gt;</span> lista
+[]</code>
 </pre>
     </div>
   </section>
@@ -83,28 +85,26 @@
 
     <p>Para ver los valores del <span class="idle-func">range</span>(), es necesario convertirlo a lista mediante la función <span class="idle-func">list</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> x = <span class="idle-func">range</span>(10)
-<span class="idle-prompt">&gt;&gt;&gt;</span> x
-<span class="idle-resp">range(0, 10)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(x)
-<span class="idle-resp">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">range</span>(7)
-<span class="idle-resp">range(0, 7)</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(7))
-<span class="idle-resp">[0, 1, 2, 3, 4, 5, 6]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> x = range(10)
+<span class="python-prompt">&gt;&gt;&gt;</span> x
+range(0, 10)
+<span class="python-prompt">&gt;&gt;&gt;</span> list(x)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(7))
+[0, 1, 2, 3, 4, 5, 6]</code>
 </pre>
     </div>
 
     <p>Si <var>n</var> no es positivo, se crea un <span class="idle-func">range</span> vacío.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(-2))
-<span class="idle-resp">[]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(0))
-<span class="idle-resp">[]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(-2))
+[]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(0))
+[]</code>
 </pre>
     </div>
 
@@ -112,23 +112,23 @@
 
     <p>El tipo <span class="idle-func">range</span> con dos argumentos se escribe <span class="idle-func">range</span>(m, n) y crea una lista inmutable de enteros consecutivos que empieza en <var>m</var> y acaba en <var>n - 1</var>.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(5, 10))
-<span class="idle-resp">[5, 6, 7, 8, 9]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(-5, 1))
-<span class="idle-resp">[-5, -4, -3, -2, -1, 0]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(5, 10))
+[5, 6, 7, 8, 9]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(-5, 1))
+[-5, -4, -3, -2, -1, 0]</code>
 </pre>
     </div>
 
     <p>Si <var>n</var> es menor o igual que <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(5, 1))
-<span class="idle-resp">[]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(3, 3))
-<span class="idle-resp">[]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(5, 1))
+[]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(3, 3))
+[]</code>
 </pre>
     </div>
 
@@ -136,47 +136,50 @@
 
     <p>El tipo <span class="idle-func">range</span> con tres argumentos se escribe <span class="idle-func">range</span>(m, n, p) y crea una lista inmutable de enteros que empieza en <var>m</var> y acaba justo antes de superar o igualar a <var>n</var>, aumentando los valores de <var>p</var> en <var>p</var>. Si <var>p</var> es negativo, los valores van disminuyendo de <var>p</var> en <var>p</var>.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(5, 21, 3))
-<span class="idle-resp">[5, 8, 11, 14, 17, 20]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(10, 0, -2))
-<span class="idle-resp">[10, 8, 6, 4, 2]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(5, 21, 3))
+[5, 8, 11, 14, 17, 20]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(10, 0, -2))
+[10, 8, 6, 4, 2]</code>
 </pre>
     </div>
 
     <p>El valor de <var>p</var> no puede ser cero:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">range</span>(4,18,0)
-<span class="idle-erro">Traceback (most recent call last):/span&gt;
-  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;
-    range(4,18,0)
-ValueError: range() arg 3 must not be zero</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> range(4, 18, 0)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-12&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">range<strong>(4, 18, 0)</strong></span>
+    <span class="error-message-highlight">~~~~~^^^^^^^^^^</span>
+<span class="error-message"><strong>ValueError</strong>: range() arg 3 must not be zero</span></code>
 </pre>
     </div>
 
     <p>Si <var>p</var> es positivo y <var>n</var> menor o igual que <var>m</var>, o si <var>p</var> es negativo y <var>n</var> mayor o igual que <var>m</var>, se crea un <span class="idle-func">range</span> vacío.</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(25, 20, 2))
-<span class="idle-resp">[]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(20, 25, -2))
-<span class="idle-resp">[]</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(25, 20, 2))
+[]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(20, 25, -2))
+[]</code>
+</pre>
     </div>
 
     <p>En los <span class="idle-func">range</span>( <var>m</var>, <var>n</var>, <var>p</var>), se pueden escribir <var>p</var> <span class="idle-func">range</span> distintos que generan el mismo resultado. Por ejemplo:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(10, 20, 3))
-<span class="idle-resp">[10, 13, 16, 19]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(10, 21, 3))
-<span class="idle-resp">[10, 13, 16, 19]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(10, 22, 3))
-<span class="idle-resp">[10, 13, 16, 19]</span></pre>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(10, 20, 3))
+[10, 13, 16, 19]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(10, 21, 3))
+[10, 13, 16, 19]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(10, 22, 3))
+[10, 13, 16, 19]</code>
+</pre>
     </div>
 
     <hr class="corta">
@@ -197,12 +200,14 @@ ValueError: range() arg 3 must not be zero</span>
 
     <p>El tipo <span class="idle-func">range</span>() sólo admite argumentos enteros. Si se utilizan argumentos decimales, se produce un error:</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> range(3.5, 10, 2)<br><span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#1&gt;", line 1, in &lt;module&gt;
-    range(3.5, 10, 2)
-TypeError: range() integer start argument expected, got float.</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> range(3.5, 10, 2)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-18&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">range<strong>(3.5, 10, 2)</strong></span>
+    <span class="error-message-highlight">~~~~~^^^^^^^^^^^^</span>
+<span class="error-message"><strong>ValueError</strong>: 'float' object cannot be interpreted as an integer</span></code>
 </pre>
     </div>
 
@@ -213,41 +218,44 @@ TypeError: range() integer start argument expected, got float.</span>
   <section id="range-concatenar">
     <h2>Concatenar <span class="idle-func">range</span>()</h2>
 
-    <p>No se pueden concatenar tipos <span class="idle-func">range</span>(), ya que el resultado de la concatenación puede no ser un tipo <span class="idle-func">range</span>()).</p>
+    <p>Se pueden concatenar tipos <span class="idle-func">range</span>() previamente convertidos en listas. El resultado es lógicamente una lista, que no se puede convertir a tipo <span class="idle-func">range</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">range</span>(3) + <span class="idle-func">range</span>(5)
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#2&gt;", line 1, in &lt;module&gt;
-    range(3) + range(5)
-TypeError: unsupported operand type(s) for +: 'range' and 'range'</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(3)) + list(range(5))
+[0, 1, 2, 0, 1, 2, 3, 4]</code>
 </pre>
     </div>
 
-    <p>Pero sí se pueden concatenar tipos <span class="idle-func">range</span>() previamente convertidos en listas. El resultado es lógicamente una lista, que no se puede convertir a tipo <span class="idle-func">range</span>().</p>
+    <p>Pero no se pueden concatenar tipos <span class="idle-func">range</span>(), ya que en general el resultado de la concatenación no será un tipo <span class="idle-func">range</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(3)) + <span class="idle-func">list</span>(<span class="idle-func">range</span>(5))
-<span class="idle-resp">[0, 1, 2, 0, 1, 2, 3, 4]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> range(3) + range(5)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-1&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">range(3) <strong>+</strong> range(5)</span>
+    <span class="error-message-highlight">~~~~~~~~~^~~~~~~~~~</span>
+<span class="error-message"><strong>ValueError</strong>: unsupported operand type(s) for +: 'range' and 'range'</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(3)) + list(range(5))
+[0, 1, 2, 0, 1, 2, 3, 4]</code>
 </pre>
     </div>
 
-    <p>No se pueden concatenar tipos <span class="idle-func">range</span>(), ni aunque el resultado sea una lista de números enteros en sucesión aritmética.</p>
+    <p>No se pueden concatenar tipos <span class="idle-func">range</span>() aunque el resultado pueda corresponder a un tipo <span class="idle-func">range</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">range</span>(1, 3) + <span class="idle-func">range</span>(3, 5)
-<span class="idle-erro">Traceback (most recent call last):
-  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;
-    range(3) + range(5)
-TypeError: unsupported operand type(s) for +: 'range' and 'range'</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(1, 3)) + <span class="idle-func">list</span>(<span class="idle-func">range</span>(3, 5))
-<span class="idle-resp">[1, 2, 3, 4]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> range(1, 3) + range(3, 5)
+Traceback (most recent call last):
+  File <span class="error-message">"&lt;python-input-2&gt;"</span>, line <span class="error-message">1</span> in <span class="error-message">&lt;module&gt;</span>
+    <span class="error-message-highlight">range(1, 3) <strong>+</strong> range(3, 5)</span>
+    <span class="error-message-highlight">~~~~~~~~~~~~^~~~~~~~~~~~~</span>
+<span class="error-message"><strong>TypeError</strong>: unsupported operand type(s) for +: 'range' and 'range'</span>
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(1, 3)) + list(range(3, 5))
+[1, 2, 3, 4]</code>
 </pre>
     </div>
-
   </section>
 
   <section id="range-len">
@@ -255,33 +263,33 @@ TypeError: unsupported operand type(s) for +: 'range' and 'range'</span>
 
     <p>La función <span class="idle-func">len</span>() devuelve la longitud de una cadena de caracteres o el número de elementos de una lista. El argumento de la función <span class="idle-func">len</span>() es la lista o cadena que queremos "medir".</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>(<span class="idle-cade">"mensaje secreto"</span>)
-<span class="idle-resp">15</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>([<span class="idle-cade">"a"</span>,<span class="idle-cade">"b"</span>,<span class="idle-cade">"c"</span>])
-<span class="idle-resp">3</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">len</span>(<span class="idle-func">range</span>(1, 100, 7))
-<span class="idle-resp">15</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> len("mensaje secreto")
+15
+<span class="python-prompt">&gt;&gt;&gt;</span> len(["a","b","c"])
+3
+<span class="python-prompt">&gt;&gt;&gt;</span> len(range(1, 100, 7))
+15</code>
 </pre>
     </div>
 
     <p>El valor devuelto por la función <span class="idle-func">len</span>() se puede usar como parámetro de <span class="idle-func">range</span>().</p>
 
-    <div class="codigo idle">
+    <div class="terminal">
       <pre>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(<span class="idle-func">len</span>(<span class="idle-cade">"mensaje secreto"</span>)))
-<span class="idle-resp">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(<span class="idle-func">len</span>([<span class="idle-cade">"a"</span>,<span class="idle-cade">"b"</span>,<span class="idle-cade">"c"</span>])))
-<span class="idle-resp">[0, 1, 2]</span>
-<span class="idle-prompt">&gt;&gt;&gt;</span> <span class="idle-func">list</span>(<span class="idle-func">range</span>(<span class="idle-func">len</span>(<span class="idle-func">range</span>(1, 100, 7))))
-<span class="idle-resp">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</span>
+<code class="language-shell"><span class="python-prompt">&gt;&gt;&gt;</span> list(range(len("mensaje secreto")))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(len(["a","b","c"])))
+[0, 1, 2]
+<span class="python-prompt">&gt;&gt;&gt;</span> list(range(len(range(1, 100, 7))))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]</code>
 </pre>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de febrero de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 27 de enero de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
