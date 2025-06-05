@@ -42,6 +42,7 @@
         <li><a href="#q11">Q11: del 17/02/25 al 02/03/25</a></li>
         <li><a href="#q12">Q12: del 03/03/25 al 16/03/25</a></li>
         <li><a href="#q13">Q13: del 24/03/25 al 06/04/25</a></li>
+        <li><a href="#q14">Q14: del 05/05/25 al 18/05/25</a></li>
       </ul>
     </div>
   </nav>
@@ -319,7 +320,7 @@
   <section id="q13">
     <h2>LMSGI Quincena Q13: del 24/03/25 al 06/04/25</h2>
 
-    <h2>Gráficos SVG (sin bucles)</h2>
+    <h3>Gráficos SVG (sin bucles)</h3>
 
     <ol>
       <li>Haced los ejercicios <a href="../ejercicios/ej-svg-ficheros-1.html">SVG Ficheros (1)</a>
@@ -332,7 +333,7 @@
       <li>Consultad las soluciones de los ejercicios <a href="../ejercicios/ej-svg-ficheros-1-b-soluciones.html">SVG Ficheros (1 B)</a>.</li>
     </ol>
 
-    <h2>Ejercicios de repaso</h2>
+    <h3>Ejercicios de repaso</h3>
 
     <p>El examen de este año tendrá una estructura similar a los de años anteriores: tres ejercicios interactivos y dos dibujos SVG (sin bucles).</p>
 
@@ -343,12 +344,48 @@
       <li>Haced los <a href="../examenes/examenes.html">exámenes de años anteriores</a>.</li>
       <li>Haced los ejercicios <a href="../ejercicios/ej-mas-1.html">Ejercicios adicionales</a>, que son una selección de ejercicios de exámenes de años anteriores. La mayoría están también en la página de exámenes, pero también hay ejercicios de exámenes anteriores al curso 16/17.</li>
     </ol>
+  </section>
 
-    <p>Con esta quincena se termina la parte del curso del módulo Lenguajes de Marcas que se imparte en el instituto. Espero que los temas que hemos tratado os hayan resultado interesantes y hayáis aprendido cosas que os sean útiles en el futuro, en primer lugar en el módulo de segundo curso Implantación de Aplicaciones Web. Recordad que los apuntes estarán siempre disponibles en <a href="https://www.mclibre.org/">mclibre.org</a> por si queréis o necesitáis consultarlos.</p>
+  <section id="q14">
+    <h2>LMSGI Quincena Q14: del 05/05/25 al 18/05/25</h2>
+
+    <p><span style="font-size: 300%; display: inline-block; margin: 20px 10px;" title="¡Atención!">&#9888;&#65039;</span><strong>Nota</strong>: Estas lecciones están dirigidas a los alumnos del plan de estudios "antiguo" (LOE), aunque se recomiendan también para los alumnos del plan de estudio "nuevo" (LOMLOE). En cualquier caso, no van para examen.</p>
+
+    <h3>Sucesiones aritméticas</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/informatica/matematicas/sucesiones-aritmeticas.html">Sucesiones aritméticas</a>
+        <p>Esta lección es un repaso de un concepto matemático muy útil en programación: las sucesiones aritméticas. Tenéis que ser capaces de sacar de cabeza fórmulas del tipo a * n + b a partir de unos pocos valores.</p>
+        <p>Más adelante utilizaremos este tipo de fórmulas para la generación de dibujos SVG.</p>
+        <p>Esta lección está en los apuntes de Temas de Informática.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/informatica/matematicas/ej-sucesiones-aritmeticas.html">Sucesiones aritméticas (apuntes de Informática)</a>.
+        <p>Son ejercicios tipo test para practicar el cálculo mental de fórmulas del tipo a * n + b. Los podéis repetir las veces que sea necesario. Tened en cuenta que en el ejercicio 2 se pueden elegir tres niveles de dificultad.</p>
+        <p>Estos ejercicios están en los apuntes de Temas de Informática.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-sucesiones.html">Sucesiones aritméticas (apuntes de Python)</a>.
+        <p>Estos ejercicios combinan las fórmulas con los tipos range y los bucles for.</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-sucesiones-soluciones.html">Sucesiones aritméticas (apuntes de Python)</a>.</li>
+    </ol>
+
+    <h3>Gráficos SVG (con bucles)</h3>
+
+    <p>Para crear dibujos más complejos vamos a utilizar bucles for. Como vimos en la quincena Q11, un bucle for permite repetir una misma instrucción las veces que queramos. En el caso de los dibujos, para dibujar diez líneas, en vez de escribir diez instrucciones que dibujen una línea, escribiremos un bucle que repita diez veces una instrucción que dibuje una línea. Por supuesto para eso hace falta que las líneas tengan relación entre sí. En los ejercicios propuestos la relación se puede expresar mediante sucesiones aritméticas.</p>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-ficheros-2-ejemplos.html">Ejemplos de ejercicios resueltos</a>
+        <p>En esta lección se explica el proceso que hay que llevar a cabo para generar un dibujo mediante bucles for. La complicación de los ejercicios reside en el número de formas utilizadas y en el número de fórmulas distintas que se necesita expresar. En esta lección se explican cuatro dibujos distintos, de menor a mayor complejidad.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-ficheros-2.html">SVG Ficheros (2)</a> En cada ejercicio se proporciona una plantilla y se piden seis dibujos, es decir, en cada ejercicio habrá que hacer seis programas que generen cada uno de los dibujos en una página web, todas basadas en la misma plantilla. Tened en cuenta que las plantillas no son todas iguales: en el primer y tercer ejercicio las coordenadas que tenéis que utilizar están entre 0 y 300, mientras que en el segundo están entre -150 y 150.
+        <p>Todos los dibujos se pueden hacer con un único bucle, como podéis comprobar en las soluciones. El tercer ejercicio es un poco más difícil, porque hay que dibujar varias figuras en cada iteración (dos líneas, cuatro cuadrados o cuatro círculos). Otra forma de hacerlo es escribir varios bucles seguidos, de manera que cada bucle dibuje una parte del dibujo.</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="https://www.mclibre.org/consultar/python/ejercicios/ej-svg-ficheros-2-soluciones.html">SVG Ficheros (2)</a></li>
+    </ol>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 5 de junio de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
