@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 06/06/25. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 6 de junio de 2025</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 06/06/25</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+        <li><a href="#ejercicio-5">Ejercicio 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>Escriba un convertidor de ases a áureos, denarios y sestercios.</p>
+
+    <p>Se recuerda a los que no han estudiado las obras de Astérix para el examen que el áureo, el denario, el sestercio y el as son algunas de las monedas utilizadas en época del primer emperador romano César Augusto. Un áureo equivalía a 25 denarios, un denario equivalía a 4 sestercios y un sestercio equivalía a 4 ases.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS
+Escriba la cantidad de ases: <span class="entrada-usuario">-5</span>
+Escriba una cantidad mayor que cero.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS
+Escriba la cantidad de ases: <span class="entrada-usuario">999</span>
+999 ases son 2 áureo(s), 12 denario(s), 1 sestercio(s), 3 as(es).
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS
+Escriba la cantidad de ases: <span class="entrada-usuario">404</span>
+404 ases son 1 áureo(s), 1 sestercio(s),
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS
+Escriba la cantidad de ases: <span class="entrada-usuario">12</span>
+12 ases son 3 sestercio(s),
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE ASES A ÁUREOS, DENARIOS Y SESTERCIOS
+Escriba la cantidad de ases: <span class="entrada-usuario">2018</span>
+2018 ases son 5 áureo(s), 1 denario(s), 2 as(es).
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Escriba un programa que simule un juego entre dos jugadores (los habituales <strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>). Cada jugador elige un número entre 1 y 100 y se tira un dado de 100 caras. El jugador que haya elegido el número más próximo al valor del dado gana la partida.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PETANCA NUMÉRICA
+Cada jugador elige un número de 1 a 100.
+  Número de Cubitus: <span class="entrada-usuario">0</span>
+  El número debe estar entre 1 y 100
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>PETANCA NUMÉRICA
+Cada jugador elige un número de 1 a 100.
+  Número de Cubitus: <span class="entrada-usuario">70</span>
+  Número de Humerus: <span class="entrada-usuario">0</span>
+  El número debe estar entre 1 y 100
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>PETANCA NUMÉRICA
+Cada jugador elige un número de 1 a 100.
+  Número de Cubitus: <span class="entrada-usuario">80</span>
+  Número de Humerus: <span class="entrada-usuario">10</span>
+
+Se tira un dado de 100 caras.
+  Dado: 98
+
+Resultado:
+  Ha ganado Cubitus.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PETANCA NUMÉRICA
+Cada jugador elige un número de 1 a 100.
+  Número de Cubitus: <span class="entrada-usuario">41</span>
+  Número de Humerus: <span class="entrada-usuario">69</span>
+
+Se tira un dado de 100 caras.
+  Dado: 55
+
+Resultado:
+  Han empatado
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong>, legionarios muy aficionados a los juegos de dados, juegan al siguiente juego. Cada uno de ellos tira un dado. A continuación se tira una cantidad de dados aleatoria, entre 5 y 10. Cada jugador cuenta cuántos dados coinciden con el suyo y el que más obtenga, gana la partida.</p>
+
+    <p>Escriba un programa que simule este juego de dados para dos jugadores.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+  Cada jugador tira un dado:
+    Cubitus: 4
+    Humerus: 4
+  Se tiran 7 dados: 5 3 3 3 3 3 3
+Han empatado a 0.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+  Cada jugador tira un dado:
+    Cubitus: 6
+    Humerus: 3
+  Se tiran 9 dados: 3 5 4 4 6 6 1 3 3
+  Ha ganado Humerus 3 a 2.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+  Cada jugador tira un dado:
+    Cubitus: 6
+    Humerus: 1
+  Se tiran 8 dados: 3 5 1 6 6 5 6 3
+  Ha ganado Cubitus 3 a 1.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Como <strong>Marcus Cubitus</strong> ha vuelto a Roma de permiso, el legionario <strong>Julius Humerus</strong> se debe conformar con jugar a un solitario mientras espera la próxima invasión bárbara. Tira una pareja de dados hasta que la suma de los dos dados coincide con la suma de la tirada anterior.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SOLITARIO DE DADOS
+
+Tirada 1: 4 4
+Tirada 2: 5 5
+Tirada 3: 1 3
+Tirada 4: 5 6
+Tirada 5: 2 2
+Tirada 6: 2 2
+
+Ha conseguido tirar 6 veces seguidas.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SOLITARIO DE DADOS
+
+Tirada 1: 5 1
+Tirada 2: 2 4
+
+Ha conseguido tirar 2 veces seguidas.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/250606-5-1-svg.png" alt="Ejercicio 5-1" width="326" height="326">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-10 -10 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> y
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/250606-5-2-svg.png" alt="Ejercicio 5-2" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">black</span> <span style="background-color: black; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> y
+      <span class="css-valor">white</span> <span style="background-color: white; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 6 de junio de 2025</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

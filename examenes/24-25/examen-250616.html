@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 16/06/25. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 16 de junio de 2025</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 16/06/25</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="ejercicio-1">
+    <h2 class="con-aside">Ejercicio 1</h2>
+
+    <aside class="aside-minienlace">
+      <p><a href="../../otros/python-testing.html">MPTC</a></p>
+      <p>181921</p>
+    </aside>
+
+    <p><strong>Jack Aubrey</strong>, al que algunos imaginan descendiente lejano de <strong>Marcus Cubitus</strong> o de <strong>Julius Humerus</strong>, prefirió hacer carrera en la Armada británica antes que en el ejército. Una de las primeras cosas que tuvo que aprender fue el a menudo impreciso sistema de unidades naúticas.</p>
+
+    <p>Escriba un programa que convierta una cantidad de centímetros en millas naúticas, cables y brazas (con un decimal). Este programa no tendrá en cuenta la opinión de Jack Aubrey sobre el sistema métrico, que como mínimo podría ser considerada como escéptica.</p>
+
+    <p>Se recuerda que aproximadamente una braza son 182,91 cm, un cable son 100 brazas y una milla naútica son 10,125 cables.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE CENTÍMETROS EN MILLAS NAÚTICAS, CABLES Y BRAZAS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">-5</span>
+Por favor, escriba un número positivo.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE CENTÍMETROS EN MILLAS NAÚTICAS, CABLES Y BRAZAS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">222327</span>
+222327 cm son 1 millas naúticas, 2 cables y 3.0 brazas.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE CENTÍMETROS EN MILLAS NAÚTICAS, CABLES Y BRAZAS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">18657</span>
+18657 cm son 0 millas naúticas, 1 cables y 2.0 brazas.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+CONVERTIDOR DE CENTÍMETROS EN MILLAS NAÚTICAS, CABLES Y BRAZAS
+Escriba la cantidad de centímetros: <span class="entrada-usuario">91</span>
+91 cm son 0 millas naúticas, 0 cables y 0.5 brazas.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Una sucesión de Fibonacci es una sucesión de números en la que cada número es la suma de los dos anteriores. Escriba un programa que pida los dos primeros valores de la sucesión y la cantidad de valores a mostrar y que muestre esa cantidad de valores.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SUCESIÓN DE FIBONACCI
+Escriba el primer valor de la sucesión: <span class="entrada-usuario">1</span>
+Escriba el segundo valor de la sucesión: <span class="entrada-usuario">1</span>
+Escriba el número de valores a mostrar: <span class="entrada-usuario">10</span>
+1 1 2 3 5 8 13 21 34 55
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SUCESIÓN DE FIBONACCI
+Escriba el primer valor de la sucesión: <span class="entrada-usuario">1</span>
+Escriba el segundo valor de la sucesión: <span class="entrada-usuario">1</span>
+Escriba el número de valores a mostrar: <span class="entrada-usuario">1</span>
+¡Se deben mostrar al menos dos valores!
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SUCESIÓN DE FIBONACCI
+Escriba el primer valor de la sucesión: <span class="entrada-usuario">3</span>
+Escriba el segundo valor de la sucesión: <span class="entrada-usuario">6</span>
+Escriba el número de valores a mostrar: <span class="entrada-usuario">6</span>
+3 6 9 15 24 39
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> han convencido a sus compañeros de <i>contubernio</i> a jugar una partida de dados entre varios jugadores. El juego consiste en tirar un dado y ver quién saca el valor más alto. Escriba un programa que simule una partida y que diga qué jugador ha ganado. Si hay varios jugadores que sacan el valor más alto, se considerará que no gana nadie.</p>
+
+    <p><strong>Nota</strong>: Un <i>contubernio</i> era la unidad mínima del ejército romano y estaba formada por ocho legionarios, pero el programa debe permitir que jueguen más de ocho jugadores.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (3)
+¿Cuántos jugadores van a jugar? <span class="entrada-usuario">4</span>
+El jugador 1 ha sacado un 3.
+El jugador 2 ha sacado un 3.
+El jugador 3 ha sacado un 1.
+El jugador 4 ha sacado un 2.
+Ningún jugador ha sacado más que los demás.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (3)
+¿Cuántos jugadores van a jugar? <span class="entrada-usuario">1</span>
+El número de jugadores debe ser como mínimo dos.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS (3)
+¿Cuántos jugadores van a jugar? <span class="entrada-usuario">3</span>
+El jugador 1 ha sacado un 2.
+El jugador 2 ha sacado un 4.
+El jugador 3 ha sacado un 2.
+Ha ganado el jugador 2, que ha sacado un 4.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba un programa que genere la siguiente imagen a partir de la plantilla siguiente:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/250616-4-svg.png" alt="Ejercicio 4" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 4. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span> y
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 16 de junio de 2025</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
