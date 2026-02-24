@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicios. Expresiones lógicas. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/python.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body onload="e01_generaExpresion(2); e02_generaExpresion(2); e03_generaSVG(1);">
+  <h1>Expresiones lógicas - Ejercicios</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Expresiones lógicas</h2>
+      <ul>
+        <li><a href="#ejercicio-1">Evaluar expr. lógicas</a></li>
+        <li><a href="#ejercicio-2">Evaluar comparaciones</a></li>
+        <li><a href="#ejercicio-3">Escribir comparaciones</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Estos ejercicios corresponden a lo explicado en las lecciones <a href="../../../lecciones/php-variables-2.html#boolean">Variables lógicas</a> y <a href="../../../lecciones/php-operaciones-logicas.html">Operaciones lógicas</a>.</p>
+
+  <p>Estos ejercicios son ejercicios de tipo test, en los que se debe evaluar o escribir una expresión lógica. Si la respuesta indicada es correcta, se mostrará automáticamente un nuevo enunciado. Si la respuesta indicada es incorrecta, se mantendrá el enunciado para permitir un nuevo intento. Unos contadores que se pueden reiniciar en cualquier momento muestran el número de respuestas correctas e incorrectas acumuladas. Puede modificar la dificultad del ejercicio aumentando o reduciendo la longitud de las expresiones involucradas.</p>
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1 - Evaluar expresiones lógicas</h2>
+
+    <p>Indique si la expresión lógica que se muestra a continuación es <span class="idle-rese">True</span> o <span class="idle-rese">False</span>.</p>
+
+    <div class="enunciado-test">
+      <p>Expresión a evaluar: <span id="e01-enunciado" class="idle-rese" style="font-size: 150%;"></span></p>
+
+      <p>
+        Indique el resultado:
+        <button type="button" onclick="e01_comprueba(true)">True</button> -
+        <button type="button" onclick="e01_comprueba(false)">False</button>
+        <span id="e01-resultado"></span>
+      </p>
+
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right;"><span id="e01-t-correctas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e01-l-correctas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right;"><span id="e01-t-incorrectas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e01-l-incorrectas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><button type="button" onclick="e01_reinicia_contador()">Reiniciar contador</button></td>
+        </tr>
+      </table>
+
+      <p>
+        Aumentar o reducir la longitud de la expresión:
+        <button type="button" onclick="e01_cambiaLongitud(+1)">Más larga</button> -
+        <button type="button" onclick="e01_cambiaLongitud(-1)">Más corta</button>
+      </p>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2 - Evaluar expresiones lógicas con comparaciones</h2>
+
+    <p>Indique si la expresión lógica que se muestra a continuación es <span class="idle-rese">True</span> o <span class="idle-rese">False</span> para el valor indicado de la variable que aparece en ella.</p>
+
+    <div class="enunciado-test">
+      <p>Expresión a evaluar: <span id="e02-enunciado" style="font-size: 150%;"></span></p>
+
+      <p>para el valor <span id="e02-valor" style="font-size: 150%;"></span></p>
+
+      <p>
+        Indique el resultado:
+        <button type="button" onclick="e02_comprueba(true)">True</button> -
+        <button type="button" onclick="e02_comprueba(false)">False</button>
+        <span id="e02-resultado"></span>
+      </p>
+
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right;"><span id="e02-t-correctas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e02-l-correctas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right;"><span id="e02-t-incorrectas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e02-l-incorrectas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><button type="button" onclick="e02_reinicia_contador()">Reiniciar contador</button></td>
+        </tr>
+      </table>
+
+      <p>
+        Aumentar o reducir la longitud de la expresión:
+        <button type="button" onclick="e02_cambiaLongitud(+1)">Más larga</button> -
+        <button type="button" onclick="e02_cambiaLongitud(-1)">Más corta</button>
+      </p>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3 - Escribir expresiones lógicas con comparaciones</h2>
+
+    <p>El dibujo que se muestra a continuación representa la recta real, en la que se muestran uno o más valores numéricos como círculos de borde rojo. Si el círculo tiene el interior de color blanco significa que el número no está incluido en la parte resaltada, pero si el círculo tiene el interior de color rojo significa que el número está incluido. Cuando se muestran uno o dos números los números pueden tener un decimal, pero cuando se muestran tres o más números, los números son enteros para facilitar la lectura del dibujo.</p>
+
+    <p>Escriba una expresión lógica con comparaciones (similar a las del ejercicio 2) que corresponda a la parte de la recta resaltada en rojo. La variable a utilizar en las compraciones debe ser <strong>x</strong>.</p>
+
+    <p>Se pueden escribir infinitas expresiones que correspondan a cualquiera de los dibujos. Intente escribir expresiones lo más cortas posible, en particular con el menor número de comparaciones posible. En general, las expresiones pueden excribirse con tantas comparaciones como valores numéricos aparecen en el dibujo.</p>
+
+    <p>Si se pide un nuevo dibujo o se muestra la solución, el contador lo contará como respuesta incorrecta.</p>
+
+    <p>Puede consultar también unos <a href="ej-booleanos-2-ejemplos.html">ejemplos de ejercicios resueltos</a>.</p>
+
+    <div class="enunciado-test">
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="360" height="60" viewBox="-30 0 360 60" style="background-color: lightgray; font-family: sans-serif;" id="e03-enunciado">
+        </svg>
+      </p>
+
+      <p>Expresión:
+        <input type="text" id="e03-respuesta-python" size="50" value="x">
+        <button type="button" onclick="e03_comprueba()">Evaluar</button>
+        <span id="e03-resultado"></span>
+      </p>
+
+      <p><button type="button" onclick="e03_nuevo()">Nuevo dibujo</button></p>
+
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right;"><span id="e03-t-correctas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#22B14C" id="e03-l-correctas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right;"><span id="e03-t-incorrectas">0</span></td>
+          <td>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="10">
+              <rect x="0" y="0" rx="4" ry="4" width="1" height="10" fill="#ED1C24" id="e03-l-incorrectas" />
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3"><button type="button" onclick="e03_reinicia_contador()">Reiniciar contador</button></td>
+        </tr>
+      </table>
+
+      <p>
+        Aumentar o reducir el número de valores (hasta 5):
+        <button type="button" onclick="e03_cambiaLongitud(+1)">Más larga</button> -
+        <button type="button" onclick="e03_cambiaLongitud(-1)">Más corta</button>
+      </p>
+
+      <p><button type="button" id="e03-solucion" onclick="e03_muestraSolucion()">Mostrar solución</button></p>
+
+      <div id="e03-ayuda" style="display: none"></div>
+    </div>
+  </section>
+
+  <script>
+    ///////////////////////
+    // Funciones comunes //
+    ///////////////////////
+    var anchoContador = 200;
+
+    function dibujaContador(correctas, tCorrectas, lCorrectas, incorrectas, tIncorrectas, lIncorrectas) {
+      tCorrectas.textContent = correctas;
+      tIncorrectas.textContent = incorrectas;
+      var total = correctas + incorrectas;
+      if (total == 0) {
+        total = 1;
+      }
+      lCorrectas.setAttribute("width", Math.max(anchoContador * correctas / total, 1))
+      lIncorrectas.setAttribute("width", Math.max(anchoContador * incorrectas / total, 1))
+    }
+
+    ////////////////////////////////////////////////////
+    // Ejercicio 1: Evaluar expresiones lógicas puras //
+    ////////////////////////////////////////////////////
+
+    var e01_enunciado = document.getElementById("e01-enunciado");
+    var e01_resultado = document.getElementById("e01-resultado");
+    var e01_tCorrectas = document.getElementById("e01-t-correctas");
+    var e01_lCorrectas = document.getElementById("e01-l-correctas");
+    var e01_tIncorrectas = document.getElementById("e01-t-incorrectas");
+    var e01_lIncorrectas = document.getElementById("e01-l-incorrectas");
+    var e01_expresion = "";
+    var e01_nCorrectas = 0;
+    var e01_nIncorrectas = 0;
+    var e01_longitud = 2;
+
+    function e01_cambiaLongitud(subeBaja) {
+      if (subeBaja == 1) {
+        e01_longitud += 1;
+      } else if (e01_longitud > 2) {
+        e01_longitud -= 1;
+      }
+      e01_generaExpresion(e01_longitud);
+    }
+
+    function e01_miniExpresion() {
+      var tmp = "";
+      if (Math.random() > 0.33) {
+        tmp += "!";
+      }
+      if (Math.random() > 0.5) {
+        tmp += "true";
+      } else {
+        tmp += "false";
+      }
+      return tmp;
+    }
+
+    function e01_generaExpresion(n) {
+      e01_expresion = e01_miniExpresion();
+      e01_enunciado.innerHTML = "";
+      for (var i = 2; i < n + 1; i++) {
+        if (Math.random() > 0.5) {
+          e01_expresion += " && ";
+        } else {
+          e01_expresion += " || ";
+        }
+        e01_expresion += e01_miniExpresion();
+      }
+      e01_expresion_python = e01_expresion.slice();
+      e01_expresion_python = e01_expresion_python.replaceAll("&&", "and").replaceAll("||", "or").replaceAll("!", "not ").replaceAll("true", "True").replaceAll("false", "False");
+      e01_enunciado.innerHTML = e01_expresion_python;
+    }
+
+    function e01_comprueba(respuesta) {
+      if (respuesta == eval(e01_expresion)) {
+        e01_resultado.textContent = "¡Correcto!";
+        e01_nCorrectas++;
+        e01_generaExpresion(e01_longitud);
+      } else {
+        e01_resultado.textContent = "¡Incorrecto!";
+        e01_nIncorrectas++;
+      }
+      dibujaContador(e01_nCorrectas, e01_tCorrectas, e01_lCorrectas, e01_nIncorrectas, e01_tIncorrectas, e01_lIncorrectas);
+    }
+
+    function e01_reinicia_contador() {
+      e01_nCorrectas = e01_nIncorrectas = 0;
+      dibujaContador(e01_nCorrectas, e01_tCorrectas, e01_lCorrectas, e01_nIncorrectas, e01_tIncorrectas, e01_lIncorrectas);
+    }
+
+    ////////////////////////////////////////////////////////////
+    // Ejercicio 2: Evaluar expresiones lógicas comparaciones //
+    ////////////////////////////////////////////////////////////
+
+    var e02_longitud = 2;
+    var e02_maximo = 20;
+    var e02_comparaciones = [" < ", " <= ", "> ", ">= ", " == ", " != "];
+    var e02_variables = "abcdefghijklmnopqrstuvwxyz";
+    var e02_var = "";
+    var e02_val = "";
+    var e02_enunciado = document.getElementById("e02-enunciado");
+    var e02_valor = document.getElementById("e02-valor");
+    var e02_resultado = document.getElementById("e02-resultado");
+    var e02_tCorrectas = document.getElementById("e02-t-correctas");
+    var e02_lCorrectas = document.getElementById("e02-l-correctas");
+    var e02_tIncorrectas = document.getElementById("e02-t-incorrectas");
+    var e02_lIncorrectas = document.getElementById("e02-l-incorrectas");
+    var e02_expresion = "";
+    var e02_nCorrectas = 0;
+    var e02_nIncorrectas = 0;
+
+    function e02_cambiaLongitud(subeBaja) {
+      if (subeBaja == 1) {
+        e02_longitud += 1;
+      } else if (e02_longitud > 2) {
+        e02_longitud -= 1;
+      }
+      e02_generaExpresion(e02_longitud);
+    }
+
+    function e02_miniExpresion() {
+      var tmp = "";
+      var e02_comp = e02_comparaciones[Math.floor(Math.random() * e02_comparaciones.length)];
+      if (Math.random() > 0.2) {
+        var e02_num = Math.floor(Math.random() * e02_maximo);
+      } else {
+        var e02_num = - Math.floor(Math.random() * e02_maximo);
+      }
+      if (Math.random() > 0.25) {
+        tmp += e02_var + " " + e02_comp + " " + e02_num;
+      } else {
+        tmp += e02_num + " " + e02_comp + " " + e02_var;
+      }
+      return tmp;
+    }
+
+    function e02_generaExpresion(n) {
+      e02_var = "$" + e02_variables.charAt(Math.floor(Math.random() * e02_variables.length));
+      e02_val = Math.floor(Math.random() * e02_maximo);
+      e02_expresion = e02_miniExpresion();
+      e02_enunciado.innerHTML = "";
+      for (var i = 2; i < n + 1; i++) {
+        if (Math.random() > 0.5) {
+          e02_expresion += " && ";
+        } else {
+          e02_expresion += " || ";
+        }
+        e02_expresion += e02_miniExpresion();
+      }
+
+      e02_expresion_python = e02_expresion.slice();
+      e02_expresion_python = e02_expresion_python.replaceAll("&&", "and").replaceAll("||", "or").replaceAll("$", "");
+      e02_enunciado.innerHTML = e02_expresion_python;
+
+      e02_var_python = e02_var.slice();
+      e02_var_python = e02_var_python.replaceAll("$", "");
+      e02_valor.innerHTML = e02_var_python + " = " + e02_val;
+
+      // e02_enunciado.innerHTML = e02_expresion;
+      // e02_valor.innerHTML = e02_var + " = " + e02_val;
+
+    }
+
+    function e02_comprueba(respuesta) {
+      if (respuesta == eval(e02_expresion.replaceAll(e02_var, e02_val))) {
+        e02_resultado.textContent = "¡Correcto!";
+        e02_nCorrectas++;
+        e02_generaExpresion(e02_longitud);
+      } else {
+        e02_resultado.textContent = "¡Incorrecto!";
+        e02_nIncorrectas++;
+      }
+      dibujaContador(e02_nCorrectas, e02_tCorrectas, e02_lCorrectas, e02_nIncorrectas, e02_tIncorrectas, e02_lIncorrectas);
+    }
+
+    function e02_reinicia_contador() {
+      e02_nCorrectas = e02_nIncorrectas = 0;
+      dibujaContador(e02_nCorrectas, e02_tCorrectas, e02_lCorrectas, e02_nIncorrectas, e02_tIncorrectas, e02_lIncorrectas);
+    }
+
+    /////////////////////////////////////////////////////////////
+    // Ejercicio 3: Escribir expresiones lógicas comparaciones //
+    /////////////////////////////////////////////////////////////
+
+    var e03_longitud = 1;
+    var e03_longitudMaxima = 5;
+    var e03_minimo = -20;
+    var e03_maximo = 100;
+    var e03_separacionValores = 10; // Cuidado porque si se aumenta este valor puede que el programa se enganche cuando tiene que inventarse muchos números
+    var e03_minimoSVG = 0;
+    var e03_maximoSVG = 300;
+    var e03_comparaciones = [" < ", " <= ", "> ", ">= ", " == ", " != "];
+    var e03_nums = [];
+    var e03_valoresComprueba = [];
+    var e03_var = "x";
+    var e03_expresion = "";
+    var e03_enunciado = document.getElementById("e03-enunciado");
+    var e03_respuesta_python = document.getElementById("e03-respuesta-python");
+    var e03_resultado = document.getElementById("e03-resultado");
+    var e03_solucion = document.getElementById("e03-solucion");
+    var e03_ayuda = document.getElementById("e03-ayuda");
+    var e03_tCorrectas = document.getElementById("e03-t-correctas");
+    var e03_lCorrectas = document.getElementById("e03-l-correctas");
+    var e03_tIncorrectas = document.getElementById("e03-t-incorrectas");
+    var e03_lIncorrectas = document.getElementById("e03-l-incorrectas");
+    var e03_nCorrectas = 0;
+    var e03_nIncorrectas = 0;
+
+    function e03_cambiaLongitud(subeBaja) {
+      if (subeBaja == 1 && e03_longitud < e03_longitudMaxima) {
+        e03_longitud += 1;
+      } else if (subeBaja == -1 && e03_longitud > 1) {
+        e03_longitud -= 1;
+      }
+      e03_generaSVG(e03_longitud);
+    }
+
+    function e03_miniExpresion(n) {
+      var e03_comp = e03_comparaciones[Math.floor(Math.random() * e03_comparaciones.length)];
+      // En estas expresiones la variable la pongo siempre a la izquierda
+      return e03_var + " " + e03_comp + " " + e03_nums[1 + n];
+    }
+
+    function e03_generaExpresion(n) {
+      // Genera lista ordenada de los n valores (más mínimo y máximo) que se verán en el dibujo
+      // Los valores están separados entre ellos como mínimo e03_separacionValores para que se vean bien en el dibujo
+      var decimales = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+      e03_nums = [e03_minimo, e03_maximo];
+      for (var i = 0; i < n; i++) {
+        e03_candidatoOk = false;
+        while (!e03_candidatoOk) {
+          if (n == 1 || n == 2) {
+            if (Math.random() > 0.25) {
+              e03_candidato = e03_minimo + Math.floor(Math.random() * (e03_maximo - e03_minimo));
+            } else {
+              e03_candidato = e03_minimo + Math.floor(Math.random() * (e03_maximo - e03_minimo)) + decimales[Math.floor(Math.random() * 10)];
+            }
+          } else {
+            e03_candidato = e03_minimo + Math.floor(Math.random() * (e03_maximo - e03_minimo));
+          }
+          e03_candidatoOk = true;
+          for (var j = 0; j < e03_nums.length; j++) {
+            if (Math.abs(e03_nums[j] - e03_candidato) < e03_separacionValores) {
+              e03_candidatoOk = false;
+            }
+          }
+        }
+        e03_nums.push(e03_candidato);
+      }
+      e03_nums.sort((a, b) => a - b);
+      // Genera lista ordenada de valores con el que se comprobarán las expresiones.
+      // Aparte de los valores de la lista e03_nums se añade un valor aleatorio intermedio entre cada par de valores de e03_nums
+      // y dos valores muy próximos (a 0.0000001) de cada valor de e03_nums (menos e03_minimo y e03_maximo)
+      e03_valoresComprueba = [];
+      e03_valoresComprueba.push(-100_000);
+      e03_valoresComprueba.push(e03_nums[0]);
+      for (var i = 0; i < e03_nums.length - 2; i++) {
+        e03_valoresComprueba.push(Math.round(10 * (e03_nums[i] + Math.random() * (e03_nums[i + 1] - e03_nums[i]))) / 10);
+        e03_valoresComprueba.push(e03_nums[i + 1] - 0.000001);
+        e03_valoresComprueba.push(e03_nums[i + 1]);
+        e03_valoresComprueba.push(e03_nums[i + 1] + 0.000001);
+      }
+      e03_valoresComprueba.push(Math.round(10 * (e03_nums[i] + Math.random() * (e03_nums[i + 1] - e03_nums[i]))) / 10);
+      e03_valoresComprueba.push(e03_nums[i + 1]);
+      e03_valoresComprueba.push(100_000);
+      var e03_contador = 0;
+      // Genera una expresión. Para descartar expresiones redundantes (por ejemplo x > 1 && x > 2), comprueba
+      // que en cada uno de los números de e03_nums (menos e03_minimo y e03_maximo, que no se enseñan en el dibujo)
+      // o bien el punto está incluido y alguno de los dos segmentos laterales (inferior o superior) no está incluido
+      // o bien el punto no está incluido y alguno de los dos segmentos laterales (inferior o superior) está incluido
+      // así descarto que un punto esté incluido o no cuando los dos segmentos laterales también lo están o no lo que
+      // haría innecesario enseñar el número.
+      while (e03_contador != n) {
+        e03_contador = 0;
+        e03_expresion = e03_miniExpresion(0);
+        e03_enunciado.innerHTML = "";
+        for (var i = 1; i < n; i++) {
+          if (Math.random() > 0.5) {
+            e03_expresion += " && ";
+          } else {
+            e03_expresion += " || ";
+          }
+          e03_expresion += e03_miniExpresion(i);
+        }
+        // Cuenta si se ven todos los números
+        for (var i = 0; i < n; i++) {
+          if (
+            eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 4])) &&
+            (!eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3])) || !eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 5])))
+          ) {
+            e03_contador += 1;
+          } else if (
+            !eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 4])) &&
+            (eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3])) || eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 5])))
+          ) {
+            e03_contador += 1;
+          }
+        }
+      }
+    }
+
+    function e03_escala(x) {
+      e03_xSVG = Math.floor(e03_minimoSVG + (x - e03_minimo) / (e03_maximo - e03_minimo) * (e03_maximoSVG - e03_minimoSVG));
+      return (e03_xSVG)
+    }
+
+    function e03_generaSVG(n) {
+      e03_ayuda.innerHTML = "";
+      e03_solucion.textContent = "Mostrar solución";
+      e03_ayuda.style.display = "none";
+
+      e03_generaExpresion(n);
+      e03_enunciado.innerHTML = "<line x1=\"-50\" y1=\"40\" x2=\"400\" y2=\"40\" stroke=\"black\" stroke-width=\"4\" />\n";
+      if (
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[0])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[1])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[2])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[3]))
+      ) {
+        e03_enunciado.innerHTML += "<line x1=\"-50\" y1=\"40\" x2=\"" + e03_escala(e03_valoresComprueba[4]) + "\" y2=\"40\" stroke=\"red\" stroke-width=\"4\" />\n";
+      }
+      for (var i = 1; i < n; i++) {
+        if (
+          eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 1])) &&
+          eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 2])) &&
+          eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3]))
+        ) {
+          e03_enunciado.innerHTML += "<line x1=\"" + e03_escala(e03_valoresComprueba[4 * i]) + "\" y1=\"40\" x2=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" y2=\"40\" stroke=\"red\" stroke-width=\"4\" />\n";
+        }
+      }
+      if (
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 1])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 2])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3])) &&
+        eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 4]))
+      ) {
+        e03_enunciado.innerHTML += "<line x1=\"" + e03_escala(e03_valoresComprueba[4 * i]) + "\" y1=\"40\" x2=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" y2=\"40\" stroke=\"red\" stroke-width=\"4\" />\n";
+      }
+
+      for (var i = 0; i < n; i++) {
+        if (
+          eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 4])) &&
+          (!eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3])) || !eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 5])))
+        ) {
+          e03_enunciado.innerHTML += "<text x=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" y=\"25\" text-anchor=\"middle\" font-size=\"20\">" + e03_valoresComprueba[4 * i + 4] + "</text>\n";
+          e03_enunciado.innerHTML += "<circle cx=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" cy=\"40\" r=\"6\" stroke=\"red\" stroke-width=\"2\" fill=\"red\" />\n";
+        } else if (
+          !eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 4])) &&
+          (eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 3])) || eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[4 * i + 5])))
+        ) {
+          e03_enunciado.innerHTML += "<text x=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" y=\"25\" text-anchor=\"middle\" font-size=\"20\">" + e03_valoresComprueba[4 * i + 4] + "</text>\n";
+          e03_enunciado.innerHTML += "<circle cx=\"" + e03_escala(e03_valoresComprueba[4 * i + 4]) + "\" cy=\"40\" r=\"6\" stroke=\"red\" stroke-width=\"2\" fill=\"white\" />\n";
+        }
+      }
+    }
+
+    function e03_comprueba(respuesta) {
+      e03_tmp = true;
+      try {
+        var e03_respuesta = e03_respuesta_python.value.slice();
+        // Para evitar problemas con las comparaciones dobles (por ejemplo 1 < x < 3) que no se pueden evaluar directamente con eval, las convierto a comparaciones simples unidas por and (en el ejemplo anterior se convertiría a 1 < x and x < 3)
+        var e03_varEscapada = e03_var.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        var e03_regexComparacionDoble = new RegExp("(-?\\d+(?:\\.\\d+)?)\\s*(<=|>=|<|>|==|!=)\\s*(" + e03_varEscapada + ")\\s*(<=|>=|<|>|==|!=)\\s*(-?\\d+(?:\\.\\d+)?)", "g");
+        e03_respuesta = e03_respuesta.replace(e03_regexComparacionDoble, "$1 $2 $3 and $3 $4 $5");
+
+        e03_respuesta = e03_respuesta.replaceAll("and", "&&").replaceAll("or", "||").replaceAll("not ", "!");
+
+        eval(e03_respuesta.replaceAll(e03_var, e03_valoresComprueba[0]));
+      } catch (e) {
+        if (e instanceof Error) {
+          e03_tmp = false;
+        }
+      }
+      if (e03_tmp) {
+        for (var i = 0; i < e03_valoresComprueba.length; i++) {
+          if (String(eval(e03_expresion.replaceAll(e03_var, e03_valoresComprueba[i]))) != String(eval(e03_respuesta.replaceAll(e03_var, e03_valoresComprueba[i])))) {
+            e03_tmp = false;
+          }
+        }
+      }
+      if (e03_tmp) {
+        e03_resultado.textContent = "¡Correcto!";
+        e03_nCorrectas++;
+        e03_generaSVG(e03_longitud);
+      } else {
+        e03_resultado.textContent = "¡Incorrecto!";
+        e03_nIncorrectas++;
+      }
+      dibujaContador(e03_nCorrectas, e03_tCorrectas, e03_lCorrectas, e03_nIncorrectas, e03_tIncorrectas, e03_lIncorrectas);
+    }
+
+    function e03_nuevo() {
+      e03_nIncorrectas++;
+      dibujaContador(e03_nCorrectas, e03_tCorrectas, e03_lCorrectas, e03_nIncorrectas, e03_tIncorrectas, e03_lIncorrectas);
+      e03_generaSVG(e03_longitud);
+    }
+
+    function e03_reinicia_contador() {
+      e03_nCorrectas = e03_nIncorrectas = 0;
+      dibujaContador(e03_nCorrectas, e03_tCorrectas, e03_lCorrectas, e03_nIncorrectas, e03_tIncorrectas, e03_lIncorrectas);
+    }
+
+    function e03_muestraSolucion() {
+      if (e03_ayuda.style.display == "none") {
+        e03_ayuda.style.display = "block";
+        e03_ayuda.textContent = "";
+        e03_solucion.textContent = "Ocultar solución";
+
+        var parrafo = document.createElement('p')
+        parrafo.innerHTML = "Una posible solución es: ";
+        var tmp = document.createElement('strong')
+        var e03_expresion_python = e03_expresion.slice();
+        e03_expresion_python = e03_expresion_python.replaceAll("&&", "and").replaceAll("||", "or");
+        tmp.innerHTML = e03_expresion_python;
+        parrafo.appendChild(tmp)
+        e03_ayuda.appendChild(parrafo);
+
+        e03_nIncorrectas++;
+        dibujaContador(e03_nCorrectas, e03_tCorrectas, e03_lCorrectas, e03_nIncorrectas, e03_tIncorrectas, e03_lIncorrectas);
+      } else {
+        e03_ayuda.style.display = "none";
+        e03_solucion.textContent = "Mostrar solución";
+      }
+    }
+  </script>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de febrero de 2026</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
