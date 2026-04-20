@@ -42,9 +42,7 @@
         <li><a href="#q12">Q12: del 02/03/26 al 15/03/26</a></li>
         <li><a href="#q13">Q13: del 23/03/26 al 05/04/26</a></li>
         <li><a href="#q14">Q14: del 13/04/26 al 26/04/26</a></li>
-        <!--
         <li><a href="#q15">Q15: del 27/04/26 al 10/05/26</a></li>
-         -->
       </ul>
     </div>
   </nav>
@@ -343,11 +341,43 @@
     <p>Con esta quincena se termina la parte del curso del módulo Lenguajes de Marcas que se imparte en el instituto. Espero que los temas que hemos tratado os hayan resultado interesantes y hayáis aprendido cosas que os sean útiles en el futuro, en primer lugar en el módulo de segundo curso Implantación de Aplicaciones Web. Recordad que los apuntes estarán siempre disponibles en <a href="https://www.mclibre.org/">mclibre.org</a> por si queréis o necesitáis consultarlos.</p>
   </section>
 
-  <!--
-
   <section id="q15">
     <h2>Quincena Q15: del 27/04/26 al 10/05/26</h2>
-  </section> -->
+
+    <p><span style="font-size: 300%; display: inline-block; margin: 20px 10px;" title="¡Atención!">&#9888;&#65039;</span><strong>Nota</strong>: Estas lecciones están dirigidas a los alumnos del plan "antiguo" (LOE), aunque os las recomiendo a los alumnos del plan de estudio "nuevo" (LOMLOE). En cualquier caso, no van para examen.</p>
+
+    <h3>Sucesiones aritméticas</h3>
+
+    <ol>
+      <li>Leed la lección <a href="https://www.mclibre.org/consultar/informatica/matematicas/sucesiones-aritmeticas.html">Sucesiones aritméticas (apuntes de Informática)</a>.
+        <p>Esta lección es un repaso de un concepto matemático muy útil en programación: las sucesiones aritméticas. Tenéis que ser capaces de sacar de cabeza fórmulas del tipo a * n + b a partir de unos pocos valores.</p>
+        <p>Más adelante utilizaremos este tipo de fórmulas para la generación de dibujos SVG.</p>
+        <p>Esta lección está en los apuntes de Temas de Informática.</p>
+      </li>
+      <li>Haced los ejercicios <a href="https://www.mclibre.org/consultar/informatica/matematicas/ej-sucesiones-aritmeticas.html">Sucesiones aritméticas (apuntes de Informática)</a>.
+        <p>Son ejercicios tipo test para practicar el cálculo mental de fórmulas del tipo a * n + b. Los podéis repetir las veces que sea necesario. Tened en cuenta que en el ejercicio 2 se pueden elegir tres niveles de dificultad.</p>
+        <p>Estos ejercicios están en los apuntes de Temas de Informática.</p>
+      </li>
+      <li>Haced los ejercicios <a href="../ejercicios/ej-sucesiones.html">Sucesiones aritméticas (apuntes de Python)</a>.
+        <p>Estos ejercicios combinan las fórmulas con los tipos range y los bucles for.</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="../ejercicios/ej-sucesiones-soluciones.html">Sucesiones aritméticas (apuntes de Python)</a>.</li>
+    </ol>
+
+    <h3>Gráficos SVG (con bucles)</h3>
+
+    <p>Para crear dibujos más complejos vamos a utilizar bucles for. Como vimos en la quincena Q12, un bucle for permite repetir una misma instrucción las veces que queramos. En el caso de los dibujos, para dibujar diez líneas, en vez de escribir diez instrucciones que dibujen una línea, escribiremos un bucle que repita diez veces una instrucción que dibuje una línea. Por supuesto para eso hace falta que las líneas tengan relación entre sí. En los ejercicios propuestos la relación se puede expresar mediante sucesiones aritméticas.</p>
+
+    <ol>
+      <li>Leed la lección <a href="../ejercicios/ej-svg-ficheros-2-ejemplos.html">Ejemplos de ejercicios resueltos</a>.
+        <p>En esta lección se explica el proceso que hay que llevar a cabo para generar un dibujo mediante bucles for. La complicación de los ejercicios reside en el número de formas utilizadas y en el número de fórmulas distintas que se necesita expresar. En esta lección se explican cuatro dibujos distintos, de menor a mayor complejidad.</p>
+      </li>
+      <li>Haced los ejercicios <a href="../ejercicios/ej-svg-ficheros-2.html">SVG Ficheros (2)</a> En cada ejercicio se proporciona una plantilla y se piden seis dibujos, es decir, en cada ejercicio habrá que hacer seis programas que generen cada uno de los dibujos en una página web, todas basadas en la misma plantilla. Tened en cuenta que las plantillas no son todas iguales: en el primer y tercer ejercicio las coordenadas que tenéis que utilizar están entre 0 y 300, mientras que en el segundo están entre -150 y 150.
+        <p>Todos los dibujos se pueden hacer con un único bucle, como podéis comprobar en las soluciones. El tercer ejercicio es un poco más difícil, porque hay que dibujar varias figuras en cada iteración (dos líneas, cuatro cuadrados o cuatro círculos). Otra forma de hacerlo es escribir varios bucles seguidos, de manera que cada bucle dibuje una parte del dibujo.</p>
+      </li>
+      <li>Consultad las soluciones de los ejercicios <a href="../ejercicios/ej-svg-ficheros-2-soluciones.html">SVG Ficheros (2)</a></li>
+    </ol>
+  </section>
 
   <footer>
     <p class="ultmod">Última modificación de esta página: 20 de abril de 2026</p>
