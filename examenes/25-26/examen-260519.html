@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Examen 19/05/26. Exámenes. Python. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../varios/python.css" title="mclibre">
+  <link rel="icon" href="../../varios/favicon.svg">
+  <link rel="stylesheet" href="../../varios/prism.css">
+  <script src="../../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Examen 11 de abril de 2025</h1>
+
+  <nav>
+    <p>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
+      <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../examenes.html"><img src="../../varios/iconos/icono-school.svg" alt="Exámenes" title="Exámenes" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Examen 19/05/26</h2>
+
+      <ul>
+        <li><a href="#ejercicio-1">Ejercicio 1</a></li>
+        <li><a href="#ejercicio-2">Ejercicio 2</a></li>
+        <li><a href="#ejercicio-3">Ejercicio 3</a></li>
+        <li><a href="#ejercicio-4">Ejercicio 4</a></li>
+        <li><a href="#ejercicio-5">Ejercicio 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="ejercicio-1">
+    <h2>Ejercicio 1</h2>
+
+    <p>En la imaginaria república de Libertonia el presidente Firefly ha creado una nueva moneda, el <i>rufus</i>, de la que se emiten cinco tipos de billetes: de 360, 60, 12, 3 y 1 <i>rufu</i>.</p>
+
+    <p>Escriba un programa que calcule el número mínimo de billetes necesarios para pagar una cantidad de <i>rufus</i>.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAGANDO EN RUFUS
+¿Cuántos Rufus quiere pagar? <span class="entrada-usuario">0</span>
+Por favor, escriba una cantidad positiva.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAGANDO EN RUFUS
+¿Cuántos Rufus quiere pagar? <span class="entrada-usuario">500</span>
+Para pagar 500 rufus, puede utilizar:
+  1 billete de 360 rufus
+  2 billetes de 60 rufus
+  1 billete de 12 rufus
+  2 billetes de 3 rufus
+  2 billetes de 1 rufu
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>PAGANDO EN RUFUS
+¿Cuántos Rufus quiere pagar? <span class="entrada-usuario">25</span>
+Para pagar 25 rufus, puede utilizar:
+  2 billetes de 12 rufus
+  1 billete de 1 rufu
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAGANDO EN RUFUS
+¿Cuántos Rufus quiere pagar? <span class="entrada-usuario">1</span>
+Para pagar 1 rufu, puede utilizar:
+  1 billete de 1 rufu
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+PAGANDO EN RUFUS
+¿Cuántos Rufus quiere pagar? <span class="entrada-usuario">2519</span>
+Para pagar 2519 rufus, puede utilizar:
+  6 billetes de 360 rufus
+  5 billetes de 60 rufus
+  4 billetes de 12 rufus
+  3 billetes de 3 rufus
+  2 billetes de 1 rufu
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-2">
+    <h2>Ejercicio 2</h2>
+
+    <p>Escriba un programa que indique si una torre o el rey del ajedrez puede moverse entre dos posiciones del tablero en un sólo movimiento.</p>
+
+    <p>El usuario escribe las dos posiciones dando el número de fila y columna de cada posición (entre 1 y 8) y el programa contesta si un rey o una torre puede moverse entre esas dos casillas en un solo movimiento.</p>
+
+    <p><strong>Nota</strong>: Si a una posición pueden llegar el rey y la torre, bastará con indicar una de las piezas.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">10</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">5</span>
+Esa posición está fuera del tablero.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">4</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">3</span>
+Indique la posición final de la pieza:
+  Indique la columna final (de 1 a 8):  <span class="entrada-usuario">6</span>
+  Indique la fila final (de 1 a 8):     <span class="entrada-usuario">-1</span>
+Esa posición está fuera del tablero.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">4</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">6</span>
+Indique la posición final de la pieza:
+  Indique la columna final (de 1 a 8):  <span class="entrada-usuario">4</span>
+  Indique la fila final (de 1 a 8):     <span class="entrada-usuario">6</span>
+Las posiciones inicial y final deben ser distintas.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">4</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">1</span>
+Indique la posición final de la pieza:
+  Indique la columna final (de 1 a 8):  <span class="entrada-usuario">4</span>
+  Indique la fila final (de 1 a 8):     <span class="entrada-usuario">8</span>
+Una torre se puede mover de (4, 1) a (4, 8).
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">5</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">6</span>
+Indique la posición final de la pieza:
+  Indique la columna final (de 1 a 8):  <span class="entrada-usuario">6</span>
+  Indique la fila final (de 1 a 8):     <span class="entrada-usuario">7</span>
+El rey se puede mover de (5, 6) a (6, 7).
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+MOVIMIENTO DE AJEDREZ
+Indique la posición inicial de la pieza:
+  Indique la columna inicial (de 1 a 8): <span class="entrada-usuario">1</span>
+  Indique la fila inicial (de 1 a 8):    <span class="entrada-usuario">1</span>
+Indique la posición final de la pieza:
+  Indique la columna final (de 1 a 8):  <span class="entrada-usuario">3</span>
+  Indique la fila final (de 1 a 8):     <span class="entrada-usuario">3</span>
+Ni una torre ni el rey se pueden mover de (1, 1) a (3, 3).
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>Ejercicio 3</h2>
+
+    <p><strong>Marcus Cubitus</strong> y <strong>Julius Humerus</strong> son dos legionarios romanos que no dejan de probar nuevos juegos de dados en los exámenes.</p>
+
+    <p>En el juego de hoy, los dos jugadores tiran en orden un mismo número de dados que se decide al principio de la partida. Los jugadores van acumulando los puntos obtenidos en cada tirada, pero si la suma es múltiplo de 10, pierden los puntos acumulados hasta entonces. Gana el jugador que obtenga más puntos.</p>
+
+    <p>Escriba un programa que simule este juego de dados para dos jugadores.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+¿Cuántos dados van a tirar Cubitus y Humerus? <span class="entrada-usuario">0</span>
+Por favor, escriba una cantidad positiva.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+¿Cuántos dados van a tirar Cubitus y Humerus? <span class="entrada-usuario">10</span>
+
+Tirada de Cubitus: 2 2 2 4 ¡CERO! 4 5 4 1 5 3
+Cubitus ha obtenido 22 puntos.
+
+Tirada de Humerus: 6 4 ¡CERO! 5 3 3 6 2 1 ¡CERO! 5 6
+Humerus ha obtenido 11 puntos.
+
+Ha ganado Cubitus 22 a 11.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+¿Cuántos dados van a tirar Cubitus y Humerus? <span class="entrada-usuario">7</span>
+
+Tirada de Cubitus: 6 2 4 4 5 6 3 ¡CERO!
+Cubitus ha obtenido 0 puntos.
+
+Tirada de Humerus: 5 4 5 1 6 1 4
+Humerus ha obtenido 26 puntos.
+
+Ha ganado Humerus 26 a 0.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+¿Cuántos dados van a tirar Cubitus y Humerus? <span class="entrada-usuario">5</span>
+
+Tirada de Cubitus: 1 4 6 4 6
+Cubitus ha obtenido 21 puntos.
+
+Tirada de Humerus: 5 4 4 3 3
+Humerus ha obtenido 19 puntos.
+
+Ha ganado Cubitus 21 a 19.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+JUEGO DE DADOS
+¿Cuántos dados van a tirar Cubitus y Humerus? 10
+
+Tirada de Cubitus: 6 1 2 4 4 3 ¡CERO! 2 1 1 4
+Cubitus ha obtenido 8 puntos.
+
+Tirada de Humerus: 5 5 ¡CERO! 6 1 3 ¡CERO! 5 3 2 ¡CERO! 5 3
+Humerus ha obtenido 8 puntos.
+
+Han empatado a 8.
+</pre>
+</div>
+  </section>
+
+  <section id="ejercicio-4">
+    <h2>Ejercicio 4</h2>
+
+    <p>Escriba un programa que simule un solitario de dados que consiste en tirar cada vez más dados en cada ronda mientras no se obtengan menos puntos que en la ronda anterior.</p>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SOLITARIO DE DADOS
+En cada ronda se tira un dado más. La partida continúa si no se obtienen menos puntos que en la ronda anterior.
+Pulse Intro para tirar de nuevo.
+
+Dados: 1  =&gt;  1
+
+Dados: 6 4  =&gt;  10
+
+Dados: 6 1 5  =&gt;  12
+
+Dados: 1 3 2 5  =&gt;  11
+
+Se ha terminado la partida.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+SOLITARIO DE DADOS
+En cada ronda se tira un dado más. La partida continúa si no se obtienen menos puntos que en la ronda anterior.
+Pulse Intro para tirar de nuevo.
+
+Dados: 4  =&gt;  4
+
+Dados: 1 3  =&gt;  4
+
+Dados: 1 1 1  =&gt;  3
+
+Se ha terminado la partida.
+</pre>
+    </div>
+
+    <div class="ejecucion-terminal">
+      <pre>
+En cada ronda se tira un dado más. La partida continúa si no se obtienen menos puntos que en la ronda anterior.
+Pulse Intro para tirar de nuevo.
+
+Dados: 3  =&gt;  3
+
+Dados: 2 2  =&gt;  4
+
+Dados: 1 4 5  =&gt;  10
+
+Dados: 1 4 2 6  =&gt;  13
+
+Dados: 3 4 1 3 4  =&gt;  15
+
+Dados: 3 3 2 1 3 3  =&gt;  15
+
+Dados: 6 2 3 5 1 4 5  =&gt;  26
+
+Dados: 4 4 6 3 5 3 5 3  =&gt;  33
+
+Dados: 4 4 4 4 2 3 5 2 3  =&gt;  31
+
+Se ha terminado la partida.
+</pre>
+    </div>
+  </section>
+
+  <section id="ejercicio-5">
+    <h2>Ejercicio 5</h2>
+
+    <p>Escriba dos programas que generen las siguientes imágenes a partir de las plantillas siguientes:</p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/260519-5-1-svg.png" alt="Ejercicio 5-1" width="324" height="324">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-1. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg
+    width="<span class="codigo-resaltado">320</span>" height="<span class="codigo-resaltado">320</span>" viewBox="<span class="codigo-resaltado">-160 -160 320 320</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">hwb(320 56% 14%)</span> <span style="background-color: hwb(320 56% 14%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">hwb(360 21% 4%)</span> <span style="background-color: hwb(360 21% 4%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">hwb(220 42% 22%)</span> <span style="background-color: hwb(220 42% 22%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">hwb(155 19% 13%)</span> <span style="background-color: hwb(155 19% 13%); border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <div class="filaflex">
+      <div class="resultado-captura-sin-borde nogrow">
+        <img src="img/260519-5-2-svg.png" alt="Ejercicio 5-2" width="344" height="344">
+      </div>
+
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Ejercicio 5-2. SVG. Examen. Python&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;svg
+    width="<span class="codigo-resaltado">340</span>" height="<span class="codigo-resaltado">340</span>" viewBox="<span class="codigo-resaltado">-10 -10 340 340</span>"
+    style="border: black 1px solid"&gt;
+  &lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Los colores empleados en esta imagen son:
+      <span class="css-valor">DodgerBlue</span> <span style="background-color: DodgerBlue; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">LightGreen</span> <span style="background-color: LightGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">MediumSeaGreen</span> <span style="background-color: MediumSeaGreen; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">RebeccaPurple</span> <span style="background-color: RebeccaPurple; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Red</span> <span style="background-color: Red; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">SaddleBrown</span> <span style="background-color: SaddleBrown; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Tomato</span> <span style="background-color: Tomato; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>,
+      <span class="css-valor">Yellow</span> <span style="background-color: Yellow; border: black 1px solid">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 19 de mayo de 2026</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/python/">Introducción a la programación con Python</a></strong> por <a href="https://www.mclibre.org/">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
