@@ -6,826 +6,416 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
-  <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/brython@3.9.0/brython_stdlib.js"></script>
-  <script type="text/python3">
-from browser import document
-from random import randrange
-import browser.svg as svg
+  <script>
+var anchoContador = 200;
+var respuesta = ["¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!"];
+var ejercicios = {};
 
-anchoContador = 200
-respuesta = ("¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!")
+function randrange(limite) {
+  return Math.floor(Math.random() * limite);
+}
 
-# Funciones comunes
+function dibujaContador(e) {
+  document.getElementById(e.id + "_num_correctas").textContent = e.cuenta[1];
+  document.getElementById(e.id + "_num_incorrectas").textContent = e.cuenta[0];
+  var total = Math.max(e.cuenta[0] + e.cuenta[1], 1);
+  document.getElementById(e.id + "_img_correctas").setAttribute("width", Math.max(anchoContador * e.cuenta[1] / total, 1));
+  document.getElementById(e.id + "_img_incorrectas").setAttribute("width", Math.max(anchoContador * e.cuenta[0] / total, 1));
+}
 
-def dibuja_contador(num_correctas, num_incorrectas, img_correctas, img_incorrectas, cuenta):
-    global document, anchoContador
-    document[num_correctas].clear()
-    document[num_correctas] <= cuenta[1]
-    document[num_incorrectas].clear()
-    document[num_incorrectas] <= cuenta[0]
-    total = cuenta[0] + cuenta[1]
-    if total == 0:
-        total = 1
-    document[img_correctas].setAttribute("width", max(anchoContador * cuenta[1] / total, 1))
-    document[img_incorrectas].setAttribute("width", max(anchoContador * cuenta[0] / total, 1))
+function convierte(x, minimo, maximo, e) {
+  return e.margenDibujo + Math.floor(e.zonaDibujo * (x - minimo) / (maximo - minimo));
+}
 
-def convierte(x, min, max, e):
-    tmp = e["margenDibujo"] + (e["zonaDibujo"] * (x - min)) // (max - min)
-    return tmp
+function reinicia(e) {
+  e.cuenta = [0, 0];
+  dibujaContador(e);
+}
 
-def reinicia(e):
-    e["cuenta"] = [0, 0]
-    dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
+function creaElementoSVG(nombre, atributos) {
+  var elemento = document.createElementNS("http://www.w3.org/2000/svg", nombre);
+  for (var atributo in atributos) {
+    elemento.setAttribute(atributo, atributos[atributo]);
+  }
+  return elemento;
+}
 
-# Funciones comunes Puntos
+function etiqueta(e, texto, x, y, ancla) {
+  var elemento = creaElementoSVG("text", {
+    x: x,
+    y: y,
+    "font-size": 15,
+    "text-anchor": ancla
+  });
+  elemento.textContent = texto;
+  document.getElementById(e.id + "_svg").appendChild(elemento);
+}
 
-def genera_punto(e):
-    puntosX = (e["maxX"] - e["minX"]) // e["saltoX"]
-    puntosY = (e["maxY"] - e["minY"]) // e["saltoY"]
-    x1 = randrange(0, puntosX + 1)
-    x1b = x1 * e["saltoX"] + e["minX"]
-    x1c = convierte(x1b, e["minX"], e["maxX"], e)
-    y1 = randrange(0, puntosY + 1)
-    y1b = y1 * e["saltoY"] + e["minY"]
-    y1c = convierte(y1b, e["minY"], e["maxY"], e)
-    return [x1b, y1b], [x1c, y1c]
+function dibujaMarco(e) {
+  var svg = document.getElementById(e.id + "_svg");
+  svg.appendChild(creaElementoSVG("rect", {
+    x: e.margenDibujo,
+    y: e.margenDibujo,
+    width: e.zonaDibujo,
+    height: e.zonaDibujo,
+    stroke: "black",
+    "stroke-width": 1,
+    fill: e.tipo == "circulo" ? "none" : "lightgray"
+  }));
+  etiqueta(e, e.minX, e.margenDibujo, e.margenDibujo - 10, "middle");
+  etiqueta(e, e.maxX, e.margenDibujo + e.zonaDibujo, e.margenDibujo - 10, "middle");
+  etiqueta(e, e.minY, e.margenDibujo - 5, e.margenDibujo + 7, "end");
+  etiqueta(e, e.maxY, e.margenDibujo - 5, e.margenDibujo + e.zonaDibujo + 7, "end");
+}
 
-def nuevo_punto(e):
-    global document
-    document[e["svg"]].clear()
-    document[e["result"]].clear()
-    e["XY"], e["XYDibujo"] = genera_punto(e)
-    document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
-    document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["maxX"]), x=e["margenDibujo"]+e["zonaDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["minY"]), x=1, y=e["margenDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.text(str(e["maxY"]), x=1, y=e["margenDibujo"]+e["zonaDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.circle(cx=e["XYDibujo"][0], cy=e["XYDibujo"][1], r=e["grosorPunto"], stroke="red", stroke_width=1, fill="red")
-    document[e["x1"]].value = document[e["y1"]].value = ""
-    if not e["respondido"]:
-        e["cuenta"][0] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-    e["respondido"] = False
-    if e["saltoX"] == e["saltoY"]:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en ambos ejes"
-    else:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en el eje X y múltiplos de " + str(e["saltoY"]) + " en el eje Y"
+function generaPunto(e) {
+  var puntosX = (e.maxX - e.minX) / e.saltoX;
+  var puntosY = (e.maxY - e.minY) / e.saltoY;
+  var x = randrange(puntosX + 1) * e.saltoX + e.minX;
+  var y = randrange(puntosY + 1) * e.saltoY + e.minY;
+  return [[x, y], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e)]];
+}
 
-    #document[e["tmp"]] <= str(e["XY"][0]) + " " + str(e["XY"][1]) + " " + str(e["XYDibujo"][0]) + " " + str(e["XYDibujo"][1]) + " "
+function generaRectangulo(e) {
+  var puntosX = (e.maxX - e.minX) / e.saltoX;
+  var puntosY = (e.maxY - e.minY) / e.saltoY;
+  var x1 = randrange(puntosX) * e.saltoX + e.minX;
+  var y1 = randrange(puntosY) * e.saltoY + e.minY;
+  var x2 = (Math.floor((x1 - e.minX) / e.saltoX) + 1 + randrange(puntosX - (x1 - e.minX) / e.saltoX)) * e.saltoX + e.minX;
+  var y2 = (Math.floor((y1 - e.minY) / e.saltoY) + 1 + randrange(puntosY - (y1 - e.minY) / e.saltoY)) * e.saltoY + e.minY;
+  return [
+    [x1, y1, x2 - x1, y2 - y1],
+    [
+      convierte(x1, e.minX, e.maxX, e),
+      convierte(y1, e.minY, e.maxY, e),
+      convierte(x2, e.minX, e.maxX, e) - convierte(x1, e.minX, e.maxX, e),
+      convierte(y2, e.minY, e.maxY, e) - convierte(y1, e.minY, e.maxY, e)
+    ]
+  ];
+}
 
-def evalua_punto(e):
-    global document, respuesta
-    try:
-        respuestaX1 = int(document[e["x1"]].value)
-        respuestaY1 = int(document[e["y1"]].value)
-    except:
-        document[e["result"]].clear()
-        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
-    else:
-        correcto = respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1]
-        document[e["result"]].clear()
-        document[e["result"]] <= respuesta[correcto]
-        if not e["respondido"]:
-            e["cuenta"][int(correcto)] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-        if correcto:
-            e["respondido"] = True
+function generaLinea(e) {
+  var puntosX = (e.maxX - e.minX) / e.saltoX;
+  var puntosY = (e.maxY - e.minY) / e.saltoY;
+  var x1 = randrange(puntosX + 1) * e.saltoX + e.minX;
+  var y1 = randrange(puntosY + 1) * e.saltoY + e.minY;
+  var x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
+  var y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
+  while (x1 == x2 && y1 == y2) {
+    x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
+    y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
+  }
+  return [
+    [x1, y1, x2, y2],
+    [
+      convierte(x1, e.minX, e.maxX, e),
+      convierte(y1, e.minY, e.maxY, e),
+      convierte(x2, e.minX, e.maxX, e),
+      convierte(y2, e.minY, e.maxY, e)
+    ]
+  ];
+}
 
-# Ejercicio 1 - Punto 1
+function generaCirculo(e) {
+  var puntosX = (e.maxX - e.minX) / e.saltoX;
+  var puntosY = (e.maxY - e.minY) / e.saltoY;
+  var x = randrange(puntosX + 1) * e.saltoX + e.minX;
+  var y = randrange(puntosY + 1) * e.saltoY + e.minY;
+  var puntoX = (x - e.minX) / e.saltoX;
+  var puntoY = (y - e.minY) / e.saltoY;
+  var radioMaximo = Math.max(puntoX, puntosX - puntoX, puntoY, puntosY - puntoY);
+  var radio = (1 + randrange(radioMaximo)) * e.saltoY;
+  var radioDibujo = convierte(x + radio, e.minX, e.maxX, e) - convierte(x, e.minX, e.maxX, e);
+  return [[x, y, radio], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e), radioDibujo]];
+}
 
-def e11_nuevo(ev):
-    global e11
-    nuevo_punto(e11)
-
-def e11_evalua(ev):
-    global e11
-    evalua_punto(e11)
-
-def e11_reinicia(ev):
-    global e11
-    reinicia(e11)
-
-e11 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e11_svg", "result": "e11_resultado", "x1": "e11_x1", "y1": "e11_y1", "tmp":  "e11_tmp", "salto" : "e11_salto",
-    "numCorrectas": "e11_num_correctas", "numIncorrectas" : "e11_num_incorrectas", "imgCorrectas": "e11_img_correctas", "imgIncorrectas": "e11_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+function generaPoligono(e) {
+  var puntosX = (e.maxX - e.minX) / e.saltoX;
+  var puntosY = (e.maxY - e.minY) / e.saltoY;
+  var x = [];
+  var y = [];
+  do {
+    for (var i = 0; i < 3; i++) {
+      x[i] = randrange(puntosX + 1) * e.saltoX + e.minX;
+      y[i] = randrange(puntosY + 1) * e.saltoY + e.minY;
     }
+  } while ((x[1] - x[0]) * (y[2] - y[0]) - (x[2] - x[0]) * (y[1] - y[0]) == 0);
+  var XY = [];
+  var XYDibujo = [];
+  for (var i = 0; i < 3; i++) {
+    XY.push([x[i], y[i]]);
+    XYDibujo.push([convierte(x[i], e.minX, e.maxX, e), convierte(y[i], e.minY, e.maxY, e)]);
+  }
+  return [XY, XYDibujo];
+}
 
-e11_nuevo(None)
-
-document["e11_boton"].bind("click", e11_evalua)
-document["e11_nuevo"].bind("click", e11_nuevo)
-document["e11_reinicia"].bind("click", e11_reinicia)
-
-# Ejercicio 2 - Punto 2
-
-def e12_nuevo(ev):
-    global e12
-    nuevo_punto(e12)
-
-def e12_evalua(ev):
-    global e12
-    evalua_punto(e12)
-
-def e12_reinicia(ev):
-    global e12
-    reinicia(e12)
-
-e12 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10,  "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e12_svg", "result": "e12_resultado", "x1": "e12_x1", "y1": "e12_y1", "tmp":  "e12_tmp","salto" : "e12_salto",
-    "numCorrectas": "e12_num_correctas", "numIncorrectas" : "e12_num_incorrectas", "imgCorrectas": "e12_img_correctas", "imgIncorrectas": "e12_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+function ajustaRangos(e) {
+  var saltos = [4, 5, 6, 8, 10];
+  if (e.dinamico == "circulo") {
+    if (randrange(2)) {
+      e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+      while (e.saltoX == 0) {
+        e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+      }
+    } else {
+      e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+      while (e.saltoX == 0) {
+        e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+      }
     }
-
-e12_nuevo(None)
-
-document["e12_boton"].bind("click", e12_evalua)
-document["e12_nuevo"].bind("click", e12_nuevo)
-document["e12_reinicia"].bind("click", e12_reinicia)
-
-# Ejercicio 3 - Punto 3
-
-def e13_nuevo(ev):
-    global e13
-    nuevo_punto(e13)
-
-def e13_evalua(ev):
-    global e13
-    evalua_punto(e13)
-
-def e13_reinicia(ev):
-    global e13
-    reinicia(e13)
-
-e13 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25,  "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e13_svg", "result": "e13_resultado", "x1": "e13_x1", "y1": "e13_y1", "tmp":  "e13_tmp", "salto" : "e13_salto",
-    "numCorrectas": "e13_num_correctas", "numIncorrectas" : "e13_num_incorrectas", "imgCorrectas": "e13_img_correctas", "imgIncorrectas": "e13_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+    e.minX = e.saltoX * randrange(6);
+    var nSaltos = saltos[randrange(saltos.length)];
+    e.maxX = e.minX + e.saltoX * nSaltos;
+    e.saltoY = e.saltoX;
+    e.minY = e.saltoY * randrange(6);
+    e.maxY = e.minY + e.saltoY * nSaltos;
+  } else {
+    if (randrange(2)) {
+      e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+      while (e.saltoX == 0) {
+        e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+      }
+    } else {
+      e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+      while (e.saltoX == 0) {
+        e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+      }
     }
-
-e13_nuevo(None)
-
-document["e13_boton"].bind("click", e13_evalua)
-document["e13_nuevo"].bind("click", e13_nuevo)
-document["e13_reinicia"].bind("click", e13_reinicia)
-
-# Ejercicio 4 - Punto 4
-
-def e14_nuevo(ev):
-    global e14
-    if randrange(2):
-        e14["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-        while e14["saltoX"] == 0:
-            e14["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e14["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-        while e14["saltoX"] == 0:
-            e14["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-    e14["minX"] = e14["saltoX"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e14["maxX"] = e14["minX"] + e14["saltoX"] * saltos[randrange(len(saltos))]
-    if randrange(2):
-        e14["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-        while e14["saltoY"] == 0:
-            e14["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e14["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-        while e14["saltoY"] == 0:
-            e14["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-    e14["minY"] = e14["saltoY"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e14["maxY"] = e14["minY"] + e14["saltoY"] * saltos[randrange(len(saltos))]
-    #document[e14["tmp"]].clear()
-    #document[e14["tmp"]] <= "val " + str(e14["minX"]) + " " + str(e14["maxX"]) + " " + str(e14["saltoX"]) + str(e14["minY"]) + " " + str(e14["maxY"]) + " " + str(e14["saltoY"]) + " finval "
-    nuevo_punto(e14)
-
-def e14_evalua(ev):
-    global e14
-    evalua_punto(e14)
-
-def e14_reinicia(ev):
-    global e14
-    reinicia(e14)
-
-e14 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1,  "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e14_svg", "result": "e14_resultado", "x1": "e14_x1", "y1": "e14_y1", "tmp":  "e14_tmp", "salto" : "e14_salto",
-    "numCorrectas": "e14_num_correctas", "numIncorrectas" : "e14_num_incorrectas", "imgCorrectas": "e14_img_correctas", "imgIncorrectas": "e14_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+    e.minX = e.saltoX * randrange(6);
+    e.maxX = e.minX + e.saltoX * saltos[randrange(saltos.length)];
+    if (randrange(2)) {
+      e.saltoY = randrange(2) * 200 + randrange(3) * 100;
+      while (e.saltoY == 0) {
+        e.saltoY = randrange(2) * 200 + randrange(3) * 100;
+      }
+    } else {
+      e.saltoY = randrange(2) * 20 + randrange(3) * 10;
+      while (e.saltoY == 0) {
+        e.saltoY = randrange(2) * 20 + randrange(3) * 10;
+      }
     }
+    e.minY = e.saltoY * randrange(6);
+    e.maxY = e.minY + e.saltoY * saltos[randrange(saltos.length)];
+  }
+}
 
-e14_nuevo(None)
+function nuevo(e) {
+  var svg = document.getElementById(e.id + "_svg");
+  var resultado = document.getElementById(e.id + "_resultado");
+  if (!e.respondido) {
+    e.cuenta[0] += 1;
+    dibujaContador(e);
+  }
+  e.respondido = false;
+  svg.replaceChildren();
+  resultado.textContent = "";
+  if (e.dinamico) {
+    ajustaRangos(e);
+  }
 
-document["e14_boton"].bind("click", e14_evalua)
-document["e14_nuevo"].bind("click", e14_nuevo)
-document["e14_reinicia"].bind("click", e14_reinicia)
+  if (e.tipo == "punto") {
+    var valores = generaPunto(e);
+  } else if (e.tipo == "rectangulo") {
+    var valores = generaRectangulo(e);
+  } else if (e.tipo == "linea") {
+    var valores = generaLinea(e);
+  } else if (e.tipo == "poligono") {
+    var valores = generaPoligono(e);
+  } else {
+    var valores = generaCirculo(e);
+  }
+  e.XY = valores[0];
+  e.XYDibujo = valores[1];
 
-# Funciones comunes Rectángulo
-
-def genera_rectangulo(e):
-    puntosX = (e["maxX"] - e["minX"]) // e["saltoX"]
-    puntosY = (e["maxY"] - e["minY"]) // e["saltoY"]
-    x1 = randrange(0, puntosX)
-    x1b = x1 * e["saltoX"] + e["minX"]
-    x1c = convierte(x1b, e["minX"], e["maxX"], e)
-    y1 = randrange(0, puntosY)
-    y1b = y1 * e["saltoY"] + e["minY"]
-    y1c = convierte(y1b, e["minY"], e["maxY"], e)
-    x2 = randrange(x1 + 1, puntosX + 1)
-    x2b = x2 * e["saltoX"] + e["minX"]
-    x2c = convierte(x2b, e["minX"], e["maxX"], e)
-    y2 = randrange(y1 + 1, puntosY + 1)
-    y2b = y2 * e["saltoY"] + e["minY"]
-    y2c = convierte(y2b, e["minY"], e["maxY"], e)
-    return [x1b, y1b, x2b - x1b, y2b - y1b], [x1c, y1c, x2c - x1c, y2c - y1c]
-
-def nuevo_rectangulo(e):
-    global document
-    document[e["svg"]].clear()
-    document[e["result"]].clear()
-    e["XY"], e["XYDibujo"] = genera_rectangulo(e)
-    document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
-    document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["maxX"]), x=e["margenDibujo"]+e["zonaDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["minY"]), x=1, y=e["margenDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.text(str(e["maxY"]), x=1, y=e["margenDibujo"]+e["zonaDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.rect(x=e["XYDibujo"][0], y=e["XYDibujo"][1], width=e["XYDibujo"][2], height=e["XYDibujo"][3], stroke="red", stroke_width=1, fill="red")
-    document[e["x1"]].value = document[e["y1"]].value = document[e["width"]].value = document[e["height"]].value = ""
-    if not e["respondido"]:
-        e["cuenta"][0] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-    e["respondido"] = False
-    if e["saltoX"] == e["saltoY"]:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en ambos ejes"
-    else:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en el eje X y múltiplos de " + str(e["saltoY"]) + " en el eje Y"
-
-    #document[e["tmp"]] <= str(e["XY"][0]) + " " + str(e["XY"][1]) + " " + str(e["XYDibujo"][0]) + " " + str(e["XYDibujo"][1]) + " "
-
-def evalua_rectangulo(e):
-    global document, respuesta
-    try:
-        respuestaX1 = int(document[e["x1"]].value)
-        respuestaY1 = int(document[e["y1"]].value)
-        respuestaWidth = int(document[e["width"]].value)
-        respuestaHeight = int(document[e["height"]].value)
-    except:
-        document[e["result"]].clear()
-        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
-    else:
-        correcto = respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1] and respuestaWidth == e["XY"][2] and respuestaHeight == e["XY"][3]
-        document[e["result"]].clear()
-        document[e["result"]] <= respuesta[correcto]
-        if not e["respondido"]:
-            e["cuenta"][int(correcto)] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-        if correcto:
-            e["respondido"] = True
-
-# Ejercicio 5 - Rectángulo 1
-
-def e21_nuevo(ev):
-    global e21
-    nuevo_rectangulo(e21)
-
-def e21_evalua(ev):
-    global e21
-    evalua_rectangulo(e21)
-
-def e21_reinicia(ev):
-    global e21
-    reinicia(e21)
-
-e21 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e21_svg", "result": "e21_resultado", "x1": "e21_x1", "y1": "e21_y1", "width": "e21_width", "height": "e21_height", "tmp": "e21_tmp", "salto" : "e21_salto",
-    "numCorrectas": "e21_num_correctas", "numIncorrectas" : "e21_num_incorrectas", "imgCorrectas": "e21_img_correctas", "imgIncorrectas": "e21_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+  if (e.tipo == "circulo") {
+    svg.appendChild(creaElementoSVG("circle", {
+      cx: e.XYDibujo[0],
+      cy: e.XYDibujo[1],
+      r: e.XYDibujo[2],
+      stroke: "red",
+      "stroke-width": 1,
+      fill: "lightgray"
+    }));
+    svg.appendChild(creaElementoSVG("circle", {
+      cx: e.XYDibujo[0],
+      cy: e.XYDibujo[1],
+      r: e.grosorPunto,
+      stroke: "red",
+      "stroke-width": 1,
+      fill: "red"
+    }));
+    dibujaMarco(e);
+  } else {
+    dibujaMarco(e);
+    if (e.tipo == "punto") {
+      svg.appendChild(creaElementoSVG("circle", {
+        cx: e.XYDibujo[0],
+        cy: e.XYDibujo[1],
+        r: e.grosorPunto,
+        stroke: "red",
+        "stroke-width": 1,
+        fill: "red"
+      }));
+    } else if (e.tipo == "rectangulo") {
+      svg.appendChild(creaElementoSVG("rect", {
+        x: e.XYDibujo[0],
+        y: e.XYDibujo[1],
+        width: e.XYDibujo[2],
+        height: e.XYDibujo[3],
+        stroke: "red",
+        "stroke-width": 1,
+        fill: "red"
+      }));
+    } else if (e.tipo == "linea") {
+      svg.appendChild(creaElementoSVG("line", {
+        x1: e.XYDibujo[0],
+        y1: e.XYDibujo[1],
+        x2: e.XYDibujo[2],
+        y2: e.XYDibujo[3],
+        stroke: "red",
+        "stroke-width": 2
+      }));
+    } else {
+      svg.appendChild(creaElementoSVG("polygon", {
+        points: e.XYDibujo.map(function(punto) {
+          return punto.join(",");
+        }).join(" "),
+        stroke: "red",
+        "stroke-width": 1,
+        fill: "red"
+      }));
+      for (var i = 0; i < e.XYDibujo.length; i++) {
+        svg.appendChild(creaElementoSVG("circle", {
+          cx: e.XYDibujo[i][0],
+          cy: e.XYDibujo[i][1],
+          r: e.grosorPunto,
+          stroke: "red",
+          "stroke-width": 1,
+          fill: "red"
+        }));
+      }
     }
+  }
 
-e21_nuevo(None)
+  for (var i = 0; i < e.campos.length; i++) {
+    document.getElementById(e.id + "_" + e.campos[i]).value = "";
+  }
+  document.getElementById(e.id + "_salto").textContent = e.saltoX == e.saltoY
+    ? "múltiplos de " + e.saltoX + " en ambos ejes"
+    : "múltiplos de " + e.saltoX + " en el eje X y múltiplos de " + e.saltoY + " en el eje Y";
+}
 
-document["e21_boton"].bind("click", e21_evalua)
-document["e21_nuevo"].bind("click", e21_nuevo)
-document["e21_reinicia"].bind("click", e21_reinicia)
-
-# Ejercicio 6 - Rectángulo 2
-
-def e22_nuevo(ev):
-    global e22
-    nuevo_rectangulo(e22)
-
-def e22_evalua(ev):
-    global e22
-    evalua_rectangulo(e22)
-
-def e22_reinicia(ev):
-    global e22
-    reinicia(e22)
-
-e22 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e22_svg", "result": "e22_resultado", "x1": "e22_x1", "y1": "e22_y1", "width": "e22_width", "height": "e22_height", "tmp": "e22_tmp", "salto" : "e22_salto",
-    "numCorrectas": "e22_num_correctas", "numIncorrectas" : "e22_num_incorrectas", "imgCorrectas": "e22_img_correctas", "imgIncorrectas": "e22_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+function evalua(e) {
+  var valores = [];
+  if (e.tipo == "poligono") {
+    valores = document.getElementById(e.id + "_" + e.campos[0]).value.split(/[\s,]+/).filter(function(valor) {
+      return valor != "";
+    });
+  } else {
+    for (var i = 0; i < e.campos.length; i++) {
+      valores.push(document.getElementById(e.id + "_" + e.campos[i]).value.trim());
     }
-
-e22_nuevo(None)
-
-document["e22_boton"].bind("click", e22_evalua)
-document["e22_nuevo"].bind("click", e22_nuevo)
-document["e22_reinicia"].bind("click", e22_reinicia)
-
-# Ejercicio 7 - Rectángulo 3
-
-def e23_nuevo(ev):
-    global e23
-    nuevo_rectangulo(e23)
-
-def e23_evalua(ev):
-    global e23
-    evalua_rectangulo(e23)
-
-def e23_reinicia(ev):
-    global e23
-    reinicia(e23)
-
-e23 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e23_svg", "result": "e23_resultado", "x1": "e23_x1", "y1": "e23_y1", "width": "e23_width", "height": "e23_height", "tmp": "e23_tmp", "salto" : "e23_salto",
-    "numCorrectas": "e23_num_correctas", "numIncorrectas" : "e23_num_incorrectas", "imgCorrectas": "e23_img_correctas", "imgIncorrectas": "e23_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+  }
+  var respuestaUsuario = [];
+  for (var i = 0; i < valores.length; i++) {
+    if (!/^[+-]?\d+$/.test(valores[i]) || !Number.isSafeInteger(Number(valores[i]))) {
+      document.getElementById(e.id + "_resultado").textContent = "Revise su respuesta. Debe escribir números enteros.";
+      return;
     }
+    respuestaUsuario.push(Number(valores[i]));
+  }
 
-e23_nuevo(None)
-
-document["e23_boton"].bind("click", e23_evalua)
-document["e23_nuevo"].bind("click", e23_nuevo)
-document["e23_reinicia"].bind("click", e23_reinicia)
-
-# Ejercicio 8 - Rectángulo 4
-
-def e24_nuevo(ev):
-    global e24
-    if randrange(2):
-        e24["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-        while e24["saltoX"] == 0:
-            e24["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e24["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-        while e24["saltoX"] == 0:
-            e24["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-    e24["minX"] = e24["saltoX"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e24["maxX"] = e24["minX"] + e24["saltoX"] * saltos[randrange(len(saltos))]
-    if randrange(2):
-        e24["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-        while e24["saltoY"] == 0:
-            e24["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e24["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-        while e24["saltoY"] == 0:
-            e24["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-    e24["minY"] = e24["saltoY"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e24["maxY"] = e24["minY"] + e24["saltoY"] * saltos[randrange(len(saltos))]
-    nuevo_rectangulo(e24)
-
-def e24_evalua(ev):
-    global e24
-    evalua_rectangulo(e24)
-
-def e24_reinicia(ev):
-    global e24
-    reinicia(e24)
-
-e24 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e24_svg", "result": "e24_resultado", "x1": "e24_x1", "y1": "e24_y1", "width": "e24_width", "height": "e24_height", "tmp": "e24_tmp", "salto" : "e24_salto",
-    "numCorrectas": "e24_num_correctas", "numIncorrectas" : "e24_num_incorrectas", "imgCorrectas": "e24_img_correctas", "imgIncorrectas": "e24_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+  var correcto;
+  if (e.tipo == "poligono") {
+    if (respuestaUsuario.length != 2 * e.XY.length) {
+      document.getElementById(e.id + "_resultado").textContent = "Revise su respuesta. Debe escribir las coordenadas de " + e.XY.length + " puntos.";
+      return;
     }
-
-e24_nuevo(None)
-
-document["e24_boton"].bind("click", e24_evalua)
-document["e24_nuevo"].bind("click", e24_nuevo)
-document["e24_reinicia"].bind("click", e24_reinicia)
-
-# Funciones comunes Línea
-
-def genera_linea(e):
-    puntosX = (e["maxX"] - e["minX"]) // e["saltoX"]
-    puntosY = (e["maxY"] - e["minY"]) // e["saltoY"]
-    x1 = randrange(0, puntosX + 1)
-    x1b = x1 * e["saltoX"] + e["minX"]
-    x1c = convierte(x1b, e["minX"], e["maxX"], e)
-    y1 = randrange(0, puntosY + 1)
-    y1b = y1 * e["saltoY"] + e["minY"]
-    y1c = convierte(y1b, e["minY"], e["maxY"], e)
-    x2 =  randrange(0, puntosX + 1)
-    y2 = randrange(0, puntosY + 1)
-    while x1 == x2 and y1 == y2:
-        x2 = randrange(0, puntosX + 1)
-        y2 = randrange(0, puntosY + 1)
-    x2b = x2 * e["saltoX"] + e["minX"]
-    x2c = convierte(x2b, e["minX"], e["maxX"], e)
-    y2b = y2 * e["saltoY"] + e["minY"]
-    y2c = convierte(y2b, e["minY"], e["maxY"], e)
-    #document["e31_tmp"] <= "i: " + str(x1b) + ", " + str(y1b) + ", " + str(x2b) + ", " + str(y2b) + " f: " + str(x1c) + ", " + str(y1c) + ", " + str(x2c) + ", " + str(y2c) + " ** "
-    return [x1b, y1b, x2b, y2b], [x1c, y1c, x2c, y2c]
-
-def nuevo_linea(e):
-    global document
-    document[e["svg"]].clear()
-    document[e["result"]].clear()
-    e["XY"], e["XYDibujo"] = genera_linea(e)
-    document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="lightgray")
-    document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["maxX"]), x=e["margenDibujo"]+e["zonaDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["minY"]), x=1, y=e["margenDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.text(str(e["maxY"]), x=1, y=e["margenDibujo"]+e["zonaDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.line(x1=e["XYDibujo"][0], y1=e["XYDibujo"][1], x2=e["XYDibujo"][2], y2=e["XYDibujo"][3], stroke="red", stroke_width=2)
-    document[e["x1"]].value = document[e["y1"]].value = document[e["x2"]].value = document[e["y2"]].value = ""
-    if not e["respondido"]:
-        e["cuenta"][0] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-    e["respondido"] = False
-    if e["saltoX"] == e["saltoY"]:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en ambos ejes"
-    else:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en el eje X y múltiplos de " + str(e["saltoY"]) + " en el eje Y"
-
-    #document[e["tmp"]] <= str(e["XY"][0]) + " " + str(e["XY"][1]) + " " + str(e["XYDibujo"][0]) + " " + str(e["XYDibujo"][1]) + " "
-
-def evalua_linea(e):
-    global document, respuesta
-    try:
-        respuestaX1 = int(document[e["x1"]].value)
-        respuestaY1 = int(document[e["y1"]].value)
-        respuestaX2 = int(document[e["x2"]].value)
-        respuestaY2 = int(document[e["y2"]].value)
-    except:
-        document[e["result"]].clear()
-        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
-    else:
-        correcto = (respuestaX1 == e["XY"][0] and respuestaY1 == e["XY"][1] and respuestaX2 == e["XY"][2] and respuestaY2 == e["XY"][3]) or (respuestaX1 == e["XY"][2] and respuestaY1 == e["XY"][3] and respuestaX2 == e["XY"][0] and respuestaY2 == e["XY"][1])
-        document[e["result"]].clear()
-        document[e["result"]] <= respuesta[correcto]
-        if not e["respondido"]:
-            e["cuenta"][int(correcto)] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-        if correcto:
-            e["respondido"] = True
-
-# Ejercicio 9 - Línea 1
-
-def e31_nuevo(ev):
-    global e31
-    nuevo_linea(e31)
-
-def e31_evalua(ev):
-    global e31
-    evalua_linea(e31)
-
-def e31_reinicia(ev):
-    global e31
-    reinicia(e31)
-
-e31 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e31_svg", "result": "e31_resultado", "x1": "e31_x1", "y1": "e31_y1", "x2": "e31_x2", "y2": "e31_y2", "tmp":  "e31_tmp", "salto" : "e31_salto",
-    "numCorrectas": "e31_num_correctas", "numIncorrectas" : "e31_num_incorrectas", "imgCorrectas": "e31_img_correctas", "imgIncorrectas": "e31_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
+    var puntosUsuario = [];
+    for (var i = 0; i < respuestaUsuario.length; i += 2) {
+      puntosUsuario.push(respuestaUsuario[i] + "," + respuestaUsuario[i + 1]);
     }
+    var puntosCorrectos = e.XY.map(function(punto) {
+      return punto.join(",");
+    });
+    correcto = puntosUsuario.sort().join(" ") == puntosCorrectos.sort().join(" ");
+  } else if (e.tipo == "linea") {
+    correcto = respuestaUsuario[0] == e.XY[0] && respuestaUsuario[1] == e.XY[1] && respuestaUsuario[2] == e.XY[2] && respuestaUsuario[3] == e.XY[3]
+      || respuestaUsuario[0] == e.XY[2] && respuestaUsuario[1] == e.XY[3] && respuestaUsuario[2] == e.XY[0] && respuestaUsuario[3] == e.XY[1];
+  } else {
+    correcto = respuestaUsuario.every(function(valor, indice) {
+      return valor == e.XY[indice];
+    });
+  }
+  document.getElementById(e.id + "_resultado").textContent = respuesta[correcto ? 1 : 0];
+  if (!e.respondido) {
+    e.cuenta[correcto ? 1 : 0] += 1;
+  }
+  dibujaContador(e);
+  if (correcto) {
+    e.respondido = true;
+  }
+}
 
-e31_nuevo(None)
+function inicializaEjercicios() {
+  var configuracion = [
+    ["e11", "punto", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1"]],
+    ["e12", "punto", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1"]],
+    ["e13", "punto", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1"]],
+    ["e14", "punto", 0, 5, 0, 5, 1, 1, 40, ["x1", "y1"], "punto"],
+    ["e21", "rectangulo", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1", "width", "height"]],
+    ["e22", "rectangulo", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1", "width", "height"]],
+    ["e23", "rectangulo", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1", "width", "height"]],
+    ["e24", "rectangulo", -100, 100, -100, 100, 10, 10, 40, ["x1", "y1", "width", "height"], "rectangulo"],
+    ["e31", "linea", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1", "x2", "y2"]],
+    ["e32", "linea", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1", "x2", "y2"]],
+    ["e33", "linea", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1", "x2", "y2"]],
+    ["e34", "linea", 0, 5, 0, 5, 1, 1, 40, ["x1", "y1", "x2", "y2"], "linea"],
+    ["e41", "circulo", 0, 5, 0, 5, 1, 1, 30, ["cx", "cy", "r"]],
+    ["e42", "circulo", 0, 100, 0, 100, 10, 10, 30, ["cx", "cy", "r"]],
+    ["e43", "circulo", -100, 100, -100, 100, 25, 25, 40, ["cx", "cy", "r"]],
+    ["e44", "circulo", 0, 5, 0, 5, 1, 1, 40, ["cx", "cy", "r"], "circulo"],
+    ["e51", "poligono", 0, 5, 0, 5, 1, 1, 30, ["points"]],
+    ["e52", "poligono", 0, 100, 0, 100, 10, 10, 30, ["points"]],
+    ["e53", "poligono", -100, 100, -100, 100, 25, 25, 40, ["points"]],
+    ["e54", "poligono", 0, 5, 0, 5, 1, 1, 40, ["points"], "poligono"]
+  ];
 
-document["e31_boton"].bind("click", e31_evalua)
-document["e31_nuevo"].bind("click", e31_nuevo)
-document["e31_reinicia"].bind("click", e31_reinicia)
+  for (var i = 0; i < configuracion.length; i++) {
+    var datos = configuracion[i];
+    var e = {
+      id: datos[0],
+      tipo: datos[1],
+      minX: datos[2],
+      maxX: datos[3],
+      minY: datos[4],
+      maxY: datos[5],
+      saltoX: datos[6],
+      saltoY: datos[7],
+      zonaDibujo: 200,
+      margenDibujo: datos[8],
+      campos: datos[9],
+      dinamico: datos[10],
+      grosorPunto: 2,
+      XY: [],
+      XYDibujo: [],
+      cuenta: [0, 0],
+      respondido: true
+    };
+    ejercicios[e.id] = e;
+    document.getElementById(e.id + "_boton").addEventListener("click", evalua.bind(null, e));
+    document.getElementById(e.id + "_nuevo").addEventListener("click", nuevo.bind(null, e));
+    document.getElementById(e.id + "_reinicia").addEventListener("click", reinicia.bind(null, e));
+    nuevo(e);
+  }
+}
 
-# Ejercicio 10 - Línea 2
+document.addEventListener("DOMContentLoaded", inicializaEjercicios);
 
-def e32_nuevo(ev):
-    global e32
-    nuevo_linea(e32)
-
-def e32_evalua(ev):
-    global e32
-    evalua_linea(e32)
-
-def e32_reinicia(ev):
-    global e32
-    reinicia(e32)
-
-e32 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e32_svg", "result": "e32_resultado", "x1": "e32_x1", "y1": "e32_y1", "x2": "e32_x2", "y2": "e32_y2", "tmp":  "e32_tmp", "salto" : "e32_salto",
-    "numCorrectas": "e32_num_correctas", "numIncorrectas" : "e32_num_incorrectas", "imgCorrectas": "e32_img_correctas", "imgIncorrectas": "e32_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e32_nuevo(None)
-
-document["e32_boton"].bind("click", e32_evalua)
-document["e32_nuevo"].bind("click", e32_nuevo)
-document["e32_reinicia"].bind("click", e32_reinicia)
-
-# Ejercicio 11 - Línea 3
-
-def e33_nuevo(ev):
-    global e33
-    nuevo_linea(e33)
-
-def e33_evalua(ev):
-    global e33
-    evalua_linea(e33)
-
-def e33_reinicia(ev):
-    global e33
-    reinicia(e33)
-
-e33 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e33_svg", "result": "e33_resultado", "x1": "e33_x1", "y1": "e33_y1", "x2": "e33_x2", "y2": "e33_y2", "tmp":  "e33_tmp", "salto" : "e33_salto",
-    "numCorrectas": "e33_num_correctas", "numIncorrectas" : "e33_num_incorrectas", "imgCorrectas": "e33_img_correctas", "imgIncorrectas": "e33_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e33_nuevo(None)
-
-document["e33_boton"].bind("click", e33_evalua)
-document["e33_nuevo"].bind("click", e33_nuevo)
-document["e33_reinicia"].bind("click", e33_reinicia)
-
-# Ejercicio 12 - Línea 4
-
-def e34_nuevo(ev):
-    global e34
-    if randrange(2):
-        e34["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-        while e34["saltoX"] == 0:
-            e34["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e34["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-        while e34["saltoX"] == 0:
-            e34["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-    e34["minX"] = e34["saltoX"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e34["maxX"] = e34["minX"] + e34["saltoX"] * saltos[randrange(len(saltos))]
-    if randrange(2):
-        e34["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-        while e34["saltoY"] == 0:
-            e34["saltoY"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e34["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-        while e34["saltoY"] == 0:
-            e34["saltoY"] = randrange(2) * 20 + randrange(3) * 10
-    e34["minY"] = e34["saltoY"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    e34["maxY"] = e34["minY"] + e34["saltoY"] * saltos[randrange(len(saltos))]
-    nuevo_linea(e34)
-
-def e34_evalua(ev):
-    global e34
-    evalua_linea(e34)
-
-def e34_reinicia(ev):
-    global e34
-    reinicia(e34)
-
-e34 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e34_svg", "result": "e34_resultado", "x1": "e34_x1", "y1": "e34_y1", "x2": "e34_x2", "y2": "e34_y2", "tmp":  "e34_tmp", "salto" : "e34_salto",
-    "numCorrectas": "e34_num_correctas", "numIncorrectas" : "e34_num_incorrectas", "imgCorrectas": "e34_img_correctas", "imgIncorrectas": "e34_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e34_nuevo(None)
-
-document["e34_boton"].bind("click", e34_evalua)
-document["e34_nuevo"].bind("click", e34_nuevo)
-document["e34_reinicia"].bind("click", e34_reinicia)
-# Funciones comunes Círculos
-
-def genera_circulo(e):
-    puntosX = (e["maxX"] - e["minX"]) // e["saltoX"]
-    puntosY = (e["maxY"] - e["minY"]) // e["saltoY"]
-    x1 = randrange(0, puntosX + 1)
-    x1b = x1 * e["saltoX"] + e["minX"]
-    x1c = convierte(x1b, e["minX"], e["maxX"], e)
-    y1 = randrange(0, puntosY + 1)
-    y1b = y1 * e["saltoY"] + e["minY"]
-    y1c = convierte(y1b, e["minY"], e["maxY"], e)
-    rMax = max(x1, puntosX - x1, y1, puntosY - y1)
-    r = randrange(1, rMax + 1)
-    rb = r * e["saltoY"]
-    rc = convierte(x1b + rb, e["minX"], e["maxX"], e)
-    #document[e["tmp"]].clear()
-    #document[e["tmp"]] <= str(rMax) + " " + str(r) + " " + str(rb) + " "
-    return [x1b, y1b, rb], [x1c, y1c, rc - x1c]
-
-def nuevo_circulo(e):
-    global document
-    document[e["svg"]].clear()
-    document[e["result"]].clear()
-    e["XY"], e["XYDibujo"] = genera_circulo(e)
-    document[e["svg"]] <= svg.circle(cx=e["XYDibujo"][0], cy=e["XYDibujo"][1], r=e["XYDibujo"][2], stroke="red", stroke_width=1, fill="lightgray")
-    document[e["svg"]] <= svg.circle(cx=e["XYDibujo"][0], cy=e["XYDibujo"][1], r=e["grosorPunto"], stroke="red", stroke_width=1, fill="red")
-    document[e["svg"]] <= svg.rect(x=e["margenDibujo"], y=e["margenDibujo"], width=e["zonaDibujo"], height=e["zonaDibujo"], stroke="black", stroke_width=1, fill="none")
-    document[e["svg"]] <= svg.text(str(e["minX"]), x=e["margenDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["maxX"]), x=e["margenDibujo"]+e["zonaDibujo"], y=e["margenDibujo"]-10, font_size=15, text_anchor="middle")
-    document[e["svg"]] <= svg.text(str(e["minY"]), x=1, y=e["margenDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["svg"]] <= svg.text(str(e["maxY"]), x=1, y=e["margenDibujo"]+e["zonaDibujo"]+7, font_size=15, text_anchor="right")
-    document[e["cx"]].value = document[e["cy"]].value = document[e["r"]].value = ""
-    if not e["respondido"]:
-        e["cuenta"][0] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-    e["respondido"] = False
-    if e["saltoX"] == e["saltoY"]:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en ambos ejes"
-    else:
-        document[e["salto"]].clear()
-        document[e["salto"]] <= "múltiplos de " + str(e["saltoX"]) + " en el eje X y múltiplos de " + str(e["saltoY"]) + " en el eje Y"
-
-    #document[e["tmp"]] <= str(e["XY"][0]) + " " + str(e["XY"][1]) + " " + str(e["XYDibujo"][0]) + " " + str(e["XYDibujo"][1]) + " "
-
-def evalua_circulo(e):
-    global document, respuesta
-    try:
-        respuestaCx = int(document[e["cx"]].value)
-        respuestaCy = int(document[e["cy"]].value)
-        respuestaR = int(document[e["r"]].value)
-    except:
-        document[e["result"]].clear()
-        document[e["result"]] <= "Revise su respuesta. Debe escribir números enteros."
-    else:
-        correcto = respuestaCx == e["XY"][0] and respuestaCy == e["XY"][1] and respuestaR == e["XY"][2]
-        document[e["result"]].clear()
-        document[e["result"]] <= respuesta[correcto]
-        if not e["respondido"]:
-            e["cuenta"][int(correcto)] += 1
-        dibuja_contador(e["numCorrectas"], e["numIncorrectas"], e["imgCorrectas"], e["imgIncorrectas"], e["cuenta"])
-        if correcto:
-            e["respondido"] = True
-
-# Ejercicio 13 - Círculo 1
-
-def e41_nuevo(ev):
-    global e41
-    nuevo_circulo(e41)
-
-def e41_evalua(ev):
-    global e41
-    evalua_circulo(e41)
-
-def e41_reinicia(ev):
-    global e41
-    reinicia(e41)
-
-e41 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e41_svg", "result": "e41_resultado", "cx": "e41_cx", "cy": "e41_cy", "r": "e41_r", "tmp":  "e41_tmp", "salto": "e41_salto",
-    "numCorrectas": "e41_num_correctas", "numIncorrectas" : "e41_num_incorrectas", "imgCorrectas": "e41_img_correctas", "imgIncorrectas": "e41_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e41_nuevo(None)
-
-document["e41_boton"].bind("click", e41_evalua)
-document["e41_nuevo"].bind("click", e41_nuevo)
-document["e41_reinicia"].bind("click", e41_reinicia)
-
-# Ejercicio 14 - Círculo 2
-
-def e42_nuevo(ev):
-    global e42
-    nuevo_circulo(e42)
-
-def e42_evalua(ev):
-    global e42
-    evalua_circulo(e42)
-
-def e42_reinicia(ev):
-    global e42
-    reinicia(e42)
-
-e42 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": 0, "maxX": 100, "minY": 0, "maxY": 100, "saltoX": 10, "saltoY": 10, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e42_svg", "result": "e42_resultado", "cx": "e42_cx", "cy": "e42_cy", "r": "e42_r", "tmp":  "e42_tmp", "salto": "e42_salto",
-    "numCorrectas": "e42_num_correctas", "numIncorrectas" : "e42_num_incorrectas", "imgCorrectas": "e42_img_correctas", "imgIncorrectas": "e42_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e42_nuevo(None)
-
-document["e42_boton"].bind("click", e42_evalua)
-document["e42_nuevo"].bind("click", e42_nuevo)
-document["e42_reinicia"].bind("click", e42_reinicia)
-
-# Ejercicio 15 - Círculo 3
-
-def e43_nuevo(ev):
-    global e43
-    nuevo_circulo(e43)
-
-def e43_evalua(ev):
-    global e43
-    evalua_circulo(e43)
-
-def e43_reinicia(ev):
-    global e43
-    reinicia(e43)
-
-e43 = { "zonaDibujo" : 200, "margenDibujo" : 30, "minX": -100, "maxX": 100, "minY": -100, "maxY": 100, "saltoX": 25, "saltoY": 25, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e43_svg", "result": "e43_resultado", "cx": "e43_cx", "cy": "e43_cy", "r": "e43_r", "tmp":  "e43_tmp", "salto": "e43_salto",
-    "numCorrectas": "e43_num_correctas", "numIncorrectas" : "e43_num_incorrectas", "imgCorrectas": "e43_img_correctas", "imgIncorrectas": "e43_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e43_nuevo(None)
-
-document["e43_boton"].bind("click", e43_evalua)
-document["e43_nuevo"].bind("click", e43_nuevo)
-document["e43_reinicia"].bind("click", e43_reinicia)
-
-# Ejercicio 16 - Círculo 4
-
-def e44_nuevo(ev):
-    global e44
-    if randrange(2):
-        e44["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-        while e44["saltoX"] == 0:
-            e44["saltoX"] = randrange(2) * 200 + randrange(3) * 100
-    else:
-        e44["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-        while e44["saltoX"] == 0:
-            e44["saltoX"] = randrange(2) * 20 + randrange(3) * 10
-    e44["minX"] = e44["saltoX"] * randrange(6)
-    saltos = [4, 5, 6, 8, 10]
-    nSaltos = saltos[randrange(len(saltos))]
-    e44["maxX"] = e44["minX"] + e44["saltoX"] * nSaltos
-    e44["saltoY"] = e44["saltoX"]
-    e44["minY"] = e44["saltoY"] * randrange(6)
-    e44["maxY"] = e44["minY"] + e44["saltoY"] * nSaltos
-    #document[e44["tmp"]].clear()
-    #document[e44["tmp"]] <= "val " + str(e44["minX"]) + " " + str(e44["maxX"]) + " " + str(e44["saltoX"]) + str(e44["minY"]) + " " + str(e44["maxY"]) + " " + str(e44["saltoY"]) + " finval "
-    nuevo_circulo(e44)
-
-def e44_evalua(ev):
-    global e44
-    evalua_circulo(e44)
-
-def e44_reinicia(ev):
-    global e44
-    reinicia(e44)
-
-e44 = { "zonaDibujo" : 200, "margenDibujo" : 40, "minX": 0, "maxX": 5, "minY": 0, "maxY": 5, "saltoX": 1, "saltoY": 1, "XY": [], "XYDibujo": [],
-    "grosorPunto" : 2,
-    # Elementos HTML
-    "svg": "e44_svg", "result": "e44_resultado", "cx": "e44_cx", "cy": "e44_cy", "r": "e44_r", "tmp":  "e44_tmp", "salto": "e44_salto",
-    "numCorrectas": "e44_num_correctas", "numIncorrectas" : "e44_num_incorrectas", "imgCorrectas": "e44_img_correctas", "imgIncorrectas": "e44_img_incorrectas",
-    "cuenta" : [0, 0], "ultimo" : -1, "respondido": True,
-    }
-
-e44_nuevo(None)
-
-document["e44_boton"].bind("click", e44_evalua)
-document["e44_nuevo"].bind("click", e44_nuevo)
-document["e44_reinicia"].bind("click", e44_reinicia)
-
-    </script>
+  </script>
 </head>
 
-<body onload="brython(0)">
+<body>
   <h1>Gráficos SVG - Ejercicios (1) - Coordenadas</h1>
 
   <nav>
@@ -854,6 +444,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         <li><a href="#ejercicio-42">14 - Círculo 2</a></li>
         <li><a href="#ejercicio-43">15 - Círculo 3</a></li>
         <li><a href="#ejercicio-44">16 - Círculo 4</a></li>
+        <li><a href="#ejercicio-51">17 - Polígono 1</a></li>
+        <li><a href="#ejercicio-52">18 - Polígono 2</a></li>
+        <li><a href="#ejercicio-53">19 - Polígono 3</a></li>
+        <li><a href="#ejercicio-54">20 - Polígono 4</a></li>
       </ul>
     </div>
   </nav>
@@ -865,24 +459,22 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
   </ul>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Al cargar por primera vez la página, o al recargarla, los dibujos pueden tardar un poco en mostrarse. Por favor, tenga paciencia.</p>
-
   <section id="ejercicio-11">
     <h2>Gráficos SVG (1) 1 - Punto 1</h2>
 
     <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e11_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e11_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e11_svg">
       </svg>
       <p id="e11_tmp"></p>
       <p>
         x: <input type="text" id="e11_x1" size="4">
         y: <input type="text" id="e11_y1" size="4">
-        <button id="e11_boton">Corregir</button>
+        <button type="button" id="e11_boton">Corregir</button>
         <span id="e11_resultado"></span>
       </p>
-      <p><button id="e11_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e11_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -895,7 +487,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e11_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e11_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e11_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -905,16 +497,16 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e12_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e12_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e12_svg">
       </svg>
       <p id="e12_tmp"></p>
       <p>
         x: <input type="text" id="e12_x1" size="4">
         y: <input type="text" id="e12_y1" size="4">
-        <button id="e12_boton">Corregir</button>
+        <button type="button" id="e12_boton">Corregir</button>
         <span id="e12_resultado"></span>
       </p>
-      <p><button id="e12_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e12_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -927,7 +519,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e12_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e12_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e12_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -937,16 +529,16 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e13_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e13_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e13_svg">
       </svg>
       <p id="e13_tmp"></p>
       <p>
         x: <input type="text" id="e13_x1" size="4">
         y: <input type="text" id="e13_y1" size="4">
-        <button id="e13_boton">Corregir</button>
+        <button type="button" id="e13_boton">Corregir</button>
         <span id="e13_resultado"></span>
       </p>
-      <p><button id="e13_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e13_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -959,7 +551,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e13_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e13_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e13_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -969,16 +561,16 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e14_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e14_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e14_svg">
       </svg>
       <p id="e14_tmp"></p>
       <p>
         x: <input type="text" id="e14_x1" size="4">
         y: <input type="text" id="e14_y1" size="4">
-        <button id="e14_boton">Corregir</button>
+        <button type="button" id="e14_boton">Corregir</button>
         <span id="e14_resultado"></span>
       </p>
-      <p><button id="e14_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e14_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -991,7 +583,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e14_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e14_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e14_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1001,7 +593,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e21_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e21_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e21_svg">
       </svg>
       <p id="e21_tmp"></p>
       <p>
@@ -1009,10 +601,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y: <input type="text" id="e21_y1" size="4">
         width: <input type="text" id="e21_width" size="6">
         height: <input type="text" id="e21_height" size="6">
-        <button id="e21_boton">Corregir</button>
+        <button type="button" id="e21_boton">Corregir</button>
         <span id="e21_resultado"></span>
       </p>
-      <p><button id="e21_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e21_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1025,7 +617,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e21_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e21_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e21_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1035,7 +627,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e22_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e22_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e22_svg">
       </svg>
       <p id="e22_tmp"></p>
       <p>
@@ -1043,10 +635,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y: <input type="text" id="e22_y1" size="4">
         width: <input type="text" id="e22_width" size="6">
         height: <input type="text" id="e22_height" size="6">
-        <button id="e22_boton">Corregir</button>
+        <button type="button" id="e22_boton">Corregir</button>
         <span id="e22_resultado"></span>
       </p>
-      <p><button id="e22_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e22_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1059,7 +651,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e22_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e22_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e22_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1069,7 +661,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e23_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e23_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e23_svg">
       </svg>
       <p id="e23_tmp"></p>
       <p>
@@ -1077,10 +669,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y: <input type="text" id="e23_y1" size="4">
         width: <input type="text" id="e23_width" size="6">
         height: <input type="text" id="e23_height" size="6">
-        <button id="e23_boton">Corregir</button>
+        <button type="button" id="e23_boton">Corregir</button>
         <span id="e23_resultado"></span>
       </p>
-      <p><button id="e23_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e23_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1093,7 +685,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e23_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e23_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e23_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1103,7 +695,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e24_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e24_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e24_svg">
       </svg>
       <p id="e24_tmp"></p>
       <p>
@@ -1111,10 +703,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y: <input type="text" id="e24_y1" size="4">
         width: <input type="text" id="e24_width" size="6">
         height: <input type="text" id="e24_height" size="6">
-        <button id="e24_boton">Corregir</button>
+        <button type="button" id="e24_boton">Corregir</button>
         <span id="e24_resultado"></span>
       </p>
-      <p><button id="e24_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e24_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1127,7 +719,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e24_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e24_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e24_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1137,7 +729,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e31_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e31_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e31_svg">
       </svg>
       <p id="e31_tmp"></p>
       <p>
@@ -1145,10 +737,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y1: <input type="text" id="e31_y1" size="4">
         x2: <input type="text" id="e31_x2" size="4">
         y2: <input type="text" id="e31_y2" size="4">
-        <button id="e31_boton">Corregir</button>
+        <button type="button" id="e31_boton">Corregir</button>
         <span id="e31_resultado"></span>
       </p>
-      <p><button id="e31_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e31_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1161,7 +753,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e31_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e31_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e31_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1171,7 +763,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e32_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e32_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e32_svg">
       </svg>
       <p id="e32_tmp"></p>
       <p>
@@ -1179,10 +771,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y1: <input type="text" id="e32_y1" size="4">
         x2: <input type="text" id="e32_x2" size="4">
         y2: <input type="text" id="e32_y2" size="4">
-        <button id="e32_boton">Corregir</button>
+        <button type="button" id="e32_boton">Corregir</button>
         <span id="e32_resultado"></span>
       </p>
-      <p><button id="e32_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e32_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1195,7 +787,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e32_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e32_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e32_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1205,7 +797,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e33_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e33_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e33_svg">
       </svg>
       <p id="e33_tmp"></p>
       <p>
@@ -1213,10 +805,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y1: <input type="text" id="e33_y1" size="4">
         x2: <input type="text" id="e33_x2" size="4">
         y2: <input type="text" id="e33_y2" size="4">
-        <button id="e33_boton">Corregir</button>
+        <button type="button" id="e33_boton">Corregir</button>
         <span id="e33_resultado"></span>
       </p>
-      <p><button id="e33_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e33_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1229,7 +821,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e33_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e33_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e33_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1239,7 +831,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e34_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e34_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e34_svg">
       </svg>
       <p id="e34_tmp"></p>
       <p>
@@ -1247,10 +839,10 @@ document["e44_reinicia"].bind("click", e44_reinicia)
         y1: <input type="text" id="e34_y1" size="4">
         x2: <input type="text" id="e34_x2" size="4">
         y2: <input type="text" id="e34_y2" size="4">
-        <button id="e34_boton">Corregir</button>
+        <button type="button" id="e34_boton">Corregir</button>
         <span id="e34_resultado"></span>
       </p>
-      <p><button id="e34_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e34_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1263,7 +855,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e34_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e34_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e34_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1273,17 +865,17 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e41_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e41_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e41_svg">
       </svg>
       <p id="e41_tmp"></p>
       <p>
         cx: <input type="text" id="e41_cx" size="4">
         cy: <input type="text" id="e41_cy" size="4">
         r: <input type="text" id="e41_r" size="4">
-        <button id="e41_boton">Corregir</button>
+        <button type="button" id="e41_boton">Corregir</button>
         <span id="e41_resultado"></span>
       </p>
-      <p><button id="e41_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e41_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1296,7 +888,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e41_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e41_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e41_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1306,17 +898,17 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e42_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e42_svg">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e42_svg">
       </svg>
       <p id="e42_tmp"></p>
       <p>
         cx: <input type="text" id="e42_cx" size="4">
         cy: <input type="text" id="e42_cy" size="4">
         r: <input type="text" id="e42_r" size="4">
-        <button id="e42_boton">Corregir</button>
+        <button type="button" id="e42_boton">Corregir</button>
         <span id="e42_resultado"></span>
       </p>
-      <p><button id="e42_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e42_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1329,7 +921,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e42_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e42_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e42_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1339,17 +931,17 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e43_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e43_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e43_svg">
       </svg>
       <p id="e43_tmp"></p>
       <p>
         cx: <input type="text" id="e43_cx" size="4">
         cy: <input type="text" id="e43_cy" size="4">
         r: <input type="text" id="e43_r" size="4">
-        <button id="e43_boton">Corregir</button>
+        <button type="button" id="e43_boton">Corregir</button>
         <span id="e43_resultado"></span>
       </p>
-      <p><button id="e43_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e43_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1362,7 +954,7 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e43_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e43_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e43_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
@@ -1372,17 +964,17 @@ document["e44_reinicia"].bind("click", e44_reinicia)
     <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e44_salto"></strong>.</p>
 
     <div class="enunciado-test">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e44_svg">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e44_svg">
       </svg>
       <p id="e44_tmp"></p>
       <p>
         cx: <input type="text" id="e44_cx" size="4">
         cy: <input type="text" id="e44_cy" size="4">
         r: <input type="text" id="e44_r" size="4">
-        <button id="e44_boton">Corregir</button>
+        <button type="button" id="e44_boton">Corregir</button>
         <span id="e44_resultado"></span>
       </p>
-      <p><button id="e44_nuevo">Nuevo dibujo</button></p>
+      <p><button type="button" id="e44_nuevo">Nuevo dibujo</button></p>
       <table>
         <tr>
           <td>Correctas:</td>
@@ -1395,12 +987,136 @@ document["e44_reinicia"].bind("click", e44_reinicia)
           <td><img id="e44_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
         </tr>
       </table>
-      <p><button id="e44_reinicia">Reiniciar contador</button></p>
+      <p><button type="button" id="e44_reinicia">Reiniciar contador</button></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-51">
+    <h2>Gráficos SVG (1) 17 - Polígono 1</h2>
+
+    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e51_salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e51_svg">
+      </svg>
+      <p id="e51_tmp"></p>
+      <p>
+        points: <input type="text" id="e51_points" size="30">
+        <button type="button" id="e51_boton">Corregir</button>
+        <span id="e51_resultado"></span>
+      </p>
+      <p><button type="button" id="e51_nuevo">Nuevo dibujo</button></p>
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right"><span id="e51_num_correctas">0</span></td>
+          <td><img id="e51_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right"><span id="e51_num_incorrectas">0</span></td>
+          <td><img id="e51_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
+        </tr>
+      </table>
+      <p><button type="button" id="e51_reinicia">Reiniciar contador</button></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-52">
+    <h2>Gráficos SVG (1) 18 - Polígono 2</h2>
+
+    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e52_salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e52_svg">
+      </svg>
+      <p id="e52_tmp"></p>
+      <p>
+        points: <input type="text" id="e52_points" size="30">
+        <button type="button" id="e52_boton">Corregir</button>
+        <span id="e52_resultado"></span>
+      </p>
+      <p><button type="button" id="e52_nuevo">Nuevo dibujo</button></p>
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right"><span id="e52_num_correctas">0</span></td>
+          <td><img id="e52_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right"><span id="e52_num_incorrectas">0</span></td>
+          <td><img id="e52_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
+        </tr>
+      </table>
+      <p><button type="button" id="e52_reinicia">Reiniciar contador</button></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-53">
+    <h2>Gráficos SVG (1) 19 - Polígono 3</h2>
+
+    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e53_salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e53_svg">
+      </svg>
+      <p id="e53_tmp"></p>
+      <p>
+        points: <input type="text" id="e53_points" size="30">
+        <button type="button" id="e53_boton">Corregir</button>
+        <span id="e53_resultado"></span>
+      </p>
+      <p><button type="button" id="e53_nuevo">Nuevo dibujo</button></p>
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right"><span id="e53_num_correctas">0</span></td>
+          <td><img id="e53_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right"><span id="e53_num_incorrectas">0</span></td>
+          <td><img id="e53_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
+        </tr>
+      </table>
+      <p><button type="button" id="e53_reinicia">Reiniciar contador</button></p>
+    </div>
+  </section>
+
+  <section id="ejercicio-54">
+    <h2>Gráficos SVG (1) 20 - Polígono 4</h2>
+
+    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e54_salto"></strong>.</p>
+
+    <div class="enunciado-test">
+      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e54_svg">
+      </svg>
+      <p id="e54_tmp"></p>
+      <p>
+        points: <input type="text" id="e54_points" size="30">
+        <button type="button" id="e54_boton">Corregir</button>
+        <span id="e54_resultado"></span>
+      </p>
+      <p><button type="button" id="e54_nuevo">Nuevo dibujo</button></p>
+      <table>
+        <tr>
+          <td>Correctas:</td>
+          <td style="text-align: right"><span id="e54_num_correctas">0</span></td>
+          <td><img id="e54_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
+        </tr>
+        <tr>
+          <td>Incorrectas:</td>
+          <td style="text-align: right"><span id="e54_num_incorrectas">0</span></td>
+          <td><img id="e54_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
+        </tr>
+      </table>
+      <p><button type="button" id="e54_reinicia">Reiniciar contador</button></p>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de abril de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 22 de octubre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
