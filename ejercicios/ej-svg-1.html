@@ -6,257 +6,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/python.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
+  <style>
+    .ej-cuerpo { display: flex; gap: 20px; align-items: flex-start; }
+    .ej-controles { flex: none; padding-top: 10px; }
+    .ej-escala { display: flex; gap: 5px; }
+    .ej-escala input { writing-mode: vertical-lr; height: 100px; margin: 0; }
+    .ej-escala-textos { display: flex; flex-direction: column; justify-content: space-between; }
+    .ej-dibujo { width: 470px; }
+    .ej-dibujo svg { max-width: 100%; height: auto; }
+    @media (max-width: 700px) {
+      .ej-cuerpo { flex-direction: column; gap: 0; align-items: stretch; }
+      .ej-controles { padding-top: 0; }
+      .ej-escala { flex-direction: column; gap: 0; }
+      .ej-escala input { writing-mode: horizontal-tb; width: 100%; height: auto; }
+      .ej-escala-textos { flex-direction: row; }
+      .ej-dibujo { width: auto; }
+      .ej-dibujo input[type="text"] { max-width: 100%; box-sizing: border-box; }
+      #e1_poligono_points { width: 12em; }
+    }
+  </style>
   <script>
-var anchoContador = 200;
-var respuesta = ["¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!"];
-var ejercicios = {};
+    var anchoContador = 200;
+    var respuesta = ["¡Lo siento, respuesta incorrecta!", "¡Respuesta correcta!"];
+    var ejercicios = {};
 
-function randrange(limite) {
-  return Math.floor(Math.random() * limite);
-}
+    // Para añadir un tipo de ejercicio:
+    // 1. Añadir aquí una entrada con el nombre del tipo (el mismo que el atributo value del botón radio)
+    // 2. Añadir en el HTML el botón radio, el enunciado (e1_enunciado_<tipo>) y los campos (e1_campos_<tipo>)
+    // Cada tipo define:
+    //   campos: nombres de los campos de texto (id e1_<tipo>_<campo>)
+    //   marcoEncima: true si el marco se dibuja después de la figura
+    //   genera(e): devuelve [valores correctos, valores en el dibujo]
+    //   dibuja(e, svg): dibuja la figura
+    //   lee(e): (opcional) devuelve la lista de textos escritos por el usuario
+    //   valida(e, respuestaUsuario): (opcional) devuelve un mensaje de error o ""
+    //   compara(e, respuestaUsuario): devuelve true si la respuesta es correcta
+    var tipos = {
+      punto: {
+        campos: ["x1", "y1"],
+        genera: generaPunto,
+        dibuja: dibujaPunto,
+        compara: comparaLista
+      },
+      rectangulo: {
+        campos: ["x1", "y1", "width", "height"],
+        genera: generaRectangulo,
+        dibuja: dibujaRectangulo,
+        compara: comparaLista
+      },
+      linea: {
+        campos: ["x1", "y1", "x2", "y2"],
+        genera: generaLinea,
+        dibuja: dibujaLinea,
+        compara: comparaLinea
+      },
+      circulo: {
+        campos: ["cx", "cy", "r"],
+        marcoEncima: true,
+        genera: generaCirculo,
+        dibuja: dibujaCirculo,
+        compara: comparaLista
+      },
+      poligono: {
+        campos: ["points"],
+        genera: generaPoligono,
+        dibuja: dibujaPoligono,
+        lee: leePoligono,
+        valida: validaPoligono,
+        compara: comparaPoligono
+      }
+    };
 
-function dibujaContador(e) {
-  document.getElementById(e.id + "_num_correctas").textContent = e.cuenta[1];
-  document.getElementById(e.id + "_num_incorrectas").textContent = e.cuenta[0];
-  var total = Math.max(e.cuenta[0] + e.cuenta[1], 1);
-  document.getElementById(e.id + "_img_correctas").setAttribute("width", Math.max(anchoContador * e.cuenta[1] / total, 1));
-  document.getElementById(e.id + "_img_incorrectas").setAttribute("width", Math.max(anchoContador * e.cuenta[0] / total, 1));
-}
+    var escalas = [
+      { minX: 0, maxX: 5, minY: 0, maxY: 5, saltoX: 1, saltoY: 1, margenDibujo: 30 },
+      { minX: 0, maxX: 100, minY: 0, maxY: 100, saltoX: 10, saltoY: 10, margenDibujo: 30 },
+      { minX: -100, maxX: 100, minY: -100, maxY: 100, saltoX: 25, saltoY: 25, margenDibujo: 40 },
+      { margenDibujo: 40, dinamico: true }
+    ];
 
-function convierte(x, minimo, maximo, e) {
-  return e.margenDibujo + Math.floor(e.zonaDibujo * (x - minimo) / (maximo - minimo));
-}
-
-function reinicia(e) {
-  e.cuenta = [0, 0];
-  dibujaContador(e);
-}
-
-function creaElementoSVG(nombre, atributos) {
-  var elemento = document.createElementNS("http://www.w3.org/2000/svg", nombre);
-  for (var atributo in atributos) {
-    elemento.setAttribute(atributo, atributos[atributo]);
-  }
-  return elemento;
-}
-
-function etiqueta(e, texto, x, y, ancla) {
-  var elemento = creaElementoSVG("text", {
-    x: x,
-    y: y,
-    "font-size": 15,
-    "text-anchor": ancla
-  });
-  elemento.textContent = texto;
-  document.getElementById(e.id + "_svg").appendChild(elemento);
-}
-
-function dibujaMarco(e) {
-  var svg = document.getElementById(e.id + "_svg");
-  svg.appendChild(creaElementoSVG("rect", {
-    x: e.margenDibujo,
-    y: e.margenDibujo,
-    width: e.zonaDibujo,
-    height: e.zonaDibujo,
-    stroke: "black",
-    "stroke-width": 1,
-    fill: e.tipo == "circulo" ? "none" : "lightgray"
-  }));
-  etiqueta(e, e.minX, e.margenDibujo, e.margenDibujo - 10, "middle");
-  etiqueta(e, e.maxX, e.margenDibujo + e.zonaDibujo, e.margenDibujo - 10, "middle");
-  etiqueta(e, e.minY, e.margenDibujo - 5, e.margenDibujo + 7, "end");
-  etiqueta(e, e.maxY, e.margenDibujo - 5, e.margenDibujo + e.zonaDibujo + 7, "end");
-}
-
-function generaPunto(e) {
-  var puntosX = (e.maxX - e.minX) / e.saltoX;
-  var puntosY = (e.maxY - e.minY) / e.saltoY;
-  var x = randrange(puntosX + 1) * e.saltoX + e.minX;
-  var y = randrange(puntosY + 1) * e.saltoY + e.minY;
-  return [[x, y], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e)]];
-}
-
-function generaRectangulo(e) {
-  var puntosX = (e.maxX - e.minX) / e.saltoX;
-  var puntosY = (e.maxY - e.minY) / e.saltoY;
-  var x1 = randrange(puntosX) * e.saltoX + e.minX;
-  var y1 = randrange(puntosY) * e.saltoY + e.minY;
-  var x2 = (Math.floor((x1 - e.minX) / e.saltoX) + 1 + randrange(puntosX - (x1 - e.minX) / e.saltoX)) * e.saltoX + e.minX;
-  var y2 = (Math.floor((y1 - e.minY) / e.saltoY) + 1 + randrange(puntosY - (y1 - e.minY) / e.saltoY)) * e.saltoY + e.minY;
-  return [
-    [x1, y1, x2 - x1, y2 - y1],
-    [
-      convierte(x1, e.minX, e.maxX, e),
-      convierte(y1, e.minY, e.maxY, e),
-      convierte(x2, e.minX, e.maxX, e) - convierte(x1, e.minX, e.maxX, e),
-      convierte(y2, e.minY, e.maxY, e) - convierte(y1, e.minY, e.maxY, e)
-    ]
-  ];
-}
-
-function generaLinea(e) {
-  var puntosX = (e.maxX - e.minX) / e.saltoX;
-  var puntosY = (e.maxY - e.minY) / e.saltoY;
-  var x1 = randrange(puntosX + 1) * e.saltoX + e.minX;
-  var y1 = randrange(puntosY + 1) * e.saltoY + e.minY;
-  var x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
-  var y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
-  while (x1 == x2 && y1 == y2) {
-    x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
-    y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
-  }
-  return [
-    [x1, y1, x2, y2],
-    [
-      convierte(x1, e.minX, e.maxX, e),
-      convierte(y1, e.minY, e.maxY, e),
-      convierte(x2, e.minX, e.maxX, e),
-      convierte(y2, e.minY, e.maxY, e)
-    ]
-  ];
-}
-
-function generaCirculo(e) {
-  var puntosX = (e.maxX - e.minX) / e.saltoX;
-  var puntosY = (e.maxY - e.minY) / e.saltoY;
-  var x = randrange(puntosX + 1) * e.saltoX + e.minX;
-  var y = randrange(puntosY + 1) * e.saltoY + e.minY;
-  var puntoX = (x - e.minX) / e.saltoX;
-  var puntoY = (y - e.minY) / e.saltoY;
-  var radioMaximo = Math.max(puntoX, puntosX - puntoX, puntoY, puntosY - puntoY);
-  var radio = (1 + randrange(radioMaximo)) * e.saltoY;
-  var radioDibujo = convierte(x + radio, e.minX, e.maxX, e) - convierte(x, e.minX, e.maxX, e);
-  return [[x, y, radio], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e), radioDibujo]];
-}
-
-function generaPoligono(e) {
-  var puntosX = (e.maxX - e.minX) / e.saltoX;
-  var puntosY = (e.maxY - e.minY) / e.saltoY;
-  var x = [];
-  var y = [];
-  do {
-    for (var i = 0; i < 3; i++) {
-      x[i] = randrange(puntosX + 1) * e.saltoX + e.minX;
-      y[i] = randrange(puntosY + 1) * e.saltoY + e.minY;
+    function randrange(limite) {
+      return Math.floor(Math.random() * limite);
     }
-  } while ((x[1] - x[0]) * (y[2] - y[0]) - (x[2] - x[0]) * (y[1] - y[0]) == 0);
-  var XY = [];
-  var XYDibujo = [];
-  for (var i = 0; i < 3; i++) {
-    XY.push([x[i], y[i]]);
-    XYDibujo.push([convierte(x[i], e.minX, e.maxX, e), convierte(y[i], e.minY, e.maxY, e)]);
-  }
-  return [XY, XYDibujo];
-}
 
-function ajustaRangos(e) {
-  var saltos = [4, 5, 6, 8, 10];
-  if (e.dinamico == "circulo") {
-    if (randrange(2)) {
-      e.saltoX = randrange(2) * 200 + randrange(3) * 100;
-      while (e.saltoX == 0) {
-        e.saltoX = randrange(2) * 200 + randrange(3) * 100;
-      }
-    } else {
-      e.saltoX = randrange(2) * 20 + randrange(3) * 10;
-      while (e.saltoX == 0) {
-        e.saltoX = randrange(2) * 20 + randrange(3) * 10;
-      }
+    function dibujaContador(e) {
+      document.getElementById(e.id + "_num_correctas").textContent = e.cuenta[1];
+      document.getElementById(e.id + "_num_incorrectas").textContent = e.cuenta[0];
+      var total = Math.max(e.cuenta[0] + e.cuenta[1], 1);
+      document.getElementById(e.id + "_img_correctas").setAttribute("width", Math.max(anchoContador * e.cuenta[1] / total, 1));
+      document.getElementById(e.id + "_img_incorrectas").setAttribute("width", Math.max(anchoContador * e.cuenta[0] / total, 1));
     }
-    e.minX = e.saltoX * randrange(6);
-    var nSaltos = saltos[randrange(saltos.length)];
-    e.maxX = e.minX + e.saltoX * nSaltos;
-    e.saltoY = e.saltoX;
-    e.minY = e.saltoY * randrange(6);
-    e.maxY = e.minY + e.saltoY * nSaltos;
-  } else {
-    if (randrange(2)) {
-      e.saltoX = randrange(2) * 200 + randrange(3) * 100;
-      while (e.saltoX == 0) {
-        e.saltoX = randrange(2) * 200 + randrange(3) * 100;
-      }
-    } else {
-      e.saltoX = randrange(2) * 20 + randrange(3) * 10;
-      while (e.saltoX == 0) {
-        e.saltoX = randrange(2) * 20 + randrange(3) * 10;
-      }
+
+    function convierte(x, minimo, maximo, e) {
+      return e.margenDibujo + Math.floor(e.zonaDibujo * (x - minimo) / (maximo - minimo));
     }
-    e.minX = e.saltoX * randrange(6);
-    e.maxX = e.minX + e.saltoX * saltos[randrange(saltos.length)];
-    if (randrange(2)) {
-      e.saltoY = randrange(2) * 200 + randrange(3) * 100;
-      while (e.saltoY == 0) {
-        e.saltoY = randrange(2) * 200 + randrange(3) * 100;
-      }
-    } else {
-      e.saltoY = randrange(2) * 20 + randrange(3) * 10;
-      while (e.saltoY == 0) {
-        e.saltoY = randrange(2) * 20 + randrange(3) * 10;
-      }
+
+    function reinicia(e) {
+      e.cuenta = [0, 0];
+      dibujaContador(e);
     }
-    e.minY = e.saltoY * randrange(6);
-    e.maxY = e.minY + e.saltoY * saltos[randrange(saltos.length)];
-  }
-}
 
-function nuevo(e) {
-  var svg = document.getElementById(e.id + "_svg");
-  var resultado = document.getElementById(e.id + "_resultado");
-  if (!e.respondido) {
-    e.cuenta[0] += 1;
-    dibujaContador(e);
-  }
-  e.respondido = false;
-  svg.replaceChildren();
-  resultado.textContent = "";
-  if (e.dinamico) {
-    ajustaRangos(e);
-  }
+    function creaElementoSVG(nombre, atributos) {
+      var elemento = document.createElementNS("http://www.w3.org/2000/svg", nombre);
+      for (var atributo in atributos) {
+        elemento.setAttribute(atributo, atributos[atributo]);
+      }
+      return elemento;
+    }
 
-  if (e.tipo == "punto") {
-    var valores = generaPunto(e);
-  } else if (e.tipo == "rectangulo") {
-    var valores = generaRectangulo(e);
-  } else if (e.tipo == "linea") {
-    var valores = generaLinea(e);
-  } else if (e.tipo == "poligono") {
-    var valores = generaPoligono(e);
-  } else {
-    var valores = generaCirculo(e);
-  }
-  e.XY = valores[0];
-  e.XYDibujo = valores[1];
+    function etiqueta(e, texto, x, y, ancla) {
+      var elemento = creaElementoSVG("text", {
+        x: x,
+        y: y,
+        "font-size": 15,
+        "text-anchor": ancla
+      });
+      elemento.textContent = texto;
+      document.getElementById(e.id + "_svg").appendChild(elemento);
+    }
 
-  if (e.tipo == "circulo") {
-    svg.appendChild(creaElementoSVG("circle", {
-      cx: e.XYDibujo[0],
-      cy: e.XYDibujo[1],
-      r: e.XYDibujo[2],
-      stroke: "red",
-      "stroke-width": 1,
-      fill: "lightgray"
-    }));
-    svg.appendChild(creaElementoSVG("circle", {
-      cx: e.XYDibujo[0],
-      cy: e.XYDibujo[1],
-      r: e.grosorPunto,
-      stroke: "red",
-      "stroke-width": 1,
-      fill: "red"
-    }));
-    dibujaMarco(e);
-  } else {
-    dibujaMarco(e);
-    if (e.tipo == "punto") {
+    function dibujaMarco(e) {
+      var svg = document.getElementById(e.id + "_svg");
+      svg.appendChild(creaElementoSVG("rect", {
+        x: e.margenDibujo,
+        y: e.margenDibujo,
+        width: e.zonaDibujo,
+        height: e.zonaDibujo,
+        stroke: "black",
+        "stroke-width": 1,
+        fill: tipos[e.tipo].marcoEncima ? "none" : "lightgray"
+      }));
+      etiqueta(e, e.minX, e.margenDibujo, e.margenDibujo - 10, "middle");
+      etiqueta(e, e.maxX, e.margenDibujo + e.zonaDibujo, e.margenDibujo - 10, "middle");
+      etiqueta(e, e.minY, e.margenDibujo - 5, e.margenDibujo + 7, "end");
+      etiqueta(e, e.maxY, e.margenDibujo - 5, e.margenDibujo + e.zonaDibujo + 7, "end");
+    }
+
+    function dibujaVertice(e, svg, x, y) {
       svg.appendChild(creaElementoSVG("circle", {
-        cx: e.XYDibujo[0],
-        cy: e.XYDibujo[1],
+        cx: x,
+        cy: y,
         r: e.grosorPunto,
         stroke: "red",
         "stroke-width": 1,
         fill: "red"
       }));
-    } else if (e.tipo == "rectangulo") {
+    }
+
+    function generaPunto(e) {
+      var puntosX = (e.maxX - e.minX) / e.saltoX;
+      var puntosY = (e.maxY - e.minY) / e.saltoY;
+      var x = randrange(puntosX + 1) * e.saltoX + e.minX;
+      var y = randrange(puntosY + 1) * e.saltoY + e.minY;
+      return [[x, y], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e)]];
+    }
+
+    function dibujaPunto(e, svg) {
+      dibujaVertice(e, svg, e.XYDibujo[0], e.XYDibujo[1]);
+    }
+
+    function generaRectangulo(e) {
+      var puntosX = (e.maxX - e.minX) / e.saltoX;
+      var puntosY = (e.maxY - e.minY) / e.saltoY;
+      var x1 = randrange(puntosX) * e.saltoX + e.minX;
+      var y1 = randrange(puntosY) * e.saltoY + e.minY;
+      var x2 = (Math.floor((x1 - e.minX) / e.saltoX) + 1 + randrange(puntosX - (x1 - e.minX) / e.saltoX)) * e.saltoX + e.minX;
+      var y2 = (Math.floor((y1 - e.minY) / e.saltoY) + 1 + randrange(puntosY - (y1 - e.minY) / e.saltoY)) * e.saltoY + e.minY;
+      return [
+        [x1, y1, x2 - x1, y2 - y1],
+        [
+          convierte(x1, e.minX, e.maxX, e),
+          convierte(y1, e.minY, e.maxY, e),
+          convierte(x2, e.minX, e.maxX, e) - convierte(x1, e.minX, e.maxX, e),
+          convierte(y2, e.minY, e.maxY, e) - convierte(y1, e.minY, e.maxY, e)
+        ]
+      ];
+    }
+
+    function dibujaRectangulo(e, svg) {
       svg.appendChild(creaElementoSVG("rect", {
         x: e.XYDibujo[0],
         y: e.XYDibujo[1],
@@ -266,7 +192,31 @@ function nuevo(e) {
         "stroke-width": 1,
         fill: "red"
       }));
-    } else if (e.tipo == "linea") {
+    }
+
+    function generaLinea(e) {
+      var puntosX = (e.maxX - e.minX) / e.saltoX;
+      var puntosY = (e.maxY - e.minY) / e.saltoY;
+      var x1 = randrange(puntosX + 1) * e.saltoX + e.minX;
+      var y1 = randrange(puntosY + 1) * e.saltoY + e.minY;
+      var x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
+      var y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
+      while (x1 == x2 && y1 == y2) {
+        x2 = randrange(puntosX + 1) * e.saltoX + e.minX;
+        y2 = randrange(puntosY + 1) * e.saltoY + e.minY;
+      }
+      return [
+        [x1, y1, x2, y2],
+        [
+          convierte(x1, e.minX, e.maxX, e),
+          convierte(y1, e.minY, e.maxY, e),
+          convierte(x2, e.minX, e.maxX, e),
+          convierte(y2, e.minY, e.maxY, e)
+        ]
+      ];
+    }
+
+    function dibujaLinea(e, svg) {
       svg.appendChild(creaElementoSVG("line", {
         x1: e.XYDibujo[0],
         y1: e.XYDibujo[1],
@@ -275,9 +225,56 @@ function nuevo(e) {
         stroke: "red",
         "stroke-width": 2
       }));
-    } else {
+    }
+
+    function generaCirculo(e) {
+      var puntosX = (e.maxX - e.minX) / e.saltoX;
+      var puntosY = (e.maxY - e.minY) / e.saltoY;
+      var x = randrange(puntosX + 1) * e.saltoX + e.minX;
+      var y = randrange(puntosY + 1) * e.saltoY + e.minY;
+      var puntoX = (x - e.minX) / e.saltoX;
+      var puntoY = (y - e.minY) / e.saltoY;
+      var radioMaximo = Math.max(puntoX, puntosX - puntoX, puntoY, puntosY - puntoY);
+      var radio = (1 + randrange(radioMaximo)) * e.saltoY;
+      var radioDibujo = convierte(x + radio, e.minX, e.maxX, e) - convierte(x, e.minX, e.maxX, e);
+      return [[x, y, radio], [convierte(x, e.minX, e.maxX, e), convierte(y, e.minY, e.maxY, e), radioDibujo]];
+    }
+
+    function dibujaCirculo(e, svg) {
+      svg.appendChild(creaElementoSVG("circle", {
+        cx: e.XYDibujo[0],
+        cy: e.XYDibujo[1],
+        r: e.XYDibujo[2],
+        stroke: "red",
+        "stroke-width": 1,
+        fill: "lightgray"
+      }));
+      dibujaVertice(e, svg, e.XYDibujo[0], e.XYDibujo[1]);
+    }
+
+    function generaPoligono(e) {
+      var puntosX = (e.maxX - e.minX) / e.saltoX;
+      var puntosY = (e.maxY - e.minY) / e.saltoY;
+      var x = [];
+      var y = [];
+      do {
+        for (var i = 0; i < 3; i++) {
+          x[i] = randrange(puntosX + 1) * e.saltoX + e.minX;
+          y[i] = randrange(puntosY + 1) * e.saltoY + e.minY;
+        }
+      } while ((x[1] - x[0]) * (y[2] - y[0]) - (x[2] - x[0]) * (y[1] - y[0]) == 0);
+      var XY = [];
+      var XYDibujo = [];
+      for (var i = 0; i < 3; i++) {
+        XY.push([x[i], y[i]]);
+        XYDibujo.push([convierte(x[i], e.minX, e.maxX, e), convierte(y[i], e.minY, e.maxY, e)]);
+      }
+      return [XY, XYDibujo];
+    }
+
+    function dibujaPoligono(e, svg) {
       svg.appendChild(creaElementoSVG("polygon", {
-        points: e.XYDibujo.map(function(punto) {
+        points: e.XYDibujo.map(function (punto) {
           return punto.join(",");
         }).join(" "),
         stroke: "red",
@@ -285,132 +282,185 @@ function nuevo(e) {
         fill: "red"
       }));
       for (var i = 0; i < e.XYDibujo.length; i++) {
-        svg.appendChild(creaElementoSVG("circle", {
-          cx: e.XYDibujo[i][0],
-          cy: e.XYDibujo[i][1],
-          r: e.grosorPunto,
-          stroke: "red",
-          "stroke-width": 1,
-          fill: "red"
-        }));
+        dibujaVertice(e, svg, e.XYDibujo[i][0], e.XYDibujo[i][1]);
       }
     }
-  }
 
-  for (var i = 0; i < e.campos.length; i++) {
-    document.getElementById(e.id + "_" + e.campos[i]).value = "";
-  }
-  document.getElementById(e.id + "_salto").textContent = e.saltoX == e.saltoY
-    ? "múltiplos de " + e.saltoX + " en ambos ejes"
-    : "múltiplos de " + e.saltoX + " en el eje X y múltiplos de " + e.saltoY + " en el eje Y";
-}
-
-function evalua(e) {
-  var valores = [];
-  if (e.tipo == "poligono") {
-    valores = document.getElementById(e.id + "_" + e.campos[0]).value.split(/[\s,]+/).filter(function(valor) {
-      return valor != "";
-    });
-  } else {
-    for (var i = 0; i < e.campos.length; i++) {
-      valores.push(document.getElementById(e.id + "_" + e.campos[i]).value.trim());
+    function leePoligono(e) {
+      return document.getElementById(e.id + "_" + e.tipo + "_" + tipos[e.tipo].campos[0]).value.split(/[\s,]+/).filter(function (valor) {
+        return valor != "";
+      });
     }
-  }
-  var respuestaUsuario = [];
-  for (var i = 0; i < valores.length; i++) {
-    if (!/^[+-]?\d+$/.test(valores[i]) || !Number.isSafeInteger(Number(valores[i]))) {
-      document.getElementById(e.id + "_resultado").textContent = "Revise su respuesta. Debe escribir números enteros.";
-      return;
+
+    function validaPoligono(e, respuestaUsuario) {
+      if (respuestaUsuario.length != 2 * e.XY.length) {
+        return "Revise su respuesta. Debe escribir las coordenadas de " + e.XY.length + " puntos.";
+      }
+      return "";
     }
-    respuestaUsuario.push(Number(valores[i]));
-  }
 
-  var correcto;
-  if (e.tipo == "poligono") {
-    if (respuestaUsuario.length != 2 * e.XY.length) {
-      document.getElementById(e.id + "_resultado").textContent = "Revise su respuesta. Debe escribir las coordenadas de " + e.XY.length + " puntos.";
-      return;
+    function comparaLista(e, respuestaUsuario) {
+      return respuestaUsuario.every(function (valor, indice) {
+        return valor == e.XY[indice];
+      });
     }
-    var puntosUsuario = [];
-    for (var i = 0; i < respuestaUsuario.length; i += 2) {
-      puntosUsuario.push(respuestaUsuario[i] + "," + respuestaUsuario[i + 1]);
+
+    function comparaLinea(e, respuestaUsuario) {
+      return respuestaUsuario[0] == e.XY[0] && respuestaUsuario[1] == e.XY[1] && respuestaUsuario[2] == e.XY[2] && respuestaUsuario[3] == e.XY[3]
+        || respuestaUsuario[0] == e.XY[2] && respuestaUsuario[1] == e.XY[3] && respuestaUsuario[2] == e.XY[0] && respuestaUsuario[3] == e.XY[1];
     }
-    var puntosCorrectos = e.XY.map(function(punto) {
-      return punto.join(",");
-    });
-    correcto = puntosUsuario.sort().join(" ") == puntosCorrectos.sort().join(" ");
-  } else if (e.tipo == "linea") {
-    correcto = respuestaUsuario[0] == e.XY[0] && respuestaUsuario[1] == e.XY[1] && respuestaUsuario[2] == e.XY[2] && respuestaUsuario[3] == e.XY[3]
-      || respuestaUsuario[0] == e.XY[2] && respuestaUsuario[1] == e.XY[3] && respuestaUsuario[2] == e.XY[0] && respuestaUsuario[3] == e.XY[1];
-  } else {
-    correcto = respuestaUsuario.every(function(valor, indice) {
-      return valor == e.XY[indice];
-    });
-  }
-  document.getElementById(e.id + "_resultado").textContent = respuesta[correcto ? 1 : 0];
-  if (!e.respondido) {
-    e.cuenta[correcto ? 1 : 0] += 1;
-  }
-  dibujaContador(e);
-  if (correcto) {
-    e.respondido = true;
-  }
-}
 
-function inicializaEjercicios() {
-  var configuracion = [
-    ["e11", "punto", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1"]],
-    ["e12", "punto", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1"]],
-    ["e13", "punto", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1"]],
-    ["e14", "punto", 0, 5, 0, 5, 1, 1, 40, ["x1", "y1"], "punto"],
-    ["e21", "rectangulo", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1", "width", "height"]],
-    ["e22", "rectangulo", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1", "width", "height"]],
-    ["e23", "rectangulo", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1", "width", "height"]],
-    ["e24", "rectangulo", -100, 100, -100, 100, 10, 10, 40, ["x1", "y1", "width", "height"], "rectangulo"],
-    ["e31", "linea", 0, 5, 0, 5, 1, 1, 30, ["x1", "y1", "x2", "y2"]],
-    ["e32", "linea", 0, 100, 0, 100, 10, 10, 30, ["x1", "y1", "x2", "y2"]],
-    ["e33", "linea", -100, 100, -100, 100, 25, 25, 40, ["x1", "y1", "x2", "y2"]],
-    ["e34", "linea", 0, 5, 0, 5, 1, 1, 40, ["x1", "y1", "x2", "y2"], "linea"],
-    ["e41", "circulo", 0, 5, 0, 5, 1, 1, 30, ["cx", "cy", "r"]],
-    ["e42", "circulo", 0, 100, 0, 100, 10, 10, 30, ["cx", "cy", "r"]],
-    ["e43", "circulo", -100, 100, -100, 100, 25, 25, 40, ["cx", "cy", "r"]],
-    ["e44", "circulo", 0, 5, 0, 5, 1, 1, 40, ["cx", "cy", "r"], "circulo"],
-    ["e51", "poligono", 0, 5, 0, 5, 1, 1, 30, ["points"]],
-    ["e52", "poligono", 0, 100, 0, 100, 10, 10, 30, ["points"]],
-    ["e53", "poligono", -100, 100, -100, 100, 25, 25, 40, ["points"]],
-    ["e54", "poligono", 0, 5, 0, 5, 1, 1, 40, ["points"], "poligono"]
-  ];
+    function comparaPoligono(e, respuestaUsuario) {
+      var puntosUsuario = [];
+      for (var i = 0; i < respuestaUsuario.length; i += 2) {
+        puntosUsuario.push(respuestaUsuario[i] + "," + respuestaUsuario[i + 1]);
+      }
+      var puntosCorrectos = e.XY.map(function (punto) {
+        return punto.join(",");
+      });
+      return puntosUsuario.sort().join(" ") == puntosCorrectos.sort().join(" ");
+    }
 
-  for (var i = 0; i < configuracion.length; i++) {
-    var datos = configuracion[i];
-    var e = {
-      id: datos[0],
-      tipo: datos[1],
-      minX: datos[2],
-      maxX: datos[3],
-      minY: datos[4],
-      maxY: datos[5],
-      saltoX: datos[6],
-      saltoY: datos[7],
-      zonaDibujo: 200,
-      margenDibujo: datos[8],
-      campos: datos[9],
-      dinamico: datos[10],
-      grosorPunto: 2,
-      XY: [],
-      XYDibujo: [],
-      cuenta: [0, 0],
-      respondido: true
-    };
-    ejercicios[e.id] = e;
-    document.getElementById(e.id + "_boton").addEventListener("click", evalua.bind(null, e));
-    document.getElementById(e.id + "_nuevo").addEventListener("click", nuevo.bind(null, e));
-    document.getElementById(e.id + "_reinicia").addEventListener("click", reinicia.bind(null, e));
-    nuevo(e);
-  }
-}
+    // Escala con el mismo salto en ambos ejes, pero con extremos distintos
+    function ajustaRangos(e) {
+      var saltos = [4, 5, 6, 8, 10];
+      if (randrange(2)) {
+        e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+        while (e.saltoX == 0) {
+          e.saltoX = randrange(2) * 200 + randrange(3) * 100;
+        }
+      } else {
+        e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+        while (e.saltoX == 0) {
+          e.saltoX = randrange(2) * 20 + randrange(3) * 10;
+        }
+      }
+      e.minX = e.saltoX * randrange(6);
+      var nSaltos = saltos[randrange(saltos.length)];
+      e.maxX = e.minX + e.saltoX * nSaltos;
+      e.saltoY = e.saltoX;
+      e.minY = e.saltoY * randrange(6);
+      e.maxY = e.minY + e.saltoY * nSaltos;
+    }
 
-document.addEventListener("DOMContentLoaded", inicializaEjercicios);
+    function nuevo(e) {
+      var svg = document.getElementById(e.id + "_svg");
+      var tipo = tipos[e.tipo];
+      e.respondido = false;
+      svg.replaceChildren();
+      document.getElementById(e.id + "_resultado").textContent = "";
+      var tamano = e.zonaDibujo + 2 * e.margenDibujo;
+      svg.setAttribute("width", tamano);
+      svg.setAttribute("height", tamano);
+      svg.setAttribute("viewBox", "0 0 " + tamano + " " + tamano);
+      if (e.dinamico) {
+        ajustaRangos(e);
+      }
+
+      var valores = tipo.genera(e);
+      e.XY = valores[0];
+      e.XYDibujo = valores[1];
+
+      if (tipo.marcoEncima) {
+        tipo.dibuja(e, svg);
+        dibujaMarco(e);
+      } else {
+        dibujaMarco(e);
+        tipo.dibuja(e, svg);
+      }
+
+      for (var i = 0; i < tipo.campos.length; i++) {
+        document.getElementById(e.id + "_" + e.tipo + "_" + tipo.campos[i]).value = "";
+      }
+      var salto = e.saltoX == e.saltoY
+        ? "múltiplos de " + e.saltoX + " en ambos ejes"
+        : "múltiplos de " + e.saltoX + " en el eje X y múltiplos de " + e.saltoY + " en el eje Y";
+      var saltos = document.querySelectorAll("#" + e.id + "_enunciado_" + e.tipo + " .salto");
+      for (var i = 0; i < saltos.length; i++) {
+        saltos[i].textContent = salto;
+      }
+    }
+
+    function evalua(e) {
+      var tipo = tipos[e.tipo];
+      var resultado = document.getElementById(e.id + "_resultado");
+      var valores = [];
+      if (tipo.lee) {
+        valores = tipo.lee(e);
+      } else {
+        for (var i = 0; i < tipo.campos.length; i++) {
+          valores.push(document.getElementById(e.id + "_" + e.tipo + "_" + tipo.campos[i]).value.trim());
+        }
+      }
+      var respuestaUsuario = [];
+      for (var i = 0; i < valores.length; i++) {
+        if (!/^[+-]?\d+$/.test(valores[i]) || !Number.isSafeInteger(Number(valores[i]))) {
+          resultado.textContent = "Revise su respuesta. Debe escribir números enteros.";
+          return;
+        }
+        respuestaUsuario.push(Number(valores[i]));
+      }
+      if (tipo.valida) {
+        var mensaje = tipo.valida(e, respuestaUsuario);
+        if (mensaje != "") {
+          resultado.textContent = mensaje;
+          return;
+        }
+      }
+
+      var correcto = tipo.compara(e, respuestaUsuario);
+      resultado.textContent = respuesta[correcto ? 1 : 0];
+      if (!e.respondido) {
+        e.cuenta[correcto ? 1 : 0] += 1;
+      }
+      dibujaContador(e);
+      if (correcto) {
+        e.respondido = true;
+      }
+    }
+
+    // Lee los controles de dificultad y de tipo, y genera un nuevo dibujo sin modificar el contador
+    function cambiaEjercicio(e) {
+      var escala = escalas[Number(document.getElementById(e.id + "_escala").value) - 1];
+      e.minX = escala.minX;
+      e.maxX = escala.maxX;
+      e.minY = escala.minY;
+      e.maxY = escala.maxY;
+      e.saltoX = escala.saltoX;
+      e.saltoY = escala.saltoY;
+      e.margenDibujo = escala.margenDibujo;
+      e.dinamico = escala.dinamico;
+      e.tipo = document.querySelector('input[name="' + e.id + '_tipo"]:checked').value;
+      for (var nombre in tipos) {
+        document.getElementById(e.id + "_enunciado_" + nombre).hidden = nombre != e.tipo;
+        document.getElementById(e.id + "_campos_" + nombre).hidden = nombre != e.tipo;
+      }
+      nuevo(e);
+    }
+
+    function inicializaEjercicios() {
+      var e = {
+        id: "e1",
+        zonaDibujo: 200,
+        grosorPunto: 2,
+        XY: [],
+        XYDibujo: [],
+        cuenta: [0, 0],
+        respondido: true
+      };
+      ejercicios[e.id] = e;
+      document.getElementById(e.id + "_boton").addEventListener("click", evalua.bind(null, e));
+      document.getElementById(e.id + "_nuevo").addEventListener("click", nuevo.bind(null, e));
+      document.getElementById(e.id + "_reinicia").addEventListener("click", reinicia.bind(null, e));
+      document.getElementById(e.id + "_escala").addEventListener("input", cambiaEjercicio.bind(null, e));
+      var radios = document.getElementsByName(e.id + "_tipo");
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].addEventListener("change", cambiaEjercicio.bind(null, e));
+      }
+      cambiaEjercicio(e);
+    }
+
+    document.addEventListener("DOMContentLoaded", inicializaEjercicios);
 
   </script>
 </head>
@@ -423,695 +473,101 @@ document.addEventListener("DOMContentLoaded", inicializaEjercicios);
       <a href="../index.html"><img src="../varios/iconos/icono-python.svg" alt="Índice de Python" title="Índice de Python" width="48" height="48"></a>
       <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
     </p>
-
-    <div class="toc">
-      <h2>Gráficos SVG (1)</h2>
-
-      <ul>
-        <li><a href="#ejercicio-11">01 - Punto 1</a></li>
-        <li><a href="#ejercicio-12">02 - Punto 2</a></li>
-        <li><a href="#ejercicio-13">03 - Punto 3</a></li>
-        <li><a href="#ejercicio-14">04 - Punto 4</a></li>
-        <li><a href="#ejercicio-21">05 - Rectángulo 1</a></li>
-        <li><a href="#ejercicio-22">06 - Rectángulo 2</a></li>
-        <li><a href="#ejercicio-23">07 - Rectángulo 3</a></li>
-        <li><a href="#ejercicio-24">08 - Rectángulo 4</a></li>
-        <li><a href="#ejercicio-31">09 - Línea 1</a></li>
-        <li><a href="#ejercicio-32">10 - Línea 2</a></li>
-        <li><a href="#ejercicio-33">11 - Línea 3</a></li>
-        <li><a href="#ejercicio-34">12 - Línea 4</a></li>
-        <li><a href="#ejercicio-41">13 - Círculo 1</a></li>
-        <li><a href="#ejercicio-42">14 - Círculo 2</a></li>
-        <li><a href="#ejercicio-43">15 - Círculo 3</a></li>
-        <li><a href="#ejercicio-44">16 - Círculo 4</a></li>
-        <li><a href="#ejercicio-51">17 - Polígono 1</a></li>
-        <li><a href="#ejercicio-52">18 - Polígono 2</a></li>
-        <li><a href="#ejercicio-53">19 - Polígono 3</a></li>
-        <li><a href="#ejercicio-54">20 - Polígono 4</a></li>
-      </ul>
-    </div>
   </nav>
 
   <p>El objetivo de estos ejercicios es practicar el sistema de coordenadas de los gráficos SVG que se tratan en las lecciones <a href="https://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> y <a href="https://www.mclibre.org/consultar/htmlcss/html/svg-formas-1.html">Formas básicas SVG</a> de los <a href="https://www.mclibre.org/consultar/htmlcss/index.html">apuntes de HTML y CSS</a>.</p>
 
   <ul>
     <li>Los dibujos muestran una porción del plano SVG delimitada por la línea negra. Arriba y a la izquierda se muestran las coordenadas de esa porción del plano.</li>
-    <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si se pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
+    <li>Puede elegir la dificultad con el control deslizante y el tipo de figura con los botones de opción. Al cambiar la dificultad o el tipo de figura se genera un nuevo dibujo, pero no se modifica el contador de preguntas acertadas o falladas.</li>
+    <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Pedir un nuevo dibujo sin haber acertado antes no cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
   </ul>
 
-  <section id="ejercicio-11">
-    <h2>Gráficos SVG (1) 1 - Punto 1</h2>
+  <section id="ejercicio-1">
+    <h2>Coordenadas SVG (1)</h2>
 
-    <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e11_salto"></strong>.</p>
+    <div class="enunciado-test" style="width: fit-content; max-width: 100%">
+      <div style="contain: inline-size">
+        <p id="e1_enunciado_punto">Escriba en las cajas de texto las coordenadas del punto rojo (x, y).<br>Los valores a escribir deben ser <strong class="salto"></strong>.</p>
+        <p id="e1_enunciado_rectangulo" hidden>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height).<br>Los valores a escribir deben ser todos <strong class="salto"></strong>.</p>
+        <p id="e1_enunciado_linea" hidden>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante.<br>Los valores a escribir deben ser todos <strong class="salto"></strong>.</p>
+        <p id="e1_enunciado_circulo" hidden>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r).<br>Los valores a escribir deben ser <strong class="salto"></strong>.</p>
+        <p id="e1_enunciado_poligono" hidden>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, (points) con el formato x1 y1 x2 y2 x3 y3. Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden.<br>Los valores a escribir deben ser <strong class="salto"></strong>.</p>
+      </div>
 
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e11_svg">
-      </svg>
-      <p id="e11_tmp"></p>
-      <p>
-        x: <input type="text" id="e11_x1" size="4">
-        y: <input type="text" id="e11_y1" size="4">
-        <button type="button" id="e11_boton">Corregir</button>
-        <span id="e11_resultado"></span>
-      </p>
-      <p><button type="button" id="e11_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e11_num_correctas">0</span></td>
-          <td><img id="e11_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e11_num_incorrectas">0</span></td>
-          <td><img id="e11_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e11_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
+      <div class="ej-cuerpo">
+        <div class="ej-controles">
+          <div class="ej-escala">
+            <input type="range" id="e1_escala" min="1" max="4" step="1" value="1" list="e1_marcas">
+            <datalist id="e1_marcas">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+            </datalist>
+            <div class="ej-escala-textos">
+              <span>Fácil</span>
+              <span>Difícil</span>
+            </div>
+          </div>
 
-  <section id="ejercicio-12">
-    <h2>Gráficos SVG (1) 2 - Punto 2</h2>
+          <p style="margin-top: 20px">
+            <label><input type="radio" name="e1_tipo" value="punto" checked> Punto</label><br>
+            <label><input type="radio" name="e1_tipo" value="rectangulo"> Rectángulo</label><br>
+            <label><input type="radio" name="e1_tipo" value="linea"> Línea</label><br>
+            <label><input type="radio" name="e1_tipo" value="circulo"> Círculo</label><br>
+            <label><input type="radio" name="e1_tipo" value="poligono"> Polígono</label>
+          </p>
+        </div>
 
-    <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e12_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e12_svg">
-      </svg>
-      <p id="e12_tmp"></p>
-      <p>
-        x: <input type="text" id="e12_x1" size="4">
-        y: <input type="text" id="e12_y1" size="4">
-        <button type="button" id="e12_boton">Corregir</button>
-        <span id="e12_resultado"></span>
-      </p>
-      <p><button type="button" id="e12_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e12_num_correctas">0</span></td>
-          <td><img id="e12_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e12_num_incorrectas">0</span></td>
-          <td><img id="e12_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e12_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-13">
-    <h2>Gráficos SVG (1) 3 - Punto 3</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e13_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e13_svg">
-      </svg>
-      <p id="e13_tmp"></p>
-      <p>
-        x: <input type="text" id="e13_x1" size="4">
-        y: <input type="text" id="e13_y1" size="4">
-        <button type="button" id="e13_boton">Corregir</button>
-        <span id="e13_resultado"></span>
-      </p>
-      <p><button type="button" id="e13_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e13_num_correctas">0</span></td>
-          <td><img id="e13_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e13_num_incorrectas">0</span></td>
-          <td><img id="e13_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e13_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-14">
-    <h2>Gráficos SVG (1) 4 - Punto 4</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del punto rojo (x, y). Los valores a escribir deben ser <strong id="e14_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e14_svg">
-      </svg>
-      <p id="e14_tmp"></p>
-      <p>
-        x: <input type="text" id="e14_x1" size="4">
-        y: <input type="text" id="e14_y1" size="4">
-        <button type="button" id="e14_boton">Corregir</button>
-        <span id="e14_resultado"></span>
-      </p>
-      <p><button type="button" id="e14_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e14_num_correctas">0</span></td>
-          <td><img id="e14_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e14_num_incorrectas">0</span></td>
-          <td><img id="e14_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e14_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-21">
-    <h2>Gráficos SVG (1) 5 - Rectángulo 1</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e21_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e21_svg">
-      </svg>
-      <p id="e21_tmp"></p>
-      <p>
-        x: <input type="text" id="e21_x1" size="4">
-        y: <input type="text" id="e21_y1" size="4">
-        width: <input type="text" id="e21_width" size="6">
-        height: <input type="text" id="e21_height" size="6">
-        <button type="button" id="e21_boton">Corregir</button>
-        <span id="e21_resultado"></span>
-      </p>
-      <p><button type="button" id="e21_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e21_num_correctas">0</span></td>
-          <td><img id="e21_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e21_num_incorrectas">0</span></td>
-          <td><img id="e21_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e21_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-22">
-    <h2>Gráficos SVG (1) 6 - Rectángulo 2</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e22_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e22_svg">
-      </svg>
-      <p id="e22_tmp"></p>
-      <p>
-        x: <input type="text" id="e22_x1" size="4">
-        y: <input type="text" id="e22_y1" size="4">
-        width: <input type="text" id="e22_width" size="6">
-        height: <input type="text" id="e22_height" size="6">
-        <button type="button" id="e22_boton">Corregir</button>
-        <span id="e22_resultado"></span>
-      </p>
-      <p><button type="button" id="e22_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e22_num_correctas">0</span></td>
-          <td><img id="e22_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e22_num_incorrectas">0</span></td>
-          <td><img id="e22_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e22_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-23">
-    <h2>Gráficos SVG (1) 7 - Rectángulo 3</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e23_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e23_svg">
-      </svg>
-      <p id="e23_tmp"></p>
-      <p>
-        x: <input type="text" id="e23_x1" size="4">
-        y: <input type="text" id="e23_y1" size="4">
-        width: <input type="text" id="e23_width" size="6">
-        height: <input type="text" id="e23_height" size="6">
-        <button type="button" id="e23_boton">Corregir</button>
-        <span id="e23_resultado"></span>
-      </p>
-      <p><button type="button" id="e23_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e23_num_correctas">0</span></td>
-          <td><img id="e23_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e23_num_incorrectas">0</span></td>
-          <td><img id="e23_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e23_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-24">
-    <h2>Gráficos SVG (1) 8 - Rectángulo 4</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de la esquina superior izquierda del rectángulo rojo (x, y), la anchura del rectángulo (width) y la altura del rectángulo (height). Los valores a escribir deben ser todos <strong id="e24_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e24_svg">
-      </svg>
-      <p id="e24_tmp"></p>
-      <p>
-        x: <input type="text" id="e24_x1" size="4">
-        y: <input type="text" id="e24_y1" size="4">
-        width: <input type="text" id="e24_width" size="6">
-        height: <input type="text" id="e24_height" size="6">
-        <button type="button" id="e24_boton">Corregir</button>
-        <span id="e24_resultado"></span>
-      </p>
-      <p><button type="button" id="e24_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e24_num_correctas">0</span></td>
-          <td><img id="e24_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e24_num_incorrectas">0</span></td>
-          <td><img id="e24_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e24_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-31">
-    <h2>Gráficos SVG (1) 9 - Línea 1</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e31_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e31_svg">
-      </svg>
-      <p id="e31_tmp"></p>
-      <p>
-        x1: <input type="text" id="e31_x1" size="4">
-        y1: <input type="text" id="e31_y1" size="4">
-        x2: <input type="text" id="e31_x2" size="4">
-        y2: <input type="text" id="e31_y2" size="4">
-        <button type="button" id="e31_boton">Corregir</button>
-        <span id="e31_resultado"></span>
-      </p>
-      <p><button type="button" id="e31_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e31_num_correctas">0</span></td>
-          <td><img id="e31_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e31_num_incorrectas">0</span></td>
-          <td><img id="e31_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e31_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-32">
-    <h2>Gráficos SVG (1) 10 - Línea 2</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e32_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e32_svg">
-      </svg>
-      <p id="e32_tmp"></p>
-      <p>
-        x1: <input type="text" id="e32_x1" size="4">
-        y1: <input type="text" id="e32_y1" size="4">
-        x2: <input type="text" id="e32_x2" size="4">
-        y2: <input type="text" id="e32_y2" size="4">
-        <button type="button" id="e32_boton">Corregir</button>
-        <span id="e32_resultado"></span>
-      </p>
-      <p><button type="button" id="e32_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e32_num_correctas">0</span></td>
-          <td><img id="e32_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e32_num_incorrectas">0</span></td>
-          <td><img id="e32_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e32_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-33">
-    <h2>Gráficos SVG (1) 11 - Línea 3</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e33_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e33_svg">
-      </svg>
-      <p id="e33_tmp"></p>
-      <p>
-        x1: <input type="text" id="e33_x1" size="4">
-        y1: <input type="text" id="e33_y1" size="4">
-        x2: <input type="text" id="e33_x2" size="4">
-        y2: <input type="text" id="e33_y2" size="4">
-        <button type="button" id="e33_boton">Corregir</button>
-        <span id="e33_resultado"></span>
-      </p>
-      <p><button type="button" id="e33_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e33_num_correctas">0</span></td>
-          <td><img id="e33_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e33_num_incorrectas">0</span></td>
-          <td><img id="e33_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e33_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-34">
-    <h2>Gráficos SVG (1) 12 - Línea 4</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas de los extremos de la línea roja (x1, y1, x2, y2). El orden de los puntos no es importante. Los valores a escribir deben ser todos <strong id="e34_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e34_svg">
-      </svg>
-      <p id="e34_tmp"></p>
-      <p>
-        x1: <input type="text" id="e34_x1" size="4">
-        y1: <input type="text" id="e34_y1" size="4">
-        x2: <input type="text" id="e34_x2" size="4">
-        y2: <input type="text" id="e34_y2" size="4">
-        <button type="button" id="e34_boton">Corregir</button>
-        <span id="e34_resultado"></span>
-      </p>
-      <p><button type="button" id="e34_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e34_num_correctas">0</span></td>
-          <td><img id="e34_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e34_num_incorrectas">0</span></td>
-          <td><img id="e34_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e34_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-41">
-    <h2>Gráficos SVG (1) 13 - Círculo 1</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e41_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e41_svg">
-      </svg>
-      <p id="e41_tmp"></p>
-      <p>
-        cx: <input type="text" id="e41_cx" size="4">
-        cy: <input type="text" id="e41_cy" size="4">
-        r: <input type="text" id="e41_r" size="4">
-        <button type="button" id="e41_boton">Corregir</button>
-        <span id="e41_resultado"></span>
-      </p>
-      <p><button type="button" id="e41_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e41_num_correctas">0</span></td>
-          <td><img id="e41_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e41_num_incorrectas">0</span></td>
-          <td><img id="e41_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e41_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-42">
-    <h2>Gráficos SVG (1) 14 - Círculo 2</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e42_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e42_svg">
-      </svg>
-      <p id="e42_tmp"></p>
-      <p>
-        cx: <input type="text" id="e42_cx" size="4">
-        cy: <input type="text" id="e42_cy" size="4">
-        r: <input type="text" id="e42_r" size="4">
-        <button type="button" id="e42_boton">Corregir</button>
-        <span id="e42_resultado"></span>
-      </p>
-      <p><button type="button" id="e42_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e42_num_correctas">0</span></td>
-          <td><img id="e42_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e42_num_incorrectas">0</span></td>
-          <td><img id="e42_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e42_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-43">
-    <h2>Gráficos SVG (1) 15 - Círculo 3</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e43_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e43_svg">
-      </svg>
-      <p id="e43_tmp"></p>
-      <p>
-        cx: <input type="text" id="e43_cx" size="4">
-        cy: <input type="text" id="e43_cy" size="4">
-        r: <input type="text" id="e43_r" size="4">
-        <button type="button" id="e43_boton">Corregir</button>
-        <span id="e43_resultado"></span>
-      </p>
-      <p><button type="button" id="e43_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e43_num_correctas">0</span></td>
-          <td><img id="e43_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e43_num_incorrectas">0</span></td>
-          <td><img id="e43_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e43_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-44">
-    <h2>Gráficos SVG (1) 16 - Círculo 4</h2>
-
-    <p>Escriba en las cajas de texto las coordenadas del centro del círculo (cx, cy) y su radio (r). Los valores a escribir deben ser <strong id="e44_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e44_svg">
-      </svg>
-      <p id="e44_tmp"></p>
-      <p>
-        cx: <input type="text" id="e44_cx" size="4">
-        cy: <input type="text" id="e44_cy" size="4">
-        r: <input type="text" id="e44_r" size="4">
-        <button type="button" id="e44_boton">Corregir</button>
-        <span id="e44_resultado"></span>
-      </p>
-      <p><button type="button" id="e44_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e44_num_correctas">0</span></td>
-          <td><img id="e44_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e44_num_incorrectas">0</span></td>
-          <td><img id="e44_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e44_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-51">
-    <h2>Gráficos SVG (1) 17 - Polígono 1</h2>
-
-    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e51_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e51_svg">
-      </svg>
-      <p id="e51_tmp"></p>
-      <p>
-        points: <input type="text" id="e51_points" size="30">
-        <button type="button" id="e51_boton">Corregir</button>
-        <span id="e51_resultado"></span>
-      </p>
-      <p><button type="button" id="e51_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e51_num_correctas">0</span></td>
-          <td><img id="e51_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e51_num_incorrectas">0</span></td>
-          <td><img id="e51_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e51_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-52">
-    <h2>Gráficos SVG (1) 18 - Polígono 2</h2>
-
-    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e52_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e52_svg">
-      </svg>
-      <p id="e52_tmp"></p>
-      <p>
-        points: <input type="text" id="e52_points" size="30">
-        <button type="button" id="e52_boton">Corregir</button>
-        <span id="e52_resultado"></span>
-      </p>
-      <p><button type="button" id="e52_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e52_num_correctas">0</span></td>
-          <td><img id="e52_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e52_num_incorrectas">0</span></td>
-          <td><img id="e52_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e52_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-53">
-    <h2>Gráficos SVG (1) 19 - Polígono 3</h2>
-
-    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e53_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e53_svg">
-      </svg>
-      <p id="e53_tmp"></p>
-      <p>
-        points: <input type="text" id="e53_points" size="30">
-        <button type="button" id="e53_boton">Corregir</button>
-        <span id="e53_resultado"></span>
-      </p>
-      <p><button type="button" id="e53_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e53_num_correctas">0</span></td>
-          <td><img id="e53_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e53_num_incorrectas">0</span></td>
-          <td><img id="e53_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e53_reinicia">Reiniciar contador</button></p>
-    </div>
-  </section>
-
-  <section id="ejercicio-54">
-    <h2>Gráficos SVG (1) 20 - Polígono 4</h2>
-
-    <p>Escriba en la caja de texto las coordenadas de los vértices del triángulo rojo, en el formato del atributo points del elemento polygon (x1 y1 x2 y2 x3 y3). Puede separar los valores con espacios o comas y escribir los vértices en cualquier orden. Los valores a escribir deben ser <strong id="e54_salto"></strong>.</p>
-
-    <div class="enunciado-test">
-      <svg width="280" height="280" viewBox="0 0 280 280" style="background-color: lightgray" id="e54_svg">
-      </svg>
-      <p id="e54_tmp"></p>
-      <p>
-        points: <input type="text" id="e54_points" size="30">
-        <button type="button" id="e54_boton">Corregir</button>
-        <span id="e54_resultado"></span>
-      </p>
-      <p><button type="button" id="e54_nuevo">Nuevo dibujo</button></p>
-      <table>
-        <tr>
-          <td>Correctas:</td>
-          <td style="text-align: right"><span id="e54_num_correctas">0</span></td>
-          <td><img id="e54_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
-        </tr>
-        <tr>
-          <td>Incorrectas:</td>
-          <td style="text-align: right"><span id="e54_num_incorrectas">0</span></td>
-          <td><img id="e54_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
-        </tr>
-      </table>
-      <p><button type="button" id="e54_reinicia">Reiniciar contador</button></p>
+        <div class="ej-dibujo">
+          <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e1_svg">
+          </svg>
+          <p id="e1_tmp"></p>
+          <p style="text-align: left">
+            <span id="e1_campos_punto">
+              <span style="white-space: nowrap">x: <input type="text" id="e1_punto_x1" size="4"></span>
+              <span style="white-space: nowrap">y: <input type="text" id="e1_punto_y1" size="4"></span>
+            </span>
+            <span id="e1_campos_rectangulo" hidden>
+              <span style="white-space: nowrap">x: <input type="text" id="e1_rectangulo_x1" size="4"></span>
+              <span style="white-space: nowrap">y: <input type="text" id="e1_rectangulo_y1" size="4"></span>
+              <span style="white-space: nowrap">width: <input type="text" id="e1_rectangulo_width" size="6"></span>
+              <span style="white-space: nowrap">height: <input type="text" id="e1_rectangulo_height" size="6"></span>
+            </span>
+            <span id="e1_campos_linea" hidden>
+              <span style="white-space: nowrap">x1: <input type="text" id="e1_linea_x1" size="4"></span>
+              <span style="white-space: nowrap">y1: <input type="text" id="e1_linea_y1" size="4"></span>
+              <span style="white-space: nowrap">x2: <input type="text" id="e1_linea_x2" size="4"></span>
+              <span style="white-space: nowrap">y2: <input type="text" id="e1_linea_y2" size="4"></span>
+            </span>
+            <span id="e1_campos_circulo" hidden>
+              <span style="white-space: nowrap">cx: <input type="text" id="e1_circulo_cx" size="4"></span>
+              <span style="white-space: nowrap">cy: <input type="text" id="e1_circulo_cy" size="4"></span>
+              <span style="white-space: nowrap">r: <input type="text" id="e1_circulo_r" size="4"></span>
+            </span>
+            <span id="e1_campos_poligono" hidden>
+              <span style="white-space: nowrap">points: <input type="text" id="e1_poligono_points" size="30"></span>
+            </span>
+            <button type="button" id="e1_boton">Corregir</button>
+          </p>
+          <p id="e1_resultado" style="text-align: left; min-height: 1.6em"></p>
+          <p><button type="button" id="e1_nuevo">Nuevo dibujo</button></p>
+          <table>
+            <tr>
+              <td>Correctas:</td>
+              <td style="text-align: right"><span id="e1_num_correctas">0</span></td>
+              <td><img id="e1_img_correctas" src="../img/franja-verde.png" height="10" alt="Correctas"></td>
+            </tr>
+            <tr>
+              <td>Incorrectas:</td>
+              <td style="text-align: right"><span id="e1_num_incorrectas">0</span></td>
+              <td><img id="e1_img_incorrectas" src="../img/franja-roja.png" height="10" alt="Incorrectas"></td>
+            </tr>
+          </table>
+          <p><button type="button" id="e1_reinicia">Reiniciar contador</button></p>
+        </div>
+      </div>
     </div>
   </section>
 
