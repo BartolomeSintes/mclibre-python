@@ -133,7 +133,7 @@
         height: e.zonaDibujo,
         stroke: "black",
         "stroke-width": 1,
-        fill: tipos[e.tipo].marcoEncima ? "none" : "lightgray"
+        fill: tipos[e.tipo].marcoEncima ? "none" : "#eee"
       }));
       etiqueta(e, e.minX, e.margenDibujo, e.margenDibujo - 10, "middle");
       etiqueta(e, e.maxX, e.margenDibujo + e.zonaDibujo, e.margenDibujo - 10, "middle");
@@ -162,6 +162,77 @@
 
     function dibujaPunto(e, svg) {
       dibujaVertice(e, svg, e.XYDibujo[0], e.XYDibujo[1]);
+    }
+
+    function dibujaAyuda(e, svg) {
+      var nivel = Number(document.getElementById(e.id + "_escala").value);
+      if (nivel <= 4) {
+        var rejilla = creaElementoSVG("g", {
+          id: e.id + "_rejilla",
+          stroke: "#222",
+          "stroke-width": 0.5,
+          "stroke-dasharray": "1 3",
+          "stroke-linecap": "round"
+        });
+        var valores = nivel == 3 ? [-75, -50, -25, 0, 25, 50, 75] : nivel == 2 ? [20, 40, 60, 80] : [1, 2, 3, 4];
+          var valoresX = valores;
+          var valoresY = valores;
+          if (nivel == 4) {
+            valoresX = [];
+            valoresY = [];
+            for (var valorX = e.minX + e.saltoX; valorX < e.maxX; valorX += e.saltoX) {
+              valoresX.push(valorX);
+            }
+            for (var valorY = e.minY + e.saltoY; valorY < e.maxY; valorY += e.saltoY) {
+              valoresY.push(valorY);
+            }
+          }
+          for (var i = 0; i < valoresX.length; i++) {
+            var x = convierte(valoresX[i], e.minX, e.maxX, e);
+          rejilla.appendChild(creaElementoSVG("line", {
+            x1: x, y1: e.margenDibujo,
+            x2: x, y2: e.margenDibujo + e.zonaDibujo
+          }));
+          }
+          for (var i = 0; i < valoresY.length; i++) {
+            var y = convierte(valoresY[i], e.minY, e.maxY, e);
+          rejilla.appendChild(creaElementoSVG("line", {
+            x1: e.margenDibujo, y1: y,
+            x2: e.margenDibujo + e.zonaDibujo, y2: y
+          }));
+        }
+        if (nivel == 3) {
+          var etiquetas = creaElementoSVG("g", {
+            stroke: "none",
+            fill: "black",
+            "font-size": 15
+          });
+          var ceroX = creaElementoSVG("text", {
+            x: convierte(0, e.minX, e.maxX, e),
+            y: e.margenDibujo - 10,
+            "text-anchor": "middle"
+          });
+          ceroX.textContent = "0";
+          etiquetas.appendChild(ceroX);
+          var ceroY = creaElementoSVG("text", {
+            x: e.margenDibujo - 5,
+            y: convierte(0, e.minY, e.maxY, e) + 7,
+            "text-anchor": "end"
+          });
+          ceroY.textContent = "0";
+          etiquetas.appendChild(ceroY);
+          rejilla.appendChild(etiquetas);
+        }
+        svg.appendChild(rejilla);
+        cambiaAyuda(e);
+      }
+    }
+
+    function cambiaAyuda(e) {
+      var rejilla = document.getElementById(e.id + "_rejilla");
+      if (rejilla) {
+        rejilla.style.display = document.getElementById(e.id + "_ayuda").checked ? "" : "none";
+      }
     }
 
     function generaRectangulo(e) {
@@ -247,7 +318,7 @@
         r: e.XYDibujo[2],
         stroke: "red",
         "stroke-width": 1,
-        fill: "lightgray"
+        fill: "none"
       }));
       dibujaVertice(e, svg, e.XYDibujo[0], e.XYDibujo[1]);
     }
@@ -344,6 +415,7 @@
     }
 
     function nuevo(e) {
+      document.getElementById(e.id + "_ayuda").checked = false;
       var svg = document.getElementById(e.id + "_svg");
       var tipo = tipos[e.tipo];
       e.respondido = false;
@@ -362,10 +434,12 @@
       e.XYDibujo = valores[1];
 
       if (tipo.marcoEncima) {
+        dibujaAyuda(e, svg);
         tipo.dibuja(e, svg);
         dibujaMarco(e);
       } else {
         dibujaMarco(e);
+        dibujaAyuda(e, svg);
         tipo.dibuja(e, svg);
       }
 
@@ -421,6 +495,7 @@
 
     // Lee los controles de dificultad y de tipo, y genera un nuevo dibujo sin modificar el contador
     function cambiaEjercicio(e) {
+      document.getElementById(e.id + "_ayuda").checked = false;
       var escala = escalas[Number(document.getElementById(e.id + "_escala").value) - 1];
       e.minX = escala.minX;
       e.maxX = escala.maxX;
@@ -453,6 +528,7 @@
       document.getElementById(e.id + "_nuevo").addEventListener("click", nuevo.bind(null, e));
       document.getElementById(e.id + "_reinicia").addEventListener("click", reinicia.bind(null, e));
       document.getElementById(e.id + "_escala").addEventListener("input", cambiaEjercicio.bind(null, e));
+      document.getElementById(e.id + "_ayuda").addEventListener("change", cambiaAyuda.bind(null, e));
       var radios = document.getElementsByName(e.id + "_tipo");
       for (var i = 0; i < radios.length; i++) {
         radios[i].addEventListener("change", cambiaEjercicio.bind(null, e));
@@ -480,6 +556,7 @@
   <ul>
     <li>Los dibujos muestran una porción del plano SVG delimitada por la línea negra. Arriba y a la izquierda se muestran las coordenadas de esa porción del plano.</li>
     <li>Puede elegir la dificultad con el control deslizante y el tipo de figura con los botones de opción. Al cambiar la dificultad o el tipo de figura se genera un nuevo dibujo, pero no se modifica el contador de preguntas acertadas o falladas.</li>
+    <li>La casilla Ayuda permite mostrar u ocultar una rejilla que facilita la identificación de los valores solicitados..</li>
     <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Pedir un nuevo dibujo sin haber acertado antes no cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
   </ul>
 
@@ -518,10 +595,11 @@
             <label><input type="radio" name="e1_tipo" value="circulo"> Círculo</label><br>
             <label><input type="radio" name="e1_tipo" value="poligono"> Polígono</label>
           </p>
+          <p id="e1_control_ayuda"><label><input type="checkbox" id="e1_ayuda" name="ayuda"> Ayuda</label></p>
         </div>
 
         <div class="ej-dibujo">
-          <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: lightgray" id="e1_svg">
+          <svg width="260" height="260" viewBox="0 0 260 260" style="background-color: #eee" id="e1_svg">
           </svg>
           <p id="e1_tmp"></p>
           <p style="text-align: left">
@@ -572,7 +650,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 22 de octubre de 2026</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
