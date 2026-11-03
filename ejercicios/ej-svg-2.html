@@ -14,8 +14,10 @@
     .ej-escala { display: flex; gap: 5px; }
     .ej-escala input { writing-mode: vertical-lr; height: 100px; margin: 0; }
     .ej-escala-textos { display: flex; flex-direction: column; justify-content: space-between; }
-    .ej-dibujo { width: 470px; }
+    .ej-dibujo { width: 580px; }
     .ej-dibujo svg { max-width: 100%; height: auto; }
+    #e2_solucion { overflow-x: auto; }
+    #e2_solucion svg { max-width: none; }
     @media (max-width: 700px) {
       .ej-cuerpo { flex-direction: column; gap: 0; align-items: stretch; }
       .ej-controles { padding-top: 0; }
@@ -46,7 +48,163 @@
       document.getElementById("e2_img_incorrectas").setAttribute("width", Math.max(anchoContador * ejercicio.cuenta[0] / total, 1));
     }
 
+    function dibujaAyuda() {
+      var svg = document.querySelector("#e2_svg svg");
+      var rejilla = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      rejilla.setAttribute("id", "e2_rejilla");
+      rejilla.setAttribute("stroke", "#222");
+      rejilla.setAttribute("stroke-width", "0.02");
+      rejilla.setAttribute("stroke-dasharray", "0.04 0.12");
+      rejilla.setAttribute("stroke-linecap", "round");
+      var xMax = ejercicio.viewboxX + ejercicio.viewboxWidth;
+      var yMax = ejercicio.viewboxY + ejercicio.viewboxHeight;
+      for (var x = ejercicio.viewboxX; x <= xMax; x++) {
+        var linea = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        linea.setAttribute("x1", x);
+        linea.setAttribute("y1", ejercicio.viewboxY);
+        linea.setAttribute("x2", x);
+        linea.setAttribute("y2", yMax);
+        rejilla.appendChild(linea);
+      }
+      for (var y = ejercicio.viewboxY; y <= yMax; y++) {
+        var linea = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        linea.setAttribute("x1", ejercicio.viewboxX);
+        linea.setAttribute("y1", y);
+        linea.setAttribute("x2", xMax);
+        linea.setAttribute("y2", y);
+        rejilla.appendChild(linea);
+      }
+      svg.appendChild(rejilla);
+      cambiaAyuda();
+    }
+
+    function cambiaAyuda() {
+      document.getElementById("e2_rejilla").style.display = document.getElementById("e2_ayuda").checked ? "" : "none";
+    }
+
+    function muestraSolucion() {
+      var solucion = document.getElementById("e2_solucion");
+      var boton = document.getElementById("e2_boton_solucion");
+      if (solucion.hidden) {
+        var original = document.querySelector("#e2_svg svg");
+        var escala = original.getBoundingClientRect().width / ejercicio.viewboxWidth;
+        var margenInicial = 85 / escala;
+        var margenTotal = 95 / escala;
+        var svg = original.cloneNode(true);
+        svg.removeAttribute("style");
+        svg.setAttribute("viewBox", (ejercicio.viewboxX - margenInicial) + " " + (ejercicio.viewboxY - 85 / escala) + " " +
+          (ejercicio.viewboxWidth + margenTotal) + " " + (ejercicio.viewboxHeight + 95 / escala));
+        svg.setAttribute("width", ejercicio.viewboxWidth * escala + 95);
+        svg.setAttribute("height", ejercicio.viewboxHeight * escala + 95);
+        var fondo = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        fondo.setAttribute("x", ejercicio.viewboxX);
+        fondo.setAttribute("y", ejercicio.viewboxY);
+        fondo.setAttribute("width", ejercicio.viewboxWidth);
+        fondo.setAttribute("height", ejercicio.viewboxHeight);
+        fondo.setAttribute("fill", "lightgray");
+        svg.insertBefore(fondo, svg.firstChild);
+        var rejilla = svg.querySelector("#e2_rejilla");
+        rejilla.removeAttribute("id");
+        rejilla.style.display = "";
+        var rectangulo = svg.querySelector('rect[fill="red"]');
+        var recX = Number(rectangulo.getAttribute("x"));
+        var recY = Number(rectangulo.getAttribute("y"));
+        var abscisas = [ejercicio.viewboxX, ejercicio.viewboxX + ejercicio.viewboxWidth,
+          recX, recX + Number(rectangulo.getAttribute("width"))];
+        var ordenadas = [ejercicio.viewboxY, ejercicio.viewboxY + ejercicio.viewboxHeight,
+          recY, recY + Number(rectangulo.getAttribute("height"))];
+
+        function etiqueta(valor, x, y, ancla, negrita, rojo) {
+          var texto = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          texto.setAttribute("x", x);
+          texto.setAttribute("y", y);
+          texto.setAttribute("font-size", 15 / escala);
+          texto.setAttribute("text-anchor", ancla);
+          if (rojo) {
+            texto.setAttribute("fill", "red");
+          }
+          if (negrita) {
+            texto.setAttribute("font-weight", "bold");
+          }
+          texto.textContent = valor;
+          svg.appendChild(texto);
+        }
+
+        Array.from(new Set(abscisas)).forEach(function (x) {
+          etiqueta(x, x, ejercicio.viewboxY - 5 / escala, "middle", x === ejercicio.viewboxX, x === recX);
+        });
+        Array.from(new Set(ordenadas)).forEach(function (y) {
+          etiqueta(y, ejercicio.viewboxX - 5 / escala, y + 5 / escala, "end", y === ejercicio.viewboxY, y === recY);
+        });
+
+        function curva(trazado) {
+          var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute("d", trazado);
+          path.setAttribute("fill", "none");
+          path.setAttribute("stroke", "black");
+          path.setAttribute("stroke-width", 1 / escala);
+          svg.appendChild(path);
+        }
+
+        var xMin = ejercicio.viewboxX;
+        var xMax = xMin + ejercicio.viewboxWidth;
+        var yMin = ejercicio.viewboxY;
+        var yMax = yMin + ejercicio.viewboxHeight;
+        curva("M " + xMin + " " + (yMin - 40 / escala) +
+          " Q " + ((xMin + xMax) / 2) + " " + (yMin - 80 / escala) +
+          " " + xMax + " " + (yMin - 40 / escala));
+        var recWidth = Number(rectangulo.getAttribute("width"));
+        curva("M " + recX + " " + (yMin - 24 / escala) +
+          " Q " + (recX + recWidth / 2) + " " + (yMin - 40 / escala) +
+          " " + (recX + recWidth) + " " + (yMin - 24 / escala));
+        etiqueta(recWidth, recX + recWidth / 2, yMin - 38 / escala, "middle", false, true);
+        curva("M " + (xMin - 40 / escala) + " " + yMin +
+          " Q " + (xMin - 80 / escala) + " " + ((yMin + yMax) / 2) +
+          " " + (xMin - 40 / escala) + " " + yMax);
+        var recHeight = Number(rectangulo.getAttribute("height"));
+        curva("M " + (xMin - 20 / escala) + " " + recY +
+          " Q " + (xMin - 32 / escala) + " " + (recY + recHeight / 2) +
+          " " + (xMin - 20 / escala) + " " + (recY + recHeight));
+        etiqueta(recHeight, xMin - 32 / escala, recY + recHeight / 2 + 5 / escala, "end", false, true);
+        etiqueta(xMax - xMin, (xMin + xMax) / 2, yMin - 66 / escala, "middle", true);
+        etiqueta(yMax - yMin, xMin - 66 / escala, (yMin + yMax) / 2 + 5 / escala, "end", true);
+        var introduccion = document.createElement("p");
+        introduccion.textContent = "Imaginemos una rejilla sobre el dibujo. Escribimos las coordenadas de los extremos de las esquinas del rectángulo rojo, además del ancho y alto. A partir de estos valores y contando en la rejilla, deducimos el resto de valores del dibujo";
+        var explicacion = document.createElement("p");
+        explicacion.textContent = "Los valores del viewBox son:";
+        var valores = document.createElement("ul");
+        valores.innerHTML =
+          "<li><strong>x</strong>: " + ejercicio.viewboxX + " (coordenada X de la esquina superior izquierda del rectángulo gris)</li>" +
+          "<li><strong>y</strong>: " + ejercicio.viewboxY + " (coordenada Y de la esquina superior izquierda del rectángulo gris)</li>" +
+          "<li><strong>width</strong>: " + ejercicio.viewboxWidth + " (anchura del rectángulo gris)</li>" +
+          "<li><strong>height</strong>: " + ejercicio.viewboxHeight + " (altura del rectángulo gris)</li>";
+        solucion.replaceChildren(introduccion, svg, explicacion, valores);
+        solucion.hidden = false;
+        boton.textContent = "Ocultar solución";
+        if (!ejercicio.solucionMostrada && !ejercicio.resuelto) {
+          ejercicio.solucionMostrada = true;
+          ejercicio.cuenta[0]++;
+          dibujaContador();
+        }
+      } else {
+        solucion.hidden = true;
+        boton.textContent = "Mostrar solución";
+      }
+      boton.setAttribute("aria-expanded", String(!solucion.hidden));
+    }
+
     function nuevaPregunta(sumaIncorrecta, resultado) {
+      if (sumaIncorrecta && !ejercicio.resuelto) {
+        ejercicio.cuenta[0]++;
+      }
+      ejercicio.resuelto = false;
+      document.getElementById("e2_boton").disabled = false;
+      ejercicio.solucionMostrada = false;
+      document.getElementById("e2_solucion").hidden = true;
+      document.getElementById("e2_solucion").replaceChildren();
+      document.getElementById("e2_boton_solucion").textContent = "Mostrar solución";
+      document.getElementById("e2_boton_solucion").setAttribute("aria-expanded", "false");
+      document.getElementById("e2_ayuda").checked = false;
       var escala = escalas[Number(document.getElementById("e2_escala").value) - 1];
       ejercicio.xMin = escala.xMin;
       ejercicio.xMax = escala.xMax;
@@ -75,6 +233,7 @@
         '" viewBox="' + ejercicio.viewboxX + " " + ejercicio.viewboxY + " " + ejercicio.viewboxWidth + " " + ejercicio.viewboxHeight +
         '" style="background-color: lightgray"><rect x="' + recX + '" y="' + recY + '" width="' + recWidth +
         '" height="' + recHeight + '" fill="red" /></svg>';
+      dibujaAyuda();
 
       var campos = ["x", "y", "width", "height"];
       for (var i = 0; i < campos.length; i++) {
@@ -82,14 +241,14 @@
         campo.value = "";
         campo.removeAttribute("style");
       }
-      if (sumaIncorrecta) {
-        ejercicio.cuenta[0]++;
-      }
       document.getElementById("e2_resultado").textContent = resultado || "";
       dibujaContador();
     }
 
     function comprueba() {
+      if (ejercicio.resuelto) {
+        return;
+      }
       var nombres = ["x", "y", "width", "height"];
       var correctos = true;
       var valoresCorrectos = [ejercicio.viewboxX, ejercicio.viewboxY, ejercicio.viewboxWidth, ejercicio.viewboxHeight];
@@ -107,7 +266,10 @@
 
       if (correctos) {
         ejercicio.cuenta[1]++;
-        nuevaPregunta(false, respuesta[1]);
+        ejercicio.resuelto = true;
+        document.getElementById("e2_boton").disabled = true;
+        document.getElementById("e2_resultado").textContent = respuesta[1];
+        dibujaContador();
       } else {
         ejercicio.cuenta[0]++;
         document.getElementById("e2_resultado").textContent = respuesta[0];
@@ -121,6 +283,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("e2_ayuda").addEventListener("change", cambiaAyuda);
       document.getElementById("e2_escala").addEventListener("input", function () {
         nuevaPregunta(false);
       });
@@ -129,6 +292,7 @@
         nuevaPregunta(true);
       });
       document.getElementById("e2_reinicia").addEventListener("click", reiniciaContador);
+      document.getElementById("e2_boton_solucion").addEventListener("click", muestraSolucion);
       nuevaPregunta(false);
     });
   </script>
@@ -147,9 +311,12 @@
   <p>El objetivo de estos ejercicios es practicar el sistema de coordenadas de los gráficos SVG, concretamente el atributo <span class="html-atri">viewBox</span>, que se trata en la lección <a href="https://www.mclibre.org/consultar/htmlcss/html/html-svg.html">SVG</a> de los <a href="https://www.mclibre.org/consultar/htmlcss/index.html">apuntes de HTML y CSS</a>.</p>
 
   <ul>
-    <li>El código SVG de un rectángulo rojo se muestra encima del dibujo.</li>
+    <li>El dibujo muestra un viewbox de color gris en el que hay dibujado un rectángulo rojo.</li>
+    <li>El código SVG del rectángulo rojo se muestra encima del dibujo.</li>
     <li>Escriba los valores de <span class="html-atri">viewBox</span> (x, y, width, height) que permiten ver el rectángulo.</li>
     <li>Al corregir la respuesta, se indican con un borde rojo los valores incorrectos.</li>
+    <li>La casilla Ayuda permite mostrar u ocultar una rejilla en todos los valores enteros.</li>
+    <li>El botón "Mostrar solución" permite mostrar u ocultar el dibujo con la rejilla y un rectángulo gris que representa el viewBox original, dentro de un viewBox más grande.</li>
     <li>En la parte inferior se muestra un contador de preguntas acertadas y falladas. Puede contestar tantas veces como desee. Si pide un nuevo dibujo sin haber acertado antes, se cuenta como fallo. Haga clic en "Reiniciar contador" para devolver los contadores a cero.</li>
     <li>Puede elegir la dificultad con el control deslizante. Al cambiarla se genera un nuevo dibujo sin modificar el contador.</li>
   </ul>
@@ -159,7 +326,8 @@
 
     <div class="enunciado-test" style="width: fit-content; max-width: 100%">
       <div style="contain: inline-size">
-        <p>Escriba en las cajas de texto los valores de <span class="html-atri">viewBox</span> (x, y, width, height). Los valores a escribir deben ser <strong>múltiplos de 1</strong>.</p>
+        <p>Escriba en las cajas de texto los valores de <span class="html-atri">viewBox</span> (x, y, width, height) que se muestra de color gris.</p>
+        <p>Los valores a escribir deben ser <strong>múltiplos de 1</strong>.</p>
       </div>
 
       <div class="ej-cuerpo">
@@ -176,6 +344,7 @@
               <span>Difícil</span>
             </div>
           </div>
+          <p id="e2_control_ayuda"><label><input type="checkbox" id="e2_ayuda" name="ayuda"> Ayuda</label></p>
         </div>
 
         <div class="ej-dibujo">
@@ -203,13 +372,15 @@
             </tr>
           </table>
           <p><button type="button" id="e2_reinicia">Reiniciar contador</button></p>
+          <p><button type="button" id="e2_boton_solucion" aria-controls="e2_solucion" aria-expanded="false">Mostrar solución</button></p>
+          <div id="e2_solucion" hidden></div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2026</p>
+    <p class="ultmod">Última modificación de esta página: 3 de noviembre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
